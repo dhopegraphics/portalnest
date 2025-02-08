@@ -68,4 +68,14 @@
     padding: 10px 30px;
     border-width: 0;
     border-radius: 20px;
+    transition: all 0.25s;
+}
+
+.get-started:hover {
+    cursor: pointer;
+    filter: brightness(120%);
+}
+
+.get-started:active {
+    opacity: 0.8;
 }
