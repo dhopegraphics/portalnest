@@ -2,13 +2,16 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
+    font-family: Montserrat, Poppins, Arial, Helvetica, sans-serif;
    
 }
 
 .classroomContainer {
-    width: 100%;
     position: absolute;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,13 +26,11 @@
 }
 
 .logo-and-header {
-    position: absolute;
-    z-index: 1;
     display: flex;
     flex-direction: column;
-    left: 200px;
-    right: 200px;
-    margin-top: 50px;
+    margin: 50px 150px;
+    z-index: 1;
+    width: 75%;
     
 }
 
@@ -43,10 +44,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-family: Arial, Helvetica, sans-serif;
-    max-width: 100%;
-    min-width: 25%;
-    height: auto;
+    gap: 100px;
     text-wrap: nowrap;
     border-top: 5px solid white;
     border-top-left-radius: 5px;
@@ -56,7 +54,7 @@
 
 .header a {
     text-decoration: none;
-    font-weight: 500;
+    font-weight: bold;
     font-size: 14px;
     color: white;
 }
@@ -71,11 +69,44 @@
     transition: all 0.25s;
 }
 
-.get-started:hover {
+.get-started:hover, .add-school:hover {
     cursor: pointer;
     filter: brightness(120%);
 }
 
-.get-started:active {
+.get-started:active, .get-started:active {
     opacity: 0.8;
+}
+
+.page-message {
+    text-align: center;
+    font-family: Arial, Helvetica, Poppins, sans-serif;
+    color: white;
+    z-index: 1;
+    margin-top: 150px;
+}
+
+.connect {
+    font-size: 40px;
+    margin: 0;
+    
+}
+
+.everywhere {
+    font-size: 85px;
+    font-weight: bold;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.add-school {
+    background-color: rgb(245, 187, 41);
+    font-weight: bolder;
+    padding: 10px 30px;
+    border-width: 0;
+    border-radius: 150px;
+    transition: all 0.25s;
+    width: 350px;
+    font-size: 30px;
 }
