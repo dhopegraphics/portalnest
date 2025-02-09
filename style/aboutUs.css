@@ -1,36 +1,31 @@
-.classroom-image-content {
-    position: relative;
+.topBG-image-content {
+    width: 100%;
+    height: 100vh;
+    background-image: url("/assets/images/TopBgImage.png");
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
     font-family: Montserrat, Poppins, Arial, Helvetica, sans-serif;
    
 }
 
-.classroomContainer {
-    position: absolute;
+.topBG-Container {
+    position: relative;
     width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
-    top: -50px;
-    
-}
-
-.classroomImage {
-    width: 100%;
-    clip-path: inset(50px 0px 50px 0px);
-    filter: brightness(50%);
 }
 
 .logo-and-header {
+    position: absolute;
     display: flex;
     flex-direction: column;
-    margin: 50px 150px;
-    z-index: 1;
-    width: 75%;
+    top: 50px;
+    left: 15%;
+    right: 15%;
     
 }
 
@@ -44,7 +39,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 100px;
     text-wrap: nowrap;
     border-top: 5px solid white;
     border-top-left-radius: 5px;
@@ -69,12 +63,12 @@
     transition: all 0.25s;
 }
 
-.get-started:hover, .add-school:hover {
+.get-started:hover, .add-school-button:hover {
     cursor: pointer;
     filter: brightness(120%);
 }
 
-.get-started:active, .get-started:active {
+.get-started:active, .add-school-button:active {
     opacity: 0.8;
 }
 
@@ -82,7 +76,6 @@
     text-align: center;
     font-family: Arial, Helvetica, Poppins, sans-serif;
     color: white;
-    z-index: 1;
     margin-top: 150px;
 }
 
@@ -109,8 +102,9 @@
 }
 
 .everywhere {
-    font-size: 85px;
+    font-size: 80px;
     font-weight: bold;
+    font-stretch: narrower;
     margin: 0;
     padding-top: 10px;
     padding-bottom: 20px;
@@ -118,13 +112,13 @@
 }
 
 .connect, .everywhere {
-    white-space: nowrap; /* Prevent text wrapping */
+    white-space: nowrap; 
     overflow: hidden;
-    border-right: 3px solid white; /* Cursor effect */
+    border-right: 3px solid white; 
     width: 0;
 }
 
-.add-school {
+.add-school-button {
     background-color: rgb(245, 187, 41);
     font-weight: bolder;
     padding: 10px 30px;
