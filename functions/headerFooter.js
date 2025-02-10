@@ -1,22 +1,22 @@
 class SpecialHeader extends HTMLElement {
     connectedCallback() {
-      fetch("/components/header.html") // Load navbar from file
+      fetch("/components/header.html") // Load Header from file
         .then(response => response.text())
         .then(data => {
           this.innerHTML = data;
         })
-        .catch(error => console.error("Error loading navbar:", error));
+        .catch(error => console.error("Error loading Header:", error));
     }
   }
   
   class SpecialFooter extends HTMLElement {
     connectedCallback() {
-      fetch("/components/footer.html") // Load navbar from file
+      fetch("/components/footer.html") // Load Footer from file
         .then(response => response.text())
         .then(data => {
           this.innerHTML = data;
         })
-        .catch(error => console.error("Error loading navbar:", error));
+        .catch(error => console.error("Error loading Footer:", error));
     }
   }
   

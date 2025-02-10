@@ -128,3 +128,11 @@
     width: 350px;
     font-size: 30px;
 }
+.topBG-container .logo-and-header .header { 
+  transition:  all 0.25s ease;
+}
+
+.topBG-container .logo-and-header .header a div:hover { 
+    color: rgb(4, 158, 247);
+    
+}
