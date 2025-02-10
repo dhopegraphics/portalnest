@@ -1,6 +1,6 @@
 class SpecialHeader extends HTMLElement {
     connectedCallback() {
-      fetch("components/navbar.html") // Load navbar from file
+      fetch("components/header.html") // Load navbar from file
         .then(response => response.text())
         .then(data => {
           this.innerHTML = data;
