@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Fonts Links -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- icons links -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Css Link -->
+    <link rel="stylesheet" href="../../style/schooladmin.css" />
+    <title>Portalnest</title>
+
+    <!-- Javascript -->
+    <script defer src="../../scripts/script-schooladmin.js"></script>
+  </head>
+  <body>
+    <div class="main__container grid">
+      <aside class="navigation">
+        <header class="header__content">
+          <div class="logo__container flex">
+            <h1>
+              P<img
+                src="../../assets/logo/portalnest-Variation-Logo.png"
+                alt="Portalnest logo"
+              />rtal<span>Nest</span>.
+            </h1>
+          </div>
+
+          <div class="info__container flex">
+            <!-- tabindex="0" causes the div(button) to focus -->
+            <div class="img__con" role="button" tabindex="0">
+              <!-- <img src="" alt=""> -->
+            </div>
+
+            <div class="info__texts">
+              <p class="management__name">Fullname</p>
+              <p class="management__email">example@mail.com</p>
+            </div>
+          </div>
+        </header>
+
+        <nav class="navigation__button-container">
+          <div class="btn__inner-con">
+            <span>
+              <i class="fas fa-home"></i>
+            </span>
+            <button class="btn__navigate" onclick="loadPage('dashboard.html')">
+              Dashboard
+            </button>
+          </div>
+          <div class="btn__inner-con">
+            <span><i class="fas fa-users"></i></span>
+            <button class="btn__navigate" onclick="loadPage('managers.html')">
+              Managers
+            </button>
+          </div>
+          <div class="btn__inner-con">
+            <span><i class="fas fa-address-card"></i></span>
+            <button class="btn__navigate" onclick="loadPage('admissions.html')">
+              Admissions
+            </button>
+          </div>
+          <div class="btn__inner-con">
+            <span><i class="fas fa-graduation-cap"></i></span>
+            <button
+              class="btn__navigate"
+              onclick="loadPage('student-manage.html')"
+            >
+              Student Management
+            </button>
+          </div>
+          <div class="btn__inner-con">
+            <span><i class="fas fa-user-tie"></i></span>
+            <button
+              class="btn__navigate"
+              onclick="loadPage('faculty-manage.html')"
+            >
+              Faculty Management
+            </button>
+          </div>
+          <div class="btn__inner-con">
+            <span><i class="fas fa-building"></i></span>
+            <button
+              class="btn__navigate"
+              onclick="loadPage('departments.html')"
+            >
+              Departments
+            </button>
+          </div>
+          <div class="btn__inner-con">
+            <span><i class="fas fa-book"></i></span>
+            <button class="btn__navigate" onclick="loadPage('courses.html')">
+              Courses
+            </button>
+          </div>
+        </nav>
+
+        <nav class="navigation__button-container">
+          <div class="btn__inner-con">
+            <span><i class="fas fa-file-alt"></i></span>
+            <button class="btn__navigate" onclick="loadPage('grading.html')">
+              Grading & Exams
+            </button>
+          </div>
+          <div class="btn__inner-con">
+            <span><i class="fas fa-cogs"></i></span>
+            <button class="btn__navigate" onclick="loadPage('reports.html')">
+              Settings & Reports
+            </button>
+          </div>
+          <div class="btn__inner-con">
+            <span><i class="fas fa-calendar-plus"></i></span>
+            <button class="btn__navigate" onclick="loadPage('events.html')">
+              Create Events
+            </button>
+          </div>
+        </nav>
+
+        <div class="log-out__container">
+          <span><i class="fas fa-sign-out-alt"></i></span>
+          <button
+            class="btn__navigate btn-logout"
+            onclick="loadPage('logout.html')"
+          >
+            Log Out
+          </button>
+        </div>
+      </aside>
+
+      <main class="content__area" id="content-area">
+        <!-- Main section display -->
+        <h2>Main section display</h2>
+      </main>
+    </div>
+  </body>
+</html>
