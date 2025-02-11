@@ -1,14 +1,22 @@
+body {
+    margin: 0;
+}
+
 .topBG-image-content {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh; 
     background-image: url("/assets/images/TopBgImage.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 90px;
     justify-content: space-evenly;
     font-family: Montserrat, Poppins, Arial, Helvetica, sans-serif;
-    margin-bottom: 150px;
 }
+
 
 .topBG-Container {
     position: relative;
@@ -102,7 +110,7 @@
 }
 
 .everywhere {
-    font-size: 80px;
+    font-size: clamp(1.8rem, calc(6vw + 1rem), 5rem);
     font-weight: bold;
     font-stretch: narrower;
     margin: 0;
@@ -147,9 +155,7 @@
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
     position: absolute;
     margin-top: 90px;
-    left: 15%;
-    right: 15%;
-    
+       
 }
 
 .middle-bar a {
@@ -186,4 +192,156 @@
 
 .middle-bar a p {
     margin: 0;
+}
+
+/* For tablets and smaller desktops */
+@media (max-width: 1024px) {
+    .logo-and-header {
+        left: 10%;
+        right: 10%;
+        margin-bottom: 0;
+    }
+
+    .page-message {
+        margin-top: 0;
+    }
+    .header a {
+        font-size: 12px;
+    }
+
+    .get-started {
+        padding: 8px 20px;
+    }
+    .connect {
+        font-size: 30px;
+    }
+
+    .everywhere {
+        font-size: clamp(1.5rem, calc(5vw + 1rem), 4rem);
+    }
+
+    .add-school-button {
+        width: 300px;
+        font-size: 25px;
+    }
+
+    .middle-bar {
+        flex-wrap: wrap;
+        justify-content: center;
+        left: 5%;
+        right: 5%;
+    }
+
+    .middle-bar a {
+        padding: 10px;
+        font-size: 10px;
+    }
+
+    .middle-bar-icons {
+        width: 120px;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+    
+    .topBG-image-content {
+        margin-bottom: 20px;
+    }
+
+    .logo-and-header {
+        align-items: center;
+        left: 5%;
+        right: 5%;
+    }
+    
+    .portalnest-logo {
+        width: 30px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0px;
+        border-top: 0;
+    }
+
+    .header a {
+        margin: 10px 0;
+        
+    }
+
+    .get-started {
+        margin-top: 10px;
+    }
+
+    .page-message {
+        padding: 10px;
+        margin-right: 10px;
+    }
+
+    .connect {
+        font-size: 20px;
+    }
+
+    .everywhere {
+        padding-left: 10px;
+        font-size: 7vw;
+    }
+
+    .add-school-button {
+        width: 250px;
+        font-size: 20px;
+    }
+
+    .middle-bar {
+        flex-wrap: wrap;
+        padding: 5px;
+        align-self: center;
+        
+    }
+    
+    .middle-bar a {
+        padding: 10px 0;
+        margin-left: 10px;
+    }
+
+    .middle-bar a p {
+        padding: 5px;
+    }
+
+    .middle-bar-icons {
+        width: 100%;
+        
+    }
+
+}
+
+/* For very small mobile devices */
+@media (max-width: 480px) {
+    .logo-and-header {
+        left: 2%;
+        right: 2%;
+    }
+
+    .header a {
+        font-size: 10px;
+    }
+
+    .connect {
+        font-size: 20px;
+    }
+
+    .everywhere {
+        font-size: clamp(1rem, calc(3vw + 1rem), 2rem);
+    }
+
+    .add-school-button {
+        width: 200px;
+        font-size: 14px;
+    }
+
+    .middle-bar a {
+        font-size: 8px;
+    }
 }
