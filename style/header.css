@@ -155,8 +155,6 @@ body {
     background-color: white;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     margin-top: 90px;
 }
 
