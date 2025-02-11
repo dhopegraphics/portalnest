@@ -5,11 +5,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     font-family: Montserrat, Poppins, Arial, Helvetica, sans-serif;
-   
+    margin-bottom: 70px;
 }
-
 .topBG-Container {
     position: relative;
     width: 100%;
@@ -135,4 +134,49 @@
 .topBG-container .logo-and-header .header a div:hover { 
     color: rgb(4, 158, 247);
     
+}
+
+.middle-bar {
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    margin-top: 50px;
+    left: 15%;
+    right: 15%;
+    
+}
+
+.middle-bar a {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    
+}
+
+.middle-bar-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.icons {
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+.middle-bar a p {
+    margin: 0;
 }
