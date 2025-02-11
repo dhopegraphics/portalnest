@@ -239,3 +239,79 @@ body {
         width: 120px;
     }
 }
+
+/* For mobile devices */
+@media (max-width: 768px) {
+    
+    .topBG-image-content {
+        margin-bottom: 20px;
+    }
+
+    .logo-and-header {
+        align-items: center;
+        left: 5%;
+        right: 5%;
+    }
+    
+    .portalnest-logo {
+        width: 30px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0px;
+        border-top: 0;
+    }
+
+    .header a {
+        margin: 10px 0;
+        
+    }
+
+    .get-started {
+        margin-top: 10px;
+    }
+
+    .page-message {
+        padding: 10px;
+        margin-top: 0px;
+    }
+
+    .connect {
+        font-size: 20px;
+    }
+
+    .everywhere {
+        padding-left: 10px;
+        font-size: clamp(1.2rem, calc(3vw + 1rem), 3rem);
+    }
+
+    .add-school-button {
+        width: 250px;
+        font-size: 20px;
+    }
+
+    .middle-bar {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 10px;
+        row-gap: 20px;
+        padding: 10px;
+        align-self: center;
+        
+    }
+    .middle-bar:last-child {
+        row-gap: 0;
+    }
+
+    .middle-bar a {
+        padding: 10px 0;
+    }
+
+    .middle-bar-icons {
+        width: 100%;
+        
+    }
+
+}
