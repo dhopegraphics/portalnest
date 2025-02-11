@@ -16,13 +16,21 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
       rel="stylesheet"
     />
+    <!-- ionicon -->
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+    <!-- font aw -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
 
     <!-- Css Link -->
     <link rel="stylesheet" href="../../style/schooladmin.css" />
     <title>Portalnest</title>
 
     <!-- Javascript -->
-    <script defer src="../../scripts/script-schooladmin.js"></script>
+    <script defer src="../../functions/script-schooladmin.js"></script>
   </head>
   <body>
     <div class="main__container grid">
@@ -53,7 +61,8 @@
         <nav class="navigation__button-container">
           <div class="btn__inner-con">
             <span>
-              <i class="fas fa-home"></i>
+              <!-- <i class="fas fa-home"></i> -->
+              <i class="ionicon ion-home-outline"></i>
             </span>
             <button class="btn__navigate" onclick="loadPage('dashboard.html')">
               Dashboard
@@ -128,7 +137,11 @@
         </nav>
 
         <div class="log-out__container">
-          <span><i class="fas fa-sign-out-alt"></i></span>
+          <span>
+            <!-- <i class="fas fa-sign-out-alt"></i> -->
+            <!-- <ion-icon name="log-out"></ion-icon> -->
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          </span>
           <button
             class="btn__navigate btn-logout"
             onclick="loadPage('logout.html')"
@@ -145,3 +158,5 @@
     </div>
   </body>
 </html>
+
+
