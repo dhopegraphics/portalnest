@@ -136,6 +136,7 @@ body {
     width: 350px;
     font-size: 30px;
 }
+
 .topBG-container .logo-and-header .header { 
   transition:  all 0.25s ease;
 }
@@ -147,15 +148,16 @@ body {
 
 .middle-bar {
     display: flex;
-    padding: 20px;
+    padding: 10px 20px;
     align-items: center;
     justify-content: space-between;
     border-radius: 10px;
     background-color: white;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
     position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     margin-top: 90px;
-       
 }
 
 .middle-bar a {
@@ -192,6 +194,21 @@ body {
 
 .middle-bar a p {
     margin: 0;
+}
+
+.arrow-up-icon {
+    background-color: white;
+    border-radius: 30px;
+    margin-top: 10px;
+}
+
+#student-portal .middle-bar-icons {
+    background-color: rgb(4, 158, 247);
+    color: white;
+    border-left-width: 0;
+    border-right-width: 0;
+    padding: 20px 0;
+    border-radius: 10px;
 }
 
 /* For tablets and smaller desktops */
@@ -297,7 +314,8 @@ body {
     .middle-bar {
         flex-wrap: wrap;
         padding: 5px;
-        align-self: center;
+        left: 5%;
+        right: 5%;
         
     }
     
@@ -313,6 +331,14 @@ body {
     .middle-bar-icons {
         width: 100%;
         
+    }
+
+    #student-portal .middle-bar-icons {
+        padding: 5px 0;
+    }
+
+    .arrow-up-icon {
+        width: 30px;
     }
 
 }
