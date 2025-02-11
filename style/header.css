@@ -275,7 +275,7 @@ body {
 
     .page-message {
         padding: 10px;
-        margin-top: 0px;
+        margin-right: 10px;
     }
 
     .connect {
@@ -284,7 +284,7 @@ body {
 
     .everywhere {
         padding-left: 10px;
-        font-size: clamp(1.2rem, calc(3vw + 1rem), 3rem);
+        font-size: 7vw;
     }
 
     .add-school-button {
@@ -293,20 +293,19 @@ body {
     }
 
     .middle-bar {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        column-gap: 10px;
-        row-gap: 20px;
+        flex-wrap: wrap;
         padding: 10px;
         align-self: center;
         
     }
-    .middle-bar:last-child {
-        row-gap: 0;
-    }
-
+    
     .middle-bar a {
         padding: 10px 0;
+        margin-left: 10px;
+    }
+
+    .middle-bar a p {
+        padding: 5px;
     }
 
     .middle-bar-icons {
@@ -314,4 +313,33 @@ body {
         
     }
 
+}
+
+/* For very small mobile devices */
+@media (max-width: 480px) {
+    .logo-and-header {
+        left: 2%;
+        right: 2%;
+    }
+
+    .header a {
+        font-size: 10px;
+    }
+
+    .connect {
+        font-size: 20px;
+    }
+
+    .everywhere {
+        font-size: clamp(1rem, calc(3vw + 1rem), 2rem);
+    }
+
+    .add-school-button {
+        width: 200px;
+        font-size: 14px;
+    }
+
+    .middle-bar a {
+        font-size: 8px;
+    }
 }
