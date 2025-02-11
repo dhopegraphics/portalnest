@@ -159,7 +159,13 @@
     text-align: center;
     padding: 20px;
     font-size: 12px;
-    
+    transition: all 0.3s;
+}
+
+.middle-bar a:hover {
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: rgb(204, 233, 250);
 }
 
 .middle-bar-icons {
