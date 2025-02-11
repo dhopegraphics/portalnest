@@ -7,8 +7,9 @@
     align-items: center;
     justify-content: space-evenly;
     font-family: Montserrat, Poppins, Arial, Helvetica, sans-serif;
-    margin-bottom: 70px;
+    margin-bottom: 150px;
 }
+
 .topBG-Container {
     position: relative;
     width: 100%;
@@ -165,7 +166,7 @@
 .middle-bar a:hover {
     cursor: pointer;
     border-radius: 10px;
-    background-color: rgb(204, 233, 250);
+    background-color: rgb(224, 242, 253);
 }
 
 .middle-bar-icons {
