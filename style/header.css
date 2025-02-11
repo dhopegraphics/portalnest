@@ -228,6 +228,8 @@ body {
     .middle-bar {
         flex-wrap: wrap;
         justify-content: center;
+        left: 5%;
+        right: 5%;
     }
 
     .middle-bar a {
@@ -294,7 +296,7 @@ body {
 
     .middle-bar {
         flex-wrap: wrap;
-        padding: 10px;
+        padding: 5px;
         align-self: center;
         
     }
