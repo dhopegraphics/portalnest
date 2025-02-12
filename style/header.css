@@ -80,7 +80,7 @@ body {
     height: 5px; /* Thickness */
     background: rgb(29, 146, 255);
     border-radius: 50px; /* Fully round edges */
-    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+    transition: all 500ms ease;
     transform: translateX(-50%);
     display: none;
 }
@@ -175,7 +175,7 @@ body {
 }
 
 .topBG-container .logo-and-header .header { 
-  transition:  all 0.25s ease;
+  transition:  all 1.25s ease;
 }
 
 .topBG-container .logo-and-header .header a div:hover { 
@@ -186,10 +186,10 @@ body {
  .middle-bar {
     display: flex;
     align-items: center;
-    border-radius: 10px;
-    margin-top: 3rem;
+    margin-top: -6rem;
     padding: 3rem;
     padding-left: 10px;
+    width: 80%;
    
  
 }
@@ -199,16 +199,18 @@ body {
     color: black;
     display: flex;
     align-items: center;
+    justify-content: center;
     text-transform: uppercase;
     background-color: white;
     font-weight: bold;
     text-align: center;
     font-size: 12px;
     transition: all 0.3s;
-    width: 9rem;
-    height: 8rem;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 10rem;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
     margin-top: 1rem;
+   
   
 
 }
@@ -218,13 +220,14 @@ body {
 
 .middle-bar a:last-child {
     border-radius: 0px 10px 10px 0px;
+  
 }
 
 
 .middle-bar a:hover {
     cursor: pointer;
     background-color: rgb(224, 242, 253);
-    align-items: center;
+    
 
 }
 
@@ -233,11 +236,27 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100px;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-    padding-left: 15px;
+    width: 70%;
+    position: relative; /* Needed for absolute positioning */
 }
+
+.middle-bar-icons::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 1px; /* Border width */
+    height: 50%; /* Adjust height of the border */
+    background: black; /* Border color */
+} 
+.middle-bar-icons::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 1px; /* Border width */
+    height: 50%; /* Adjust height of the border */
+    background: black; /* Border color */
+}
+
 
 .icons {
     width: 50%;
@@ -254,14 +273,35 @@ body {
     margin-top: 10px;
 }
 
-#student-portal .middle-bar-icons {
+.active .middle-bar-icons {
     background-color: rgb(4, 158, 247);
     color: white;
     border-left-width: 0;
     border-right-width: 0;
-    padding: 20px 20px;
+    padding: 10% 10%;
     border-radius: 10px;
+    width: 100%;
 }
+
+.active .middle-bar-icons::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 0px; /* Border width */
+    height: 0; /* Adjust height of the border */
+    background: rgb(255, 255, 255); /* Border color */
+}
+
+.active .middle-bar-icons::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0px; /* Border width */
+    height: 0; /* Adjust height of the border */
+    background: rgb(255, 255, 255); /* Border color */
+}
+
+
 
 /* For tablets and smaller desktops */
 @media (max-width: 1024px) {
