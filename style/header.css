@@ -169,7 +169,16 @@ body {
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
     margin-top: 1rem;
   
+
 }
+ .middle-bar a:first-child {
+    border-radius: 10px 0px 0 10px;
+}
+
+.middle-bar a:last-child {
+    border-radius: 0px 10px 10px 0px;
+}
+
 
 .middle-bar a:hover {
     cursor: pointer;
