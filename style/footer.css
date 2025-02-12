@@ -6,7 +6,7 @@ body {
     font-family: Montserrat, Poppins, Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+    min-height: 100vh;
 }
 
 .footer {
@@ -95,37 +95,35 @@ body {
     text-align: center;
 }
 
-/* Media Queries for Responsiveness */
-
 /* For tablets and smaller desktops */
 @media (min-width: 768px) and (max-width: 1024px) {
     .section-container {
-        width: 48%; /* Two sections per row */
+        width: 48%;
     }
 }
 
 /* For larger desktops */
 @media (min-width: 1025px) {
     .footer {
-        padding: 80px; /* Restore original padding */
+        padding: 80px;
     }
 
     .section-container {
-        width: 25%; /* Four sections per row */
+        width: 25%;
     }
 }
 
 /* For mobile devices */
 @media (max-width: 767px) {
     .footer {
-        padding: 20px; /* Further reduce padding for mobile */
+        padding: 20px;
     }
 
     .section-container {
-        width: 100%; /* Full width for mobile */
+        width: 100%;
     }
 
     .copyright {
-        font-size: 12px; /* Smaller font size for mobile */
+        font-size: 12px;
     }
 }
