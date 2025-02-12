@@ -19,7 +19,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: -60px;
+    margin-bottom: -20px;
     font-family: Montserrat, Poppins, Arial, Helvetica, sans-serif;
 }
 
@@ -192,52 +192,48 @@ nav {
     
 }
 
- .middle-bar {
+.middle-bar {
     display: flex;
     align-items: center;
-    margin-top: -6rem;
-    padding: 3rem;
-    padding-left: 10px;
-    width: 80%;
-   
- 
+    margin-top: -60px;
+    padding: 70px 20px;
+    background-color: white;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
 }
 
 .middle-bar a {
+    display: flex;
     text-decoration: none;
     color: black;
-    display: flex;
     align-items: center;
     justify-content: center;
     text-transform: uppercase;
-    background-color: white;
     font-weight: bold;
     text-align: center;
     font-size: 12px;
     transition: all 0.3s;
-    width: 100%;
-    height: 10rem;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
-    margin-top: 1rem;
-   
-  
-
+    padding: 15px;
+    border-right: 1px solid;
+    border-left: 1px solid;
+    margin-right: 30px;
 }
- .middle-bar a:first-child {
-    border-radius: 10px 0px 0 10px;
+
+.middle-bar a:nth-last-child(2) {
+    border: 0;
 }
 
 .middle-bar a:last-child {
-    border-radius: 0px 10px 10px 0px;
-  
+    margin-right: 0;
 }
-
-
 .middle-bar a:hover {
     cursor: pointer;
     background-color: rgb(224, 242, 253);
-    
-
+    border-radius: 10px;
+    padding: 5px;
 }
 
 .middle-bar-icons {
@@ -245,28 +241,8 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 50%;
-    position: relative; /* Needed for absolute positioning */
+    
 }
-
-.middle-bar-icons::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    width: 1px; /* Border width */
-    height: 50%; /* Adjust height of the border */
-    background: black; /* Border color */
-} 
-
-.middle-bar-icons::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    width: 1px; /* Border width */
-    height: 50%; /* Adjust height of the border */
-    background: black; /* Border color */
-}
-
 
 .icons {
     width: 50%;
@@ -274,7 +250,8 @@ nav {
 }
 
 .middle-bar a p {
-    margin: 0;
+    margin: 0 5px;
+    text-align: bottom;
 }
 
 .arrow-up-icon {
@@ -321,8 +298,6 @@ nav {
     height: 0; /* Adjust height of the border */
     background: rgb(255, 255, 255); /* Border color */
 }
-
-
 
 /* For tablets and smaller desktops */
 @media (max-width: 1024px) {
@@ -377,6 +352,8 @@ nav {
         margin-top: -70px;
         left: 5%;
         right: 5%;
+        height: auto;
+        padding: 20px;
     }
 
     .middle-bar a {
@@ -384,9 +361,6 @@ nav {
         font-size: 10px;
     }
 
-    .middle-bar-icons {
-        width: 120px;
-    }
 }
 
 /* For mobile devices */
@@ -445,35 +419,17 @@ nav {
         flex-wrap: wrap;
         padding: 5px;
         margin-top: -70px;
-        
-        
+        height: auto;
     }
     
     .middle-bar a {
-       
-       
+        flex: 1 1 45%; /* Allow items to wrap and take up space */
+        margin: 5px; 
+        border-radius: 10px;
     }
-    .middle-bar a:first-child {
-        border-radius: 10px 0px 0 10px;
-    }
-  
-    .middle-bar a:last-child {
-        border-radius: 0px 10px 10px 0px;
-    }
-
-    .middle-bar a:nth-child(3) {
-        border-radius: 0px 10px 10px 0px;
-    }
-
     .middle-bar a p {
         padding: 5px;
     }
-
-    .middle-bar-icons {
-        width: 100%;
-        
-    }
-
   
     .arrow-up-icon {
         width: 30px;
@@ -505,10 +461,16 @@ nav {
         font-size: 14px;
     }
 
+    .middle-bar {
+        padding: 10px;
+        height: auto;
+    }
+
     .middle-bar a {
+        flex: 1 1 100%;
         font-size: 8px;
         border-radius: 10px;
-        margin-left: 10px;
+        margin-left: 5px 0;
     }
 
 }
