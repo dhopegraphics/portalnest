@@ -142,32 +142,35 @@ body {
     
 }
 
-.middle-bar {
+ .middle-bar {
     display: flex;
-    padding: 10px 20px;
     align-items: center;
-    justify-content: space-between;
     border-radius: 10px;
-    background-color: white;
-    width: 80%;
-    margin-top: -60px;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 3rem;
+    padding: 3rem;
+   
+ 
 }
 
 .middle-bar a {
     text-decoration: none;
     color: black;
+    display: flex;
+    align-items: center;
     text-transform: uppercase;
+    background-color: white;
     font-weight: bold;
     text-align: center;
-    padding: 20px;
     font-size: 12px;
     transition: all 0.3s;
+    width: 9rem;
+    height: 8rem;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 1rem;
 }
 
 .middle-bar a:hover {
     cursor: pointer;
-    border-radius: 10px;
     background-color: rgb(224, 242, 253);
 }
 
