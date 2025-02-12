@@ -44,10 +44,51 @@ body {
     align-items: center;
     justify-content: space-between;
     text-wrap: nowrap;
-    border-top: 5px solid white;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
     padding: 20px 0px;
+}
+.header::before {
+    content: "";
+    align-items: center;
+    position: absolute;
+    top: 8rem; /* Move border up */
+    left: 10rem;
+    width: 80%;
+    height: 5px; /* Control thickness */
+    background: white;
+    border-radius: 50px; /* Fully round edges */
+}
+
+.header a {
+    position: relative; /* Needed for absolute positioning of ::before */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header a div {
+    position: relative; /* Needed for pseudo-element positioning */
+    padding: 10px 15px; /* Add some spacing */
+}
+
+/* Border effect */
+.header a div::before {
+    content: "";
+    position: absolute;
+    top: -35%; /* Position below the div */
+    left: 50%;
+    width: 0%; /* Initially hidden */
+    height: 5px; /* Thickness */
+    background: rgb(29, 146, 255);
+    border-radius: 50px; /* Fully round edges */
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+    transform: translateX(-50%);
+    display: none;
+}
+
+/* Show border when hovering over the div */
+.header a div:hover::before {
+    display: block;
+    width: 150%; /* Expand border width */
 }
 
 .header a {
