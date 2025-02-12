@@ -148,6 +148,7 @@ body {
     border-radius: 10px;
     margin-top: 3rem;
     padding: 3rem;
+    padding-left: 10px;
    
  
 }
@@ -167,11 +168,14 @@ body {
     height: 8rem;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
     margin-top: 1rem;
+  
 }
 
 .middle-bar a:hover {
     cursor: pointer;
     background-color: rgb(224, 242, 253);
+    align-items: center;
+
 }
 
 .middle-bar-icons {
@@ -179,9 +183,10 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 150px;
+    width: 100px;
     border-left: 1px solid black;
     border-right: 1px solid black;
+    padding-left: 15px;
 }
 
 .icons {
@@ -204,7 +209,7 @@ body {
     color: white;
     border-left-width: 0;
     border-right-width: 0;
-    padding: 20px 0;
+    padding: 20px 20px;
     border-radius: 10px;
 }
 
@@ -321,8 +326,19 @@ body {
     }
     
     .middle-bar a {
-        padding: 10px 0;
-        margin-left: 10px;
+       
+       
+    }
+    .middle-bar a:first-child {
+        border-radius: 10px 0px 0 10px;
+    }
+  
+    .middle-bar a:last-child {
+        border-radius: 0px 10px 10px 0px;
+    }
+
+    .middle-bar a:nth-child(3) {
+        border-radius: 0px 10px 10px 0px;
     }
 
     .middle-bar a p {
@@ -334,10 +350,7 @@ body {
         
     }
 
-    #student-portal .middle-bar-icons {
-        padding: 5px 0;
-    }
-
+  
     .arrow-up-icon {
         width: 30px;
     }
@@ -370,5 +383,8 @@ body {
 
     .middle-bar a {
         font-size: 8px;
+        border-radius: 10px;
+        margin-left: 10px;
     }
+
 }
