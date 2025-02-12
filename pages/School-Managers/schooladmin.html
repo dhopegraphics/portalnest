@@ -16,8 +16,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
       rel="stylesheet"
     />
-    <!-- ionicon -->
-    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 
     <!-- font aw -->
     <link
@@ -58,102 +56,119 @@
           </div>
         </header>
 
-        <nav class="navigation__button-container">
-          <div class="btn__inner-con">
+        <nav class="navigation__button-container nav__one">
+          <button
+            class="btn__navigate dashboardbtn"
+            onclick="loadPage('dashboard.html')"
+            data-target="dashboard"
+          >
             <span>
-              <!-- <i class="fas fa-home"></i> -->
-              <i class="ionicon ion-home-outline"></i>
+              <i class="fas fa-home"></i>
             </span>
-            <button class="btn__navigate" onclick="loadPage('dashboard.html')">
-              Dashboard
-            </button>
-          </div>
-          <div class="btn__inner-con">
+            Dashboard
+          </button>
+
+          <button class="btn__navigate" onclick="loadPage('managers.html')">
             <span><i class="fas fa-users"></i></span>
-            <button class="btn__navigate" onclick="loadPage('managers.html')">
-              Managers
-            </button>
-          </div>
-          <div class="btn__inner-con">
+            Managers
+          </button>
+
+          <button class="btn__navigate" onclick="loadPage('admissions.html')">
             <span><i class="fas fa-address-card"></i></span>
-            <button class="btn__navigate" onclick="loadPage('admissions.html')">
-              Admissions
-            </button>
-          </div>
-          <div class="btn__inner-con">
+            Admissions
+          </button>
+
+          <button
+            class="btn__navigate"
+            onclick="loadPage('student-manage.html')"
+          >
             <span><i class="fas fa-graduation-cap"></i></span>
-            <button
-              class="btn__navigate"
-              onclick="loadPage('student-manage.html')"
-            >
-              Student Management
-            </button>
-          </div>
-          <div class="btn__inner-con">
+            Student Management
+          </button>
+
+          <button
+            class="btn__navigate"
+            onclick="loadPage('faculty-manage.html')"
+          >
             <span><i class="fas fa-user-tie"></i></span>
-            <button
-              class="btn__navigate"
-              onclick="loadPage('faculty-manage.html')"
-            >
-              Faculty Management
-            </button>
-          </div>
-          <div class="btn__inner-con">
+            Faculty Management
+          </button>
+
+          <button class="btn__navigate" onclick="loadPage('departments.html')">
             <span><i class="fas fa-building"></i></span>
-            <button
-              class="btn__navigate"
-              onclick="loadPage('departments.html')"
-            >
-              Departments
-            </button>
-          </div>
-          <div class="btn__inner-con">
+            Departments
+          </button>
+
+          <button class="btn__navigate" onclick="loadPage('courses.html')">
             <span><i class="fas fa-book"></i></span>
-            <button class="btn__navigate" onclick="loadPage('courses.html')">
-              Courses
-            </button>
-          </div>
+            Courses
+          </button>
         </nav>
 
-        <nav class="navigation__button-container">
-          <div class="btn__inner-con">
+        <nav class="navigation__button-container nav__two">
+          <button class="btn__navigate" onclick="loadPage('grading.html')">
             <span><i class="fas fa-file-alt"></i></span>
-            <button class="btn__navigate" onclick="loadPage('grading.html')">
-              Grading & Exams
-            </button>
-          </div>
-          <div class="btn__inner-con">
+            Grading & Exams
+          </button>
+
+          <button class="btn__navigate" onclick="loadPage('reports.html')">
             <span><i class="fas fa-cogs"></i></span>
-            <button class="btn__navigate" onclick="loadPage('reports.html')">
-              Settings & Reports
-            </button>
-          </div>
-          <div class="btn__inner-con">
+            Settings & Reports
+          </button>
+
+          <button class="btn__navigate" onclick="loadPage('events.html')">
             <span><i class="fas fa-calendar-plus"></i></span>
-            <button class="btn__navigate" onclick="loadPage('events.html')">
-              Create Events
-            </button>
-          </div>
+            Create Events
+          </button>
         </nav>
 
         <div class="log-out__container">
-          <span>
-            <!-- <i class="fas fa-sign-out-alt"></i> -->
-            <!-- <ion-icon name="log-out"></ion-icon> -->
-            <i class="fa-solid fa-arrow-right-from-bracket"></i>
-          </span>
           <button
             class="btn__navigate btn-logout"
             onclick="loadPage('logout.html')"
           >
+            <span>
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </span>
             Log Out
           </button>
         </div>
       </aside>
 
-      <main class="content__area" id="content-area">
-        <!-- Main section display -->
-        <h2>Main section display</h2>
+      <main>
+        <header class="main__header">
+          <nav class="main__nav flex">
+            <button class="btn__main btn__menu">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <button class="btn__main btn__notification">
+              <i class="fa-solid fa-bell"></i>
+            </button>
+          </nav>
+        </header>
+
+        <div class="main__card-container">
+          <h1>Dashboard-School Management</h1>
+
+          <div class="card__container">
+            <div class="card">
+              <div class="card__header flex">
+                <span></span>
+                <div>
+                  <p>100</p>
+                  <p>Applicants</p>
+                </div>
+              </div>
+
+              <div class="card__footer flex">
+                <p>See Details</p>
+                <span>&rarr;</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content__area" id="content-area"></div>
       </main>
     </div>
   </body>
