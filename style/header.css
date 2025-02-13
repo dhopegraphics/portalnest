@@ -416,14 +416,18 @@ nav {
     }
 
     .middle-bar {
+        width: 70%;
         flex-wrap: wrap;
         padding: 5px;
         margin-top: -70px;
         height: auto;
     }
-    
+
+    .middle-bar-icons {
+        width: 50%;
+    }
     .middle-bar a {
-        flex: 1 1 45%; /* Allow items to wrap and take up space */
+        flex: 1 1 45%;
         margin: 5px; 
         border-radius: 10px;
     }
