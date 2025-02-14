@@ -3,22 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
+    <title>Contact Us - PortalNest</title>
+    <link rel="stylesheet" href="/style/ContactUs.css">
 </head>
 <body>
     <special-header> </special-header>
-    <div class="contact-us">
-        <div class="contact-us-content">
-            <div class="contact-us-header">
-                <h1>Contact Us</h1>
-            </div>
-            <div class="contact-us-body">
-                <p>PortalNest is a platform that connects students to their schools. It is a platform that allows students to access their school's resources and information from anywhere, anytime. It is a platform that allows students to connect with their teachers and classmates, and access their assignments, grades, and other school-related information. It is a platform that allows students to stay connected to their school, even when they are not physically present. It is a platform that allows students to stay connected to their school, even when they are not physically present. It is a platform that allows students to stay connected to their school, even when they are not physically present. It is a platform that allows students to stay connected to their school, even when they are not physically present. It is a platform that allows students to stay connected to their school, even when they are not physically present. It is a platform that allows students to stay connected to their school, even when they are not physically present. It is a platform that allows students to stay connected to their school, even when they are not physically present. It is a platform that allows students to stay connected to their school, even when they are not physically present. It is a platform that allows students to stay connected to their school, even when they are not physically present.</p>
-            </div>
-        </div>
-    </div>
+    <section class="contact-form">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter Your Name Here" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter Your Mail Here" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Your Message Here" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
     <special-footer> </special-footer>
     <script src="/functions/headerFooter.js"></script>
-    
 </body>
 </html>
