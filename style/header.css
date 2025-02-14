@@ -13,7 +13,7 @@ body {
 
 .topBG-image-content {
     width: 100%;
-    min-height: 100vh; 
+    min-height: 70vh; 
     background-image: url("/assets/images/TopBgImage.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -92,42 +92,48 @@ nav {
 .topBG-container .logo-and-header .header a div { 
     color: rgb(255, 255, 255);
  
-    transition: all 0.3s;
+    transition: color 0.3s ease-in-out; /* Smooth transition */
 
     
 }
 
 .topBG-container .logo-and-header .header a div:hover { 
     color: rgb(4, 158, 247);
-  
+    text-shadow: 0 0 10px rgba(4, 158, 247, 0.8), 
+    0 0 20px rgba(4, 158, 247, 0.6); /* Blue glow effect */
     
 }
 
 /* Border effect */
+/* Initial border effect */
 .header a div::before {
     content: "";
     position: absolute;
-    top: -35%; /* Position below the div */
+    top: -35%; /* Position above */
     left: 50%;
     width: 0%; /* Initially hidden */
     height: 5px; /* Thickness */
     background: rgb(29, 146, 255);
-    border-radius: 50px; /* Fully round edges */
-    transition: width 0.4s ease-in-out, left 0.4s ease-in-out;
+    border-radius: 50px; /* Round edges */
+    transition: width 0.4s ease-in-out, left 0.4s ease-in-out, opacity 0.3s ease-in-out, box-shadow 0.4s ease-in-out;
     transform: translateX(-50%);
-    box-shadow: 0 0 10px rgba(29, 146, 255, 0.8); /* Subtle glow effect */
+    box-shadow: 0 0 5px rgba(29, 146, 255, 0); /* No glow initially */
     opacity: 0; /* Initially hidden */
-  
 }
 
-/* Show border when hovering over the div */
+/* Expand and glow on hover */
 .header a div:hover::before {
-    width: 150%; /* Expand border width */
-    opacity: 1; /* Make it visible */
+    width: 150%; /* Expand */
+    opacity: 1; /* Fully visible */
     box-shadow: 0 0 15px rgba(29, 146, 255, 1), 
                 0 0 30px rgba(29, 146, 255, 0.8); /* Intense glow */
-    
-  
+}
+
+/* Smooth transition back when unhovering */
+.header a div:not(:hover)::before {
+    width: 0%; /* Shrinks smoothly */
+    opacity: 0; /* Fade out */
+    box-shadow: 0 0 5px rgba(29, 146, 255, 0); /* Remove glow */
 }
 
 .header a {
@@ -508,6 +514,11 @@ nav {
 
 /* For mobile devices */
 @media (max-width: 768px) {
+
+    .full-header {
+        display: none;
+      
+    }
     
     .topBG-image-content {
         margin-bottom: -100px;
@@ -565,17 +576,12 @@ nav {
         
         
     }
-    
-   
+
     .middle-bar a {
-       
-      
-       
     }
     .middle-bar a:first-child {
         border-radius: 10px 0px 0 10px;
     }
-  
     .middle-bar a:last-child {
         border-radius: 0px 10px 10px 0px;
     }
@@ -593,12 +599,10 @@ nav {
         
     }
 
-  
     .arrow-up-icon {
         width: 30px;
     }
 
-  
 }
 
 /* For very small mobile devices */
@@ -613,11 +617,11 @@ nav {
     }
 
     .connect {
-        font-size: 20px;
+        font-size: 15px;
     }
 
     .everywhere {
-        font-size: clamp(1rem, calc(3vw + 1rem), 2rem);
+        font-size: clamp(1rem, calc(3vw + 1rem), 1.7rem);
     }
 
     .add-school-button {
@@ -626,22 +630,33 @@ nav {
     }
 
     .middle-bar a:first-child {
-        border-radius: 10px 10px 10px 10px;
+        border-radius: 10px 0px 0px 10px;
+    }
+    
+    .middle-bar a:nth-child(3) {
+        border-radius: 10px 0px 0px 10px;
     }
     
 
     .middle-bar a {
-        font-size: 8px;
+        font-size: 0.7rem;
         border-radius: 10px 10px 10px 10px;
-        margin-left: 10px;
     }
+
+    .middle-bar p {
+        font-size: 0.7rem;
+    }
+
     .full-header {
         display: none;
-      
+    }
+    .middle-bar a {
+        display: flex;
+        align-items: center;
+        width: 8rem;
+        height: 8rem;
     }
 
 
-
-    
 
 }
