@@ -72,7 +72,10 @@
             Dashboard
           </button>
 
-          <button class="btn__navigate" onclick="loadPage('managers.html')">
+          <button
+            class="btn__navigate managersbtn"
+            onclick="loadPage('managers.html')"
+          >
             <span><i class="fas fa-users"></i></span>
             Managers
           </button>
@@ -139,7 +142,7 @@
         </div>
       </aside>
 
-      <main>
+      <main class="overall__main">
         <header class="main__header">
           <nav class="main__nav flex">
             <button class="btn__main btn__menu">
@@ -160,7 +163,7 @@
             <div class="card__container grid grid--4-cols">
               <div class="card card_green">
                 <div class="card__header flex border_green">
-                  <span
+                  <span class="people_icon"
                     ><i class="bi bi-layout-sidebar-reverse col_green"></i
                   ></span>
                   <div>
@@ -179,9 +182,11 @@
 
               <div class="card card_violet">
                 <div class="card__header flex border_violet">
-                  <span
-                    ><i class="bi bi-person-check-fill col_violet"></i
-                  ></span>
+                  <span>
+                    <i class="bi bi-person-check col_violet"></i>
+                    <!-- <i class="bi bi-person-check-fill col_violet"></i -->
+                    >
+                  </span>
                   <div>
                     <p class="col_violet">20</p>
                     <p>Staff/School Managers</p>

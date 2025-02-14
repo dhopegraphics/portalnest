@@ -36,6 +36,34 @@ body {
   padding: 1.8rem 3rem;
 }
 
+.navigation.close {
+  display: none;
+  /* z-index: 99; */
+}
+
+.main__container.active {
+  grid-template-columns: 1fr;
+}
+
+.overall__main.active {
+  transform: translateX(-1px);
+  width: 100%;
+}
+
+.overall__main {
+  height: 1110px;
+  transform: translateX(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+.pending__left-content.width {
+  width: 80%;
+}
+
+.see_all.width {
+  width: 14%;
+}
+
 /************ General Styling *********/
 /* grids */
 .grid {
@@ -89,7 +117,6 @@ body {
 
 .main__main-content {
   background: var(--light-white-col);
-  /* height: 100%; */
 }
 
 .main__card-container {
@@ -106,14 +133,13 @@ body {
 
 /************ Aside Navigation *********/
 .navigation {
-  /* display: none; */
   background-color: var(--primary-col);
   color: var(--white-col);
-
   width: 100%;
+
   /* This will be change anytime soon */
   /* height: 66.73rem; */
-  height: 1100px;
+  height: 1110px;
 }
 
 .header__content {
@@ -210,7 +236,7 @@ body {
   position: absolute;
 
   /* will keep changing this due to the heigh of the page */
-  bottom: -59rem;
+  bottom: -60rem;
 }
 
 /************ Main Header *********/

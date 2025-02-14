@@ -1,14 +1,16 @@
 "use strict";
 
-// DEFAULT DISPLAY AND SELECTION OF PAGES
 const buttons = document.querySelectorAll(".btn__navigate");
 const contents = document.querySelectorAll(".content");
 
+// DEFAULT DISPLAY AND SELECTION OF PAGES
+// let lastloadpages = "";
 function loadPage(page) {
   fetch(page)
     .then((response) => response.text())
     .then((data) => {
       document.getElementById("content-area").innerHTML = data;
+      // lastloadpages = page;
     })
     .catch((error) => console.error("Error loading the page:", error));
 }
@@ -34,3 +36,30 @@ buttons.forEach((button) => {
     document.getElementById(targetData).classList.add("active");
   });
 });
+
+// Header menu button function
+const container = document.querySelector(".main__container");
+const contentsMain = document.querySelector(".overall__main");
+const menuBtn = document.querySelector(".btn__menu");
+const navigationSection = document.querySelector(".navigation");
+
+menuBtn.addEventListener("click", () => {
+  navigationSection.classList.toggle("close");
+  container.classList.toggle("active");
+  contentsMain.classList.toggle("active");
+  document.querySelectorAll(".pending__left-content").forEach((width) => {
+    width.classList.toggle("width");
+  });
+  document.querySelector(".see_all").classList.toggle("width");
+});
+
+//
+// function managerFun() {
+//   return (lastloadpages = "managers.html");
+// }
+
+// document.querySelector(".managersbtn").addEventListener("click", () => {
+//   if (managerFun())
+//     document.querySelector(".people_icon").innerHTML =
+//       '<i class="bi bi-people col_green"></i>';
+// });
