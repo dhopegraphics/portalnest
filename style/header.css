@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,500;1,600&display=swap');
+
+
 body {
     margin: 0;
 }
@@ -10,7 +13,7 @@ body {
 
 .topBG-image-content {
     width: 100%;
-    min-height: 100vh; 
+    min-height: 70vh; 
     background-image: url("/assets/images/TopBgImage.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -19,8 +22,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: -20px;
-    font-family: Montserrat, Poppins, Arial, Helvetica, sans-serif;
+    margin-bottom: -10%;
+    font-family: Montserrat, Poppins;
 }
 
 .logo-and-header {
@@ -49,22 +52,29 @@ body {
 
 nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     width: 100%;
     padding: 0 20px;
 }
 
-.header::before {
+.full-header {
+    display: flex;
+    align-items: center;
+    width: 100%; /* Default width */
+    max-width: 1200px; /* Optional: Prevent it from getting too wide */
+}
+
+.header a::before {
     content: "";
     align-items: center;
     position: absolute;
-    top: 8rem; /* Move border up */
-    left: 4.1%;
-    width: 80%;
+    top: -35%; /* Move border up */
+    width: 330%;
     height: 5px; /* Control thickness */
     background: white;
     border-radius: 50px; /* Fully round edges */
+    transition: all 500ms ease;
+    left: -25%;
 }
 
 .header a {
@@ -72,32 +82,60 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 
 .header a div {
     position: relative; /* Needed for pseudo-element positioning */
     padding: 10px 15px; /* Add some spacing */
+   
+}
+
+.topBG-container .logo-and-header .header a div { 
+    color: rgb(255, 255, 255);
+ 
+    transition: color 0.3s ease-in-out; /* Smooth transition */
+
+    
+}
+
+.topBG-container .logo-and-header .header a div:hover { 
+    color: rgb(4, 158, 247);
+    text-shadow: 0 0 10px rgba(4, 158, 247, 0.8), 
+    0 0 20px rgba(4, 158, 247, 0.6); /* Blue glow effect */
+    
 }
 
 /* Border effect */
+/* Initial border effect */
 .header a div::before {
     content: "";
     position: absolute;
-    top: -35%; /* Position below the div */
+    top: -35%; /* Position above */
     left: 50%;
     width: 0%; /* Initially hidden */
     height: 5px; /* Thickness */
     background: rgb(29, 146, 255);
-    border-radius: 50px; /* Fully round edges */
-    transition: all 500ms ease;
+    border-radius: 50px; /* Round edges */
+    transition: width 0.4s ease-in-out, left 0.4s ease-in-out, opacity 0.3s ease-in-out, box-shadow 0.4s ease-in-out;
     transform: translateX(-50%);
-    display: none;
+    box-shadow: 0 0 5px rgba(29, 146, 255, 0); /* No glow initially */
+    opacity: 0; /* Initially hidden */
 }
 
-/* Show border when hovering over the div */
+/* Expand and glow on hover */
 .header a div:hover::before {
-    display: block;
-    width: 150%; /* Expand border width */
+    width: 150%; /* Expand */
+    opacity: 1; /* Fully visible */
+    box-shadow: 0 0 15px rgba(29, 146, 255, 1), 
+                0 0 30px rgba(29, 146, 255, 0.8); /* Intense glow */
+}
+
+/* Smooth transition back when unhovering */
+.header a div:not(:hover)::before {
+    width: 0%; /* Shrinks smoothly */
+    opacity: 0; /* Fade out */
+    box-shadow: 0 0 5px rgba(29, 146, 255, 0); /* Remove glow */
 }
 
 .header a {
@@ -111,10 +149,12 @@ nav {
     background-color: rgb(245, 187, 41);
     font-size: 14px;
     font-weight: bold;
-    padding: 10px 30px;
+    padding: 10px 15px;
     border-width: 0;
     border-radius: 20px;
     transition: all 0.25s;
+    width: 170px;
+    margin-left: 4rem;
 }
 
 .get-started:hover, .add-school-button:hover {
@@ -181,59 +221,69 @@ nav {
     transition: all 0.25s;
     width: 350px;
     font-size: 30px;
+    margin-bottom: 10px;
 }
 
 .topBG-container .logo-and-header .header { 
   transition:  all 1.25s ease;
 }
 
-.topBG-container .logo-and-header .header a div:hover { 
-    color: rgb(4, 158, 247);
-    
-}
 
-.middle-bar {
+
+ .middle-bar {
     display: flex;
     align-items: center;
-    margin-top: -60px;
-    padding: 70px 20px;
-    background-color: white;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
-    height: 80px;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 10px;
+    margin-top: -1%;
+    padding: 3rem;
+    padding-left: 10px;
+    width: 80%;
+   
+ 
 }
 
 .middle-bar a {
-    display: flex;
     text-decoration: none;
     color: black;
+    display: flex;
     align-items: center;
     justify-content: center;
     text-transform: uppercase;
-    font-weight: bold;
+    background-color: white;
+    font-weight: 650;
     text-align: center;
-    font-size: 12px;
+    font-size: 1rem;
     transition: all 0.3s;
-    padding: 15px;
-    border-right: 1px solid;
-    border-left: 1px solid;
-    margin-right: 30px;
+    width: 100%;
+    height: 10rem;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+   
 }
 
-.middle-bar a:nth-last-child(2) {
-    border: 0;
+.middle-bar p {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 80%;
+}
+
+
+ .middle-bar a:first-child {
+    border-radius: 10px 0px 0 10px;
 }
 
 .middle-bar a:last-child {
-    margin-right: 0;
+    border-radius: 0px 10px 10px 0px;
+  
 }
+
+
 .middle-bar a:hover {
     cursor: pointer;
-    background-color: rgb(224, 242, 253);
-    border-radius: 10px;
-    padding: 5px;
+    background-color: rgb(224, 242, 253); 
+    padding: 10px;
+    
+
 }
 
 .middle-bar-icons {
@@ -241,7 +291,39 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
+    width: 50%;
+    position: relative; /* Needed for absolute positioning */
+    font-size: 80%;
+}
+
+.middle-bar-icons::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 2px; /* Border width */
+    height: 50%; /* Adjust height of the border */
+    background: black; /* Border color */
+    transition: height 0.3s  ease-in-out, background 0.3s ease-in-out;
+} 
+
+.middle-bar-icons::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 2px; /* Border width */
+    height: 50%; /* Adjust height of the border */
+    background: black; /* Border color */
+    transition: height 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+
+/* Hover effect: Show the border */
+/* Hover effect: Show the border */
+.middle-bar a:not(.active):hover .middle-bar-icons::before,
+.middle-bar a:not(.active):hover .middle-bar-icons::after {
+    width: 2px;
+    height: 100%; /* Expand vertically */
+    background: rgb(0, 68, 255); /* Change color */
 }
 
 .icons {
@@ -250,8 +332,7 @@ nav {
 }
 
 .middle-bar a p {
-    margin: 0 5px;
-    text-align: bottom;
+    margin: 0;
 }
 
 .arrow-up-icon {
@@ -299,6 +380,56 @@ nav {
     background: rgb(255, 255, 255); /* Border color */
 }
 
+
+@media (min-width: 1366px) {  
+    /* Styles for laptops and desktops */
+
+    .topBG-image-content {
+        width: 100%;
+        max-width: 100vw 300vh; 
+        background-image: url("/assets/images/TopBgImage.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: -10%;
+        font-family: Montserrat, Poppins;
+    }
+
+    .add-school-button {
+     
+        font-weight: bolder;
+        padding: 5px 20px;
+        border-width: 0;
+        border-radius: 150px;
+        transition: all 0.25s;
+        width: 350px;
+        font-size: 25px;
+    }
+
+    .middle-bar {
+        display: flex;
+        align-items: center;
+        margin-top: -1%;
+        padding: 3rem;
+        padding-left: 10px;
+        width: 80%;
+       
+     
+    }
+
+
+   section.page-message {
+        margin-bottom: 20%;
+    }
+
+  }
+  
+
+
 /* For tablets and smaller desktops */
 @media (max-width: 1024px) {
     .topBG-image-content {
@@ -316,19 +447,6 @@ nav {
     .header a {
         font-size: 12px;
     }
-    
-    .header::before {
-        content: "";
-        align-items: center;
-        position: absolute;
-        top: 8rem; /* Move border up */
-        left: 2.1%;
-        width: 100%;
-        height: 5px; /* Control thickness */
-        background: white;
-        border-radius: 50px; /* Fully round edges */
-    }
-    
 
     .get-started {
         padding: 8px 20px;
@@ -336,35 +454,69 @@ nav {
     .connect {
         font-size: 30px;
     }
-
     .everywhere {
         font-size: clamp(1.5rem, calc(5vw + 1rem), 4rem);
     }
-
     .add-school-button {
         width: 300px;
         font-size: 25px;
     }
-
     .middle-bar {
         flex-wrap: wrap;
         justify-content: center;
-        margin-top: -70px;
+        margin-top: 70px;
         left: 5%;
         right: 5%;
-        height: auto;
-        padding: 20px;
     }
-
     .middle-bar a {
         padding: 10px;
         font-size: 10px;
+        width: 30%;
+        margin-top: 5%;
+    }
+    .middle-bar-icons {
+        padding: 5% 1%;
+        width: 60%;
+    }
+    .middle-bar-icons  img.icons  {
+        width: 30%;
+    }
+    .active .middle-bar-icons {
+        padding: 5% 5%;
+        border-radius: 10px;
+        width: 70%;
+    }
+
+    .middle-bar a:nth-child(2) , .middle-bar a:nth-child(4) {
+        border-radius: 0px 10px 10px 0px;
+    }
+
+    .middle-bar a:nth-child(3) {
+        border-radius: 10px 0px 0 10px;
+    }
+
+    .header a::before {
+        width: 300%;
+    }
+
+    .full-header {
+        display: flex;
+        width: 80%; /* Reduce width */
+        align-items: center;
+       
     }
 
 }
 
+
+
 /* For mobile devices */
 @media (max-width: 768px) {
+
+    .full-header {
+        display: none;
+      
+    }
     
     .topBG-image-content {
         margin-bottom: -100px;
@@ -419,22 +571,89 @@ nav {
         flex-wrap: wrap;
         padding: 5px;
         margin-top: -70px;
-        height: auto;
+        
+        
     }
-    
+
     .middle-bar a {
-        flex: 1 1 45%; /* Allow items to wrap and take up space */
-        margin: 5px; 
-        border-radius: 10px;
+      
     }
+
+    .middle-bar a:first-child {
+        border-radius: 10px 0px 0 10px;
+    }
+    .middle-bar a:last-child {
+        border-radius: 0px 10px 10px 0px;
+    }
+
+    .middle-bar a:nth-child(3) {
+        border-radius: 0px 10px 10px 0px;
+    }
+
     .middle-bar a p {
         padding: 5px;
     }
-  
+
+    .middle-bar-icons {
+        width: 100%;
+        
+    }
+
     .arrow-up-icon {
         width: 30px;
     }
 
+}
+
+@media (min-width: 768px) and (max-width: 885px) {
+
+    .middle-bar {
+        display: flex;
+        align-items: center;
+        margin-top: -10%;
+        width: 100%;
+       
+     
+    }
+
+    .middle-bar a:nth-child(2) , .middle-bar a:nth-child(3) {
+        border-radius: 0px 0px 0px 0px;
+    }
+     .middle-bar a:nth-child(3) {
+        border-radius: 0px 10px 10px 0px;
+    }
+
+    .middle-bar a:nth-child(4) {
+        border-radius: 10px 0px 0px 10px;
+    }
+
+    .middle-bar a:hover {
+        background-color: rgb(224, 242, 253); 
+        padding-left: 20px;
+    }
+
+    .middle-bar-icons  {
+        width: 70%;
+    }
+
+    .middle-bar-icons img.icons  {
+        width: 45%;
+    }
+
+    .active .middle-bar-icons {
+        padding: 10% 10%;
+        width: 100%;
+        
+    }
+
+    .active .middle-bar-icons  img.icons  {
+        width: 50%;
+    }
+
+    .middle-bar  .active {
+        font-size: 17px
+    }
+    
 }
 
 /* For very small mobile devices */
@@ -449,11 +668,11 @@ nav {
     }
 
     .connect {
-        font-size: 20px;
+        font-size: 15px;
     }
 
     .everywhere {
-        font-size: clamp(1rem, calc(3vw + 1rem), 2rem);
+        font-size: clamp(1rem, calc(3vw + 1rem), 1.7rem);
     }
 
     .add-school-button {
@@ -461,16 +680,34 @@ nav {
         font-size: 14px;
     }
 
-    .middle-bar {
-        padding: 10px;
-        height: auto;
+    .middle-bar a:first-child {
+        border-radius: 10px 0px 0px 10px;
     }
+    
+    .middle-bar a:nth-child(3) {
+        border-radius: 10px 0px 0px 10px;
+    }
+    
 
     .middle-bar a {
-        flex: 1 1 100%;
-        font-size: 8px;
-        border-radius: 10px;
-        margin-left: 5px 0;
+        font-size: 0.7rem;
+        border-radius: 10px 10px 10px 10px;
     }
+
+    .middle-bar p {
+        font-size: 0.7rem;
+    }
+
+    .full-header {
+        display: none;
+    }
+    .middle-bar a {
+        display: flex;
+        align-items: center;
+        width: 8rem;
+        height: 8rem;
+    }
+
+
 
 }
