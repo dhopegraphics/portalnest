@@ -428,7 +428,53 @@ nav {
 
   }
   
+  @media (min-width: 1025px) and (max-width: 1364px) {
 
+    .topBG-container .logo-and-header {
+        justify-content: center; /* Center horizontally */
+        width: 80%;
+        margin-left: 10%;
+      
+        
+    }
+    
+
+
+    .middle-bar {
+        display: flex;
+        align-items: center;
+        margin-top: -1%;
+        padding: 3rem;
+        padding-left: 10px;
+        width: 100%;
+        
+    }
+
+    .page-message {
+        text-align: center;
+        font-family: Arial, Helvetica, Poppins, sans-serif;
+        color: white;
+    }
+
+    .add-school-button {
+        margin-bottom: 15%;
+    }
+
+    .middle-bar a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 650;
+        text-align: center;
+        font-size: 1rem;
+        padding: -2rem;
+       
+    }
+
+
+
+
+  }
 
 /* For tablets and smaller desktops */
 @media (max-width: 1024px) {
@@ -508,10 +554,8 @@ nav {
 
 }
 
-
-
 /* For mobile devices */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
     .full-header {
         display: none;
@@ -606,6 +650,18 @@ nav {
 }
 
 @media (min-width: 768px) and (max-width: 885px) {
+
+    .topBG-container .logo-and-header {
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center;     /* Center vertically (if needed) */
+      
+    }
+    
+    .header a::before {
+        width: 350%;
+    
+    }
 
     .middle-bar {
         display: flex;
