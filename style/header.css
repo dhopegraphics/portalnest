@@ -428,7 +428,52 @@ nav {
 
   }
   
+  @media (min-width: 1025px) and (max-width: 1364px) {
 
+    .topBG-container .logo-and-header {
+        justify-content: center; /* Center horizontally */
+        width: 80%;
+        margin-left: 10%;
+      
+        
+    }
+    
+
+    .middle-bar {
+        display: flex;
+        align-items: center;
+        margin-top: -1%;
+        padding: 3rem;
+        padding-left: 10px;
+        width: 93%;
+        
+    }
+
+    .page-message {
+        text-align: center;
+        font-family: Arial, Helvetica, Poppins, sans-serif;
+        color: white;
+    }
+
+    .add-school-button {
+        margin-bottom: 15%;
+    }
+
+    .middle-bar a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 650;
+        text-align: center;
+        font-size: 1rem;
+        padding: -2rem;
+       
+    }
+
+
+
+
+  }
 
 /* For tablets and smaller desktops */
 @media (max-width: 1024px) {
@@ -508,10 +553,8 @@ nav {
 
 }
 
-
-
 /* For mobile devices */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
     .full-header {
         display: none;
@@ -568,7 +611,6 @@ nav {
     }
 
     .middle-bar {
-        width: 70%;
         flex-wrap: wrap;
         padding: 5px;
         margin-top: -70px;
@@ -576,14 +618,10 @@ nav {
         
     }
 
-    .middle-bar-icons {
-        width: 50%;
-    }
     .middle-bar a {
-        flex: 1 1 45%;
-        margin: 5px; 
-        border-radius: 10px;
       
+    }
+
     .middle-bar a:first-child {
         border-radius: 10px 0px 0 10px;
     }
@@ -610,7 +648,20 @@ nav {
 
 }
 
+/* For Mobiles with double screens */
 @media (min-width: 768px) and (max-width: 885px) {
+
+    .topBG-container .logo-and-header {
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center;     /* Center vertically (if needed) */
+      
+    }
+    
+    .header a::before {
+        width: 350%;
+    
+    }
 
     .middle-bar {
         display: flex;
@@ -663,6 +714,14 @@ nav {
 
 /* For very small mobile devices */
 @media (max-width: 480px) {
+
+   .page-message .page-message-content .everywhere {
+        font-size: 6vw;
+        font-weight: bold;
+      
+    }
+
+   
     .logo-and-header {
         left: 2%;
         right: 2%;
@@ -711,8 +770,13 @@ nav {
         align-items: center;
         width: 8rem;
         height: 8rem;
+        font-size: 2rem;
+        padding: 10px;
     }
 
-
+    .middle-bar-icons {
+        width: 100%;
+      
+    }
 
 }
