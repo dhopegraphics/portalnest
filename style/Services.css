@@ -1,5 +1,7 @@
 .container {
   padding: 2% 5% 5% 5%;
+  overflow-x: hidden;
+  /* background-color: #f2f2f2; */
 }
 
 .grid {
@@ -14,12 +16,19 @@
 .grid-item {
   background-color: white;
   border-radius: 10px;
-  height: 3rem;
+  height: 4rem;
   display: flex;
   align-items: center;
   color: var(--color-warning);
   padding: 0.3rem 1rem 0.3rem 0;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+}
+
+.grid-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .grid-item input {
@@ -27,9 +36,12 @@
 }
 
 .grid-item label {
-  display: block;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .grid-item label h4 {
@@ -48,27 +60,59 @@
 .extra-info {
   display: flex;
   justify-content: space-between;
-  gap: 4rem;
+  align-items: center;
+  gap: 2rem;
   margin-bottom: 2rem;
+  padding-right: 20%;
 }
 
 .img-container {
   flex: 1 0 23%;
+  flex-shrink: 0;
 }
 
 .img-container img {
   width: 100%;
-  height: 100%;
+
+  object-fit: cover;
 }
 
 .text {
   flex: 5 0;
+  transition: all 300ms ease-in-out;
 }
 .text p {
   line-height: 1.2;
   letter-spacing: 0.5px;
   color: #333;
   text-align: justify;
+  transition: all 300ms ease-in-out;
+  font-size: 14px;
+}
+.info {
+  animation: text-appear 500ms ease-in-out;
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+input[type="radio"] {
+  border: 4px solid black;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  background-color: white;
+  transition: all 0.3s ease-in-out;
+  accent-color: black;
+  width: 16px;
+  height: 16px;
+}
+
+input[type="radio"]:checked {
+  border-color: white; /* Border changes when selected */
 }
 
 .call-to-action {
@@ -84,6 +128,13 @@
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
   color: #333;
   font-size: 13px;
+  font-weight: 700;
+  transition: all 200ms ease-in-out;
+}
+
+.call-to-action:hover {
+  transform: scale(1.02);
+  background-color: #ffc977;
 }
 
 .btn-container {
@@ -109,6 +160,7 @@
     justify-content: space-between;
     gap: 1rem;
     margin-bottom: 2rem;
+    padding-right: 0;
   }
 
   .grid {
@@ -116,8 +168,30 @@
   }
 }
 
+@media (max-width: 980px) {
+  .text p {
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    color: #333;
+    text-align: justify;
+    transition: all 300ms ease-in-out;
+    /* font-size: 15px; */
+  }
+}
+
 @media (max-width: 580px) {
   .grid {
     grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@keyframes text-appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
