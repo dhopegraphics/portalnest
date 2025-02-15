@@ -568,7 +568,6 @@ nav {
     }
 
     .middle-bar {
-        width: 70%;
         flex-wrap: wrap;
         padding: 5px;
         margin-top: -70px;
@@ -576,14 +575,10 @@ nav {
         
     }
 
-    .middle-bar-icons {
-        width: 50%;
-    }
     .middle-bar a {
-        flex: 1 1 45%;
-        margin: 5px; 
-        border-radius: 10px;
       
+    }
+
     .middle-bar a:first-child {
         border-radius: 10px 0px 0 10px;
     }
