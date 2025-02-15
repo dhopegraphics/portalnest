@@ -427,6 +427,7 @@ nav {
     }
 
   }
+
   
   @media (min-width: 1025px) and (max-width: 1364px) {
 
@@ -434,8 +435,6 @@ nav {
         justify-content: center; /* Center horizontally */
         width: 80%;
         margin-left: 10%;
-      
-        
     }
     
 
@@ -446,7 +445,6 @@ nav {
         padding: 3rem;
         padding-left: 10px;
         width: 93%;
-        
     }
 
     .page-message {
@@ -475,7 +473,7 @@ nav {
 
   }
 
-/* For tablets and smaller desktops */
+/*For tablets and smaller desktops*/
 @media (max-width: 1024px) {
     .topBG-image-content {
         margin-bottom: -70px;
@@ -553,103 +551,12 @@ nav {
 
 }
 
-/* For mobile devices */
-@media (max-width: 767px) {
 
-    .full-header {
-        display: none;
-      
-    }
-    
-    .topBG-image-content {
-        margin-bottom: -100px;
-    }
-
-    .logo-and-header {
-        align-items: center;
-        left: 5%;
-        right: 5%;
-    }
-    
-    .portalnest-logo {
-        width: 30px;
-    }
-
-    .header {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px 0px;
-        border-top: 0;
-    }
-
-    .header a {
-        margin: 10px 0;
-        
-    }
-
-    .get-started {
-        margin-top: 10px;
-    }
-
-    .page-message {
-        padding: 10px;
-        margin-right: 10px;
-    }
-
-    .connect {
-        font-size: 20px;
-    }
-
-    .everywhere {
-        padding-left: 10px;
-        font-size: 7vw;
-    }
+@media (min-width: 856px) and (max-width: 1023px) {
 
     .add-school-button {
-        width: 250px;
-        font-size: 20px;
+        margin-bottom: 15%;
     }
-
-    .middle-bar {
-        flex-wrap: wrap;
-        padding: 5px;
-        margin-top: -70px;
-        
-        
-    }
-
-    .middle-bar a {
-      
-    }
-
-    .middle-bar a:first-child {
-        border-radius: 10px 0px 0 10px;
-    }
-    .middle-bar a:last-child {
-        border-radius: 0px 10px 10px 0px;
-    }
-
-    .middle-bar a:nth-child(3) {
-        border-radius: 0px 10px 10px 0px;
-    }
-
-    .middle-bar a p {
-        padding: 5px;
-    }
-
-    .middle-bar-icons {
-        width: 100%;
-        
-    }
-
-    .arrow-up-icon {
-        width: 30px;
-    }
-
-}
-
-/* For Mobiles with double screens */
-@media (min-width: 768px) and (max-width: 885px) {
 
     .topBG-container .logo-and-header {
         display: flex;
@@ -712,7 +619,174 @@ nav {
     
 }
 
-/* For very small mobile devices */
+/*For Mobiles with double screens*/
+@media (min-width: 768px) and (max-width: 885px) {
+    .add-school-button {
+        margin-bottom: 15%;
+    }
+
+    .topBG-container .logo-and-header {
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center;     /* Center vertically (if needed) */
+      
+    }
+    
+    .header a::before {
+        width: 350%;
+    
+    }
+
+    .middle-bar {
+        display: flex;
+        align-items: center;
+        margin-top: -10%;
+        width: 100%;
+       
+     
+    }
+
+    .middle-bar a:nth-child(2) , .middle-bar a:nth-child(3) {
+        border-radius: 0px 0px 0px 0px;
+    }
+     .middle-bar a:nth-child(3) {
+        border-radius: 0px 10px 10px 0px;
+    }
+
+    .middle-bar a:nth-child(4) {
+        border-radius: 10px 0px 0px 10px;
+    }
+
+    .middle-bar a:hover {
+        background-color: rgb(224, 242, 253); 
+        padding-left: 20px;
+    }
+
+    .middle-bar-icons  {
+        width: 70%;
+    }
+
+    .middle-bar-icons img.icons  {
+        width: 45%;
+    }
+
+    .active .middle-bar-icons {
+        padding: 10% 10%;
+        width: 100%;
+        
+    }
+
+    .active .middle-bar-icons  img.icons  {
+        width: 50%;
+    }
+
+    .middle-bar  .active {
+        font-size: 17px
+    }
+    
+}
+
+/*For mobile devices*/
+@media (max-width: 767px) {
+
+
+    .full-header {
+        display: none;
+      
+    }
+    
+    .topBG-image-content {
+        margin-bottom: -100px;
+    }
+
+    .logo-and-header {
+        align-items: center;
+        left: 5%;
+        right: 5%;
+    }
+    
+    .portalnest-logo {
+        width: 30px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0px;
+        border-top: 0;
+    }
+
+    .header a {
+        margin: 10px 0;
+        
+    }
+
+    .get-started {
+        margin-top: 10px;
+    }
+
+    .page-message {
+        padding: 10px;
+        margin-right: 10px;
+    }
+
+    .connect {
+        font-size: 20px;
+    }
+
+    .everywhere {
+        padding-left: 10px;
+        font-size: 7vw;
+    }
+
+    .add-school-button {
+        width: 250px;
+        font-size: 20px;
+        margin-bottom: 20%;
+    }
+
+    .middle-bar {
+        flex-wrap: wrap;
+        padding: 5px;
+        margin-top: 0%;
+        
+        
+    }
+    .middle-bar a:first-child {
+        border-radius: 10px 0px 0 10px;
+    }
+    .middle-bar a:last-child {
+        border-radius: 0px 10px 10px 0px;
+    }
+
+    .middle-bar a:nth-child(3) {
+        border-radius: 0px 10px 10px 0px;
+    }
+
+    .middle-bar a:nth-child(2) {
+        border-radius: 0px 0px 0px 0px;
+    }
+
+    .middle-bar a:nth-child(4) {
+        border-radius: 10px 0px 0px 10px;
+    }
+
+    .middle-bar a p {
+        padding: 5px;
+    }
+
+    .middle-bar-icons {
+        width: 100%;
+        
+    }
+
+    .arrow-up-icon {
+        width: 30px;
+    }
+
+}
+
+/*For very small mobile devices*/
 @media (max-width: 480px) {
 
    .page-message .page-message-content .everywhere {
@@ -747,10 +821,24 @@ nav {
     .middle-bar a:first-child {
         border-radius: 10px 0px 0px 10px;
     }
+
+    .middle-bar a:nth-child(2) {
+        border-radius: 0px 10px 10px 0px;
+    }
+    
     
     .middle-bar a:nth-child(3) {
         border-radius: 10px 0px 0px 10px;
     }
+
+    .middle-bar a:nth-child(4) {
+        border-radius: 0px 10px 10px 0px;
+    }
+    
+    .middle-bar a:last-child {
+        border-radius: 10px 10px 10px 10px;
+    }
+    
     
 
     .middle-bar a {
@@ -777,6 +865,15 @@ nav {
     .middle-bar-icons {
         width: 100%;
       
+    }
+
+} 
+
+@media (min-width: 150px) and (max-width: 349px) {
+
+    .middle-bar a:nth-child(1) ,  .middle-bar a:nth-child(2) ,  .middle-bar a:nth-child(3) ,  .middle-bar a:nth-child(4) {
+        font-size: 0.7rem;
+        border-radius: 10px 10px 10px 10px;
     }
 
 }
