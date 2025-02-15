@@ -649,6 +649,7 @@ nav {
 
 }
 
+/* For Mobiles with double screens */
 @media (min-width: 768px) and (max-width: 885px) {
 
     .topBG-container .logo-and-header {
@@ -714,6 +715,14 @@ nav {
 
 /* For very small mobile devices */
 @media (max-width: 480px) {
+
+   .page-message .page-message-content .everywhere {
+        font-size: 6vw;
+        font-weight: bold;
+      
+    }
+
+   
     .logo-and-header {
         left: 2%;
         right: 2%;
@@ -762,8 +771,13 @@ nav {
         align-items: center;
         width: 8rem;
         height: 8rem;
+        font-size: 2rem;
+        padding: 10px;
     }
 
-
+    .middle-bar-icons {
+        width: 100%;
+      
+    }
 
 }
