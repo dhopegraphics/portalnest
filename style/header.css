@@ -428,7 +428,6 @@ nav {
 
   }
 
-  
   @media (min-width: 1025px) and (max-width: 1364px) {
 
     .topBG-container .logo-and-header {
@@ -472,7 +471,6 @@ nav {
 
 
   }
-
 /*For tablets and smaller desktops*/
 @media (max-width: 1024px) {
     .topBG-image-content {
@@ -507,7 +505,7 @@ nav {
     .middle-bar {
         flex-wrap: wrap;
         justify-content: center;
-        margin-top: 70px;
+        margin-top: -10%;
         left: 5%;
         right: 5%;
     }
@@ -522,21 +520,29 @@ nav {
         width: 60%;
     }
     .middle-bar-icons  img.icons  {
-        width: 30%;
+        width: 50%;
     }
     .active .middle-bar-icons {
-        padding: 5% 5%;
+        padding: 15% 15%;
         border-radius: 10px;
+        width: 80%;
+    }
+    .active .middle-bar-icons  img.icons  {
         width: 70%;
     }
 
-    .middle-bar a:nth-child(2) , .middle-bar a:nth-child(4) {
-        border-radius: 0px 10px 10px 0px;
+    .middle-bar a:nth-child(2)  {
+        border-radius: 0px 0px 0px 0px;
     }
 
     .middle-bar a:nth-child(3) {
-        border-radius: 10px 0px 0 10px;
+        border-radius: 0px 10px 10px 0px;
     }
+
+    .middle-bar a:nth-child(4)  {
+        border-radius: 10px 0px 0px 10px;
+    }
+
 
     .header a::before {
         width: 300%;
@@ -550,7 +556,6 @@ nav {
     }
 
 }
-
 
 @media (min-width: 856px) and (max-width: 1023px) {
 
@@ -618,7 +623,6 @@ nav {
     }
     
 }
-
 /*For Mobiles with double screens*/
 @media (min-width: 768px) and (max-width: 885px) {
     .add-school-button {
@@ -685,7 +689,6 @@ nav {
     }
     
 }
-
 /*For mobile devices*/
 @media (max-width: 767px) {
 
@@ -802,7 +805,6 @@ nav {
 
 
 }
-
 
 /*For very small mobile devices*/
 @media (max-width: 480px) {
