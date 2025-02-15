@@ -439,14 +439,13 @@ nav {
     }
     
 
-
     .middle-bar {
         display: flex;
         align-items: center;
         margin-top: -1%;
         padding: 3rem;
         padding-left: 10px;
-        width: 100%;
+        width: 93%;
         
     }
 
