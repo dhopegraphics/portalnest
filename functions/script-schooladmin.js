@@ -4,13 +4,11 @@ const buttons = document.querySelectorAll(".btn__navigate");
 const contents = document.querySelectorAll(".content");
 
 // DEFAULT DISPLAY AND SELECTION OF PAGES
-// let lastloadpages = "";
 function loadPage(page) {
   fetch(page)
     .then((response) => response.text())
     .then((data) => {
       document.getElementById("content-area").innerHTML = data;
-      // lastloadpages = page;
     })
     .catch((error) => console.error("Error loading the page:", error));
 }
@@ -53,13 +51,14 @@ menuBtn.addEventListener("click", () => {
   document.querySelector(".see_all").classList.toggle("width");
 });
 
-//
-// function managerFun() {
-//   return (lastloadpages = "managers.html");
-// }
+/*
+// loading content function
+function loadComponent(id, file) {
+  fetch(file)
+    .then((response) => response.text())
+    .then((data) => (document.getElementById(id).innerHTML = data))
+    .catch((error) => console.error(`Error loading ${file}:`, error));
+}
 
-// document.querySelector(".managersbtn").addEventListener("click", () => {
-//   if (managerFun())
-//     document.querySelector(".people_icon").innerHTML =
-//       '<i class="bi bi-people col_green"></i>';
-// });
+loadComponent("admissons_section", "content.html");
+*/

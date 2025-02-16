@@ -117,6 +117,8 @@ body {
 
 .main__main-content {
   background: var(--light-white-col);
+  /* height: auto; */
+  height: 1060px;
 }
 
 .main__card-container {
@@ -126,20 +128,16 @@ body {
 
 .content__area {
   margin: 0rem 4.8rem 4rem;
-
-  /* Fake height */
-  height: 838.7px;
+  height: auto;
 }
 
 /************ Aside Navigation *********/
 .navigation {
+  position: relative;
   background-color: var(--primary-col);
   color: var(--white-col);
   width: 100%;
-
-  /* This will be change anytime soon */
-  /* height: 66.73rem; */
-  height: 1110px;
+  height: auto;
 }
 
 .header__content {
@@ -191,6 +189,7 @@ body {
 
 .nav__one {
   height: 62vh;
+  border-bottom: 1px solid var(--white-col);
 }
 
 .nav__two {
@@ -202,7 +201,6 @@ body {
   flex-direction: column;
   align-items: flex-start;
   margin-top: 1.5rem;
-  border-bottom: 1px solid var(--white-col);
 }
 
 .btn__navigate {
@@ -228,15 +226,38 @@ body {
   padding: 1.8rem 3rem;
 }
 
+.border_bottom {
+  border-top: 1px solid var(--white-col);
+  margin-top: 50rem;
+}
+
 .log-out__container {
-  position: relative;
+  position: absolute;
+  bottom: 0;
 }
 
 .btn-logout {
   position: absolute;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: transparent;
+  color: rgba(255, 72, 0, 0.903);
+  margin: 0.6rem 1.5rem;
+  padding: 1.3rem;
+  border: none;
+  font-size: 2rem;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
 
   /* will keep changing this due to the heigh of the page */
-  bottom: -60rem;
+  bottom: 0;
+}
+
+.btn-logout:hover {
+  color: var(--white-col);
 }
 
 /************ Main Header *********/
@@ -431,7 +452,7 @@ body {
 }
 
 .image-container img:hover {
-  /* transform: scale(1.1); */
+  transform: scale(1.1);
 }
 
 .card__content {
@@ -636,6 +657,53 @@ body {
 .decline_btn:hover {
   background: #ff0307ff;
   color: var(--white-col);
+}
+
+/************ Admission *********/
+#live__admission {
+  height: 503.209px;
+}
+
+#recent__admission {
+  height: 330px;
+}
+
+#card_main_container {
+  margin-top: 6rem;
+}
+
+#pending_card {
+  height: 116.071px;
+}
+
+/************ Manager *********/
+.managers__header {
+  justify-content: space-between;
+}
+
+.managers__header h2 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: var(--dark);
+}
+
+.sort_btn {
+  width: 18%;
+  border: none;
+  padding: 0.6rem 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-radius: 11px;
+  cursor: pointer;
+}
+
+.sort_btn:focus {
+  outline: none;
+}
+
+.sort_btn option {
+  font-size: 1.4rem;
+  font-weight: 600;
 }
 
 /************ *********/
