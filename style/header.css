@@ -809,6 +809,8 @@ nav {
 /*For very small mobile devices*/
 @media (max-width: 480px) {
 
+
+
    .page-message .page-message-content .everywhere {
         font-size: 6vw;
         font-weight: bold;
@@ -836,6 +838,7 @@ nav {
     .add-school-button {
         width: 200px;
         font-size: 14px;
+        color: black;
     }
 
     .middle-bar a:first-child {
