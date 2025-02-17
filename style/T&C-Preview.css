@@ -20,6 +20,17 @@ body {
    
 }
 
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .terms-container {
     background: white;
     border-radius: 20px;
@@ -31,6 +42,9 @@ body {
     align-self: center;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
     
+    /* Add animation */
+    opacity: 0;
+    animation: fadeSlideIn 0.8s ease-out forwards;
 }
 
 .sidebar {
@@ -38,6 +52,17 @@ body {
     border-right: 1px solid var(--border-color);
     padding: 2rem;
     overflow-y: auto;
+}
+
+/* Optional: Add slight delay for sidebar and main-content for a staggered effect */
+.sidebar {
+    animation: fadeSlideIn 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+}
+
+.main-content {
+    animation: fadeSlideIn 0.8s ease-out 0.4s forwards;
+    opacity: 0;
 }
 
 .sidebar-list {
