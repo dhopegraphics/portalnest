@@ -1,0 +1,62 @@
+* {
+    font-family: montserrat, poppins, arial, sans-serif;
+}
+.about-us-content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+}
+
+.circle {
+    font-size: 30px;
+    color: rgb(245, 187, 41);
+}
+
+.about-us-button {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    padding: 0 10px;
+    gap: 15px;
+    border-radius: 40px;
+    border: none;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    
+}
+
+.introduction-message {
+    display: flex;
+    margin-right: 13%;
+    justify-content: space-between;
+    
+}
+
+.introduction-message h2 {
+    max-width: 28%;
+}
+
+.description {
+    max-width: 43%;
+}
+
+.introduction {
+    color: rgb(29, 146, 255);
+}
+
+.about-offer-mission {
+    display: flex;
+}
+
+.container {
+    background-color: white;
+}
+
+.container-title, .container-description {
+    margin: 0;
+}
+
+.container-title {
+    font-size: 16px;
+    font-weight: bold;   
+}
