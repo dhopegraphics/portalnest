@@ -16,7 +16,7 @@
 .grid-item {
   background-color: white;
   border-radius: 10px;
-  height: 4rem;
+  height: 6rem;
   display: flex;
   align-items: center;
   color: var(--color-warning);
@@ -32,7 +32,7 @@
 }
 
 .grid-item input {
-  margin-right: 10px;
+  margin-right: 17px;
 }
 
 .grid-item label {
@@ -46,13 +46,13 @@
 
 .grid-item label h4 {
   margin: 0;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bolder;
   color: black;
 }
 
 .grid-item label p {
-  font-size: 10px;
+  font-size: 12px;
   margin: 0 0 0;
   font-weight: 500;
 }
@@ -105,11 +105,11 @@ input[type="radio"] {
   display: inline-block;
   position: relative;
   cursor: pointer;
-  background-color: white;
+  background-color: transparent;
   transition: all 0.3s ease-in-out;
   accent-color: black;
-  width: 16px;
-  height: 16px;
+  width: 17px;
+  height: 17px;
 }
 
 input[type="radio"]:checked {
@@ -131,6 +131,7 @@ input[type="radio"]:checked {
   font-size: 13px;
   font-weight: 700;
   transition: all 200ms ease-in-out;
+  cursor: pointer;
 }
 
 .call-to-action:hover {
@@ -166,6 +167,14 @@ input[type="radio"]:checked {
 
   .grid {
     width: 90%;
+  }
+
+  .grid-item label h4 {
+    font-size: 13px;
+  }
+
+  .grid-item label p {
+    font-size: 11px;
   }
 }
 
