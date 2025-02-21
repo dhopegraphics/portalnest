@@ -3,9 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up As Manager</title>
+    <title>Manager Sign Up - PortalNest</title>
+    <link rel="stylesheet" href="manager-style.css">
 </head>
 <body>
-    
+    <div class="container">
+        <div class="form-box">
+            <h2>Manager Sign Up</h2>
+            <p>Register for a PortalNest Manager Account</p>
+            <div class="social-login">
+                <button class="google">Google</button>
+                <button class="facebook">Facebook</button>
+            </div>
+            <p>Or Register With Email</p>
+            <form id="manager-signup-form">
+                <input type="text" id="manager-name" placeholder="Full Name" required>
+                <input type="email" id="manager-email" placeholder="Email" required>
+                <input type="password" id="manager-password" placeholder="Password" required>
+                <input type="text" id="organization" placeholder="Organization Name" required>
+                <button type="submit" class="signup-btn">Create Manager Account</button>
+            </form>
+            <p>Already Have An Account? <a href="manager-signin.html">Log In</a></p>
+        </div>
+    </div>
+    <script src="manager-script.js"></script>
 </body>
 </html>
