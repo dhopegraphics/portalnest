@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <div id="dashboard" class="dashboard__section grid content">
+      <div class="live__activity-container">
+        <div class="live__activity-header">
+          <h1>Live-Activity Feed</h1>
+        </div>
+
+        <div class="live__activity-card grid grid--4-cols">
+          <div class="activity__card">
+            <div class="image-container">
+              <img
+                src="../../assets/images/classroom.png"
+                alt="students in class"
+              />
+            </div>
+
+            <div class="card__content">
+              <h1>Online Registration</h1>
+              <p class="creted_text first_ctext">
+                <span><i class="bi bi-dash"></i></span>Created by : Mensah
+                Issach Nana Sam
+              </p>
+
+              <div class="card_mid_content">
+                <p>Start_Date:</p>
+                <div class="approval__students flex">
+                  <span><i class="bi bi-calendar4-week"></i></span>
+                  <p>Jan 20, 2025</p>
+                  <span><i class="bi bi-clock"></i></span>
+                  <p>09:30 Am</p>
+                </div>
+
+                <p>End_Date:</p>
+                <div class="approval__students flex">
+                  <span><i class="bi bi-calendar4-week"></i></span>
+                  <p>Jan 20, 2025</p>
+                  <span><i class="bi bi-clock"></i></span>
+                  <p>09:30 Am</p>
+                </div>
+              </div>
+
+              <div class="progress__container flex">
+                <p>50%</p>
+                <p>Ongoing</p>
+              </div>
+
+              <!-- this isn't showing now -->
+              <div class="show_progress fifty_"></div>
+            </div>
+          </div>
+
+          <div class="activity__card">
+            <div class="image-container">
+              <img
+                src="../../assets/images/classroom.png"
+                alt="students in class"
+              />
+            </div>
+
+            <div class="card__content">
+              <h1>Pending Approvals-Admissions</h1>
+              <p class="creted_text">
+                <span><i class="bi bi-dash"></i></span>Approved by : Mensah
+                Issach
+              </p>
+
+              <div class="card_mid_content">
+                <p>Total Approved Students</p>
+                <div class="approval__students flex">
+                  <span><i class="bi bi-calendar4-week"></i></span>
+                  <p>Jan 20, 2025</p>
+                </div>
+
+                <p>Pending Students Aprovals:</p>
+                <div class="approval__students flex">
+                  <span><i class="bi bi-calendar4-week"></i></span>
+                  <p>Jan 20, 2025</p>
+                </div>
+              </div>
+
+              <div class="progress__container flex">
+                <p>70%</p>
+                <p>Pending</p>
+              </div>
+
+              <!-- this isn't showing now -->
+              <div class="show_progress seventy_"></div>
+            </div>
+          </div>
+
+          <div class="activity__card">
+            <div class="image-container">
+              <img
+                src="../../assets/images/classroom.png"
+                alt="students in class"
+              />
+            </div>
+
+            <div class="card__content">
+              <h1>Upcoming Events - Mid-Exam</h1>
+              <p class="creted_text">
+                <span><i class="bi bi-dash"></i></span>Created by : Mensah
+                Issach Nana Sam
+              </p>
+
+              <div class="card_mid_content">
+                <p>Exam Schedule</p>
+                <div class="approval__students flex">
+                  <span><i class="bi bi-calendar4-week"></i></span>
+                  <p>April 29, 2025</p>
+                  <span><i class="bi bi-clock"></i></span>
+                  <p>09:30 Am</p>
+                </div>
+
+                <p class="ending_text">Ending Date</p>
+                <div class="approval__students flex">
+                  <span><i class="bi bi-calendar4-week"></i></span>
+                  <p>April 29, 2025</p>
+                  <span><i class="bi bi-clock"></i></span>
+                  <p>09:30 Am</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="activity__card">
+            <div class="image-container">
+              <img
+                src="../../assets/images/classroom.png"
+                alt="students in class"
+              />
+            </div>
+
+            <div class="card__content">
+              <h1>Upcoming Events-Staff Meeting</h1>
+              <p class="creted_text">
+                <span><i class="bi bi-dash"></i></span>Created by : Mensah
+                Issach Nana Sam
+              </p>
+
+              <div class="card_mid_content">
+                <p>Start_Date:</p>
+                <div class="approval__students flex">
+                  <span><i class="bi bi-calendar4-week"></i></span>
+                  <p>Jan 20, 2025</p>
+                  <span><i class="bi bi-clock"></i></span>
+                  <p>09:30 Am</p>
+                </div>
+
+                <p>End_Date:</p>
+                <div class="approval__students flex">
+                  <span><i class="bi bi-calendar4-week"></i></span>
+                  <p>Jan 20, 2025</p>
+                  <span><i class="bi bi-clock"></i></span>
+                  <p>09:30 Am</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="recent__pending-container">
+        <div class="live__activity-header flex pending__heading">
+          <h1>Recent Pending Applicants</h1>
+
+          <button class="btn see_all">See All</button>
+        </div>
+
+        <div class="dashboardnext__card-container grid grid--2-cols">
+          <!-- card 1 -->
+          <div class="pending__card grid">
+            <div class="pending__left-content grid">
+              <img
+                src="../../assets/images/team-2.jpg"
+                alt="image of a person"
+              />
+
+              <div class="personinfo__container">
+                <div class="program flex">
+                  <p>Computer Science</p>
+
+                  <div class="level flex">
+                    <span><i class="fa-solid fa-circle"></i></span>
+                    <p>Year One</p>
+                  </div>
+                </div>
+
+                <h2>Mensah Isaac Nana Sam</h2>
+                <div class="approval flex">
+                  <div class="date flex">
+                    <span><i class="bi bi-calendar4-week"></i></span>
+                    <p>Jan 20, 2025</p>
+                  </div>
+
+                  <div class="date flex">
+                    <span><i class="bi bi-clock"></i></span>
+                    <p>09:30 Am</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pending__right-content">
+              <button class="btn approval_btn">Approve</button>
+              <button class="btn decline_btn">Decline</button>
+            </div>
+          </div>
+
+          <!-- card 2 -->
+          <div class="pending__card grid">
+            <div class="pending__left-content grid">
+              <img
+                src="../../assets/images/team-2.jpg"
+                alt="image of a person"
+              />
+
+              <div class="personinfo__container">
+                <div class="program flex">
+                  <p>Physics</p>
+
+                  <div class="level flex">
+                    <span><i class="fa-solid fa-circle"></i></span>
+                    <p>Year One</p>
+                  </div>
+                </div>
+
+                <h2>Walker Awortwe</h2>
+                <div class="approval flex">
+                  <div class="date flex">
+                    <span><i class="bi bi-calendar4-week"></i></span>
+                    <p>Jan 15, 2025</p>
+                  </div>
+
+                  <div class="date flex">
+                    <span><i class="bi bi-clock"></i></span>
+                    <p>05:30 Pm</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pending__right-content">
+              <button class="btn approval_btn">Approve</button>
+              <button class="btn decline_btn">Decline</button>
+            </div>
+          </div>
+
+          <!-- card 3 -->
+          <div class="pending__card grid">
+            <div class="pending__left-content grid">
+              <img
+                src="../../assets/images/team-2.jpg"
+                alt="image of a person"
+              />
+
+              <div class="personinfo__container">
+                <div class="program flex">
+                  <p>Bio Chemistry</p>
+
+                  <div class="level flex">
+                    <span><i class="fa-solid fa-circle"></i></span>
+                    <p>Year One</p>
+                  </div>
+                </div>
+
+                <h2>Mensah Paul</h2>
+                <div class="approval flex">
+                  <div class="date flex">
+                    <span><i class="bi bi-calendar4-week"></i></span>
+                    <p>Jan 29, 2025</p>
+                  </div>
+
+                  <div class="date flex">
+                    <span><i class="bi bi-clock"></i></span>
+                    <p>10:30 Am</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pending__right-content">
+              <button class="btn approval_btn">Approve</button>
+              <button class="btn decline_btn">Decline</button>
+            </div>
+          </div>
+
+          <!-- card 4 -->
+          <div class="pending__card grid">
+            <div class="pending__left-content grid">
+              <img
+                src="../../assets/images/team-2.jpg"
+                alt="image of a person"
+              />
+
+              <div class="personinfo__container">
+                <div class="program flex">
+                  <p>Social Science</p>
+
+                  <div class="level flex">
+                    <span><i class="fa-solid fa-circle"></i></span>
+                    <p>Year One</p>
+                  </div>
+                </div>
+
+                <h2>John Nana Sam</h2>
+                <div class="approval flex">
+                  <div class="date flex">
+                    <span><i class="bi bi-calendar4-week"></i></span>
+                    <p>Jan 23, 2025</p>
+                  </div>
+
+                  <div class="date flex">
+                    <span><i class="bi bi-clock"></i></span>
+                    <p>06:30 Am</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pending__right-content">
+              <button class="btn approval_btn">Approve</button>
+              <button class="btn decline_btn">Decline</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,736 @@
+:root {
+  --primary-col: #003333;
+  --secondary-col: ;
+  --hover-col: #008080;
+  --light-white-col: #f5f5f5;
+  --white-col: #fff;
+  --low-dark: #656565;
+  --col-dark: #333;
+  --dark: #14141f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  /* will change the font family */
+  font-family: "Rubik", sans-serif;
+  margin: 0;
+  background-color: var(--light);
+  color: var(--col-dark);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/************ Script Styling *********/
+.btn__navigate.active {
+  background-color: var(--hover-col);
+  border-radius: 11px;
+  padding: 1.8rem 3rem;
+}
+
+.navigation.close {
+  display: none;
+  /* z-index: 99; */
+}
+
+.main__container.active {
+  grid-template-columns: 1fr;
+}
+
+.overall__main.active {
+  transform: translateX(-1px);
+  width: 100%;
+}
+
+.overall__main {
+  height: 1110px;
+  transform: translateX(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+.pending__left-content.width {
+  width: 80%;
+}
+
+.see_all.width {
+  width: 14%;
+}
+
+/************ General Styling *********/
+/* grids */
+.grid {
+  display: grid;
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--2-cols2 {
+  grid-template-columns: 30% 70%;
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--5-cols {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.grid--center-v {
+  align-items: center;
+}
+
+/* flex */
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  padding: 1rem 4rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--dark);
+  border-radius: 11px;
+  cursor: pointer;
+  transform: background 0.3s, color 0.3s;
+}
+
+/**** main container ***/
+.main__container {
+  grid-template-columns: 20% 80%;
+}
+
+.main__main-content {
+  background: var(--light-white-col);
+  /* height: auto; */
+  height: 1060px;
+}
+
+.main__card-container {
+  margin: 0rem 4.8rem;
+  padding: 3.2rem 0rem;
+}
+
+.content__area {
+  margin: 0rem 4.8rem 4rem;
+  height: auto;
+}
+
+/************ Aside Navigation *********/
+.navigation {
+  position: relative;
+  background-color: var(--primary-col);
+  color: var(--white-col);
+  width: 100%;
+  height: auto;
+}
+
+.header__content {
+  padding: 2rem 0rem 2rem 2rem;
+  border-bottom: 1px solid var(--white-col);
+}
+
+.logo__container {
+  max-width: 100rem;
+}
+
+/* Will change this when the transparent logo comes */
+.logo__container h1 {
+  font-size: 4.4rem;
+}
+
+.logo__container span {
+  font-weight: 400;
+}
+
+.logo__container img {
+  width: 8%;
+  object-fit: cover;
+  filter: invert(1);
+}
+
+.info__container {
+  margin-top: 0.5rem;
+  gap: 0.5rem;
+}
+
+/* img__con im making this to behave like a button I think I have to add hover to this or? */
+.img__con {
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--white-col);
+  border: 2px solid var(--white-col);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.info__texts {
+  font-size: 1.8rem;
+}
+
+.management__email {
+  font-size: 1.4rem;
+}
+
+.nav__one {
+  height: 62vh;
+  border-bottom: 1px solid var(--white-col);
+}
+
+.nav__two {
+  height: 30vh;
+}
+
+.navigation__button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 1.5rem;
+}
+
+.btn__navigate {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  background: transparent;
+  color: var(--white-col);
+  margin: 0.6rem 1.5rem;
+  padding: 1.3rem;
+  border: none;
+  font-size: 2rem;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn__navigate:hover {
+  background-color: var(--hover-col);
+  border-radius: 11px;
+  padding: 1.8rem 3rem;
+}
+
+.border_bottom {
+  border-top: 1px solid var(--white-col);
+  margin-top: 50rem;
+}
+
+.log-out__container {
+  position: absolute;
+  bottom: 0;
+}
+
+.btn-logout {
+  position: absolute;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: transparent;
+  color: rgba(255, 72, 0, 0.903);
+  margin: 0.6rem 1.5rem;
+  padding: 1.3rem;
+  border: none;
+  font-size: 2rem;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+
+  /* will keep changing this due to the heigh of the page */
+  bottom: 0;
+}
+
+.btn-logout:hover {
+  color: var(--white-col);
+}
+
+/************ Main Header *********/
+.main__header {
+  background-color: var(--white-col);
+  box-shadow: 0px 16px 12px rgba(0, 0, 0, 0.1);
+}
+
+.main__nav {
+  justify-content: space-between;
+  padding: 2rem 4.4rem 2rem 2rem;
+}
+
+.btn__main {
+  border: none;
+  background: transparent;
+  font-size: 2.4rem;
+  cursor: pointer;
+}
+
+.btn__notification {
+  transform: rotate(-30deg);
+}
+
+.main__card-container h1 {
+  color: var(--dark);
+  font-size: 3rem;
+  margin-bottom: 1.8rem;
+}
+
+.card__container {
+  gap: 4rem;
+}
+
+.card {
+  border: 1px solid;
+  border-radius: 11px;
+}
+
+.card_green {
+  background-color: #0080802a;
+  border-color: #008080;
+}
+
+.col_green {
+  color: #008080;
+}
+
+.border_green {
+  border-bottom: 1px solid #008080;
+}
+
+.card_violet {
+  background-color: #af6eff48;
+  border-color: #af6efffd;
+}
+
+.col_violet {
+  color: #af6efffd;
+}
+
+.border_violet {
+  border-bottom: 1px solid #af6efffd;
+}
+
+.card_orange {
+  background-color: #ff89035d;
+  border-color: #ff8903fb;
+}
+
+.col_orange {
+  color: #ff8903fb;
+}
+
+.border_orange {
+  border-bottom: 1px solid #ff8903fb;
+}
+
+.card_lightblue {
+  background-color: #039eff49;
+  border-color: #039efffc;
+}
+
+.col_lightblue {
+  color: #039efffc;
+}
+
+.border_lightblue {
+  border-bottom: 1px solid #039efffc;
+}
+
+.card__header {
+  padding: 2rem;
+  gap: 0.8rem;
+}
+
+.card__header span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white-col);
+  width: 3rem;
+  height: 3rem;
+}
+
+.card__header span i {
+  font-size: 1.5rem;
+}
+
+.card__header p:first-child {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.card__header p:last-child {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.card__footer {
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.card__footer p,
+.card__footer button {
+  font-size: 1.4rem;
+}
+
+.card__footer button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+/************ Dashboard Section *********/
+.dashboard__section {
+  grid-template-rows: 60% 40%;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.live__activity-container {
+  background-color: var(--white-col);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0.8rem 1.4rem rgba(0, 0, 0, 0.2);
+}
+
+.recent__pending-container {
+  background-color: var(--white-col);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0.8rem 1.4rem rgba(0, 0, 0, 0.2);
+}
+
+.live__activity-header h1 {
+  font-size: 2.4rem;
+  margin-bottom: 2.5rem;
+}
+
+.live__activity-card {
+  gap: 2rem;
+}
+
+.activity__card {
+  box-shadow: 0 0.8rem 1.4rem rgba(0, 0, 0, 0.2);
+  border-radius: 11px;
+  transition: all 0.4s;
+  height: 55rem;
+}
+
+.activity__card:hover {
+  transform: translateY(-1.2rem);
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
+}
+
+.image-container {
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  border-top-left-radius: 11px;
+  border-top-right-radius: 11px;
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-container img:hover {
+  transform: scale(1.1);
+}
+
+.card__content {
+  padding: 2rem;
+}
+
+.card__content h1 {
+  font-size: 2rem;
+  color: var(--dark);
+}
+
+.card__content p {
+  font-size: 1.6rem;
+}
+
+.card__content .creted_text {
+  font-size: 1.2rem;
+  margin-top: 0.2rem;
+}
+
+.first_ctext {
+  margin-bottom: 3.4rem;
+}
+
+.card_mid_content {
+  margin-top: 1.2rem;
+}
+
+.card_mid_content p:first-child,
+.card_mid_content p:nth-child(3) {
+  font-weight: 600;
+}
+
+.card_mid_content p:nth-child(3):not(.ending_text) {
+  color: red;
+}
+
+.card_mid_content p:first-child,
+.card_mid_content .ending_text {
+  color: var(--hover-col);
+}
+
+.card_mid_content p:nth-child(2) {
+  margin-right: 0.8rem;
+}
+
+.approval__students {
+  text-align: center;
+  gap: 0.4rem;
+  margin: 0.6rem 0rem;
+  color: var(--low-dark);
+}
+
+.approval__students span i {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.approval__students p {
+  margin-top: 0.2rem;
+}
+
+.progress__container {
+  margin-top: 1.2rem;
+  justify-content: space-between;
+}
+
+/* this isn't showing now  */
+.show_progress {
+  width: 100%;
+  height: 20%;
+  background-color: var(--hover-col);
+}
+
+/* Pending styling */
+.pending__heading {
+  justify-content: space-between;
+  margin-right: 1.5rem;
+}
+
+.see_all {
+  margin-bottom: 2.5rem;
+  border: 1px solid #039efffc;
+  background: #039eff49;
+  padding: 1rem 5rem;
+  text-align: center;
+  white-space: nowrap;
+  transform: background-color 0.3s, color 0.3s;
+}
+
+.see_all:hover {
+  background: #039efffc;
+  color: var(--white-col);
+}
+
+.dashboardnext__card-container {
+  column-gap: 3rem;
+  row-gap: 2rem;
+}
+
+.pending__card {
+  border: 2px solid #0080802a;
+  grid-template-columns: 70% 30%;
+  gap: 1rem;
+  padding: 2.5rem 2rem;
+  border-radius: 30px;
+}
+
+.pending__left-content {
+  width: 95%;
+  grid-template-columns: 30% 70%;
+  gap: 0.6rem;
+}
+
+.pending__left-content img {
+  width: 10rem;
+  height: 10rem;
+  border: 1px solid var(--white-col);
+  border-radius: 11px;
+}
+
+.personinfo__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  margin-top: 0.4rem;
+  white-space: nowrap;
+}
+
+.program {
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.program p {
+  font-size: 1.6rem;
+}
+
+.level {
+  gap: 0.4rem;
+}
+
+.level span i {
+  color: #ddd;
+}
+
+.personinfo__container h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.approval {
+  gap: 0.6rem;
+  white-space: nowrap;
+  justify-content: space-between;
+}
+
+.date {
+  gap: 0.4rem;
+}
+
+.personinfo__container .approval p,
+.personinfo__container .approval span {
+  font-size: 1.6rem;
+  color: var(--col-dark);
+}
+
+.personinfo__container .approval span {
+  font-size: 1.6rem;
+}
+
+.pending__right-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.approval_btn {
+  width: 100%;
+  border: 1px solid #008080;
+  background: #0080802a;
+  transform: background-color 0.3s, color 0.3s;
+}
+
+.decline_btn {
+  width: 100%;
+  border: 1px solid #ff0307ff;
+  background: #ff032558;
+  color: #ff0307ff;
+  transform: background-color 0.3s, color 0.3s;
+}
+
+.approval_btn:hover {
+  background: #008080;
+  color: var(--white-col);
+}
+
+.decline_btn:hover {
+  background: #ff0307ff;
+  color: var(--white-col);
+}
+
+/************ Admission *********/
+#live__admission {
+  height: 503.209px;
+}
+
+#recent__admission {
+  height: 330px;
+}
+
+#card_main_container {
+  margin-top: 6rem;
+}
+
+#pending_card {
+  height: 116.071px;
+}
+
+/************ Manager *********/
+.managers__header {
+  justify-content: space-between;
+}
+
+.managers__header h2 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: var(--dark);
+}
+
+.sort_btn {
+  width: 18%;
+  border: none;
+  padding: 0.6rem 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-radius: 11px;
+  cursor: pointer;
+}
+
+.sort_btn:focus {
+  outline: none;
+}
+
+.sort_btn option {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+/************ *********/
+/* 
+1. Typography System (font-size)
+    10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+2. Spacing System (Padding / Margin)
+    2 / 4 / 8 / 12 / 32 / 48 / 64 / 80 / 96 / 128
+
+3. Font-width
+    default: 400
+    medium: 500
+    semi-large: 600
+    large: 700
+
+4. line-height
+    default: 
+    smaill: 
+    medium: 
+
+5. letter-sapcing
+
+6. Colors
+    primary: 
+    Tints: 
+    Shade: 
+    Accents: 
+    Grayes:
+ */
