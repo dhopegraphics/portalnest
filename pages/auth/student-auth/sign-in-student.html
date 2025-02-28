@@ -1,33 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In - PortalNest</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In - PortalNest</title>
+  <link rel="stylesheet" href="/style/sign-in-style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet">
 </head>
+
 <body>
-    <div class="container">
-        <div class="form-box">
-            <h2>Log In To Your Account</h2>
-            <p>Welcome Back To PortalNest! Select Your Method</p>
-            <div class="social-login">
-                <button class="google">Google</button>
-                <button class="facebook">Facebook</button>
-            </div>
-            <p>Or Continue With Email</p>
-            <form id="login-form">
-                <input type="email" id="email" placeholder="Email" required>
-                <input type="password" id="password" placeholder="Password" required>
-                <div class="remember-forgot">
-                    <label><input type="checkbox"> Remember Me</label>
-                    <a href="#">Forgot Password?</a>
-                </div>
-                <button type="submit" class="login-btn">Log In</button>
-            </form>
-            <p>Don't Have An Account? <a href="signup.html">Sign Up Now</a></p>
+  <div class="container">
+  
+    <div class="left">
+      <span id="back-icon"  class="material-icons-sharp">
+        arrow_back_ios
+        </span>
+        <div class="form-filling" >
+          <img class="portalnest-logo" src="/assets/logo/portalnest logo.png" />
+          <div>
+            <h1  class="log-in-to-your">Log In To Your Account</h1>
+            <h2 style="font-size:medium ;" class="welcome-back-to">Welcome Back! To Portalnest! Select Your Method</h2>
+          </div>
         </div>
+
+        <div  class="third-party-auth" >
+          <div class="facebook">
+            <div class="overlap-group">
+              <img class="auth-logo" src="/assets/images/Facebook-logo.png" />
+              <div class="auth-name">Facebook</div>
+            </div>
+          </div>
+          <div class="google">
+            <div class="overlap-group">
+              <img class="auth-logo" src="/assets/images/Google.webp" />
+              <div class="auth-name">Google</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="or">
+          <div class="line" style="flex-grow: 1; height: 1px; background-color: black;"></div>
+          <div class="or-continue-with" style="padding: 0 10px;">Or Continue With Email</div>
+          <div class="line" style="flex-grow: 1; height: 1px; background-color: black;"></div>
+        </div>
+
+        <div class="mail-form">
+          <div  class="outer-form email">
+            <span  class="material-icons-sharp">
+              mail_outline
+              </span>
+            <div class="text-wrapper">Email</div>
+          </div>
+          <div id="password-form" class="outer-form">
+            <span class="material-icons-sharp">
+              lock
+              </span>
+            <div class="text-wrapper">Password</div>
+            <img class="eye-off" src="img/eye-off.svg" />
+          </div>
+      </div>
+
+
+        <div class="forget-remember-password" >
+          <div class="remember-me-tick">
+            <div class="check">
+              <div class="rectangle"></div>
+            </div>
+            <div class="remember-me">Remember Me</div>
+          </div>
+          <div class="text-wrapper-4">Forgot Password?</div>
+        </div>
+        
+        <div class="log-in">
+            <div class="log-in-2">Log In</div>
+        </div>
+
+        <div class="account-creation">
+          <div class="dont-have-account">Don’t Have An Account?</div>
+          <div class="sign-up-now">Sign Up Now</div>
+        </div>
+
     </div>
-   
+
+    <div class="right">
+      <div class="animated-preview">
+        <img class="secure-mobile-apps" src="/assets/images/Secure-mobile-apps.svg" />
+      </div>
+    </div>
+</div>
+
 </body>
+
 </html>
