@@ -37,19 +37,13 @@ h1, h2, h3 {
 }
 
 
-span.material-icons-sharp {
+.mail-form  img.form-icon {
   color: #007bff;
   cursor: pointer;
-  margin-top: 3rem;
-  margin-right: 25rem;
-  margin-bottom: 2rem;
-  size: 10rem;
+  filter: invert(28%) sepia(93%) saturate(749%) hue-rotate(180deg);
 
 }
 
-.form-filling  {
-  margin-right: 2rem;
-}
 
 .portalnest-logo {
   width: 100px;
@@ -63,7 +57,7 @@ span.material-icons-sharp {
 }
 
 .google {
-  margin-left: 2rem;
+  margin-left: 3rem;
 }
 
 
@@ -136,7 +130,7 @@ span.material-icons-sharp {
 }
 
 .outer-form input{
-  width: 100%;
+  width: 83%;
   border: none;
   outline: none;
   font-size: 12px;
@@ -149,26 +143,9 @@ span.material-icons-sharp {
       font-weight: 400;
   }
 
-.text-wrapper {
-  font-family: "Avenir-Medium", Helvetica;
-  font-weight: 500;
-  color: #000000;
-  font-size: 14px;
-  letter-spacing: 0.56px;
-  line-height: normal;
-  
-}
 
 
-.form-logo {
-  margin-left: 1rem;
-  width: 28px;
-  height: 28px;
-  display: flex;
-}
-
-
-.eye-off {
+.mail-form .outer-form .eye-off {
   width: 21px;
   height: 21px;
 }
@@ -193,7 +170,6 @@ align-items: center;
 
 .remember-me {
   height: 12px;
-  font-family: "Avenir-Heavy", Helvetica;
   font-weight: 400;
   color: #000000;
   font-size: 9px;
@@ -201,27 +177,24 @@ align-items: center;
   line-height: normal;
 }
 
-.check {
-  width: 24px;
-  align-items: center;
+.remember-me-tick .checker {
+  width: 20px;
+  margin-right: 2px;
+  filter: invert(28%) sepia(93%) saturate(749%) hue-rotate(180deg);
+  cursor: pointer;
+
+
 }
 
-.rectangle {
-  width: 18px;
-  height: 18px;
-
-  background-color: #1971ff;
-  border-radius: 2px;
-}
 
 .text-wrapper-4 {
   height: 14px;
-  font-family: "Avenir-Black", Helvetica;
   font-weight: 900;
   color: #1971ff;
   font-size: 10px;
   letter-spacing: 0.40px;
   line-height: normal;
+  text-decoration: none;
 }
 
 
