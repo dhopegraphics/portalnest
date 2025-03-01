@@ -1,6 +1,5 @@
 function loadForm(formType) {
   const authContainer = document.getElementById("authContainer");
-  const formStyle = document.getElementById("formStyle");
   const filePath = formType === "signup" ? "/components/sign-up-forms.html" : "/components/sign-in-forms.html";
 
 
