@@ -28,11 +28,16 @@ h1 {
 
 .third-party-auth {
   display: flex;
+  
   margin-top: 20px;
 }
 
-.google {
+.google   {
   margin-left: 3rem;
+}
+
+.google .auth-logo {
+  width: 50px;
 }
 
 

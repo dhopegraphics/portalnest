@@ -13,6 +13,10 @@ body, html {
   font-family: 'Poppins';
 }
 
+ span #back-icon  {
+    cursor:pointer ;
+}
+
 .container {
   display: flex;
   overflow: hidden;
@@ -98,17 +102,111 @@ body, html {
 
 
 @media (max-width: 480px ) {
-    body ,html{
-        overflow: scroll;
+    body ,html , .wrapper , .container  {
+        align-items: center;
+        justify-items: center;
+        overflow: visible;
+        width: 100%;
+
     }
 
-    .container {
-        overflow: visible;
-    }
 
     .wrapper {
+   
         flex-direction: column;
+        width: 1005;
+    
     }
+
+    .left {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .right {
+        display: none;
+    }
+
+
+h1 {
+ font-size: 13px;
+  font-weight: 700;
+}
+
+
+.form-filling div h2 {
+    font-size: 10px;
+    font-weight: 500;
+
+  }
+
+  .third-party-auth {
+    width: 100%;
+    align-items: center;
+    justify-self: center;
+   
+  }
+
+  .overlap-group {
+    display: flex;
+     width: 110px;
+     height: 30px;
+     cursor: pointer;
+     justify-content: center;
+     align-items: center;
+   }
+   
+   .auth-logo {
+     width: 35px;
+   }
+   .google .auth-logo {
+    width: 30px;
+   }
+   
+   .auth-name {
+     font-weight: 500;
+     color: #000000;
+     font-size: 10px;
+   }
+
+   .line {
+    width: 7.5rem;
+    flex-grow: 0;
+    
+  }
+  .or-continue-with {
+    font-size: 10px;
+    width: 100%;
+    font-weight: 700;
+    
+  }
+
+  .outer-form {
+    width: 150%;
+    align-items: center;
+    justify-items: center;
+    justify-self: center;
+    align-self: center;
+
+  }
+  
+   .outer-form img.form-icon {
+    width: 24px;
+    margin-left: 0.5rem;
+    margin-right: 0.2rem;
+    
+  
+  }
+  
+  .outer-form input{
+    width: 60%;
+  }
+  
+  .log-in {
+    display: flex;
+    width: 100%;
+  
+  }
 
   
 }
