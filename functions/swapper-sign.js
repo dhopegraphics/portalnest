@@ -21,7 +21,7 @@ function loadForm(formType) {
                        document.querySelector(".container").classList.remove("sign-up");
                        setTimeout(() => {
                         loadForm("signin");
-                    }, 400); // 🔹 Matches animation duration
+                    }, 500); // 🔹 Matches animation duration
                 });
             }
            } else {
@@ -34,7 +34,7 @@ function loadForm(formType) {
                    });
                }
            }
-       }, 600); // Small delay ensures the elements exist before adding event listeners
+       }, 800); // Small delay ensures the elements exist before adding event listeners
    })
    .catch(error => console.error("Error loading the form:", error));
 }

@@ -40,8 +40,11 @@ body, html {
   
 }
 
-.get-back  span.back-icon {
+.get-back  {
+  position: absolute;
   align-self: flex-start;
+  margin-top: 2rem;
+  top: 0;
   
 }
 
@@ -122,7 +125,7 @@ h1 {
 }
 
 .line {
-  width: 133px;
+  width: 130px;
   
 }
 .or-continue-with {
@@ -175,41 +178,7 @@ h1 {
   height: 21px;
 }
 
-.forget-remember-password {
-  display: flex;
-  justify-content: space-between;
-  width: 60%;
-  align-items: center;
-  justify-items: center;
-  margin-bottom: 1rem;
-}
 
-.remember-me-tick {
-display: flex;
-justify-items: center;
-align-items: center;
-
- 
-
-}
-
-.remember-me {
-  height: 12px;
-  font-weight: 400;
-  color: #000000;
-  font-size: 9px;
-  letter-spacing: 0.36px;
-  line-height: normal;
-}
-
-.remember-me-tick .checker {
-  width: 20px;
-  margin-right: 2px;
-  filter: invert(28%) sepia(93%) saturate(749%) hue-rotate(180deg);
-  cursor: pointer;
-
-
-}
 
 .text-wrapper-4 {
   height: 14px;
@@ -246,30 +215,7 @@ align-items: center;
 
 }
 
-.account-creation {
-  display: flex;
-  justify-self: center;
-  align-self: center;
-  align-items: center;
-  justify-items: center;
 
-}
-
-
-.dont-have-account {
-  font-weight: 400;
-  color: #000000;
-  font-size: 9px;
-  letter-spacing: 0.36px;
-}
-
-.sign-up-now {
-  margin-left: 0.6rem;
-  font-weight: 900;
-  color: #1971ff;
-  font-size: 10px;
-  letter-spacing: 0.40px;
-}
 
 
 /* Right side (Blue) */
