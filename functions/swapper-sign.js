@@ -34,7 +34,7 @@ function loadForm(formType) {
                    });
                }
            }
-       }, 400); // Small delay ensures the elements exist before adding event listeners
+       }, 600); // Small delay ensures the elements exist before adding event listeners
    })
    .catch(error => console.error("Error loading the form:", error));
 }

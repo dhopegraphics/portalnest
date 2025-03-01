@@ -40,7 +40,8 @@ body, html {
   
 }
 
-.back-icon {
+.get-back  span.back-icon {
+  align-self: flex-start;
   
 }
 
@@ -58,7 +59,7 @@ h1 {
   font-family: 'Poppins';
 }
 
-.form-filling div h2 {
+.form-filling div p {
   font-size: 15px;
   font-weight: 500;
 }
