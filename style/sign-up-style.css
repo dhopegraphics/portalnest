@@ -298,20 +298,17 @@ align-items: center;
 
 .container.sign-up .wrapper .right {
   transform: translateX(-117%);
-  pointer-events: none; /* Prevents clicking during transition */
-  opacity: 0.95; /* Slight fade effect for smooth transition */
 }
 
 .container.sign-up .wrapper .left {
   transform: translateX(83%);
-  pointer-events: none; /* Prevents clicking during transition */
-  opacity: 0.95; /* Slight fade effect for smooth transition */
 }
 
 .container.transitioning-back {
-  pointer-events: none; /* Prevents clicking during transition */
-  opacity: 0.95; /* Slight fade effect for smooth transition */
+    pointer-events: none; /* Prevents clicking during transition */
+    opacity: 0.95; /* Slight fade effect for smooth transition */
 }
+
 /* Cursor pointer for Sign Up */
 .sign-up-now {
   cursor: pointer;

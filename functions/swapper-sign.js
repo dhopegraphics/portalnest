@@ -1,57 +1,45 @@
-document.getElementById("signUpNow").addEventListener("click", function() {
-  const container = document.querySelector(".container");
-  const leftPanel = document.querySelector(".left");
+function loadForm(formType) {
+  const authContainer = document.getElementById("authContainer");
+  const formStyle = document.getElementById("formStyle");
+  const filePath = formType === "signup" ? "/components/sign-up-forms.html" : "/components/sign-in-forms.html";
+  const stylePath = formType === "signup" ? "/style/sign-up-style.css" : "/style/sign-in-style.css";
 
-  // Add animation class to move screens
-  container.classList.add("sign-up");
+   // Fetch the corresponding form
+   fetch(filePath)
+   .then(response => response.text())
+   .then(html => {
+       authContainer.innerHTML = html;
+       formStyle.href = stylePath; // Switch styles dynamically
 
-  // Wait for animation to complete before changing content
-  setTimeout(() => {
-      leftPanel.innerHTML = `
-          <span id="backToSignIn" class="material-icons-sharp">
-              arrow_back_ios
-          </span>
-          <div class="form-filling">
-              <img class="portalnest-logo" src="/assets/logo/portalnest logo.png" />
-              <div>
-                  <h1 class="log-in-to-your">Create Your Account</h1>
-                  <h2 class="welcome-back-to">Join Portalnest today!</h2>
-              </div>
-          </div>
-          <div class="mail-form">
-              <div class="outer-form email">
-                  <img class="form-icon" src="/assets/icons/email.svg">
-                  <input type="email" placeholder="Email" required>
-              </div>
-              <div class="outer-form">
-                  <img class="form-icon" src="/assets/icons/user.svg">
-                  <input type="text" placeholder="Full Name" required>
-              </div>
-              <div id="password-form" class="outer-form">
-                  <img class="form-icon" src="/assets/icons/lock.svg">
-                  <input type="password" placeholder="Password" required>
-                  <img class="eye-off" src="/assets/icons/visibility_off.svg">
-              </div>
-          </div>
-          <div class="log-in">
-              <div class="log-in-2">Sign Up</div>
-          </div>
-          <div class="account-creation">
-              <div class="dont-have-account">Already have an account?</div>
-              <div class="sign-up-now" id="signInNow">Sign In</div>
-          </div>
-      `;
+       // Wait for DOM update, then attach event listeners
+       setTimeout(() => {
+           if (formType === "signup") {
+               // Attach event listener to the existing back button
+               const backButton = document.getElementById("back-icon");
+               if (backButton) {
+                   backButton.addEventListener("click", function () {
+                       document.querySelector(".container").classList.remove("sign-up");
+                       setTimeout(() => {
+                        loadForm("signin");
+                    }, 400); // 🔹 Matches animation duration
+                });
+            }
+           } else {
+               // Attach event listener to switch to Sign-Up
+               const signUpNow = document.getElementById("signUpNow");
+               if (signUpNow) {
+                   signUpNow.addEventListener("click", function () {
+                       document.querySelector(".container").classList.add("sign-up");
+                       loadForm("signup");
+                   });
+               }
+           }
+       }, 400); // Small delay ensures the elements exist before adding event listeners
+   })
+   .catch(error => console.error("Error loading the form:", error));
+}
 
-      // Re-add event listener for switching back to Sign-In
-      document.getElementById("signInNow").addEventListener("click", function() {
-          container.classList.remove("sign-up");
-          location.reload(); // Reloads to reset to the original sign-in content
-      });
-
-      document.getElementById("backToSignIn").addEventListener("click", function() {
-          container.classList.remove("sign-up");
-          location.reload();
-      });
-
-  }, 300); // Matches the CSS transition duration
+// Initial load (default to Sign-In form)
+document.addEventListener("DOMContentLoaded", function () {
+loadForm("signin");
 });
