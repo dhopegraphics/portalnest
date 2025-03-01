@@ -40,6 +40,9 @@ body, html {
   
 }
 
+.back-icon {
+  
+}
 
 .left, .right {
   flex: 1;
@@ -50,10 +53,15 @@ body, html {
   align-items: center;
 }
 
-h1, h2, h3 {
-  font-family: 'Poppins', sans-serif;
+h1 {
+  font-weight: 600;
+  font-family: 'Poppins';
 }
 
+.form-filling div h2 {
+  font-size: 15px;
+  font-weight: 500;
+}
 
 .mail-form  img.form-icon {
   color: #007bff;
@@ -107,7 +115,6 @@ h1, h2, h3 {
 
 .or {
   display: flex;
-
   align-items: center;
   margin: 20px 0;
  
@@ -230,8 +237,7 @@ align-items: center;
 }
 
  .log-in-2 {
-  font-family: "Outfit-Bold", Helvetica;
-  font-weight: 700;
+  font-weight: 600;
   color: #ffffff;
   font-size: 16px;
   letter-spacing: 0.80px;
@@ -243,34 +249,25 @@ align-items: center;
   display: flex;
   justify-self: center;
   align-self: center;
-  margin-right: 12rem;
   align-items: center;
+  justify-items: center;
 
 }
 
 
 .dont-have-account {
-
-  width: 112px;
-  height: 12px;
-  font-family: "Avenir-Heavy", Helvetica;
   font-weight: 400;
   color: #000000;
   font-size: 9px;
   letter-spacing: 0.36px;
-  line-height: normal;
 }
 
 .sign-up-now {
   margin-left: 0.6rem;
-  width: 93px;
-  height: 14px;
-  font-family: "Avenir-Black", Helvetica;
   font-weight: 900;
   color: #1971ff;
   font-size: 10px;
   letter-spacing: 0.40px;
-  line-height: normal;
 }
 
 
