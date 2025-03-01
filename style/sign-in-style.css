@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,500;1,600&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+h1 {
+  font-weight: 600;
+  font-family: 'Poppins';
+}
+
+.form-filling div h2 {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.mail-form  img.form-icon {
+  color: #007bff;
+  cursor: pointer;
+  filter: invert(28%) sepia(93%) saturate(749%) hue-rotate(180deg);
+
+}
+
+
+.portalnest-logo {
+  width: 100px;
+
+}
+
+
+.third-party-auth {
+  display: flex;
+  
+  margin-top: 20px;
+}
+
+.google   {
+  margin-left: 3rem;
+}
+
+.google .auth-logo {
+  width: 50px;
+}
+
+
+.overlap-group {
+ display: flex;
+  width: 195px;
+  height: 49px;
+  background-color: #ffffff;
+  border-radius: 7px;
+  border: 1px solid;
+  border-color: #147aff;
+  box-shadow: 0px 4px 26.5px #00000030;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-logo {
+  width: 60px;
+}
+
+.auth-name {
+  font-weight: 500;
+  color: #000000;
+  font-size: 16px;
+  letter-spacing: 0.80px;
+  line-height: normal;
+}
+
+.or {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+ 
+}
+
+.line {
+  width: 133px;
+  
+}
+.or-continue-with {
+  font-weight: 500;
+  color: #000000;
+  font-size: 12px;
+  letter-spacing: 0.60px;
+  line-height: normal;
+}
+
+
+.outer-form {
+  width: 428px;
+  height: 46px;
+  background-color: #517dce0d;
+  border-radius: 8px;
+  border: 2px solid;
+  border-color: #000000;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+ .outer-form img.form-icon {
+  width: 24px;
+  margin-left: 0.5rem;
+  margin-right: 0.2rem;
+  
+
+}
+
+.outer-form input{
+  width: 83%;
+  border: none;
+  outline: none;
+  font-size: 12px;
+  font-weight: 500;
+  background: none;
+}
+
+.outer-form input::placeholder{
+      color: #888;
+      font-weight: 400;
+  }
+
+
+
+.mail-form .outer-form .eye-off {
+  width: 21px;
+  height: 21px;
+}
+
+.forget-remember-password {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 1rem;
+}
+
+.remember-me-tick {
+display: flex;
+justify-items: center;
+align-items: center;
+
+ 
+
+}
+
+.remember-me {
+  height: 12px;
+  font-weight: 400;
+  color: #000000;
+  font-size: 9px;
+  letter-spacing: 0.36px;
+  line-height: normal;
+}
+
+.remember-me-tick .checker {
+  width: 20px;
+  margin-right: 2px;
+  filter: invert(28%) sepia(93%) saturate(749%) hue-rotate(180deg);
+  cursor: pointer;
+
+
+}
+
+.text-wrapper-4 {
+  height: 14px;
+  font-weight: 900;
+  color: #1971ff;
+  font-size: 10px;
+  letter-spacing: 0.40px;
+  line-height: normal;
+  text-decoration: none;
+}
+
+
+
+ .log-in {
+  display: flex;
+  width: 428px;
+  background-color: #1971ff;
+  border-radius: 7px;
+  border: 1px solid;
+  border-color: #147aff;
+  box-shadow: 0px 4px 26.5px #00000030;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+
+}
+
+ .log-in-2 {
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 0.80px;
+  padding: 6px 0px 6px 0px;
+
+}
+
+.account-creation {
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  align-items: center;
+  justify-items: center;
+
+}
+
+
+.dont-have-account {
+  font-weight: 400;
+  color: #000000;
+  font-size: 9px;
+  letter-spacing: 0.36px;
+}
+
+.sign-up-now {
+  margin-left: 0.6rem;
+  font-weight: 900;
+  color: #1971ff;
+  font-size: 10px;
+  letter-spacing: 0.40px;
+}
+
+
+/* Cursor pointer for Sign Up */
+.sign-up-now {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+
+

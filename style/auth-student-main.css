@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,500;1,600&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Poppins';
+}
+
+ span #back-icon  {
+    cursor:pointer ;
+}
+
+.container {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.wrapper {
+  display: flex;
+  width: 200%;  /* Twice the width for sliding effect */
+  transition: transform 0.6s ease-in-out;
+}
+
+/* Left side (White) */
+.left {
+  flex: 1;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+  align-items: center;
+  transition: transform 0.6s ease-in-out;
+  
+}
+
+
+.left, .right {
+  flex: 1;
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Right side (Blue) */
+.right {
+  flex: 1;
+  background-color: #007bff; /* Blue color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.6s ease-in-out;
+ 
+}
+
+
+.right .animated-preview {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .right .animated-preview img {
+    width: 80%;
+    align-self: center;
+    justify-self: center;
+  
+  }
+  
+  .container.sign-up .wrapper .right {
+    transform: translateX(-117%);
+  }
+  
+  .container.sign-up .wrapper .left {
+    transform: translateX(83%);
+  }
+  
+  .container.transitioning-back {
+      pointer-events: none; /* Prevents clicking during transition */
+      opacity: 0.95; /* Slight fade effect for smooth transition */
+  }
+  
+
+@media (max-width: 768px ) {
+
+
+}
+
+
+@media (max-width: 480px ) {
+    body ,html , .wrapper , .container  {
+        align-items: center;
+        justify-items: center;
+        overflow: visible;
+        width: 100%;
+
+    }
+
+
+    .wrapper {
+   
+        flex-direction: column;
+        width: 1005;
+        background: none;
+    
+    }
+
+    .left {
+        width: 100%;
+        overflow: hidden;
+        background: none;
+    }
+
+    .right {
+        display: none;
+    }
+
+
+h1 {
+ font-size: 13px;
+  font-weight: 700;
+}
+
+
+.form-filling div h2 {
+    font-size: 10px;
+    font-weight: 500;
+
+  }
+
+  .third-party-auth {
+    width: 100%;
+    align-items: center;
+    justify-self: center;
+   
+  }
+
+  .overlap-group {
+    display: flex;
+     width: 110px;
+     height: 30px;
+     cursor: pointer;
+     justify-content: center;
+     align-items: center;
+   }
+   
+   .auth-logo {
+     width: 35px;
+   }
+   .google .auth-logo {
+    width: 30px;
+   }
+   
+   .auth-name {
+     font-weight: 500;
+     color: #000000;
+     font-size: 10px;
+   }
+
+   .line {
+    width: 7.5rem;
+    flex-grow: 0;
+    
+  }
+  .or-continue-with {
+    font-size: 10px;
+    width: 100%;
+    font-weight: 700;
+    
+  }
+
+  .outer-form {
+    width: 150%;
+    align-items: center;
+    justify-items: center;
+    justify-self: center;
+    align-self: center;
+
+  }
+  
+   .outer-form img.form-icon {
+    width: 24px;
+    margin-left: 0.5rem;
+    margin-right: 0.2rem;
+    
+  
+  }
+  
+  .outer-form input{
+    width: 60%;
+  }
+  
+  .log-in {
+    display: flex;
+    width: 100%;
+  
+  }
+
+  .container.sign-up .wrapper .left {
+    transform: none;
+  }
+
+.form-filling div p {
+  font-size: 10px;
+  font-weight: 500;
+}
+.form-filling div br {
+    display: none;
+  }
+  
+  .forget-remember-password { 
+    width: 100%;
+    align-items: center;
+  }
+
+  .container {
+    position: relative;
+    width: 100%; /* Adjust as needed */
+    height: 100vh; /* Adjust as needed */
+    overflow: hidden;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-position: -300px;
+    filter: blur(1px); 
+    z-index: -1;
+}
+
+span#back-icon.material-icons-sharp {
+    display: none;
+}
+
+.account-signIn {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    align-items: center;
+    justify-items: center;
+  
+  }
+  
+  
+  .have-account {
+    font-weight: 400;
+    color: #000000;
+    font-size: 9px;
+    letter-spacing: 0.36px;
+  }
+  
+  .sign-in {
+    margin-left: 0.6rem;
+    font-weight: 900;
+    color: #1971ff;
+    font-size: 10px;
+    letter-spacing: 0.40px;
+  }
+  
+  
+  /* Cursor pointer for Sign Up */
+  .sign-in {
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+}
