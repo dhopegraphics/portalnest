@@ -2,14 +2,14 @@ function loadForm(formType) {
   const authContainer = document.getElementById("authContainer");
   const formStyle = document.getElementById("formStyle");
   const filePath = formType === "signup" ? "/components/sign-up-forms.html" : "/components/sign-in-forms.html";
-  const stylePath = formType === "signup" ? "/style/sign-up-style.css" : "/style/sign-in-style.css";
+
 
    // Fetch the corresponding form
    fetch(filePath)
    .then(response => response.text())
    .then(html => {
        authContainer.innerHTML = html;
-       formStyle.href = stylePath; // Switch styles dynamically
+    
 
        // Wait for DOM update, then attach event listeners
        setTimeout(() => {

@@ -41,7 +41,6 @@ body, html {
 }
 
 
-
 .left, .right {
   flex: 1;
   width: 50%;
@@ -50,15 +49,6 @@ body, html {
   justify-content: center;
   align-items: center;
 }
-
-
-
-
-.portalnest-logo {
-  width: 100px;
-
-}
-
 
 
 /* Right side (Blue) */
@@ -86,19 +76,26 @@ body, html {
 
 }
 
-.container.sign-up .wrapper .right {
-  transform: translateX(-117%);
-  pointer-events: none; /* Prevents clicking during transition */
-  opacity: 0.95; /* Slight fade effect for smooth transition */
+@media (max-width: 768px ) {
+
+
 }
 
-.container.sign-up .wrapper .left {
-  transform: translateX(83%);
-  pointer-events: none; /* Prevents clicking during transition */
-  opacity: 0.95; /* Slight fade effect for smooth transition */
-}
 
-.container.transitioning-back {
-  pointer-events: none; /* Prevents clicking during transition */
-  opacity: 0.95; /* Slight fade effect for smooth transition */
+@media (max-width: 480px ) {
+    body ,html{
+        overflow: visible;
+    }
+
+    .container {
+        overflow: visible;
+    }
+
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .right {
+        display: none;
+    }
 }
