@@ -1,30 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - PortalNest</title>
-    <link rel="stylesheet" href="/style/ContactUs.css">
+    <link rel="stylesheet" href="/style/contactUs.css">
+
 </head>
+
 <body>
+
     <special-header> </special-header>
-    <section class="contact-form">
-        <h2>Contact Us</h2>
-        <form>
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="Enter Your Name Here" required>
 
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Enter Your Mail Here" required>
+    <!-- Contact Section -->
+    <main class="contact-container">
+        <div class="contact-header">
+            <div class="contact-title">
+                <span class="dot"></span>
+                <h2>CONTACT US - PORTALNEST</h2>
+                <span class="dot"></span>
+            </div>
+        </div>
 
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Your Message Here" required></textarea>
+        <div class="contact-content">
+            <!-- Contact Info Card (Left) -->
+            <div class="contact-info-card">
+                <div class="info-item">
+                    <div class="icon-container">
+                        <i class="location-icon"></i>
+                    </div>
+                    <div class="info-text">
+                        <h3>Location</h3>
+                        <p>Franko Road,AK-5743-34,<br>Kumasi, Ghana</p>
+                    </div>
+                </div>
 
-            <button type="submit">Submit</button>
-        </form>
-    </section>
+                <div class="info-item">
+                    <div class="icon-container">
+                        <i class="phone-icon"></i>
+                    </div>
+                    <div class="info-text">
+                        <h3>Phone</h3>
+                        <p>+233 (555) 123-456</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon-container">
+                        <i class="email-icon"></i>
+                    </div>
+                    <div class="info-text">
+                        <h3>Email</h3>
+                        <p>Support@Portalnest.Com</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Image (Center) -->
+            <div class="contact-image">
+                <img src="/assets/images/classroom.png" alt="Portalnest student">
+            </div>
+
+            <!-- Contact Form (Right) -->
+            <div class="contact-form-container1">
+                <img src="/assets/logo/portalnest-Variation-Logo.png" alt="Portalnest logo" class="logo">
+
+                <h2>Contact Form</h2>
+
+                <form class="contact-form1">
+                    <div class="form-group1">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" id="fullname" placeholder="Enter Your Name Here">
+                    </div>
+
+                    <div class="form-group1">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Enter Your Mail Here">
+                    </div>
+
+                    <div class="form-group1">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="6"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
 
     <special-footer> </special-footer>
     <script src="/functions/headerFooter.js"></script>
+
 </body>
+
 </html>
