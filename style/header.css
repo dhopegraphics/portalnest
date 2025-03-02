@@ -3,7 +3,33 @@
 
 body {
     margin: 0;
+    font-family: 'Poppins' ;
 }
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    z-index: 1001;
+}
+
+.hamburger-menu span {
+    background: #ffffff;
+    height: 3px;
+    width: 30px;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* Change to black when .full-header is active */
+.full-header.active ~ .hamburger-menu span {
+    background: black;
+}
+
 
 .overall-header {
     display: flex;
@@ -23,7 +49,7 @@ body {
     align-items: center;
     justify-content: space-between;
     margin-bottom: -10%;
-    font-family: Montserrat, Poppins;
+    font-family: 'Poppins', 'Poppins';
 }
 
 .logo-and-header {
@@ -168,7 +194,7 @@ nav {
 
 .page-message {
     text-align: center;
-    font-family: Arial, Helvetica, Poppins, sans-serif;
+    font-family: 'Poppins' ;
     color: white;
     margin-top: 100px;
     max-width: fit-content;
@@ -397,7 +423,7 @@ nav {
         align-items: center;
         justify-content: space-between;
         margin-bottom: -10%;
-        font-family: Montserrat, Poppins;
+        font-family: 'Poppins' ;
     }
 
     .add-school-button {
@@ -449,7 +475,7 @@ nav {
 
     .page-message {
         text-align: center;
-        font-family: Arial, Helvetica, Poppins, sans-serif;
+        font-family: 'Poppins' ;
         color: white;
     }
 
@@ -692,11 +718,42 @@ nav {
 }
 /*For mobile devices*/
 @media (max-width: 767px) {
-
+    .hamburger-menu {
+        display: flex;
+    }
 
     .full-header {
         display: none;
-      
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: white;
+        width: 100%;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        padding: 10px 0;
+        z-index: 1000;
+    }
+
+    .full-header nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .full-header a {
+        padding: 15px;
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .full-header a:hover {
+        background: #f4f4f4;
+    }
+
+    /* Show the navigation when active */
+    .full-header.active {
+        display: block;
     }
     
     .topBG-image-content {
@@ -814,7 +871,82 @@ nav {
 /*For very small mobile devices*/
 @media (max-width: 480px) {
 
+    .hamburger-menu {
+        display: flex;
+      
+        
+    }
 
+  
+
+    .full-header {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgb(255, 255, 255);
+        width: 50%;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        align-items: flex-start;
+        justify-items: flex-start;
+        height: 288.6%;
+        overflow: hidden;
+     
+    }
+
+    .full-header nav {
+        display: flex;
+        flex-direction: column;
+      
+    }
+
+    .full-header a {
+        padding: 15px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    /* Show the navigation when active */
+    .full-header.active {
+        display: block;
+        align-items: flex-start ;
+        justify-items: flex-start;
+        overflow: hidden;
+     
+    }
+
+    .full-header.active .header a::before {
+        content: none;
+       
+
+    }
+ .full-header.active .header  {
+    align-items: flex-start;
+    margin-top: 2rem;
+    
+    }
+
+.full-header.active .header  div  {
+    background-color: rgb(31, 12, 150);
+    margin: 0;
+    margin-bottom: 0;
+    color: black;
+   }
+
+   .full-header.active .header a div  {
+    color: black;
+    }
+
+
+
+    .full-header.active   a .get-started {
+        justify-self: flex-start;
+        margin-right: 5rem;
+        width: 70%;
+        margin-left: 0;
+        
+    }
 
    .page-message .page-message-content .everywhere {
         font-size: 6vw;
@@ -908,6 +1040,44 @@ nav {
 } 
 
 @media (min-width: 150px) and (max-width: 349px) {
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .full-header {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: white;
+        width: 100%;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        padding: 10px 0;
+        z-index: 1000;
+    }
+
+    .full-header nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .full-header a {
+        padding: 15px;
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .full-header a:hover {
+        background: #f4f4f4;
+    }
+
+    /* Show the navigation when active */
+    .full-header.active {
+        display: block;
+    }
 
     .middle-bar a:nth-child(1) ,  .middle-bar a:nth-child(2) ,  .middle-bar a:nth-child(3) ,  .middle-bar a:nth-child(4) {
         font-size: 0.7rem;

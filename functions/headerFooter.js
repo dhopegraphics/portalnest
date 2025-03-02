@@ -22,3 +22,13 @@ class SpecialHeader extends HTMLElement {
   
   customElements.define("special-header", SpecialHeader);
   customElements.define("special-footer", SpecialFooter);
+
+
+
+function toggleMenu() {
+  const menu = document.querySelector(".full-header");
+  const hamburger = document.querySelector(".hamburger-menu");
+
+  menu.classList.toggle("active");
+  hamburger.classList.toggle("active"); // Add class to change color
+}
