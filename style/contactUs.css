@@ -189,6 +189,7 @@ footer {
 
 .form-group {
     margin-bottom: 15px;
+
 }
 
 .form-group label {
@@ -196,22 +197,32 @@ footer {
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 5px;
+    color: #000 !important;
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ddd;
+    border: 1px solid black !important;
     border-radius: 8px;
     font-size: 14px;
-    background: #F8F9FA;
+    background: #F8F9FA !important;
+    color: black !important;
 }
 
 .form-group textarea {
     resize: vertical;
     min-height: 120px;
+    color: #080808 !important;
 }
+
+input::placeholder {
+    color: black !important;
+    opacity: 1;
+    /* Ensures full black visibility */
+}
+
 
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
@@ -335,6 +346,7 @@ footer {
     top: 20px;
     left: 20px;
 }
+
 
 .profile-image {
     width: 100%;
