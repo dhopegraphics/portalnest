@@ -21,8 +21,24 @@ body {
     background: #ffffff;
     height: 3px;
     width: 30px;
-    margin: 5px 0;
+    margin: 3px 0;
     transition: 0.3s;
+    transition: transform 0.3s, opacity 0.3s, background 0.3s;
+}
+
+/* When menu is active, transform into an 'X' */
+.hamburger-menu.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg); /* Move down slightly before rotating */
+    background: black;
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0; /* Hide middle bar */
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg); /* Move up slightly before rotating */
+    background: black;
 }
 
 /* Change to black when .full-header is active */
@@ -871,13 +887,20 @@ nav {
 /*For very small mobile devices*/
 @media (max-width: 480px) {
 
+    /* Disable scrolling when menu is active */
+body.no-scroll {
+    overflow: hidden;
+}
+
     .hamburger-menu {
         display: flex;
       
         
     }
 
-  
+    .hamburger-menu.active span {
+        background: black;
+    }
 
     .full-header {
         display: none;
