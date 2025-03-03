@@ -148,6 +148,28 @@ nav {
     
 }
 
+.logo-and-header .header a.active-nav-bar div {
+    color: rgb(4, 158, 247);
+    text-shadow: 0 0 10px rgba(4, 158, 247, 0.8), 
+    0 0 20px rgba(4, 158, 247, 0.6); /* Blue glow effect */
+}
+
+.logo-and-header .header a.active-nav-bar div::before {
+    content: "";
+    position: absolute;
+    top: -35%; /* Position above */
+    left: 50%;
+    width: 150%; /* Initially hidden */
+    height: 5px; /* Thickness */
+    background: rgb(29, 146, 255);
+    border-radius: 50px; /* Round edges */
+    opacity: 1;
+    transform: translateX(-50%);
+    box-shadow: 0 0 15px rgba(29, 146, 255, 1), 
+    0 0 30px rgba(29, 146, 255, 0.8); /* Intense glow */
+}
+
+
 /* Border effect */
 /* Initial border effect */
 .header a div::before {
@@ -478,6 +500,26 @@ nav {
         width: 80%;
         margin-left: 10%;
     }
+    .logo-and-header .header a.active-nav-bar div {
+    color: rgb(4, 158, 247);
+    text-shadow: 0 0 10px rgba(4, 158, 247, 0.8), 
+    0 0 20px rgba(4, 158, 247, 0.6); /* Blue glow effect */
+}
+
+.logo-and-header .header a.active-nav-bar div::before {
+    content: "";
+    position: absolute;
+    top: -35%; /* Position above */
+    left: 50%;
+    width: 150%; /* Initially hidden */
+    height: 5px; /* Thickness */
+    background: rgb(29, 146, 255);
+    border-radius: 50px; /* Round edges */
+    opacity: 1;
+    transform: translateX(-50%);
+    box-shadow: 0 0 15px rgba(29, 146, 255, 1), 
+    0 0 30px rgba(29, 146, 255, 0.8); /* Intense glow */
+}
     
 
     .middle-bar {
@@ -516,6 +558,8 @@ nav {
   }
 /*For tablets and smaller desktops*/
 @media (max-width: 1024px) {
+
+
     .topBG-image-content {
         margin-bottom: -70px;
     }
@@ -523,6 +567,27 @@ nav {
         left: 10%;
         right: 10%;
         margin-bottom: 0;
+    }
+
+    .logo-and-header .header a.active-nav-bar div {
+        color: rgb(4, 158, 247);
+        text-shadow: 0 0 10px rgba(4, 158, 247, 0.8), 
+        0 0 20px rgba(4, 158, 247, 0.6); /* Blue glow effect */
+    }
+    
+    .logo-and-header .header a.active-nav-bar div::before {
+        content: "";
+        position: absolute;
+        top: -35%; /* Position above */
+        left: 50%;
+        width: 150%; /* Initially hidden */
+        height: 5px; /* Thickness */
+        background: rgb(29, 146, 255);
+        border-radius: 50px; /* Round edges */
+        opacity: 1;
+        transform: translateX(-50%);
+        box-shadow: 0 0 15px rgba(29, 146, 255, 1), 
+        0 0 30px rgba(29, 146, 255, 0.8); /* Intense glow */
     }
 
     .page-message {
@@ -903,7 +968,6 @@ body.no-scroll {
     }
 
     .full-header {
-        display: none;
         position: absolute;
         top: 0;
         left: 0;
@@ -913,10 +977,15 @@ body.no-scroll {
         z-index: 1000;
         align-items: flex-start;
         justify-items: flex-start;
-        height: 288.6%;
+        height: 300vh; /* Adjusted to fit screen height */
         overflow: hidden;
-     
+    
+        /* Animation Defaults */
+        transform: translateX(-100%); /* Hide off-screen */
+        opacity: 0;
+        transition: transform 0.4s ease-out, opacity 0.4s ease-out;
     }
+    
 
     .full-header nav {
         display: flex;
@@ -936,6 +1005,8 @@ body.no-scroll {
         align-items: flex-start ;
         justify-items: flex-start;
         overflow: hidden;
+        transform: translateX(0);
+        opacity: 1;
      
     }
 
@@ -951,7 +1022,6 @@ body.no-scroll {
     }
 
 .full-header.active .header  div  {
-    background-color: rgb(31, 12, 150);
     margin: 0;
     margin-bottom: 0;
     color: black;
