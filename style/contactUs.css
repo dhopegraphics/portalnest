@@ -96,10 +96,34 @@ footer {
     width: 250px;
 }
 
+.contact-info1 {
+    position: absolute;
+    left: 220px;
+    top: 30%;
+    transform: translateY(-50%);
+    z-index: 2;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 75px;
+    height: 75px;
+    margin-left: 200px;
+    overflow: visible;
+}
+
+
 .info-item {
     display: flex;
     align-items: flex-start;
     gap: 15px;
+    margin-bottom: 20px;
+}
+
+.info-item1 {
+    display: flex;
+    align-items: flex-start;
+    gap: 0px;
     margin-bottom: 20px;
 }
 
@@ -151,7 +175,7 @@ footer {
     background: white;
     padding: 30px;
     /* Reduce padding to decrease height */
-    border-radius: 15px 0 0 15px;
+    border-radius: 15px 15px 15px 15px;
     /* Round only left corners */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 2;
@@ -160,7 +184,7 @@ footer {
     padding-left: 20px;
     padding-right: 30px;
     position: relative;
-    width: 85%;
+    width: 200%;
     /* Adjust to match the image width */
     max-width: 450px;
     /* Set a max width for consistency */
@@ -168,8 +192,7 @@ footer {
     /* Ensure it only takes up necessary space */
     max-height: 500px;
     /* Limit the height */
-    overflow-y: auto;
-    /* Allow scrolling if content overflows */
+
 }
 
 
