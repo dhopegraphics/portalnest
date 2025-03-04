@@ -56,6 +56,8 @@ body {
   color: var(--col-dark);
   font-size: 1rem;
   font-weight: 400;
+
+  display: flex;
 }
 
 /************ Script Styling *********/
@@ -66,23 +68,19 @@ body {
 }
 
 .navigation.close {
-  display: none;
-  /* z-index: 99; */
+  width: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+  white-space: nowrap;
 }
 
 .main__container.active {
   grid-template-columns: 1fr;
 }
 
-.overall__main.active {
-  transform: translateX(-1px);
-  width: 100%;
-}
-
 .overall__main {
   height: 1110px;
-  transform: translateX(0);
-  transition: transform 0.5s ease-in-out;
 }
 
 .pending__left-content.width {
@@ -140,8 +138,9 @@ body {
 }
 
 /**** main container ***/
-.main__container {
-  grid-template-columns: 20% 80%;
+.main,
+.main__header {
+  width: 100%;
 }
 
 .main__main-content {
@@ -165,8 +164,10 @@ body {
   position: relative;
   background-color: var(--primary-col);
   color: var(--white-col);
-  width: 100%;
+  width: 300px;
   height: auto;
+  white-space: nowrap;
+  transition: all 0.4s ease;
 }
 
 .header__content {
@@ -217,12 +218,12 @@ body {
 }
 
 .nav__one {
-  height: 62vh;
+  height: 72vh;
   border-bottom: 1px solid var(--white-col);
 }
 
 .nav__two {
-  height: 30vh;
+  height: 20vh;
 }
 
 .navigation__button-container {
@@ -241,7 +242,7 @@ body {
   background: transparent;
   color: var(--white-col);
   margin: 0.6rem 1.5rem;
-  padding: 1.3rem;
+  padding: 1.8rem 3rem;
   border: none;
   font-size: 2rem;
   white-space: nowrap;
@@ -252,7 +253,6 @@ body {
 .btn__navigate:hover {
   background-color: var(--hover-col);
   border-radius: 11px;
-  padding: 1.8rem 3rem;
 }
 
 .border_bottom {
@@ -409,6 +409,35 @@ body {
 .card__footer {
   justify-content: space-between;
   padding: 1rem 2rem;
+}
+
+.card__footer_m {
+  justify-content: center;
+  padding: 1rem 2rem;
+}
+
+.btn_m {
+  border: none;
+  background: transparent;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn_m span {
+  border: 1px solid;
+  border-radius: 3px;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  transition: all 0.3s;
+}
+
+.btn_m:hover p {
+  border-bottom: 1px solid;
 }
 
 .card__footer p,
