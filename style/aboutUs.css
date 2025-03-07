@@ -265,7 +265,41 @@
 
 /*Responsiveness on smaller desktop and tablet*/
 @media (max-width: 1024px) {
-    
+    .about-offer-mission {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .container {
+        width: 100%;
+        margin-bottom: 30px;
+        padding: 20px;
+    }
+
+    .middle-section {
+        width: 100%;
+    }
+
+    .people, .classroom {
+        width: 100%;
+    }
+
+    .team {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        column-gap: 10px;
+    }
+
+    .member-card {
+        width: 80%;
+        height: 400px;
+        margin-right: 0;
+    }
+
+
 }
 
 /*Responsiveness on mobile*/
