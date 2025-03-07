@@ -61,7 +61,7 @@ body {
 }
 
 /************ Admission..general stying to some pages *********/
-#live__admission {
+/* #live__admission {
   height: 503.209px;
 }
 
@@ -75,7 +75,7 @@ body {
 
 #pending_card {
   height: 116.071px;
-}
+} */
 
 /************ Script Styling *********/
 .btn__navigate.active {
@@ -734,12 +734,9 @@ body {
   color: var(--white-col);
 }
 
-/************ Admission *********/
-
 /************ Manager *********/
 .managers__header {
   justify-content: space-between;
-  margin-top: 2rem;
 }
 
 .managers__header h2 {
@@ -872,20 +869,257 @@ body {
   height: 4rem;
   background-color: var(--col-otherwhite);
   padding: 1rem;
-  border: none;
+  border: 1px solid var(--col-otherwhite);
   border-radius: 50%;
-  font-size: 2rem;
+  font-size: 1.8rem;
   transition: background-color 0.4s, border 0.4s;
   cursor: pointer;
 }
 
 .salary_btn_container button:last-child {
-  font-weight: 600;
+  font-size: 3rem;
+  font-weight: 500;
 }
 
 .salary_btn_container button:not(:first-child):hover {
   background-color: var(--col-white);
   border: 1px solid var(--col-otherwhite);
+}
+
+/************ Admission *********/
+.admission_section {
+  display: flex;
+  flex-direction: column;
+}
+
+.admission_navigation {
+  justify-content: space-between;
+  padding: 3rem 4rem;
+}
+
+.admission_navigation form {
+  width: 40%;
+}
+
+.admission_search {
+  width: 100%;
+  padding: 1.5rem;
+  font-size: 1.4rem;
+  border: 1px solid var(--col-otherwhite);
+  color: var(--col-dark);
+  background-color: transparent;
+  border-radius: 8px;
+}
+
+.admission_search:focus {
+  outline: none;
+}
+
+.admission_sort {
+  width: 17%;
+}
+
+.admission_program_sort {
+  width: 20%;
+}
+
+.admission_sort,
+.admission_program_sort {
+  border: 1px solid var(--col-otherwhite);
+  padding: 1.4rem 0.8rem;
+}
+
+.admission_navigation button {
+  width: 15%;
+  justify-content: center;
+  background-color: #4e2a0b;
+  color: var(--white-col);
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding: 1.1rem 4rem;
+  border: 1px solid #4e2a0b;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+.admission_navigation button span {
+  font-size: 2rem;
+}
+
+.admission_navigation button:hover {
+  color: #4e2a0b;
+  background-color: transparent;
+}
+
+.admission_content_container {
+  position: relative;
+  padding: 2rem 3rem;
+  height: 700px;
+}
+
+.admission_content_header {
+  justify-content: space-between;
+}
+
+.admission_content_header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.admission_content_header button {
+  border: 1px solid var(--col-otherwhite);
+  border-radius: 8px;
+  background-color: transparent;
+  padding: 1rem 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+.admission_content_header button span {
+  font-size: 1.8rem;
+}
+
+.admission_content_header button:hover {
+  background-color: var(--col-otherwhite);
+}
+
+.admission_content {
+  margin-top: 4rem;
+}
+
+.admission_initials {
+  justify-content: space-between;
+  margin: 0rem 8rem 1rem 20rem;
+}
+
+.admission_initials p {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.contents__admission {
+  width: 100%;
+}
+
+.admisson_content_display {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.admisson_content_display div {
+  border: none;
+}
+
+.admission_person {
+  gap: 1rem;
+}
+
+.admission_person_img {
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--col-otherwhite);
+  border-radius: 50%;
+}
+
+.person_details_con {
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.person_details_con p:first-child {
+  font-weight: 600;
+}
+
+.person_details_con p,
+.admission_title p,
+.program_date p {
+  font-size: 1.6rem;
+  color: var(--dark);
+}
+
+.course_pending p {
+  background-color: var(--col-light-orange);
+  color: var(--col-orange);
+  padding: 0.8rem 1.5rem;
+  border-radius: 11px;
+  font-size: 1.6rem;
+}
+
+.admission_approval {
+  justify-content: center;
+  gap: 1rem;
+}
+
+.admission_approval button:first-child {
+  border: none;
+  background-color: transparent;
+  font-size: 3rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.admission_approval button:first-child span {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.admission_approval button:not(:first-child) {
+  background-color: transparent;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  padding: 1rem;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  font-size: 3rem;
+  transition: background-color 0.4s, border 0.4s;
+  cursor: pointer;
+}
+
+.admission_approval button:last-child {
+  color: var(--col-red);
+}
+
+.admission_approval button:last-child:hover {
+  background-color: var(--col-light-red);
+  border: 1px solid var(--col-red);
+}
+
+.admission_approval button:nth-child(2) {
+  color: var(--col-green);
+}
+
+.admission_approval button:nth-child(2):hover {
+  background-color: var(--col-light-green);
+  border: 1px solid var(--col-green);
+}
+
+.inner_contents__admission input {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--col-otherwhite);
+  cursor: pointer;
+}
+
+.admisson_footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-top: 2px solid var(--col-otherwhite);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.admisson_footer p {
+  font-size: 1.3rem;
+  font-weight: 600;
 }
 
 /************ *********/
