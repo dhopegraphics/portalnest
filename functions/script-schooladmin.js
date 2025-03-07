@@ -64,3 +64,48 @@ menuBtn.addEventListener("click", () => {
   });
   document.querySelector(".see_all").classList.toggle("width");
 });
+
+// Change header text base on navigation buttonn click
+document.querySelector(".admissionbtn").addEventListener("click", () => {
+  document.querySelector(".header_title_text").textContent =
+    "Admissions Management";
+});
+
+document
+  .querySelector(".student-managementbtn")
+  .addEventListener("click", () => {
+    document.querySelector(".header_title_text").textContent =
+      "Student Management";
+  });
+
+document
+  .querySelector(".faculty-managementbtn")
+  .addEventListener("click", () => {
+    document.querySelector(".header_title_text").textContent =
+      "Faculties Management";
+  });
+
+document.querySelector(".departmentbtn").addEventListener("click", () => {
+  document.querySelector(".header_title_text").textContent =
+    "Department Managements";
+});
+
+document.querySelector(".coursebtn").addEventListener("click", () => {
+  document.querySelector(".header_title_text").textContent =
+    "Course Management";
+});
+
+document.querySelector(".gradingbtn").addEventListener("click", () => {
+  document.querySelector(".header_title_text").textContent =
+    "Grade Managements";
+});
+
+function defaultText() {
+  document.querySelector(".header_title_text").textContent =
+    "Dashboard-School Manager";
+}
+
+document.querySelector(".eventbtn").addEventListener("click", defaultText);
+document.querySelector(".reportbtn").addEventListener("click", defaultText);
+document.querySelector(".managersbtn").addEventListener("click", defaultText);
+document.querySelector(".dashboardbtn").addEventListener("click", defaultText);

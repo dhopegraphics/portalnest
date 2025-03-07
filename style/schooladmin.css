@@ -60,6 +60,23 @@ body {
   display: flex;
 }
 
+/************ Admission..general stying to some pages *********/
+#live__admission {
+  height: 503.209px;
+}
+
+#recent__admission {
+  height: 330px;
+}
+
+#card_main_container {
+  margin-top: 6rem;
+}
+
+#pending_card {
+  height: 116.071px;
+}
+
 /************ Script Styling *********/
 .btn__navigate.active {
   background-color: var(--hover-col);
@@ -718,25 +735,11 @@ body {
 }
 
 /************ Admission *********/
-#live__admission {
-  height: 503.209px;
-}
-
-#recent__admission {
-  height: 330px;
-}
-
-#card_main_container {
-  margin-top: 6rem;
-}
-
-#pending_card {
-  height: 116.071px;
-}
 
 /************ Manager *********/
 .managers__header {
   justify-content: space-between;
+  margin-top: 2rem;
 }
 
 .managers__header h2 {
@@ -769,7 +772,6 @@ body {
   margin-top: 3rem;
   height: 110rem;
   overflow-y: auto;
-  /* background-color: red; */
 }
 
 .initial_content_container::-webkit-scrollbar {
@@ -777,6 +779,7 @@ body {
 }
 
 .manager_content_container {
+  margin-top: 2rem;
 }
 
 .manager_content_container h1 {
@@ -871,9 +874,13 @@ body {
   padding: 1rem;
   border: none;
   border-radius: 50%;
-  font-size: 1.6rem;
+  font-size: 2rem;
   transition: background-color 0.4s, border 0.4s;
   cursor: pointer;
+}
+
+.salary_btn_container button:last-child {
+  font-weight: 600;
 }
 
 .salary_btn_container button:not(:first-child):hover {
