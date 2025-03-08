@@ -929,6 +929,7 @@ body {
   padding: 1.4rem 0.8rem;
 }
 
+.student_mang_header button,
 .admission_navigation button {
   width: 15%;
   justify-content: center;
@@ -944,10 +945,12 @@ body {
   transition: background-color 0.4s, color 0.4s;
 }
 
+.student_mang_header button span,
 .admission_navigation button span {
   font-size: 2rem;
 }
 
+.student_mang_header button:hover,
 .admission_navigation button:hover {
   color: #4e2a0b;
   background-color: transparent;
@@ -1114,12 +1117,77 @@ body {
   width: 100%;
   border-top: 2px solid var(--col-otherwhite);
   padding: 2rem;
-  margin-bottom: 2rem;
 }
 
 .admisson_footer p {
   font-size: 1.3rem;
   font-weight: 600;
+}
+
+/************ Student Management *********/
+.student_mang_header {
+  width: 100%;
+  justify-content: right;
+  margin-bottom: 3rem;
+}
+
+.student_mang_header button {
+  width: 17%;
+}
+
+.student__search {
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 6rem;
+}
+
+.student__search form {
+  width: 40%;
+}
+
+.student_sorted_con {
+  width: 40%;
+  justify-content: right;
+  gap: 4rem;
+}
+
+.student_sorted_con select {
+  width: 50%;
+}
+
+.student_sorted_con select:last-child {
+  width: 70%;
+}
+
+.student_pending p {
+  background-color: var(--col-light-green);
+  color: var(--col-green);
+  padding: 0.8rem 1.5rem;
+  border-radius: 11px;
+  font-size: 1.6rem;
+}
+
+.card_lightred {
+  background-color: var(--col-light-red);
+  border-color: var(--col-red);
+}
+
+.col_lightred {
+  color: var(--col-red);
+}
+
+.border_lightred {
+  border-bottom: 1px solid var(--col-red);
+}
+
+/************ Faculty Management *********/
+.faculty_initials {
+  margin: 0rem 8rem 1rem 9rem;
+}
+
+/************ Course Management *********/
+.course_sorted {
+  width: 55%;
 }
 
 /************ *********/
