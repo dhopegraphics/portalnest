@@ -6,18 +6,108 @@
     <title>Faculty Management</title>
   </head>
   <body>
-    <div id="admission" class="dashboard__section grid content">
-      <div id="live__admission" class="live__activity-container"></div>
+    <div
+      id="faculty_management"
+      class="dashboard__section content faculty_management_section"
+    >
+      <div class="student_mang_header flex">
+        <button class="flex">
+          <!-- add icon -->
+          <span>E</span>
+          Add Faculty
+        </button>
+      </div>
 
-      <div id="recent__admission" class="recent__pending-container">
-        <div
-          id="card_main_container"
-          class="dashboardnext__card-container grid grid--2-cols"
-        >
-          <div id="pending_card" class="pending__card grid"></div>
-          <div id="pending_card" class="pending__card grid"></div>
-          <div id="pending_card" class="pending__card grid"></div>
-          <div id="pending_card" class="pending__card grid"></div>
+      <div
+        id="live__admission"
+        class="live__activity-container admission_content_container"
+      >
+        <div class="student__search flex">
+          <form action="#">
+            <input
+              class="admission_search"
+              type="text"
+              placeholder="Search Faculties..."
+            />
+          </form>
+
+          <div class="student_sorted_con flex">
+            <select name="" id="" class="sort_btn admission_sort">
+              <option value="1">ALL STATUS</option>
+              <option value="2">ADMITTED</option>
+              <option value="3">PENDING REVIEW</option>
+              <option value="4">REJECTED</option>
+            </select>
+
+            <select name="" id="" class="sort_btn admission_sort">
+              <option value="1">All Faculties</option>
+              <option value="2">Faculty of Science</option>
+              <option value="3">Faculty of Social Sciences</option>
+              <option value="4">Faculty of Health</option>
+              <option value="5">Faculty of Law</option>
+              <option value="6">Faculty of Business</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="admission_content">
+          <div class="admission_initials flex faculty_initials">
+            <p>Faculty Name</p>
+            <p>ID</p>
+            <p>Departments</p>
+            <p>Status</p>
+            <p>Action</p>
+          </div>
+
+          <div class="contents__admission">
+            <div class="inner_contents__admission flex">
+              <input type="checkbox" />
+
+              <div class="initial_content flex admisson_content_display">
+                <div class="person_details flex admission_person">
+                  <div class="person_details_con">
+                    <p>Faculty of Science</p>
+                  </div>
+                </div>
+
+                <div class="program_date">
+                  <p>Sci-12</p>
+                </div>
+
+                <div class="admission_title">
+                  <p>4 Departments</p>
+                </div>
+
+                <div class="student_pending">
+                  <p>Active</p>
+                </div>
+
+                <div class="flex admission_approval">
+                  <button>
+                    <span>
+                      <!-- eye icon -->
+                      O
+                    </span>
+                  </button>
+
+                  <!-- Check button -->
+                  <button class="flex">&times;</button>
+
+                  <!-- Close button -->
+                  <button class="flex">&times;</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- move this to the bottom -->
+        <div class="admisson_footer">
+          <p>
+            Showing <span class="admisson_num_check">1</span> To
+            <span class="addmission_on_check">10</span> of
+            <span class="admisson_total_check">97</span> Results
+          </p>
         </div>
       </div>
     </div>
