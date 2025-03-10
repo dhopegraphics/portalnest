@@ -933,11 +933,12 @@ body {
 .admission_navigation button {
   width: 15%;
   justify-content: center;
+  gap: 0.2rem;
   background-color: #4e2a0b;
   color: var(--white-col);
   font-size: 1.4rem;
   font-weight: 500;
-  padding: 1.1rem 4rem;
+  padding: 1rem 4rem;
   border: 1px solid #4e2a0b;
   border-radius: 8px;
   cursor: pointer;
@@ -948,6 +949,7 @@ body {
 .student_mang_header button span,
 .admission_navigation button span {
   font-size: 2rem;
+  margin-top: 0.2rem;
 }
 
 .student_mang_header button:hover,
@@ -973,18 +975,21 @@ body {
 }
 
 .admission_content_header button {
+  justify-content: center;
+  gap: 1rem;
   border: 1px solid var(--col-otherwhite);
   border-radius: 8px;
   background-color: transparent;
   padding: 1rem 1.5rem;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.4s;
 }
 
 .admission_content_header button span {
-  font-size: 1.8rem;
+  font-size: 2rem;
+  font-weight: 600;
 }
 
 .admission_content_header button:hover {
@@ -1063,7 +1068,7 @@ body {
   border: none;
   background-color: transparent;
   font-size: 3rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
 }
 
@@ -1133,6 +1138,8 @@ body {
 
 .student_mang_header button {
   width: 17%;
+  justify-content: center;
+  gap: 0.6rem;
 }
 
 .student__search {
@@ -1185,9 +1192,17 @@ body {
   margin: 0rem 8rem 1rem 9rem;
 }
 
+.faculty_icon button span {
+  transform: rotate(270deg);
+}
+
 /************ Course Management *********/
 .course_sorted {
   width: 55%;
+}
+
+.course_year p {
+  background-color: transparent;
 }
 
 /************ *********/
