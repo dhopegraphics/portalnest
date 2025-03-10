@@ -109,3 +109,51 @@ document.querySelector(".eventbtn").addEventListener("click", defaultText);
 document.querySelector(".reportbtn").addEventListener("click", defaultText);
 document.querySelector(".managersbtn").addEventListener("click", defaultText);
 document.querySelector(".dashboardbtn").addEventListener("click", defaultText);
+
+// Grading chats
+const performanceCtx = document
+  .getElementById("performanceChart")
+  .getContext("2d");
+const gradeCtx = document.getElementById("gradeChart").getContext("2d");
+
+new Chart(performanceCtx, {
+  type: "line",
+  data: {
+    labels: ["Jan", "Feb", "Mar", "Apr", "May"],
+    datasets: [
+      {
+        label: "Performance",
+        data: [75, 80, 82, 78, 81],
+        borderColor: "#4c6ef5",
+        fill: false,
+        tension: 0.4,
+      },
+    ],
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true,
+      },
+    },
+  },
+});
+
+new Chart(gradeCtx, {
+  type: "doughnut",
+  data: {
+    labels: ["A", "B", "C", "D", "F"],
+    datasets: [
+      {
+        data: [40, 25, 20, 10, 5],
+        backgroundColor: [
+          "#4c6ef5",
+          "#5c7cfa",
+          "#748ffc",
+          "#91a7ff",
+          "#bac8ff",
+        ],
+      },
+    ],
+  },
+});

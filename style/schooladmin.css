@@ -1205,6 +1205,42 @@ body {
   background-color: transparent;
 }
 
+/************ Grading *********/
+.grading_inner_container {
+  height: 450px;
+}
+
+.grading_initials {
+  justify-content: space-between;
+  margin: 0rem 4rem 0rem 10rem;
+}
+
+.grading_contents {
+  margin: 0;
+}
+
+.grading__container {
+  gap: 4rem;
+}
+.grading__card {
+  background-color: var(--white-col);
+  padding: 2rem;
+  border-radius: 11px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 50rem;
+}
+.grading__card h3 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+.chart {
+  width: 100%;
+  height: 200px;
+}
+
 /************ *********/
 /* 
 1. Typography System (font-size)
