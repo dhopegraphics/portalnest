@@ -60,23 +60,6 @@ body {
   display: flex;
 }
 
-/************ Admission..general stying to some pages *********/
-/* #live__admission {
-  height: 503.209px;
-}
-
-#recent__admission {
-  height: 330px;
-}
-
-#card_main_container {
-  margin-top: 6rem;
-}
-
-#pending_card {
-  height: 116.071px;
-} */
-
 /************ Script Styling *********/
 .btn__navigate.active {
   background-color: var(--hover-col);
@@ -558,7 +541,9 @@ body {
 
 .card_mid_content p:first-child,
 .card_mid_content p:nth-child(3) {
+  font-size: 1.4rem;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .card_mid_content p:nth-child(3):not(.ending_text) {
@@ -582,17 +567,50 @@ body {
 }
 
 .approval__students span i {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 
 .approval__students p {
+  font-size: 1.3rem;
   margin-top: 0.2rem;
 }
 
 .progress__container {
   margin-top: 1.2rem;
   justify-content: space-between;
+}
+
+.show_progress {
+  margin-top: 2rem;
+  border: 1px solid white;
+  width: 100%;
+}
+
+.fifty {
+  border: 1px solid green;
+  aspect-ratio: 16;
+  background-color: #ddd;
+}
+
+.show_progress_1 {
+  width: 50%;
+  border: 4px solid green;
+}
+
+.show_progress_3 {
+  width: 70%;
+  border: 4px solid green;
+}
+
+.show_progress_2 {
+  width: 50%;
+  border: 4px solid white;
+}
+
+.show_progress_4 {
+  width: 30%;
+  border: 4px solid white;
 }
 
 /* this isn't showing now  */
