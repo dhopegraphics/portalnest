@@ -257,6 +257,15 @@ body {
   border-radius: 11px;
 }
 
+.btn__navigate span i {
+  font-size: 2.5rem;
+  color: var(--col-aside-btn);
+}
+
+.btn__navigate .slider_turn {
+  transform: rotate(-270deg);
+}
+
 .border_bottom {
   border-top: 1px solid var(--white-col);
   margin-top: 50rem;
@@ -275,7 +284,8 @@ body {
   gap: 1rem;
   background: transparent;
   color: var(--col-mid-red);
-  margin: 0.6rem 1.5rem;
+  /* margin: 0.6rem 0.6rem 0.6rem 1.5rem; */
+  margin-left: 3rem;
   padding: 1.3rem;
   border: none;
   font-size: 2rem;
@@ -287,6 +297,10 @@ body {
 
 .btn-logout:hover {
   color: var(--col-otherwhite);
+}
+
+.logout_icon {
+  transform: rotate(90deg);
 }
 
 /************ Main Header *********/
