@@ -1,11 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PortalNest - Check Results</title>
+    <link rel="stylesheet" href="/style/studentHome.css">
 </head>
+
 <body>
-    
+    <div class="sidebar">
+        <div>
+            <div class="logo">
+                <img src="/assets/logo/portalnest-Variation-Logo-2.png" alt="PortalNest Logo">
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <i>🏠</i>
+                    <a href="/pages/Student-Portal/index.html"><span>Home</span></a>
+                </li>
+                <li class="nav-item">
+                    <i>💳</i>
+                    <a href="/pages/Student-Portal/fees-payment.html"><span>Pay Fees</span></a>
+                </li>
+                <li class="nav-item">
+                    <i>📚</i>
+                    <a href="/pages/Student-Portal/course-registration.html"><span>Course Registration</span></a>
+                </li>
+                <li class="nav-item active">
+                    <i>📝</i>
+                    <a href="/pages/Student-Portal/result-check.html"><span>Check Result</span></a>
+                </li>
+                <li class="nav-item">
+                    <i>📊</i>
+                    <a href="/pages/Student-Portal/payment-history.html"><span>Payment History</span></a>
+                </li>
+                <li class="nav-item">
+                    <i>📋</i>
+                    <a href="/pages/Student-Portal/registration-history.html"><span>Registration History</span></a>
+                </li>
+            </ul>
+        </div>
+        <div class="logout">
+            <div class="nav-item">
+                <i>↪</i>
+                <span>Log Out</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content results-page">
+        <div class="selection-container">
+            <div class="dropdown-group">
+                <label for="academicYear">Select Academic Year</label>
+                <div class="custom-select">
+                    <select id="academicYear">
+                        <option value="" selected disabled>Choose Academic Year</option>
+                        <option value="2024-2025">2024/2025</option>
+                        <option value="2023-2024">2023/2024</option>
+                        <option value="2022-2023">2022/2023</option>
+                    </select>
+                    <div class="select-arrow">▼</div>
+                </div>
+            </div>
+
+            <div class="dropdown-group">
+                <label for="semester">Select Semester</label>
+                <div class="custom-select">
+                    <select id="semester">
+                        <option value="" selected disabled>Choose Semester</option>
+                        <option value="first">First Semester</option>
+                        <option value="second">Second Semester</option>
+                    </select>
+                    <div class="select-arrow">▼</div>
+                </div>
+            </div>
+
+            <button class="proceed-button">Proceed</button>
+        </div>
+
+        <div class="results-banner">
+            <span>CHECK RESULTS</span>
+        </div>
+    </div>
+
+    <script>
+        // Add click event to proceed button
+        document.querySelector('.proceed-button').addEventListener('click', function () {
+            const year = document.getElementById('academicYear').value;
+            const semester = document.getElementById('semester').value;
+
+            if (!year || !semester) {
+                alert('Please select both Academic Year and Semester');
+                return;
+            }
+
+            // Handle form submission here
+            console.log('Selected:', { year, semester });
+        });
+
+        // Add custom styling for select focus
+        const selects = document.querySelectorAll('select');
+        selects.forEach(select => {
+            select.addEventListener('focus', function () {
+                this.parentElement.classList.add('focused');
+            });
+            select.addEventListener('blur', function () {
+                this.parentElement.classList.remove('focused');
+            });
+        });
+    </script>
 </body>
+
 </html>
