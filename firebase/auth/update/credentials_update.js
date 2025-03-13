@@ -29,6 +29,7 @@ document.getElementById("updateProfileBtn").addEventListener("click", async func
         student_id: "STU-2025-001",
         user_type: "Student",
         username: "dhope_graphics"
+        
     };
 
     await updateUserData(documentId, updatedInfo);
