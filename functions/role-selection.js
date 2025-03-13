@@ -14,6 +14,13 @@ document.addEventListener("DOMContentLoaded", function () {
       "Access your student portal, view course materials, submit assignments, and track your academic progress.",
   };
 
+  // Role navigation paths
+  const rolePaths = {
+    "school-manager": "/pages/auth/manager-auth/manager-sign-in.html",
+    "gain-admission": "/pages/auth/admission/sign-up-portalNest.html",
+    student: "/pages/auth/student-auth/sign-in-student.html",
+  };
+
   // Handle role selection
   roleCards.forEach((card) => {
     card.addEventListener("click", function () {
@@ -42,12 +49,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const selectedRole = document.querySelector(".role-card.selected");
     if (selectedRole) {
       const role = selectedRole.dataset.role;
-      // Here you can add navigation logic
-      alert(`Navigating to ${role} dashboard...`);
+      window.location.href = rolePaths[role]; // Navigate to the corresponding page
     }
   });
 });
 
-window.addEventListener('DOMContentLoaded', () => {
-  document.querySelector('.container').style.opacity = '1';
+window.addEventListener("DOMContentLoaded", () => {
+  document.querySelector(".container").style.opacity = "1";
 });

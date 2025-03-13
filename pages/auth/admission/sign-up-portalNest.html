@@ -11,6 +11,13 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Rounded"
         rel="stylesheet">
         <link rel="stylesheet" href="/style/auth-student-main.css">
+        <script> 
+      document.addEventListener("DOMContentLoaded", function () {
+    if (localStorage.getItem("userLoggedIn") === "true") {
+        window.location.href = "/pages/admission/application-form.html";
+    }
+});
+        </script>
 </head>
 
 <body>
