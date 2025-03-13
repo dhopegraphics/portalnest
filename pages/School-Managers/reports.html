@@ -7,23 +7,40 @@
 
     <link rel="stylesheet" href="../../style/schooladmin-query.css" />
 
-    <script defer src="../../functions/script-schooladmin.js"></script>
+    <script defer src="../../functions/script2_schooladmin.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
-    <div id="admission" class="dashboard__section grid content">
-      <div id="live__admission" class="live__activity-container"></div>
+    <div id="admission" class="dashboard__section content report__section">
+      <div class="reports_diagram__container grid">
+        <div class="grading__card report__card">
+          <div class="report_card_heading flex">
+            <h3>Reports Analytics</h3>
 
-      <div id="recent__admission" class="recent__pending-container">
-        <div
-          id="card_main_container"
-          class="dashboardnext__card-container grid grid--2-cols"
-        >
-          <div id="pending_card" class="pending__card grid"></div>
-          <div id="pending_card" class="pending__card grid"></div>
-          <div id="pending_card" class="pending__card grid"></div>
-          <div id="pending_card" class="pending__card grid"></div>
+            <select name="" id="" class="sort_btn admission_sort report_sort">
+              <option value="1">Today</option>
+              <option value="2">Yesterday</option>
+              <option value="3">Last 7 days</option>
+              <option value="4">1 month</option>
+              <option value="5">3 month</option>
+              <option value="6">6 month</option>
+              <option value="7">12 month</option>
+            </select>
+          </div>
+          <canvas id="performanceChart" class="chart_performance"></canvas>
+        </div>
+
+        <div class="grading__card report__card">
+          <h3>Grade Distribution</h3>
+
+          <div class="piechat flex">
+            <canvas id="pieChart" class="chart"></canvas>
+          </div>
         </div>
       </div>
+
+      <div id="live__admission" class="live__activity-container"></div>
     </div>
   </body>
 </html>

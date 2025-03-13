@@ -9,7 +9,10 @@ function contentHolder() {
     fetch(page)
       .then((response) => response.text())
       .then((data) => {
-        document.getElementById("content-area").innerHTML = data;
+        // document.getElementById("content-area").innerHTML = data;
+        const contentArea = document.getElementById("content-area");
+        contentArea.innerHTML = data;
+        executeScripts(contentArea);
       })
       .catch((error) => console.error("Error loading the page:", error));
   }
@@ -18,10 +21,36 @@ function contentHolder() {
   function loadComponent(file) {
     fetch(file)
       .then((response) => response.text())
-      .then(
-        (data) => (document.getElementById("cardContainer").innerHTML = data)
-      )
+      .then((data) => {
+        // (document.getElementById("cardContainer").innerHTML = data)
+
+        const componentArea = document.getElementById("cardContainer");
+        componentArea.innerHTML = data;
+        executeScripts(componentArea);
+      })
       .catch((error) => console.error(`Error loading ${file}:`, error));
+  }
+
+  // Function to execute <script> tags manually
+  function executeScripts(container) {
+    const scripts = container.querySelectorAll("script");
+    scripts.forEach((oldScript) => {
+      const newScript = document.createElement("script");
+
+      // Handle external script files
+      if (oldScript.src) {
+        newScript.src = oldScript.src;
+      } else {
+        // Handle inline script content
+        newScript.textContent = oldScript.textContent;
+      }
+
+      // Ensure scripts are executed after DOM is updated
+      document.body.appendChild(newScript);
+
+      // Optional: Remove the script to avoid duplication
+      oldScript.parentNode.removeChild(oldScript);
+    });
   }
 
   return function (param1, param2) {
@@ -109,51 +138,3 @@ document.querySelector(".eventbtn").addEventListener("click", defaultText);
 document.querySelector(".reportbtn").addEventListener("click", defaultText);
 document.querySelector(".managersbtn").addEventListener("click", defaultText);
 document.querySelector(".dashboardbtn").addEventListener("click", defaultText);
-
-// Grading chats
-const performanceCtx = document
-  .getElementById("performanceChart")
-  .getContext("2d");
-const gradeCtx = document.getElementById("gradeChart").getContext("2d");
-
-new Chart(performanceCtx, {
-  type: "line",
-  data: {
-    labels: ["Jan", "Feb", "Mar", "Apr", "May"],
-    datasets: [
-      {
-        label: "Performance",
-        data: [75, 80, 82, 78, 81],
-        borderColor: "#4c6ef5",
-        fill: false,
-        tension: 0.4,
-      },
-    ],
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true,
-      },
-    },
-  },
-});
-
-new Chart(gradeCtx, {
-  type: "doughnut",
-  data: {
-    labels: ["A", "B", "C", "D", "F"],
-    datasets: [
-      {
-        data: [40, 25, 20, 10, 5],
-        backgroundColor: [
-          "#4c6ef5",
-          "#5c7cfa",
-          "#748ffc",
-          "#91a7ff",
-          "#bac8ff",
-        ],
-      },
-    ],
-  },
-});

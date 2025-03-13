@@ -1,11 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PortalNest - Payment History</title>
+    <link rel="stylesheet" href="/style/studentHome.css">
 </head>
+
 <body>
-    
+    <div class="sidebar">
+        <div>
+            <div class="logo">
+                <img src="/assets/logo/portalnest-Variation-Logo-2.png" alt="PortalNest Logo">
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <i>🏠</i>
+                    <a href="/pages/Student-Portal/index.html"><span>Home</span></a>
+                </li>
+                <li class="nav-item">
+                    <i>💳</i>
+                    <a href="/pages/Student-Portal/fees-payment.html"><span>Pay Fees</span></a>
+                </li>
+                <li class="nav-item">
+                    <i>📚</i>
+                    <a href="/pages/Student-Portal/course-registration.html"><span>Course Registration</span></a>
+                </li>
+                <li class="nav-item">
+                    <i>📝</i>
+                    <a href="/pages/Student-Portal/result-check.html"><span>Check Result</span></a>
+                </li>
+                <li class="nav-item active">
+                    <i>📊</i>
+                    <a href="/pages/Student-Portal/payment-history.html"><span>Payment History</span></a>
+                </li>
+                <li class="nav-item">
+                    <i>📋</i>
+                    <a href="/pages/Student-Portal/registration-history.html"><span>Registration History</span></a>
+                </li>
+            </ul>
+        </div>
+        <div class="logout">
+            <div class="nav-item">
+                <i>↪</i>
+                <span>Log Out</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="payment-history-container">
+            <table class="payment-table">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Transaction Date</th>
+                        <th>Payment Category</th>
+                        <th>Amount</th>
+                        <th>Payment Method</th>
+                        <th>Status</th>
+                        <th>Check Receipt</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>12/17/2024 6:58:24 PM</td>
+                        <td>Academic</td>
+                        <td>1000</td>
+                        <td>Momo</td>
+                        <td><span class="status-successful">Successful</span></td>
+                        <td><button class="view-button">View</button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>12/18/2024 2:58:24 PM</td>
+                        <td>Residential Fees</td>
+                        <td>6000</td>
+                        <td>Credit Card</td>
+                        <td><span class="status-successful">Successful</span></td>
+                        <td><button class="view-button">View</button></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>12/24/2024 3:58:24 PM</td>
+                        <td>Academic</td>
+                        <td>2500</td>
+                        <td>Momo</td>
+                        <td><span class="status-successful">Successful</span></td>
+                        <td><button class="view-button">View</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </body>
+
 </html>
