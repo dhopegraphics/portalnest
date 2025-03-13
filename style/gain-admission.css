@@ -1,0 +1,168 @@
+.whole-page {
+    display: flex;
+
+}
+
+.signup-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 50%;
+    height: 100vh;
+    background-color: lightblue;
+    padding-left: 10%;
+    padding-right: 5%;
+
+}
+
+.portalnest-logo {
+    width: 30%;
+    margin-bottom: 10px;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 85%;
+    overflow: hidden;
+    
+}
+
+.signup-form h1 {
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.welcome-message {
+    max-width: 80%;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.third-party-auth {
+    display: flex;
+    justify-content: space-between;
+    max-width: 85%;
+    min-width: 30%;
+    margin: 20px 0;
+}
+
+.google, .facebook {
+    display: flex;
+    max-width: 25%;
+    height: 49px;
+    background-color: #ffffff;
+    border-radius: 7px;
+    border: 2px solid;
+    border-color: #147aff;
+    box-shadow: 0px 4px 26.5px #00000030;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 50px;
+}
+
+.auth-logo {
+    width: 50px;
+}
+
+.facebook-logo {
+    width: 60px;
+}
+
+.auth-text {
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.80px;
+    line-height: normal;
+}
+
+.or {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    max-width: 85%;
+}
+
+.line {
+    width: 133px;
+    
+}
+
+.or-continue-with {
+    font-weight: 500;
+    color: #000000;
+    font-size: 12px;
+    letter-spacing: 0.60px;
+    line-height: normal;
+}
+
+.overall-input-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 85%;
+    margin-bottom: 20px;
+}
+
+.input-container input {
+    padding: 15px 45px;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 100%;
+}
+
+#submit {
+    background-color: #1971ff;
+    border-width: 0;
+    color: white;
+    font-weight: 600;
+    margin-top: 60px;
+    border: 1px solid;
+    border-color: #147aff;
+    box-shadow: 0px 4px 26.5px #00000030;
+    cursor: pointer;
+    transition: all ease 0.2s;
+}
+
+#submit:hover {
+    opacity: 0.8;
+}
+
+.form-icon {
+    position: absolute;
+    width: 24px;
+    left: 15px;
+}
+
+.eye-off {
+    position: absolute;
+    width: 24px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.preview-image {
+    background-color: #007bff;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.secure-mobile-apps {
+    position: absolute;
+    width: 80%;
+}
