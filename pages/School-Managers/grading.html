@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="../../style/schooladmin-query.css" />
 
-    <script defer src="../../functions/script-schooladmin.js"></script>
+    <script defer src="../../functions/script2_schooladmin.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
@@ -147,21 +147,16 @@
     <div class="grading__container flex">
       <div class="grading__card">
         <h3>Performance Trends</h3>
-        <button class="click">click</button>
         <canvas id="performanceChart" class="chart"></canvas>
       </div>
 
       <div class="grading__card">
         <h3>Grade Distribution</h3>
-        <canvas id="gradeChart" class="chart"></canvas>
+
+        <div class="piechat flex">
+          <canvas id="gradeChart" class="chart"></canvas>
+        </div>
       </div>
     </div>
-
-    <script>
-      console.log("grading");
-      document.querySelector(".click").addEventListener(".click", (e) => {
-        console.log(e);
-      });
-    </script>
   </body>
 </html>
