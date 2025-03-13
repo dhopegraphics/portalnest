@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<htm lang="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +7,76 @@
       rel="stylesheet">
   
     <title>Landing Page</title>
-
+    <link rel="stylesheet" href="style/LandingPage.css">
 </head>
 <body>
     <special-header> </special-header>
-    <p>welcome to the Oluwa </p>
+      <script src="landingpage.js"></script>          
+    <section class="why-choose-us">
+      <h2>Why Choose Us?</h2>
+      
+      <div class="features">
+          <div class="feature">Customizable and Scalable</div>
+          <div class="feature active">Secure and User-Friendly</div>
+          <div class="feature">Real-Time Insight and Tracking</div>
+      </div>
+  
+      <div class="progress-line">
+          <span class="progress-dot"></span>
+          <span class="progress-dot active"></span>
+          <span class="progress-dot"></span>
+      </div>
+  </section>
+                  <div class="image-section">
+                    <div class="image-preview">
+                      <div class="image">
+                        <img src="assets/images/preview1.jpeg" class="image preview1">
+                        <img src="assets/images/preview2.webp" class="image preview2">
+                        <img src="assets/images/preview3.webp" class="image preview3">
+                      </div>
+                    </div>
+
+                    <div class="textpreview"> 
+                      PortalNest prioritizes date security and ease of use. Our platform ensures that your sensitive information is protected while providing an intuitive interface for both administrators and students.
+                      
+                     </div>
+                  </div>
+                
+                  
+              </div>
+                  </section>
+                   <!-- Testimonials -->
+                   <section class="testimonials">
+                    <h2>Testimonials</h2>
+                    <p>See what people are saying</p>
+                    
+                    <div class="testimonial-container">
+                        <div class="testimonial-card active">
+                            <img src="assets/images/testimony1.jpeg" alt="testimonial1">
+                            <p>“PortalNest has revolutionized the way our school operates. Students and teachers can now interact seamlessly,
+                                and our administration has never been more efficient.”</p>
+                            <h4>Mr. Daniel K</h4>
+                            <span>Administrator, Bright Future High School</span>
+                        </div>
+                        
+                        <div class="testimonial-card">
+                            <img src="assets/images/testimony2.jpeg" alt="testimonials2">
+                            <p>"This platform has made student management so much easier!"</p>
+                            <h4>Jane Doe</h4>
+                            <span>Teacher, Elite Academy</span>
+                        </div>
+                        
+                        <div class="testimonial-card">
+                            <img src="assets/images/testimony3.webp" alt="testimonials3">
+                            <p>"I love how seamless the system is for checking grades."</p>
+                            <h4>John Smith</h4>
+                            <span>Student, University of Excellence</span>
+                        </div>
+                    </div>
+                    
+                    <button id="nextButton" class="next-arrow"> →</button>
+                </section>
     <special-footer> </special-footer>
     <script src="/functions/headerFooter.js"></script>
 </body>
-</htm
+</html>

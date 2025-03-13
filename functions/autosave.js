@@ -10,8 +10,3 @@ document.querySelectorAll("input").forEach(input => {
     });
 });
 
-document.querySelector(".log-in").addEventListener("click", function () {
-    document.querySelectorAll("input").forEach(input => {
-        localStorage.removeItem(input.name);
-    });
-});

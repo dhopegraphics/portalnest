@@ -71,6 +71,9 @@ document.addEventListener("DOMContentLoaded", async function () {
             };
 
             await setDoc(doc(db, "users", documentId), userData);
+// ✅ Save login state (keep user logged in)
+localStorage.setItem("userLoggedIn", "true");
+localStorage.setItem("loggedInUserEmail", email);
 
             // ✅ Step 6: Stop Loading Effect & Redirect
             signUpButton.classList.remove("loading");
@@ -103,3 +106,9 @@ function showAlert(message) {
         alertBox.classList.remove("show");
     };
 }
+
+document.querySelector(".log-in").addEventListener("click", function () {
+    document.querySelectorAll("input").forEach(input => {
+        localStorage.removeItem(input.name);
+    });
+});
