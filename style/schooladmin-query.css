@@ -1,13 +1,13 @@
 @media (max-width: 96em) {
   .main__header {
-    background-color: brown;
+    background-color: rgb(255, 255, 255);
     color: #6827e2;
   }
 }
 
 @media (max-width: 84em) {
   .main__header {
-    background-color: red;
+    background-color: rgb(255, 255, 255);
   }
 }
 

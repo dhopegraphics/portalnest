@@ -1,6 +1,28 @@
 import { auth, db } from "../firebaseconfig.js";
 import { createUserWithEmailAndPassword, fetchSignInMethodsForEmail } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
 import { doc, setDoc, collection, query, where, getDocs, orderBy, limit, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
+import { setPersistence, browserLocalPersistence, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+
+// Ensure user stays logged in
+setPersistence(auth, browserLocalPersistence)
+  .then(() => {
+    console.log("Persistence set to local.");
+  })
+  .catch(error => {
+    console.error("Persistence error:", error.message);
+  });
+
+// Check login status when page loads
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        // User is still logged in
+        localStorage.setItem("userLoggedIn", "true");
+        localStorage.setItem("loggedInUserEmail", user.email);
+        window.location.href = "/pages/admission/application-form.html";
+    } else {
+        localStorage.removeItem("userLoggedIn"); // Ensure localStorage is updated
+    }
+});
 
 document.addEventListener("DOMContentLoaded", async function () {
     const signUpButton = document.querySelector(".log-in"); // "Create An Account" button
@@ -112,3 +134,4 @@ document.querySelector(".log-in").addEventListener("click", function () {
         localStorage.removeItem(input.name);
     });
 });
+
