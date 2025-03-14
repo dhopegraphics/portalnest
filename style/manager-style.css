@@ -230,6 +230,71 @@ h1 {
 }
 
 
+/* Style for dropdown container */
+#role-form {
+  display: flex;
+  align-items: center;
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  transition: 0.3s;
+}
+
+/* Add hover effect */
+#role-form:hover {
+  border-color: #007bff;
+}
+
+/* Style for select dropdown */
+.styled-select {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+  color: #333;
+  padding: 8px;
+  cursor: pointer;
+  appearance: none; /* Hide default dropdown arrow */
+  -webkit-appearance: none; /* Hide default dropdown arrow */
+  -moz-appearance: none; /* Hide default dropdown arrow */
+  -ms-appearance: none; /* Hide default dropdown arrow */
+  -o-appearance: none; /* Hide default dropdown arrow */
+}
+.styled-select option[value=""] {
+  color: rgba(0, 0, 0, 0.1); /* Adjust opacity */
+}
+
+.styled-select {
+  color: rgba(0, 0, 0, 0.8); /* Default text color */
+}
+
+.styled-select:invalid {
+  color: rgba(0, 0, 0, 0.5); /* Lighter color for placeholder */
+}
+
+/* Custom dropdown arrow */
+#role-form::after {
+  content: '\25BC'; /* Unicode down arrow */
+  font-size: 16px;
+  color: #333;
+  margin-left: auto;
+  pointer-events: none;
+}
+
+/* Make sure it looks good on focus */
+.styled-select:focus {
+  outline: none;
+}
+
+/* Style for icons in form fields */
+.form-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
 
 .text-wrapper-4 {
   height: 14px;
@@ -359,3 +424,5 @@ h1 {
 #close-alert:hover {
   background: #e0e0e0;
 }
+
+
