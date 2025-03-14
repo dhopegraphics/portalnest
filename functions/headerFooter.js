@@ -1,29 +1,3 @@
-window.onload = function () {
-  console.log("Navbar script loaded!");
-
-  let currentPath = window.location.pathname;
-  console.log("Current Path:", currentPath);
-
-  let navLinks = document.querySelectorAll(".header a");
-  console.log("Nav Links Found:", navLinks.length);  // ✅ Check how many links are found
-
-  if (navLinks.length === 0) {
-      console.error("No navigation links found. Check if your .header a elements exist.");
-      return;
-  }
-
-  navLinks.forEach(link => {
-      let linkPath = new URL(link.href, window.location.origin).pathname;
-      console.log("Checking link:", linkPath);
-
-      if (currentPath === linkPath) {
-          console.log("Match found for:", link);
-          link.classList.add("active-nav-bar");
-      }
-  });
-};
-console.log(document.querySelectorAll("  .header a"));
-
 class SpecialHeader extends HTMLElement {
   connectedCallback() {
       fetch("/components/header.html")
@@ -32,8 +6,8 @@ class SpecialHeader extends HTMLElement {
               this.innerHTML = data;
               console.log("Header loaded!");
 
-              // Call function to attach event listeners after header loads
-              attachMiddleBarListeners();
+              initializeNavHighlight(); // ✅ Run nav highlight after header loads
+              attachMiddleBarListeners(); // ✅ Attach event listeners after header loads
           })
           .catch(error => console.error("Error loading Header:", error));
   }
@@ -53,12 +27,38 @@ class SpecialFooter extends HTMLElement {
 customElements.define("special-header", SpecialHeader);
 customElements.define("special-footer", SpecialFooter);
 
-// Function to attach event listeners after header loads
+// ✅ Function to highlight the active navbar link
+function initializeNavHighlight() {
+  console.log("Navbar script loaded!");
+
+  let currentPath = window.location.pathname;
+  console.log("Current Path:", currentPath);
+
+  let navLinks = document.querySelectorAll(".header a");
+  console.log("Nav Links Found:", navLinks.length);
+
+  if (navLinks.length === 0) {
+      console.error("No navigation links found. Check if your .header a elements exist.");
+      return;
+  }
+
+  navLinks.forEach(link => {
+      let linkPath = new URL(link.href, window.location.origin).pathname;
+      console.log("Checking link:", linkPath);
+
+      if (currentPath === linkPath) {
+          console.log("Match found for:", link);
+          link.classList.add("active-nav-bar");
+      }
+  });
+}
+
+// ✅ Function to attach event listeners to middle-bar divs
 function attachMiddleBarListeners() {
   console.log("Attaching event listeners...");
 
   const middleBarDivs = document.querySelectorAll(".middle-bar > div");
-  
+
   if (middleBarDivs.length === 0) {
       console.error("No .middle-bar divs found! Check if header has loaded correctly.");
       return;
