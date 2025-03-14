@@ -1,0 +1,243 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+
+/* Why Choose Us */
+.why-choose-us {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.features {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin: 0 auto 10px auto;
+    text-align: center;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feature span {
+    flex: 1;
+    font-size: 16px;
+    color: #aaa; /* Light grey text */
+}
+
+.feature.active span {
+    font-weight: bold;
+    color: black; /* Highlight active text */
+}
+
+.progress-line {
+    width: 50%;
+    height: 3px;
+    background: #ccc;
+    position: relative;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.progress-dot {
+    width: 12px;
+    height: 12px;
+    background: #ccc;
+    border-radius: 50%;
+    position: relative;
+}
+
+.progress-dot.active {
+    background: black; /* Highlight the active dot */
+}
+
+/* Horizontal Line with Dots */
+.why-choose-line {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    gap: 20px;
+}
+.image-section {
+    display: flex;  /* Enable flexbox */
+    justify-content: center;  /* Horizontally center the content */
+    align-items: center;  /* Vertically center the content */
+    position: relative;  /* Needed for absolute positioning of the preview images */
+    height: 100vh;  /* Adjusts the height to 100% of the viewport */
+  }
+  
+  .image-preview {
+    position: relative;  /* Necessary for positioning the images within */
+    width: 300px;  /* Set width of the image preview */
+    height: 300px;  /* Set height of the image preview */
+    display: flex;  /* Enable flexbox within the preview */
+    justify-content: center;  /* Center the content horizontally */
+    align-items: center;  /* Center the content vertically */
+  }
+  
+  .image {
+    position: absolute;  /* Make the images stack on top of each other */
+    width: 100%;
+    height: 100%;
+  }
+  
+  .preview1 {
+    z-index: 1;  /* This image will be at the bottom */
+    left: -50%;
+    top: -15%;
+    bottom: -2%;
+    border-radius: 5%;
+  }
+  
+  .preview2 {
+    z-index: 2;  /* This image will be in the middle */
+    top: -20%;  /* Adjust positioning for layering */
+    right: -10%;
+    left: -20%;
+    border-radius: 5%;
+  }
+  
+  .preview3 {
+    z-index: 3;  /* This image will be on top */
+    top: -1%;  /* Adjust positioning for layering */
+    right: -40%;
+    left: -2%;
+    bottom: -90%;
+    border-radius: 5%;
+  }
+  
+  .textpreview {
+    text-align: left;  /* Center the text */
+    margin-top: 10px;  /* Add some space below the images */
+    font-size: 18px;  /* Adjust font size as needed */
+    margin-left: 5rem;
+    max-width: 400px;
+    line-height: 1.5;
+  }
+  
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background: gray;
+    border-radius: 50%;
+}
+
+.dot.active {
+    background: black;
+}
+
+/* Image & Text Section */
+.why-choose-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 0px;
+    padding: 0 ;
+    vertical-align: top;
+}
+
+.why-choose-image img {
+    width: 250px;
+    max-width: 100%;
+}
+
+.why-choose-text {
+    text-align: left;
+    max-width: 400px;
+}
+
+.why-choose-text h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.testimonials {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f9f9f9;
+}
+
+.testimonial-container {
+    position: relative;
+    width: 60%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.testimonial-card {
+    display: none;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.testimonial-card.active {
+    display: block;
+}
+
+.testimonial-card img {
+    width: 120px;  /* Adjust image size */
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.next-arrow {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border-radius: 200px;
+}
+
+.next-arrow:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    background: blue;
+    color: white;
+    padding: 50px 100px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+}
+.subscribe input {
+    width: 80px;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+}
+.subscribe button {
+    background: yellow;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.why-choose-image{
+    width:400px;
+    height:100px;
+    object-position: top;
+    object-fit: contain;
+}

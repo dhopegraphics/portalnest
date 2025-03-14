@@ -1,126 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>School Search</title>
-    <link rel="stylesheet" href="/style/school-search.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/style/school-search.css" />
+  </head>
+  <body>
     <!-- Header Section -->
     <header>
-        <div class="search-container">
-            <select id="schoolType">
-                <option value="">School Type</option>
-                <option value="day">Day School</option>
-                <option value="boarding">Boarding School</option>
-            </select>
-            <input type="text" id="location" placeholder="Gurugram, Haryana, India">
-            <button id="searchBtn">Search</button>
-        </div>
+      <div class="search-container">
+        <select id="schoolType">
+          <option value="">School Type</option>
+          <option value="day">Day School</option>
+          <option value="boarding">Boarding School</option>
+        </select>
+        <input
+          type="text"
+          id="location"
+          placeholder="Gurugram, Haryana, India"
+        />
+        <button id="searchBtn">Search</button>
+      </div>
     </header>
 
     <div class="main-container">
-        <!-- Sidebar Filters -->
-        <aside class="filters">
-            <div class="filter-section">
-                <h3>Classification</h3>
-                <label><input type="checkbox" name="classification" value="coed"> Co-Ed</label>
-                <label><input type="checkbox" name="classification" value="girls"> Girls Only</label>
-                <label><input type="checkbox" name="classification" value="boys"> Boys Only</label>
-            </div>
+      <!-- Sidebar Filters -->
+      <aside class="filters">
+        <div class="filter-section">
+          <h3>Classification</h3>
+          <label
+            ><input type="checkbox" name="classification" value="coed" />
+            Co-Ed</label
+          >
+          <label
+            ><input type="checkbox" name="classification" value="girls" /> Girls
+            Only</label
+          >
+          <label
+            ><input type="checkbox" name="classification" value="boys" /> Boys
+            Only</label
+          >
+        </div>
 
-            <div class="filter-section">
-                <h3>Board</h3>
-                <label><input type="checkbox" name="board" value="cbse"> CBSE</label>
-                <label><input type="checkbox" name="board" value="icse"> ICSE/ISC</label>
-                <label><input type="checkbox" name="board" value="ib"> IB</label>
-                <label><input type="checkbox" name="board" value="igcse"> IGCSE</label>
-            </div>
+        <div class="filter-section">
+          <h3>Board</h3>
+          <label
+            ><input type="checkbox" name="board" value="cbse" /> CBSE</label
+          >
+          <label
+            ><input type="checkbox" name="board" value="icse" /> ICSE/ISC</label
+          >
+          <label><input type="checkbox" name="board" value="ib" /> IB</label>
+          <label
+            ><input type="checkbox" name="board" value="igcse" /> IGCSE</label
+          >
+        </div>
 
-            <div class="filter-section">
-                <h3>Fees (Annual)</h3>
-                <label><input type="checkbox" name="fees" value="0-3"> Below 3L</label>
-                <label><input type="checkbox" name="fees" value="3-5"> 3L - 5L</label>
-                <label><input type="checkbox" name="fees" value="5-7"> 5L - 7L</label>
-                <label><input type="checkbox" name="fees" value="7-10"> 7L - 10L</label>
-            </div>
+        <div class="filter-section">
+          <h3>Fees (Annual)</h3>
+          <label
+            ><input type="checkbox" name="fees" value="0-3" /> Below 3L</label
+          >
+          <label
+            ><input type="checkbox" name="fees" value="3-5" /> 3L - 5L</label
+          >
+          <label
+            ><input type="checkbox" name="fees" value="5-7" /> 5L - 7L</label
+          >
+          <label
+            ><input type="checkbox" name="fees" value="7-10" /> 7L - 10L</label
+          >
+        </div>
 
-            <div class="filter-section">
-                <h3>Distance</h3>
-                <input type="range" id="distance" min="1" max="10" value="5">
-                <div class="range-labels">
-                    <span>1 km</span>
-                    <span>10 km</span>
+        <div class="filter-section">
+          <h3>Distance</h3>
+          <input type="range" id="distance" min="1" max="10" value="5" />
+          <div class="range-labels">
+            <span>1 km</span>
+            <span>10 km</span>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <h3>Facilities</h3>
+          <label
+            ><input type="checkbox" name="facilities" value="ac" /> AC
+            Classrooms</label
+          >
+          <label
+            ><input type="checkbox" name="facilities" value="pool" /> Swimming
+            Pool</label
+          >
+          <label
+            ><input type="checkbox" name="facilities" value="dayboarding" /> Day
+            Boarding</label
+          >
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="content">
+        <h2>25 Best Schools Found In Gurugram</h2>
+
+        <div class="school-cards">
+          <!-- School Card 1 -->
+          <div class="school-card">
+            <div class="school-image">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/school%20search-7dXbM9b775nbNDtHW74yQEdhp9tmnJ.png"
+                alt="Heritage School"
+              />
+            </div>
+            <div class="school-info">
+              <div class="school-header">
+                <h3>Heritage Xperiential Learning School</h3>
+                <div class="rating">
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">★</span>
+                  <span class="star">☆</span>
                 </div>
-            </div>
+              </div>
+              <p class="address">DLF City Phase-1, Block-C, Palam Road</p>
 
-            <div class="filter-section">
-                <h3>Facilities</h3>
-                <label><input type="checkbox" name="facilities" value="ac"> AC Classrooms</label>
-                <label><input type="checkbox" name="facilities" value="pool"> Swimming Pool</label>
-                <label><input type="checkbox" name="facilities" value="dayboarding"> Day Boarding</label>
-            </div>
-        </aside>
-
-        <!-- Main Content -->
-        <main class="content">
-            <h2>25 Best Schools Found In Gurugram</h2>
-            
-            <div class="school-cards">
-                <!-- School Card 1 -->
-                <div class="school-card">
-                    <div class="school-image">
-                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/school%20search-7dXbM9b775nbNDtHW74yQEdhp9tmnJ.png" alt="Heritage School">
-                    </div>
-                    <div class="school-info">
-                        <div class="school-header">
-                            <h3>Heritage Xperiential Learning School</h3>
-                            <div class="rating">
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star">★</span>
-                                <span class="star">☆</span>
-                            </div>
-                        </div>
-                        <p class="address">DLF City Phase-1, Block-C, Palam Road</p>
-                        
-                        <div class="school-details">
-                            <div class="detail">
-                                <span class="label">School Type:</span>
-                                <span>Day School</span>
-                            </div>
-                            <div class="detail">
-                                <span class="label">Board:</span>
-                                <span>IB, ICSE & ISC, IGCSE</span>
-                            </div>
-                            <div class="detail">
-                                <span class="label">Type:</span>
-                                <span>Co-Ed</span>
-                            </div>
-                            <div class="detail">
-                                <span class="label">Class:</span>
-                                <span>Class 12th</span>
-                            </div>
-                        </div>
-
-                        <div class="school-actions">
-                            <button class="call-btn">📞 Call</button>
-                            <button class="view-btn">View School</button>
-                        </div>
-
-                        <div class="expert-comment">
-                            <p><strong>Expert Comment:</strong> Heritage School provides excellent education with modern facilities and experienced faculty...</p>
-                        </div>
-                    </div>
+              <div class="school-details">
+                <div class="detail">
+                  <span class="label">School Type:</span>
+                  <span>Day School</span>
                 </div>
+                <div class="detail">
+                  <span class="label">Board:</span>
+                  <span>IB, ICSE & ISC, IGCSE</span>
+                </div>
+                <div class="detail">
+                  <span class="label">Type:</span>
+                  <span>Co-Ed</span>
+                </div>
+                <div class="detail">
+                  <span class="label">Class:</span>
+                  <span>Class 12th</span>
+                </div>
+              </div>
 
-                <!-- Additional school cards can be added here -->
+              <div class="school-actions">
+                <button class="call-btn">📞 Call</button>
+                <button class="view-btn">View School</button>
+              </div>
+
+              <div class="expert-comment">
+                <p>
+                  <strong>Expert Comment:</strong> Heritage School provides
+                  excellent education with modern facilities and experienced
+                  faculty...
+                </p>
+              </div>
             </div>
-        </main>
+          </div>
+
+          <!-- Additional school cards can be added here -->
+        </div>
+      </main>
     </div>
 
     <script src="/functions/school-search-function.js"></script>
-</body>
+  </body>
 </html>

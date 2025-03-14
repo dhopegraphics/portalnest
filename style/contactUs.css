@@ -39,7 +39,6 @@ footer {
     margin: 0 auto;
     padding: 40px 20px;
     font-family: Arial, sans-serif;
-    margin-left: 100px;
 }
 
 /* Header Styles */
@@ -47,7 +46,7 @@ footer {
     display: flex;
     margin-bottom: 40px;
     font-size: 16px;
-    justify-content: left;
+    justify-content: center;
 }
 
 .header-content {
@@ -69,49 +68,46 @@ footer {
 .dot {
     width: 8px;
     height: 8px;
-    background-color: #FFD700;
+    background-color: #ffd700;
     border-radius: 50%;
 }
 
 /* Contact Container */
 .contact-container {
     display: grid;
-    grid-template-columns: 1fr 1.2fr 1fr;
+    grid-template-columns: 1fr;
     gap: 30px;
-    align-items: center;
+    align-items: start;
     position: relative;
 }
 
 /* Contact Info Card */
 .contact-info {
-    position: absolute;
-    left: 40px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 2;
     background: white;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 250px;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto 30px;
+    position: relative;
+    z-index: 2;
 }
 
 .contact-info1 {
-    position: absolute;
-    left: 220px;
-    top: 30%;
-    transform: translateY(-50%);
-    z-index: 2;
     background: white;
-    padding: 30px;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 75px;
     height: 75px;
-    margin-left: 200px;
-    overflow: visible;
+    margin: 0 auto 20px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
 
 .info-item {
     display: flex;
@@ -122,9 +118,8 @@ footer {
 
 .info-item1 {
     display: flex;
-    align-items: flex-start;
-    gap: 0px;
-    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
 .icon {
@@ -149,19 +144,19 @@ footer {
 
 .info-content p {
     margin: 0;
-    color: #B22222;
+    color: #b22222;
     font-size: 14px;
 }
 
 /* Contact Image */
 .contact-image {
     width: 100%;
-    height: 460px;
+    height: 300px;
     border-radius: 15px;
     overflow: hidden;
     position: relative;
     z-index: 1;
-    margin-left: 160px;
+    margin: 0 auto;
 }
 
 .contact-image img {
@@ -174,45 +169,32 @@ footer {
 .contact-form {
     background: white;
     padding: 30px;
-    /* Reduce padding to decrease height */
-    border-radius: 15px 15px 15px 15px;
-    /* Round only left corners */
+    border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 2;
-    margin-left: 100px;
-    /* Pull it closer to the image */
-    padding-left: 20px;
-    padding-right: 30px;
     position: relative;
-    width: 200%;
-    /* Adjust to match the image width */
+    width: 100%;
     max-width: 450px;
-    /* Set a max width for consistency */
+    margin: 0 auto;
     height: auto;
-    /* Ensure it only takes up necessary space */
-    max-height: 500px;
-    /* Limit the height */
-
 }
 
-
 .network-icon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
     width: 50px;
     height: 50px;
+    display: block;
+    margin: 0 auto 15px;
 }
 
 .contact-form h2 {
     font-size: 24px;
     margin-bottom: 20px;
     font-weight: bold;
+    text-align: center;
 }
 
 .form-group {
     margin-bottom: 15px;
-
 }
 
 .form-group label {
@@ -230,7 +212,7 @@ footer {
     border: 1px solid black !important;
     border-radius: 8px;
     font-size: 14px;
-    background: #F8F9FA !important;
+    background: #f8f9fa !important;
     color: black !important;
 }
 
@@ -246,53 +228,9 @@ input::placeholder {
     /* Ensures full black visibility */
 }
 
-
-/* Responsive Adjustments */
-@media (max-width: 1024px) {
-    .contact-container {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-info {
-        position: relative;
-        left: auto;
-        top: auto;
-        transform: none;
-        margin: 20px auto;
-        width: auto;
-    }
-
-    .contact-image {
-        height: 500px;
-    }
-
-    .contact-form {
-        max-width: 100%;
-    }
-
-    .network-icon {
-        width: 40px;
-        height: 40px;
-    }
-}
-
-@media (max-width: 768px) {
-    .header-content {
-        padding: 10px 20px;
-    }
-
-    .header-content h1 {
-        font-size: 16px;
-    }
-
-    .contact-info,
-    .contact-form {
-        padding: 20px;
-    }
-}
-
+/* Testimonials Section */
 .testimonials {
-    padding: 80px 20px;
+    padding: 60px 20px;
     background-color: #fff;
 }
 
@@ -304,11 +242,11 @@ input::placeholder {
 /* Header Styles */
 .testimonials-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
 .testimonials-header h2 {
-    font-size: 48px;
+    font-size: 36px;
     font-weight: 900;
     margin: 0;
     position: relative;
@@ -316,18 +254,18 @@ input::placeholder {
 }
 
 .testimonials-header h2::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
+    width: 60px;
     height: 4px;
-    background-color: #FFD700;
+    background-color: #ffd700;
 }
 
 .testimonials-header p {
-    font-size: 18px;
+    font-size: 16px;
     color: #333;
     margin-top: 10px;
 }
@@ -335,8 +273,9 @@ input::placeholder {
 /* Testimonial Card Styles */
 .testimonial-card {
     display: flex;
-    gap: 40px;
+    flex-direction: column;
     align-items: center;
+    text-align: center;
     max-width: 900px;
     margin: 0 auto;
     position: relative;
@@ -345,14 +284,15 @@ input::placeholder {
 /* Image Styles */
 .testimonial-image-wrapper {
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 30px;
 }
 
 .image-background {
     position: absolute;
-    width: 280px;
-    height: 280px;
+    width: 180px;
+    height: 180px;
     background-color: #0073e6;
     border-radius: 50%;
     top: 0;
@@ -361,15 +301,14 @@ input::placeholder {
 
 .image-container {
     position: absolute;
-    width: 280px;
-    height: 280px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     overflow: hidden;
-    background-color: #FFB6C1;
+    background-color: #ffb6c1;
     top: 20px;
     left: 20px;
 }
-
 
 .profile-image {
     width: 100%;
@@ -379,31 +318,17 @@ input::placeholder {
 
 /* Content Styles */
 .testimonial-content {
-    flex: 1;
     position: relative;
     padding: 20px 0;
+    width: 100%;
 }
 
 .quote-mark {
-    font-size: 100px;
-    line-height: 1;
-    color: #ddd;
-    font-family: Georgia, serif;
-    position: absolute;
-}
-
-.quote-left {
-    top: -20px;
-    left: -40px;
-}
-
-.quote-right {
-    bottom: 60px;
-    right: 60px;
+    display: none;
 }
 
 .testimonial-text {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.6;
     margin: 0 0 30px 0;
     position: relative;
@@ -413,7 +338,7 @@ input::placeholder {
 
 .testimonial-author h3 {
     color: #0073e6;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bolder;
     margin: 0 0 5px 0;
 }
@@ -421,15 +346,12 @@ input::placeholder {
 .testimonial-author p {
     color: #080808;
     margin: 0;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bolder;
 }
 
 /* Next Button Styles */
 .next-button {
-    position: absolute;
-    right: -60px;
-    bottom: 0;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -441,6 +363,7 @@ input::placeholder {
     align-items: center;
     justify-content: center;
     transition: background-color 0.3s ease;
+    margin: 30px auto 0;
 }
 
 .next-button:hover {
@@ -448,16 +371,198 @@ input::placeholder {
 }
 
 /* Responsive Styles */
-@media (max-width: 992px) {
-    .testimonial-card {
+/* Small Mobile Devices (320px - 480px) */
+@media (max-width: 480px) {
+    .contact-section {
+        padding: 20px 15px;
+    }
+
+    .header-content {
+        padding: 10px 15px;
+    }
+
+    .header-content h1 {
+        font-size: 12px;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 20px 15px;
+    }
+
+    .contact-image {
+        height: 200px;
+    }
+
+    .testimonials {
+        padding: 40px 15px;
+    }
+
+    .testimonials-header h2 {
+        font-size: 28px;
+    }
+
+    .testimonial-image-wrapper {
+        width: 150px;
+        height: 150px;
+    }
+
+    .image-background,
+    .image-container {
+        width: 130px;
+        height: 130px;
+    }
+
+    .testimonial-text {
+        font-size: 14px;
+    }
+
+    .testimonial-author h3 {
+        font-size: 18px;
+    }
+
+    .testimonial-author p {
+        font-size: 12px;
+    }
+
+    .next-button {
+        width: 40px;
+        height: 40px;
+    }
+
+    nav ul {
         flex-direction: column;
-        text-align: center;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+/* Medium Mobile Devices (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+    .contact-section {
+        padding: 30px 20px;
+    }
+
+    .contact-image {
+        height: 250px;
+    }
+
+    .testimonial-image-wrapper {
+        width: 180px;
+        height: 180px;
+    }
+
+    .image-background,
+    .image-container {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+/* Tablets (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .contact-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .contact-info {
+        grid-column: 1;
+        margin: 0;
+    }
+
+    .contact-image {
+        grid-column: 2;
+        height: 350px;
+        margin: 0;
+    }
+
+    .contact-form {
+        grid-column: 1 / span 2;
+        max-width: 100%;
+    }
+
+    .contact-info1 {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        margin: 0;
+    }
+
+    .testimonial-card {
+        flex-direction: row;
+        text-align: left;
+        gap: 30px;
+    }
+
+    .testimonial-image-wrapper {
+        margin-bottom: 0;
+    }
+
+    .quote-mark {
+        display: block;
+        font-size: 60px;
+    }
+
+    .quote-left {
+        top: -10px;
+        left: -20px;
+    }
+
+    .quote-right {
+        bottom: 40px;
+        right: 40px;
+    }
+
+    .next-button {
+        position: absolute;
+        right: -20px;
+        bottom: 0;
+        margin: 0;
+    }
+}
+
+/* Small Desktops (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .contact-container {
+        grid-template-columns: 1fr 1.2fr 1fr;
+        gap: 20px;
+    }
+
+    .contact-info {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+        margin: 0;
+    }
+
+    .contact-image {
+        height: 400px;
+        margin: 0;
+    }
+
+    .contact-form {
+        margin: 0;
+    }
+
+    .contact-info1 {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        margin: 0;
+    }
+
+    .testimonial-card {
+        flex-direction: row;
+        text-align: left;
+        gap: 40px;
     }
 
     .testimonial-image-wrapper {
         width: 250px;
         height: 250px;
-        margin: 0 auto;
+        margin-bottom: 0;
     }
 
     .image-background,
@@ -467,33 +572,149 @@ input::placeholder {
     }
 
     .quote-mark {
-        display: none;
+        display: block;
+        font-size: 80px;
+    }
+
+    .quote-left {
+        top: -15px;
+        left: -30px;
+    }
+
+    .quote-right {
+        bottom: 50px;
+        right: 50px;
     }
 
     .next-button {
-        position: relative;
-        right: auto;
-        margin: 30px auto 0;
+        position: absolute;
+        right: -40px;
+        bottom: 0;
+        margin: 0;
     }
 }
 
-@media (max-width: 480px) {
+/* Large Desktops (1200px and above) */
+@media (min-width: 1200px) {
+    .contact-section {
+        margin-left: 100px;
+    }
+
+    .contact-header {
+        justify-content: left;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr 1.2fr 1fr;
+        gap: 30px;
+    }
+
+    .contact-info {
+        position: absolute;
+        left: 40px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+        width: 250px;
+        margin: 0;
+    }
+
+    .contact-info1 {
+        position: absolute;
+        left: 220px;
+        top: 30%;
+        transform: translateY(-50%);
+        z-index: 2;
+        margin-left: 200px;
+    }
+
+    .contact-image {
+        width: 100%;
+        height: 460px;
+        margin-left: 160px;
+    }
+
+    .contact-form {
+        margin-left: 100px;
+        width: 200%;
+        max-width: 450px;
+    }
+
     .testimonials-header h2 {
-        font-size: 36px;
+        font-size: 48px;
+    }
+
+    .testimonial-card {
+        flex-direction: row;
+        text-align: left;
+        gap: 40px;
     }
 
     .testimonial-image-wrapper {
-        width: 200px;
-        height: 200px;
+        width: 300px;
+        height: 300px;
+        margin-bottom: 0;
     }
 
-    .image-background,
+    .image-background {
+        width: 280px;
+        height: 280px;
+    }
+
     .image-container {
-        width: 180px;
-        height: 180px;
+        width: 280px;
+        height: 280px;
+        top: 20px;
+        left: 20px;
+    }
+
+    .quote-mark {
+        display: block;
+        font-size: 100px;
+    }
+
+    .quote-left {
+        top: -20px;
+        left: -40px;
+        margin-left: 100px;
+    }
+
+    .quote-right {
+        bottom: 60px;
+        right: 60px;
+        margin-left: 600px;
     }
 
     .testimonial-text {
+        font-size: 18px;
+        margin-left: 100px;
+    }
+
+    .testimonial-author h3 {
+        font-size: 24px;
+        margin-left: 100px;
+    }
+
+    .testimonial-author p {
         font-size: 16px;
+        margin-left: 100px;
+    }
+
+    .next-button {
+        position: absolute;
+        right: -60px;
+        bottom: 0;
+        margin: 0;
+    }
+}
+
+/* Fix for navigation on medium screens */
+@media (max-width: 767px) {
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav ul li {
+        margin: 5px 10px;
     }
 }

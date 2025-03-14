@@ -1,21 +1,90 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Portal-Home</title>
-    <!-- Import Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
-    <!-- Import Google Material Icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
-    <link rel="stylesheet" href="/style/studentHome.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PortalNest - Student Dashboard</title>
+  <link rel="stylesheet" href="/style/studentHome.css">
 </head>
+
 <body>
-    <aside class="sidebar">
-        <div class="logo">
-            <img src="/assets/logo/portalnest-Variation-Logo-2.png" alt="logo">
-            <h2>Portal Nest</h2>
+  <div class="sidebar">
+    <div>
+      <div class="logo">
+        <h1 style="color: #2a7d8b; font-size: 24px;">P<span style="color: #2a7d8b; font-size: 18px;">⚙</span>rtal<span
+            style="color: #4caf50;">Nest</span>.</h1>
+      </div>
+      <ul class="nav-menu">
+        <li class="nav-item active">
+          <i>🏠</i>
+          <a href="/pages/Student-Portal/index.html"><span>Home</span></a>
+        </li>
+        <li class="nav-item">
+          <i>💳</i>
+          <a href="/pages/Student-Portal/fees-payment.html"><span>Pay Fees</span></a>
+        </li>
+        <li class="nav-item">
+          <i>📚</i>
+          <a href="/pages/Student-Portal/course-registration.html"><span>Course Registration</span></a>
+        </li>
+        <li class="nav-item">
+          <i>📝</i>
+          <a href="/pages/Student-Portal/result-check.html"><span>Check Result</span></a>
+        </li>
+        <li class="nav-item ">
+          <i>📊</i>
+          <a href="/pages/Student-Portal/payment-history.html"><span>Payment History</span></a>
+        </li>
+        <li class="nav-item">
+          <i>📋</i>
+          <a href="/pages/Student-Portal/registration-history.html"><span>Registration History</span></a>
+        </li>
+      </ul>
+    </div>
+    <div class="logout">
+      <div class="nav-item">
+        <i>↪</i>
+        <span>Log Out</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="profile-card">
+      <div class="profile-image">
+        <img src="/assets/images/profilepic.png" alt="Student Profile Picture">
+      </div>
+      <div class="profile-details">
+        <div class="detail-group">
+          <div class="detail-label">Name</div>
+          <div class="detail-value">MENSAH Isaac Nana Sam</div>
+        </div>
+        <div class="detail-group">
+          <div class="detail-label">Level</div>
+          <div class="detail-value">300 Level</div>
+        </div>
+        <div class="detail-group">
+          <div class="detail-label">Index Number</div>
+          <div class="detail-value">0055478</div>
+        </div>
+        <div class="detail-group">
+          <div class="detail-label">Payment Of Fees</div>
+          <div class="detail-value">
+            <span class="not-paid">Not Paid</span>
+            <a href="#" class="pay-now">Pay Fees Now</a>
+          </div>
+        </div>
+        <div class="detail-group">
+          <div class="detail-label">Department</div>
+          <div class="detail-value">Computer Science</div>
+        </div>
+        <div class="detail-group">
+          <div class="detail-label">Course Registration Status</div>
+          <div class="detail-value">
+            <span class="status-badge status-closed">Closed</span>
+            <span class="status-badge register-now">Register Now</span>
+          </div>
         </div>
         <ul class="links">
             <li>
@@ -106,5 +175,7 @@
             </div>
         </div>
     </main>
+
 </body>
+
 </html>

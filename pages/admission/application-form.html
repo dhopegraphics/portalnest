@@ -3,7 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Application For Admission</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    // Redirect if user is not logged in
+    if (!localStorage.getItem("userLoggedIn")) {
+        window.location.href = "/pages/auth/admission/sign-up-portalNest.html";
+    }
+
+    // Restore saved form data
+    document.querySelectorAll("input, textarea").forEach(input => {
+        if (localStorage.getItem(input.name)) {
+            input.value = localStorage.getItem(input.name);
+        }
+
+        // Save on change
+        input.addEventListener("input", () => {
+            localStorage.setItem(input.name, input.value);
+        });
+    });
+});
+
+document.getElementById("logout-btn").addEventListener("click", function () {
+    localStorage.removeItem("userLoggedIn");
+    localStorage.removeItem("loggedInUserEmail");
+    localStorage.clear(); // Also clears saved form data
+    window.location.href = "/pages/auth/admission/sign-up-portalNest.html";
+});
+    </script>
 </head>
 <body>
     

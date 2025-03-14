@@ -1,0 +1,36 @@
+@media (max-width: 96em) {
+  .main__header {
+    background-color: rgb(255, 255, 255);
+    color: #6827e2;
+  }
+}
+
+@media (max-width: 84em) {
+  .main__header {
+    background-color: rgb(255, 255, 255);
+  }
+}
+
+@media (max-width: 75em) {
+  .main__header {
+    background-color: yellow;
+  }
+}
+
+@media (max-width: 59em) {
+  .main__header {
+    background-color: green;
+  }
+}
+
+@media (max-width: 44em) {
+  .main__header {
+    background-color: orange;
+  }
+}
+
+@media (max-width: 34em) {
+  .main__header {
+    background-color: pink;
+  }
+}

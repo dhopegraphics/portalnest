@@ -4,20 +4,157 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <link rel="stylesheet" href="../../style/schooladmin-query.css" />
+
+    <script defer src="../../functions/script2_schooladmin.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
-    <div id="admission" class="dashboard__section grid content">
-      <div id="live__admission" class="live__activity-container"></div>
+    <div
+      id="course_management"
+      class="dashboard__section content grading_section"
+    >
+      <div
+        id="live__admission"
+        class="live__activity-container admission_content_container grading_inner_container"
+      >
+        <div class="student__search flex">
+          <form action="#">
+            <input
+              class="admission_search"
+              type="text"
+              placeholder="Search Courses,Student Id,Exams..."
+            />
+          </form>
 
-      <div id="recent__admission" class="recent__pending-container">
-        <div
-          id="card_main_container"
-          class="dashboardnext__card-container grid grid--2-cols"
-        >
-          <div id="pending_card" class="pending__card grid"></div>
-          <div id="pending_card" class="pending__card grid"></div>
-          <div id="pending_card" class="pending__card grid"></div>
-          <div id="pending_card" class="pending__card grid"></div>
+          <div class="student_sorted_con flex course_sorted">
+            <select name="" id="" class="sort_btn admission_sort">
+              <option value="1">All Year</option>
+              <option value="2">Year 1</option>
+              <option value="3">Year 2</option>
+              <option value="4">Year 3</option>
+              <option value="5">Year 4</option>
+              <option value="6">Year 5</option>
+              <option value="7">Year 6</option>
+              <option value="8">Year 7</option>
+            </select>
+
+            <!-- List the courses -->
+            <select name="" id="" class="sort_btn admission_sort">
+              <option value="1">All Courses</option>
+              <option value="2">ADMITTED</option>
+              <option value="3">PENDING REVIEW</option>
+              <option value="4">REJECTED</option>
+            </select>
+
+            <!-- List of Lecturers -->
+            <select name="" id="" class="sort_btn admission_sort">
+              <option value="1">All Lecturers</option>
+              <option value="2">Faculty of Science</option>
+              <option value="3">Faculty of Social Sciences</option>
+              <option value="4">Faculty of Health</option>
+              <option value="5">Faculty of Law</option>
+              <option value="6">Faculty of Business</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="admission_content">
+          <div class="admission_initials flex grading_initials">
+            <p>ID</p>
+            <p>Exam Titile</p>
+            <p>Date</p>
+            <p>Course Name</p>
+            <p>Lecturer</p>
+            <p>Year</p>
+            <p>Student Id</p>
+            <p>Status</p>
+            <p>Action</p>
+          </div>
+
+          <div class="contents__admission">
+            <div class="inner_contents__admission flex grading_contents">
+              <input type="checkbox" />
+
+              <div class="initial_content flex admisson_content_display">
+                <div class="program_date grading_id">
+                  <p>Mid 24</p>
+                </div>
+
+                <div class="person_details flex admission_person">
+                  <div class="person_details_con">
+                    <p>Mid-semester</p>
+                  </div>
+                </div>
+
+                <div class="program_date">
+                  <p>Dec 15 2023</p>
+                </div>
+
+                <div class="admission_title">
+                  <p>Discrete Maths</p>
+                </div>
+
+                <div class="admission_title">
+                  <p>Dr. Walker</p>
+                </div>
+
+                <div class="student_pending course_year">
+                  <p>Year 1</p>
+                </div>
+
+                <div class="program_date student__id">
+                  <p>20202056</p>
+                </div>
+
+                <div class="program_date">
+                  <p></p>
+                </div>
+
+                <div class="flex admission_approval">
+                  <button>
+                    <span>
+                      <i class="bi bi-eye"></i>
+                    </span>
+                  </button>
+
+                  <!-- Check button -->
+                  <button class="flex">
+                    <i class="bi bi-check-lg"></i>
+                  </button>
+
+                  <!-- Close button -->
+                  <button class="flex">&times;</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- move this to the bottom -->
+        <div class="admisson_footer">
+          <p>
+            Showing <span class="admisson_num_check">1</span> To
+            <span class="addmission_on_check">10</span> of
+            <span class="admisson_total_check">97</span> Results
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grading__container flex">
+      <div class="grading__card">
+        <h3>Performance Trends</h3>
+        <canvas id="performanceChart" class="chart"></canvas>
+      </div>
+
+      <div class="grading__card">
+        <h3>Grade Distribution</h3>
+
+        <div class="piechat flex">
+          <canvas id="gradeChart" class="chart"></canvas>
         </div>
       </div>
     </div>
