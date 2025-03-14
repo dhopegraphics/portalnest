@@ -1,4 +1,9 @@
 @media (max-width: 96em) {
+  html {
+    font-size: 50%;
+  }
+
+  /* remove this */
   .main__header {
     background-color: brown;
     color: #6827e2;
@@ -8,6 +13,31 @@
 @media (max-width: 84em) {
   .main__header {
     background-color: red;
+  }
+
+  .task-today {
+    padding: 1.2rem;
+    height: 81rem;
+    overflow-y: auto;
+  }
+  .task-today::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* .card_scroll.scroll { */
+  .card_scroll {
+    /* background-color: red; */
+    /* width: 152rem; */
+    width: 100%;
+    max-width: 700px;
+    /* overflow-x: auto; */
+    overflow-x: scroll;
+    /* white-space: nowrap; */
+  }
+
+  .card__container {
+    /* display: grid; */
+    /* grid-template-columns: repeat(3, 1fr); */
   }
 }
 

@@ -64,7 +64,7 @@
       <nav class="navigation__button-container nav__one">
         <button
           class="btn__navigate dashboardbtn"
-          onclick="displayPages('dashboard.html' , 'main-hero-content.html')"
+          onclick="displayPages('dashboard.html')"
           data-target="dashboard"
         >
           <span>
@@ -75,7 +75,7 @@
 
         <button
           class="btn__navigate managersbtn"
-          onclick="displayPages('managers.html' , 'manager-hero.html')"
+          onclick="displayPages('managers.html')"
         >
           <span class="slider_turn">
             <i class="bi bi-layout-sidebar"></i>
@@ -85,7 +85,7 @@
 
         <button
           class="btn__navigate admissionbtn"
-          onclick="displayPages('admissions.html' , 'main-hero-content.html')"
+          onclick="displayPages('admissions.html')"
         >
           <span>
             <i class="bi bi-box-seam"></i>
@@ -95,7 +95,7 @@
 
         <button
           class="btn__navigate student-managementbtn"
-          onclick="displayPages('student-manage.html' , 'student-mag-hero.html')"
+          onclick="displayPages('student-manage.html')"
         >
           <span>
             <i class="bi bi-clipboard-plus"></i>
@@ -105,7 +105,7 @@
 
         <button
           class="btn__navigate faculty-managementbtn"
-          onclick="displayPages('faculty-manage.html' , 'faculty-hero.html')"
+          onclick="displayPages('faculty-manage.html')"
         >
           <span>
             <i class="bi bi-building-check"></i>
@@ -115,7 +115,7 @@
 
         <button
           class="btn__navigate departmentbtn"
-          onclick="displayPages('departments.html' , 'department-hero.html')"
+          onclick="displayPages('departments.html')"
         >
           <span>
             <i class="bi bi-columns-gap"></i>
@@ -125,7 +125,7 @@
 
         <button
           class="btn__navigate coursebtn"
-          onclick="displayPages('courses.html' , 'course_hero.html')"
+          onclick="displayPages('courses.html')"
         >
           <span>
             <i class="bi bi-file-earmark-minus"></i>
@@ -137,7 +137,7 @@
       <nav class="navigation__button-container nav__two">
         <button
           class="btn__navigate gradingbtn"
-          onclick="displayPages('grading.html' , 'grading-hero.html')"
+          onclick="displayPages('grading.html')"
         >
           <span>
             <i class="bi bi-layout-text-sidebar-reverse"></i>
@@ -147,7 +147,7 @@
 
         <button
           class="btn__navigate reportbtn"
-          onclick="displayPages('reports.html' , 'report-hero.html')"
+          onclick="displayPages('reports.html')"
         >
           <span>
             <i class="bi bi-gear"></i>
@@ -157,7 +157,7 @@
 
         <button
           class="btn__navigate eventbtn"
-          onclick="displayPages('events.html' , 'event-hero.html')"
+          onclick="displayPages('events.html')"
         >
           <span>
             <i class="bi bi-display"></i>
@@ -169,7 +169,7 @@
       <div class="border_bottom"></div>
 
       <div class="log-out__container">
-        <button class="btn-logout" onclick="loadPage('logout.html')">
+        <button class="btn-logout">
           <span class="logout_icon">
             <i class="bi bi-upload"></i>
           </span>
@@ -191,16 +191,6 @@
       </header>
 
       <div class="main__main-content">
-        <div class="main__card-container">
-          <h1 class="header_title_text">Dashboard-School Manager</h1>
-
-          <!-- Here the icons are temperary -->
-          <div
-            class="card__container grid grid--4-cols"
-            id="cardContainer"
-          ></div>
-        </div>
-
         <div class="content__area" id="content-area"></div>
       </div>
     </main>

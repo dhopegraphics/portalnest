@@ -33,8 +33,91 @@
 
     <!-- Javascript -->
     <script defer src="../../functions/script-schooladmin.js"></script>
+    <script defer src="../../functions/script2_schooladmin.js"></script>
   </head>
   <body>
+    <div class="main__card-container">
+      <h1 class="header_title_text">Dashboard-School Manager</h1>
+
+      <div class="card_scroll dashboard__scroll">
+        <div class="card__container" id="cardContainer">
+          <div class="card card_green">
+            <div class="card__header flex border_green">
+              <span class="people_icon"
+                ><i class="bi bi-people col_green"></i
+              ></span>
+              <div>
+                <p class="col_green">Create</p>
+                <p>Lecturer</p>
+              </div>
+            </div>
+
+            <div class="card__footer_m flex col_green">
+              <button id="createlecturer" class="btn_m flex col_green">
+                <p>Add</p>
+                <span>+</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="card card_violet">
+            <div class="card__header flex border_violet">
+              <span>
+                <i class="bi bi-person-check col_violet"></i>
+              </span>
+              <div>
+                <p class="col_violet">Staff/School</p>
+                <p>Managers</p>
+              </div>
+            </div>
+
+            <div class="card__footer_m flex col_violet">
+              <button class="btn_m flex col_violet">
+                <p>Add</p>
+                <span>+</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="card card_orange">
+            <div class="card__header flex border_orange">
+              <span><i class="bi bi-person col_orange"></i></span>
+              <div>
+                <p class="col_orange">Admissions</p>
+                <p>Officer</p>
+              </div>
+            </div>
+
+            <div class="card__footer_m flex col_orange">
+              <button class="btn_m flex col_orange">
+                <p>Add</p>
+                <span>+</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="card card_lightblue">
+            <div class="card__header flex border_lightblue">
+              <span>
+                <i class="bi bi-journal-text col_lightblue"></i>
+              </span>
+              <div>
+                <p class="col_lightblue">Examination</p>
+                <p>Officer</p>
+              </div>
+            </div>
+
+            <div class="card__footer_m flex col_lightblue">
+              <button class="btn_m flex col_lightblue">
+                <p>Add</p>
+                <span>+</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="managers__header flex">
       <h2>Complete List</h2>
 
@@ -145,5 +228,16 @@
     </div>
 
     <!-- Not done..think about the layout and logic behind it  -->
+    <div class="manager_form_container">
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt saepe
+        repudiandae quos est numquam quisquam blanditiis magnam praesentium
+        modi, quis consequuntur debitis fuga dolorem laboriosam quae! Nihil
+        aperiam libero officiis?
+      </p>
+    </div>
+
+    <!-- overlay -->
+    <div class="overlay hidden"></div>
   </body>
 </html>

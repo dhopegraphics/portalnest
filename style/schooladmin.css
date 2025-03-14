@@ -5,11 +5,13 @@
   --dark: #14141f;
 
   --white-col: #fff;
+  --col-black: #000;
 
   /* colors */
   --primary-col: #011e30;
 
   --col-green: #3dbda9;
+  --my-mid-green: #c5ebe5;
   --col-mid-green: #84c1b4;
   --col-light-green: #d8f1ee;
 
@@ -33,7 +35,7 @@
 
   --col-blue-white: #e4defe;
   --col-otherwhite: #d9d9d9;
-  --col-white: #f6f7fa;
+  --col-white-bg: #f6f7fa;
   --col-aside-btn: #d2d2d2;
 }
 
@@ -90,6 +92,37 @@ body {
   width: 14%;
 }
 
+.card_mid_content.margin {
+  margin-top: 0rem;
+}
+
+.first_ctext.margin {
+  margin-bottom: 1.2rem;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* left: 235px; */
+  width: 100%;
+  height: 100%;
+  background-color: rgba(246, 247, 250, 0.1);
+  backdrop-filter: blur(10px);
+  /* z-index: -1; */
+  transition: all 0.5s ease;
+}
+
+.hidden,
+.manager_form_container {
+  display: none;
+}
+
+.hidden.hidden_remove,
+.manager_form_container.hidden_remove {
+  display: block;
+}
+
 /************ General Styling *********/
 /* grids */
 .grid {
@@ -143,14 +176,15 @@ body {
 }
 
 .main__main-content {
-  background: var(--light-white-col);
+  /* background: var(--col-white-bg); */
+  background: yellow;
   /* height: auto; */
-  height: 1060px;
+  /* height: 1060px; */
+  height: 1141px;
 }
 
 .main__card-container {
-  margin: 0rem 4.8rem;
-  padding: 3.2rem 0rem;
+  padding: 2rem 0rem;
 }
 
 .content__area {
@@ -163,8 +197,9 @@ body {
   position: relative;
   background-color: var(--primary-col);
   color: var(--white-col);
-  width: 300px;
+  width: 309px;
   height: auto;
+  height: 1141px;
   white-space: nowrap;
   transition: all 0.4s ease;
 }
@@ -307,14 +342,18 @@ body {
 .main__header {
   background-color: var(--white-col);
   box-shadow: 0px 16px 12px rgba(0, 0, 0, 0.1);
+  height: 64px;
 }
 
 .main__nav {
   justify-content: space-between;
-  padding: 2rem 4.4rem 2rem 2rem;
+  padding: 2rem 4.4rem 1rem 2rem;
 }
 
 .btn__main {
+  width: 23.5px;
+  height: 24px;
+  object-fit: contain;
   border: none;
   background: transparent;
   font-size: 2.4rem;
@@ -322,40 +361,67 @@ body {
 }
 
 .btn__notification {
+  width: 29.4px;
+  height: 30px;
   transform: rotate(-30deg);
 }
 
 .main__card-container h1 {
-  color: var(--dark);
+  color: var(--col-black);
   font-size: 3rem;
+  font-weight: 700;
   margin-bottom: 1.8rem;
 }
 
+.card_scroll {
+  /* background-color: red; */
+  width: 100%;
+  overflow: hidden;
+}
+
 .card__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 4rem;
+
+  max-width: 900px;
+  overflow-x: auto;
 }
 
 .card {
+  width: 100%;
+  /* width: 271px; */
+  height: 130px;
   border: 1px solid;
   border-radius: 11px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card_green {
-  background-color: #0080802a;
-  border-color: #008080;
+  /* background-color: #0080802a; */
+  /* border-color: #008080; */
+  background-color: var(--my-mid-green);
+  border-color: var(--col-green);
 }
 
 .col_green {
-  color: #008080;
+  /* color: #008080; */
+  color: var(--col-green);
 }
 
 .border_green {
-  border-bottom: 1px solid #008080;
+  /* border-bottom: 1px solid #008080; */
+  /* border-top: 1px solid var(--col-green); */
 }
 
 .card_violet {
   background-color: #af6eff48;
-  border-color: #af6efffd;
+  /* border-color: #af6efffd; */
+  border-color: #a097d9;
 }
 
 .col_violet {
@@ -363,7 +429,7 @@ body {
 }
 
 .border_violet {
-  border-bottom: 1px solid #af6efffd;
+  /* border-bottom: 1px solid #af6efffd; */
 }
 
 .card_orange {
@@ -376,7 +442,7 @@ body {
 }
 
 .border_orange {
-  border-bottom: 1px solid #ff8903fb;
+  /* border-bottom: 1px solid #ff8903fb; */
 }
 
 .card_lightblue {
@@ -389,7 +455,7 @@ body {
 }
 
 .border_lightblue {
-  border-bottom: 1px solid #039efffc;
+  /* border-bottom: 1px solid #039efffc; */
 }
 
 .card__header {
@@ -402,30 +468,36 @@ body {
   align-items: center;
   justify-content: center;
   background-color: var(--white-col);
-  width: 3rem;
-  height: 3rem;
+  /* width: 3rem; */
+  /* height: 3rem; */
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
 }
 
 .card__header span i {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
 }
 
 .card__header p:first-child {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 700;
 }
 
 .card__header p:last-child {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 500;
 }
 
 .card__footer {
+  margin-bottom: 1rem;
+  border-top: 1px solid;
   justify-content: space-between;
   padding: 1rem 2rem;
 }
 
 .card__footer_m {
+  margin-bottom: 1rem;
   justify-content: center;
   padding: 1rem 2rem;
 }
@@ -456,7 +528,8 @@ body {
 
 .card__footer p,
 .card__footer button {
-  font-size: 1.4rem;
+  margin-top: 1rem;
+  font-size: 1.6rem;
 }
 
 .card__footer button {
@@ -466,6 +539,10 @@ body {
 }
 
 /************ Dashboard Section *********/
+.dashboard__scroll {
+  margin-top: 4rem;
+}
+
 .dashboard__section {
   grid-template-rows: 60% 40%;
   gap: 4rem;
@@ -473,6 +550,7 @@ body {
 }
 
 .live__activity-container {
+  margin-top: 4rem;
   background-color: var(--white-col);
   padding: 2rem;
   border-radius: 20px;
@@ -480,6 +558,7 @@ body {
 }
 
 .recent__pending-container {
+  margin-top: 4rem;
   background-color: var(--white-col);
   padding: 2rem;
   border-radius: 20px;
@@ -768,6 +847,7 @@ body {
 
 /************ Manager *********/
 .managers__header {
+  margin-top: 2rem;
   justify-content: space-between;
 }
 
@@ -918,13 +998,24 @@ body {
   border: 1px solid var(--col-otherwhite);
 }
 
+.manager_form_container {
+  width: 772px;
+  height: 1004px;
+  top: 74px;
+  left: 590px;
+  background-color: var(--white-col);
+  z-index: 999;
+}
+
 /************ Admission *********/
 .admission_section {
+  margin-top: 4rem;
   display: flex;
   flex-direction: column;
 }
 
 .admission_navigation {
+  height: 100px;
   justify-content: space-between;
   padding: 3rem 4rem;
 }
@@ -993,7 +1084,8 @@ body {
 .admission_content_container {
   position: relative;
   padding: 2rem 3rem;
-  height: 700px;
+  height: 435px;
+  /* height: 700px; */
 }
 
 .admission_content_header {
@@ -1162,10 +1254,14 @@ body {
 }
 
 /************ Student Management *********/
+.student_management {
+  height: 435px;
+}
 .student_mang_header {
   width: 100%;
   justify-content: right;
   margin-bottom: 3rem;
+  margin-top: 8rem;
 }
 
 .student_mang_header button {
@@ -1216,7 +1312,7 @@ body {
 }
 
 .border_lightred {
-  border-bottom: 1px solid var(--col-red);
+  /* border-bottom: 1px solid var(--col-red); */
 }
 
 /************ Faculty Management *********/
@@ -1238,6 +1334,10 @@ body {
 }
 
 /************ Grading *********/
+.grading_section {
+  margin-top: 8rem;
+}
+
 .grading_inner_container {
   height: 450px;
 }
@@ -1284,6 +1384,10 @@ body {
 }
 
 /************ Reports *********/
+.report__section {
+  margin-top: 6rem;
+}
+
 .reports_diagram__container {
   grid-template-columns: 58% 38%;
   gap: 4rem;

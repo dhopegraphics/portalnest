@@ -9,7 +9,6 @@ function contentHolder() {
     fetch(page)
       .then((response) => response.text())
       .then((data) => {
-        // document.getElementById("content-area").innerHTML = data;
         const contentArea = document.getElementById("content-area");
         contentArea.innerHTML = data;
         executeScripts(contentArea);
@@ -17,45 +16,36 @@ function contentHolder() {
       .catch((error) => console.error("Error loading the page:", error));
   }
 
-  // loading content function
-  function loadComponent(file) {
-    fetch(file)
-      .then((response) => response.text())
-      .then((data) => {
-        // (document.getElementById("cardContainer").innerHTML = data)
-
-        const componentArea = document.getElementById("cardContainer");
-        componentArea.innerHTML = data;
-        executeScripts(componentArea);
-      })
-      .catch((error) => console.error(`Error loading ${file}:`, error));
-  }
-
   // Function to execute <script> tags manually
   function executeScripts(container) {
     const scripts = container.querySelectorAll("script");
+
     scripts.forEach((oldScript) => {
       const newScript = document.createElement("script");
 
-      // Handle external script files
+      // Copy attributes like 'type', 'src', and 'async'
       if (oldScript.src) {
         newScript.src = oldScript.src;
+        newScript.async = false; // Ensure correct execution order
       } else {
-        // Handle inline script content
         newScript.textContent = oldScript.textContent;
       }
 
-      // Ensure scripts are executed after DOM is updated
+      // Copy other attributes (like type or id if needed)
+      Array.from(oldScript.attributes).forEach((attr) => {
+        newScript.setAttribute(attr.name, attr.value);
+      });
+
+      // Append to the body to ensure execution
       document.body.appendChild(newScript);
 
-      // Optional: Remove the script to avoid duplication
-      oldScript.parentNode.removeChild(oldScript);
+      // Optional: Remove the original script to avoid duplication
+      oldScript.remove();
     });
   }
 
-  return function (param1, param2) {
+  return function (param1) {
     loadPage(param1);
-    loadComponent(param2);
   };
 }
 const displayPages = contentHolder();
@@ -92,49 +82,7 @@ menuBtn.addEventListener("click", () => {
     width.classList.toggle("width");
   });
   document.querySelector(".see_all").classList.toggle("width");
+  document.querySelector(".card_mid_content").classList.toggle("margin");
+  document.querySelector(".first_ctext").classList.toggle("margin");
+  document.querySelector(".card_scroll").classList.toggle("scroll");
 });
-
-// Change header text base on navigation buttonn click
-document.querySelector(".admissionbtn").addEventListener("click", () => {
-  document.querySelector(".header_title_text").textContent =
-    "Admissions Management";
-});
-
-document
-  .querySelector(".student-managementbtn")
-  .addEventListener("click", () => {
-    document.querySelector(".header_title_text").textContent =
-      "Student Management";
-  });
-
-document
-  .querySelector(".faculty-managementbtn")
-  .addEventListener("click", () => {
-    document.querySelector(".header_title_text").textContent =
-      "Faculties Management";
-  });
-
-document.querySelector(".departmentbtn").addEventListener("click", () => {
-  document.querySelector(".header_title_text").textContent =
-    "Department Managements";
-});
-
-document.querySelector(".coursebtn").addEventListener("click", () => {
-  document.querySelector(".header_title_text").textContent =
-    "Course Management";
-});
-
-document.querySelector(".gradingbtn").addEventListener("click", () => {
-  document.querySelector(".header_title_text").textContent =
-    "Grade Managements";
-});
-
-function defaultText() {
-  document.querySelector(".header_title_text").textContent =
-    "Dashboard-School Manager";
-}
-
-document.querySelector(".eventbtn").addEventListener("click", defaultText);
-document.querySelector(".reportbtn").addEventListener("click", defaultText);
-document.querySelector(".managersbtn").addEventListener("click", defaultText);
-document.querySelector(".dashboardbtn").addEventListener("click", defaultText);

@@ -33,6 +33,7 @@
 
     <!-- Javascript -->
     <script defer src="../../functions/script-schooladmin.js"></script>
+    <script defer src="../../functions/script2_schooladmin.js"></script>
   </head>
   <body>
     <div class="card card_green">
@@ -45,7 +46,7 @@
       </div>
 
       <div class="card__footer_m flex col_green">
-        <button class="btn_m flex col_green">
+        <button id="createlecturer" class="btn_m flex col_green">
           <p>Add</p>
           <span>+</span>
         </button>
@@ -106,5 +107,16 @@
         </button>
       </div>
     </div>
+
+    <script>
+      // Manager's section logic
+      const overlay = document.querySelector(".overlay");
+      const createLecturerBtn = document.querySelector("#createlecturer");
+
+      createLecturerBtn.addEventListener("click", () => {
+        console.log("creat btn");
+        overlay.classList.add("hidden_remove");
+      });
+    </script>
   </body>
 </html>

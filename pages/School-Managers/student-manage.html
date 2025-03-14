@@ -10,6 +10,87 @@
     <script defer src="../../functions/script-schooladmin.js"></script>
   </head>
   <body>
+    <div class="main__card-container">
+      <h1>Student Management</h1>
+
+      <div class="card_scroll dashboard__scroll">
+        <div class="card__container" id="cardContainer">
+          <div class="card card_green">
+            <div class="card__header flex border_green">
+              <span class="people_icon"
+                ><i class="bi bi-journal-text col_green"></i>
+              </span>
+              <div>
+                <p class="col_green">1,234</p>
+                <p>Active Students</p>
+              </div>
+            </div>
+
+            <div class="card__footer flex col_green">
+              <p>See Details</p>
+              <button>
+                <i class="bi bi-arrow-right col_green"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="card card_violet">
+            <div class="card__header flex border_violet">
+              <span>
+                <i class="bi bi-person-check col_violet"></i>
+              </span>
+              <div>
+                <p class="col_violet">45</p>
+                <p>Pending Registration</p>
+              </div>
+            </div>
+
+            <div class="card__footer flex col_violet">
+              <p>See Details</p>
+              <button><i class="bi bi-arrow-right col_violet"></i></button>
+            </div>
+          </div>
+
+          <div class="card card_orange">
+            <div class="card__header flex border_orange">
+              <span>
+                <i class="bi bi-person col_orange"></i>
+              </span>
+              <div>
+                <p class="col_orange">500</p>
+                <p>Gratuated Students</p>
+              </div>
+            </div>
+
+            <div class="card__footer flex col_orange">
+              <p>See Details</p>
+              <button><i class="bi bi-arrow-right col_orange"></i></button>
+            </div>
+          </div>
+
+          <div class="card card_lightred">
+            <div class="card__header flex border_lightred">
+              <!-- change the icon here -->
+              <span>
+                <i class="bi bi-person-x col_lightred"></i>
+              </span>
+              <div>
+                <p class="col_lightred">15</p>
+                <p>Withdrawn</p>
+              </div>
+            </div>
+
+            <div class="card__footer flex col_lightred">
+              <p>See Details</p>
+              <button>
+                <i class="bi bi-arrow-right col_lightred"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div
       id="student_management"
       class="dashboard__section content student_management_section"
@@ -23,7 +104,7 @@
 
       <div
         id="live__admission"
-        class="live__activity-container admission_content_container"
+        class="live__activity-container admission_content_container student_management"
       >
         <div class="student__search flex">
           <form action="#">
