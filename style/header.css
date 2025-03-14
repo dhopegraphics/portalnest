@@ -306,7 +306,7 @@ nav {
  
 }
 
-.middle-bar a {
+.middle-bar div {
     text-decoration: none;
     color: black;
     display: flex;
@@ -325,7 +325,7 @@ nav {
    
 }
 
-.middle-bar p {
+.middle-bar div p {
     align-items: center;
     justify-content: center;
     display: flex;
@@ -333,17 +333,17 @@ nav {
 }
 
 
- .middle-bar a:first-child {
+ .middle-bar div:first-child {
     border-radius: 10px 0px 0 10px;
 }
 
-.middle-bar a:last-child {
+.middle-bar div:last-child {
     border-radius: 0px 10px 10px 0px;
   
 }
 
 
-.middle-bar a:hover {
+.middle-bar div:hover {
     cursor: pointer;
     background-color: rgb(224, 242, 253); 
     padding: 10px;
@@ -384,8 +384,8 @@ nav {
 
 /* Hover effect: Show the border */
 /* Hover effect: Show the border */
-.middle-bar a:not(.active):hover .middle-bar-icons::before,
-.middle-bar a:not(.active):hover .middle-bar-icons::after {
+.middle-bar div:not(.active):hover .middle-bar-icons::before,
+.middle-bar div:not(.active):hover .middle-bar-icons::after {
     width: 2px;
     height: 100%; /* Expand vertically */
     background: rgb(0, 68, 255); /* Change color */
@@ -396,7 +396,7 @@ nav {
     margin-bottom: 10px;
 }
 
-.middle-bar a p {
+.middle-bar div p {
     margin: 0;
 }
 
@@ -404,7 +404,7 @@ nav {
     display: none;
 }
 
-.active  .arrow-up-icon {
+div.active  .arrow-up-icon {
     display: inline;
     background-color: white;
     border-radius: 30px;
@@ -412,7 +412,7 @@ nav {
     width: 35px;
 }
 
-.active .middle-bar-icons {
+div.active .middle-bar-icons {
     background-color: rgb(4, 158, 247);
     color: white;
     border-left-width: 0;
@@ -422,12 +422,12 @@ nav {
     width: 100%;
 }
 
-.active .middle-bar-icons  img.icons  {
+div.active .middle-bar-icons  img.icons  {
     filter: invert(1); 
 }
 
 
-.active .middle-bar-icons::after {
+div.active .middle-bar-icons::after {
     content: "";
     position: absolute;
     right: 0;
@@ -436,7 +436,7 @@ nav {
     background: rgb(255, 255, 255); /* Border color */
 }
 
-.active .middle-bar-icons::before {
+div.active .middle-bar-icons::before {
     content: "";
     position: absolute;
     left: 0;
@@ -445,6 +445,14 @@ nav {
     background: rgb(255, 255, 255); /* Border color */
 }
 
+.middle-bar > div {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.middle-bar > div.active {
+  
+    transform: scale(1.1); /* Slightly enlarge for effect */
+}
 
 @media (min-width: 1366px) {  
     /* Styles for laptops and desktops */
@@ -541,7 +549,7 @@ nav {
         margin-bottom: 15%;
     }
 
-    .middle-bar a {
+    .middle-bar div {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -617,7 +625,7 @@ nav {
         left: 5%;
         right: 5%;
     }
-    .middle-bar a {
+    .middle-bar div {
         padding: 10px;
         font-size: 10px;
         width: 30%;
@@ -630,24 +638,24 @@ nav {
     .middle-bar-icons  img.icons  {
         width: 50%;
     }
-    .active .middle-bar-icons {
+    div.active .middle-bar-icons {
         padding: 15% 15%;
         border-radius: 10px;
         width: 80%;
     }
-    .active .middle-bar-icons  img.icons  {
-        width: 70%;
+    div.active .middle-bar-icons  img.icons  {
+        width: 50%;
     }
 
-    .middle-bar a:nth-child(2)  {
+    .middle-bar div:nth-child(2)  {
         border-radius: 0px 0px 0px 0px;
     }
 
-    .middle-bar a:nth-child(3) {
+    div.middle-bar div:nth-child(3) {
         border-radius: 0px 10px 10px 0px;
     }
 
-    .middle-bar a:nth-child(4)  {
+    .middle-bar div:nth-child(4)  {
         border-radius: 10px 0px 0px 10px;
     }
 
@@ -692,18 +700,18 @@ nav {
      
     }
 
-    .middle-bar a:nth-child(2) , .middle-bar a:nth-child(3) {
+    .middle-bar div:nth-child(2) , .middle-bar div:nth-child(3) {
         border-radius: 0px 0px 0px 0px;
     }
-     .middle-bar a:nth-child(3) {
+     .middle-bar div:nth-child(3) {
         border-radius: 0px 10px 10px 0px;
     }
 
-    .middle-bar a:nth-child(4) {
+    .middle-bar div:nth-child(4) {
         border-radius: 10px 0px 0px 10px;
     }
 
-    .middle-bar a:hover {
+    .middle-bar div:hover {
         background-color: rgb(224, 242, 253); 
         padding-left: 20px;
     }
@@ -716,17 +724,17 @@ nav {
         width: 45%;
     }
 
-    .active .middle-bar-icons {
+    div.active .middle-bar-icons {
         padding: 10% 10%;
         width: 100%;
         
     }
 
-    .active .middle-bar-icons  img.icons  {
+    div.active .middle-bar-icons  img.icons  {
         width: 50%;
     }
 
-    .middle-bar  .active {
+    .middle-bar  div.active {
         font-size: 17px
     }
     
@@ -758,18 +766,18 @@ nav {
      
     }
 
-    .middle-bar a:nth-child(2) , .middle-bar a:nth-child(3) {
+    .middle-bar div:nth-child(2) , .middle-bar div:nth-child(3) {
         border-radius: 0px 0px 0px 0px;
     }
-     .middle-bar a:nth-child(3) {
+     .middle-bar div:nth-child(3) {
         border-radius: 0px 10px 10px 0px;
     }
 
-    .middle-bar a:nth-child(4) {
+    .middle-bar div:nth-child(4) {
         border-radius: 10px 0px 0px 10px;
     }
 
-    .middle-bar a:hover {
+    .middle-bar div:hover {
         background-color: rgb(224, 242, 253); 
         padding-left: 20px;
     }
@@ -782,17 +790,17 @@ nav {
         width: 45%;
     }
 
-    .active .middle-bar-icons {
+    div.active .middle-bar-icons {
         padding: 10% 10%;
         width: 100%;
         
     }
 
-    .active .middle-bar-icons  img.icons  {
+    div.active .middle-bar-icons  img.icons  {
         width: 50%;
     }
 
-    .middle-bar  .active {
+    .middle-bar  div.active {
         font-size: 17px
     }
     
@@ -894,26 +902,26 @@ nav {
         
         
     }
-    .middle-bar a:first-child {
+    .middle-bar div:first-child {
         border-radius: 10px 0px 0 10px;
     }
-    .middle-bar a:last-child {
+    .middle-bar div:last-child {
         border-radius: 0px 10px 10px 0px;
     }
 
-    .middle-bar a:nth-child(3) {
+    .middle-bar div:nth-child(3) {
         border-radius: 0px 10px 10px 0px;
     }
 
-    .middle-bar a:nth-child(2) {
+    .middle-bar div:nth-child(2) {
         border-radius: 0px 0px 0px 0px;
     }
 
-    .middle-bar a:nth-child(4) {
+    .middle-bar div:nth-child(4) {
         border-radius: 10px 0px 0px 10px;
     }
 
-    .middle-bar a p {
+    .middle-bar div p {
         padding: 5px;
     }
 
@@ -932,14 +940,14 @@ nav {
     }
 
 
-    .active .middle-bar-icons {
+    div.active .middle-bar-icons {
         width: 60%; 
      
        
       
     }
 
-    .active .middle-bar-icons img.icons {
+    div.active .middle-bar-icons img.icons {
         width: 120%;
         max-width: none;
         height: auto;
@@ -1071,30 +1079,30 @@ body.no-scroll {
         color: black;
     }
 
-    .middle-bar a:first-child {
+    .middle-bar div:first-child {
         border-radius: 10px 0px 0px 10px;
     }
 
-    .middle-bar a:nth-child(2) {
+    .middle-bar div:nth-child(2) {
         border-radius: 0px 10px 10px 0px;
     }
     
     
-    .middle-bar a:nth-child(3) {
+    .middle-bar div:nth-child(3) {
         border-radius: 10px 0px 0px 10px;
     }
 
-    .middle-bar a:nth-child(4) {
+    .middle-bar div:nth-child(4) {
         border-radius: 0px 10px 10px 0px;
     }
     
-    .middle-bar a:last-child {
+    .middle-bar div:last-child {
         border-radius: 10px 10px 10px 10px;
     }
     
     
 
-    .middle-bar a {
+    .middle-bar div {
         font-size: 0.7rem;
         border-radius: 10px 10px 10px 10px;
     }
@@ -1106,7 +1114,7 @@ body.no-scroll {
     .full-header {
         display: none;
     }
-    .middle-bar a {
+    .middle-bar div {
         display: flex;
         align-items: center;
         width: 8rem;
@@ -1119,12 +1127,12 @@ body.no-scroll {
         width: 100%;
       
     }
-    .active .middle-bar-icons {
+    div.active .middle-bar-icons {
         padding: 5% 5%;
         width: 100%;
     }
 
-    .active .middle-bar-icons  img.icons  {
+    div.active .middle-bar-icons  img.icons  {
         width: 50%;
       
     }
@@ -1172,7 +1180,7 @@ body.no-scroll {
         display: block;
     }
 
-    .middle-bar a:nth-child(1) ,  .middle-bar a:nth-child(2) ,  .middle-bar a:nth-child(3) ,  .middle-bar a:nth-child(4) {
+    .middle-bar div:nth-child(1) ,  .middle-bar div:nth-child(2) ,  .middle-bar div:nth-child(3) ,  .middle-bar div:nth-child(4) {
         font-size: 0.7rem;
         border-radius: 10px 10px 10px 10px;
     }
@@ -1181,7 +1189,7 @@ body.no-scroll {
 
     }
     
-    .middle-bar a {
+    .middle-bar div {
         margin-top: 10%;
     }
 
