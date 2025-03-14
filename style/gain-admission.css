@@ -1,168 +1,144 @@
 .whole-page {
     display: flex;
-
 }
 
-.signup-form-container {
+.form-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 50%;
-    height: 100vh;
-    background-color: lightblue;
-    padding-left: 10%;
-    padding-right: 5%;
-
+    max-width: 60%;
 }
 
 .portalnest-logo {
-    width: 30%;
-    margin-bottom: 10px;
-}
-
-.signup-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 85%;
-    overflow: hidden;
-    
-}
-
-.signup-form h1 {
-    text-transform: capitalize;
-    font-weight: bold;
-    font-size: 2rem;
-    margin-top: 0;
-    margin-bottom: 0;
+    width: 40%;
 }
 
 .welcome-message {
-    max-width: 80%;
+    text-transform: capitalize;
+    font-size: 15px;
     font-weight: 500;
-    margin-top: 5px;
-}
-
-.third-party-auth {
-    display: flex;
-    justify-content: space-between;
     max-width: 85%;
-    min-width: 30%;
-    margin: 20px 0;
+    margin-bottom: 0;
 }
 
-.google, .facebook {
-    display: flex;
-    max-width: 25%;
-    height: 49px;
-    background-color: #ffffff;
-    border-radius: 7px;
-    border: 2px solid;
-    border-color: #147aff;
-    box-shadow: 0px 4px 26.5px #00000030;
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
-    padding: 0px 50px;
-}
-
-.auth-logo {
-    width: 50px;
-}
-
-.facebook-logo {
-    width: 60px;
-}
-
-.auth-text {
-    font-weight: 500;
-    font-size: 16px;
-    letter-spacing: 0.80px;
-    line-height: normal;
-}
-
-.or {
+.your-admission-portal-message-container {
     display: flex;
     align-items: center;
-    margin: 20px 0;
-    max-width: 85%;
+    margin: 30px 0;
+   
 }
 
 .line {
     width: 133px;
-    
+
 }
 
-.or-continue-with {
+.your-admission {
     font-weight: 500;
     color: #000000;
     font-size: 12px;
     letter-spacing: 0.60px;
     line-height: normal;
+    text-transform: uppercase;
+    text-wrap: nowrap;
 }
 
-.overall-input-container {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-}
-
-.input-container {
+.dropdown-container, .required-documents {
     position: relative;
-    display: flex;
-    align-items: center;
-    width: 85%;
-    margin-bottom: 20px;
-}
-
-.input-container input {
-    padding: 15px 45px;
-    border: 2px solid black;
-    border-radius: 10px;
     width: 100%;
+    margin-bottom: 30px;
 }
 
-#submit {
+.dropdown-menu {
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+}
+
+.input-group, .required-documents {
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+.input-group input, .required-documents {
+    padding-right: 35px;
+    
+    
+}
+
+.input-group input:focus {
+    outline: none;
+}
+
+.input-group input::placeholder {
+    font-weight: 500;
+    color: black;
+}
+
+.arrow {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg); /* Initially pointing up */
+    transition: transform 0.3s ease;
+}
+
+.dropdown-container.active .arrow {
+    transform: translateY(-50%) rotate(180deg); /* Arrow points down when active */
+}
+
+.required-documents {
+    display: flex;
+    padding: 8px 10px;
+    background-color: rgb(236, 234, 234);
+    justify-content: space-between;
+    align-items: center;
+}
+
+.required-documents p {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.checkboxes {
+    margin-right: 10px;
+    flex-wrap: nowrap;
+}
+
+.proceed {
     background-color: #1971ff;
-    border-width: 0;
     color: white;
-    font-weight: 600;
-    margin-top: 60px;
-    border: 1px solid;
-    border-color: #147aff;
-    box-shadow: 0px 4px 26.5px #00000030;
-    cursor: pointer;
-    transition: all ease 0.2s;
-}
-
-#submit:hover {
-    opacity: 0.8;
-}
-
-.form-icon {
-    position: absolute;
-    width: 24px;
-    left: 15px;
-}
-
-.eye-off {
-    position: absolute;
-    width: 24px;
-    right: 15px;
-    cursor: pointer;
+    padding: 8px 0;
+    border-radius: 8px;
+    border: 0px;
+    font-weight: 500;
+    outline: none;
+    margin-top: 30px;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
 }
 
 .preview-image {
-    background-color: #007bff;
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    max-width: 50%;
     height: 100vh;
-    overflow: hidden;
-    position: relative;
+    background-color: #1971ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .secure-mobile-apps {
-    position: absolute;
-    width: 80%;
+    max-width: 80%;
+    align-self: center;
 }
