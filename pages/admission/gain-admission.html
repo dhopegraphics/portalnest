@@ -6,63 +6,76 @@
   <title>Gain Admission</title>
   <link rel="stylesheet" href="/style/gain-admission.css">
   <link rel="stylesheet" href="/style/main.css">
-  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
     <div class="whole-page">
-      <div class="signup-form-container">
-        <img class="portalnest-logo" src="/assets/logo/portalnest logo.png" />
-
-        <div class="signup-form">
-          <h1>sign up to portal nest</h1>
+      <div class="form-container">
+        <div class="form">
+          <img class="portalnest-logo" src="/assets/logo/portalnest logo.png" />
           <p class="welcome-message">
-            Welcome To PortalNest! Select Your Method. You Are
-            Trying To Gain Admission. Create An Account Now So You
-            Get To See Your Admission Status
+            welcome to portal nest! choose your school to be admitted
           </p>
 
-          <div class="third-party-auth">
-            <div class="google">
-              <img class="auth-logo" src="/assets/images/Google.webp" />
-              <p class="auth-text">Google</p>
-            </div>
-            <div class="facebook">
-              <img class="facebook-logo" src="/assets/images/Facebook-logo.png" />
-              <p class="auth-text">Facebook</p>
-            </div>
-          </div>
-
-          <div class="or">
+          <div class="your-admission-portal-message-container">
             <div class="line" style="flex-grow: 1; height: 1px; background-color: black;"></div>
-            <div class="or-continue-with" style="padding: 0 10px;">Or Continue With Email</div>
+            <div class="your-admission" style="padding: 0 10px;">Your Admission Portal</div>
             <div class="line" style="flex-grow: 1; height: 1px; background-color: black;"></div>
           </div>
 
-          <form>
-            <div class="overall-input-container">
-
-              <div class="input-container">
-                <img class="form-icon" src="/assets/icons/email.svg" >
-                <input type="email" placeholder="Email"  required >
-              </div>
-  
-              <div class="input-container">
-                <img class="form-icon" src="/assets/icons/lock.svg" >
-                <input type="password" placeholder="Password"  required >
-                <img class="eye-off" src="/assets/icons/visibility_off.svg" />
-              </div>
-
-              <div class="input-container">
-                <input id="submit" type="submit" value="Create an account">
-              </div>
+          <div class="dropdown-container" id="dropdownContainer">
+            <div class="input-group">
+              <input type="text" class="form-control" id="dropdownInput" placeholder="Which Institution Are You Applying To?" required>
+              <span class="input-group-text" id="dropdownTrigger">
+                <i class="fa fa-chevron-up arrow" id="dropdownArrow"></i>
+              </span>
             </div>
-          </form>
+            <ul class="dropdown-menu" id="dropdownMenu">
+              <li><a class="dropdown-item">KNUST</a></li>
+              <li><a class="dropdown-item">Opoku Ware Senior High</a></li>
+              <li><a class="dropdown-item">University of Ghana Legon</a></li>
+              <li><a class="dropdown-item">Osei Tutu Senior High</a></li>
+            </ul>
+          </div>
+
+          <div class="dropdown-container" id="dropdownContainer">
+            <div class="input-group">
+              <input type="text" class="form-control" id="dropdownInput" placeholder="What Level Are You Applying For?" required>
+              <span class="input-group-text" id="dropdownTrigger">
+                <i class="fa fa-chevron-up arrow" id="dropdownArrow"></i>
+              </span>
+            </div>
+            <ul class="dropdown-menu" id="dropdownMenu">
+              <li><a class="dropdown-item">High School</a></li>
+              <li><a class="dropdown-item">Undergraduate</a></li>
+              <li><a class="dropdown-item">Postgraduate</a></li>              
+          </div>
+
+          <div class="required-documents">
+            <p>Do You Have All Required Documents Ready?</p>
+            <div class="checkboxes">
+
+              <label>
+                <input type="checkbox" id="yes" onclick="onlyOne(this)"> Yes
+              </label>
+              <label>
+                <input type="checkbox" id="no" onclick="onlyOne(this)"> No
+              </label>
+            </div>
+          </div>
+
+          <input class="proceed" id="proceed" type="submit" value="Proceed To Application Form">
+
         </div>
+        
       </div>
   
       <div class="preview-image">
           <img class="secure-mobile-apps" src="/assets/images/Secure-mobile-apps.svg"/>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="/functions/gain-admission.js"></script>
 </body>
 </html>
