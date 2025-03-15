@@ -90,12 +90,12 @@
     position: absolute;
     right: 5px;
     top: 50%;
-    transform: translateY(-50%) rotate(0deg); /* Initially pointing up */
+    transform: translateY(-50%) rotate(0deg);
     transition: transform 0.3s ease;
 }
 
 .dropdown-container.active .arrow {
-    transform: translateY(-50%) rotate(180deg); /* Arrow points down when active */
+    transform: translateY(-50%) rotate(180deg);
 }
 
 .required-documents {
