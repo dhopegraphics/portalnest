@@ -1,57 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Student Portal-Home</title>
-    <!-- Import Google Fonts -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
-    />
-    <!-- Import Google Material Icons -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
-    />
-    <link rel="stylesheet" href="/style/studentHome.css" />
-  </head>
-  <body>
-    <aside class="sidebar">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PortalNest - Student Dashboard</title>
+  <link rel="stylesheet" href="/style/studentHome.css">
+</head>
+
+<body>
+  <div class="sidebar">
+    <div>
       <div class="logo">
-        <img src="/assets/logo/portalnest-Variation-Logo-2.png" alt="logo" />
-        <h2>Portal Nest</h2>
+        <h1 style="color: #2a7d8b; font-size: 24px;">P<span style="color: #2a7d8b; font-size: 18px;">⚙</span>rtal<span
+            style="color: #4caf50;">Nest</span>.</h1>
       </div>
-      <ul class="links">
-        <li>
-          <span class="material-icons-sharp"> home </span>
-          <a href="#">Home</a>
+      <ul class="nav-menu">
+        <li class="nav-item active">
+          <i>🏠</i>
+          <a href="/pages/Student-Portal/index.html"><span>Home</span></a>
         </li>
-        <li>
-          <span class="material-icons-sharp"> payments </span>
-          <a href="#">Pay Fees</a>
+        <li class="nav-item">
+          <i>💳</i>
+          <a href="/pages/Student-Portal/fees-payment.html"><span>Pay Fees</span></a>
         </li>
-        <li>
-          <span class="material-icons-sharp"> how_to_reg </span>
-          <a href="#">Course Registration</a>
+        <li class="nav-item">
+          <i>📚</i>
+          <a href="/pages/Student-Portal/course-registration.html"><span>Course Registration</span></a>
         </li>
-        <li>
-          <span class="material-icons-sharp"> receipt_long </span>
-          <a href="#">Check Results</a>
+        <li class="nav-item">
+          <i>📝</i>
+          <a href="/pages/Student-Portal/result-check.html"><span>Check Result</span></a>
         </li>
-        <li>
-          <span class="material-icons-sharp"> paid </span>
-          <a href="#">Payment History</a>
+        <li class="nav-item ">
+          <i>📊</i>
+          <a href="/pages/Student-Portal/payment-history.html"><span>Payment History</span></a>
         </li>
-        <li>
-          <span class="material-icons-sharp"> history </span>
-          <a href="#">Registration History</a>
-        </li>
-        <li>
-          <span class="material-icons-sharp"> logout </span>
-          <a href="#">Log Out</a>
+        <li class="nav-item">
+          <i>📋</i>
+          <a href="/pages/Student-Portal/registration-history.html"><span>Registration History</span></a>
         </li>
       </ul>
+    </div>
+    <div class="logout">
+      <div class="nav-item">
+        <i>↪</i>
+        <span>Log Out</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="profile-card">
+      <div class="profile-image">
+        <img src="/assets/images/profilepic.png" alt="Student Profile Picture">
+      </div>
+      <div class="profile-details">
+        <div class="detail-group">
+          <div class="detail-label">Name</div>
+          <div class="detail-value">MENSAH Isaac Nana Sam</div>
+        </div>
+        <div class="detail-group">
+          <div class="detail-label">Level</div>
+          <div class="detail-value">300 Level</div>
+        </div>
+        <div class="detail-group">
+          <div class="detail-label">Index Number</div>
+          <div class="detail-value">0055478</div>
+        </div>
+        <div class="detail-group">
+          <div class="detail-label">Payment Of Fees</div>
+          <div class="detail-value">
+            <span class="not-paid">Not Paid</span>
+            <a href="#" class="pay-now">Pay Fees Now</a>
+          </div>
+        </div>
+        <div class="detail-group">
+          <div class="detail-label">Department</div>
+          <div class="detail-value">Computer Science</div>
+        </div>
+        <div class="detail-group">
+          <div class="detail-label">Course Registration Status</div>
+          <div class="detail-value">
+            <span class="status-badge status-closed">Closed</span>
+            <span class="status-badge register-now">Register Now</span>
+          </div>
+        </div>
+        <ul class="links">
+            <li>
+                <span class="material-icons-sharp">
+                    home
+                    </span>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <span class="material-icons-sharp">
+                    payments
+                </span>
+                <a href="#">Pay Fees</a>
+            </li>
+            <li>
+                <span class="material-icons-sharp">
+                    how_to_reg
+                    </span>
+                <a href="#">Course Registration</a>
+            </li>
+            <li>
+                <span class="material-icons-sharp">
+                    receipt_long
+                    </span>
+                <a href="#">Check Results</a>
+            </li>
+            <li>
+                <span class="material-icons-sharp">
+                    paid
+                </span>
+                <a href="#">Payment History</a>
+            </li>
+            <li>
+                <span class="material-icons-sharp">
+                    history
+                </span>
+                <a href="#">Registration History</a>
+            </li>
+            <li class="logout">
+                <span class="material-icons-sharp">
+                    logout
+                </span>
+                <a href="#">Log Out</a>
+            </li>
+        </ul>
     </aside>
-  </body>
+    <main>
+                <!-- Profile Card -->
+                <div class="profile-card">
+                    <img src="assets/images/profilepic.png" alt="Profile Picture" class="profile-img">
+                    <div class="profile-details">
+                        <h2>MENSAH Isaac Nana Sam</h2>
+                        <p><strong>Index Number:</strong> 0055478</p>
+                        <p><strong>Department:</strong> Computer Science</p>
+                        <p><strong>Faculty:</strong> Computational Science And Physics</p>
+                        <p><strong>Level:</strong> 300 Level</p>
+                    </div>
+                    <div class="status">
+                        <p><strong>Payment Of Fees:</strong> <span class="not-paid">Not Paid</span> <a href="#" class="pay-btn">Pay Fees Now →</a></p>
+                        <p><strong>Course Registration Status:</strong> <span class="closed">Closed</span> <a href="#" class="register-btn">Register Now</a></p>
+                        <p><strong>School Registration Progress:</strong> <span class="progress">Will Be Available Later</span></p>
+                    </div>
+                </div>
+    
+                <!-- Semester and Virtual Classroom Container -->
+                <div class="info-container">
+                    <!-- Semester Information -->
+                    <div class="semester-info">
+                        <h3>Current Semester Information</h3>
+                        <p><strong>Semester Season:</strong> 2024/2025</p>
+                        <p><strong>Current Semester:</strong> First-Semester</p>
+                        <p><strong>Course Registration End Date:</strong> 7 March 2025, 11:59pm</p>
+                        <p class="closed"><strong>Late Course Registration End Date:</strong> Closed!</p>
+                    </div>
+    
+                    <!-- Virtual Classroom -->
+                    <div class="virtual-classroom">
+                        <span class="material-icons-sharp">
+                            video
+                            </span>
+                        <div class="classroom-info">
+                            <h3>Virtual Classroom</h3>
+                            <p>Online Platform For Live Interactive Teaching With Video, Student Engage In Quizzes, Exams, Teachers Provides Slides</p>
+                            <p class="coming-soon">Coming Soon…</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
 </html>

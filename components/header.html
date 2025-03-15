@@ -7,8 +7,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
     rel="stylesheet">
     <link rel="stylesheet" href="/style/header.css">
-
-
 </head>
 <body>
     <div class="overall-header">
@@ -24,7 +22,7 @@
                  </div>
                 <div class="full-header" >
                     <nav class="header">
-                        <a id="home" href= "/index.html">
+                        <a id="home"  href= "../index.html">
                             <div>HOME</div>
                         </a>
                         <a id="services" href="/pages/services.html">
@@ -55,49 +53,63 @@
             </div>
         </div>
         <section class="middle-bar">
-            <a id="t-and-c" href="/components/Previews-T&C.html">
+            <div id="t-and-c" >
                 <span class="middle-bar-icons">
                     <img class="icons" src="/assets/images/Security Shield.png">
                     <p>terms and conditions</p>
-                    <img class="arrow-up-icon" src="/assets/icons/ArrowUpContained.png">
+                    <a href="/components/Previews-T&C.html">
+                        <img class="arrow-up-icon" src="/assets/icons/ArrowUpContained.png">
+                    </a>
+                  
                 </span>
-            </a>
+            </div>
         
-            <a id="admission-portal" href="/pages/admission/gain-admission.html">
+            <div id="admission-portal" >
                 <span class="middle-bar-icons">
                     <img class="icons" src="/assets/icons/Clipboard.png">
                     <p>admission portal</p>
                     <img class="arrow-up-icon" src="/assets/icons/ArrowUpContained.png">
                 </span>
-            </a>
+            </div>
         
-            <a id="admin-dashboard" href="/pages/School-Managers/index.html">
+            <div id="admin-dashboard" class="active" >
                 <span class="middle-bar-icons">
                     <img class="icons" src="/assets/icons/AudioSettings.png">
                     <p>admin dashboard</p>
-                    <img class="arrow-up-icon" src="/assets/icons/ArrowUpContained.png">
+                    <a href="/pages/School-Managers/index.html">
+                        <img class="arrow-up-icon" src="/assets/icons/ArrowUpContained.png">
+                    </a>
+                    
                 </span>
-            </a>
+            </div>
         
-            <a id="student-portal" class="active" href="/pages/Student-Portal/index.html">
+            <div id="student-portal"  >
                 <span class="middle-bar-icons">
-                    <img style="filter: invert(0)" class="icons" src="/assets/images/Student Studying.png">
+                    <img style="filter: invert(1)" class="icons" src="/assets/images/Student Studying.png">
                     <p>student portal</p>
-                    <img class="arrow-up-icon" src="/assets/icons/ArrowUpContained.png">
+                    <a href="/pages/Student-Portal/index.html">
+                        <img class="arrow-up-icon" src="/assets/icons/ArrowUpContained.png">
+                    </a>
+                  
                 </span>
-            </a>
+            </div>
         
-            <a id="school-search" href="/pages/Miscellaneous/school-search.html">
+            <div id="school-search" >
                 <span class="middle-bar-icons">
                     <img class="icons" src="/assets/images/Listening-To-Feedback.png">
                     <p>school search</p>
-                    <img class="arrow-up-icon" src="/assets/icons/ArrowUpContained.png">
+                    <a href="/pages/Miscellaneous/school-search.html">
+                        <img class="arrow-up-icon" src="/assets/icons/ArrowUpContained.png">
+                    </a>
+                   
                 </span>
-            </a>            
+            </div>            
         </section>
 
     </div>
 
+    <script src="/functions/headerFooter.js" ></script>
+  
 
 </body>
 </html>

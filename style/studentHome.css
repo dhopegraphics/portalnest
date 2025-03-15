@@ -1,68 +1,487 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Sharp');
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-} 
+    font-family: "Poppins", sans-serif;
+}
 body {
     height: 100vh;
     width: 100%;
-    background-image: url('/assets\images\galaxy.jpg'); /* Adjust the path as needed */
     background-position: center;
     background-size: cover;
 }
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #fff;
+}
+
 .sidebar {
     position: fixed;
     top: 0;
     left: 0;
-    width: 260px;
+    width: 110px;
     height: 100%;
     display: flex;
-    align-items: center;
     flex-direction: column;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(17px);
     --webkit-backdrop-filter: blur(17px);
-    border-right: 1px solid rgba(255, 255, 255, 0.6);
+    border-right: 1px solid rgba(255, 255, 255, 0.7);
+    transition: width 0.3s ease;
+}
+.sidebar:hover {
+    width: 260px;
 }
 .sidebar .logo {
+    color: #000;
+}
+
+.logo {
     display: flex;
     align-items: center;
-    padding: 25px 10px 15px;
 }
+
 .logo img {
-    width: 20px;
+    width: 43px;
     border-radius: 50%;
-}
-.logo h2 {
+    background-color: #e3e8ef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-weight: 600;
+    color: #666;
+}
+
+.step.active {
+    background-color: #1a73e8;
+    color: white;
+}
+
+.step-line {
+    width: 100px;
+    height: 2px;
+    background-color: #e3e8ef;
+    margin: 0 10px;
+}
+
+.course-title {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.courses-table-container {
+    background: white;
+    border-radius: 10px;
+    padding: 1px;
+    margin-bottom: 30px;
+    overflow-x: auto;
+}
+
+.logo h2 {
     font-size: 1.15rem;
+    font-weight: 600;
     margin-left: 15px;
-} 
+    display: none;
+}
+.sidebar:hover .logo h2 {
+    display: block;
+}
 .sidebar .links {
     list-style: none;
     margin-top: 20px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    height: calc(100% - 140px);
 }
-.links li {
+.sidebar .links::-webkit-scrollbar {
+    display: none;
+}
+
+.selection-container {
+    flex: 1;
     display: flex;
+    border-radius: 4px;
     align-items: center;
+    justify-content: center;
+    padding: 40px;
+    gap: 24px;
+}
+
+.dropdown-group {
+    width: 100%;
+    max-width: 400px;
+}
+
+.dropdown-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+}
+.links li:hover {
+    cursor: pointer;
+    background: #11afaf2f;
+}
+.links h4 {
+    color: #222;
+    font-weight: 500;
+    display: none;
+    margin-bottom: 10px;
+}
+.sidebar:hover .links h4 {
+    display: block;
+}
+.links hr {
+    margin: 10px 8px;
+    border: 1px solid #4c4c4c;
+}
+.sidebar:hover .links hr {
+    border-color: transparent;
 }
 .links li span {
     padding: 12px 10px;
 }
-.links li:hover {
-    border-radius: 4px;
-    cursor: pointer;
-    background: #353;
-}
 .links li a {
-    color: #000;
     padding: 10px;
+    color: #000;
+    display: none;
     font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 16px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.proceed-button:hover {
+    background-color: #1557b0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .registration-history {
+        flex-direction: column;
+    }
+
+    .registration-slip-banner {
+        writing-mode: horizontal-tb;
+        transform: none;
+        padding: 20px;
+        border-top-right-radius: 115.5px;
+        border-bottom-right-radius: 115.5px;
+    }
+
+    .registration-slip-banner span {
+        transform: none;
+    }
+
+    .selection-container {
+        padding: 20px;
+    }
+}
+
+
+.payment-history-container {
+    background: white;
+    border-radius: 10px;
+    padding: 1px;
+    margin: 30px;
+    overflow-x: auto;
+}
+
+.payment-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+}
+
+.payment-table th,
+.payment-table td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.payment-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+}
+
+.payment-table td {
+    color: #444;
+}
+
+.payment-table tr:last-child td {
+    border-bottom: none;
+}
+
+.status-successful {
+    color: #1a73e8;
+    font-weight: 500;
+}
+
+.view-button {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 6px 16px;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.view-button:hover {
+    background-color: #f5f5f5;
+    border-color: #ccc;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .payment-history-container {
+        margin: 15px;
+    }
+
+    .payment-table th,
+    .payment-table td {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .payment-table {
+        font-size: 13px;
+    }
+
+    .payment-table th,
+    .payment-table td {
+        padding: 8px;
+    }
+
+    .view-button {
+        padding: 4px 12px;
+        font-size: 12px;
+    }
+}
+
+/* Add these new styles to the existing studentHome.css file */
+
+.results-page {
+    display: flex;
+    position: relative;
+    min-height: 100%;
+}
+
+.selection-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    gap: 24px;
+}
+
+.dropdown-group {
+    width: 100%;
+    max-width: 400px;
+}
+
+.dropdown-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.custom-select {
+    position: relative;
+    width: 100%;
+}
+
+.custom-select select {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    appearance: none;
+    background-color: white;
+    cursor: pointer;
+    color: #333;
+    transition: all 0.2s ease;
+}
+
+.custom-select select:focus {
+    outline: none;
+    border-color: #1a73e8;
+}
+
+.custom-select.focused {
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.2);
+    border-radius: 8px;
+}
+
+.select-arrow {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #666;
+    font-size: 12px;
+}
+
+.results-banner {
+    background-color: #1a73e8;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    border-top-right-radius: 115.5px;
+    border-bottom-right-radius: 115.5px;
+}
+
+.results-banner span {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 2px;
     white-space: nowrap;
     text-decoration: none;
-
 }
+.sidebar:hover .links li a {
+    display: block;
+}
+.links .logout-link {
+    margin-top: 20px;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    transition: margin-left 0.3s ease, width 0.3s ease;
+    width: calc(100% - 250px);
+}
+
+.main-content.full-width {
+    width: 100%;
+    margin-left: 0;
+}
+
+.main-content .open-btn {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+/* Profile Card */
+.profile-card {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.profile-details h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.profile-details p {
+    margin: 5px 0;
+}
+
+.status {
+    margin-top: 20px;
+}
+
+.status p {
+    margin: 10px 0;
+}
+
+.status .not-paid {
+    color: red;
+    font-weight: bold;
+}
+
+.status .pay-btn, .status .register-btn {
+    display: inline-block;
+    text-decoration: none;
+    background: #007bff;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-size: 0.9em;
+    transition: background 0.3s ease;
+}
+
+.status .pay-btn:hover, .status .register-btn:hover {
+    background: #0056b3;
+}
+
+/* Info Container */
+.info-container {
+    display: flex;
+    gap: 20px;
+}
+
+/* Semester Info */
+.semester-info, .virtual-classroom {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+.semester-info h3, .virtual-classroom h3 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        width: 200px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .info-container {
+        flex-direction: column;
+    }
+}
+
