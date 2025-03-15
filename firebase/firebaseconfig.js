@@ -7,13 +7,12 @@ import { getAuth  } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-aut
 // Firebase Config
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyB23ym2RPjajlLSIZUMTG30XgxYASgPMrw",
-  authDomain: "portalnest-a6e55.firebaseapp.com",
-  projectId: "portalnest-a6e55",
-  storageBucket: "portalnest-a6e55.firebasestorage.app",
-  messagingSenderId: "541170085452",
-  appId: "1:541170085452:web:9cd69d890f171637ebcee9",
-  measurementId: "G-C897YQDD6N"
+  apiKey: "AIzaSyDAX2K0TK_qaQWcT8TayXVfz57EAluzRXY",
+  authDomain: "portalnest-82470.firebaseapp.com",
+  projectId: "portalnest-82470",
+  storageBucket: "portalnest-82470.firebasestorage.app",
+  messagingSenderId: "351167922561",
+  appId: "1:351167922561:web:5c216dc987bee78d306880"
 };
 
 // Initialize Firebase
