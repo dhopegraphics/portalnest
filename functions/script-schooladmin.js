@@ -2,7 +2,7 @@
 
 // Navigation and Section Content
 const buttons = document.querySelectorAll(".btn__navigate");
-const contents = document.querySelectorAll(".contents__container");
+const contents = document.querySelectorAll(".content__area");
 
 // Managers
 const overLay = document.querySelector(".overlay");

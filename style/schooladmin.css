@@ -39,6 +39,12 @@
   --col-aside-btn: #d2d2d2;
 }
 
+/*
+-webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-progress-appearance: none; 
+ */
+
 * {
   margin: 0;
   padding: 0;
@@ -53,7 +59,7 @@ body {
   /* will change the font family */
   font-family: "Rubik", sans-serif;
   margin: 0;
-  background-color: var(--light);
+  /* background-color: var(--light); */
   color: var(--col-dark);
   font-size: 1rem;
   font-weight: 400;
@@ -80,19 +86,18 @@ body {
   grid-template-columns: 1fr;
 }
 
-/* note this */
-.overall__main {
-  height: 1110px;
-}
-
-.contents__container {
+.content__area {
   display: none;
+  opacity: 0;
+  visibility: hidden;
   height: 0;
-  transition: all 0.5s ease;
+  transition: all 0.4s ease;
 }
 
-.contents__container.active {
+.content__area.active {
   display: block;
+  opacity: 1;
+  visibility: visible;
   height: auto;
 }
 
@@ -107,6 +112,10 @@ body {
 
 .see_all.width {
   width: 14%;
+}
+
+.card_scroll.scroll {
+  width: 100%;
 }
 
 .card_mid_content.margin {
@@ -126,21 +135,33 @@ body {
   height: 100%;
   background-color: rgba(246, 247, 250, 0.1);
   backdrop-filter: blur(10px);
-  /* z-index: -1; */
   transition: all 0.5s ease;
 }
 
 .hidden,
 .manager_form_container {
   display: none;
+  transition: all 0.5s ease;
 }
 
 .hidden.hidden_remove,
 .manager_form_container.hidden_remove {
   display: block;
+  transition: all 0.5s ease;
 }
 
 /************ General Styling *********/
+.select_remove_default {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-progress-appearance: none;
+}
+
+.inner_grading_container::-webkit-scrollbar,
+.initial_content_container::-webkit-scrollbar {
+  display: none;
+}
+
 /* grids */
 .grid {
   display: grid;
@@ -190,14 +211,20 @@ body {
 .main,
 .main__header {
   width: 100%;
+  height: auto;
+  background-color: var(--col-white-bg);
 }
 
+/* note this */
+/* .overall__main {
+  height: 1110px;
+} */
+
 .main__main-content {
-  /* background: var(--col-white-bg); */
-  /* background: yellow; */
-  /* height: auto; */
+  background: var(--col-white-bg);
+  height: auto;
   /* height: 1060px; */
-  height: 1141px;
+  /* height: 1141px; */
 }
 
 .main__card-container {
@@ -206,7 +233,8 @@ body {
 
 .content__area {
   margin: 0rem 4.8rem 4rem;
-  height: auto;
+  /* height: auto; */
+  height: 1028px;
 }
 
 /************ Aside Navigation *********/
@@ -215,8 +243,9 @@ body {
   background-color: var(--primary-col);
   color: var(--white-col);
   width: 309px;
-  height: auto;
-  height: 1141px;
+  /* height: auto; */
+  /* height: 1141px; */
+  height: 1122px;
   white-space: nowrap;
   transition: all 0.4s ease;
 }
@@ -271,7 +300,8 @@ body {
 }
 
 .nav__one {
-  height: 72vh;
+  /* height: 72vh; */
+  height: 82vh;
   border-bottom: 1px solid var(--white-col);
 }
 
@@ -320,7 +350,8 @@ body {
 
 .border_bottom {
   border-top: 1px solid var(--white-col);
-  margin-top: 50rem;
+  /* margin-top: 50rem; */
+  margin-top: 200px;
 }
 
 .log-out__container {
@@ -387,13 +418,15 @@ body {
   color: var(--col-black);
   font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 1.8rem;
+  margin: 1rem 0rem 0.6rem;
 }
 
+/* will come back here */
 .card_scroll {
-  /* background-color: red; */
-  width: 100%;
-  overflow: hidden;
+  background-color: red;
+  /* width: 100%; */
+  width: 890px;
+  /* overflow: hidden; */
 }
 
 .card__container {
@@ -402,17 +435,17 @@ body {
   justify-content: space-between;
   gap: 4rem;
 
-  max-width: 900px;
+  /* max-width: 1000px; */
   overflow-x: auto;
 }
 
 .card {
   width: 100%;
-  height: 18rem;
+  height: 16rem;
   /* width: 271px; */
   /* height: 130px; */
   border: 1px solid;
-  border-radius: 11px;
+  border-radius: 20px;
 
   display: flex;
   flex-direction: column;
@@ -511,7 +544,7 @@ body {
   margin-bottom: 1rem;
   border-top: 1px solid;
   justify-content: space-between;
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem;
 }
 
 .card__footer_m {
@@ -564,20 +597,22 @@ body {
 
 .dashboard__section {
   grid-template-rows: 60% 40%;
-  gap: 4rem;
-  margin-bottom: 4rem;
+  gap: 2rem;
+  margin: 2rem 0rem 4rem;
 }
 
 .live__activity-container {
-  margin-top: 4rem;
+  height: 434px;
+  margin-top: 2rem;
   background-color: var(--white-col);
   padding: 2rem;
   border-radius: 20px;
   box-shadow: 0 0.8rem 1.4rem rgba(0, 0, 0, 0.2);
 }
 
+.recent__pending_container,
 .recent__pending-container {
-  margin-top: 4rem;
+  /* margin-top: 4rem; */
   background-color: var(--white-col);
   padding: 2rem;
   border-radius: 20px;
@@ -597,7 +632,8 @@ body {
   box-shadow: 0 0.8rem 1.4rem rgba(0, 0, 0, 0.2);
   border-radius: 11px;
   transition: all 0.4s;
-  height: 55rem;
+  /* height: 55rem; */
+  height: 321px;
 }
 
 .activity__card:hover {
@@ -733,6 +769,10 @@ body {
 }
 
 /* Pending styling */
+.recent__pending_container {
+  height: 328px;
+}
+
 .pending__heading {
   justify-content: space-between;
   margin-right: 1.5rem;
@@ -866,7 +906,7 @@ body {
 
 /************ Manager *********/
 .managers__header {
-  margin-top: 2rem;
+  margin-top: 3rem;
   justify-content: space-between;
 }
 
@@ -877,8 +917,22 @@ body {
   color: var(--dark);
 }
 
+.manager_select_con {
+  position: relative;
+  width: 20%;
+}
+
+/* Check the html of this */
+.manager_select_con span {
+  position: absolute;
+  top: 2px;
+  right: 12px;
+  font-size: 2rem;
+  transform: rotate(90deg);
+}
+
 .sort_btn {
-  width: 18%;
+  width: 100%;
   border: none;
   padding: 0.6rem 0.8rem;
   font-size: 1.4rem;
@@ -898,16 +952,13 @@ body {
 
 .initial_content_container {
   margin-top: 3rem;
-  height: 110rem;
+  height: 750px;
   overflow-y: auto;
 }
 
-.initial_content_container::-webkit-scrollbar {
-  display: none;
-}
-
 .manager_content_container {
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
+  margin: 2rem 0rem 4rem;
 }
 
 .manager_content_container h1 {
@@ -919,7 +970,7 @@ body {
 
 .initial_title {
   justify-content: space-between;
-  margin: 2rem 30rem 0.8rem 20rem;
+  margin: 2rem 30rem 2rem 20rem;
 }
 
 .initial_title p {
@@ -1217,15 +1268,16 @@ body {
 
 /************ Admission *********/
 .admission_section {
-  margin-top: 4rem;
+  margin-top: 7rem;
   display: flex;
   flex-direction: column;
+  gap: 8rem;
 }
 
 .admission_navigation {
   height: 100px;
   justify-content: space-between;
-  padding: 3rem 4rem;
+  /* padding: 3rem 4rem; */
 }
 
 .admission_navigation form {
@@ -1246,12 +1298,38 @@ body {
   outline: none;
 }
 
+.container_admission_sort {
+  width: 40%;
+  justify-content: space-between;
+  gap: 2.5rem;
+}
+
+.admission_select_con {
+  position: relative;
+}
+
+/* Check the html of this */
+.admission_select_con span {
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  font-size: 2rem;
+  transform: rotate(90deg);
+  /* cursor: pointer; */
+}
+
 .admission_sort {
-  width: 17%;
+  width: 130px;
 }
 
 .admission_program_sort {
-  width: 20%;
+  width: 200px;
+  border: none;
+  padding: 0.6rem 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-radius: 11px;
+  cursor: pointer;
 }
 
 .admission_sort,
@@ -1269,7 +1347,8 @@ body {
   color: var(--white-col);
   font-size: 1.4rem;
   font-weight: 500;
-  padding: 1rem 4rem;
+  /* padding: 1rem 4rem; */
+  padding: 1.4rem 4rem;
   border: 1px solid #4e2a0b;
   border-radius: 8px;
   cursor: pointer;
@@ -1494,12 +1573,12 @@ body {
   gap: 4rem;
 }
 
-.student_sorted_con select {
-  width: 50%;
+.student_sort_first {
+  width: 151px;
 }
 
-.student_sorted_con select:last-child {
-  width: 70%;
+.student_sort_last {
+  width: 200px;
 }
 
 .student_pending p {
@@ -1534,7 +1613,17 @@ body {
 
 /************ Course Management *********/
 .course_sorted {
-  width: 55%;
+  justify-content: right;
+  width: 55.5%;
+  gap: 4rem;
+}
+
+.course_sort_first {
+  width: 120px;
+}
+
+.course_sort_last {
+  width: 170px;
 }
 
 .course_year p {
@@ -1542,8 +1631,21 @@ body {
 }
 
 /************ Grading *********/
-.grading_section {
+.inner_grading_container {
   margin-top: 8rem;
+  height: 730px;
+  overflow-y: auto;
+  border-radius: 20px;
+}
+
+.grading_sorted {
+  justify-content: right;
+  width: 53.8%;
+  gap: 3rem;
+}
+
+.grading_section {
+  /* margin-top: 8rem; */
 }
 
 .grading_inner_container {

@@ -25,15 +25,13 @@
   }
 
   /* .card_scroll.scroll { */
-  .card_scroll {
-    /* background-color: red; */
-    /* width: 152rem; */
+  /* .card_scroll {
     width: 100%;
     max-width: 700px;
-    /* overflow-x: auto; */
+    overflow-x: auto;
     overflow-x: scroll;
-    /* white-space: nowrap; */
-  }
+    white-space: nowrap;
+  } */
 
   .card__container {
     /* display: grid; */
