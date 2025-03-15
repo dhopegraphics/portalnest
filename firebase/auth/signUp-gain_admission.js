@@ -5,27 +5,27 @@ import { setPersistence, browserLocalPersistence, onAuthStateChanged } from "htt
 
 // Ensure user stays logged in
 setPersistence(auth, browserLocalPersistence)
-  .then(() => {
-    console.log("Persistence set to local.");
-  })
-  .catch(error => {
-    console.error("Persistence error:", error.message);
-  });
+  .then(() => console.log("Persistence set to local."))
+  .catch(error => console.error("Persistence error:", error.message));
 
-// Check login status when page loads
-onAuthStateChanged(auth, (user) => {
+  onAuthStateChanged(auth, (user) => {
+    const currentPage = window.location.pathname; // Get the current page URL
+
     if (user) {
-        // User is still logged in
         localStorage.setItem("userLoggedIn", "true");
         localStorage.setItem("loggedInUserEmail", user.email);
-        window.location.href = "/pages/admission/application-form.html";
+
+        // ✅ Only redirect if the user is NOT already on the signup page
+        if (currentPage !== "/pages/admission/signup.html") {
+            window.location.href = "/pages/admission/application-form.html";
+        }
     } else {
-        localStorage.removeItem("userLoggedIn"); // Ensure localStorage is updated
+        localStorage.removeItem("userLoggedIn");
     }
 });
 
-document.addEventListener("DOMContentLoaded", async function () {
-    const signUpButton = document.querySelector(".log-in"); // "Create An Account" button
+document.addEventListener("DOMContentLoaded", function () {
+    const signUpButton = document.querySelector(".log-in");
 
     signUpButton.addEventListener("click", async function () {
         const email = document.querySelector(".email input").value;
@@ -36,11 +36,10 @@ document.addEventListener("DOMContentLoaded", async function () {
             return;
         }
 
-        // Start Loading Animation
-        signUpButton.classList.add("loading");
+        signUpButton.classList.add("loading"); // ✅ Start Loading Animation
 
         try {
-            // ✅ Step 1: Check if email exists in Firestore first
+            // ✅ Check if email exists in Firestore
             const usersCollection = collection(db, "users");
             const emailQuery = query(usersCollection, where("email", "==", email));
             const querySnapshot = await getDocs(emailQuery);
@@ -51,7 +50,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 return;
             }
 
-            // ✅ Step 2: Check Firebase Authentication for existing email
+            // ✅ Check Firebase Authentication for existing email
             const signInMethods = await fetchSignInMethodsForEmail(auth, email);
             if (signInMethods.length > 0) {
                 showAlert("❌ Email already in use. Please try another email.");
@@ -59,28 +58,27 @@ document.addEventListener("DOMContentLoaded", async function () {
                 return;
             }
 
-            // ✅ Step 3: Get the last used student ID
+            // ✅ Get the last used student ID
             const lastUserQuery = query(usersCollection, orderBy("user_id", "desc"), limit(1));
             const lastUserSnapshot = await getDocs(lastUserQuery);
 
-            let newStudentNumber = 1; // Default if no users exist
-
+            let newStudentNumber = 1;
             if (!lastUserSnapshot.empty) {
-                const lastUserId = lastUserSnapshot.docs[0].id; // Get last document ID (e.g., "student5")
-                const lastNumber = parseInt(lastUserId.replace("student", "")) || 0; // Extract number (5)
-                newStudentNumber = lastNumber + 1; // Increment properly
+                const lastUserId = lastUserSnapshot.docs[0].id;
+                const lastNumber = parseInt(lastUserId.replace("student", "")) || 0;
+                newStudentNumber = lastNumber + 1;
             }
 
-            const documentId = `student${newStudentNumber}`; // Generate next unique ID
+            const documentId = `student${newStudentNumber}`;
 
-            // ✅ Step 4: Create User in Firebase Authentication
+            // ✅ Create User in Firebase Authentication
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
 
-            // ✅ Step 5: Store User Data in Firestore
+            // ✅ Store User Data in Firestore
             const userData = {
                 email: email,
-                full_name: null, 
+                full_name: null,
                 user_id: user.uid,
                 institution_code: null,
                 phone_number: null,
@@ -92,46 +90,48 @@ document.addEventListener("DOMContentLoaded", async function () {
                 updated_at: serverTimestamp(),
             };
 
-            await setDoc(doc(db, "users", documentId), userData);
-// ✅ Save login state (keep user logged in)
-localStorage.setItem("userLoggedIn", "true");
-localStorage.setItem("loggedInUserEmail", email);
+            await setDoc(doc(db, "users", documentId), userData); // ✅ Ensure Firestore document is created before moving forward
 
-            // ✅ Step 6: Stop Loading Effect & Redirect
+            // ✅ Stop Loading Animation
             signUpButton.classList.remove("loading");
-            showAlert("🎉 Sign Up Successful! Redirecting...");
 
-            setTimeout(() => {
+            // ✅ Show success alert and WAIT for "OK" before redirecting
+            showAlert("🎉 Sign Up Successful! Click OK to proceed.", () => {
+                // ✅ Redirect after user clicks "OK"
                 window.location.href = "/pages/admission/application-form.html";
-            }, 2000);
+            });
+
         } catch (error) {
             console.error("Error:", error.message);
             showAlert("❌ Sign Up Failed: " + error.message);
-            signUpButton.classList.remove("loading");
+            signUpButton.classList.remove("loading"); // Stop loading animation on failure
         }
     });
 });
 
-// Function to Show Custom Alert
-function showAlert(message) {
+// Function to Show Custom Alert and Wait for "OK"
+function showAlert(message, callback = null) {
     const alertBox = document.getElementById("custom-alert");
     const alertMessage = document.getElementById("alert-message");
     const closeAlert = document.getElementById("close-alert");
 
-    alertMessage.innerText = message; // Set alert message
+    alertMessage.innerText = message;
     alertBox.classList.remove("hidden");
     alertBox.classList.add("show");
 
-    // Close alert when clicking the button
     closeAlert.onclick = function () {
         alertBox.classList.add("hidden");
         alertBox.classList.remove("show");
+
+        if (callback) {
+            callback(); // Execute callback AFTER user clicks "OK"
+        }
     };
 }
 
+// Clear localStorage on new login
 document.querySelector(".log-in").addEventListener("click", function () {
     document.querySelectorAll("input").forEach(input => {
         localStorage.removeItem(input.name);
     });
 });
-
