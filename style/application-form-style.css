@@ -1,0 +1,100 @@
+body {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.heading {
+    font-weight: bold;
+    font-size: 38px;
+}
+
+.header p {
+    font-size: 18px;
+    letter-spacing: 0.5px;
+}
+
+.nav-indicator {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.form-progress {
+    display: grid;
+}
+
+.form-number {
+    width: 30px;
+    height: 30px;
+    border-radius: 40px;
+    background-color: rgb(238, 234, 234);
+    color: rgb(147, 147, 147);
+    padding: 3px 2px 0px 2px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.description {
+    color: rgb(147, 147, 147);
+    transition: color 0.3s ease;
+    font-size: 14px;
+}
+
+
+#form {
+    box-shadow: 1px 1px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 15px 15px 50px 15px;
+    margin-top: 20px;
+}
+
+.form-title-desc {
+    margin-bottom: 30px;
+}
+
+#form h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+#form h1, #form p {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.address-container {
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;   
+}
+
+.previous-button, .next-button, .save-draft-btn{
+    margin-left: 30px;
+    border-radius: 4px;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.previous-button:hover, .next-button:hover, .save-draft-btn:hover {
+    opacity: 0.8;
+}
+
+.next-button {
+    background-color: black;
+    color: white;
+}
+
+.buttons button:first-child {
+    margin-right: auto;
+    margin-left: 0;
+}
+
