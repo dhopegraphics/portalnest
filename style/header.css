@@ -1,12 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,500;1,600&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,500;1,600&display=swap");
 
 body {
     margin: 0;
-    font-family: 'Poppins' ;
-
+    font-family: "Poppins";
 }
-
 
 /* Hamburger Menu */
 .hamburger-menu {
@@ -30,24 +27,21 @@ body {
 
 /* When menu is active, transform into an 'X' */
 .hamburger-menu.active span:nth-child(1) {
-    transform: translateY(9px) rotate(45deg); /* Move down slightly before rotating */
+    transform: translateY(9px) rotate(45deg);
+    /* Move down slightly before rotating */
     background: black;
 }
 
 .hamburger-menu.active span:nth-child(2) {
-    opacity: 0; /* Hide middle bar */
+    opacity: 0;
+    /* Hide middle bar */
 }
 
 .hamburger-menu.active span:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg); /* Move up slightly before rotating */
+    transform: translateY(-9px) rotate(-45deg);
+    /* Move up slightly before rotating */
     background: black;
 }
-
-/* Change to black when .full-header is active */
-.full-header.active ~ .hamburger-menu span {
-    background: black;
-}
-
 
 .overall-header {
     display: flex;
@@ -57,7 +51,7 @@ body {
 
 .topBG-image-content {
     width: 100%;
-    min-height: 70vh; 
+    min-height: 70vh;
     background-image: url("/assets/images/TopBgImage.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -67,7 +61,7 @@ body {
     align-items: center;
     justify-content: space-between;
     margin-bottom: -10%;
-    font-family: 'Poppins', 'Poppins';
+    font-family: "Poppins", "Poppins";
 }
 
 .logo-and-header {
@@ -77,13 +71,11 @@ body {
     left: 15%;
     right: 15%;
     margin: 50px 0;
-    
 }
 
 .portalnest-logo {
     max-width: 300px;
     min-width: 200px;
-    
 }
 
 .header {
@@ -104,106 +96,125 @@ nav {
 .full-header {
     display: flex;
     align-items: center;
-    width: 100%; /* Default width */
-    max-width: 1200px; /* Optional: Prevent it from getting too wide */
+    width: 100%;
+    /* Default width */
+    max-width: 1200px;
+    /* Optional: Prevent it from getting too wide */
 }
 
 .header a::before {
     content: "";
     align-items: center;
     position: absolute;
-    top: -35%; /* Move border up */
+    top: -35%;
+    /* Move border up */
     width: 330%;
-    height: 5px; /* Control thickness */
+    height: 5px;
+    /* Control thickness */
     background: white;
-    border-radius: 50px; /* Fully round edges */
+    border-radius: 50px;
+    /* Fully round edges */
     transition: all 500ms ease;
     left: -25%;
 }
 
 .header a {
-    position: relative; /* Needed for absolute positioning of ::before */
+    position: relative;
+    /* Needed for absolute positioning of ::before */
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 
 .header a div {
-    position: relative; /* Needed for pseudo-element positioning */
-    padding: 10px 15px; /* Add some spacing */
-   
+    position: relative;
+    /* Needed for pseudo-element positioning */
+    padding: 10px 15px;
+    /* Add some spacing */
 }
 
-.topBG-container .logo-and-header .header a div { 
+.topBG-container .logo-and-header .header a div {
     color: rgb(255, 255, 255);
- 
-    transition: color 0.3s ease-in-out; /* Smooth transition */
 
-    
+    transition: color 0.3s ease-in-out;
+    /* Smooth transition */
 }
 
-.topBG-container .logo-and-header .header a div:hover { 
+.topBG-container .logo-and-header .header a div:hover {
     color: rgb(4, 158, 247);
-    text-shadow: 0 0 10px rgba(4, 158, 247, 0.8), 
-    0 0 20px rgba(4, 158, 247, 0.6); /* Blue glow effect */
-    
+    text-shadow: 0 0 10px rgba(4, 158, 247, 0.8), 0 0 20px rgba(4, 158, 247, 0.6);
+    /* Blue glow effect */
 }
 
 .logo-and-header .header a.active-nav-bar div {
     color: rgb(4, 158, 247);
-    text-shadow: 0 0 10px rgba(4, 158, 247, 0.8), 
-    0 0 20px rgba(4, 158, 247, 0.6); /* Blue glow effect */
+    text-shadow: 0 0 10px rgba(4, 158, 247, 0.8), 0 0 20px rgba(4, 158, 247, 0.6);
+    /* Blue glow effect */
     transition: color 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
 }
 
 .logo-and-header .header a.active-nav-bar div::before {
     content: "";
     position: absolute;
-    top: -35%; /* Position above */
+    top: -35%;
+    /* Position above */
     left: 50%;
-    width: 150%; /* Initially hidden */
-    height: 5px; /* Thickness */
+    width: 150%;
+    /* Initially hidden */
+    height: 5px;
+    /* Thickness */
     background: rgb(29, 146, 255);
-    border-radius: 50px; /* Round edges */
+    border-radius: 50px;
+    /* Round edges */
     opacity: 1;
     transform: translateX(-50%);
-    box-shadow: 0 0 15px rgba(29, 146, 255, 1), 
-    0 0 30px rgba(29, 146, 255, 0.8); /* Intense glow */
+    box-shadow: 0 0 15px rgba(29, 146, 255, 1), 0 0 30px rgba(29, 146, 255, 0.8);
+    /* Intense glow */
     transition: left 0.4s ease-in-out, width 0.4s ease-in-out, opacity 0.3s;
 }
-
 
 /* Border effect */
 /* Initial border effect */
 .header a div::before {
     content: "";
     position: absolute;
-    top: -35%; /* Position above */
+    top: -35%;
+    /* Position above */
     left: 50%;
-    width: 0%; /* Initially hidden */
-    height: 5px; /* Thickness */
+    width: 0%;
+    /* Initially hidden */
+    height: 5px;
+    /* Thickness */
     background: rgb(29, 146, 255);
-    border-radius: 50px; /* Round edges */
-    transition: width 0.4s ease-in-out, left 0.4s ease-in-out, opacity 0.3s ease-in-out, box-shadow 0.4s ease-in-out;
+    border-radius: 50px;
+    /* Round edges */
+    transition: width 0.4s ease-in-out, left 0.4s ease-in-out,
+        opacity 0.3s ease-in-out, box-shadow 0.4s ease-in-out;
     transform: translateX(-50%);
-    box-shadow: 0 0 5px rgba(29, 146, 255, 0); /* No glow initially */
-    opacity: 0; /* Initially hidden */
+    box-shadow: 0 0 5px rgba(29, 146, 255, 0);
+    /* No glow initially */
+    opacity: 0;
+    /* Initially hidden */
 }
 
 /* Expand and glow on hover */
 .header a div:hover::before {
-    width: 150%; /* Expand */
-    opacity: 1; /* Fully visible */
-    box-shadow: 0 0 15px rgba(29, 146, 255, 1), 
-                0 0 30px rgba(29, 146, 255, 0.8); /* Intense glow */
+    width: 150%;
+    /* Expand */
+    opacity: 1;
+    /* Fully visible */
+    box-shadow: 0 0 15px rgba(29, 146, 255, 1), 0 0 30px rgba(29, 146, 255, 0.8);
+    /* Intense glow */
 }
 
 /* Smooth transition back when unhovering */
 .header a div:not(:hover)::before {
-    width: 0%; /* Shrinks smoothly */
-    opacity: 0; /* Fade out */
-    box-shadow: 0 0 5px rgba(29, 146, 255, 0); /* Remove glow */
+    width: 0%;
+    /* Shrinks smoothly */
+    opacity: 0;
+    /* Fade out */
+    box-shadow: 0 0 5px rgba(29, 146, 255, 0);
+    /* Remove glow */
 }
 
 .header a {
@@ -225,18 +236,20 @@ nav {
     margin-left: 4rem;
 }
 
-.get-started:hover, .add-school-button:hover {
+.get-started:hover,
+.add-school-button:hover {
     cursor: pointer;
     filter: brightness(120%);
 }
 
-.get-started:active, .add-school-button:active {
+.get-started:active,
+.add-school-button:active {
     opacity: 0.8;
 }
 
 .page-message {
     text-align: center;
-    font-family: 'Poppins' ;
+    font-family: "Poppins";
     color: white;
     margin-top: 100px;
     max-width: fit-content;
@@ -246,6 +259,7 @@ nav {
     from {
         width: 0%;
     }
+
     to {
         width: 100%;
     }
@@ -261,7 +275,6 @@ nav {
     font-size: 40px;
     margin: 0;
     animation: typing 3s steps(22, end) forwards, blink 0.7s infinite;
-    
 }
 
 .everywhere {
@@ -274,10 +287,11 @@ nav {
     animation: typing 3s steps(22, end) 3.5s forwards, blink 0.7s infinite 3.5s;
 }
 
-.connect, .everywhere {
-    white-space: nowrap; 
+.connect,
+.everywhere {
+    white-space: nowrap;
     overflow: hidden;
-    border-right: 3px solid white; 
+    border-right: 3px solid white;
     width: 100%;
 }
 
@@ -293,21 +307,17 @@ nav {
     margin-bottom: 10px;
 }
 
-.topBG-container .logo-and-header .header { 
-  transition:  all 1.25s ease;
+.topBG-container .logo-and-header .header {
+    transition: all 1.25s ease;
 }
 
-
-
- .middle-bar {
+.middle-bar {
     display: flex;
     align-items: center;
     margin-top: -1%;
     padding: 3rem;
     padding-left: 10px;
     width: 80%;
-   
- 
 }
 
 .middle-bar div {
@@ -326,7 +336,6 @@ nav {
     height: 10rem;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
     margin-top: 1rem;
-   
 }
 
 .middle-bar div p {
@@ -336,23 +345,18 @@ nav {
     width: 80%;
 }
 
-
- .middle-bar div:first-child {
+.middle-bar div:first-child {
     border-radius: 10px 0px 0 10px;
 }
 
 .middle-bar div:last-child {
     border-radius: 0px 10px 10px 0px;
-  
 }
-
 
 .middle-bar div:hover {
     cursor: pointer;
-    background-color: rgb(224, 242, 253); 
+    background-color: rgb(224, 242, 253);
     padding: 10px;
-    
-
 }
 
 .middle-bar-icons {
@@ -361,7 +365,8 @@ nav {
     align-items: center;
     justify-content: center;
     width: 50%;
-    position: relative; /* Needed for absolute positioning */
+    position: relative;
+    /* Needed for absolute positioning */
     font-size: 80%;
 }
 
@@ -369,30 +374,37 @@ nav {
     content: "";
     position: absolute;
     left: 0;
-    width: 2px; /* Border width */
-    height: 50%; /* Adjust height of the border */
-    background: black; /* Border color */
-    transition: height 0.3s  ease-in-out, background 0.3s ease-in-out;
-} 
+    width: 2px;
+    /* Border width */
+    height: 50%;
+    /* Adjust height of the border */
+    background: black;
+    /* Border color */
+    transition: height 0.3s ease-in-out, background 0.3s ease-in-out;
+}
 
 .middle-bar-icons::after {
     content: "";
     position: absolute;
     right: 0;
-    width: 2px; /* Border width */
-    height: 50%; /* Adjust height of the border */
-    background: black; /* Border color */
+    width: 2px;
+    /* Border width */
+    height: 50%;
+    /* Adjust height of the border */
+    background: black;
+    /* Border color */
     transition: height 0.3s ease-in-out, background 0.3s ease-in-out;
 }
-
 
 /* Hover effect: Show the border */
 /* Hover effect: Show the border */
 .middle-bar div:not(.active):hover .middle-bar-icons::before,
 .middle-bar div:not(.active):hover .middle-bar-icons::after {
     width: 2px;
-    height: 100%; /* Expand vertically */
-    background: rgb(0, 68, 255); /* Change color */
+    height: 100%;
+    /* Expand vertically */
+    background: rgb(0, 68, 255);
+    /* Change color */
 }
 
 .icons {
@@ -408,7 +420,7 @@ nav {
     display: none;
 }
 
-div.active  .arrow-up-icon {
+div.active .arrow-up-icon {
     display: inline;
     background-color: white;
     border-radius: 30px;
@@ -426,44 +438,57 @@ div.active .middle-bar-icons {
     width: 100%;
 }
 
-div.active .middle-bar-icons  img.icons  {
-    filter: invert(1); 
+div.active .middle-bar-icons img.icons {
+    filter: invert(1);
 }
 
+.middle-bar-icons img.study-icons {
+    filter: invert(1);
+}
+
+div.active .middle-bar-icons img.study-icons {
+    filter: invert(0);
+}
 
 div.active .middle-bar-icons::after {
     content: "";
     position: absolute;
     right: 0;
-    width: 0px; /* Border width */
-    height: 0; /* Adjust height of the border */
-    background: rgb(255, 255, 255); /* Border color */
+    width: 0px;
+    /* Border width */
+    height: 0;
+    /* Adjust height of the border */
+    background: rgb(255, 255, 255);
+    /* Border color */
 }
 
 div.active .middle-bar-icons::before {
     content: "";
     position: absolute;
     left: 0;
-    width: 0px; /* Border width */
-    height: 0; /* Adjust height of the border */
-    background: rgb(255, 255, 255); /* Border color */
+    width: 0px;
+    /* Border width */
+    height: 0;
+    /* Adjust height of the border */
+    background: rgb(255, 255, 255);
+    /* Border color */
 }
 
-.middle-bar > div {
+.middle-bar>div {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.middle-bar > div.active {
-  
-    transform: scale(1.1); /* Slightly enlarge for effect */
+.middle-bar>div.active {
+    transform: scale(1.1);
+    /* Slightly enlarge for effect */
 }
 
-@media (min-width: 1366px) {  
+@media (min-width: 1366px) {
     /* Styles for laptops and desktops */
 
     .topBG-image-content {
         width: 100%;
-        max-width: 100vw 300vh; 
+        max-width: 100vw 300vh;
         background-image: url("/assets/images/TopBgImage.png");
         background-position: center;
         background-repeat: no-repeat;
@@ -473,11 +498,10 @@ div.active .middle-bar-icons::before {
         align-items: center;
         justify-content: space-between;
         margin-bottom: -10%;
-        font-family: 'Poppins' ;
+        font-family: "Poppins";
     }
 
     .add-school-button {
-     
         font-weight: bolder;
         padding: 5px 20px;
         border-width: 0;
@@ -494,45 +518,46 @@ div.active .middle-bar-icons::before {
         padding: 3rem;
         padding-left: 10px;
         width: 80%;
-       
-     
     }
 
-
-   section.page-message {
+    section.page-message {
         margin-bottom: 20%;
     }
+}
 
-  }
-
-  @media (min-width: 1025px) and (max-width: 1364px) {
-
+@media (min-width: 1025px) and (max-width: 1364px) {
     .topBG-container .logo-and-header {
-        justify-content: center; /* Center horizontally */
+        justify-content: center;
+        /* Center horizontally */
         width: 80%;
         margin-left: 10%;
     }
-    .logo-and-header .header a.active-nav-bar div {
-    color: rgb(4, 158, 247);
-    text-shadow: 0 0 10px rgba(4, 158, 247, 0.8), 
-    0 0 20px rgba(4, 158, 247, 0.6); /* Blue glow effect */
-}
 
-.logo-and-header .header a.active-nav-bar div::before {
-    content: "";
-    position: absolute;
-    top: -35%; /* Position above */
-    left: 50%;
-    width: 150%; /* Initially hidden */
-    height: 5px; /* Thickness */
-    background: rgb(29, 146, 255);
-    border-radius: 50px; /* Round edges */
-    opacity: 1;
-    transform: translateX(-50%);
-    box-shadow: 0 0 15px rgba(29, 146, 255, 1), 
-    0 0 30px rgba(29, 146, 255, 0.8); /* Intense glow */
-}
-    
+    .logo-and-header .header a.active-nav-bar div {
+        color: rgb(4, 158, 247);
+        text-shadow: 0 0 10px rgba(4, 158, 247, 0.8),
+            0 0 20px rgba(4, 158, 247, 0.6);
+        /* Blue glow effect */
+    }
+
+    .logo-and-header .header a.active-nav-bar div::before {
+        content: "";
+        position: absolute;
+        top: -35%;
+        /* Position above */
+        left: 50%;
+        width: 150%;
+        /* Initially hidden */
+        height: 5px;
+        /* Thickness */
+        background: rgb(29, 146, 255);
+        border-radius: 50px;
+        /* Round edges */
+        opacity: 1;
+        transform: translateX(-50%);
+        box-shadow: 0 0 15px rgba(29, 146, 255, 1), 0 0 30px rgba(29, 146, 255, 0.8);
+        /* Intense glow */
+    }
 
     .middle-bar {
         display: flex;
@@ -545,7 +570,7 @@ div.active .middle-bar-icons::before {
 
     .page-message {
         text-align: center;
-        font-family: 'Poppins' ;
+        font-family: "Poppins";
         color: white;
     }
 
@@ -561,20 +586,15 @@ div.active .middle-bar-icons::before {
         text-align: center;
         font-size: 1rem;
         padding: -2rem;
-       
     }
+}
 
-
-
-
-  }
 /*For tablets and smaller desktops*/
 @media (max-width: 1024px) {
-
-
     .topBG-image-content {
         margin-bottom: -70px;
     }
+
     .logo-and-header {
         left: 10%;
         right: 10%;
@@ -583,28 +603,34 @@ div.active .middle-bar-icons::before {
 
     .logo-and-header .header a.active-nav-bar div {
         color: rgb(4, 158, 247);
-        text-shadow: 0 0 10px rgba(4, 158, 247, 0.8), 
-        0 0 20px rgba(4, 158, 247, 0.6); /* Blue glow effect */
+        text-shadow: 0 0 10px rgba(4, 158, 247, 0.8),
+            0 0 20px rgba(4, 158, 247, 0.6);
+        /* Blue glow effect */
     }
-    
+
     .logo-and-header .header a.active-nav-bar div::before {
         content: "";
         position: absolute;
-        top: -35%; /* Position above */
+        top: -35%;
+        /* Position above */
         left: 50%;
-        width: 150%; /* Initially hidden */
-        height: 5px; /* Thickness */
+        width: 150%;
+        /* Initially hidden */
+        height: 5px;
+        /* Thickness */
         background: rgb(29, 146, 255);
-        border-radius: 50px; /* Round edges */
+        border-radius: 50px;
+        /* Round edges */
         opacity: 1;
         transform: translateX(-50%);
-        box-shadow: 0 0 15px rgba(29, 146, 255, 1), 
-        0 0 30px rgba(29, 146, 255, 0.8); /* Intense glow */
+        box-shadow: 0 0 15px rgba(29, 146, 255, 1), 0 0 30px rgba(29, 146, 255, 0.8);
+        /* Intense glow */
     }
 
     .page-message {
         margin-top: 60px;
     }
+
     .header a {
         font-size: 12px;
     }
@@ -612,16 +638,20 @@ div.active .middle-bar-icons::before {
     .get-started {
         padding: 8px 20px;
     }
+
     .connect {
         font-size: 30px;
     }
+
     .everywhere {
         font-size: clamp(1.5rem, calc(5vw + 1rem), 4rem);
     }
+
     .add-school-button {
         width: 300px;
         font-size: 25px;
     }
+
     .middle-bar {
         flex-wrap: wrap;
         justify-content: center;
@@ -629,29 +659,34 @@ div.active .middle-bar-icons::before {
         left: 5%;
         right: 5%;
     }
+
     .middle-bar div {
         padding: 10px;
         font-size: 10px;
         width: 30%;
         margin-top: 5%;
     }
+
     .middle-bar-icons {
         padding: 5% 1%;
         width: 60%;
     }
-    .middle-bar-icons  img.icons  {
+
+    .middle-bar-icons img.icons {
         width: 50%;
     }
+
     div.active .middle-bar-icons {
         padding: 15% 15%;
         border-radius: 10px;
         width: 80%;
     }
-    div.active .middle-bar-icons  img.icons  {
+
+    div.active .middle-bar-icons img.icons {
         width: 50%;
     }
 
-    .middle-bar div:nth-child(2)  {
+    .middle-bar div:nth-child(2) {
         border-radius: 0px 0px 0px 0px;
     }
 
@@ -659,10 +694,9 @@ div.active .middle-bar-icons::before {
         border-radius: 0px 10px 10px 0px;
     }
 
-    .middle-bar div:nth-child(4)  {
+    .middle-bar div:nth-child(4) {
         border-radius: 10px 0px 0px 10px;
     }
-
 
     .header a::before {
         width: 300%;
@@ -670,29 +704,27 @@ div.active .middle-bar-icons::before {
 
     .full-header {
         display: flex;
-        width: 80%; /* Reduce width */
+        width: 80%;
+        /* Reduce width */
         align-items: center;
-       
     }
-
 }
 
 @media (min-width: 856px) and (max-width: 1023px) {
-
     .add-school-button {
         margin-bottom: 15%;
     }
 
     .topBG-container .logo-and-header {
         display: flex;
-        justify-content: center; /* Center horizontally */
-        align-items: center;     /* Center vertically (if needed) */
-      
+        justify-content: center;
+        /* Center horizontally */
+        align-items: center;
+        /* Center vertically (if needed) */
     }
-    
+
     .header a::before {
         width: 350%;
-    
     }
 
     .middle-bar {
@@ -700,14 +732,14 @@ div.active .middle-bar-icons::before {
         align-items: center;
         margin-top: -10%;
         width: 100%;
-       
-     
     }
 
-    .middle-bar div:nth-child(2) , .middle-bar div:nth-child(3) {
+    .middle-bar div:nth-child(2),
+    .middle-bar div:nth-child(3) {
         border-radius: 0px 0px 0px 0px;
     }
-     .middle-bar div:nth-child(3) {
+
+    .middle-bar div:nth-child(3) {
         border-radius: 0px 10px 10px 0px;
     }
 
@@ -716,33 +748,32 @@ div.active .middle-bar-icons::before {
     }
 
     .middle-bar div:hover {
-        background-color: rgb(224, 242, 253); 
+        background-color: rgb(224, 242, 253);
         padding-left: 20px;
     }
 
-    .middle-bar-icons  {
+    .middle-bar-icons {
         width: 70%;
     }
 
-    .middle-bar-icons img.icons  {
+    .middle-bar-icons img.icons {
         width: 45%;
     }
 
     div.active .middle-bar-icons {
         padding: 10% 10%;
         width: 100%;
-        
     }
 
-    div.active .middle-bar-icons  img.icons  {
+    div.active .middle-bar-icons img.icons {
         width: 50%;
     }
 
-    .middle-bar  div.active {
-        font-size: 17px
+    .middle-bar div.active {
+        font-size: 17px;
     }
-    
 }
+
 /*For Mobiles with double screens*/
 @media (min-width: 768px) and (max-width: 885px) {
     .add-school-button {
@@ -751,14 +782,14 @@ div.active .middle-bar-icons::before {
 
     .topBG-container .logo-and-header {
         display: flex;
-        justify-content: center; /* Center horizontally */
-        align-items: center;     /* Center vertically (if needed) */
-      
+        justify-content: center;
+        /* Center horizontally */
+        align-items: center;
+        /* Center vertically (if needed) */
     }
-    
+
     .header a::before {
         width: 350%;
-    
     }
 
     .middle-bar {
@@ -766,14 +797,14 @@ div.active .middle-bar-icons::before {
         align-items: center;
         margin-top: -10%;
         width: 100%;
-       
-     
     }
 
-    .middle-bar div:nth-child(2) , .middle-bar div:nth-child(3) {
+    .middle-bar div:nth-child(2),
+    .middle-bar div:nth-child(3) {
         border-radius: 0px 0px 0px 0px;
     }
-     .middle-bar div:nth-child(3) {
+
+    .middle-bar div:nth-child(3) {
         border-radius: 0px 10px 10px 0px;
     }
 
@@ -782,33 +813,32 @@ div.active .middle-bar-icons::before {
     }
 
     .middle-bar div:hover {
-        background-color: rgb(224, 242, 253); 
+        background-color: rgb(224, 242, 253);
         padding-left: 20px;
     }
 
-    .middle-bar-icons  {
+    .middle-bar-icons {
         width: 70%;
     }
 
-    .middle-bar-icons img.icons  {
+    .middle-bar-icons img.icons {
         width: 45%;
     }
 
     div.active .middle-bar-icons {
         padding: 10% 10%;
         width: 100%;
-        
     }
 
-    div.active .middle-bar-icons  img.icons  {
+    div.active .middle-bar-icons img.icons {
         width: 50%;
     }
 
-    .middle-bar  div.active {
-        font-size: 17px
+    .middle-bar div.active {
+        font-size: 17px;
     }
-    
 }
+
 /*For mobile devices*/
 @media (max-width: 767px) {
     .hamburger-menu {
@@ -848,7 +878,7 @@ div.active .middle-bar-icons::before {
     .full-header.active {
         display: block;
     }
-    
+
     .topBG-image-content {
         margin-bottom: -100px;
     }
@@ -858,7 +888,7 @@ div.active .middle-bar-icons::before {
         left: 5%;
         right: 5%;
     }
-    
+
     .portalnest-logo {
         width: 30px;
     }
@@ -872,7 +902,6 @@ div.active .middle-bar-icons::before {
 
     .header a {
         margin: 10px 0;
-        
     }
 
     .get-started {
@@ -903,12 +932,12 @@ div.active .middle-bar-icons::before {
         flex-wrap: wrap;
         padding: 5px;
         margin-top: 0%;
-        
-        
     }
+
     .middle-bar div:first-child {
         border-radius: 10px 0px 0 10px;
     }
+
     .middle-bar div:last-child {
         border-radius: 0px 10px 10px 0px;
     }
@@ -931,8 +960,6 @@ div.active .middle-bar-icons::before {
 
     .middle-bar-icons {
         width: 100%;
-        
-        
     }
 
     .middle-bar-icons img.icons {
@@ -943,12 +970,8 @@ div.active .middle-bar-icons::before {
         width: 30px;
     }
 
-
     div.active .middle-bar-icons {
-        width: 60%; 
-     
-       
-      
+        width: 60%;
     }
 
     div.active .middle-bar-icons img.icons {
@@ -957,26 +980,18 @@ div.active .middle-bar-icons::before {
         height: auto;
         object-fit: contain;
     }
-
-
 }
 
 /*For very small mobile devices*/
 @media (max-width: 480px) {
 
     /* Disable scrolling when menu is active */
-body.no-scroll {
-    overflow: hidden;
-}
+    body.no-scroll {
+        overflow: hidden;
+    }
 
     .hamburger-menu {
         display: flex;
-      
-        
-    }
-
-    .hamburger-menu.active span {
-        background: black;
     }
 
     .full-header {
@@ -989,20 +1004,20 @@ body.no-scroll {
         z-index: 1000;
         align-items: flex-start;
         justify-items: flex-start;
-        height: 300vh; /* Adjusted to fit screen height */
+        height: 300vh;
+        /* Adjusted to fit screen height */
         overflow: hidden;
-    
+
         /* Animation Defaults */
-        transform: translateX(-100%); /* Hide off-screen */
+        transform: translateX(-100%);
+        /* Hide off-screen */
         opacity: 0;
         transition: transform 0.4s ease-out, opacity 0.4s ease-out;
     }
-    
 
     .full-header nav {
         display: flex;
         flex-direction: column;
-      
     }
 
     .full-header a {
@@ -1014,52 +1029,44 @@ body.no-scroll {
     /* Show the navigation when active */
     .full-header.active {
         display: block;
-        align-items: flex-start ;
+        align-items: flex-start;
         justify-items: flex-start;
         overflow: hidden;
         transform: translateX(0);
         opacity: 1;
-     
     }
 
     .full-header.active .header a::before {
         content: none;
-       
-
-    }
- .full-header.active .header  {
-    align-items: flex-start;
-    margin-top: 2rem;
-    
     }
 
-.full-header.active .header  div  {
-    margin: 0;
-    margin-bottom: 0;
-    color: black;
-   }
-
-   .full-header.active .header a div  {
-    color: black;
+    .full-header.active .header {
+        align-items: flex-start;
+        margin-top: 2rem;
     }
 
+    .full-header.active .header div {
+        margin: 0;
+        margin-bottom: 0;
+        color: black;
+    }
 
+    .full-header.active .header a div {
+        color: black;
+    }
 
-    .full-header.active   a .get-started {
+    .full-header.active a .get-started {
         justify-self: flex-start;
         margin-right: 5rem;
         width: 70%;
         margin-left: 0;
-        
     }
 
-   .page-message .page-message-content .everywhere {
+    .page-message .page-message-content .everywhere {
         font-size: 6vw;
         font-weight: bold;
-      
     }
 
-   
     .logo-and-header {
         left: 2%;
         right: 2%;
@@ -1090,8 +1097,7 @@ body.no-scroll {
     .middle-bar div:nth-child(2) {
         border-radius: 0px 10px 10px 0px;
     }
-    
-    
+
     .middle-bar div:nth-child(3) {
         border-radius: 10px 0px 0px 10px;
     }
@@ -1099,12 +1105,10 @@ body.no-scroll {
     .middle-bar div:nth-child(4) {
         border-radius: 0px 10px 10px 0px;
     }
-    
+
     .middle-bar div:last-child {
         border-radius: 10px 10px 10px 10px;
     }
-    
-    
 
     .middle-bar div {
         font-size: 0.7rem;
@@ -1118,6 +1122,7 @@ body.no-scroll {
     .full-header {
         display: none;
     }
+
     .middle-bar div {
         display: flex;
         align-items: center;
@@ -1129,23 +1134,19 @@ body.no-scroll {
 
     .middle-bar-icons {
         width: 100%;
-      
     }
+
     div.active .middle-bar-icons {
         padding: 5% 5%;
         width: 100%;
     }
 
-    div.active .middle-bar-icons  img.icons  {
+    div.active .middle-bar-icons img.icons {
         width: 50%;
-      
     }
-    
-
-} 
+}
 
 @media (min-width: 150px) and (max-width: 349px) {
-
     .hamburger-menu {
         display: flex;
     }
@@ -1184,17 +1185,19 @@ body.no-scroll {
         display: block;
     }
 
-    .middle-bar div:nth-child(1) ,  .middle-bar div:nth-child(2) ,  .middle-bar div:nth-child(3) ,  .middle-bar div:nth-child(4) {
+    .middle-bar div:nth-child(1),
+    .middle-bar div:nth-child(2),
+    .middle-bar div:nth-child(3),
+    .middle-bar div:nth-child(4) {
         font-size: 0.7rem;
         border-radius: 10px 10px 10px 10px;
     }
+
     .middle-bar a:first-child {
         border-radius: 10px 10px 10px 10px;
-
     }
-    
+
     .middle-bar div {
         margin-top: 10%;
     }
-
 }
