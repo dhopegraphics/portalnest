@@ -125,7 +125,17 @@ document.getElementById("logout-btn").addEventListener("click", function () {
     <script>
 
         function saveData() {
-          alert("Data saved!");
+            const formData = {
+                firstName: document.getElementById("inputFirstName").value,
+                lastName: document.getElementById("inputLastName").value,
+                dateOfBirth: document.getElementById("inputDateOfBirth").value,
+                gender: document.getElementById("inputState").value,
+                email: document.getElementById("inputEmailAddress").value,
+                phone: document.getElementById("inputPhoneNumber").value,
+                address: document.getElementById("inputAddress").value
+            };
+                localStorage.setItem("admissionFormDraft", JSON.stringify(formData));
+                alert("Draft saved successfully!");
         }
     </script>
     <script src="/functions/application-form.js"></script>
