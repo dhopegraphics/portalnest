@@ -1,116 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Header</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
-    rel="stylesheet">
-    <link rel="stylesheet" href="/style/header.css">
-</head>
-<body>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style/header.css" />
+  </head>
+  <body>
     <div class="overall-header">
-        <div class="topBG-image-content">
-            <div class="topBG-container">
-                <section class="logo-and-header">
-                    <img class="portalnest-logo" src="/assets/logo/portalnest logo.png">
-                        <!-- Hamburger Icon -->
-                  <div class="hamburger-menu" onclick="toggleMenu()">
-                       <span></span>
-                       <span></span>
-                       <span></span>
-                 </div>
-                <div class="full-header" >
-                    <nav class="header">
-                        <a id="home"  href= "../index.html">
-                            <div>HOME</div>
-                        </a>
-                        <a id="services" href="/pages/services.html">
-                            <div>SERVICES</div>
-                        </a>
-                        <a id="about-us" href="/pages/about-us.html">
-                            <div>ABOUT US</div>
-                        </a>
-                        <a id="contact-us" href="/pages/contact-us.html">
-                            <div>CONTACT US</div>
-                        </a>
-                    </nav>
-                    <a id="get-started"   href="/pages/Get-Started.html">
-                        <button class="get-started">GET STARTED</button>
-                    </a>   
-                </div>
-                </section>
-                <section class="page-message">
-                    <div class="page-message-content">
-                        <p class="connect">CONNECT TO YOUR STUDENTS</p>
-                        <p class="everywhere">EVERYWHERE, ANYWHERE</p>
-                        <a id="add-your-school" href="/pages/Get-Started.html">
-                            <button class="add-school-button">WANT TO ADD YOUR SCHOOL?</button>
-                        </a>
-                    </div>
-                </section>
-                
+      <div class="topBG-image-content">
+        <div class="topBG-container">
+          <section class="logo-and-header">
+            <img
+              class="portalnest-logo"
+              src="/assets/logo/portalnest logo.png"
+            />
+            <!-- Hamburger Icon -->
+            <div class="hamburger-menu" onclick="toggleMenu()">
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
+            <div class="full-header">
+              <nav class="header">
+                <a id="home" href="../index.html">
+                  <div>HOME</div>
+                </a>
+                <a id="services" href="/pages/services.html">
+                  <div>SERVICES</div>
+                </a>
+                <a id="about-us" href="/pages/about-us.html">
+                  <div>ABOUT US</div>
+                </a>
+                <a id="contact-us" href="/pages/contact-us.html">
+                  <div>CONTACT US</div>
+                </a>
+              </nav>
+              <a id="get-started" href="/pages/Get-Started.html">
+                <button class="get-started">GET STARTED</button>
+              </a>
+            </div>
+          </section>
+          <section class="page-message">
+            <div class="page-message-content">
+              <p class="connect">CONNECT TO YOUR STUDENTS</p>
+              <p class="everywhere">EVERYWHERE, ANYWHERE</p>
+              <a id="add-your-school" href="/pages/Get-Started.html">
+                <button class="add-school-button">
+                  WANT TO ADD YOUR SCHOOL?
+                </button>
+              </a>
+            </div>
+          </section>
         </div>
-        <section class="middle-bar">
-            <div id="t-and-c" >
-                <span class="middle-bar-icons">
-                    <img class="icons" src="/assets/images/Security Shield.png">
-                    <p>terms and conditions</p>
-                    <a href="/components/Previews-T&C.html">
-                        <img class="arrow-up-icon" src="/assets/icons/ArrowUpContained.png">
-                    </a>
-                  
-                </span>
-            </div>
-        
-            <div id="admission-portal" >
-                <span class="middle-bar-icons">
-                    <img class="icons" src="/assets/icons/Clipboard.png">
-                    <p>admission portal</p>
-                    <img class="arrow-up-icon" src="/assets/icons/ArrowUpContained.png">
-                </span>
-            </div>
-        
-            <div id="admin-dashboard" class="active" >
-                <span class="middle-bar-icons">
-                    <img class="icons" src="/assets/icons/AudioSettings.png">
-                    <p>admin dashboard</p>
-                    <a href="/pages/School-Managers/index.html">
-                        <img class="arrow-up-icon" src="/assets/icons/ArrowUpContained.png">
-                    </a>
-                    
-                </span>
-            </div>
-        
-            <div id="student-portal"  >
-                <span class="middle-bar-icons">
-                    <img style="filter: invert(1)" class="icons" src="/assets/images/Student Studying.png">
-                    <p>student portal</p>
-                    <a href="/pages/Student-Portal/index.html">
-                        <img class="arrow-up-icon" src="/assets/icons/ArrowUpContained.png">
-                    </a>
-                  
-                </span>
-            </div>
-        
-            <div id="school-search" >
-                <span class="middle-bar-icons">
-                    <img class="icons" src="/assets/images/Listening-To-Feedback.png">
-                    <p>school search</p>
-                    <a href="/pages/Miscellaneous/school-search.html">
-                        <img class="arrow-up-icon" src="/assets/icons/ArrowUpContained.png">
-                    </a>
-                   
-                </span>
-            </div>            
-        </section>
+      </div>
+      <section class="middle-bar">
+        <div id="t-and-c">
+          <span class="middle-bar-icons">
+            <img class="icons" src="/assets/images/Security Shield.png" />
+            <p>terms and conditions</p>
+            <a href="/components/Previews-T&C.html">
+              <img
+                class="arrow-up-icon"
+                src="/assets/icons/ArrowUpContained.png"
+              />
+            </a>
+          </span>
+        </div>
 
+        <div id="admission-portal">
+          <span class="middle-bar-icons">
+            <img class="icons" src="/assets/icons/Clipboard.png" />
+            <p>admission portal</p>
+            <img
+              class="arrow-up-icon"
+              src="/assets/icons/ArrowUpContained.png"
+            />
+          </span>
+        </div>
+
+        <div id="admin-dashboard" class="active">
+          <span class="middle-bar-icons">
+            <img class="icons" src="/assets/icons/AudioSettings.png" />
+            <p>admin dashboard</p>
+            <a href="/pages/School-Managers/index.html">
+              <img
+                class="arrow-up-icon"
+                src="/assets/icons/ArrowUpContained.png"
+              />
+            </a>
+          </span>
+        </div>
+
+        <div id="student-portal">
+          <span class="middle-bar-icons">
+            <img
+              style="filter: invert(1)"
+              class="icons"
+              src="/assets/images/Student Studying.png"
+            />
+            <p>student portal</p>
+            <a href="/pages/Student-Portal/index.html">
+              <img
+                class="arrow-up-icon"
+                src="/assets/icons/ArrowUpContained.png"
+              />
+            </a>
+          </span>
+        </div>
+
+        <div id="school-search">
+          <span class="middle-bar-icons">
+            <img class="icons" src="/assets/images/Listening-To-Feedback.png" />
+            <p>school search</p>
+            <a href="/pages/Miscellaneous/school-search.html">
+              <img
+                class="arrow-up-icon"
+                src="/assets/icons/ArrowUpContained.png"
+              />
+            </a>
+          </span>
+        </div>
+      </section>
     </div>
 
-    <script src="/functions/headerFooter.js" ></script>
-  
-
-</body>
+    <script src="/functions/headerFooter.js"></script>
+  </body>
 </html>
-
