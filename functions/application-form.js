@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+    loadDraft();
     let currentStep = 1;
     const totalSteps = 6;
 
@@ -163,3 +164,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
     updateProgress();
 });
+
+function saveData() {
+    const formData = {
+        firstName: document.getElementById("inputFirstName").value,
+        lastName: document.getElementById("inputLastName").value,
+        dateOfBirth: document.getElementById("inputDateOfBirth").value,
+        gender: document.getElementById("inputState").value,
+        email: document.getElementById("inputEmailAddress").value,
+        phone: document.getElementById("inputPhoneNumber").value,
+        address: document.getElementById("inputAddress").value
+    };
+        localStorage.setItem("admissionFormDraft", JSON.stringify(formData));
+        alert("Draft saved successfully!");
+}
+
+function loadDraft() {
+    const draft = JSON.parse(localStorage.getItem("admissionFormDraft"));
+    if (draft) {
+        document.getElementById("inputFirstName").value = draft.firstName;
+        document.getElementById("inputLastName").value = draft.lastName;
+        document.getElementById("inputDateOfBirth").value = draft.dateOfBirth;
+        document.getElementById("inputState").value = draft.gender;
+        document.getElementById("inputEmailAddress").value = draft.email;
+        document.getElementById("inputPhoneNumber").value = draft.phone;
+        document.getElementById("inputAddress").value = draft.address;
+    }
+}
