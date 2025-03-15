@@ -6,11 +6,6 @@
     <title>Portal-Nest-School_Manager</title>
 
     <!-- Google Fonts Links -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
 
     <!-- icons links -->
     <link
@@ -21,8 +16,6 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
     />
-
-    <!-- font aw -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -34,7 +27,7 @@
 
     <!-- Javascript -->
     <script defer src="../../functions/script-schooladmin.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> -->
   </head>
   <body>
     <aside class="navigation">
@@ -62,31 +55,21 @@
       </header>
 
       <nav class="navigation__button-container nav__one">
-        <button
-          class="btn__navigate dashboardbtn"
-          onclick="displayPages('dashboard.html')"
-          data-target="dashboard"
-        >
+        <button class="btn__navigate dashboardbtn" data-target="dashboard">
           <span>
             <i class="bi bi-house-door"></i>
           </span>
           Dashboard
         </button>
 
-        <button
-          class="btn__navigate managersbtn"
-          onclick="displayPages('managers.html')"
-        >
+        <button class="btn__navigate managersbtn" data-target="managers">
           <span class="slider_turn">
             <i class="bi bi-layout-sidebar"></i>
           </span>
           Managers
         </button>
 
-        <button
-          class="btn__navigate admissionbtn"
-          onclick="displayPages('admissions.html')"
-        >
+        <button class="btn__navigate admissionbtn" data-target="admissions">
           <span>
             <i class="bi bi-box-seam"></i>
           </span>
@@ -95,7 +78,7 @@
 
         <button
           class="btn__navigate student-managementbtn"
-          onclick="displayPages('student-manage.html')"
+          data-target="student"
         >
           <span>
             <i class="bi bi-clipboard-plus"></i>
@@ -105,7 +88,7 @@
 
         <button
           class="btn__navigate faculty-managementbtn"
-          onclick="displayPages('faculty-manage.html')"
+          data-target="faculty"
         >
           <span>
             <i class="bi bi-building-check"></i>
@@ -113,20 +96,14 @@
           Faculty Management
         </button>
 
-        <button
-          class="btn__navigate departmentbtn"
-          onclick="displayPages('departments.html')"
-        >
+        <button class="btn__navigate departmentbtn" data-target="departments">
           <span>
             <i class="bi bi-columns-gap"></i>
           </span>
           Departments
         </button>
 
-        <button
-          class="btn__navigate coursebtn"
-          onclick="displayPages('courses.html')"
-        >
+        <button class="btn__navigate coursebtn" data-target="courses">
           <span>
             <i class="bi bi-file-earmark-minus"></i>
           </span>
@@ -135,30 +112,21 @@
       </nav>
 
       <nav class="navigation__button-container nav__two">
-        <button
-          class="btn__navigate gradingbtn"
-          onclick="displayPages('grading.html')"
-        >
+        <button class="btn__navigate gradingbtn" data-target="grading">
           <span>
             <i class="bi bi-layout-text-sidebar-reverse"></i>
           </span>
           Grading & Exams
         </button>
 
-        <button
-          class="btn__navigate reportbtn"
-          onclick="displayPages('reports.html')"
-        >
+        <button class="btn__navigate reportbtn" data-target="settings">
           <span>
             <i class="bi bi-gear"></i>
           </span>
           Settings & Reports
         </button>
 
-        <button
-          class="btn__navigate eventbtn"
-          onclick="displayPages('events.html')"
-        >
+        <button class="btn__navigate eventbtn" data-target="events">
           <span>
             <i class="bi bi-display"></i>
           </span>
@@ -191,7 +159,2637 @@
       </header>
 
       <div class="main__main-content">
-        <div class="content__area" id="content-area"></div>
+        <!--  Dashboard -->
+        <div
+          id="dashboard"
+          class="contents__container dashboard__section_block"
+        >
+          <section class="content__area">
+            <div class="main__card-container">
+              <h1 class="header_title_text">Dashboard-School Manager</h1>
+
+              <div class="card_scroll dashboard__scroll">
+                <div class="card__container" id="cardContainer">
+                  <div class="card card_green">
+                    <div class="card__header flex border_green">
+                      <span class="people_icon">
+                        <i class="bi bi-journal-text col_green"></i>
+                      </span>
+                      <div>
+                        <p class="col_green">100</p>
+                        <p>Applicants</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_green">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_green"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card card_violet">
+                    <div class="card__header flex border_violet">
+                      <span>
+                        <i class="bi bi-person-check col_violet"></i>
+                      </span>
+                      <div>
+                        <p class="col_violet">20</p>
+                        <p>Staff/School Managers</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_violet">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_violet"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card card_orange">
+                    <div class="card__header flex border_orange">
+                      <span>
+                        <!-- <i class="bi bi-person col_orange"></i> -->
+                        <i class="bi bi-file-person-fill col_orange"></i>
+                      </span>
+                      <div>
+                        <p class="col_orange">500</p>
+                        <p>Students</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_orange">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_orange"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card card_lightblue">
+                    <div class="card__header flex border_lightblue">
+                      <span>
+                        <i class="bi bi-journal-text col_lightblue"></i>
+                      </span>
+                      <div>
+                        <p class="col_lightblue">15</p>
+                        <p>Listed Courses</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_lightblue">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_lightblue"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="dashboard" class="dashboard__section grid content">
+              <div class="live__activity-container">
+                <div class="live__activity-header">
+                  <h1>Live-Activity Feed</h1>
+                </div>
+
+                <div class="live__activity-card grid grid--4-cols">
+                  <div class="activity__card">
+                    <div class="image-container">
+                      <img
+                        src="../../assets/images/classroom.png"
+                        alt="students in class"
+                      />
+                    </div>
+
+                    <div class="card__content">
+                      <h1>Online Registration</h1>
+                      <p class="creted_text first_ctext">
+                        <span><i class="bi bi-dash"></i></span>Created by :
+                        Mensah Issach Nana Sam
+                      </p>
+
+                      <div class="card_mid_content">
+                        <p>Start_Date:</p>
+                        <div class="approval__students flex">
+                          <span><i class="bi bi-calendar4-week"></i></span>
+                          <p>Jan 20, 2025</p>
+                          <span><i class="bi bi-clock"></i></span>
+                          <p>09:30 Am</p>
+                        </div>
+
+                        <p>End_Date:</p>
+                        <div class="approval__students flex">
+                          <span><i class="bi bi-calendar4-week"></i></span>
+                          <p>Jan 20, 2025</p>
+                          <span><i class="bi bi-clock"></i></span>
+                          <p>09:30 Am</p>
+                        </div>
+                      </div>
+
+                      <div class="progress__container flex">
+                        <p>50%</p>
+                        <p>Ongoing</p>
+                      </div>
+
+                      <!-- this isn't showing now -->
+                      <div class="show_progress flex fifty">
+                        <div class="show_progress_1"></div>
+                        <div class="show_progress_2"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="activity__card">
+                    <div class="image-container">
+                      <img
+                        src="../../assets/images/classroom.png"
+                        alt="students in class"
+                      />
+                    </div>
+
+                    <div class="card__content">
+                      <h1>Pending Approvals-Admissions</h1>
+                      <p class="creted_text">
+                        <span><i class="bi bi-dash"></i></span>Approved by :
+                        Mensah Issach
+                      </p>
+
+                      <div class="card_mid_content">
+                        <p>Total Approved Students</p>
+                        <div class="approval__students flex">
+                          <span><i class="bi bi-calendar4-week"></i></span>
+                          <p>Jan 20, 2025</p>
+                        </div>
+
+                        <p>Pending Students Aprovals:</p>
+                        <div class="approval__students flex">
+                          <span><i class="bi bi-calendar4-week"></i></span>
+                          <p>Jan 20, 2025</p>
+                        </div>
+                      </div>
+
+                      <div class="progress__container flex">
+                        <p>70%</p>
+                        <p>Pending</p>
+                      </div>
+
+                      <!-- this isn't showing now -->
+                      <div class="show_progress flex fifty">
+                        <div class="show_progress_3"></div>
+                        <div class="show_progress_4"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="activity__card">
+                    <div class="image-container">
+                      <img
+                        src="../../assets/images/classroom.png"
+                        alt="students in class"
+                      />
+                    </div>
+
+                    <div class="card__content">
+                      <h1>Upcoming Events - Mid-Exam</h1>
+                      <p class="creted_text">
+                        <span><i class="bi bi-dash"></i></span>Created by :
+                        Mensah Issach Nana Sam
+                      </p>
+
+                      <div class="card_mid_content">
+                        <p>Exam Schedule</p>
+                        <div class="approval__students flex">
+                          <span><i class="bi bi-calendar4-week"></i></span>
+                          <p>April 29, 2025</p>
+                          <span><i class="bi bi-clock"></i></span>
+                          <p>09:30 Am</p>
+                        </div>
+
+                        <p class="ending_text">Ending Date</p>
+                        <div class="approval__students flex">
+                          <span><i class="bi bi-calendar4-week"></i></span>
+                          <p>April 29, 2025</p>
+                          <span><i class="bi bi-clock"></i></span>
+                          <p>09:30 Am</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="activity__card">
+                    <div class="image-container">
+                      <img
+                        src="../../assets/images/classroom.png"
+                        alt="students in class"
+                      />
+                    </div>
+
+                    <div class="card__content">
+                      <h1>Upcoming Events-Staff Meeting</h1>
+                      <p class="creted_text">
+                        <span><i class="bi bi-dash"></i></span>Created by :
+                        Mensah Issach Nana Sam
+                      </p>
+
+                      <div class="card_mid_content">
+                        <p>Start_Date:</p>
+                        <div class="approval__students flex">
+                          <span><i class="bi bi-calendar4-week"></i></span>
+                          <p>Jan 20, 2025</p>
+                          <span><i class="bi bi-clock"></i></span>
+                          <p>09:30 Am</p>
+                        </div>
+
+                        <p>End_Date:</p>
+                        <div class="approval__students flex">
+                          <span><i class="bi bi-calendar4-week"></i></span>
+                          <p>Jan 20, 2025</p>
+                          <span><i class="bi bi-clock"></i></span>
+                          <p>09:30 Am</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="recent__pending-container">
+                <div class="live__activity-header flex pending__heading">
+                  <h1>Recent Pending Applicants</h1>
+
+                  <button class="btn see_all">See All</button>
+                </div>
+
+                <div class="dashboardnext__card-container grid grid--2-cols">
+                  <!-- card 1 -->
+                  <div class="pending__card grid">
+                    <div class="pending__left-content grid">
+                      <img
+                        src="../../assets/images/team-2.jpg"
+                        alt="image of a person"
+                      />
+
+                      <div class="personinfo__container">
+                        <div class="program flex">
+                          <p>Computer Science</p>
+
+                          <div class="level flex">
+                            <span><i class="fa-solid fa-circle"></i></span>
+                            <p>Year One</p>
+                          </div>
+                        </div>
+
+                        <h2>Mensah Isaac Nana Sam</h2>
+                        <div class="approval flex">
+                          <div class="date flex">
+                            <span><i class="bi bi-calendar4-week"></i></span>
+                            <p>Jan 20, 2025</p>
+                          </div>
+
+                          <div class="date flex">
+                            <span><i class="bi bi-clock"></i></span>
+                            <p>09:30 Am</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="pending__right-content">
+                      <button class="btn approval_btn">Approve</button>
+                      <button class="btn decline_btn">Decline</button>
+                    </div>
+                  </div>
+
+                  <!-- card 2 -->
+                  <div class="pending__card grid">
+                    <div class="pending__left-content grid">
+                      <img
+                        src="../../assets/images/team-2.jpg"
+                        alt="image of a person"
+                      />
+
+                      <div class="personinfo__container">
+                        <div class="program flex">
+                          <p>Physics</p>
+
+                          <div class="level flex">
+                            <span><i class="fa-solid fa-circle"></i></span>
+                            <p>Year One</p>
+                          </div>
+                        </div>
+
+                        <h2>Walker Awortwe</h2>
+                        <div class="approval flex">
+                          <div class="date flex">
+                            <span><i class="bi bi-calendar4-week"></i></span>
+                            <p>Jan 15, 2025</p>
+                          </div>
+
+                          <div class="date flex">
+                            <span><i class="bi bi-clock"></i></span>
+                            <p>05:30 Pm</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="pending__right-content">
+                      <button class="btn approval_btn">Approve</button>
+                      <button class="btn decline_btn">Decline</button>
+                    </div>
+                  </div>
+
+                  <!-- card 3 -->
+                  <div class="pending__card grid">
+                    <div class="pending__left-content grid">
+                      <img
+                        src="../../assets/images/team-2.jpg"
+                        alt="image of a person"
+                      />
+
+                      <div class="personinfo__container">
+                        <div class="program flex">
+                          <p>Bio Chemistry</p>
+
+                          <div class="level flex">
+                            <span><i class="fa-solid fa-circle"></i></span>
+                            <p>Year One</p>
+                          </div>
+                        </div>
+
+                        <h2>Mensah Paul</h2>
+                        <div class="approval flex">
+                          <div class="date flex">
+                            <span><i class="bi bi-calendar4-week"></i></span>
+                            <p>Jan 29, 2025</p>
+                          </div>
+
+                          <div class="date flex">
+                            <span><i class="bi bi-clock"></i></span>
+                            <p>10:30 Am</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="pending__right-content">
+                      <button class="btn approval_btn">Approve</button>
+                      <button class="btn decline_btn">Decline</button>
+                    </div>
+                  </div>
+
+                  <!-- card 4 -->
+                  <div class="pending__card grid">
+                    <div class="pending__left-content grid">
+                      <img
+                        src="../../assets/images/team-2.jpg"
+                        alt="image of a person"
+                      />
+
+                      <div class="personinfo__container">
+                        <div class="program flex">
+                          <p>Social Science</p>
+
+                          <div class="level flex">
+                            <span><i class="fa-solid fa-circle"></i></span>
+                            <p>Year One</p>
+                          </div>
+                        </div>
+
+                        <h2>John Nana Sam</h2>
+                        <div class="approval flex">
+                          <div class="date flex">
+                            <span><i class="bi bi-calendar4-week"></i></span>
+                            <p>Jan 23, 2025</p>
+                          </div>
+
+                          <div class="date flex">
+                            <span><i class="bi bi-clock"></i></span>
+                            <p>06:30 Am</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="pending__right-content">
+                      <button class="btn approval_btn">Approve</button>
+                      <button class="btn decline_btn">Decline</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!--  Managers -->
+        <div id="managers" class="contents__container">
+          <section class="content__area">
+            <div class="main__card-container">
+              <h1 class="header_title_text">Dashboard-School Manager</h1>
+
+              <div class="card_scroll dashboard__scroll">
+                <div class="card__container" id="cardContainer">
+                  <div class="card card_green">
+                    <div class="card__header flex border_green">
+                      <span class="people_icon"
+                        ><i class="bi bi-people col_green"></i
+                      ></span>
+                      <div>
+                        <p class="col_green">Create</p>
+                        <p>Lecturer</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer_m flex col_green">
+                      <button id="createlecturer" class="btn_m flex col_green">
+                        <p>Add</p>
+                        <span>+</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card card_violet">
+                    <div class="card__header flex border_violet">
+                      <span>
+                        <i class="bi bi-person-check col_violet"></i>
+                      </span>
+                      <div>
+                        <p class="col_violet">Staff/School</p>
+                        <p>Managers</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer_m flex col_violet">
+                      <button id="createmanager" class="btn_m flex col_violet">
+                        <p>Add</p>
+                        <span>+</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card card_orange">
+                    <div class="card__header flex border_orange">
+                      <span><i class="bi bi-person col_orange"></i></span>
+                      <div>
+                        <p class="col_orange">Admissions</p>
+                        <p>Officer</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer_m flex col_orange">
+                      <button id="createofficer" class="btn_m flex col_orange">
+                        <p>Add</p>
+                        <span>+</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card card_lightblue">
+                    <div class="card__header flex border_lightblue">
+                      <span>
+                        <i class="bi bi-journal-text col_lightblue"></i>
+                      </span>
+                      <div>
+                        <p class="col_lightblue">Examination</p>
+                        <p>Officer</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer_m flex col_lightblue">
+                      <button
+                        id="createexaminer"
+                        class="btn_m flex col_lightblue"
+                      >
+                        <p>Add</p>
+                        <span>+</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="managers__header flex">
+              <h2>Complete List</h2>
+
+              <select name="" id="" class="sort_btn">
+                <option value="1">ALL</option>
+                <option value="2">NAME</option>
+                <option value="3">TITLE</option>
+              </select>
+            </div>
+
+            <!-- initial content for my javascript -->
+            <div class="initial_content_container">
+              <!-- Teacher -->
+              <div class="manager_content_container">
+                <h1>Lecturer/Teacher :</h1>
+
+                <div class="initial_title flex">
+                  <p>Name</p>
+                  <p>Department</p>
+                  <p>Course</p>
+                  <p>Year</p>
+                  <p>Salary($)</p>
+                </div>
+
+                <div class="initial_content grid">
+                  <div class="person_details flex">
+                    <div class="person_img"></div>
+                    <p>Isaac Nana Sam Mensah</p>
+                  </div>
+
+                  <div class="program_title flex">
+                    <p>Computer Science</p>
+                  </div>
+
+                  <div class="course_title flex">
+                    <p>Circuit Theory</p>
+                  </div>
+
+                  <div class="program_level flex">
+                    <p>Year 1,2,4</p>
+                  </div>
+
+                  <div class="manager_salary flex">
+                    <p>12,000</p>
+
+                    <div class="salary_btn_container flex">
+                      <button class="flex"><span>+</span> Add Roles</button>
+
+                      <!-- Edit button -->
+                      <button class="flex">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                      </button>
+
+                      <!-- close button -->
+                      <button class="flex">&times;</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Manager -->
+              <div class="manager_content_container">
+                <h1>School Manager/Staff:</h1>
+
+                <div class="initial_title flex">
+                  <p>Name</p>
+                  <p>Department</p>
+                  <p>Course</p>
+                  <p>Year</p>
+                  <p>Salary($)</p>
+                </div>
+
+                <div class="initial_content grid">
+                  <div class="person_details flex">
+                    <div class="person_img"></div>
+                    <p>Walker Gideon</p>
+                  </div>
+
+                  <div class="program_title flex">
+                    <p>Computer Science</p>
+                  </div>
+
+                  <div class="course_title flex">
+                    <p>Programming in Javascript</p>
+                  </div>
+
+                  <div class="program_level flex">
+                    <p>ALL</p>
+                  </div>
+
+                  <div class="manager_salary flex">
+                    <p>25,000,000</p>
+
+                    <div class="salary_btn_container flex">
+                      <button class="flex"><span>+</span> Add Roles</button>
+
+                      <!-- Edit button -->
+                      <button class="flex">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                      </button>
+
+                      <!-- close button -->
+                      <button class="flex">&times;</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Form  -->
+            <div class="manager_form_container">
+              <div class="fake_display flex">
+                <div></div>
+                <button class="close_form">
+                  <span><i class="bi bi-x"></i></span>
+                </button>
+              </div>
+
+              <form action="" class="manager_form">
+                <div class="up_container flex">
+                  <div class="img_con" role="button"></div>
+
+                  <div class="first_1_input">
+                    <div class="">
+                      <label for="fristname">First Name</label>
+                      <input type="text" name="fristname" id="fristname" />
+                    </div>
+
+                    <div class="">
+                      <label for="lastname">Last Name</label>
+                      <input type="text" name="lastname" id="lastname" />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="inn-container inn_one">
+                  <label for="personmail">Work Email</label>
+                  <input type="email" name="personmail" id="personmail" />
+                </div>
+
+                <div class="inn-container inn_two">
+                  <label for="number">Work Phone</label>
+                  <input type="number" name="number" id="number" />
+                </div>
+
+                <div class="inn-container inn_three">
+                  <label for="position">Role/Position</label>
+                  <select name="position" id="position">
+                    <option value="1"></option>
+                    <option value="2">Head of Department (HOD)</option>
+                    <option value="3">Senior Lecturer</option>
+                    <option value="4">Lecturer</option>
+                  </select>
+                </div>
+
+                <div class="inn-container inn_four">
+                  <label for="department">Department</label>
+                  <select name="department" id="department">
+                    <option value="1"></option>
+                    <option value="2">Computer Science Department</option>
+                    <option value="3">Business Department</option>
+                    <option value="4">Health Department</option>
+                    <option value="5">Law Department</option>
+                  </select>
+                </div>
+
+                <div class="year_selection">
+                  <label>Year Selection :</label>
+
+                  <div class="selection">
+                    <!-- Add the plus icon -->
+                    <div class="flex">
+                      <p role="button">Year 1 <span>+</span></p>
+                      <p role="button">Year 2 <span>+</span></p>
+                      <p role="button">Year 3 <span>+</span></p>
+                      <p role="button">Year 4 <span>+</span></p>
+                    </div>
+
+                    <div class="flex">
+                      <p role="button">Year 5 <span>+</span></p>
+                      <p role="button">Year 6 <span>+</span></p>
+                      <p role="button">Year 7 <span>+</span></p>
+                      <p role="button">All Year</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="permission_selection">
+                  <p class="permission-margin">Permissions :</p>
+
+                  <div class="selection">
+                    <!-- Add the plus icon -->
+                    <div class="flex">
+                      <p role="button">Create/Edit Staff<span>+</span></p>
+                      <p role="button">Assign Roles <span>+</span></p>
+                      <p role="button">
+                        Select Custom Permissions <span>+</span>
+                      </p>
+                      <p role="button">Withdrawals <span>+</span></p>
+                    </div>
+
+                    <div class="flex">
+                      <p role="button">
+                        View/Approve/Reject Applications <span>+</span>
+                      </p>
+                      <p role="button">
+                        Set Admisstion Criteria <span>+</span>
+                      </p>
+                      <p role="button">Deferrials <span>+</span></p>
+                    </div>
+
+                    <div class="flex">
+                      <p role="button">
+                        View/Edit Students Records <span>+</span>
+                      </p>
+                      <p role="button">Create/Update Courses <span>+</span></p>
+                      <p role="button">
+                        Create/Update Faculties <span>+</span>
+                      </p>
+                    </div>
+
+                    <div class="flex">
+                      <p role="button">
+                        Create/Update Departments <span>+</span>
+                      </p>
+                      <p role="button">
+                        Define Grading Policies <span>+</span>
+                      </p>
+                      <p role="button">
+                        Approve/Release Results <span>+</span>
+                      </p>
+                    </div>
+
+                    <div class="flex">
+                      <p role="button">View School Analytics <span>+</span></p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="course_selection">
+                  <div class="select_course flex">
+                    <p class="permission-margin">Select Courses :</p>
+
+                    <div class="course_search_cont">
+                      <input type="text" class="search_courses" />
+
+                      <!-- search icon -->
+                      <span>Q</span>
+                    </div>
+                  </div>
+
+                  <div class="selection">
+                    <div class="flex">
+                      <p role="button">
+                        CSM 151 Information Technology I <span>+</span>
+                      </p>
+                      <p role="button">CSM 153 Circuit Theory <span>+</span></p>
+                      <p role="button">
+                        CSM 357 Human Computer Interaction <span>+</span>
+                      </p>
+                    </div>
+
+                    <div class="flex">
+                      <p role="button">ACF 255 Accounting I <span>+</span></p>
+                      <p role="button">
+                        CSM 357 Human Computer Interaction <span>+</span>
+                      </p>
+                      <p role="button">
+                        CSM 395 Introduction to Artificial Intelligence
+                        <span>+</span>
+                      </p>
+                    </div>
+
+                    <div class="flex">
+                      <p role="button">
+                        View/edit student records <span>+</span>
+                      </p>
+                      <p role="button">Create/update courses <span>+</span></p>
+                      <p role="button">
+                        Create/update faculties <span>+</span>
+                      </p>
+                    </div>
+
+                    <div class="flex">
+                      <p role="button">
+                        Create/update departments <span>+</span>
+                      </p>
+                      <p role="button">
+                        Define grading policies <span>+</span>
+                      </p>
+                      <p role="button">
+                        approve/release results <span>+</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <!-- overlay -->
+            <div class="overlay hidden"></div>
+          </section>
+        </div>
+
+        <!--  Admissions -->
+        <div id="admissions" class="contents__container">
+          <section class="content__area">
+            <div class="main__card-container">
+              <h1>Admissions Management</h1>
+
+              <div class="card_scroll dashboard__scroll">
+                <div class="card__container" id="cardContainer">
+                  <div class="card card_green">
+                    <div class="card__header flex">
+                      <span class="people_icon">
+                        <i class="bi bi-journal-text col_green"></i>
+                      </span>
+                      <div>
+                        <p class="col_green">100</p>
+                        <p>Applicants</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_green border_green">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_green"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card card_violet">
+                    <div class="card__header flex border_violet">
+                      <span>
+                        <i class="bi bi-person-check col_violet"></i>
+                      </span>
+                      <div>
+                        <p class="col_violet">20</p>
+                        <p>Staff/School Managers</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_violet">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_violet"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card card_orange">
+                    <div class="card__header flex border_orange">
+                      <span>
+                        <!-- <i class="bi bi-person col_orange"></i> -->
+                        <i class="bi bi-file-person-fill col_orange"></i>
+                      </span>
+                      <div>
+                        <p class="col_orange">500</p>
+                        <p>Students</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_orange">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_orange"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card card_lightblue">
+                    <div class="card__header flex border_lightblue">
+                      <span>
+                        <i class="bi bi-journal-text col_lightblue"></i>
+                      </span>
+                      <div>
+                        <p class="col_lightblue">15</p>
+                        <p>Listed Courses</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_lightblue">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_lightblue"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card card_orange">
+                    <div class="card__header flex border_orange">
+                      <span>
+                        <!-- clock icon -->
+                        <i class="bi bi-file-person-fill col_orange"></i>
+                      </span>
+                      <div>
+                        <p class="col_orange">85</p>
+                        <p>Pending List</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_orange">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_orange"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card card_lightred">
+                    <div class="card__header flex border_lightred">
+                      <!--  X icon -->
+                      <span class="col_lightred" style="font-size: 2rem">
+                        &times;
+                      </span>
+                      <div>
+                        <p class="col_lightred">45</p>
+                        <p>Rejected</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_lightred">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_lightred"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card card_green">
+                    <div class="card__header flex border_green">
+                      <span class="people_icon">
+                        <i class="bi bi-check-lg col_green"></i>
+                      </span>
+                      <div>
+                        <p class="col_green">45</p>
+                        <p>Accepted</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_green">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_green"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              id="admission"
+              class="dashboard__section content admission_section"
+            >
+              <div class="admission_navigation flex live__activity-container">
+                <form action="#">
+                  <input
+                    class="admission_search"
+                    type="text"
+                    placeholder="Search by Name, Email or ID..."
+                  />
+                </form>
+
+                <select name="" id="" class="sort_btn admission_sort">
+                  <option value="1">ALL STATUS</option>
+                  <option value="2">ADMITTED</option>
+                  <option value="3">PENDING REVIEW</option>
+                  <option value="4">REJECTED</option>
+                </select>
+
+                <select name="" id="" class="sort_btn admission_program_sort">
+                  <option value="">All Programs</option>
+                  <option value="1">
+                    BSc Agriculture (Agricultural Economics)
+                  </option>
+                  <option value="2">
+                    BSc Agriculture (Agricultural Extension and Rural Sociology)
+                  </option>
+                  <option value="3">
+                    BSc Agriculture (Agricultural Mechanisation)
+                  </option>
+                  <option value="4">BSc Agriculture (Animal Science)</option>
+                  <option value="5">
+                    BSc Agriculture (Crop and Soil Sciences)
+                  </option>
+                  <option value="6">BSc Agriculture (Horticulture)</option>
+                  <option value="7">BSc Agribusiness Management</option>
+                  <option value="8">BSc Agricultural Biotechnology</option>
+                  <option value="9">BSc Landscape Design and Management</option>
+                  <option value="10">BSc Post Harvest Technology</option>
+                  <option value="11">
+                    BSc Natural Resources Management (Wood Science and
+                    Technology Management)
+                  </option>
+                  <option value="12">
+                    BSc Natural Resources Management (Wildlife and Range
+                    Management)
+                  </option>
+                  <option value="13">
+                    BSc Natural Resources Management (Silviculture and Forest
+                    Management)
+                  </option>
+                  <option value="14">
+                    BSc Natural Resources Management (Fisheries and Watershed
+                    Management)
+                  </option>
+                  <option value="15">
+                    BSc Natural Resources Management (Agroforestry)
+                  </option>
+                  <option value="16">
+                    BSc Packaging Technology (Food Packaging)
+                  </option>
+                  <option value="17">
+                    BSc Packaging Technology (Pharmaceutical Packaging)
+                  </option>
+                  <option value="18">
+                    BSc Packaging Technology (Packaging Design and Graphics)
+                  </option>
+                  <option value="19">
+                    BSc Packaging Technology (Value Chain and Logistics)
+                  </option>
+                  <option value="20">BSc Aquaculture & Water Resources</option>
+                  <option value="21">BA Communication Design</option>
+                  <option value="22">BA Painting and Sculpture</option>
+                  <option value="23">BA Industrial Art (Ceramics)</option>
+                  <option value="24">
+                    BA Industrial Art (Metalsmithing and Jewellery Technology)
+                  </option>
+                  <option value="25">
+                    BA Industrial Art (Textile Design and Technology)
+                  </option>
+                  <option value="26">BA Industrial Art (Fashion Design)</option>
+                  <option value="27">
+                    BA Integrated Rural Art and Industry
+                  </option>
+                  <option value="28">BA Publishing Studies</option>
+                  <option value="29">
+                    BA Educational Innovations in Science & Technology
+                  </option>
+                  <option value="30">BA Indigenous Art and Technology</option>
+                  <option value="31">BSc Architecture</option>
+                  <option value="32">
+                    BSc Construction Technology and Management
+                  </option>
+                  <option value="33">BSc Land Economy</option>
+                  <option value="34">BSc Planning</option>
+                  <option value="35">BSc Development Planning</option>
+                  <option value="36">BSc Human Settlement Planning</option>
+                  <option value="37">
+                    BSc Quantity Surveying and Construction Economics
+                  </option>
+                  <option value="38">BSc Real Estate</option>
+                  <option value="39">BSc Urban Planning</option>
+                  <option value="40">BSc Regional Planning</option>
+                  <option value="41">BA Economics</option>
+                  <option value="42">BA Sociology</option>
+                  <option value="43">BA Social Work</option>
+                  <option value="44">BA Geography and Rural Development</option>
+                  <option value="45">BA History</option>
+                  <option value="46">BA Political Studies</option>
+                  <option value="47">BA English</option>
+                  <option value="48">BA French and Francophone Studies</option>
+                  <option value="49">BA Akan Language and Culture</option>
+                  <option value="50">BA Linguistics</option>
+                  <option value="51">LLB (Commercial Law)</option>
+                  <option value="52">LLB (Private Law)</option>
+                  <option value="53">LLB (Public Law)</option>
+                  <option value="54">LLB (International Law)</option>
+                  <option value="55">LLB (Environmental Law)</option>
+                  <option value="56">LLB (Human Rights Law)</option>
+                  <option value="57">LLB (Corporate Law)</option>
+                  <option value="58">LLB (Criminal Law)</option>
+                  <option value="59">LLB (Family Law)</option>
+                  <option value="60">LLB (Intellectual Property Law)</option>
+                  <option value="61">
+                    BSc Business Administration (Accounting)
+                  </option>
+                  <option value="62">
+                    BSc Business Administration (Banking & Finance)
+                  </option>
+                  <option value="63">
+                    BSc Business Administration (Marketing)
+                  </option>
+                  <option value="64">
+                    BSc Business Administration (International Business)
+                  </option>
+                  <option value="65">
+                    BSc Business Administration (Human Resource Management)
+                  </option>
+                  <option value="66">
+                    BSc Business Administration (Management)
+                  </option>
+                  <option value="67">
+                    BSc Business Administration (Logistics and Supply Chain
+                    Management)
+                  </option>
+                  <option value="68">
+                    BSc Business Administration (Business Information
+                    Technology)
+                  </option>
+                  <option value="69">
+                    BSc Business Administration (Entrepreneurship)
+                  </option>
+                  <option value="70">
+                    BSc Business Administration (Hospitality and Tourism
+                    Management)
+                  </option>
+                  <option value="71">BSc Civil Engineering</option>
+                  <option value="72">BSc Geological Engineering</option>
+                  <option value="73">BSc Geomatic Engineering</option>
+                  <option value="74">BSc Petroleum Engineering</option>
+                  <option value="75">BSc Mining Engineering</option>
+                  <option value="76">BSc Environmental Engineering</option>
+                  <option value="77">BSc Water Resources Engineering</option>
+                  <option value="78">BSc Structural Engineering</option>
+                  <option value="79">BSc Transportation Engineering</option>
+                  <option value="80">BSc Geotechnical Engineering</option>
+                  <option value="81">BSc Mechanical Engineering</option>
+                  <option value="82">BSc Chemical Engineering</option>
+                  <option value="83">BSc Materials Engineering</option>
+                  <option value="84">BSc Aerospace Engineering</option>
+                  <option value="85">BSc Automotive Engineering</option>
+                  <option value="86">BSc Industrial Engineering</option>
+                  <option value="87">BSc Marine Engineering</option>
+                  <option value="88">BSc Mechatronics Engineering</option>
+                  <option value="89">BSc Petroleum Engineering</option>
+                  <option value="90">BSc Biomedical Engineering</option>
+                  <option value="91">
+                    BSc Electrical and Electronic Engineering
+                  </option>
+                  <option value="92">BSc Computer Engineering</option>
+                  <option value="93">BSc Telecommunications Engineering</option>
+                  <option value="94">BSc Robotics Engineering</option>
+                  <option value="95">BSc Software Engineering</option>
+                  <option value="96">
+                    BSc Information Technology Engineering
+                  </option>
+                  <option value="97">BSc Network Engineering</option>
+                  <option value="98">BSc Cybersecurity Engineering</option>
+                  <option value="99">
+                    BSc Artificial Intelligence Engineering
+                  </option>
+                </select>
+
+                <button class="flex">
+                  <span><i class="bi bi-funnel"></i></span>
+                  Advanced Filters
+                </button>
+              </div>
+
+              <div
+                id="live__admission"
+                class="live__activity-container admission_content_container"
+              >
+                <div class="admission_content_header flex">
+                  <h1>Applications</h1>
+
+                  <button class="flex">
+                    <span><i class="bi bi-download"></i></span> Export
+                  </button>
+                </div>
+
+                <div class="admission_content">
+                  <div class="admission_initials flex">
+                    <p>Applicant</p>
+                    <p>Program</p>
+                    <p>Status</p>
+                    <p>Date</p>
+                    <p>Action</p>
+                  </div>
+
+                  <div class="contents__admission">
+                    <div class="inner_contents__admission flex">
+                      <input type="checkbox" />
+
+                      <div
+                        class="initial_content flex admisson_content_display"
+                      >
+                        <div class="person_details flex admission_person">
+                          <div class="admission_person_img"></div>
+
+                          <div class="person_details_con">
+                            <p>John Sam Mensah</p>
+                            <p>example@gmail.com</p>
+                          </div>
+                        </div>
+
+                        <div class="admission_title">
+                          <p>Computer Science</p>
+                        </div>
+
+                        <div class="course_pending">
+                          <p>Pending</p>
+                        </div>
+
+                        <div class="program_date">
+                          <p>2024-02-20</p>
+                        </div>
+
+                        <div class="flex admission_approval">
+                          <button>
+                            <span>
+                              <i class="bi bi-eye"></i>
+                            </span>
+                          </button>
+
+                          <!-- Check button -->
+                          <button class="flex">
+                            <i class="bi bi-check-lg"></i>
+                          </button>
+
+                          <!-- Close button -->
+                          <button class="flex">&times;</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- move this to the bottom -->
+                <div class="admisson_footer">
+                  <p>
+                    Showing <span class="admisson_num_check">1</span> To
+                    <span class="addmission_on_check">10</span> of
+                    <span class="admisson_total_check">97</span> Results
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!--  Student Management -->
+        <div id="student" class="contents__container">
+          <section class="content__area">
+            <div class="main__card-container">
+              <h1>Student Management</h1>
+
+              <div class="card_scroll dashboard__scroll">
+                <div class="card__container" id="cardContainer">
+                  <div class="card card_green">
+                    <div class="card__header flex border_green">
+                      <span class="people_icon"
+                        ><i class="bi bi-journal-text col_green"></i>
+                      </span>
+                      <div>
+                        <p class="col_green">1,234</p>
+                        <p>Active Students</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_green">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_green"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card card_violet">
+                    <div class="card__header flex border_violet">
+                      <span>
+                        <i class="bi bi-person-check col_violet"></i>
+                      </span>
+                      <div>
+                        <p class="col_violet">45</p>
+                        <p>Pending Registration</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_violet">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_violet"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card card_orange">
+                    <div class="card__header flex border_orange">
+                      <span>
+                        <i class="bi bi-person col_orange"></i>
+                      </span>
+                      <div>
+                        <p class="col_orange">500</p>
+                        <p>Gratuated Students</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_orange">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_orange"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card card_lightred">
+                    <div class="card__header flex border_lightred">
+                      <!-- change the icon here -->
+                      <span>
+                        <i class="bi bi-person-x col_lightred"></i>
+                      </span>
+                      <div>
+                        <p class="col_lightred">15</p>
+                        <p>Withdrawn</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_lightred">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_lightred"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              id="student_management"
+              class="dashboard__section content student_management_section"
+            >
+              <div class="student_mang_header flex">
+                <button class="flex">
+                  <span><i class="bi bi-person-plus"></i></span>
+                  Add New Student
+                </button>
+              </div>
+
+              <div
+                id="live__admission"
+                class="live__activity-container admission_content_container student_management"
+              >
+                <div class="student__search flex">
+                  <form action="#">
+                    <input
+                      class="admission_search"
+                      type="text"
+                      placeholder="Search by Name, Email or ID..."
+                    />
+                  </form>
+
+                  <div class="student_sorted_con flex">
+                    <select name="" id="" class="sort_btn admission_sort">
+                      <option value="1">ALL STATUS</option>
+                      <option value="2">ADMITTED</option>
+                      <option value="3">PENDING REVIEW</option>
+                      <option value="4">REJECTED</option>
+                    </select>
+
+                    <select name="" id="" class="sort_btn admission_sort">
+                      <option value="1">All Departments</option>
+                      <option value="2">Computer Science</option>
+                      <option value="3">Social Sciences</option>
+                      <option value="4">Pharmacy</option>
+                      <option value="5">Biology</option>
+                      <option value="6">Business</option>
+                      <option value="7">Law</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="admission_content">
+                  <div class="admission_initials flex">
+                    <p>Sutdent</p>
+                    <p>ID</p>
+                    <p>Department</p>
+                    <p>Status</p>
+                    <p>Action</p>
+                  </div>
+
+                  <div class="contents__admission">
+                    <div class="inner_contents__admission flex">
+                      <input type="checkbox" />
+
+                      <div
+                        class="initial_content flex admisson_content_display"
+                      >
+                        <div class="person_details flex admission_person">
+                          <div class="admission_person_img"></div>
+
+                          <div class="person_details_con">
+                            <p>John Sam Mensah</p>
+                            <p>example@gmail.com</p>
+                          </div>
+                        </div>
+
+                        <div class="program_date">
+                          <p>20240220</p>
+                        </div>
+
+                        <div class="admission_title">
+                          <p>Computer Science</p>
+                        </div>
+
+                        <div class="student_pending">
+                          <p>Active</p>
+                        </div>
+
+                        <div class="flex admission_approval">
+                          <button>
+                            <span>
+                              <i class="bi bi-eye"></i>
+                            </span>
+                          </button>
+
+                          <!-- Check button -->
+                          <button class="flex">
+                            <i class="bi bi-check-lg"></i>
+                          </button>
+
+                          <!-- Close button -->
+                          <button class="flex">&times;</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- move this to the bottom -->
+                <div class="admisson_footer">
+                  <p>
+                    Showing <span class="admisson_num_check">1</span> To
+                    <span class="addmission_on_check">10</span> of
+                    <span class="admisson_total_check">97</span> Results
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Faculty Management -->
+        <div id="faculty" class="contents__container">
+          <section class="content__area">
+            <div class="main__card-container">
+              <h1>Faculties Management</h1>
+
+              <div class="card_scroll dashboard__scroll">
+                <div class="card__container" id="cardContainer">
+                  <div class="card card_green">
+                    <div class="card__header flex border_green">
+                      <span class="people_icon">
+                        <i class="bi bi-diagram-3 col_green"></i>
+                      </span>
+                      <div>
+                        <p class="col_green">8</p>
+                        <p>Total Faculties</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_green">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_green"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card card_violet">
+                    <div class="card__header flex border_violet">
+                      <span>
+                        <i class="bi bi-graph-up col_violet"></i>
+                      </span>
+                      <div>
+                        <p class="col_violet">20</p>
+                        <p>Departments</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_violet">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_violet"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card card_orange">
+                    <div class="card__header flex border_orange">
+                      <span><i class="bi bi-person col_orange"></i></span>
+                      <div>
+                        <p class="col_orange">14</p>
+                        <p>HOD's Assigned</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_orange">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_orange"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card card_lightblue">
+                    <div class="card__header flex border_lightblue">
+                      <span>
+                        <i class="bi bi-braces col_lightblue"></i>
+                      </span>
+
+                      <div>
+                        <p class="col_lightblue">6</p>
+                        <p>Unassigned Departments</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_lightblue">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_lightblue"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              id="faculty_management"
+              class="dashboard__section content faculty_management_section"
+            >
+              <div class="student_mang_header faculty_icon flex">
+                <button class="flex">
+                  <span><i class="bi bi-diagram-3"></i></span>
+                  Add Faculty
+                </button>
+              </div>
+
+              <div
+                id="live__admission"
+                class="live__activity-container admission_content_container"
+              >
+                <div class="student__search flex">
+                  <form action="#">
+                    <input
+                      class="admission_search"
+                      type="text"
+                      placeholder="Search Faculties..."
+                    />
+                  </form>
+
+                  <div class="student_sorted_con flex">
+                    <select name="" id="" class="sort_btn admission_sort">
+                      <option value="1">ALL STATUS</option>
+                      <option value="2">ADMITTED</option>
+                      <option value="3">PENDING REVIEW</option>
+                      <option value="4">REJECTED</option>
+                    </select>
+
+                    <select name="" id="" class="sort_btn admission_sort">
+                      <option value="1">All Faculties</option>
+                      <option value="2">Faculty of Science</option>
+                      <option value="3">Faculty of Social Sciences</option>
+                      <option value="4">Faculty of Health</option>
+                      <option value="5">Faculty of Law</option>
+                      <option value="6">Faculty of Business</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="admission_content">
+                  <div class="admission_initials flex faculty_initials">
+                    <p>Faculty Name</p>
+                    <p>ID</p>
+                    <p>Departments</p>
+                    <p>Status</p>
+                    <p>Action</p>
+                  </div>
+
+                  <div class="contents__admission">
+                    <div class="inner_contents__admission flex">
+                      <input type="checkbox" />
+
+                      <div
+                        class="initial_content flex admisson_content_display"
+                      >
+                        <div class="person_details flex admission_person">
+                          <div class="person_details_con">
+                            <p>Faculty of Science</p>
+                          </div>
+                        </div>
+
+                        <div class="program_date">
+                          <p>Sci-12</p>
+                        </div>
+
+                        <div class="admission_title">
+                          <p>4 Departments</p>
+                        </div>
+
+                        <div class="student_pending">
+                          <p>Active</p>
+                        </div>
+
+                        <div class="flex admission_approval">
+                          <button>
+                            <span>
+                              <i class="bi bi-eye"></i>
+                            </span>
+                          </button>
+
+                          <!-- Check button -->
+                          <button class="flex">
+                            <i class="bi bi-check-lg"></i>
+                          </button>
+
+                          <!-- Close button -->
+                          <button class="flex">&times;</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- move this to the bottom -->
+                <div class="admisson_footer">
+                  <p>
+                    Showing <span class="admisson_num_check">1</span> To
+                    <span class="addmission_on_check">10</span> of
+                    <span class="admisson_total_check">97</span> Results
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!--  Departments -->
+        <div id="departments" class="contents__container">
+          <section class="content__area">
+            <div class="main__card-container">
+              <h1>Department Managements</h1>
+
+              <div class="card_scroll dashboard__scroll">
+                <div class="card__container" id="cardContainer">
+                  <div class="card card_green">
+                    <div class="card__header flex border_green">
+                      <span class="people_icon">
+                        <i class="bi bi-columns-gap col_green"></i>
+                      </span>
+                      <div>
+                        <p class="col_green">20</p>
+                        <p>Departments</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_green">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_green"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card card_violet">
+                    <div class="card__header flex border_violet">
+                      <span>
+                        <i class="bi bi-person-check col_violet"></i>
+                      </span>
+                      <div>
+                        <p class="col_violet">5</p>
+                        <p>Assigned Lecturers</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_violet">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_violet"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card card_orange">
+                    <div class="card__header flex border_orange">
+                      <span>
+                        <i class="bi bi-journal-text col_orange"></i>
+                      </span>
+                      <div>
+                        <p class="col_orange">10</p>
+                        <p>Unassigned Courses</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_orange">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_orange"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card card_lightblue">
+                    <div class="card__header flex border_lightblue">
+                      <span>
+                        <i class="bi bi-journal-text col_lightblue"></i>
+                      </span>
+                      <div>
+                        <p class="col_lightblue">15</p>
+                        <p>Listed Courses</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_lightblue">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_lightblue"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              id="department_management"
+              class="dashboard__section content department_management_section"
+            >
+              <div class="student_mang_header flex">
+                <button class="flex">
+                  <!-- add icon -->
+                  <span>
+                    <i class="fas fa-code-branch"></i>
+                  </span>
+                  Add Department
+                </button>
+              </div>
+
+              <div
+                id="live__admission"
+                class="live__activity-container admission_content_container"
+              >
+                <div class="student__search flex">
+                  <form action="#">
+                    <input
+                      class="admission_search"
+                      type="text"
+                      placeholder="Search Faculties..."
+                    />
+                  </form>
+
+                  <div class="student_sorted_con flex">
+                    <!-- List the courses -->
+                    <select name="" id="" class="sort_btn admission_sort">
+                      <option value="1">All Courses</option>
+                      <option value="2">ADMITTED</option>
+                      <option value="3">PENDING REVIEW</option>
+                      <option value="4">REJECTED</option>
+                    </select>
+
+                    <!-- List the departments -->
+                    <select name="" id="" class="sort_btn admission_sort">
+                      <option value="1">All Departments</option>
+                      <option value="2">Faculty of Science</option>
+                      <option value="3">Faculty of Social Sciences</option>
+                      <option value="4">Faculty of Health</option>
+                      <option value="5">Faculty of Law</option>
+                      <option value="6">Faculty of Business</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="admission_content">
+                  <div class="admission_initials flex faculty_initials">
+                    <p>Department Name</p>
+                    <p>ID</p>
+                    <p>Courses</p>
+                    <p>Status</p>
+                    <p>Action</p>
+                  </div>
+
+                  <div class="contents__admission">
+                    <div class="inner_contents__admission flex">
+                      <input type="checkbox" />
+
+                      <div
+                        class="initial_content flex admisson_content_display"
+                      >
+                        <div class="person_details flex admission_person">
+                          <div class="person_details_con">
+                            <p>Computer Science</p>
+                          </div>
+                        </div>
+
+                        <div class="program_date">
+                          <p>Csm-12</p>
+                        </div>
+
+                        <div class="admission_title">
+                          <p>4 Listed Courses</p>
+                        </div>
+
+                        <div class="student_pending">
+                          <p>Active</p>
+                        </div>
+
+                        <div class="flex admission_approval">
+                          <button>
+                            <span>
+                              <i class="bi bi-eye"></i>
+                            </span>
+                          </button>
+
+                          <!-- Check button -->
+                          <button class="flex">
+                            <i class="bi bi-check-lg"></i>
+                          </button>
+
+                          <!-- Close button -->
+                          <button class="flex">&times;</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- move this to the bottom -->
+                <div class="admisson_footer">
+                  <p>
+                    Showing <span class="admisson_num_check">1</span> To
+                    <span class="addmission_on_check">10</span> of
+                    <span class="admisson_total_check">97</span> Results
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!--  Courses -->
+        <div id="courses" class="contents__container">
+          <section class="content__area">
+            <div class="main__card-container">
+              <h1>Course Management</h1>
+
+              <div class="card_scroll dashboard__scroll">
+                <div class="card__container" id="cardContainer">
+                  <div class="card card_green">
+                    <div class="card__header flex border_green">
+                      <span class="people_icon">
+                        <i class="bi bi-journal-text col_green"></i>
+                      </span>
+                      <div>
+                        <p class="col_green">15</p>
+                        <p>Total Courses</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_green">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_green"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card card_violet">
+                    <div class="card__header flex border_violet">
+                      <span>
+                        <i class="bi bi-person-check col_violet"></i>
+                      </span>
+                      <div>
+                        <p class="col_violet">20</p>
+                        <p>Lecturers</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_violet">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_violet"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card card_orange">
+                    <div class="card__header flex border_orange">
+                      <span><i class="bi bi-person col_orange"></i></span>
+                      <div>
+                        <p class="col_orange">5</p>
+                        <p>Assigned Lecturers</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_orange">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_orange"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card card_lightblue">
+                    <div class="card__header flex border_lightblue">
+                      <span>
+                        <i class="bi bi-journal-text col_lightblue"></i>
+                      </span>
+                      <div>
+                        <p class="col_lightblue">15</p>
+                        <p>Unassigned Lecturers</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_lightblue">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_lightblue"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              id="course_management"
+              class="dashboard__section content course_management_section"
+            >
+              <div class="student_mang_header flex">
+                <button class="flex">
+                  <span><i class="bi bi-journal-text"></i></span>
+                  Add Course
+                </button>
+              </div>
+
+              <div
+                id="live__admission"
+                class="live__activity-container admission_content_container"
+              >
+                <div class="student__search flex">
+                  <form action="#">
+                    <input
+                      class="admission_search"
+                      type="text"
+                      placeholder="Search Courses..."
+                    />
+                  </form>
+
+                  <div class="student_sorted_con flex course_sorted">
+                    <select name="" id="" class="sort_btn admission_sort">
+                      <option value="1">All Year</option>
+                      <option value="2">Year 1</option>
+                      <option value="3">Year 2</option>
+                      <option value="4">Year 3</option>
+                      <option value="5">Year 4</option>
+                      <option value="6">Year 5</option>
+                      <option value="7">Year 6</option>
+                      <option value="8">Year 7</option>
+                    </select>
+
+                    <!-- List the courses -->
+                    <select name="" id="" class="sort_btn admission_sort">
+                      <option value="1">All Courses</option>
+                      <option value="2">ADMITTED</option>
+                      <option value="3">PENDING REVIEW</option>
+                      <option value="4">REJECTED</option>
+                    </select>
+
+                    <!-- List of Lecturers -->
+                    <select name="" id="" class="sort_btn admission_sort">
+                      <option value="1">All Lecturers</option>
+                      <option value="2">Faculty of Science</option>
+                      <option value="3">Faculty of Social Sciences</option>
+                      <option value="4">Faculty of Health</option>
+                      <option value="5">Faculty of Law</option>
+                      <option value="6">Faculty of Business</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="admission_content">
+                  <div class="admission_initials flex faculty_initials">
+                    <p>Course Name</p>
+                    <p>ID</p>
+                    <p>Lecturer</p>
+                    <p>Year</p>
+                    <p>Action</p>
+                  </div>
+
+                  <div class="contents__admission">
+                    <div class="inner_contents__admission flex">
+                      <input type="checkbox" />
+
+                      <div
+                        class="initial_content flex admisson_content_display"
+                      >
+                        <div class="person_details flex admission_person">
+                          <div class="person_details_con">
+                            <p>Circuit Theory</p>
+                          </div>
+                        </div>
+
+                        <div class="program_date">
+                          <p>CSM 156</p>
+                        </div>
+
+                        <div class="admission_title">
+                          <p>Dr. Walker</p>
+                        </div>
+
+                        <div class="student_pending course_year">
+                          <p>Year 1</p>
+                        </div>
+
+                        <div class="flex admission_approval">
+                          <button>
+                            <span>
+                              <i class="bi bi-eye"></i>
+                            </span>
+                          </button>
+
+                          <!-- Check button -->
+                          <button class="flex">
+                            <i class="bi bi-check-lg"></i>
+                          </button>
+
+                          <!-- Close button -->
+                          <button class="flex">&times;</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- move this to the bottom -->
+                <div class="admisson_footer">
+                  <p>
+                    Showing <span class="admisson_num_check">1</span> To
+                    <span class="addmission_on_check">10</span> of
+                    <span class="admisson_total_check">97</span> Results
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!--  Grading & Exams -->
+        <div id="grading" class="contents__container">
+          <section class="content__area">
+            <div class="main__card-container">
+              <h1>Grade Managements</h1>
+
+              <div class="card_scroll dashboard__scroll">
+                <div class="card__container" id="cardContainer">
+                  <div class="card card_green">
+                    <div class="card__header flex border_green">
+                      <span class="people_icon">
+                        <i class="bi bi-journal-text col_green"></i>
+                      </span>
+                      <div>
+                        <p class="col_green">8</p>
+                        <p>Grading Courses</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_green">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_green"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card card_violet">
+                    <div class="card__header flex border_violet">
+                      <span>
+                        <i class="bi bi-person-check col_violet"></i>
+                      </span>
+                      <div>
+                        <p class="col_violet">20</p>
+                        <p>Graded Students</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_violet">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_violet"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card card_orange">
+                    <div class="card__header flex border_orange">
+                      <span><i class="bi bi-person col_orange"></i></span>
+                      <div>
+                        <p class="col_orange">500</p>
+                        <p>Total Exams</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_orange">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_orange"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card card_lightblue">
+                    <div class="card__header flex border_lightblue">
+                      <span>
+                        <i class="bi bi-journal-text col_lightblue"></i>
+                      </span>
+                      <div>
+                        <p class="col_lightblue">15</p>
+                        <p>Pending Courses</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_lightblue">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_lightblue"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              id="course_management"
+              class="dashboard__section content grading_section"
+            >
+              <div
+                id="live__admission"
+                class="live__activity-container admission_content_container grading_inner_container"
+              >
+                <div class="student__search flex">
+                  <form action="#">
+                    <input
+                      class="admission_search"
+                      type="text"
+                      placeholder="Search Courses,Student Id,Exams..."
+                    />
+                  </form>
+
+                  <div class="student_sorted_con flex course_sorted">
+                    <select name="" id="" class="sort_btn admission_sort">
+                      <option value="1">All Year</option>
+                      <option value="2">Year 1</option>
+                      <option value="3">Year 2</option>
+                      <option value="4">Year 3</option>
+                      <option value="5">Year 4</option>
+                      <option value="6">Year 5</option>
+                      <option value="7">Year 6</option>
+                      <option value="8">Year 7</option>
+                    </select>
+
+                    <!-- List the courses -->
+                    <select name="" id="" class="sort_btn admission_sort">
+                      <option value="1">All Courses</option>
+                      <option value="2">ADMITTED</option>
+                      <option value="3">PENDING REVIEW</option>
+                      <option value="4">REJECTED</option>
+                    </select>
+
+                    <!-- List of Lecturers -->
+                    <select name="" id="" class="sort_btn admission_sort">
+                      <option value="1">All Lecturers</option>
+                      <option value="2">Faculty of Science</option>
+                      <option value="3">Faculty of Social Sciences</option>
+                      <option value="4">Faculty of Health</option>
+                      <option value="5">Faculty of Law</option>
+                      <option value="6">Faculty of Business</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="admission_content">
+                  <div class="admission_initials flex grading_initials">
+                    <p>ID</p>
+                    <p>Exam Titile</p>
+                    <p>Date</p>
+                    <p>Course Name</p>
+                    <p>Lecturer</p>
+                    <p>Year</p>
+                    <p>Student Id</p>
+                    <p>Status</p>
+                    <p>Action</p>
+                  </div>
+
+                  <div class="contents__admission">
+                    <div
+                      class="inner_contents__admission flex grading_contents"
+                    >
+                      <input type="checkbox" />
+
+                      <div
+                        class="initial_content flex admisson_content_display"
+                      >
+                        <div class="program_date grading_id">
+                          <p>Mid 24</p>
+                        </div>
+
+                        <div class="person_details flex admission_person">
+                          <div class="person_details_con">
+                            <p>Mid-semester</p>
+                          </div>
+                        </div>
+
+                        <div class="program_date">
+                          <p>Dec 15 2023</p>
+                        </div>
+
+                        <div class="admission_title">
+                          <p>Discrete Maths</p>
+                        </div>
+
+                        <div class="admission_title">
+                          <p>Dr. Walker</p>
+                        </div>
+
+                        <div class="student_pending course_year">
+                          <p>Year 1</p>
+                        </div>
+
+                        <div class="program_date student__id">
+                          <p>20202056</p>
+                        </div>
+
+                        <div class="program_date">
+                          <p></p>
+                        </div>
+
+                        <div class="flex admission_approval">
+                          <button>
+                            <span>
+                              <i class="bi bi-eye"></i>
+                            </span>
+                          </button>
+
+                          <!-- Check button -->
+                          <button class="flex">
+                            <i class="bi bi-check-lg"></i>
+                          </button>
+
+                          <!-- Close button -->
+                          <button class="flex">&times;</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- move this to the bottom -->
+                <div class="admisson_footer">
+                  <p>
+                    Showing <span class="admisson_num_check">1</span> To
+                    <span class="addmission_on_check">10</span> of
+                    <span class="admisson_total_check">97</span> Results
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="grading__container flex">
+              <div class="grading__card">
+                <h3>Performance Trends</h3>
+                <canvas id="performanceChart" class="chart"></canvas>
+              </div>
+
+              <div class="grading__card">
+                <h3>Grade Distribution</h3>
+
+                <div class="piechat flex">
+                  <canvas id="gradeChart" class="chart"></canvas>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Settings & Reports -->
+        <div id="settings" class="contents__container">
+          <section class="content__area">
+            <div class="main__card-container">
+              <h1>Dashboard-School Manager</h1>
+
+              <div class="card_scroll dashboard__scroll">
+                <div class="card__container" id="cardContainer">
+                  <div class="card card_green">
+                    <div class="card__header flex border_green">
+                      <span class="people_icon">
+                        <i class="bi bi-journal-text col_green"></i>
+                      </span>
+                      <div>
+                        <p class="col_green">14,565</p>
+                        <p>Total Reports</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_green">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_green"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card card_violet">
+                    <div class="card__header flex border_violet">
+                      <span>
+                        <i class="bi bi-person-check col_violet"></i>
+                      </span>
+                      <div>
+                        <p class="col_violet">20</p>
+                        <p>Unresolved Reports</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_violet">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_violet"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card card_orange">
+                    <div class="card__header flex border_orange">
+                      <span><i class="bi bi-person col_orange"></i></span>
+                      <div>
+                        <p class="col_orange">14,545</p>
+                        <p>Resolved Reports</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_orange">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_orange"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card card_lightblue">
+                    <div class="card__header flex border_lightblue">
+                      <span>
+                        <i class="bi bi-journal-text col_lightblue"></i>
+                      </span>
+                      <div>
+                        <p class="col_lightblue">15</p>
+                        <p>Portal Nest Reports</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_lightblue">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_lightblue"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              id="admission"
+              class="dashboard__section content report__section"
+            >
+              <div class="reports_diagram__container grid">
+                <div class="grading__card report__card">
+                  <div class="report_card_heading flex">
+                    <h3>Reports Analytics</h3>
+
+                    <select
+                      name=""
+                      id=""
+                      class="sort_btn admission_sort report_sort"
+                    >
+                      <option value="1">Today</option>
+                      <option value="2">Yesterday</option>
+                      <option value="3">Last 7 days</option>
+                      <option value="4">1 month</option>
+                      <option value="5">3 month</option>
+                      <option value="6">6 month</option>
+                      <option value="7">12 month</option>
+                    </select>
+                  </div>
+                  <canvas
+                    id="performanceChart"
+                    class="chart_performance"
+                  ></canvas>
+                </div>
+
+                <div class="grading__card report__card">
+                  <h3>Grade Distribution</h3>
+
+                  <div class="piechat flex">
+                    <canvas id="pieChart" class="chart"></canvas>
+                  </div>
+                </div>
+              </div>
+
+              <div id="live__admission" class="live__activity-container"></div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Create Events -->
+        <div id="events" class="contents__container">
+          <!-- 
+          <section class="content__area">
+            <div class="main__card-container">
+              <h1>Dashboard-School Manager</h1>
+
+              <div class="card_scroll dashboard__scroll">
+                <div class="card__container" id="cardContainer">
+                  <div class="card card_green">
+                    <div class="card__header flex border_green">
+                      <span class="people_icon">
+                        <i class="bi bi-journal-text col_green"></i>
+                      </span>
+                      <div>
+                        <p class="col_green">100</p>
+                        <p>Total Events</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_green">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_green"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card card_violet">
+                    <div class="card__header flex border_violet">
+                      <span>
+                        <i class="bi bi-person-check col_violet"></i>
+                      </span>
+                      <div>
+                        <p class="col_violet">20</p>
+                        <p>Ongoing Events</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_violet">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_violet"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card card_orange">
+                    <div class="card__header flex border_orange">
+                      <span><i class="bi bi-person col_orange"></i></span>
+                      <div>
+                        <p class="col_orange">2</p>
+                        <p>Closed Events</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_orange">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_orange"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card card_lightblue">
+                    <div class="card__header flex border_lightblue">
+                      <span>
+                        <i class="bi bi-journal-text col_lightblue"></i>
+                      </span>
+                      <div>
+                        <p class="col_lightblue">25</p>
+                        <p>Completed</p>
+                      </div>
+                    </div>
+
+                    <div class="card__footer flex col_lightblue">
+                      <p>See Details</p>
+                      <button>
+                        <i class="bi bi-arrow-right col_lightblue"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              id="course_management"
+              class="dashboard__section content course_management_section"
+            >
+              <div class="student_mang_header flex">
+                <button class="flex">
+                  <span><i class="bi bi-journal-text"></i></span>
+                  Add Events
+                </button>
+              </div>
+
+              <div
+                id="live__admission"
+                class="live__activity-container admission_content_container"
+              >
+                <div class="student__search flex">
+                  <form action="#">
+                    <input
+                      class="admission_search"
+                      type="text"
+                      placeholder="Search Events..."
+                    />
+                  </form>
+
+                  <div class="student_sorted_con flex course_sorted">
+                    <select name="" id="" class="sort_btn admission_sort">
+                      <option value="1">All Year</option>
+                      <option value="2">Year 1</option>
+                      <option value="3">Year 2</option>
+                      <option value="4">Year 3</option>
+                      <option value="5">Year 4</option>
+                      <option value="6">Year 5</option>
+                      <option value="7">Year 6</option>
+                      <option value="8">Year 7</option>
+                    </select>
+
+                    
+                    <select name="" id="" class="sort_btn admission_sort">
+                      <option value="1">All Courses</option>
+                      <option value="2">ADMITTED</option>
+                      <option value="3">PENDING REVIEW</option>
+                      <option value="4">REJECTED</option>
+                    </select>
+
+                    
+                    <select name="" id="" class="sort_btn admission_sort">
+                      <option value="1">All Lecturers</option>
+                      <option value="2">Faculty of Science</option>
+                      <option value="3">Faculty of Social Sciences</option>
+                      <option value="4">Faculty of Health</option>
+                      <option value="5">Faculty of Law</option>
+                      <option value="6">Faculty of Business</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="admission_content">
+                  <div class="admission_initials flex faculty_initials">
+                    <p>Course Name</p>
+                    <p>ID</p>
+                    <p>Lecturer</p>
+                    <p>Year</p>
+                    <p>Action</p>
+                  </div>
+
+                  <div class="contents__admission">
+                    <div class="inner_contents__admission flex">
+                      <input type="checkbox" />
+
+                      <div
+                        class="initial_content flex admisson_content_display"
+                      >
+                        <div class="person_details flex admission_person">
+                          <div class="person_details_con">
+                            <p>Circuit Theory</p>
+                          </div>
+                        </div>
+
+                        <div class="program_date">
+                          <p>CSM 156</p>
+                        </div>
+
+                        <div class="admission_title">
+                          <p>Dr. Walker</p>
+                        </div>
+
+                        <div class="student_pending course_year">
+                          <p>Year 1</p>
+                        </div>
+
+                        <div class="flex admission_approval">
+                          <button>
+                            <span>
+                              <i class="bi bi-eye"></i>
+                            </span>
+                          </button>
+
+                          
+                          <button class="flex">
+                            <i class="bi bi-check-lg"></i>
+                          </button>
+
+                          
+                          <button class="flex">&times;</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                
+                <div class="admisson_footer">
+                  <p>
+                    Showing <span class="admisson_num_check">1</span> To
+                    <span class="addmission_on_check">10</span> of
+                    <span class="admisson_total_check">97</span> Results
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+           -->
+        </div>
       </div>
     </main>
   </body>

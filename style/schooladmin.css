@@ -80,8 +80,25 @@ body {
   grid-template-columns: 1fr;
 }
 
+/* note this */
 .overall__main {
   height: 1110px;
+}
+
+.contents__container {
+  display: none;
+  height: 0;
+  transition: all 0.5s ease;
+}
+
+.contents__container.active {
+  display: block;
+  height: auto;
+}
+
+.dashboard__section_block.active {
+  display: block;
+  height: auto;
 }
 
 .pending__left-content.width {
@@ -177,7 +194,7 @@ body {
 
 .main__main-content {
   /* background: var(--col-white-bg); */
-  background: yellow;
+  /* background: yellow; */
   /* height: auto; */
   /* height: 1060px; */
   height: 1141px;

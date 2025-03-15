@@ -1,67 +1,30 @@
 "use strict";
 
+// Navigation and Section Content
 const buttons = document.querySelectorAll(".btn__navigate");
-const contents = document.querySelectorAll(".content");
+const contents = document.querySelectorAll(".contents__container");
 
-// DEFAULT DISPLAY AND SELECTION OF PAGES
-function contentHolder() {
-  function loadPage(page) {
-    fetch(page)
-      .then((response) => response.text())
-      .then((data) => {
-        const contentArea = document.getElementById("content-area");
-        contentArea.innerHTML = data;
-        executeScripts(contentArea);
-      })
-      .catch((error) => console.error("Error loading the page:", error));
-  }
+// Managers
+const overLay = document.querySelector(".overlay");
+const formDisplay = document.querySelector(".manager_form_container");
+const closeBtn = document.querySelector(".close_form");
 
-  // Function to execute <script> tags manually
-  function executeScripts(container) {
-    const scripts = container.querySelectorAll("script");
+const createLecturerBtn = document.querySelector("#createlecturer");
+const createManagerBtn = document.querySelector("#createmanager");
+const createOfficerBtn = document.querySelector("#createofficer");
+const createExaminerBtn = document.querySelector("#createexaminer");
 
-    scripts.forEach((oldScript) => {
-      const newScript = document.createElement("script");
+// Default selection
+const dashboardBtn = document.querySelector(".dashboardbtn");
+const dashboardContent = document.querySelector("#dashboard");
 
-      // Copy attributes like 'type', 'src', and 'async'
-      if (oldScript.src) {
-        newScript.src = oldScript.src;
-        newScript.async = false; // Ensure correct execution order
-      } else {
-        newScript.textContent = oldScript.textContent;
-      }
-
-      // Copy other attributes (like type or id if needed)
-      Array.from(oldScript.attributes).forEach((attr) => {
-        newScript.setAttribute(attr.name, attr.value);
-      });
-
-      // Append to the body to ensure execution
-      document.body.appendChild(newScript);
-
-      // Optional: Remove the original script to avoid duplication
-      oldScript.remove();
-    });
-  }
-
-  return function (param1) {
-    loadPage(param1);
-  };
-}
-const displayPages = contentHolder();
-
-document.addEventListener("DOMContentLoaded", () => {
-  const dashboardBtn = document.querySelector(".dashboardbtn");
-
-  if (dashboardBtn) {
-    dashboardBtn.classList.add("active");
-    displayPages("dashboard.html", "main-hero-content.html");
-  }
-});
+dashboardBtn.classList.add("active");
+dashboardContent.classList.add("active");
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     buttons.forEach((btn) => btn.classList.remove("active"));
+
     contents.forEach((content) => content.classList.remove("active"));
 
     button.classList.add("active");
@@ -86,3 +49,72 @@ menuBtn.addEventListener("click", () => {
   document.querySelector(".first_ctext").classList.toggle("margin");
   document.querySelector(".card_scroll").classList.toggle("scroll");
 });
+
+// Managers logic
+function displayForm() {
+  overLay.classList.add("hidden_remove");
+  formDisplay.classList.add("hidden_remove");
+}
+
+createLecturerBtn.addEventListener("click", displayForm);
+
+createManagerBtn.addEventListener("click", displayForm);
+
+createOfficerBtn.addEventListener("click", displayForm);
+
+createExaminerBtn.addEventListener("click", displayForm);
+
+closeBtn.addEventListener("click", () => {
+  overLay.classList.remove("hidden_remove");
+  formDisplay.classList.remove("hidden_remove");
+});
+
+// Grading chats
+/*
+const performanceCtx = document
+  .getElementById("performanceChart")
+  .getContext("2d");
+const gradeCtx = document.getElementById("gradeChart").getContext("2d");
+
+new Chart(performanceCtx, {
+  type: "line",
+  data: {
+    labels: ["Jan", "Feb", "Mar", "Apr", "May"],
+    datasets: [
+      {
+        label: "Performance",
+        data: [75, 80, 82, 78, 81],
+        borderColor: "#4c6ef5",
+        fill: false,
+        tension: 0.4,
+      },
+    ],
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true,
+      },
+    },
+  },
+});
+
+new Chart(gradeCtx, {
+  type: "doughnut",
+  data: {
+    labels: ["A", "B", "C", "D", "F"],
+    datasets: [
+      {
+        data: [40, 25, 20, 10, 5],
+        backgroundColor: [
+          "#4c6ef5",
+          "#5c7cfa",
+          "#748ffc",
+          "#91a7ff",
+          "#bac8ff",
+        ],
+      },
+    ],
+  },
+});
+*/
