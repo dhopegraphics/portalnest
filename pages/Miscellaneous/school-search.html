@@ -6,163 +6,581 @@
     <title>School Search</title>
     <link rel="stylesheet" href="/style/school-search.css" />
   </head>
+
   <body>
-    <!-- Header Section -->
-    <header>
-      <div class="search-container">
-        <select id="schoolType">
-          <option value="">School Type</option>
-          <option value="day">Day School</option>
-          <option value="boarding">Boarding School</option>
-        </select>
-        <input
-          type="text"
-          id="location"
-          placeholder="Gurugram, Haryana, India"
-        />
-        <button id="searchBtn">Search</button>
-      </div>
-    </header>
+    <div class="container">
+      <h1 class="">Find Your Perfect School</h1>
+      <p class="">
+        Search through thousands of schools and find the right fit for you
+        education journey
+      </p>
+    </div>
 
-    <div class="main-container">
-      <!-- Sidebar Filters -->
-      <aside class="filters">
-        <div class="filter-section">
-          <h3>Classification</h3>
-          <label
-            ><input type="checkbox" name="classification" value="coed" />
-            Co-Ed</label
-          >
-          <label
-            ><input type="checkbox" name="classification" value="girls" /> Girls
-            Only</label
-          >
-          <label
-            ><input type="checkbox" name="classification" value="boys" /> Boys
-            Only</label
-          >
-        </div>
-
-        <div class="filter-section">
-          <h3>Board</h3>
-          <label
-            ><input type="checkbox" name="board" value="cbse" /> CBSE</label
-          >
-          <label
-            ><input type="checkbox" name="board" value="icse" /> ICSE/ISC</label
-          >
-          <label><input type="checkbox" name="board" value="ib" /> IB</label>
-          <label
-            ><input type="checkbox" name="board" value="igcse" /> IGCSE</label
-          >
-        </div>
-
-        <div class="filter-section">
-          <h3>Fees (Annual)</h3>
-          <label
-            ><input type="checkbox" name="fees" value="0-3" /> Below 3L</label
-          >
-          <label
-            ><input type="checkbox" name="fees" value="3-5" /> 3L - 5L</label
-          >
-          <label
-            ><input type="checkbox" name="fees" value="5-7" /> 5L - 7L</label
-          >
-          <label
-            ><input type="checkbox" name="fees" value="7-10" /> 7L - 10L</label
-          >
-        </div>
-
-        <div class="filter-section">
-          <h3>Distance</h3>
-          <input type="range" id="distance" min="1" max="10" value="5" />
-          <div class="range-labels">
-            <span>1 km</span>
-            <span>10 km</span>
+    <main>
+      <aside>
+        <h3 class="aside-heading">Filters</h3>
+        <div class="filters">
+          <!-- Education Level -->
+          <div>
+            <p class="filter-heading">education level</p>
+            <select name="education-level" id="education-level" class="select">
+              <option value="">high school</option>
+              <option value="">under grad</option>
+              <option value="">post grad</option>
+            </select>
           </div>
-        </div>
+          <!-- Location -->
+          <div>
+            <p class="filter-heading">Location</p>
+            <select
+              name="education-level"
+              id="education-level"
+              class="select"
+              style="margin-bottom: 0.3rem"
+            >
+              <option value="high-school">high school</option>
+              <option value="under-grad">under grad</option>
+              <option value="post-grad">post grad</option>
+            </select>
+            <select name="education-level" id="education-level" class="select">
+              <option value="">high school</option>
+              <option value="">under grad</option>
+              <option value="">post grad</option>
+            </select>
+          </div>
 
-        <div class="filter-section">
-          <h3>Facilities</h3>
-          <label
-            ><input type="checkbox" name="facilities" value="ac" /> AC
-            Classrooms</label
-          >
-          <label
-            ><input type="checkbox" name="facilities" value="pool" /> Swimming
-            Pool</label
-          >
-          <label
-            ><input type="checkbox" name="facilities" value="dayboarding" /> Day
-            Boarding</label
-          >
+          <!-- school type -->
+          <div>
+            <p class="filter-heading">School Type</p>
+            <div>
+              <div class="input-container">
+                <input type="checkbox" name="type" id="science" /><label
+                  for="science"
+                  >Science</label
+                >
+              </div>
+              <div class="input-container">
+                <input type="checkbox" name="type" id="private" /><label
+                  for="private"
+                  >Arts</label
+                >
+              </div>
+              <div class="input-container">
+                <input type="checkbox" name="type" id="Business" /><label
+                  for="Business"
+                  >Business</label
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Programs -->
+          <div>
+            <p class="filter-heading">Programs</p>
+            <div>
+              <div class="input-container">
+                <input type="checkbox" name="type" id="public" /><label
+                  for="public"
+                  >science</label
+                >
+              </div>
+              <div class="input-container">
+                <input type="checkbox" name="type" id="Arts" /><label for="Arts"
+                  >Arts</label
+                >
+              </div>
+              <div class="input-container">
+                <input type="checkbox" name="type" id="boarding" /><label
+                  for="boarding"
+                  >Business</label
+                >
+              </div>
+              <div class="input-container">
+                <input type="checkbox" name="type" id="Engineering" /><label
+                  for="Engineering"
+                  >Engineering</label
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- facilities -->
+          <div>
+            <p class="filter-heading">facilities</p>
+            <div>
+              <div class="input-container">
+                <input type="checkbox" name="type" id="science" /><label
+                  for="science"
+                  >Science</label
+                >
+              </div>
+              <div class="input-container">
+                <input type="checkbox" name="type" id="private" /><label
+                  for="private"
+                  >Arts</label
+                >
+              </div>
+              <div class="input-container">
+                <input type="checkbox" name="type" id="Business" /><label
+                  for="Business"
+                  >Business</label
+                >
+              </div>
+            </div>
+          </div>
         </div>
       </aside>
+      <div class="area">
+        <div class="big-input">
+          <svg
+            fill="#878787"
+            height="0.8rem"
+            width="0.8rem"
+            version="1.1"
+            id="Capa_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 490.4 490.4"
+            xml:space="preserve"
+            stroke="#ccc"
+          >
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <g>
+                <path
+                  d="M484.1,454.796l-110.5-110.6c29.8-36.3,47.6-82.8,47.6-133.4c0-116.3-94.3-210.6-210.6-210.6S0,94.496,0,210.796 s94.3,210.6,210.6,210.6c50.8,0,97.4-18,133.8-48l110.5,110.5c12.9,11.8,25,4.2,29.2,0C492.5,475.596,492.5,463.096,484.1,454.796z M41.1,210.796c0-93.6,75.9-169.5,169.5-169.5s169.6,75.9,169.6,169.5s-75.9,169.5-169.5,169.5S41.1,304.396,41.1,210.796z"
+                ></path>
+              </g>
+            </g>
+          </svg>
 
-      <!-- Main Content -->
-      <main class="content">
-        <h2>25 Best Schools Found In Gurugram</h2>
+          <input
+            type="text"
+            placeholder="search schools, programs or locations..."
+          />
+        </div>
 
-        <div class="school-cards">
-          <!-- School Card 1 -->
-          <div class="school-card">
-            <div class="school-image">
-              <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/school%20search-7dXbM9b775nbNDtHW74yQEdhp9tmnJ.png"
-                alt="Heritage School"
-              />
+        <div class="mid-section">
+          <div class="left">
+            <p>245 schools found</p>
+            <div class="mid-select">
+              <span>Sort by: </span>
+              <select name="" id="">
+                <option value="">Relevance</option>
+                <option value="">Name</option>
+                <option value="">category</option>
+              </select>
             </div>
-            <div class="school-info">
-              <div class="school-header">
-                <h3>Heritage Xperiential Learning School</h3>
-                <div class="rating">
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">☆</span>
+          </div>
+          <div class="right">
+            <div class="first-svg">
+              <svg
+                width="1.3rem"
+                height="1.3rem"
+                viewBox="-2.1 -2.1 25.20 25.20"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                fill="#000000"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <title>grid [#1526]</title>
+                  <desc>Created with Sketch.</desc>
+                  <defs></defs>
+                  <g
+                    id="Page-1"
+                    stroke="none"
+                    stroke-width="1"
+                    fill="none"
+                    fill-rule="evenodd"
+                  >
+                    <g
+                      id="Dribbble-Light-Preview"
+                      transform="translate(-219.000000, -200.000000)"
+                      fill="#ffff"
+                    >
+                      <g
+                        id="icons"
+                        transform="translate(56.000000, 160.000000)"
+                      >
+                        <path
+                          d="M181.9,54 L179.8,54 C178.63975,54 177.7,54.895 177.7,56 L177.7,58 C177.7,59.105 178.63975,60 179.8,60 L181.9,60 C183.06025,60 184,59.105 184,58 L184,56 C184,54.895 183.06025,54 181.9,54 M174.55,54 L172.45,54 C171.28975,54 170.35,54.895 170.35,56 L170.35,58 C170.35,59.105 171.28975,60 172.45,60 L174.55,60 C175.71025,60 176.65,59.105 176.65,58 L176.65,56 C176.65,54.895 175.71025,54 174.55,54 M167.2,54 L165.1,54 C163.93975,54 163,54.895 163,56 L163,58 C163,59.105 163.93975,60 165.1,60 L167.2,60 C168.36025,60 169.3,59.105 169.3,58 L169.3,56 C169.3,54.895 168.36025,54 167.2,54 M181.9,47 L179.8,47 C178.63975,47 177.7,47.895 177.7,49 L177.7,51 C177.7,52.105 178.63975,53 179.8,53 L181.9,53 C183.06025,53 184,52.105 184,51 L184,49 C184,47.895 183.06025,47 181.9,47 M174.55,47 L172.45,47 C171.28975,47 170.35,47.895 170.35,49 L170.35,51 C170.35,52.105 171.28975,53 172.45,53 L174.55,53 C175.71025,53 176.65,52.105 176.65,51 L176.65,49 C176.65,47.895 175.71025,47 174.55,47 M167.2,47 L165.1,47 C163.93975,47 163,47.895 163,49 L163,51 C163,52.105 163.93975,53 165.1,53 L167.2,53 C168.36025,53 169.3,52.105 169.3,51 L169.3,49 C169.3,47.895 168.36025,47 167.2,47 M181.9,40 L179.8,40 C178.63975,40 177.7,40.895 177.7,42 L177.7,44 C177.7,45.105 178.63975,46 179.8,46 L181.9,46 C183.06025,46 184,45.105 184,44 L184,42 C184,40.895 183.06025,40 181.9,40 M174.55,40 L172.45,40 C171.28975,40 170.35,40.895 170.35,42 L170.35,44 C170.35,45.105 171.28975,46 172.45,46 L174.55,46 C175.71025,46 176.65,45.105 176.65,44 L176.65,42 C176.65,40.895 175.71025,40 174.55,40 M169.3,42 L169.3,44 C169.3,45.105 168.36025,46 167.2,46 L165.1,46 C163.93975,46 163,45.105 163,44 L163,42 C163,40.895 163.93975,40 165.1,40 L167.2,40 C168.36025,40 169.3,40.895 169.3,42"
+                          id="grid-[#1526]"
+                        ></path>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div>
+              <svg
+                width="1.6rem"
+                height="1.6rem"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M8 6.00067L21 6.00139M8 12.0007L21 12.0015M8 18.0007L21 18.0015M3.5 6H3.51M3.5 12H3.51M3.5 18H3.51M4 6C4 6.27614 3.77614 6.5 3.5 6.5C3.22386 6.5 3 6.27614 3 6C3 5.72386 3.22386 5.5 3.5 5.5C3.77614 5.5 4 5.72386 4 6ZM4 12C4 12.2761 3.77614 12.5 3.5 12.5C3.22386 12.5 3 12.2761 3 12C3 11.7239 3.22386 11.5 3.5 11.5C3.77614 11.5 4 11.7239 4 12ZM4 18C4 18.2761 3.77614 18.5 3.5 18.5C3.22386 18.5 3 18.2761 3 18C3 17.7239 3.22386 17.5 3.5 17.5C3.77614 17.5 4 17.7239 4 18Z"
+                    stroke="#000000"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="center">
+          <div class="school-list">
+            <div class="card">
+              <img src="/assets/images/classroom.png" alt="" />
+
+              <div class="head">
+                <div>
+                  <h5>Accra International School</h5>
+                </div>
+                <div>
+                  <p>open</p>
                 </div>
               </div>
-              <p class="address">DLF City Phase-1, Block-C, Palam Road</p>
-
-              <div class="school-details">
-                <div class="detail">
-                  <span class="label">School Type:</span>
-                  <span>Day School</span>
-                </div>
-                <div class="detail">
-                  <span class="label">Board:</span>
-                  <span>IB, ICSE & ISC, IGCSE</span>
-                </div>
-                <div class="detail">
-                  <span class="label">Type:</span>
-                  <span>Co-Ed</span>
-                </div>
-                <div class="detail">
-                  <span class="label">Class:</span>
-                  <span>Class 12th</span>
+              <p class="location">Accra, Ghana</p>
+              <div>
+                <div class="accommodation">
+                  <div class="item">
+                    <span>
+                      <svg
+                        fill="#797979"
+                        version="1.1"
+                        id="Capa_1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        width="0.7rem"
+                        height="0.7rem"
+                        viewBox="0 0 38.022 38.022"
+                        xml:space="preserve"
+                      >
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                          <g>
+                            <path
+                              d="M38.022,16.348c0,0.807-0.484,1.534-1.229,1.846l-0.771,0.322v4.43c0,0.552-0.447,1-1,1c-0.554,0-1-0.448-1-1v-3.594 l-2.312,0.968v5.085c0,0.859-0.554,1.626-1.369,1.896l-10.188,3.386c-0.205,0.068-0.418,0.104-0.632,0.104 c-0.192,0-0.389-0.028-0.577-0.085L7.736,27.319c-0.845-0.257-1.423-1.033-1.423-1.915v-5.085l-5.084-2.126 C0.486,17.881,0,17.154,0,16.348c0-0.806,0.484-1.534,1.229-1.845L18.24,7.388c0.491-0.206,1.049-0.206,1.543,0l17.01,7.115 C37.537,14.813,38.022,15.541,38.022,16.348z"
+                            ></path>
+                          </g>
+                        </g>
+                      </svg>
+                    </span>
+                    <p>university</p>
+                  </div>
+                  <div class="item">
+                    <span
+                      ><svg
+                        fill="#797979"
+                        width="0.7rem"
+                        height="0.7rem"
+                        viewBox="0 0 32 32"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                          <title>house</title>
+                          <path
+                            d="M0 16h4l12-13.696 12 13.696h4l-13.984-16h-4zM4 32h8v-9.984q0-0.832 0.576-1.408t1.44-0.608h4q0.8 0 1.408 0.608t0.576 1.408v9.984h8v-13.408l-12-13.248-12 13.248v13.408zM26.016 6.112l4 4.576v-8.672h-4v4.096z"
+                          ></path>
+                        </g></svg
+                    ></span>
+                    <p>Boarding</p>
+                  </div>
                 </div>
               </div>
-
-              <div class="school-actions">
-                <button class="call-btn">📞 Call</button>
-                <button class="view-btn">View School</button>
+              <div class="programs">
+                <p>Science</p>
+                <p>Arts</p>
+                <p>Business</p>
               </div>
 
-              <div class="expert-comment">
-                <p>
-                  <strong>Expert Comment:</strong> Heritage School provides
-                  excellent education with modern facilities and experienced
-                  faculty...
-                </p>
+              <div class="box">
+                <a href="">view details</a>
+              </div>
+            </div>
+            <div class="card">
+              <img src="/assets/images/classroom.png" alt="" />
+
+              <div class="head">
+                <div>
+                  <h5>Accra International School</h5>
+                </div>
+                <div>
+                  <p style="background-color: #ffff00">upcoming</p>
+                </div>
+              </div>
+              <p class="location">Accra, Ghana</p>
+              <div>
+                <div class="accommodation">
+                  <div class="item">
+                    <span>
+                      <svg
+                        fill="#797979"
+                        version="1.1"
+                        id="Capa_1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        width="0.7rem"
+                        height="0.7rem"
+                        viewBox="0 0 38.022 38.022"
+                        xml:space="preserve"
+                      >
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                          <g>
+                            <path
+                              d="M38.022,16.348c0,0.807-0.484,1.534-1.229,1.846l-0.771,0.322v4.43c0,0.552-0.447,1-1,1c-0.554,0-1-0.448-1-1v-3.594 l-2.312,0.968v5.085c0,0.859-0.554,1.626-1.369,1.896l-10.188,3.386c-0.205,0.068-0.418,0.104-0.632,0.104 c-0.192,0-0.389-0.028-0.577-0.085L7.736,27.319c-0.845-0.257-1.423-1.033-1.423-1.915v-5.085l-5.084-2.126 C0.486,17.881,0,17.154,0,16.348c0-0.806,0.484-1.534,1.229-1.845L18.24,7.388c0.491-0.206,1.049-0.206,1.543,0l17.01,7.115 C37.537,14.813,38.022,15.541,38.022,16.348z"
+                            ></path>
+                          </g>
+                        </g>
+                      </svg>
+                    </span>
+                    <p>university</p>
+                  </div>
+                  <div class="item">
+                    <span
+                      ><svg
+                        fill="#797979"
+                        width="0.7rem"
+                        height="0.7rem"
+                        viewBox="0 0 32 32"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                          <title>house</title>
+                          <path
+                            d="M0 16h4l12-13.696 12 13.696h4l-13.984-16h-4zM4 32h8v-9.984q0-0.832 0.576-1.408t1.44-0.608h4q0.8 0 1.408 0.608t0.576 1.408v9.984h8v-13.408l-12-13.248-12 13.248v13.408zM26.016 6.112l4 4.576v-8.672h-4v4.096z"
+                          ></path>
+                        </g></svg
+                    ></span>
+                    <p>Boarding</p>
+                  </div>
+                </div>
+              </div>
+              <div class="programs">
+                <p>Science</p>
+                <p>Arts</p>
+                <p>Business</p>
+              </div>
+
+              <div class="box">
+                <a href="">view details</a>
+              </div>
+            </div>
+            <div class="card">
+              <img src="/assets/images/classroom.png" alt="" />
+
+              <div class="head">
+                <div>
+                  <h5>Accra International School</h5>
+                </div>
+                <div>
+                  <p>open</p>
+                </div>
+              </div>
+              <p class="location">Accra, Ghana</p>
+              <div>
+                <div class="accommodation">
+                  <div class="item">
+                    <span>
+                      <svg
+                        fill="#797979"
+                        version="1.1"
+                        id="Capa_1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        width="0.7rem"
+                        height="0.7rem"
+                        viewBox="0 0 38.022 38.022"
+                        xml:space="preserve"
+                      >
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                          <g>
+                            <path
+                              d="M38.022,16.348c0,0.807-0.484,1.534-1.229,1.846l-0.771,0.322v4.43c0,0.552-0.447,1-1,1c-0.554,0-1-0.448-1-1v-3.594 l-2.312,0.968v5.085c0,0.859-0.554,1.626-1.369,1.896l-10.188,3.386c-0.205,0.068-0.418,0.104-0.632,0.104 c-0.192,0-0.389-0.028-0.577-0.085L7.736,27.319c-0.845-0.257-1.423-1.033-1.423-1.915v-5.085l-5.084-2.126 C0.486,17.881,0,17.154,0,16.348c0-0.806,0.484-1.534,1.229-1.845L18.24,7.388c0.491-0.206,1.049-0.206,1.543,0l17.01,7.115 C37.537,14.813,38.022,15.541,38.022,16.348z"
+                            ></path>
+                          </g>
+                        </g>
+                      </svg>
+                    </span>
+                    <p>university</p>
+                  </div>
+                  <div class="item">
+                    <span
+                      ><svg
+                        fill="#797979"
+                        width="0.7rem"
+                        height="0.7rem"
+                        viewBox="0 0 32 32"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                          <title>house</title>
+                          <path
+                            d="M0 16h4l12-13.696 12 13.696h4l-13.984-16h-4zM4 32h8v-9.984q0-0.832 0.576-1.408t1.44-0.608h4q0.8 0 1.408 0.608t0.576 1.408v9.984h8v-13.408l-12-13.248-12 13.248v13.408zM26.016 6.112l4 4.576v-8.672h-4v4.096z"
+                          ></path>
+                        </g></svg
+                    ></span>
+                    <p>Boarding</p>
+                  </div>
+                </div>
+              </div>
+              <div class="programs">
+                <p>Science</p>
+                <p>Arts</p>
+                <p>Business</p>
+              </div>
+
+              <div class="box">
+                <a href="">view details</a>
+              </div>
+            </div>
+            <div class="card">
+              <img src="/assets/images/classroom.png" alt="" />
+
+              <div class="head">
+                <div>
+                  <h5>Accra International School</h5>
+                </div>
+                <div>
+                  <p>open</p>
+                </div>
+              </div>
+              <p class="location">Accra, Ghana</p>
+              <div>
+                <div class="accommodation">
+                  <div class="item">
+                    <span>
+                      <svg
+                        fill="#797979"
+                        version="1.1"
+                        id="Capa_1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        width="0.7rem"
+                        height="0.7rem"
+                        viewBox="0 0 38.022 38.022"
+                        xml:space="preserve"
+                      >
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                          <g>
+                            <path
+                              d="M38.022,16.348c0,0.807-0.484,1.534-1.229,1.846l-0.771,0.322v4.43c0,0.552-0.447,1-1,1c-0.554,0-1-0.448-1-1v-3.594 l-2.312,0.968v5.085c0,0.859-0.554,1.626-1.369,1.896l-10.188,3.386c-0.205,0.068-0.418,0.104-0.632,0.104 c-0.192,0-0.389-0.028-0.577-0.085L7.736,27.319c-0.845-0.257-1.423-1.033-1.423-1.915v-5.085l-5.084-2.126 C0.486,17.881,0,17.154,0,16.348c0-0.806,0.484-1.534,1.229-1.845L18.24,7.388c0.491-0.206,1.049-0.206,1.543,0l17.01,7.115 C37.537,14.813,38.022,15.541,38.022,16.348z"
+                            ></path>
+                          </g>
+                        </g>
+                      </svg>
+                    </span>
+                    <p>university</p>
+                  </div>
+                  <div class="item">
+                    <span
+                      ><svg
+                        fill="#797979"
+                        width="0.7rem"
+                        height="0.7rem"
+                        viewBox="0 0 32 32"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                          <title>house</title>
+                          <path
+                            d="M0 16h4l12-13.696 12 13.696h4l-13.984-16h-4zM4 32h8v-9.984q0-0.832 0.576-1.408t1.44-0.608h4q0.8 0 1.408 0.608t0.576 1.408v9.984h8v-13.408l-12-13.248-12 13.248v13.408zM26.016 6.112l4 4.576v-8.672h-4v4.096z"
+                          ></path>
+                        </g></svg
+                    ></span>
+                    <p>Boarding</p>
+                  </div>
+                </div>
+              </div>
+              <div class="programs">
+                <p>Science</p>
+                <p>Arts</p>
+                <p>Business</p>
+              </div>
+
+              <div class="box">
+                <a href="">view details</a>
               </div>
             </div>
           </div>
-
-          <!-- Additional school cards can be added here -->
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
 
     <script src="/functions/school-search-function.js"></script>
   </body>
