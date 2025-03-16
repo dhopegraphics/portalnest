@@ -34,9 +34,11 @@
 
     <!-- Javascript -->
     <script defer src="../../functions/script-schooladmin.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
+    <!-- 👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇 -->
+    <!-- Navigation buttons -->
     <aside class="navigation">
       <header class="header__content">
         <div class="logo__container flex">
@@ -166,6 +168,7 @@
       </header>
 
       <div class="main__main-content">
+        <!-- 👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇 -->
         <!-- ** Dashboard  -->
         <div class="content__area dashboard__section_block" id="dashboard">
           <section>
@@ -590,6 +593,7 @@
           </section>
         </div>
 
+        <!-- 👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇 -->
         <!-- ** Managers  -->
         <div class="content__area" id="managers">
           <section>
@@ -690,8 +694,7 @@
                   <option value="3">TITLE</option>
                 </select>
 
-                <!-- Add the icon here -->
-                <span>></span>
+                <span><i class="bi bi-chevron-down"></i></span>
               </div>
             </div>
 
@@ -803,7 +806,12 @@
                 </button>
               </div>
 
-              <form action="" class="manager_form">
+              <form
+                action=""
+                class="manager_form"
+                id="managerForm"
+                name="managerForm"
+              >
                 <div class="up_container flex">
                   <div class="img_con" role="button"></div>
 
@@ -832,42 +840,75 @@
 
                 <div class="inn-container inn_three">
                   <label for="position">Role/Position</label>
-                  <select name="position" id="position">
-                    <option value="1"></option>
-                    <option value="2">Head of Department (HOD)</option>
-                    <option value="3">Senior Lecturer</option>
-                    <option value="4">Lecturer</option>
-                  </select>
+
+                  <div class="hold_select_position">
+                    <select name="position" id="position">
+                      <option value="1"></option>
+                      <option value="2">Head of Department (HOD)</option>
+                      <option value="3">Senior Lecturer</option>
+                      <option value="4">Lecturer</option>
+                    </select>
+
+                    <span>
+                      <i class="bi bi-caret-down-fill"></i>
+                    </span>
+                  </div>
                 </div>
 
                 <div class="inn-container inn_four">
                   <label for="department">Department</label>
-                  <select name="department" id="department">
-                    <option value="1"></option>
-                    <option value="2">Computer Science Department</option>
-                    <option value="3">Business Department</option>
-                    <option value="4">Health Department</option>
-                    <option value="5">Law Department</option>
-                  </select>
+
+                  <div class="hold_select_position">
+                    <select name="department" id="department">
+                      <option value="1"></option>
+                      <option value="2">Computer Science Department</option>
+                      <option value="3">Business Department</option>
+                      <option value="4">Health Department</option>
+                      <option value="5">Law Department</option>
+                    </select>
+
+                    <span>
+                      <i class="bi bi-caret-down-fill"></i>
+                    </span>
+                  </div>
                 </div>
 
                 <div class="year_selection">
                   <label>Year Selection :</label>
 
                   <div class="selection">
-                    <!-- Add the plus icon -->
                     <div class="flex">
-                      <p role="button">Year 1 <span>+</span></p>
-                      <p role="button">Year 2 <span>+</span></p>
-                      <p role="button">Year 3 <span>+</span></p>
-                      <p role="button">Year 4 <span>+</span></p>
+                      <p role="button" class="year-option" data-value="Year 1">
+                        Year 1 <span>+</span>
+                      </p>
+                      <p role="button" class="year-option" data-value="Year 2">
+                        Year 2 <span>+</span>
+                      </p>
+                      <p role="button" class="year-option" data-value="Year 3">
+                        Year 3 <span>+</span>
+                      </p>
+                      <p role="button" class="year-option" data-value="Year 4">
+                        Year 4 <span>+</span>
+                      </p>
                     </div>
 
                     <div class="flex">
-                      <p role="button">Year 5 <span>+</span></p>
-                      <p role="button">Year 6 <span>+</span></p>
-                      <p role="button">Year 7 <span>+</span></p>
-                      <p role="button">All Year</p>
+                      <p role="button" class="year-option" data-value="Year 5">
+                        Year 5 <span>+</span>
+                      </p>
+                      <p role="button" class="year-option" data-value="Year 6">
+                        Year 6 <span>+</span>
+                      </p>
+                      <p role="button" class="year-option" data-value="Year 7">
+                        Year 7 <span>+</span>
+                      </p>
+                      <p
+                        role="button"
+                        class="year-option"
+                        data-value="All Year"
+                      >
+                        All Year
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -876,50 +917,117 @@
                   <p class="permission-margin">Permissions :</p>
 
                   <div class="selection">
-                    <!-- Add the plus icon -->
                     <div class="flex">
-                      <p role="button">Create/Edit Staff<span>+</span></p>
-                      <p role="button">Assign Roles <span>+</span></p>
-                      <p role="button">
+                      <p
+                        role="button"
+                        class="permission-option"
+                        data-value="Create/Edit Staff"
+                      >
+                        Create/Edit Staff<span>+</span>
+                      </p>
+                      <p
+                        role="button"
+                        class="permission-option"
+                        data-value="Assign Roles"
+                      >
+                        Assign Roles <span>+</span>
+                      </p>
+                      <p
+                        role="button"
+                        class="permission-option"
+                        data-value="Select Custom Permissions"
+                      >
                         Select Custom Permissions <span>+</span>
                       </p>
-                      <p role="button">Withdrawals <span>+</span></p>
+                      <p
+                        role="button"
+                        class="permission-option"
+                        data-value="Withdrawals"
+                      >
+                        Withdrawals <span>+</span>
+                      </p>
                     </div>
 
                     <div class="flex">
-                      <p role="button">
+                      <p
+                        role="button"
+                        class="permission-option"
+                        data-value="View/Approve/Reject Applications"
+                      >
                         View/Approve/Reject Applications <span>+</span>
                       </p>
-                      <p role="button">
+                      <p
+                        role="button"
+                        class="permission-option"
+                        data-value="Set Admisstion Criteria"
+                      >
                         Set Admisstion Criteria <span>+</span>
                       </p>
-                      <p role="button">Deferrials <span>+</span></p>
+                      <p
+                        role="button"
+                        class="permission-option"
+                        data-value="Deferrials"
+                      >
+                        Deferrials <span>+</span>
+                      </p>
                     </div>
 
                     <div class="flex">
-                      <p role="button">
+                      <p
+                        role="button"
+                        class="permission-option"
+                        data-value="View/Edit Students Records"
+                      >
                         View/Edit Students Records <span>+</span>
                       </p>
-                      <p role="button">Create/Update Courses <span>+</span></p>
-                      <p role="button">
+                      <p
+                        role="button"
+                        class="permission-option"
+                        data-value="Create/Update Courses"
+                      >
+                        Create/Update Courses <span>+</span>
+                      </p>
+                      <p
+                        role="button"
+                        class="permission-option"
+                        data-value="Create/Update Faculties"
+                      >
                         Create/Update Faculties <span>+</span>
                       </p>
                     </div>
 
                     <div class="flex">
-                      <p role="button">
+                      <p
+                        role="button"
+                        class="permission-option"
+                        data-value="Create/Update Departments"
+                      >
                         Create/Update Departments <span>+</span>
                       </p>
-                      <p role="button">
+                      <p
+                        role="button"
+                        class="permission-option"
+                        data-value="Define Grading Policies"
+                      >
                         Define Grading Policies <span>+</span>
                       </p>
-                      <p role="button">
+                      <p
+                        role="button"
+                        class="permission-option"
+                        data-value="Approve/Release Results"
+                      >
                         Approve/Release Results <span>+</span>
                       </p>
                     </div>
 
                     <div class="flex">
-                      <p role="button">View School Analytics <span>+</span></p>
+                      <p
+                        role="button"
+                        class="permission-option"
+                        data-value="View School Analytics"
+                      >
+                        View School Analytics <span>+</span>
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -930,52 +1038,104 @@
 
                     <div class="course_search_cont">
                       <input type="text" class="search_courses" />
-
-                      <!-- search icon -->
-                      <span>Q</span>
+                      <span><i class="bi bi-search"></i></span>
                     </div>
                   </div>
 
-                  <div class="selection">
+                  <div class="selection course__selection">
                     <div class="flex">
-                      <p role="button">
+                      <p
+                        role="button"
+                        class="course-option"
+                        data-value="Information Technology I"
+                      >
                         CSM 151 Information Technology I <span>+</span>
                       </p>
-                      <p role="button">CSM 153 Circuit Theory <span>+</span></p>
-                      <p role="button">
+                      <p
+                        role="button"
+                        class="course-option"
+                        data-value="Circuit Theory"
+                      >
+                        CSM 153 Circuit Theory <span>+</span>
+                      </p>
+                      <p
+                        role="button"
+                        class="course-option"
+                        data-value="Human Computer Interaction"
+                      >
                         CSM 357 Human Computer Interaction <span>+</span>
                       </p>
                     </div>
 
                     <div class="flex">
-                      <p role="button">ACF 255 Accounting I <span>+</span></p>
-                      <p role="button">
+                      <p
+                        role="button"
+                        class="course-option"
+                        data-value="Accounting I"
+                      >
+                        ACF 255 Accounting I <span>+</span>
+                      </p>
+                      <p
+                        role="button"
+                        class="course-option"
+                        data-value="Human Computer Interaction"
+                      >
                         CSM 357 Human Computer Interaction <span>+</span>
                       </p>
-                      <p role="button">
+                      <p
+                        role="button"
+                        class="course-option"
+                        data-value="Introduction to Artificial Intelligence"
+                      >
                         CSM 395 Introduction to Artificial Intelligence
                         <span>+</span>
                       </p>
                     </div>
 
                     <div class="flex">
-                      <p role="button">
+                      <p
+                        role="button"
+                        class="course-option"
+                        data-value="View/edit student records"
+                      >
                         View/edit student records <span>+</span>
                       </p>
-                      <p role="button">Create/update courses <span>+</span></p>
-                      <p role="button">
+                      <p
+                        role="button"
+                        class="course-option"
+                        data-value="Create/update courses"
+                      >
+                        Create/update courses <span>+</span>
+                      </p>
+                      <p
+                        role="button"
+                        class="course-option"
+                        data-value="Create/update faculties"
+                      >
                         Create/update faculties <span>+</span>
                       </p>
                     </div>
 
                     <div class="flex">
-                      <p role="button">
+                      <p
+                        role="button"
+                        class="course-option"
+                        data-value="Create/update departments"
+                      >
                         Create/update departments <span>+</span>
                       </p>
-                      <p role="button">
+                      <p
+                        role="button"
+                        class="course-option"
+                        data-value="Define grading policies"
+                      >
                         Define grading policies <span>+</span>
                       </p>
-                      <p role="button">
+                      <p
+                        role="button"
+                        class="course-option"
+                        data-value="approve/release results"
+                      >
                         approve/release results <span>+</span>
                       </p>
                     </div>
@@ -989,15 +1149,16 @@
           </section>
         </div>
 
+        <!-- 👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇 -->
         <!-- ** Admissions  -->
         <div class="content__area" id="admissions">
           <section>
             <div class="main__card-container">
               <h1>Admissions Management</h1>
 
-              <div class="card_scroll dashboard__scroll">
+              <div class="card_scroll dashboard__scroll admission_scroll">
                 <div class="card__container" id="cardContainer">
-                  <div class="card card_green">
+                  <div class="admission_scroll_card card card_green">
                     <div class="card__header flex">
                       <span class="people_icon">
                         <i class="bi bi-journal-text col_green"></i>
@@ -1016,7 +1177,7 @@
                     </div>
                   </div>
 
-                  <div class="card card_violet">
+                  <div class="admission_scroll_card card card_violet">
                     <div class="card__header flex border_violet">
                       <span>
                         <i class="bi bi-person-check col_violet"></i>
@@ -1035,7 +1196,7 @@
                     </div>
                   </div>
 
-                  <div class="card card_orange">
+                  <div class="admission_scroll_card card card_orange">
                     <div class="card__header flex border_orange">
                       <span>
                         <!-- <i class="bi bi-person col_orange"></i> -->
@@ -1055,7 +1216,7 @@
                     </div>
                   </div>
 
-                  <div class="card card_lightblue">
+                  <div class="admission_scroll_card card card_lightblue">
                     <div class="card__header flex border_lightblue">
                       <span>
                         <i class="bi bi-journal-text col_lightblue"></i>
@@ -1074,7 +1235,7 @@
                     </div>
                   </div>
 
-                  <div class="card card_orange">
+                  <div class="admission_scroll_card card card_orange">
                     <div class="card__header flex border_orange">
                       <span>
                         <!-- clock icon -->
@@ -1094,7 +1255,7 @@
                     </div>
                   </div>
 
-                  <div class="card card_lightred">
+                  <div class="admission_scroll_card card card_lightred">
                     <div class="card__header flex border_lightred">
                       <!--  X icon -->
                       <span class="col_lightred" style="font-size: 2rem">
@@ -1114,7 +1275,7 @@
                     </div>
                   </div>
 
-                  <div class="card card_green">
+                  <div class="admission_scroll_card card card_green">
                     <div class="card__header flex border_green">
                       <span class="people_icon">
                         <i class="bi bi-check-lg col_green"></i>
@@ -1163,8 +1324,7 @@
                       <option value="4">REJECTED</option>
                     </select>
 
-                    <!-- Add the icon here -->
-                    <span>></span>
+                    <span><i class="bi bi-chevron-down"></i></span>
                   </div>
 
                   <div class="admission_select_con">
@@ -1233,8 +1393,7 @@
                       </option>
                     </select>
 
-                    <!-- Add the icon here -->
-                    <span>></span>
+                    <span><i class="bi bi-chevron-down"></i></span>
                   </div>
                 </div>
 
@@ -1326,6 +1485,7 @@
           </section>
         </div>
 
+        <!-- 👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇 -->
         <!-- ** Student Management  -->
         <div class="content__area" id="student">
           <section>
@@ -1451,8 +1611,7 @@
                         <option value="4">REJECTED</option>
                       </select>
 
-                      <!-- Add the icon here -->
-                      <span>></span>
+                      <span><i class="bi bi-chevron-down"></i></span>
                     </div>
 
                     <div class="admission_select_con">
@@ -1470,8 +1629,7 @@
                         <option value="7">Law</option>
                       </select>
 
-                      <!-- Add the icon here -->
-                      <span>></span>
+                      <span><i class="bi bi-chevron-down"></i></span>
                     </div>
                   </div>
                 </div>
@@ -1546,6 +1704,7 @@
           </section>
         </div>
 
+        <!-- 👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇 -->
         <!-- ** Faculty Management  -->
         <div class="content__area" id="faculty">
           <section>
@@ -1669,8 +1828,7 @@
                         <option value="4">REJECTED</option>
                       </select>
 
-                      <!-- Add the icon here -->
-                      <span>></span>
+                      <span><i class="bi bi-chevron-down"></i></span>
                     </div>
 
                     <div class="admission_select_con">
@@ -1688,8 +1846,7 @@
                         <option value="7">Law</option>
                       </select>
 
-                      <!-- Add the icon here -->
-                      <span>></span>
+                      <span><i class="bi bi-chevron-down"></i></span>
                     </div>
                   </div>
                 </div>
@@ -1761,6 +1918,7 @@
           </section>
         </div>
 
+        <!-- 👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇 -->
         <!-- ** Departments  -->
         <div class="content__area" id="departments">
           <section>
@@ -1888,8 +2046,7 @@
                         <option value="4">REJECTED</option>
                       </select>
 
-                      <!-- Add the icon here -->
-                      <span>></span>
+                      <span><i class="bi bi-chevron-down"></i></span>
                     </div>
 
                     <div class="admission_select_con">
@@ -1906,8 +2063,7 @@
                         <option value="6">Faculty of Business</option>
                       </select>
 
-                      <!-- Add the icon here -->
-                      <span>></span>
+                      <span><i class="bi bi-chevron-down"></i></span>
                     </div>
                   </div>
                 </div>
@@ -1979,6 +2135,7 @@
           </section>
         </div>
 
+        <!-- 👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇 -->
         <!-- ** Courses  -->
         <div class="content__area" id="courses">
           <section>
@@ -2105,8 +2262,7 @@
                         <option value="8">Year 7</option>
                       </select>
 
-                      <!-- Add the icon here -->
-                      <span>></span>
+                      <span><i class="bi bi-chevron-down"></i></span>
                     </div>
 
                     <div class="admission_select_con">
@@ -2121,8 +2277,7 @@
                         <option value="4">REJECTED</option>
                       </select>
 
-                      <!-- Add the icon here -->
-                      <span>></span>
+                      <span><i class="bi bi-chevron-down"></i></span>
                     </div>
 
                     <div class="admission_select_con">
@@ -2139,8 +2294,7 @@
                         <option value="6">Faculty of Business</option>
                       </select>
 
-                      <!-- Add the icon here -->
-                      <span>></span>
+                      <span><i class="bi bi-chevron-down"></i></span>
                     </div>
                   </div>
                 </div>
@@ -2212,9 +2366,10 @@
           </section>
         </div>
 
+        <!-- 👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇 -->
         <!-- ** Grading & Exams  -->
         <div class="content__area" id="grading">
-          <section>
+          <section class="inner_grading_container">
             <div class="main__card-container">
               <h1>Grade Managements</h1>
 
@@ -2297,189 +2452,188 @@
               </div>
             </div>
 
-            <div class="inner_grading_container">
+            <div
+              id="course_management"
+              class="dashboard__section content grading_section"
+            >
               <div
-                id="course_management"
-                class="dashboard__section content grading_section"
+                id="live__admission"
+                class="live__activity-container admission_content_container grading_inner_container"
               >
-                <div
-                  id="live__admission"
-                  class="live__activity-container admission_content_container grading_inner_container"
-                >
-                  <div class="student__search flex">
-                    <form action="#">
-                      <input
-                        class="admission_search"
-                        type="text"
-                        placeholder="Search Courses,Student Id,Exams..."
-                      />
-                    </form>
+                <div class="student__search flex">
+                  <form action="#">
+                    <input
+                      class="admission_search"
+                      type="text"
+                      placeholder="Search Courses,Student Id,Exams..."
+                    />
+                  </form>
 
-                    <div class="flex grading_sorted">
-                      <div class="admission_select_con">
-                        <select
-                          name=""
-                          id=""
-                          class="select_remove_default sort_btn admission_sort course_sort_first"
-                        >
-                          <option value="1">All Year</option>
-                          <option value="2">Year 1</option>
-                          <option value="3">Year 2</option>
-                          <option value="4">Year 3</option>
-                          <option value="5">Year 4</option>
-                          <option value="6">Year 5</option>
-                          <option value="7">Year 6</option>
-                          <option value="8">Year 7</option>
-                        </select>
+                  <div class="flex grading_sorted">
+                    <div class="admission_select_con">
+                      <select
+                        name=""
+                        id=""
+                        class="select_remove_default sort_btn admission_sort course_sort_first"
+                      >
+                        <option value="1">All Year</option>
+                        <option value="2">Year 1</option>
+                        <option value="3">Year 2</option>
+                        <option value="4">Year 3</option>
+                        <option value="5">Year 4</option>
+                        <option value="6">Year 5</option>
+                        <option value="7">Year 6</option>
+                        <option value="8">Year 7</option>
+                      </select>
 
-                        <!-- Add the icon here -->
-                        <span>></span>
-                      </div>
+                      <!-- Add the icon here -->
+                      <span><i class="bi bi-chevron-down"></i></span>
+                    </div>
 
-                      <div class="admission_select_con">
-                        <select
-                          name=""
-                          id=""
-                          class="select_remove_default sort_btn admission_sort course_sort_first"
-                        >
-                          <option value="1">All Courses</option>
-                          <option value="2">ADMITTED</option>
-                          <option value="3">PENDING REVIEW</option>
-                          <option value="4">REJECTED</option>
-                        </select>
+                    <div class="admission_select_con">
+                      <select
+                        name=""
+                        id=""
+                        class="select_remove_default sort_btn admission_sort course_sort_first"
+                      >
+                        <option value="1">All Courses</option>
+                        <option value="2">ADMITTED</option>
+                        <option value="3">PENDING REVIEW</option>
+                        <option value="4">REJECTED</option>
+                      </select>
 
-                        <!-- Add the icon here -->
-                        <span>></span>
-                      </div>
+                      <!-- Add the icon here -->
+                      <span><i class="bi bi-chevron-down"></i></span>
+                    </div>
 
-                      <div class="admission_select_con">
-                        <select
-                          name=""
-                          id=""
-                          class="select_remove_default sort_btn admission_sort course_sort_last"
-                        >
-                          <option value="1">All Lecturers</option>
-                          <option value="2">Faculty of Science</option>
-                          <option value="3">Faculty of Social Sciences</option>
-                          <option value="4">Faculty of Health</option>
-                          <option value="5">Faculty of Law</option>
-                          <option value="6">Faculty of Business</option>
-                        </select>
+                    <div class="admission_select_con">
+                      <select
+                        name=""
+                        id=""
+                        class="select_remove_default sort_btn admission_sort course_sort_last"
+                      >
+                        <option value="1">All Lecturers</option>
+                        <option value="2">Faculty of Science</option>
+                        <option value="3">Faculty of Social Sciences</option>
+                        <option value="4">Faculty of Health</option>
+                        <option value="5">Faculty of Law</option>
+                        <option value="6">Faculty of Business</option>
+                      </select>
 
-                        <!-- Add the icon here -->
-                        <span>></span>
-                      </div>
+                      <!-- Add the icon here -->
+                      <span><i class="bi bi-chevron-down"></i></span>
                     </div>
                   </div>
+                </div>
 
-                  <div class="admission_content">
-                    <div class="admission_initials flex grading_initials">
-                      <p>ID</p>
-                      <p>Exam Titile</p>
-                      <p>Date</p>
-                      <p>Course Name</p>
-                      <p>Lecturer</p>
-                      <p>Year</p>
-                      <p>Student Id</p>
-                      <p>Status</p>
-                      <p>Action</p>
-                    </div>
+                <div class="admission_content">
+                  <div class="admission_initials flex grading_initials">
+                    <p>ID</p>
+                    <p>Exam Titile</p>
+                    <p>Date</p>
+                    <p>Course Name</p>
+                    <p>Lecturer</p>
+                    <p>Year</p>
+                    <p>Student Id</p>
+                    <p>Status</p>
+                    <p>Action</p>
+                  </div>
 
-                    <div class="contents__admission">
+                  <div class="contents__admission">
+                    <div
+                      class="inner_contents__admission flex grading_contents"
+                    >
+                      <input type="checkbox" />
+
                       <div
-                        class="inner_contents__admission flex grading_contents"
+                        class="initial_content flex admisson_content_display"
                       >
-                        <input type="checkbox" />
+                        <div class="program_date grading_id">
+                          <p>Mid 24</p>
+                        </div>
 
-                        <div
-                          class="initial_content flex admisson_content_display"
-                        >
-                          <div class="program_date grading_id">
-                            <p>Mid 24</p>
+                        <div class="person_details flex admission_person">
+                          <div class="person_details_con">
+                            <p>Mid-semester</p>
                           </div>
+                        </div>
 
-                          <div class="person_details flex admission_person">
-                            <div class="person_details_con">
-                              <p>Mid-semester</p>
-                            </div>
-                          </div>
+                        <div class="program_date">
+                          <p>Dec 15 2023</p>
+                        </div>
 
-                          <div class="program_date">
-                            <p>Dec 15 2023</p>
-                          </div>
+                        <div class="admission_title">
+                          <p>Discrete Maths</p>
+                        </div>
 
-                          <div class="admission_title">
-                            <p>Discrete Maths</p>
-                          </div>
+                        <div class="admission_title">
+                          <p>Dr. Walker</p>
+                        </div>
 
-                          <div class="admission_title">
-                            <p>Dr. Walker</p>
-                          </div>
+                        <div class="student_pending course_year">
+                          <p>Year 1</p>
+                        </div>
 
-                          <div class="student_pending course_year">
-                            <p>Year 1</p>
-                          </div>
+                        <div class="program_date student__id">
+                          <p>20202056</p>
+                        </div>
 
-                          <div class="program_date student__id">
-                            <p>20202056</p>
-                          </div>
+                        <div class="program_date">
+                          <p></p>
+                        </div>
 
-                          <div class="program_date">
-                            <p></p>
-                          </div>
+                        <div class="flex admission_approval">
+                          <button>
+                            <span>
+                              <i class="bi bi-eye"></i>
+                            </span>
+                          </button>
 
-                          <div class="flex admission_approval">
-                            <button>
-                              <span>
-                                <i class="bi bi-eye"></i>
-                              </span>
-                            </button>
+                          <!-- Check button -->
+                          <button class="flex">
+                            <i class="bi bi-check-lg"></i>
+                          </button>
 
-                            <!-- Check button -->
-                            <button class="flex">
-                              <i class="bi bi-check-lg"></i>
-                            </button>
-
-                            <!-- Close button -->
-                            <button class="flex">&times;</button>
-                          </div>
+                          <!-- Close button -->
+                          <button class="flex">&times;</button>
                         </div>
                       </div>
                     </div>
                   </div>
+                </div>
 
-                  <!-- move this to the bottom -->
-                  <div class="admisson_footer">
-                    <p>
-                      Showing <span class="admisson_num_check">1</span> To
-                      <span class="addmission_on_check">10</span> of
-                      <span class="admisson_total_check">97</span> Results
-                    </p>
-                  </div>
+                <!-- move this to the bottom -->
+                <div class="admisson_footer">
+                  <p>
+                    Showing <span class="admisson_num_check">1</span> To
+                    <span class="addmission_on_check">10</span> of
+                    <span class="admisson_total_check">97</span> Results
+                  </p>
                 </div>
               </div>
+            </div>
 
-              <div class="grading__container flex">
-                <div class="grading__card">
-                  <h3>Performance Trends</h3>
-                  <canvas id="performanceChart" class="chart"></canvas>
-                </div>
+            <div class="grading__container flex">
+              <div class="grading__card">
+                <h3>Performance Trends</h3>
+                <canvas id="performanceChart" class="chart"></canvas>
+              </div>
 
-                <div class="grading__card">
-                  <h3>Grade Distribution</h3>
+              <div class="grading__card">
+                <h3>Grade Distribution</h3>
 
-                  <div class="piechat flex">
-                    <canvas id="gradeChart" class="chart"></canvas>
-                  </div>
+                <div class="piechat flex">
+                  <canvas id="gradeChart" class="chart"></canvas>
                 </div>
               </div>
             </div>
           </section>
         </div>
 
+        <!-- 👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇 -->
         <!-- ** Settings & Reports  -->
         <div class="content__area" id="reports">
-          <section>
+          <section class="inner_grading_container">
             <div class="main__card-container">
               <h1>Dashboard-School Manager</h1>
 
@@ -2562,20 +2716,20 @@
               </div>
             </div>
 
-            <div class="inner_grading_container">
-              <div
-                id="admission"
-                class="dashboard__section content report__section"
-              >
-                <div class="reports_diagram__container grid">
-                  <div class="grading__card report__card">
-                    <div class="report_card_heading flex">
-                      <h3>Reports Analytics</h3>
+            <div
+              id="admission"
+              class="dashboard__section content report__section"
+            >
+              <div class="reports_diagram__container grid">
+                <div class="grading__card report__card">
+                  <div class="report_card_heading flex">
+                    <h3>Reports Analytics</h3>
 
+                    <div class="analytics_con">
                       <select
                         name=""
                         id=""
-                        class="sort_btn admission_sort report_sort"
+                        class="select_remove_default sort_btn admission_sort report_sort"
                       >
                         <option value="1">Today</option>
                         <option value="2">Yesterday</option>
@@ -2585,31 +2739,241 @@
                         <option value="6">6 month</option>
                         <option value="7">12 month</option>
                       </select>
+
+                      <span><i class="bi bi-chevron-down"></i></span>
                     </div>
-                    <canvas
-                      id="performanceChart"
-                      class="chart_performance"
-                    ></canvas>
                   </div>
 
-                  <div class="grading__card report__card">
-                    <h3>Grade Distribution</h3>
+                  <canvas id="performanceChart" class="chart"></canvas>
+                </div>
 
-                    <div class="piechat flex">
-                      <canvas id="pieChart" class="chart"></canvas>
+                <div class="grading__card report__card">
+                  <h3>Grade Distribution</h3>
+
+                  <div class="piechat flex">
+                    <canvas id="gradeChart" class="chart"></canvas>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                id="live__admission"
+                class="live__activity-container report_mid_container"
+              >
+                <div class="report_mid_header flex">
+                  <h2>Reports Management</h2>
+
+                  <button class="flex">
+                    <!-- plus icon -->
+                    <span>+</span>
+                    New Report
+                  </button>
+                </div>
+
+                <div class="report_search_con">
+                  <span><i class="bi bi-search"></i></span>
+                  <input
+                    type="text"
+                    placeholder="Search reports...."
+                    class="repor_search"
+                  />
+                </div>
+
+                <div class="table_container">
+                  <table>
+                    <tr>
+                      <th>REPORT ID</th>
+                      <th>SUBMIT BY</th>
+                      <th>CATEGORY</th>
+                      <th>STATUS</th>
+                    </tr>
+
+                    <tr>
+                      <td>#REP-2024-001</td>
+                      <td>Sarah Johnson</td>
+                      <td>Technical Issue</td>
+                      <td>
+                        <p
+                          class="report_pending"
+                          style="color: #854d0e; background-color: #fef9c3"
+                        >
+                          Pending
+                        </p>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>#REP-2024-002</td>
+                      <td>Michael Chen</td>
+                      <td>Academic</td>
+                      <td>
+                        <p
+                          class="report_resolve"
+                          style="background-color: #dcfce7; color: #166534"
+                        >
+                          Resolved
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+
+                <div class="report_mid_footer flex">
+                  <p>Showing 1 to 10 of 20 results</p>
+
+                  <div class="mid_footer_last">
+                    <button>Previous</button>
+                    <button>Next</button>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                id="live__admission"
+                class="live__activity-container report_mid_container"
+              >
+                <div class="report_mid_header flex">
+                  <h2>System Settings</h2>
+                </div>
+
+                <div class="setting_container">
+                  <div class="setting_inner_content flex">
+                    <div>
+                      <p>Enable Anonymous Reporting</p>
+                      <p>
+                        Allow user to submit reports without revealing their
+                        idntity
+                      </p>
+                    </div>
+
+                    <button class="setting_first_icon">
+                      <span class="btn_setting_on">
+                        <svg
+                          width="44"
+                          height="20"
+                          viewBox="0 0 44 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect width="44" height="24" rx="12" fill="#217dff" />
+                          <rect
+                            x="22.5"
+                            y="2.5"
+                            width="19"
+                            height="19"
+                            rx="9.5"
+                            fill="white"
+                            stroke="white"
+                          />
+                        </svg>
+                      </span>
+
+                      <span class="btn_setting_off">
+                        <svg
+                          width="44"
+                          height="20"
+                          viewBox="0 0 44 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect width="44" height="24" rx="12" fill="#d9d9d9" />
+                          <rect
+                            x="22.5"
+                            y="2.5"
+                            width="19"
+                            height="19"
+                            rx="9.5"
+                            fill="white"
+                            stroke="white"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                  </div>
+
+                  <div class="setting_inner_content flex">
+                    <div>
+                      <p>Auto-response Messages</p>
+                      <p>
+                        Send automatic acknowledgment emails for new reports
+                      </p>
+                    </div>
+
+                    <button class="setting_last_icon">
+                      <span class="btn_setting_last_on">
+                        <svg
+                          width="44"
+                          height="20"
+                          viewBox="0 0 44 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect width="44" height="24" rx="12" fill="#217dff" />
+                          <rect
+                            x="22.5"
+                            y="2.5"
+                            width="19"
+                            height="19"
+                            rx="9.5"
+                            fill="white"
+                            stroke="white"
+                          />
+                        </svg>
+                      </span>
+
+                      <span class="btn_setting_last_off">
+                        <svg
+                          width="44"
+                          height="20"
+                          viewBox="0 0 44 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect width="44" height="24" rx="12" fill="#d9d9d9" />
+                          <rect
+                            x="22.5"
+                            y="2.5"
+                            width="19"
+                            height="19"
+                            rx="9.5"
+                            fill="white"
+                            stroke="white"
+                          />
+                        </svg>
+                      </span>
+                    </button>
+                  </div>
+
+                  <div class="setting_next">
+                    <p>Report Priority Rules</p>
+                    <p>Based on category and submission time</p>
+                  </div>
+
+                  <div class="setting_notify">
+                    <p class="setting_notify_header">Notification Perferencs</p>
+
+                    <div class="flex">
+                      <input type="checkbox" />
+                      <p>Email notification for new reports</p>
+                    </div>
+
+                    <div class="flex">
+                      <input type="checkbox" />
+                      <p>Push notification for status updates</p>
+                    </div>
+
+                    <div class="flex">
+                      <input type="checkbox" />
+                      <p>Weekly summary reports</p>
                     </div>
                   </div>
                 </div>
-
-                <div
-                  id="live__admission"
-                  class="live__activity-container"
-                ></div>
               </div>
             </div>
           </section>
         </div>
 
+        <!-- 👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇 -->
         <!-- ** Create Events  -->
         <div class="content__area" id="events">
           <section>
@@ -2737,7 +3101,7 @@
                       </select>
 
                       <!-- Add the icon here -->
-                      <span>></span>
+                      <span><i class="bi bi-chevron-down"></i></span>
                     </div>
 
                     <div class="admission_select_con">
@@ -2753,7 +3117,7 @@
                       </select>
 
                       <!-- Add the icon here -->
-                      <span>></span>
+                      <span><i class="bi bi-chevron-down"></i></span>
                     </div>
 
                     <div class="admission_select_con">
@@ -2771,7 +3135,7 @@
                       </select>
 
                       <!-- Add the icon here -->
-                      <span>></span>
+                      <span><i class="bi bi-chevron-down"></i></span>
                     </div>
                   </div>
                 </div>
