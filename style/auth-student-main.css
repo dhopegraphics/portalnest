@@ -95,11 +95,6 @@ body, html {
   }
   
 
-@media (max-width: 768px ) {
-
-
-}
-
 
 @media (max-width: 480px ) {
     body ,html , .wrapper , .container  {
