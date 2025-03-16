@@ -48,7 +48,8 @@ body {
 }
 
 
-#form {
+#personalInfoForm, #educationForm, #programForm, 
+#documentsForm, #guardiansForm, #submit{
     box-shadow: 1px 1px 40px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 15px 15px 50px 15px;
@@ -59,12 +60,12 @@ body {
     margin-bottom: 30px;
 }
 
-#form h1 {
+form h1 {
     font-size: 24px;
     font-weight: 700;
 }
 
-#form h1, #form p {
+form h1, form p {
     margin-bottom: 0;
     margin-top: 0;
 }
