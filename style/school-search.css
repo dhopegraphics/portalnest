@@ -19,9 +19,9 @@
 }
 
 .select:focus {
-  outline: none;
+  outline: 1px solid #5c3bfd;
   box-shadow: none;
-  border: 1px solid #ccc;
+  border: 1px solid #5c3bfd;
 }
 
 label {
@@ -38,11 +38,16 @@ body {
 }
 
 .container {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.aside-heading {
+  color: #333;
 }
 
 .container > h1 {
   margin-bottom: 0.3rem;
+  color: #333;
 }
 
 .container > p {
@@ -53,7 +58,7 @@ body {
 
 main {
   display: flex;
-  gap: 2rem;
+  gap: 5rem;
   width: 100%;
 }
 
@@ -146,11 +151,11 @@ aside {
 }
 
 .mid-select select:focus {
-  outline: none;
+  outline: 1px solid #5c3bfd;
 }
 
 .first-svg {
-  background-color: #6b51ce;
+  background-color: #5c3bfd;
   border-radius: 0.2rem;
   padding: 0.2rem;
 }
@@ -171,6 +176,7 @@ aside {
   display: flex;
   gap: 1rem;
   justify-items: center;
+  margin-bottom: 1rem;
 }
 
 .card {
@@ -179,6 +185,7 @@ aside {
   width: 13rem;
   overflow: hidden;
   border-radius: 0.4rem;
+  transition: ease-in-out 400ms;
 }
 
 .card img {
@@ -188,9 +195,13 @@ aside {
   margin-bottom: 1rem;
 }
 
+.card:hover {
+  transform: scale(0.98);
+}
+
 .head {
   display: flex;
-  justify-items: space-between;
+  justify-content: space-between;
   margin-bottom: 0.3rem;
 }
 
@@ -250,7 +261,7 @@ aside {
 
 .btn {
   text-decoration: none;
-  background-color: #6b51ce;
+  background-color: #5c3bfd;
   color: white;
 
   margin: 0 auto;
@@ -260,7 +271,7 @@ aside {
 
 .box {
   height: 2rem;
-  background-color: #6b51ce;
+  background-color: #5c3bfd;
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -268,10 +279,65 @@ aside {
   justify-content: center;
   align-items: center;
   border-radius: 0.3rem;
+  transition: ease-in-out 400ms;
+}
+
+.box:hover {
+  transform: scale(0.98);
 }
 
 .box > a {
   text-decoration: none;
   color: white;
   width: 100%;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+}
+footer > div > p {
+  color: #797979;
+  font-size: 0.8rem;
+  align-items: center;
+}
+
+.pagination {
+  display: flex;
+
+  width: 23%;
+  justify-content: space-evenly;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.pagination > button {
+  border: none;
+  padding: 0.4rem 0.5rem;
+  cursor: pointer;
+  transition: ease-in-out 300ms;
+  font-size: 0.8rem;
+  border-radius: 0.4rem;
+}
+
+.page {
+  background-color: #f0f0f0;
+  color: #333;
+  border-radius: 0.2rem;
+}
+
+.page.active {
+  background-color: #5c3bfd;
+  color: #fff;
+  font-weight: bold;
+}
+
+.prev.disabled,
+.next.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button:not(.disabled):hover {
+  background-color: #dcdcdc;
 }
