@@ -3,16 +3,35 @@
     font-size: 50%;
   }
 
+  /* Javascript */
+  /* 1058.48px */
+  .admission_scroll.width {
+    width: 1058.48px;
+  }
+
+  .admission_scroll_card.width {
+    width: 41rem;
+    transition: width 0.5s ease;
+  }
+
   /* remove this */
   .main__header {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(212, 40, 40);
     color: #6827e2;
+  }
+
+  .admission_scroll {
+    width: 820px;
+  }
+
+  .admission_scroll_card {
+    width: 31rem;
   }
 }
 
 @media (max-width: 84em) {
   .main__header {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(225, 238, 42);
   }
 
   .task-today {
@@ -25,15 +44,13 @@
   }
 
   /* .card_scroll.scroll { */
-  .card_scroll {
-    /* background-color: red; */
-    /* width: 152rem; */
+  /* .card_scroll {
     width: 100%;
     max-width: 700px;
-    /* overflow-x: auto; */
+    overflow-x: auto;
     overflow-x: scroll;
-    /* white-space: nowrap; */
-  }
+    white-space: nowrap;
+  } */
 
   .card__container {
     /* display: grid; */
@@ -43,24 +60,24 @@
 
 @media (max-width: 75em) {
   .main__header {
-    background-color: yellow;
+    background-color: rgb(35, 120, 32);
   }
 }
 
 @media (max-width: 59em) {
   .main__header {
-    background-color: green;
+    background-color: rgb(35, 155, 225);
   }
 }
 
 @media (max-width: 44em) {
   .main__header {
-    background-color: orange;
+    background-color: rgb(173, 52, 230);
   }
 }
 
 @media (max-width: 34em) {
   .main__header {
-    background-color: pink;
+    background-color: rgb(8, 4, 7);
   }
 }
