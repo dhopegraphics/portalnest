@@ -25,7 +25,7 @@ setPersistence(auth, browserLocalPersistence)
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const signUpButton = document.querySelector(".log-in");
+    const signUpButton = document.querySelector(".sign-up");
 
     signUpButton.addEventListener("click", async function () {
         const email = document.querySelector(".email input").value;
@@ -130,7 +130,7 @@ function showAlert(message, callback = null) {
 }
 
 // Clear localStorage on new login
-document.querySelector(".log-in").addEventListener("click", function () {
+document.querySelector(".sign-up").addEventListener("click", function () {
     document.querySelectorAll("input").forEach(input => {
         localStorage.removeItem(input.name);
     });

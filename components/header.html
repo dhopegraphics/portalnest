@@ -4,26 +4,57 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Header</title>
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/style/header.css" />
-  </head>
-  <body>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+    rel="stylesheet">
+    <link rel="stylesheet" href="/style/header.css">
+    <link rel="stylesheet" href="/media_query/header.css">
+</head>
+<body>
     <div class="overall-header">
-      <div class="topBG-image-content">
-        <div class="topBG-container">
-          <section class="logo-and-header">
-            <img
-              class="portalnest-logo"
-              src="/assets/logo/portalnest logo.png"
-            />
-            <!-- Hamburger Icon -->
-            <div class="hamburger-menu" onclick="toggleMenu()">
-              <span></span>
-              <span></span>
-              <span></span>
+        <div class="topBG-image-content">
+            <div class="topBG-container">
+                <section class="logo-and-header">
+                    <img class="portalnest-logo" src="/assets/logo/portalnest logo.png">
+                        <!-- Hamburger Icon -->
+                  <div class="hamburger-menu" onclick="toggleMenu()">
+                       <span></span>
+                       <span></span>
+                       <span></span>
+                 </div>
+                <div class="full-header" >
+                    <nav class="header">
+                        <a id="home"  href= "../index.html">
+                            <img class="nav-icon" src="/assets/icons/home-icon.svg" alt="Home">
+                            <div>HOME</div>
+                        </a>
+                        <a id="services" href="/pages/services.html">
+                            <img class="nav-icon" src="/assets/icons/services-icon.svg" alt="Services">
+                            <div>SERVICES</div>
+                        </a>
+                        <a id="about-us" href="/pages/about-us.html">
+                            <img class="nav-icon" src="/assets/icons/about-icon.svg" alt="About Us">
+                            <div>ABOUT US</div>
+                        </a>
+                        <a id="contact-us" href="/pages/contact-us.html">
+                            <img class="nav-icon" src="/assets/icons/contact-icon.svg" alt="Contact Us">
+                            <div>CONTACT US</div>
+                        </a>
+                    </nav>
+                    <a id="get-started"   href="/pages/Get-Started.html">
+                        <button class="get-started">GET STARTED</button>
+                    </a>   
+                </div>
+                </section>
+                <section class="page-message">
+                    <div class="page-message-content">
+                        <p class="connect">CONNECT TO YOUR STUDENTS</p>
+                        <p class="everywhere">EVERYWHERE, ANYWHERE</p>
+                        <a id="add-your-school" href="/pages/Get-Started.html">
+                            <button class="add-school-button">WANT TO ADD YOUR SCHOOL?</button>
+                        </a>
+                    </div>
+                </section>
+
             </div>
             <div class="full-header">
               <nav class="header">
