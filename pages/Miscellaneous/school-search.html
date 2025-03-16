@@ -16,7 +16,7 @@
       </p>
     </div>
 
-    <main>
+    <form method="post" id="form">
       <aside>
         <h3 class="aside-heading">Filters</h3>
         <div class="filters">
@@ -54,21 +54,21 @@
             <p class="filter-heading">School Type</p>
             <div>
               <div class="input-container">
-                <input type="checkbox" name="type" id="science" /><label
-                  for="science"
-                  >Science</label
+                <input type="checkbox" name="type" id="public" /><label
+                  for="public"
+                  >public</label
                 >
               </div>
               <div class="input-container">
                 <input type="checkbox" name="type" id="private" /><label
                   for="private"
-                  >Arts</label
+                  >private</label
                 >
               </div>
               <div class="input-container">
-                <input type="checkbox" name="type" id="Business" /><label
-                  for="Business"
-                  >Business</label
+                <input type="checkbox" name="type" id="Boarding" /><label
+                  for="Boarding"
+                  >Boarding</label
                 >
               </div>
             </div>
@@ -78,24 +78,25 @@
             <p class="filter-heading">Programs</p>
             <div>
               <div class="input-container">
-                <input type="checkbox" name="type" id="public" /><label
-                  for="public"
+                <input type="checkbox" name="Programs" id="science" /><label
+                  for="science"
                   >science</label
                 >
               </div>
               <div class="input-container">
-                <input type="checkbox" name="type" id="Arts" /><label for="Arts"
+                <input type="checkbox" name="Programs" id="Arts" /><label
+                  for="Arts"
                   >Arts</label
                 >
               </div>
               <div class="input-container">
-                <input type="checkbox" name="type" id="boarding" /><label
+                <input type="checkbox" name="Programs" id="boarding" /><label
                   for="boarding"
                   >Business</label
                 >
               </div>
               <div class="input-container">
-                <input type="checkbox" name="type" id="Engineering" /><label
+                <input type="checkbox" name="Programs" id="Engineering" /><label
                   for="Engineering"
                   >Engineering</label
                 >
@@ -108,21 +109,22 @@
             <p class="filter-heading">facilities</p>
             <div>
               <div class="input-container">
-                <input type="checkbox" name="type" id="science" /><label
-                  for="science"
-                  >Science</label
+                <input type="checkbox" name="facilities" id="Labs" /><label
+                  for="Labs"
+                  >Labs</label
                 >
               </div>
               <div class="input-container">
-                <input type="checkbox" name="type" id="private" /><label
-                  for="private"
-                  >Arts</label
-                >
+                <input
+                  type="checkbox"
+                  name="facilities"
+                  id="Sports-faciliities"
+                /><label for="Sports-faciliities">Sports faciliities</label>
               </div>
               <div class="input-container">
-                <input type="checkbox" name="type" id="Business" /><label
-                  for="Business"
-                  >Business</label
+                <input type="checkbox" name="facilities" id="Library" /><label
+                  for="Library"
+                  >Library</label
                 >
               </div>
             </div>
@@ -335,7 +337,7 @@
               </div>
             </div>
             <div class="card">
-              <img src="/assets/images/classroom.png" alt="" />
+              <img src="/assets/images/preview2.webp" alt="" />
 
               <div class="head">
                 <div>
@@ -416,7 +418,7 @@
               </div>
             </div>
             <div class="card">
-              <img src="/assets/images/classroom.png" alt="" />
+              <img src="/assets/images/preview1.jpeg" alt="" />
 
               <div class="head">
                 <div>
@@ -497,7 +499,7 @@
               </div>
             </div>
             <div class="card">
-              <img src="/assets/images/classroom.png" alt="" />
+              <img src="/assets/images/preview3.webp" alt="" />
 
               <div class="head">
                 <div>
@@ -579,8 +581,21 @@
             </div>
           </div>
         </div>
+
+        <footer>
+          <div>
+            <p>Showing 1 to 9 of schools</p>
+          </div>
+          <div class="pagination">
+            <button class="prev disabled">previous</button>
+            <button class="page">1</button>
+            <button class="page active">2</button>
+            <button class="page">3</button>
+            <button class="next">next</button>
+          </div>
+        </footer>
       </div>
-    </main>
+    </form>
 
     <script src="/functions/school-search-function.js"></script>
   </body>
