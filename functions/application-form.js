@@ -123,28 +123,25 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function saveData() {
-    const formData = {
-        firstName: document.getElementById("inputFirstName").value,
-        lastName: document.getElementById("inputLastName").value,
-        dateOfBirth: document.getElementById("inputDateOfBirth").value,
-        gender: document.getElementById("inputState").value,
-        email: document.getElementById("inputEmailAddress").value,
-        phone: document.getElementById("inputPhoneNumber").value,
-        address: document.getElementById("inputAddress").value
-    };
+    const formData = {};
+
+    // Loop through all input, select, and textarea fields
+    document.querySelectorAll("input, select, textarea").forEach(input => {
+        formData[input.id] = input.value;  // Store each field by its ID
+    });
+
     localStorage.setItem("admissionFormDraft", JSON.stringify(formData));
     alert("Draft saved successfully!");
 }
 
+
 function loadDraft() {
     const draft = JSON.parse(localStorage.getItem("admissionFormDraft"));
     if (draft) {
-        document.getElementById("inputFirstName").value = draft.firstName;
-        document.getElementById("inputLastName").value = draft.lastName;
-        document.getElementById("inputDateOfBirth").value = draft.dateOfBirth;
-        document.getElementById("inputState").value = draft.gender;
-        document.getElementById("inputEmailAddress").value = draft.email;
-        document.getElementById("inputPhoneNumber").value = draft.phone;
-        document.getElementById("inputAddress").value = draft.address;
+        document.querySelectorAll("input, select, textarea").forEach(input => {
+            if (draft[input.id]) {
+                input.value = draft[input.id];  // Restore the saved value
+            }
+        });
     }
 }
