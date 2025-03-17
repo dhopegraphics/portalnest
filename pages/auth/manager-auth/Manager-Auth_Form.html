@@ -4,11 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Authentication For Student Form</title>
+    <title>Authentication For Manager Form</title>
     <link rel="stylesheet" href="/style/SignUp_LogIn_Form.css">
     <link rel="icon" type="image/png" href="/assets/logo/portalnest-Variation-Logo.png">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-   
 </head>
 
 <body>
@@ -16,8 +15,8 @@
         <div style="flex-direction: column; " class="form-box  login">
             
             <form action="#">      
-                <h1  class="log-in-to-your">Log In To Your Account</h1>
-                <h2  class="welcome-back-to">Welcome Back! To Portalnest! Select Your Method</h2>
+                <h1  class="log-in-to-your">Log In to your Dashboard</h1>
+                <h4  class="welcome-back-to">Welcome back! to portalNest! Select Your method. this is <br> when you have  already have your  institution credentials</h4>
                 <div  class="third-party-auth" >
                     <div class="facebook">
                       <div class="overlap-group">
@@ -47,6 +46,14 @@
                     <input class="password-signIn" type="password" placeholder="Password" required>
                     <i class='bx bxs-lock-alt'></i>
                 </div>
+                <div class="input-box sign-up">
+                  <input id="Institution_code" type="text" placeholder="Institution_code" required>
+                  <i class='bx bxs-institution'></i>
+              </div>
+              <div class="input-box sign-up">
+                  <input id="Student_id" type="text" placeholder="Student_id" required>
+                  <i class='bx bx-user'></i>
+              </div>
                 <div class="forgot-link">
                     <div class="forget-remember-password" >
                         <div class="remember-me-tick">
@@ -56,6 +63,7 @@
                         <a href="#" class="text-wrapper-4">Forgot Password?</a>
                       </div>
                 </div>
+                
                 <button type="submit"  class="btn login-btn">Login</button>
                
               
@@ -112,7 +120,7 @@
            
                 <div class="account-signIn account-register">
                     <div class="have-account">Have An Account Already?</div>
-                    <div class="sign-in" id="sign-in-btn">Sign In</div>
+                    <div class="sign-in " id="sign-in-btn">Sign In</div>
                   </div>
             </form>
         </div>
@@ -145,7 +153,7 @@
 
 
     <script src="/functions/SignUp_LogIn_Form.js"></script>
-    <script type="module" src="/firebase/auth/signup_student.js" > </script>
+
   
 </body>
 

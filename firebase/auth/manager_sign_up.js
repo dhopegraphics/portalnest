@@ -92,7 +92,6 @@ document.addEventListener("DOMContentLoaded", async function () {
         institution_code: institutionCode, // Store institution code
         staff_code: staffCode, // Store staff code
         phone_number: null,
-        student_id: null,
         user_type: userType, // ✅ Store selected user type
         username: null,
         created_at: serverTimestamp(),
