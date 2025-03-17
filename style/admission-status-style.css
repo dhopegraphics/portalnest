@@ -1,0 +1,100 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Align Application Status to the Left */
+.left-align {
+    text-align: left;
+}
+
+/* Header */
+h1 {
+    color: #333;
+}
+
+p {
+    color: #555;
+}
+
+/* Application Summary */
+.application-summary {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.summary-grid {
+    display: flex;
+    justify-content: space-between;
+}
+
+.summary-grid div {
+    width: 48%;
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.summary-grid p {
+    margin: 5px 0;
+}
+
+/* Status Section */
+.status {
+    margin-top: 30px;
+}
+
+/* Background for Status Section */
+.progress-container {
+    text-align: center;
+    background: #eaf2ff;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Progress Bar */
+.progress {
+    width: 100%;
+    background: #ddd;
+    height: 8px;
+    border-radius: 4px;
+    margin: 10px 0;
+    position: relative;
+}
+
+.progress-bar {
+    width: 75%; /* Moved forward between 'Under Review' and 'Decision' */
+    height: 100%;
+    background: #007bff;
+    border-radius: 4px;
+}
+
+/* Progress Labels */
+.progress-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #777;
+}
+
+/* Updates Section */
+.updates-actions {
+    text-align: left;
+    margin-top: 30px;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+}
