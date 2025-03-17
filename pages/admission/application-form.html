@@ -78,11 +78,11 @@
             </div>
 
             <div class="col-md-6">
-              <label for="inputEmail4" class="form-label">First Name</label>
+              <label for="inputLastName" class="form-label">First Name</label>
               <input type="text" class="form-control" id="inputFirstName" required>
             </div>
             <div class="col-md-6">
-              <label for="inputLastName4" class="form-label">Last Name</label>
+              <label for="inputLastName" class="form-label">Last Name</label>
               <input type="text" class="form-control" id="inputLastName" required>
             </div>
             <div class="col-md-7">
@@ -124,7 +124,41 @@
                 <p>Please provide details about your academic history</p>
             </div>
             
+            <div class="col-md-6">
+                <label for="inputHighSchoolName" class="form-label">High School Name</label>
+                <input type="text" class="form-control" id="highSchoolName" required>
+            </div>
+
+            <div class="col-md-6">
+                <label for="inputGraduationYear" class="form-label">Graduation Year</label>
+                <input type="number" min="1980" max="2024" class="form-control" id="graduationYear" required>
+            </div>
+
+            <div class="col-md-6">
+                <label for="inputGPA" class="form-label">GPA</label>
+                <input type="number" min="0" max="5" class="form-control" id="gpa" required>
+            </div>
+
+            <div class="col-md-6">
+                <label for="inputSchoolDistrict" class="form-label">School District</label>
+                <input type="text" class="form-control" id="schoolDistrict" required>
+            </div>
+
+            <div class="col-md-12">
+                <label for="floatingTextarea2">Academic Achievements</label>
+                <textarea  class="form-control" id="inputAcademicAchievement" style="height: 100px" placeholder="List any honors, awards, or significant academic achievements">
+                </textarea>
+            </div>
+
+            <div class="col-md-12">
+                <label for="floatingTextarea2">Extracurricular Activities</label>
+                <textarea  class="form-control" id="inputExtraActivites" style="height: 100px" placeholder="List any clubs, sports, or other activities you participated in">
+                </textarea>
+            </div>
+            
+
             <div class="buttons">
+                <button class="save-draft-btn" onclick="saveData()">Save draft</button>
                 <button type="button" class="previous-button" disabled>Previous</button>
                 <button type="button" class="next-button">Next Step</button>
 
@@ -137,8 +171,46 @@
                 <h1>Program</h1>
                 <p>Please select your preferred program and study options</p>
             </div>
+
+            <div class="col-md-12">
+                <label for="inputProgram" class="form-label">Select Program</label>
+                <select id="inputProgram" class="form-select" required>
+                  <option selected>Select Program</option>
+                  <option>Bsc. Computer Science</option>
+                  <option>Bsc. Human Biology</option>
+                </select>
+            </div>
+
+            <div class="col-md-5">
+                <label for="inputFaculty" class="form-label">Faculty</label>
+                <input type="text" class="form-control" id="faculty" required>
+            </div>
+
+            <div class="col-md-7">
+                <label for="inputDepartment" class="form-label">Department</label>
+                <input type="text" class="form-control" id="department" required>
+            </div>
+
+            <div class="col-md-12">
+                <label for="inputCourse" class="form-label">Preferred Course of Study</label>
+                <select id="inputCourse" class="form-select" required>
+                  <option selected>Select Course</option>
+                  <option>Bsc. Computer Science</option>
+                  <option>Bsc. Human Biology</option>
+                </select>
+            </div>
+
+            <div class="col-md-12">
+                <label for="inputStudyMode" class="form-label">Study Mode</label>
+                <select id="inputStudyMode" class="form-select" required>
+                  <option selected>Select Study Mode</option>
+                  <option>Study mode 1</option>
+                  <option>Study mode 2</option>
+                </select>
+            </div>
             
             <div class="buttons">
+                <button class="save-draft-btn" onclick="saveData()">Save draft</button>
                 <button type="button" class="previous-button" disabled>Previous</button>
                 <button type="button" class="next-button">Next Step</button>
 
@@ -152,6 +224,7 @@
                 <p>Please upload all required documents in the specified format (PDF, JPG, or PNG)</p>
             </div>
             
+
             <div class="buttons">
                 <button type="button" class="previous-button" disabled>Previous</button>
                 <button type="button" class="next-button">Next Step</button>
@@ -165,8 +238,31 @@
                 <h1>Guardian Details</h1>
                 <p>Fill in the information about your guardian below</p>
             </div>
+
+            <div class="col-md-12">
+                <label for="inputGuardianName" class="form-label">Guardian's Full Name</label>
+                <input type="text" class="form-control" id="guardianName" placeholder="Enter guardian's name here" required>
+            </div>
+
+            <div class="col-md-12">
+                <label for="inputGuardianNumber" class="form-label">Contact Number</label>
+                <input type="tel" class="form-control" id="guardianNumber" placeholder="0000111122" required>
+            </div>
+
+            <div class="col-md-12">
+                <label for="inputGuardianRel" class="form-label">Relationship to Applicant</label>
+                <select id="inputGuardianRel" class="form-select" required>
+                  <option selected>Select Relationship</option>
+                  <option>Father</option>
+                  <option>Mother</option>
+                  <option>Uncle</option>
+                  <option>Aunty</option>
+                  <option>Other</option>
+                </select>
+            </div>
             
             <div class="buttons">
+                <button class="save-draft-btn" onclick="saveData()">Save draft</button>
                 <button type="button" class="previous-button" disabled>Previous</button>
                 <button type="button" class="next-button">Next Step</button>
 
