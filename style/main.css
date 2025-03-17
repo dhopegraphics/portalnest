@@ -25,5 +25,10 @@
 
 body {
     margin: 0;
-    font-family: 'Poppins', Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-content {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
 }
