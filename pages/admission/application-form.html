@@ -78,11 +78,11 @@
             </div>
 
             <div class="col-md-6">
-              <label for="inputEmail4" class="form-label">First Name</label>
+              <label for="inputLastName" class="form-label">First Name</label>
               <input type="text" class="form-control" id="inputFirstName" required>
             </div>
             <div class="col-md-6">
-              <label for="inputLastName4" class="form-label">Last Name</label>
+              <label for="inputLastName" class="form-label">Last Name</label>
               <input type="text" class="form-control" id="inputLastName" required>
             </div>
             <div class="col-md-7">
@@ -124,7 +124,41 @@
                 <p>Please provide details about your academic history</p>
             </div>
             
+            <div class="col-md-6">
+                <label for="inputHighSchoolName" class="form-label">High School Name</label>
+                <input type="text" class="form-control" id="highSchoolName" required>
+            </div>
+
+            <div class="col-md-6">
+                <label for="inputGraduationYear" class="form-label">Graduation Year</label>
+                <input type="number" class="form-control" id="graduationYear" required>
+            </div>
+
+            <div class="col-md-6">
+                <label for="inputGPA" class="form-label">GPA</label>
+                <input type="number" class="form-control" id="gpa" required>
+            </div>
+
+            <div class="col-md-6">
+                <label for="inputSchoolDistrict" class="form-label">School District</label>
+                <input type="text" class="form-control" id="schoolDistrict" required>
+            </div>
+
+            <div class="col-md-12">
+                <label for="floatingTextarea2">Academic Achievements</label>
+                <textarea  class="form-control" id="inputAcademicAchievement" style="height: 100px" placeholder="List any honors, awards, or significant academic achievements">
+                </textarea>
+            </div>
+
+            <div class="col-md-12">
+                <label for="floatingTextarea2">Extracurricular Activities</label>
+                <textarea  class="form-control" id="inputExtraActivites" style="height: 100px" placeholder="List any clubs, sports, or other activities you participated in">
+                </textarea>
+            </div>
+            
+
             <div class="buttons">
+                <button class="save-draft-btn" onclick="saveData()">Save draft</button>
                 <button type="button" class="previous-button" disabled>Previous</button>
                 <button type="button" class="next-button">Next Step</button>
 
