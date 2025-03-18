@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="/style/contactUs.css">
     <link rel="stylesheet" href="/style/main.css" />
     <link rel="icon" type="image/png" href="/assets/logo/portalnest-Variation-Logo.png">
+    <style>
+        .Submit-now:hover {
+            background-color: #133d8c;
+        }
+    </style>
 
 </head>
 
@@ -107,6 +112,13 @@
                         <label for="message">Message</label>
                         <textarea id="message" rows="6"></textarea>
                     </div>
+                    <button class="Submit-now" id="submitBtn" type="button" 
+                    style="background-color: #007bff; color: white; border: none; padding: 12px 20px; 
+                           font-size: 16px; border-radius: 5px; cursor: pointer; transition: 0.3s ease; 
+                           display: block; width: 100%; max-width: 200px; margin: 10px auto;">
+                
+                    Submit
+                </button>
                 </form>
             </div>
         </div>
@@ -160,6 +172,7 @@
 
     <special-footer> </special-footer>
     <script src="/functions/headerFooter.js"></script>
+    <script type="module" src="/firebase/contactUs/create.js" ></script>
 
 </body>
 

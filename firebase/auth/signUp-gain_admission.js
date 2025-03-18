@@ -14,6 +14,7 @@ setPersistence(auth, browserLocalPersistence)
     if (user) {
         localStorage.setItem("userLoggedIn", "true");
         localStorage.setItem("loggedInUserEmail", user.email);
+        localStorage.setItem("user_id", user.uid);
 
         // ✅ Only redirect if the user is NOT already on the signup page
         if (currentPage !== "/pages/admission/signup.html") {
