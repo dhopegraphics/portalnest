@@ -5,8 +5,211 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PortalNest - Payment History</title>
-    <link rel="stylesheet" href="/style/studentHome.css">
-    <link rel="icon" type="image/png" href="/assets/logo/portalnest-Variation-Logo.png">
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            min-height: 100vh;
+            background-color: #f9f9f9;
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            width: 250px;
+            background-color: white;
+            border-right: 1px solid #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+            height: 100vh;
+            position: sticky;
+            top: 0;
+        }
+
+        /* Logo styles */
+        .logo {
+            padding: 20px 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Navigation menu */
+        .nav-menu {
+            list-style: none;
+            width: 100%;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            padding: 14px 15px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #333;
+        }
+
+        .nav-item:hover {
+            background-color: #f5f5f5;
+        }
+
+        .nav-item.active {
+            background-color: #1976d2;
+            color: white;
+        }
+
+        .nav-item svg {
+            margin-right: 12px;
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        .nav-item.active svg {
+            fill: white;
+        }
+
+        .nav-item a {
+            text-decoration: none;
+            color: inherit;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* Logout section */
+        .logout {
+            margin-top: auto;
+            border-top: 1px solid #f0f0f0;
+            padding: 15px 0;
+        }
+
+        .logout .nav-item {
+            color: #555;
+        }
+
+        .logout .nav-item:hover {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Main content area */
+        .main-content {
+            flex: 1;
+            padding: 30px;
+            background-color: white;
+        }
+
+        /* Payment header */
+        .payment-header {
+            margin-bottom: 30px;
+        }
+
+        .payment-header h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .payment-header p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* Fees grid */
+        .fees-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        /* Fee card */
+        .fee-card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fee-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: #f0f7ff;
+        }
+
+        .fee-card::after {
+            content: "→";
+            position: absolute;
+            bottom: 15px;
+            right: 20px;
+            font-size: 24px;
+            color: #1976d2;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .fee-card:hover::after {
+            opacity: 1;
+        }
+
+        .fee-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #1976d2;
+        }
+
+        .fee-description {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: static;
+            }
+
+            .nav-menu {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .nav-item {
+                padding: 10px;
+            }
+
+            .main-content {
+                padding: 15px;
+            }
+
+            .fees-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -91,40 +294,141 @@
         </div>
 
         <div class="fees-grid">
-            <div class="fee-card">
-                <h2 class="fee-title">ACADEMIC FEES</h2>
-                <p class="fee-description">
-                    Academic Fee Payment Involves The Settlement Of Outstanding Tuition Fees And Related Charges,
-                    Essential For Educational, Enrollment And Program Participation
-                </p>
-            </div>
+            <a href="academic-fees.html" style="text-decoration: none; color: inherit;">
+                <div class="fee-card" id="academic-fees">
+                    <h2 class="fee-title">ACADEMIC FEES</h2>
+                    <p class="fee-description">
+                        Academic Fee Payment Involves The Settlement Of Outstanding Tuition Fees And Related Charges,
+                        Essential For Educational, Enrollment And Program Participation
+                    </p>
+                </div>
+            </a>
 
-            <div class="fee-card">
-                <h2 class="fee-title">RESIDENTIAL FEES</h2>
-                <p class="fee-description">
-                    Accommodation Fee Payment Pertains To The Settlement Of Charges Associated With Securing Hostel/Hall
-                    Facilities, Ensuring Residency During The Academic Term Or Specified Period.
-                </p>
-            </div>
+            <a href="residential-fees.html" style="text-decoration: none; color: inherit;">
+                <div class="fee-card" id="residential-fees">
+                    <h2 class="fee-title">RESIDENTIAL FEES</h2>
+                    <p class="fee-description">
+                        Accommodation Fee Payment Pertains To The Settlement Of Charges Associated With Securing
+                        Hostel/Hall
+                        Facilities, Ensuring Residency During The Academic Term Or Specified Period.
+                    </p>
+                </div>
+            </a>
 
-            <div class="fee-card">
-                <h2 class="fee-title">GRADUATION FEES</h2>
-                <p class="fee-description">
-                    Graduation Fee Payment Involves Settling Outstanding Fees Related To The Commencement Ceremony,
-                    Ensuring Eligibility For Participation In The Graduation Event And Receipt Of Associated
-                    Credentials.
-                </p>
-            </div>
+            <a href="graduation-fees.html" style="text-decoration: none; color: inherit;">
+                <div class="fee-card" id="graduation-fees">
+                    <h2 class="fee-title">GRADUATION FEES</h2>
+                    <p class="fee-description">
+                        Graduation Fee Payment Involves Settling Outstanding Fees Related To The Commencement Ceremony,
+                        Ensuring Eligibility For Participation In The Graduation Event And Receipt Of Associated
+                        Credentials.
+                    </p>
+                </div>
+            </a>
 
-            <div class="fee-card">
-                <h2 class="fee-title">RESIT FEES</h2>
-                <p class="fee-description">
-                    Academic Fee Payment Involves The Settlement Of Outstanding Tuition Fees And Related Charges,
-                    Essential For Educational, Enrollment And Program Participation
-                </p>
-            </div>
+            <a href="resit-fees.html" style="text-decoration: none; color: inherit;">
+                <div class="fee-card" id="resit-fees">
+                    <h2 class="fee-title">RESIT FEES</h2>
+                    <p class="fee-description">
+                        Academic Fee Payment Involves The Settlement Of Outstanding Tuition Fees And Related Charges,
+                        Essential For Educational, Enrollment And Program Participation
+                    </p>
+                </div>
+            </a>
         </div>
     </div>
+
+    <script>
+        // Add click event listeners to fee cards
+        document.addEventListener('DOMContentLoaded', function () {
+            // This is an alternative approach using JavaScript if you prefer not to use anchor tags
+            // Uncomment this code and remove the anchor tags if you prefer this approach
+
+            /*
+            const feeCards = document.querySelectorAll('.fee-card');
+            
+            feeCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const id = this.id;
+                    let url = '';
+                    
+                    switch(id) {
+                        case 'academic-fees':
+                            url = 'academic-fees.html';
+                            break;
+                        case 'residential-fees':
+                            url = 'residential-fees.html';
+                            break;
+                        case 'graduation-fees':
+                            url = 'graduation-fees.html';
+                            break;
+                        case 'resit-fees':
+                            url = 'resit-fees.html';
+                            break;
+                    }
+                    
+                    if (url) {
+                        window.location.href = url;
+                    }
+                });
+            });
+            */
+
+            // Add ripple effect to fee cards
+            const feeCards = document.querySelectorAll('.fee-card');
+
+            feeCards.forEach(card => {
+                card.addEventListener('mousedown', createRipple);
+            });
+
+            function createRipple(event) {
+                const card = event.currentTarget;
+
+                const circle = document.createElement('div');
+                const diameter = Math.max(card.clientWidth, card.clientHeight);
+                const radius = diameter / 2;
+
+                circle.style.width = circle.style.height = `${diameter}px`;
+                circle.style.left = `${event.clientX - card.getBoundingClientRect().left - radius}px`;
+                circle.style.top = `${event.clientY - card.getBoundingClientRect().top - radius}px`;
+                circle.classList.add('ripple');
+
+                const ripple = card.getElementsByClassName('ripple')[0];
+
+                if (ripple) {
+                    ripple.remove();
+                }
+
+                card.appendChild(circle);
+            }
+
+            // Add this CSS for the ripple effect
+            const style = document.createElement('style');
+            style.textContent = `
+                .fee-card {
+                    position: relative;
+                    overflow: hidden;
+                }
+                
+                .ripple {
+                    position: absolute;
+                    background-color: rgba(255, 255, 255, 0.7);
+                    transform: scale(0);
+                    border-radius: 50%;
+                    animation: ripple 0.6s linear;
+                    pointer-events: none;
+                }
+                
+                @keyframes ripple {
+                    to {
+                        transform: scale(4);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
 </body>
 
 </html>
