@@ -78,7 +78,7 @@
             </div>
 
             <div class="col-md-6">
-              <label for="inputLastName" class="form-label">First Name</label>
+              <label for="inputFirstName" class="form-label">First Name</label>
               <input type="text" class="form-control" id="inputFirstName" required>
             </div>
             <div class="col-md-6">
@@ -91,14 +91,14 @@
             </div>
             <div class="col-md-5">
               <label for="inputGender" class="form-label">Gender</label>
-              <select id="inputState" class="form-select" required>
+              <select id="inputGender" class="form-select" required>
                 <option selected>Choose...</option>
                 <option>Male</option>
                 <option>Female</option>
               </select>
             </div>
             <div class="col-sm">
-                <label for="inputAddress2" class="form-label">Email Address</label>
+                <label for="inputEmailAddress" class="form-label">Email Address</label>
                 <input type="email" class="form-control" id="inputEmailAddress" placeholder="example132@gmail.com" required>
             </div>
             <div class="col-md-7">
@@ -106,14 +106,14 @@
                 <input type="tel" class="form-control" id="inputPhoneNumber" required>
             </div>
             <div class="address-container">
-                <label for="floatingTextarea2">Address</label>
+                <label for="inputAddress">Address</label>
                 <textarea  class="form-control" id="inputAddress" style="height: 100px" required></textarea>
             </div>
 
             <div class="buttons">
-                <button class="save-draft-btn" onclick="saveData()">Save draft</button>
-                <button type="submit" class="previous-button" disabled>Previous</button>
-                <button type="submit" class="next-button">Next Step</button>
+                <button type="button" class="save-draft-btn" onclick="saveData()">Save draft</button>
+                <button type="button" class="previous-button" disabled>Previous</button>
+                <button type="button" class="next-button">Next Step</button>
             </div>
         </form>
 
@@ -126,32 +126,32 @@
             
             <div class="col-md-6">
                 <label for="inputHighSchoolName" class="form-label">High School Name</label>
-                <input type="text" class="form-control" id="highSchoolName" required>
+                <input type="text" class="form-control" id="inputHighSchoolName" required>
             </div>
 
             <div class="col-md-6">
                 <label for="inputGraduationYear" class="form-label">Graduation Year</label>
-                <input type="number" min="1980" max="2024" class="form-control" id="graduationYear" required>
+                <input type="number" min="1980" max="2024" class="form-control" id="inputGraduationYear" required>
             </div>
 
             <div class="col-md-6">
                 <label for="inputGPA" class="form-label">GPA</label>
-                <input type="number" min="0" max="5" class="form-control" id="gpa" required>
+                <input type="number" min="0" max="5" class="form-control" id="inputGPA" required>
             </div>
 
             <div class="col-md-6">
                 <label for="inputSchoolDistrict" class="form-label">School District</label>
-                <input type="text" class="form-control" id="schoolDistrict" required>
+                <input type="text" class="form-control" id="inputSchoolDistrict" required>
             </div>
 
             <div class="col-md-12">
-                <label for="floatingTextarea2">Academic Achievements</label>
+                <label for="inputAcademicAchievement">Academic Achievements</label>
                 <textarea  class="form-control" id="inputAcademicAchievement" style="height: 100px" placeholder="List any honors, awards, or significant academic achievements">
                 </textarea>
             </div>
 
             <div class="col-md-12">
-                <label for="floatingTextarea2">Extracurricular Activities</label>
+                <label for="inputExtraActivites">Extracurricular Activities</label>
                 <textarea  class="form-control" id="inputExtraActivites" style="height: 100px" placeholder="List any clubs, sports, or other activities you participated in">
                 </textarea>
             </div>
@@ -183,12 +183,12 @@
 
             <div class="col-md-5">
                 <label for="inputFaculty" class="form-label">Faculty</label>
-                <input type="text" class="form-control" id="faculty" required>
+                <input type="text" class="form-control" id="inputFaculty" required>
             </div>
 
             <div class="col-md-7">
                 <label for="inputDepartment" class="form-label">Department</label>
-                <input type="text" class="form-control" id="department" required>
+                <input type="text" class="form-control" id="inputDepartment" required>
             </div>
 
             <div class="col-md-12">
@@ -210,7 +210,7 @@
             </div>
             
             <div class="buttons">
-                <button class="save-draft-btn" onclick="saveData()">Save draft</button>
+                <button type="button" class="save-draft-btn" onclick="saveData()">Save draft</button>
                 <button type="button" class="previous-button" disabled>Previous</button>
                 <button type="button" class="next-button">Next Step</button>
 
@@ -223,12 +223,51 @@
                 <h1>Required Documents</h1>
                 <p>Please upload all required documents in the specified format (PDF, JPG, or PNG)</p>
             </div>
-            
 
+            <div class="col-md-12">
+                <label for="inputPassport" class="form-label">Passport Photo (JPG, PNG)</label>
+                <div class="file-upload-container" data-accept="image/jpeg,image/png">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1829/1829586.png" alt="Upload Icon">
+                    <span>Upload a file or drag and drop</span>
+                    <p class="file-name"></p>
+                </div>
+                <input id="inputPassport" type="file" accept="image/jpeg, image/png">
+            </div>
+        
+            <div class="col-md-12">
+                <label for="inputTranscript" class="form-label">Academic Transcripts (PDF)</label>
+                <div class="file-upload-container" data-accept="application/pdf">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1829/1829586.png" alt="Upload Icon">
+                    <span>Upload a file or drag and drop</span>
+                    <p class="file-name"></p>
+                </div>
+                <input id="inputTranscript" type="file" accept="application/pdf">
+            </div>
+        
+            <div class="col-md-12">
+                <label for="inputCertificates" class="form-label">Certificates (PDF)</label>
+                <div class="file-upload-container" data-accept="application/pdf">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1829/1829586.png" alt="Upload Icon">
+                    <span>Upload a file or drag and drop</span>
+                    <p class="file-name"></p>
+                </div>
+                <input id="inputCertificates" type="file" accept="application/pdf">
+            </div>
+        
+            <div class="col-md-12">
+                <label for="inputPassport" class="form-label">National ID/Passport (PDF)</label>
+                <div class="file-upload-container" data-accept="application/pdf">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1829/1829586.png" alt="Upload Icon">
+                    <span>Upload a file or drag and drop</span>
+                    <p class="file-name"></p>
+                </div>
+                <input id="inputPassport" type="file" accept="application/pdf">
+            </div>
+        
             <div class="buttons">
+                <button type="button" class="save-draft-btn" onclick="saveData()">Save draft</button>
                 <button type="button" class="previous-button" disabled>Previous</button>
                 <button type="button" class="next-button">Next Step</button>
-
             </div>
         </form>
 
@@ -241,12 +280,12 @@
 
             <div class="col-md-12">
                 <label for="inputGuardianName" class="form-label">Guardian's Full Name</label>
-                <input type="text" class="form-control" id="guardianName" placeholder="Enter guardian's name here" required>
+                <input type="text" class="form-control" id="inputGuardianName" placeholder="Enter guardian's name here" required>
             </div>
 
             <div class="col-md-12">
                 <label for="inputGuardianNumber" class="form-label">Contact Number</label>
-                <input type="tel" class="form-control" id="guardianNumber" placeholder="0000111122" required>
+                <input type="tel" class="form-control" id="inputGuardianNumber" placeholder="0000111122" required>
             </div>
 
             <div class="col-md-12">
@@ -287,5 +326,70 @@
     <script src="/functions/application-form.js"></script>
     
 
+    <script>
+        document.querySelectorAll(".file-upload-container").forEach(dropArea => {
+            const fileInput = dropArea.nextElementSibling;
+            const fileNameDisplay = dropArea.querySelector(".file-name");
+            const uploadText = dropArea.querySelector("span");
+            const uploadIcon = dropArea.querySelector("img");
+    
+            // Click to select file
+            dropArea.addEventListener("click", () => fileInput.click());
+    
+            // Handle file selection
+            fileInput.addEventListener("change", (event) => {
+                if (event.target.files.length > 0) {
+                    handleFile(event.target.files[0], dropArea, uploadIcon, fileNameDisplay, uploadText);
+                }
+            });
+    
+            // Drag & Drop Events
+            dropArea.addEventListener("dragover", (event) => {
+                event.preventDefault();
+                dropArea.classList.add("drag-over");
+            });
+    
+            dropArea.addEventListener("dragleave", () => {
+                dropArea.classList.remove("drag-over");
+            });
+    
+            dropArea.addEventListener("drop", (event) => {
+                event.preventDefault();
+                dropArea.classList.remove("drag-over");
+    
+                const file = event.dataTransfer.files[0];
+                if (file) {
+                    handleFile(file, dropArea, uploadIcon, fileNameDisplay, uploadText);
+                    
+                    // Assign dropped file to input field so it can be submitted
+                    const dataTransfer = new DataTransfer();
+                    dataTransfer.items.add(file);
+                    fileInput.files = dataTransfer.files;
+                }
+            });
+    
+            // Function to handle file
+            function handleFile(file, dropArea, uploadIcon, fileNameDisplay, uploadText) {
+                const acceptedTypes = dropArea.getAttribute("data-accept").split(",");
+                
+                if (file && acceptedTypes.includes(file.type)) {
+                    dropArea.classList.add("uploaded");
+                    fileNameDisplay.textContent = file.name;
+                    fileNameDisplay.style.display = "block";
+                    uploadText.style.display = "none";
+    
+                    // Change icon for images
+                    if (file.type.startsWith("image/")) {
+                        const imageURL = URL.createObjectURL(file);
+                        uploadIcon.src = imageURL;
+                    } else {
+                        uploadIcon.src = "https://cdn-icons-png.flaticon.com/512/2991/2991108.png"; // PDF icon
+                    }
+                } else {
+                    fileNameDisplay.textContent = "Invalid file type. Please upload the correct format.";
+                }
+            }
+        });
+    </script>
 </body>
 </html>
