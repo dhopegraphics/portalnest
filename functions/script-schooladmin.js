@@ -50,6 +50,7 @@ menuBtn.addEventListener("click", () => {
   document.querySelector(".card_scroll").classList.toggle("scroll");
   document.querySelector(".main__main-content").classList.toggle("width");
   document.querySelector(".admission_scroll").classList.toggle("width");
+  document.querySelector(".manager_form_container").classList.toggle("left");
 
   document.querySelectorAll(".admission_scroll_card").forEach((width) => {
     width.classList.toggle("width");

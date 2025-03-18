@@ -258,7 +258,7 @@
             </div>
 
             <div id="dashboard" class="dashboard__section grid content">
-              <div class="live__activity-container">
+              <div class="live__activity-container dashboard_actvities">
                 <div class="live__activity-header">
                   <h1>Live-Activity Feed</h1>
                 </div>
@@ -302,7 +302,6 @@
                         <p>Ongoing</p>
                       </div>
 
-                      <!-- this isn't showing now -->
                       <div class="show_progress flex fifty">
                         <div class="show_progress_1"></div>
                         <div class="show_progress_2"></div>
@@ -344,7 +343,6 @@
                         <p>Pending</p>
                       </div>
 
-                      <!-- this isn't showing now -->
                       <div class="show_progress flex fifty">
                         <div class="show_progress_3"></div>
                         <div class="show_progress_4"></div>
@@ -1239,7 +1237,8 @@
                     <div class="card__header flex border_orange">
                       <span>
                         <!-- clock icon -->
-                        <i class="bi bi-file-person-fill col_orange"></i>
+                        <!-- <i class="bi bi-file-person-fill col_orange"></i> -->
+                        <i class="bi bi-clock col_orange"></i>
                       </span>
                       <div>
                         <p class="col_orange">85</p>
@@ -1257,9 +1256,8 @@
 
                   <div class="admission_scroll_card card card_lightred">
                     <div class="card__header flex border_lightred">
-                      <!--  X icon -->
-                      <span class="col_lightred" style="font-size: 2rem">
-                        &times;
+                      <span>
+                        <i class="bi bi-x col_lightred"></i>
                       </span>
                       <div>
                         <p class="col_lightred">45</p>
@@ -2616,7 +2614,10 @@
             <div class="grading__container flex">
               <div class="grading__card">
                 <h3>Performance Trends</h3>
-                <canvas id="performanceChart" class="chart"></canvas>
+                <canvas
+                  id="performanceChart"
+                  class="chart performanceChart"
+                ></canvas>
               </div>
 
               <div class="grading__card">
@@ -2786,6 +2787,8 @@
                       <th>SUBMIT BY</th>
                       <th>CATEGORY</th>
                       <th>STATUS</th>
+                      <th>DATE</th>
+                      <th>ACTIONS</th>
                     </tr>
 
                     <tr>
@@ -2800,6 +2803,8 @@
                           Pending
                         </p>
                       </td>
+                      <td>Jan 15 2024</td>
+                      <td style="color: #4f46e5">View Assign</td>
                     </tr>
 
                     <tr>
@@ -2814,6 +2819,8 @@
                           Resolved
                         </p>
                       </td>
+                      <td>Jan 14 2024</td>
+                      <td style="color: #4f46e5">View Assign</td>
                     </tr>
                   </table>
                 </div>

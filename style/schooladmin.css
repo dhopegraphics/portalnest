@@ -41,12 +41,6 @@
   --col-aside-btn: #d2d2d2;
 }
 
-/*
--webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-progress-appearance: none; 
- */
-
 * {
   margin: 0;
   padding: 0;
@@ -58,10 +52,8 @@ html {
 }
 
 body {
-  /* will change the font family */
   font-family: "Rubik", sans-serif;
   margin: 0;
-  /* background-color: var(--light); */
   color: var(--col-dark);
   font-size: 1rem;
   font-weight: 400;
@@ -72,6 +64,7 @@ body {
 /************ Script Styling *********/
 .btn__navigate.active {
   background-color: var(--col-green);
+  color: var(--white-col);
   border-radius: 11px;
   padding: 1.8rem 3rem;
 }
@@ -134,11 +127,6 @@ body {
   width: 100%;
 }
 
-.main__main-content.width {
-  /* width: 100%; */
-  /* transition: width 0.4s ease; */
-}
-
 .card_mid_content.margin {
   margin-top: 0rem;
 }
@@ -147,11 +135,16 @@ body {
   margin-bottom: 1.2rem;
 }
 
+.manager_form_container.left {
+  position: absolute;
+  top: 80px;
+  left: 280px;
+}
+
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
-  /* left: 235px; */
   width: 100%;
   height: 100%;
   background-color: rgba(246, 247, 250, 0.1);
@@ -173,6 +166,7 @@ body {
 
 /************ General Styling *********/
 .select_remove_default {
+  appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-progress-appearance: none;
@@ -239,20 +233,10 @@ body {
   background-color: var(--col-white-bg);
 }
 
-/* note this */
-/* .overall__main {
-  height: 1110px;
-} */
-
 .main__main-content {
   flex: 1;
   background: var(--col-white-bg);
-  /* width: 959px; */
   height: auto;
-  /* height: 1060px; */
-  /* height: 1141px; */
-
-  /* transition: width 0.4s; */
 }
 
 .main__card-container {
@@ -261,7 +245,6 @@ body {
 
 .content__area {
   margin: 0rem 4.8rem 4rem;
-  /* height: auto; */
   height: 1028px;
 }
 
@@ -271,8 +254,6 @@ body {
   background-color: var(--primary-col);
   color: var(--white-col);
   width: 309px;
-  /* height: auto; */
-  /* height: 1141px; */
   height: 1122px;
   white-space: nowrap;
   transition: all 0.4s ease;
@@ -287,7 +268,6 @@ body {
   max-width: 100rem;
 }
 
-/* Will change this when the transparent logo comes */
 .logo__container h1 {
   font-size: 4.4rem;
 }
@@ -307,7 +287,6 @@ body {
   gap: 0.5rem;
 }
 
-/* img__con im making this to behave like a button I think I have to add hover to this or? */
 .img__con {
   width: 5rem;
   height: 5rem;
@@ -329,12 +308,7 @@ body {
 
 .nav__one {
   height: 75vh;
-  /* height: 82vh; */
   border-bottom: 1px solid var(--white-col);
-}
-
-.nav__two {
-  height: 20vh;
 }
 
 .navigation__button-container {
@@ -359,17 +333,17 @@ body {
   font-weight: 500;
   white-space: nowrap;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background-color 0.3s, color 0.3s, border-radius 0.3s;
 }
 
 .btn__navigate:hover {
   background-color: var(--col-green);
+  color: var(--white-col);
   border-radius: 11px;
 }
 
 .btn__navigate span i {
   font-size: 2.5rem;
-  color: var(--col-aside-btn);
 }
 
 .btn__navigate .slider_turn {
@@ -377,26 +351,23 @@ body {
 }
 
 .border_bottom {
-  border-top: 1px solid var(--white-col);
-  /* margin-top: 50rem; */
-  margin-top: 200px;
+  margin-top: 40rem;
+  border-bottom: 1px solid var(--white-col);
 }
 
 .log-out__container {
-  position: absolute;
-  bottom: 0;
+  width: 90%;
 }
 
 .btn-logout {
   position: absolute;
-  width: 90%;
+  width: 100%;
   display: flex;
   align-items: center;
   gap: 1rem;
   background: transparent;
   color: var(--col-mid-red);
-  /* margin: 0.6rem 0.6rem 0.6rem 1.5rem; */
-  margin-left: 3rem;
+  margin: 0.6rem 0.6rem 1.4rem 1.5rem;
   padding: 1.3rem;
   border: none;
   font-size: 2rem;
@@ -449,14 +420,6 @@ body {
   margin: 1rem 0rem 0.6rem;
 }
 
-/* will come back here */
-.card_scroll {
-  /* background-color: red; */
-  /* width: 100%; */
-  /* width: 890px; */
-  /* overflow: hidden; */
-}
-
 .admission_scroll {
   flex: 1;
   width: 887px;
@@ -468,8 +431,6 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 4rem;
-
-  /* max-width: 1000px; */
   overflow-x: auto;
 }
 
@@ -482,8 +443,6 @@ body {
 .card {
   width: 100%;
   height: 16rem;
-  /* width: 271px; */
-  /* height: 130px; */
   border: 1px solid;
   border-radius: 20px;
 
@@ -498,34 +457,21 @@ body {
 }
 
 .card_green {
-  /* background-color: #0080802a; */
-  /* border-color: #008080; */
   background-color: var(--my-mid-green);
   border-color: var(--col-green);
 }
 
 .col_green {
-  /* color: #008080; */
   color: var(--col-green);
-}
-
-.border_green {
-  /* border-bottom: 1px solid #008080; */
-  /* border-top: 1px solid var(--col-green); */
 }
 
 .card_violet {
   background-color: #af6eff48;
-  /* border-color: #af6efffd; */
   border-color: #a097d9;
 }
 
 .col_violet {
   color: #af6efffd;
-}
-
-.border_violet {
-  /* border-bottom: 1px solid #af6efffd; */
 }
 
 .card_orange {
@@ -537,10 +483,6 @@ body {
   color: #ff8903fb;
 }
 
-.border_orange {
-  /* border-bottom: 1px solid #ff8903fb; */
-}
-
 .card_lightblue {
   background-color: #039eff49;
   border-color: #039efffc;
@@ -548,10 +490,6 @@ body {
 
 .col_lightblue {
   color: #039efffc;
-}
-
-.border_lightblue {
-  /* border-bottom: 1px solid #039efffc; */
 }
 
 .card__header {
@@ -564,8 +502,6 @@ body {
   align-items: center;
   justify-content: center;
   background-color: var(--white-col);
-  /* width: 3rem; */
-  /* height: 3rem; */
   border-radius: 5px;
   width: 40px;
   height: 40px;
@@ -655,18 +591,23 @@ body {
   box-shadow: 0 0.8rem 1.4rem rgba(0, 0, 0, 0.2);
 }
 
+.dashboard_actvities {
+  height: 400px;
+}
+
 .recent__pending_container,
 .recent__pending-container {
-  /* margin-top: 4rem; */
   background-color: var(--white-col);
   padding: 2rem;
   border-radius: 20px;
   box-shadow: 0 0.8rem 1.4rem rgba(0, 0, 0, 0.2);
 }
 
+.pending__heading h1,
 .live__activity-header h1 {
   font-size: 2.4rem;
   margin-bottom: 2.5rem;
+  color: var(--col-black);
 }
 
 .live__activity-card {
@@ -677,7 +618,6 @@ body {
   box-shadow: 0 0.8rem 1.4rem rgba(0, 0, 0, 0.2);
   border-radius: 11px;
   transition: all 0.4s;
-  /* height: 55rem; */
   height: 321px;
 }
 
@@ -688,7 +628,7 @@ body {
 
 .image-container {
   width: 100%;
-  height: 50%;
+  height: 40%;
   overflow: hidden;
   border-top-left-radius: 11px;
   border-top-right-radius: 11px;
@@ -740,7 +680,7 @@ body {
 }
 
 .card_mid_content p:nth-child(3):not(.ending_text) {
-  color: red;
+  color: var(--col-red);
 }
 
 .card_mid_content p:first-child,
@@ -775,25 +715,26 @@ body {
 }
 
 .show_progress {
+  height: 10px;
   margin-top: 2rem;
-  border: 1px solid white;
+  border: 1px solid var(--col-light-green);
+  background-color: var(--col-light-green);
+  border-radius: 8px;
   width: 100%;
-}
-
-.fifty {
-  border: 1px solid green;
-  aspect-ratio: 16;
-  background-color: #ddd;
 }
 
 .show_progress_1 {
   width: 50%;
-  border: 4px solid green;
+  border: 4px solid var(--col-green);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .show_progress_3 {
   width: 70%;
-  border: 4px solid green;
+  border: 4px solid var(--col-green);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .show_progress_2 {
@@ -804,13 +745,6 @@ body {
 .show_progress_4 {
   width: 30%;
   border: 4px solid white;
-}
-
-/* this isn't showing now  */
-.show_progress {
-  width: 100%;
-  height: 20%;
-  background-color: var(--col-green);
 }
 
 /* Pending styling */
@@ -967,7 +901,6 @@ body {
   width: 20%;
 }
 
-/* Check the html of this */
 .manager_select_con span {
   position: absolute;
   top: 2px;
@@ -985,23 +918,18 @@ body {
   cursor: pointer;
 }
 
-.sort_btn:focus {
-  /* outline: none; */
-}
-
 .sort_btn option {
   font-size: 1.4rem;
   font-weight: 600;
 }
 
 .initial_content_container {
-  margin-top: 3rem;
+  margin-top: 1.5rem;
   height: 730px;
   overflow-y: auto;
 }
 
 .manager_content_container {
-  /* margin-top: 2rem; */
   margin: 2rem 0rem 4rem;
 }
 
@@ -1115,7 +1043,6 @@ body {
 .manager_form_container {
   position: absolute;
   top: 0;
-  /* left: 10px; */
   width: 55%;
   height: 900px;
   top: 74px;
@@ -1145,10 +1072,6 @@ body {
 }
 
 .manager_form {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
-
   padding: 0rem 4rem 4rem 6rem;
 }
 
@@ -1236,7 +1159,6 @@ body {
 
 .inn_three select {
   width: 71%;
-  /* margin-right: 1rem; */
 }
 
 .inn_four select {
@@ -1340,7 +1262,6 @@ body {
 .admission_navigation {
   height: 100px;
   justify-content: space-between;
-  /* padding: 3rem 4rem; */
 }
 
 .admission_navigation form {
@@ -1371,13 +1292,12 @@ body {
   position: relative;
 }
 
-/* Check the html of this */
 .admission_select_con span {
   position: absolute;
   top: 7px;
   right: 10px;
   font-size: 2rem;
-  /* cursor: pointer; */
+  cursor: pointer;
 }
 
 .admission_sort {
@@ -1410,7 +1330,6 @@ body {
   font-size: 1.4rem;
   font-weight: 500;
   padding: 0.8rem 4rem;
-  /* padding: 1.4rem 4rem; */
   border: 1px solid #4e2a0b;
   border-radius: 8px;
   cursor: pointer;
@@ -1434,7 +1353,6 @@ body {
   position: relative;
   padding: 2rem 3rem;
   height: 435px;
-  /* height: 700px; */
 }
 
 .admission_content_header {
@@ -1658,10 +1576,6 @@ body {
 
 .col_lightred {
   color: var(--col-red);
-}
-
-.border_lightred {
-  /* border-bottom: 1px solid var(--col-red); */
 }
 
 /************ Faculty Management *********/
@@ -1987,17 +1901,6 @@ tr th {
 .setting_notify div p {
   font-size: 1.3rem;
 }
-
-/* html entity for plus &#43; */
-
-/* 
-
-<svg width="44" height="24" viewBox="0 0 44 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="44" height="24" rx="12" fill="black"/>
-<rect x="22.5" y="2.5" width="19" height="19" rx="9.5" fill="white" stroke="white"/>
-</svg>
-
-*/
 
 /************ *********/
 /* 
