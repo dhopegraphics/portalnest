@@ -310,17 +310,58 @@
         </form>
 
         <!--Submit Form-->
-        <form id="educationForm" class="row g-3 form-section" style="display: none;">
+        <form id="submitForm" class="row g-3 form-section" style="display: none;">
             <div class="form-title-desc">
                 <h1>Terms & Conditions</h1>
                 <p>Please read and accept the terms and conditions below</p>
             </div>
             
-            <div class="buttons">
-                <button type="button" class="previous-button" disabled>Previous</button>
-                <button type="button" class="next-button">Next Step</button>
+            <div class="paragraph-container">
 
+                <p>
+                    By submitting this application, I hereby declare that all information provided
+                    is true and accurate to the best of my knowledge. I understand that any false statements
+                    or omissions may result in the rejection of my application or subsequent termination of
+                    enrollment
+                    
+                </p>
+                <p style="margin-top: 15px;">
+                    I agree to comply with all the rules, regulations, and policies of the institution. I authorize
+                    the institution to verify any information provided in this application
+                </p>
             </div>
+
+            <div class="check-button">
+                <input type="checkbox" id="checkButton">
+                <label for="checkButton" style="margin-left: 20px;">I agree to the terms and conditions</label>
+            </div>
+
+            <h1>Application Preview</h1>
+            <div class="preview-container">
+                <div class="row">
+                    <div class="col-md-12 d-flex justify-content-between">
+                        <label class="fw-500">Full Name</label>
+                        <span id="previewFullName"></span>
+                    </div>
+                    <hr>
+                    <div class="col-md-12 d-flex justify-content-between">
+                        <label class="fw-500">Email</label>
+                        <span id="previewEmail"></span>
+                    </div>
+                    <hr>
+                    <div class="col-md-12 d-flex justify-content-between">
+                        <label class="fw-500">Program</label>
+                        <span id="previewProgram"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="buttons">
+                <button type="button" class="previous-button">Previous</button>
+                <button type="submit" class="next-button">Submit Application</button>
+            </div>
+            
+
         </form>
         
     </div>
