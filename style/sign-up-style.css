@@ -148,29 +148,119 @@ h1 {
 
 
 
- .log-in {
+.sign-up {
   display: flex;
   width: 428px;
   background-color: #1971ff;
   border-radius: 7px;
-  border: 1px solid;
-  border-color: #147aff;
+  border: 1px solid #147aff;
   box-shadow: 0px 4px 26.5px #00000030;
   align-items: center;
   justify-content: center;
   margin-bottom: 1rem;
-
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
- .log-in-2 {
+/* Hover Effect */
+.sign-up:hover {
+  background-color: #0f5fd4;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Click (Loading) Effect */
+.sign-up:active {
+  background-color: white;
+  color: #1971ff;
+}
+
+.sign-up.loading {
+  background-color: white;
+  color: #1971ff;
+  position: relative;
+}
+
+.sign-up.loading::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #1971ff;
+  top: 0;
+  left: 0;
+  animation: loadingEffect 2s linear forwards;
+}
+
+@keyframes loadingEffect {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* Button Text */
+.sign-up-2 {
   font-weight: 600;
   color: #ffffff;
   font-size: 16px;
   letter-spacing: 0.80px;
-  padding: 6px 0px 6px 0px;
-
+  padding: 6px 0px;
+  z-index: 2;
 }
 
+/* Custom Alert Box */
+.alert-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #1971ff;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 300px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
 
+/* Show the alert */
+.alert-box.show {
+  opacity: 1;
+}
 
+/* Hide the alert */
+.hidden {
+  display: none;
+}
 
+/* Alert Message */
+#alert-message {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+/* Close Button */
+#close-alert {
+  background: white;
+  color: #1971ff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+#close-alert:hover {
+  background: #e0e0e0;
+}

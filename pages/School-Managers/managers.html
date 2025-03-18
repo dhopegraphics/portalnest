@@ -1,149 +1,474 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Google Fonts Links -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal-Nest-School_Manager</title>
 
-    <!-- icons links -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
-    />
+  <!-- Google Fonts Links -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-    <!-- font aw -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    />
+  <!-- icons links -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
 
-    <link rel="stylesheet" href="../../style/schooladmin-query.css" />
+  <!-- font aw -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 
-    <title>School Managers</title>
+  <!-- Css Link -->
+  <link rel="stylesheet" href="../../style/schooladmin.css" />
+  <script defer src="../../functions/script-schooladmin.js"></script>
+  <link rel="stylesheet" href="/style/admin-dashboard/manager-section.css">
 
-    <!-- Javascript -->
-    <script defer src="../../functions/script-schooladmin.js"></script>
-  </head>
-  <body>
-    <div class="managers__header flex">
-      <h2>Complete List</h2>
 
-      <select name="" id="" class="sort_btn">
-        <option value="1">ALL</option>
-        <option value="2">NAME</option>
-        <option value="3">TITLE</option>
-      </select>
-    </div>
+ 
+</head>
 
-    <!-- initial content for my javascript -->
-    <div class="initial_content_container">
-      <!-- Teacher -->
-      <div class="manager_content_container">
-        <h1>Lecturer/Teacher :</h1>
+<body>
+  <main  class="main overall__main">
+      <!-- 👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇 -->
+      <!-- ** Managers  -->
+      <div class="content__area" id="managers">
+        <section>
+          <div class="main__card-container">
+            <h1 class="header_title_text">Dashboard-School Manager</h1>
 
-        <div class="initial_title flex">
-          <p>Name</p>
-          <p>Department</p>
-          <p>Course</p>
-          <p>Year</p>
-          <p>Salary($)</p>
-        </div>
+            <div class="card_scroll dashboard__scroll">
+              <div class="card__container" id="cardContainer">
+                <div class="card card_green">
+                  <div class="card__header flex border_green">
+                    <span class="people_icon"><i class="bi bi-people col_green"></i></span>
+                    <div>
+                      <p class="col_green">Create</p>
+                      <p>Lecturer</p>
+                    </div>
+                  </div>
 
-        <div class="initial_content grid">
-          <div class="person_details flex">
-            <div class="person_img"></div>
-            <p>Isaac Nana Sam Mensah</p>
-          </div>
+                  <div class="card__footer_m flex col_green">
+                    <button id="createlecturer" class="btn_m flex col_green">
+                      <p>Add</p>
+                      <span>+</span>
+                    </button>
+                  </div>
+                </div>
 
-          <div class="program_title flex">
-            <p>Computer Science</p>
-          </div>
+                <div class="card card_violet">
+                  <div class="card__header flex border_violet">
+                    <span>
+                      <i class="bi bi-person-check col_violet"></i>
+                    </span>
+                    <div>
+                      <p class="col_violet">Staff/School</p>
+                      <p>Managers</p>
+                    </div>
+                  </div>
 
-          <div class="course_title flex">
-            <p>Circuit Theory</p>
-          </div>
+                  <div class="card__footer_m flex col_violet">
+                    <button id="createmanager" class="btn_m flex col_violet">
+                      <p>Add</p>
+                      <span>+</span>
+                    </button>
+                  </div>
+                </div>
 
-          <div class="program_level flex">
-            <p>Year 1,2,4</p>
-          </div>
+                <div class="card card_orange">
+                  <div class="card__header flex border_orange">
+                    <span><i class="bi bi-person col_orange"></i></span>
+                    <div>
+                      <p class="col_orange">Admissions</p>
+                      <p>Officer</p>
+                    </div>
+                  </div>
 
-          <div class="manager_salary flex">
-            <p>12,000</p>
+                  <div class="card__footer_m flex col_orange">
+                    <button id="createofficer" class="btn_m flex col_orange">
+                      <p>Add</p>
+                      <span>+</span>
+                    </button>
+                  </div>
+                </div>
 
-            <div class="salary_btn_container flex">
-              <button class="flex"><span>+</span> Add Roles</button>
+                <div class="card card_lightblue">
+                  <div class="card__header flex border_lightblue">
+                    <span>
+                      <i class="bi bi-journal-text col_lightblue"></i>
+                    </span>
+                    <div>
+                      <p class="col_lightblue">Examination</p>
+                      <p>Officer</p>
+                    </div>
+                  </div>
 
-              <!-- Edit button -->
-              <button class="flex">
-                <i class="fa-solid fa-pen-to-square"></i>
-              </button>
-
-              <!-- close button -->
-              <button class="flex">&times;</button>
+                  <div class="card__footer_m flex col_lightblue">
+                    <button id="createexaminer" class="btn_m flex col_lightblue">
+                      <p>Add</p>
+                      <span>+</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- Manager -->
-      <div class="manager_content_container">
-        <h1>School Manager/Staff:</h1>
+          <div class="managers__header flex">
+            <div>
+              <h2>Complete List</h2>
+            </div>
 
-        <div class="initial_title flex">
-          <p>Name</p>
-          <p>Department</p>
-          <p>Course</p>
-          <p>Year</p>
-          <p>Salary($)</p>
-        </div>
+            <div class="manager_select_con">
+              <select name="" id="" class="sort_btn select_remove_default">
+                <option value="1">ALL</option>
+                <option value="2">NAME</option>
+                <option value="3">TITLE</option>
+              </select>
 
-        <div class="initial_content grid">
-          <div class="person_details flex">
-            <div class="person_img"></div>
-            <p>Walker Gideon</p>
-          </div>
-
-          <div class="program_title flex">
-            <p>Computer Science</p>
-          </div>
-
-          <div class="course_title flex">
-            <p>Programming in Javascript</p>
-          </div>
-
-          <div class="program_level flex">
-            <p>ALL</p>
-          </div>
-
-          <div class="manager_salary flex">
-            <p>25,000,000</p>
-
-            <div class="salary_btn_container flex">
-              <button class="flex"><span>+</span> Add Roles</button>
-
-              <!-- Edit button -->
-              <button class="flex">
-                <i class="fa-solid fa-pen-to-square"></i>
-              </button>
-
-              <!-- close button -->
-              <button class="flex">&times;</button>
+              <span><i class="bi bi-chevron-down"></i></span>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- Not done..think about the layout and logic behind it  -->
-  </body>
+          <!-- initial content for my javascript -->
+          <div class="initial_content_container">
+            <!-- Teacher -->
+            <div class="manager_content_container">
+              <h1>Lecturer/Teacher :</h1>
+
+              <div class="initial_title flex">
+                <p>Name</p>
+                <p>Department</p>
+                <p>Course</p>
+                <p>Year</p>
+                <p>Salary($)</p>
+              </div>
+
+              <div class="initial_content grid">
+                <div class="person_details flex">
+                  <div class="person_img"></div>
+                  <p>Isaac Nana Sam Mensah</p>
+                </div>
+
+                <div class="program_title flex">
+                  <p>Computer Science</p>
+                </div>
+
+                <div class="course_title flex">
+                  <p>Circuit Theory</p>
+                </div>
+
+                <div class="program_level flex">
+                  <p>Year 1,2,4</p>
+                </div>
+
+                <div class="manager_salary flex">
+                  <p>12,000</p>
+
+                  <div class="salary_btn_container flex">
+                    <button class="flex"><span>+</span> Add Roles</button>
+
+                    <!-- Edit button -->
+                    <button class="flex">
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    </button>
+
+                    <!-- close button -->
+                    <button class="flex">&times;</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Manager -->
+            <div class="manager_content_container">
+              <h1>School Manager/Staff:</h1>
+
+              <div class="initial_title flex">
+                <p>Name</p>
+                <p>Department</p>
+                <p>Course</p>
+                <p>Year</p>
+                <p>Salary($)</p>
+              </div>
+
+              <div class="initial_content grid">
+                <div class="person_details flex">
+                  <div class="person_img"></div>
+                  <p>Walker Gideon</p>
+                </div>
+
+                <div class="program_title flex">
+                  <p>Computer Science</p>
+                </div>
+
+                <div class="course_title flex">
+                  <p>Programming in Javascript</p>
+                </div>
+
+                <div class="program_level flex">
+                  <p>ALL</p>
+                </div>
+
+                <div class="manager_salary flex">
+                  <p>25,000,000</p>
+
+                  <div class="salary_btn_container flex">
+                    <button class="flex"><span>+</span> Add Roles</button>
+
+                    <!-- Edit button -->
+                    <button class="flex">
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    </button>
+
+                    <!-- close button -->
+                    <button class="flex">&times;</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form  -->
+          <div class="manager_form_container">
+            <div class="fake_display flex">
+              <div></div>
+              <button class="close_form">
+                <span><i class="bi bi-x"></i></span>
+              </button>
+            </div>
+
+            <form action="" class="manager_form" id="managerForm" name="managerForm">
+              <div class="up_container flex">
+                <div class="img_con" role="button"></div>
+
+                <div class="first_1_input">
+                  <div class="">
+                    <label for="fristname">First Name</label>
+                    <input type="text" name="fristname" id="fristname" />
+                  </div>
+
+                  <div class="">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" name="lastname" id="lastname" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="inn-container inn_one">
+                <label for="personmail">Work Email</label>
+                <input type="email" name="personmail" id="personmail" />
+              </div>
+
+              <div class="inn-container inn_two">
+                <label for="number">Work Phone</label>
+                <input type="number" name="number" id="number" />
+              </div>
+
+              <div class="inn-container inn_three">
+                <label for="position">Role/Position</label>
+
+                <div class="hold_select_position">
+                  <select name="position" id="position">
+                    <option value="1"></option>
+                    <option value="2">Head of Department (HOD)</option>
+                    <option value="3">Senior Lecturer</option>
+                    <option value="4">Lecturer</option>
+                  </select>
+
+                  <span>
+                    <i class="bi bi-caret-down-fill"></i>
+                  </span>
+                </div>
+              </div>
+
+              <div class="inn-container inn_four">
+                <label for="department">Department</label>
+
+                <div class="hold_select_position">
+                  <select name="department" id="department">
+                    <option value="1"></option>
+                    <option value="2">Computer Science Department</option>
+                    <option value="3">Business Department</option>
+                    <option value="4">Health Department</option>
+                    <option value="5">Law Department</option>
+                  </select>
+
+                  <span>
+                    <i class="bi bi-caret-down-fill"></i>
+                  </span>
+                </div>
+              </div>
+
+              <div class="year_selection">
+                <label>Year Selection :</label>
+
+                <div class="selection">
+                  <div class="flex">
+                    <p role="button" class="year-option" data-value="Year 1">
+                      Year 1 <span>+</span>
+                    </p>
+                    <p role="button" class="year-option" data-value="Year 2">
+                      Year 2 <span>+</span>
+                    </p>
+                    <p role="button" class="year-option" data-value="Year 3">
+                      Year 3 <span>+</span>
+                    </p>
+                    <p role="button" class="year-option" data-value="Year 4">
+                      Year 4 <span>+</span>
+                    </p>
+                  </div>
+
+                  <div class="flex">
+                    <p role="button" class="year-option" data-value="Year 5">
+                      Year 5 <span>+</span>
+                    </p>
+                    <p role="button" class="year-option" data-value="Year 6">
+                      Year 6 <span>+</span>
+                    </p>
+                    <p role="button" class="year-option" data-value="Year 7">
+                      Year 7 <span>+</span>
+                    </p>
+                    <p role="button" class="year-option" data-value="All Year">
+                      All Year
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="permission_selection">
+                <p class="permission-margin">Permissions :</p>
+
+                <div class="selection">
+                  <div class="flex">
+                    <p role="button" class="permission-option" data-value="Create/Edit Staff">
+                      Create/Edit Staff<span>+</span>
+                    </p>
+                    <p role="button" class="permission-option" data-value="Assign Roles">
+                      Assign Roles <span>+</span>
+                    </p>
+                    <p role="button" class="permission-option" data-value="Select Custom Permissions">
+                      Select Custom Permissions <span>+</span>
+                    </p>
+                    <p role="button" class="permission-option" data-value="Withdrawals">
+                      Withdrawals <span>+</span>
+                    </p>
+                  </div>
+
+                  <div class="flex">
+                    <p role="button" class="permission-option" data-value="View/Approve/Reject Applications">
+                      View/Approve/Reject Applications <span>+</span>
+                    </p>
+                    <p role="button" class="permission-option" data-value="Set Admisstion Criteria">
+                      Set Admisstion Criteria <span>+</span>
+                    </p>
+                    <p role="button" class="permission-option" data-value="Deferrials">
+                      Deferrials <span>+</span>
+                    </p>
+                  </div>
+
+                  <div class="flex">
+                    <p role="button" class="permission-option" data-value="View/Edit Students Records">
+                      View/Edit Students Records <span>+</span>
+                    </p>
+                    <p role="button" class="permission-option" data-value="Create/Update Courses">
+                      Create/Update Courses <span>+</span>
+                    </p>
+                    <p role="button" class="permission-option" data-value="Create/Update Faculties">
+                      Create/Update Faculties <span>+</span>
+                    </p>
+                  </div>
+
+                  <div class="flex">
+                    <p role="button" class="permission-option" data-value="Create/Update Departments">
+                      Create/Update Departments <span>+</span>
+                    </p>
+                    <p role="button" class="permission-option" data-value="Define Grading Policies">
+                      Define Grading Policies <span>+</span>
+                    </p>
+                    <p role="button" class="permission-option" data-value="Approve/Release Results">
+                      Approve/Release Results <span>+</span>
+                    </p>
+                  </div>
+
+                  <div class="flex">
+                    <p role="button" class="permission-option" data-value="View School Analytics">
+                      View School Analytics <span>+</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="course_selection">
+                <div class="select_course flex">
+                  <p class="permission-margin">Select Courses :</p>
+
+                  <div class="course_search_cont">
+                    <input type="text" class="search_courses" />
+                    <span><i class="bi bi-search"></i></span>
+                  </div>
+                </div>
+
+                <div class="selection course__selection">
+                  <div class="flex">
+                    <p role="button" class="course-option" data-value="Information Technology I">
+                      CSM 151 Information Technology I <span>+</span>
+                    </p>
+                    <p role="button" class="course-option" data-value="Circuit Theory">
+                      CSM 153 Circuit Theory <span>+</span>
+                    </p>
+                    <p role="button" class="course-option" data-value="Human Computer Interaction">
+                      CSM 357 Human Computer Interaction <span>+</span>
+                    </p>
+                  </div>
+
+                  <div class="flex">
+                    <p role="button" class="course-option" data-value="Accounting I">
+                      ACF 255 Accounting I <span>+</span>
+                    </p>
+                    <p role="button" class="course-option" data-value="Human Computer Interaction">
+                      CSM 357 Human Computer Interaction <span>+</span>
+                    </p>
+                    <p role="button" class="course-option" data-value="Introduction to Artificial Intelligence">
+                      CSM 395 Introduction to Artificial Intelligence
+                      <span>+</span>
+                    </p>
+                  </div>
+
+                  <div class="flex">
+                    <p role="button" class="course-option" data-value="View/edit student records">
+                      View/edit student records <span>+</span>
+                    </p>
+                    <p role="button" class="course-option" data-value="Create/update courses">
+                      Create/update courses <span>+</span>
+                    </p>
+                    <p role="button" class="course-option" data-value="Create/update faculties">
+                      Create/update faculties <span>+</span>
+                    </p>
+                  </div>
+
+                  <div class="flex">
+                    <p role="button" class="course-option" data-value="Create/update departments">
+                      Create/update departments <span>+</span>
+                    </p>
+                    <p role="button" class="course-option" data-value="Define grading policies">
+                      Define grading policies <span>+</span>
+                    </p>
+                    <p role="button" class="course-option" data-value="approve/release results">
+                      approve/release results <span>+</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- overlay -->
+          <div class="overlay hidden"></div>
+        </section>
+      </div>
+
+    </div>
+  </main>
+  <script src="/functions/school-dashboard_drawerRender.js"></script>
+</body>
+
 </html>

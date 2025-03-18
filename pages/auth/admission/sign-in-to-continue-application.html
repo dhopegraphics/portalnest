@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In - PortalNest</title>
+  <link rel="icon" type="image/png" href="/assets/logo/portalnest-Variation-Logo.png">
+ <link rel="stylesheet" href="/style/sign-up-style.css">
+        <link rel="stylesheet" href="/style/auth-student-main.css">
+        <script> 
+      document.addEventListener("DOMContentLoaded", function () {
+    if (localStorage.getItem("userLoggedIn") === "true") {
+        window.location.href = "/pages/admission/application-form.html";
+    }
+});
+        </script>
+</head> 
+
+<body>
+  <div class="container">
+    <div class="wrapper">
+    <div class="left" id="authContainer" >
+        <div class="get-back" >
+            <span id="back-icon"  class="material-icons-sharp">
+              arrow_back_ios
+              </span>
+          </div>
+                <div class="form-filling" >
+                  <img class="portalnest-logo" src="/assets/logo/portalnest logo.png" />
+                  <div>
+                    <h1  class="log-in-to-your">Log In To Continue Your Application</h1>
+                    <p  class="welcome-back00t to continue your admission process</p>
+                  </div>
+                </div>
+                <div  class="third-party-auth" >
+                  <div class="facebook">
+                    <div class="overlap-group">
+                      <img class="auth-logo" src="/assets/images/Facebook-logo.png" />
+                      <div class="auth-name">Facebook</div>
+                    </div>
+                  </div>
+                  <div class="google">
+                    <div class="overlap-group">
+                      <img class="auth-logo" src="/assets/images/Google.webp" />
+                      <div class="auth-name">Google</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="or">
+                  <div class="line" style="flex-grow: 1; height: 1px; background-color: black;"></div>
+                  <div class="or-continue-with" style="padding: 0 10px;">Or Continue With Email</div>
+                  <div class="line" style="flex-grow: 1; height: 1px; background-color: black;"></div>
+                </div>
+                <div class="mail-form">
+                  <div  class="outer-form email">
+                    <img class="form-icon" src="/assets/icons/email.svg" >
+                    <input type="email" placeholder="Email"  required >
+                  </div>
+                  <div id="password-form" class="outer-form">
+                    <img class="form-icon" src="/assets/icons/lock.svg" >
+                    <input type="password" placeholder="Password" required >
+                    <img class="eye-off" src="/assets/icons/visibility_off.svg" />
+                  </div>
+              </div>
+                
+                <div class="log-in">
+                    <div class="log-in-2">Log In</div>
+                </div>
+        
+    </div>
+    <div class="right">
+      <div class="animated-preview">
+        <img class="secure-mobile-apps" src="/assets/images/Secure-mobile-apps.svg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="custom-alert" class="alert-box hidden">
+    <p id="alert-message"></p>
+    <button id="close-alert">OK</button>
+</div>
+
+<script type="module" src="/firebase/auth/login-admission-continue.js" ></script>
+<script src="autosave.js"></script>
+</body>
+</html>

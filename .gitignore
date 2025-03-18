@@ -1,3 +1,15 @@
 /.DS_Store
 
 .DS_Store
+
+/node_modules
+
+/firebase/firebaseconfig.js
+
+.firebaseconfig.js
+
+firebaseconfig.js
+
+fake-student-portal
+
+fake-manager-dashboard

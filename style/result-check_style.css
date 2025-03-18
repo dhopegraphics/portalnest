@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,500;1,600&display=swap");
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #fff;
+}
+
+
+.main-content {
+    margin-left: 150px; /* Push content right of the drawer */
+    width: calc(100% - 250px);
+    height: 100vh;
+    overflow-y: auto; /* Only content scrolls */
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.results-page {
+    display: flex;
+    position: relative;
+    min-height: 100%;
+}
+
+.selection-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    gap: 24px;
+}
+
+.dropdown-group {
+    width: 100%;
+    max-width: 400px;
+}
+
+.dropdown-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.custom-select {
+    position: relative;
+    width: 100%;
+}
+
+.custom-select select {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    appearance: none;
+    background-color: white;
+    cursor: pointer;
+    color: #333;
+    transition: all 0.2s ease;
+}
+
+.custom-select select:focus {
+    outline: none;
+    border-color: #1a73e8;
+}
+
+.custom-select.focused {
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.2);
+    border-radius: 8px;
+}
+
+.select-arrow {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #666;
+    font-size: 12px;
+}
+
+.results-banner {
+    background-color: #1a73e8;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    border-top-right-radius: 115.5px;
+    border-bottom-right-radius: 115.5px;
+}
+
+.results-banner span {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+.proceed-button {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 16px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.proceed-button:hover {
+    background-color: #1557b0;
+}

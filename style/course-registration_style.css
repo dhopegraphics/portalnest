@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,500;1,600&display=swap");
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #fff;
+}
+
+
+.main-content {
+    margin-left: 150px; /* Push content right of the drawer */
+    width: calc(100% - 250px);
+    height: 100vh;
+    overflow-y: auto; /* Only content scrolls */
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.progress-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.step {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #e3e8ef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #666;
+}
+
+.step.active {
+    background-color: #1a73e8;
+    color: white;
+}
+
+.step-line {
+    width: 100px;
+    height: 2px;
+    background-color: #e3e8ef;
+    margin: 0 10px;
+}
+
+.course-title {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.courses-table-container {
+    background: white;
+    border-radius: 10px;
+    padding: 1px;
+    margin-bottom: 30px;
+    overflow-x: auto;
+}
+
+.courses-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.courses-table th {
+    background-color: #f8f9fa;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.courses-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eaeaea;
+    color: #444;
+}
+
+.courses-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.courses-table tr:last-child td {
+    border-bottom: none;
+}
+
+.courses-table tbody tr:hover {
+    background-color: #f0f7ff;
+}
+
+.proceed-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.proceed-button {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.proceed-button:hover {
+    background-color: #1557b0;
+}
+

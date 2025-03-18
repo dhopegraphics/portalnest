@@ -1,190 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portal-Nest-School_Manager</title>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal-Nest-School_Manager</title>
 
     <!-- Google Fonts Links -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  
     <!-- icons links -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
-    />
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
+  
     <!-- font aw -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  
+  <!-- Css Link -->
+  <link rel="stylesheet" href="../../style/schooladmin.css" />
+  <link rel="stylesheet" href="/style/admin-dashboard/admission-section.css">
+  <link rel="stylesheet" href="/style/admin-dashboard/manager-section.css">
+  <link rel="stylesheet" href="/style/admin-dashboard/dashboard-section.css">
 
-    <!-- Css Link -->
-    <link rel="stylesheet" href="../../style/schooladmin.css" />
-    <link rel="stylesheet" href="../../style/schooladmin-query.css" />
+  <!-- Javascript -->
+  <script defer src="../../functions/script-schooladmin.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <!-- Javascript -->
-    <script defer src="../../functions/script-schooladmin.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  </head>
-  <body>
-    <aside class="navigation">
-      <header class="header__content">
-        <div class="logo__container flex">
-          <h1>
-            P<img
-              src="../../assets/logo/portalnest-Variation-Logo.png"
-              alt="Portalnest logo"
-            />rtal<span>Nest</span>.
-          </h1>
-        </div>
+</head>
 
-        <div class="info__container flex">
-          <!-- tabindex="0" causes the div(button) to focus -->
-          <div class="img__con" role="button" tabindex="0">
-            <!-- <img src="" alt=""> -->
-          </div>
-
-          <div class="info__texts">
-            <p class="management__name">Fullname</p>
-            <p class="management__email">example@mail.com</p>
-          </div>
-        </div>
-      </header>
-
-      <nav class="navigation__button-container nav__one">
-        <button
-          class="btn__navigate dashboardbtn"
-          onclick="displayPages('dashboard.html' , 'main-hero-content.html')"
-          data-target="dashboard"
-        >
-          <span>
-            <i class="fas fa-home"></i>
-          </span>
-          Dashboard
-        </button>
-
-        <button
-          class="btn__navigate managersbtn"
-          onclick="displayPages('managers.html' , 'manager-hero.html')"
-        >
-          <span><i class="fas fa-users"></i></span>
-          Managers
-        </button>
-
-        <button
-          class="btn__navigate admissionbtn"
-          onclick="displayPages('admissions.html' , 'main-hero-content.html')"
-        >
-          <span><i class="fas fa-address-card"></i></span>
-          Admissions
-        </button>
-
-        <button
-          class="btn__navigate student-managementbtn"
-          onclick="displayPages('student-manage.html' , 'student-mag-hero.html')"
-        >
-          <span><i class="fas fa-graduation-cap"></i></span>
-          Student Management
-        </button>
-
-        <button
-          class="btn__navigate faculty-managementbtn"
-          onclick="displayPages('faculty-manage.html' , 'faculty-hero.html')"
-        >
-          <span><i class="fas fa-user-tie"></i></span>
-          Faculty Management
-        </button>
-
-        <button
-          class="btn__navigate departmentbtn"
-          onclick="displayPages('departments.html' , 'department-hero.html')"
-        >
-          <span><i class="fas fa-building"></i></span>
-          Departments
-        </button>
-
-        <button
-          class="btn__navigate coursebtn"
-          onclick="displayPages('courses.html' , 'course_hero.html')"
-        >
-          <span><i class="fas fa-book"></i></span>
-          Courses
-        </button>
-      </nav>
-
-      <nav class="navigation__button-container nav__two">
-        <button
-          class="btn__navigate gradingbtn"
-          onclick="displayPages('grading.html' , 'grading-hero.html')"
-        >
-          <span><i class="fas fa-file-alt"></i></span>
-          Grading & Exams
-        </button>
-
-        <button
-          class="btn__navigate reportbtn"
-          onclick="displayPages('reports.html' , 'report-hero.html')"
-        >
-          <span><i class="fas fa-cogs"></i></span>
-          Settings & Reports
-        </button>
-
-        <button
-          class="btn__navigate eventbtn"
-          onclick="displayPages('events.html' , 'event-hero.html')"
-        >
-          <span><i class="fas fa-calendar-plus"></i></span>
-          Create Events
-        </button>
-      </nav>
-
-      <div class="border_bottom"></div>
-
-      <div class="log-out__container">
-        <button class="btn-logout" onclick="loadPage('logout.html')">
-          <span>
-            <i class="fa-solid fa-arrow-right-from-bracket"></i>
-          </span>
-          Log Out
-        </button>
+<body style="display: flex; height: 100vh; ">
+  <aside style="position: fixed; height: 100vh; z-index: 2; " class="navigation">
+    <header class="header__content">
+      <div class="logo__container flex">
+        <h1>
+          P<img src="../../assets/logo/portalnest-Variation-Logo.png" alt="Portalnest logo" />rtal<span>Nest</span>.
+        </h1>
       </div>
-    </aside>
-
-    <main class="main overall__main">
-      <header class="main__header">
-        <nav class="main__nav flex">
-          <button class="btn__main btn__menu" id="slider_btn">
-            <i class="fa-solid fa-bars"></i>
-          </button>
-          <button class="btn__main btn__notification">
-            <i class="bi bi-bell"></i>
-          </button>
-        </nav>
-      </header>
-
-      <div class="main__main-content">
-        <div class="main__card-container">
-          <h1 class="header_title_text">Dashboard-School Manager</h1>
-
-          <!-- Here the icons are temperary -->
-          <div
-            class="card__container grid grid--4-cols"
-            id="cardContainer"
-          ></div>
+      <div class="info__container flex">
+        <!-- tabindex="0" causes the div(button) to focus -->
+        <div class="img__con" role="button" tabindex="0">
+          <!-- <img src="" alt=""> -->
         </div>
-
-        <div class="content__area" id="content-area"></div>
+        <div class="info__texts">
+          <p class="management__name">Fullname</p>
+          <p class="management__email">example@mail.com</p>
+        </div>
       </div>
-    </main>
-  </body>
+    </header>
+    <nav class="navigation__button-container nav__one">
+      
+      <button class="btn__navigate drawer-item active  dashboardbtn" data-file="dashboard.html" >
+        <span>
+          <i class="bi bi-house-door"></i>
+        </span>
+        Dashboard
+      </button>
+
+
+      <button class="btn__navigate drawer-item  managersbtn" data-file="managers.html" >
+        <span class="slider_turn">
+          <i class="bi bi-layout-sidebar"></i>
+        </span>
+        Managers
+      </button>
+
+
+
+ 
+      <button class="btn__navigate drawer-item admissionbtn" data-file="admissions.html" >
+        <span>
+          <i class="bi bi-box-seam"></i>
+        </span>
+        Admissions
+      </button>
+
+
+      <button class="btn__navigate drawer-item  student-managementbtn" data-file="student-manage.html" >
+        <span>
+          <i class="bi bi-clipboard-plus"></i>
+        </span>
+        Student Management
+      </button>
+
+
+      <button class="btn__navigate drawer-item faculty-managementbtn" data-file="faculty-manage.html" >
+        <span>
+          <i class="bi bi-building-check"></i>
+        </span>
+        Faculty Management
+      </button>
+
+
+      <button class="btn__navigate drawer-item  departmentbtn" data-file="departments.html" >
+        <span>
+          <i class="bi bi-columns-gap"></i>
+        </span>
+        Departments
+      </button>
+
+      <button class="btn__navigate drawer-item coursebtn"  data-file="courses.html">
+        <span>
+          <i class="bi bi-file-earmark-minus"></i>
+        </span>
+        Courses
+      </button>
+
+    </nav>
+    <nav class="navigation__button-container nav__two">
+      <button class="btn__navigate drawer-item  gradingbtn"  data-file="grading.html">
+        <span>
+          <i class="bi bi-layout-text-sidebar-reverse"></i>
+        </span>
+        Grading & Exams
+      </button>
+
+
+
+      <button class="btn__navigate drawer-item reportbtn" data-file="reports.html">
+        <span>
+          <i class="bi bi-gear"></i>
+        </span>
+        Settings & Reports
+      </button>
+
+
+      <button class="btn__navigate drawer-item  eventbtn"  data-file="events.html">
+        <span>
+          <i class="bi bi-display"></i>
+        </span>
+        Create Events
+      </button>
+
+
+    </nav>
+    <div class="border_bottom"></div>
+    <div class="log-out__container">
+      <button class="btn-logout">
+        <span class="logout_icon">
+          <i class="bi bi-upload"></i>
+        </span>
+        Log Out
+      </button>
+    </div>
+  </aside>
+  <header style="position: fixed; right: 0; width: 78vw; z-index: 0;" class="main__header">
+    <nav class="main__nav flex">
+      <button class="btn__main btn__menu" id="slider_btn">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <button class="btn__main btn__notification">
+        <i class="bi bi-bell"></i>
+      </button>
+    </nav>
+  </header>
+  
+  <main id="overall__main" style="margin-left: 21%; margin-top: 5%;" class="main overall__main">
+   try you luck
+  </main>
+  <script  src="/functions/school-dashboard_drawerRender.js"></script>
+</body>
+
 </html>

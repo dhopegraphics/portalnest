@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,500;1,600&display=swap");
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #fff;
+}
+
+
+.main-content {
+    margin-left: 150px; /* Push content right of the drawer */
+    width: calc(100% - 250px);
+    height: 100vh;
+    overflow-y: auto; /* Only content scrolls */
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.payment-history-container {
+    background: white;
+    border-radius: 10px;
+    padding: 1px;
+    margin: 30px;
+    overflow-x: auto;
+}
+
+.payment-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+}
+
+.payment-table th,
+.payment-table td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.payment-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+}
+
+.payment-table td {
+    color: #444;
+}
+
+.payment-table tr:last-child td {
+    border-bottom: none;
+}
+
+.status-successful {
+    color: #1a73e8;
+    font-weight: 500;
+}
+
+.view-button {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 6px 16px;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.view-button:hover {
+    background-color: #f5f5f5;
+    border-color: #ccc;
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication For Manager Form</title>
+    <link rel="stylesheet" href="/style/manager-style.css">
+    <link rel="icon" type="image/png" href="/assets/logo/portalnest-Variation-Logo.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="container">
+        <div style="flex-direction: column; " class="form-box  login">
+            
+            <form action="#">      
+                <h1  class="log-in-to-your">Log In to your Dashboard</h1>
+                <h4  style="font-size: medium;" class="welcome-back-to">Welcome back! to portalNest! Select Your method. this is <br> when you have  already have your  institution credentials</h4>
+                <div  class="third-party-auth" >
+                    <div class="facebook">
+                      <div class="overlap-group">
+                        <img class="auth-logo" src="/assets/images/Facebook-logo.png" />
+                        <div class="auth-name">Facebook</div>
+                      </div>
+                    </div>
+                    <div class="google">
+                      <div class="overlap-group">
+                        <img class="auth-logo" src="/assets/images/Google.webp" />
+                        <div class="auth-name">Google</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="or">
+                    <div class="line" style="flex-grow: 1; height: 1px; background-color: black;"></div>
+                    <div class="or-continue-with" style="padding: 0 10px;">Or Continue With Email</div>
+                    <div class="line" style="flex-grow: 1; height: 1px; background-color: black;"></div>
+                  </div>
+
+                <div class="input-box ">
+                    <input class="email-signIn" type="text" placeholder="Email" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box ">
+                    <input class="password-signIn" type="password" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <div class="input-box ">
+                  <input id="Institution_code" type="text" placeholder="Institution_code" required>
+                  <i class='bx bxs-institution'></i>
+              </div>
+              <div class="input-box ">
+                  <input id="Staff_id" type="text" placeholder="Staff Code" required>
+                  <i class='bx bx-user'></i>
+              </div>
+                <div class="forgot-link">
+                    <div class="forget-remember-password" >
+                        <div class="remember-me-tick">
+                          <img class="checker" src="/assets/icons/check_box.svg" />
+                          <div class="remember-me">Remember Me</div>
+                        </div>
+                        <a href="#" class="text-wrapper-4">Forgot Password?</a>
+                      </div>
+                </div>
+                
+                <button type="submit"  class="btn login-btn">Login</button>
+               
+              
+            </form>
+            <div class="account-signIn">
+                <div class="have-account">haven’t created institution yet ?</div>
+                <a href="/pages/Miscellaneous/Institution-Creation.html">
+                  <div  class="sign-in " id="sign-up-btn" >create your institution now</div>
+
+                </a>
+               
+              </div>
+
+             
+                <div  style=" width: 100%; height: 0.5px; background-color: black;"></div>
+               
+              
+
+              <div style="display: flex; align-items: center; margin-top: 16px;" >
+                <h6>already having your institution code</h6>
+                <div  class="register-btn" style=" cursor: pointer; background-color: #1971ff; color: white; margin-left: 10px; border-radius: 8px; padding: 8px;"  >sign up to join your school</div>
+              </div>
+
+
+        </div>
+
+        <!-- registration  box -->
+        <div class="form-box register">
+            <form class="register-form" action="#">
+                <div>
+                    <h1  class="log-in-to-your">Sign Up To Your School</h1>
+                    <p  class="welcome-back-to">Welcome to portalNest! Select Your method. this is when <br> you have  already been Admitted but you are not on our  platform</p>
+                  </div>
+                  <div  class="third-party-auth" >
+                    <div class="facebook">
+                      <div class="overlap-group">
+                        <img class="auth-logo" src="/assets/images/Facebook-logo.png" />
+                        <div class="auth-name">Facebook</div>
+                      </div>
+                    </div>
+                    <div class="google">
+                      <div class="overlap-group">
+                        <img class="auth-logo" src="/assets/images/Google.webp" />
+                        <div class="auth-name">Google</div>
+                      </div>
+                    </div>
+                  </div>
+                <div class="input-box sign-up">
+                    <input id="Username" type="text" placeholder="Username" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box sign-up">
+                    <input class="email-signUp" type="email" placeholder="Email" required>
+                    <i class='bx bxs-envelope'></i>
+                </div>
+                <div class="input-box sign-up">
+                    <input id="password-signUp" type="password" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+
+                <div class="input-box sign-up">
+                    <input id="Institution_code" type="text" placeholder="Institution_code" required>
+                    <i class='bx bxs-institution'></i>
+                </div>
+                <div class="input-box sign-up">
+                    <input id="Student_id" type="text" placeholder="Student_id" required>
+                    <i class='bx bx-user'></i>
+                </div>
+                <button type="submit" id="register-button" class="btn">Register</button>
+           
+                <div class="account-signIn account-register">
+                    <div class="have-account">Have An Account Already?</div>
+                    <div class="sign-in " id="sign-in-btn">Sign In</div>
+                  </div>
+            </form>
+        </div>
+
+        <!-- TOOGLE BOX -->
+        <div class="toggle-box">
+            <div class="toggle-panel toggle-left">
+                <h1>Hello, Welcome!</h1>
+                <img  style="width: 150px; margin-top: 10px;   filter: brightness(0) invert(1); " class="portalnest-logo" src="/assets/logo/portalnest logo.png" />
+                <p>Already have an account?</p>
+                <img class="mobile-icon" src="/assets/images/Secure-mobile-apps.svg"  />
+               
+            </div>
+            <div class="toggle-panel toggle-right">
+                <h1>Welcome Back!</h1>
+                <img  style="width: 150px; margin-top: 10px;   filter: brightness(0) invert(1); " class="portalnest-logo" src="/assets/logo/portalnest logo.png" />
+                <p>
+                    Don't have an account?
+                </p>
+                <img class="mobile-icon" src="/assets/images/Secure-mobile-apps.svg"  />
+            </div>
+        </div>
+    </div>
+
+
+<div id="custom-alert" class="alert-box hidden">
+    <p id="alert-message"></p>
+    <button id="close-alert">OK</button>
+</div>
+
+
+    <script src="/functions/SignUp_LogIn_Form.js"></script>
+
+  
+</body>
+
+</html>
