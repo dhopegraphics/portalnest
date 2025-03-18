@@ -99,3 +99,47 @@ form h1, form p {
     margin-left: 0;
 }
 
+.file-upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 220px;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s;
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+.file-upload-container:hover,
+.file-upload-container.drag-over {
+    border-color: navy;
+    background-color: #e0e0e0;
+}
+
+.file-upload-container img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.file-name {
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    max-width: 80%;
+    word-wrap: break-word;
+    display: none;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.uploaded .file-name {
+    display: block;
+}
