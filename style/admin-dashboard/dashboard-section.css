@@ -74,7 +74,7 @@
   }
   
   .card__content h1 {
-    font-size: 2rem;
+    font-size: 1rem;
     color: var(--dark);
   }
   
@@ -84,12 +84,9 @@
   
   .card__content .creted_text {
     font-size: 1.2rem;
-    margin-top: 0.2rem;
+   
   }
   
-  .first_ctext {
-    margin-bottom: 3.4rem;
-  }
   
   .card_mid_content {
     margin-top: 1.2rem;
