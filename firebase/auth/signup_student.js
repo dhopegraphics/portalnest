@@ -14,6 +14,7 @@ onAuthStateChanged(auth, (user) => {
     if (user) {
         localStorage.setItem("userLoggedIn", "true");
         localStorage.setItem("loggedInUserEmail", user.email);
+        localStorage.setItem("user_id", user.uid);
 
         if (currentPage !== "/pages/auth/student-auth/SignUp_Login_Form.html") {
             window.location.href = "/pages/Student-Portal/index.html";

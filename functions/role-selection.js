@@ -16,9 +16,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Role navigation paths
   const rolePaths = {
-    "school-manager": "/pages/auth/manager-auth/manager-sign-in.html",
+    "school-manager": "/pages/auth/manager-auth/Manager-Auth_Form.html",
     "gain-admission": "/pages/auth/admission/sign-up-portalNest.html",
-    student: "/pages/auth/student-auth/sign-in-student.html",
+    student: "/pages/auth/student-auth/SignUp_Login_Form.html",
   };
 
   // Handle role selection

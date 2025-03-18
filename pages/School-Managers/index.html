@@ -24,13 +24,12 @@
   <link rel="stylesheet" href="/style/admin-dashboard/dashboard-section.css">
 
   <!-- Javascript -->
-  <script defer src="../../functions/script-schooladmin.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 
 <body style="display: flex; height: 100vh; ">
-  <aside style="position: fixed; height: 100vh; z-index: 2; " class="navigation">
+  <aside style="position: fixed; height: 200vh; z-index: 2; overflow-y: hidden;" class="navigation">
     <header class="header__content">
       <div class="logo__container flex">
         <h1>
@@ -64,48 +63,36 @@
         </span>
         Managers
       </button>
-
-
-
- 
       <button class="btn__navigate drawer-item admissionbtn" data-file="admissions.html" >
         <span>
           <i class="bi bi-box-seam"></i>
         </span>
         Admissions
       </button>
-
-
       <button class="btn__navigate drawer-item  student-managementbtn" data-file="student-manage.html" >
         <span>
           <i class="bi bi-clipboard-plus"></i>
         </span>
         Student Management
       </button>
-
-
       <button class="btn__navigate drawer-item faculty-managementbtn" data-file="faculty-manage.html" >
         <span>
           <i class="bi bi-building-check"></i>
         </span>
         Faculty Management
       </button>
-
-
       <button class="btn__navigate drawer-item  departmentbtn" data-file="departments.html" >
         <span>
           <i class="bi bi-columns-gap"></i>
         </span>
         Departments
       </button>
-
       <button class="btn__navigate drawer-item coursebtn"  data-file="courses.html">
         <span>
           <i class="bi bi-file-earmark-minus"></i>
         </span>
         Courses
       </button>
-
     </nav>
     <nav class="navigation__button-container nav__two">
       <button class="btn__navigate drawer-item  gradingbtn"  data-file="grading.html">
@@ -115,24 +102,18 @@
         Grading & Exams
       </button>
 
-
-
       <button class="btn__navigate drawer-item reportbtn" data-file="reports.html">
         <span>
           <i class="bi bi-gear"></i>
         </span>
         Settings & Reports
       </button>
-
-
       <button class="btn__navigate drawer-item  eventbtn"  data-file="events.html">
         <span>
           <i class="bi bi-display"></i>
         </span>
         Create Events
       </button>
-
-
     </nav>
     <div class="border_bottom"></div>
     <div class="log-out__container">
@@ -155,7 +136,7 @@
     </nav>
   </header>
   
-  <main id="overall__main" style="margin-left: 21%; margin-top: 5%;" class="main overall__main">
+  <main id="overall__main" style="margin-left: 21%; margin-top: 5%; scrollbar-width: none;" class="main overall__main">
    try you luck
   </main>
   <script  src="/functions/school-dashboard_drawerRender.js"></script>

@@ -17,6 +17,7 @@ body {
 
 }
 
+
 .container {
     position: relative;
     width: 100%;
@@ -27,6 +28,7 @@ body {
 
     overflow: hidden;
 }
+
 
 .container h1 {
     font-size: 36px;
@@ -43,6 +45,20 @@ form {
    align-self: center;
    justify-self: center;
    
+
+}
+
+.back-button {
+  background: white;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+  border-radius: 50px;
+  width: 50px;
+
+
 }
  .register-form {
     margin-top: 0;
