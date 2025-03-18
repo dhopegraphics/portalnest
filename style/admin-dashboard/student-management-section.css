@@ -1,0 +1,62 @@
+
+/************ Student Management *********/
+.student_management {
+  height: 435px;
+}
+.student_mang_header {
+  width: 100%;
+  justify-content: right;
+  margin-bottom: 3rem;
+  margin-top: 8rem;
+}
+
+.student_mang_header button {
+  width: 17%;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.student__search {
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 6rem;
+}
+
+.student__search form {
+  width: 40%;
+}
+
+.student_sorted_con {
+  width: 40%;
+  justify-content: right;
+  gap: 4rem;
+}
+
+.student_sort_first {
+  width: 151px;
+}
+
+.student_sort_last {
+  width: 200px;
+}
+
+.student_pending p {
+  background-color: var(--col-light-green);
+  color: var(--col-green);
+  padding: 0.8rem 1.5rem;
+  border-radius: 11px;
+  font-size: 1.6rem;
+}
+
+.card_lightred {
+  background-color: var(--col-light-red);
+  border-color: var(--col-red);
+}
+
+.col_lightred {
+  color: var(--col-red);
+}
+
+.border_lightred {
+  /* border-bottom: 1px solid var(--col-red); */
+}

@@ -8,14 +8,13 @@ setPersistence(auth, browserLocalPersistence)
   .then(() => console.log("Persistence set to local."))
   .catch(error => console.error("Persistence error:", error.message));
 
-  onAuthStateChanged(auth, (user) => {
-    const currentPage = window.location.pathname; // Get the current page URL
+onAuthStateChanged(auth, (user) => {
+    const currentPage = window.location.pathname;
 
     if (user) {
         localStorage.setItem("userLoggedIn", "true");
         localStorage.setItem("loggedInUserEmail", user.email);
 
-        // ✅ Only redirect if the user is NOT already on the signup page
         if (currentPage !== "/pages/auth/student-auth/SignUp_Login_Form.html") {
             window.location.href = "/pages/Student-Portal/index.html";
         }
@@ -23,7 +22,6 @@ setPersistence(auth, browserLocalPersistence)
         localStorage.removeItem("userLoggedIn");
     }
 });
-
 
 document.addEventListener("DOMContentLoaded", function () {
     const signUpButton = document.querySelector("#register-button");
@@ -35,16 +33,22 @@ document.addEventListener("DOMContentLoaded", function () {
         const Student_Code = document.querySelector("#Student_id").value;
         const Student_Username = document.querySelector("#Username").value;
 
-
         if (!email || !password || !institution_input || !Student_Code) {
             showAlert("⚠️ Please Fill email, password, institution_input and Student_Code");
             return;
         }
 
-        signUpButton.classList.add("loading"); // ✅ Start Loading Animation
+        signUpButton.classList.add("loading"); // Start Loading Animation
 
         try {
-            // ✅ Check if email exists in Firestore
+            // ✅ Validate student and institution before proceeding
+            const isValid = await validateStudentAndInstitution(Student_Code, institution_input);
+            if (!isValid) {
+                signUpButton.classList.remove("loading");
+                return;
+            }
+
+            // ✅ Check if email already exists in Firestore
             const usersCollection = collection(db, "users");
             const emailQuery = query(usersCollection, where("email", "==", email));
             const querySnapshot = await getDocs(emailQuery);
@@ -89,31 +93,65 @@ document.addEventListener("DOMContentLoaded", function () {
                 phone_number: null,
                 student_id: Student_Code,
                 user_type: "Student",
-                username: Username,
+                username: Student_Username,
                 created_at: serverTimestamp(),
                 updated_at: serverTimestamp(),
             };
 
-            await setDoc(doc(db, "users", documentId), userData); // ✅ Ensure Firestore document is created before moving forward
+            await setDoc(doc(db, "users", documentId), userData);
 
-            // ✅ Stop Loading Animation
             signUpButton.classList.remove("loading");
 
-            // ✅ Show success alert and WAIT for "OK" before redirecting
             showAlert("🎉 Sign Up Successful! Click OK to proceed.", () => {
-                // ✅ Redirect after user clicks "OK"
                 window.location.href = "/pages/Student-Portal/index.html";
             });
 
         } catch (error) {
             console.error("Error:", error.message);
             showAlert("❌ Sign Up Failed: " + error.message);
-            signUpButton.classList.remove("loading"); // Stop loading animation on failure
+            signUpButton.classList.remove("loading");
         }
     });
 });
 
-// Function to Show Custom Alert and Wait for "OK"
+// ✅ Function to Validate Student ID and Institution Code
+async function validateStudentAndInstitution(studentId, institutionCode) {
+    try {
+        // Check if student ID exists
+        const studentsCollection = collection(db, "students");
+        const studentQuery = query(studentsCollection, where("student_id", "==", studentId));
+        const studentSnapshot = await getDocs(studentQuery);
+
+        if (studentSnapshot.empty) {
+            showAlert("❌ Invalid Student ID. Please check and try again.");
+            return false;
+        }
+
+        const studentData = studentSnapshot.docs[0].data();
+        if (studentData.institution_code !== institutionCode) {
+            showAlert("❌ Institution Code does not match with student record.");
+            return false;
+        }
+
+        // Check if institution code exists in schools collection
+        const schoolsCollection = collection(db, "schools");
+        const schoolQuery = query(schoolsCollection, where("institution_code", "==", institutionCode));
+        const schoolSnapshot = await getDocs(schoolQuery);
+
+        if (schoolSnapshot.empty) {
+            showAlert("❌ Institution Code not found in schools database.");
+            return false;
+        }
+
+        return true;
+    } catch (error) {
+        console.error("Validation Error:", error.message);
+        showAlert("❌ Validation Failed: " + error.message);
+        return false;
+    }
+}
+
+// ✅ Function to Show Custom Alert
 function showAlert(message, callback = null) {
     const alertBox = document.getElementById("custom-alert");
     const alertMessage = document.getElementById("alert-message");
@@ -128,7 +166,7 @@ function showAlert(message, callback = null) {
         alertBox.classList.remove("show");
 
         if (callback) {
-            callback(); // Execute callback AFTER user clicks "OK"
+            callback();
         }
     };
 }
