@@ -13,6 +13,10 @@ document.addEventListener("DOMContentLoaded", function () {
         formSections.forEach((section, index) => {
             section.style.display = index + 1 === step ? "flex" : "none";
         });
+
+        if (step === totalSteps) {
+            populatePreview();
+        }
     }
 
     function updateProgress() {
@@ -117,11 +121,9 @@ function saveData() {
         if (input.type !== "file") {
             formData[input.id] = input.value;
         } else {
-            // Save file input metadata (e.g., file names)
             if (input.files.length > 0) {
                 formData[input.id] = Array.from(input.files).map(file => file.name);
             }
-            // Clear the file input
             input.value = "";
         }
     });
@@ -139,7 +141,6 @@ function loadDraft() {
             if (input.type !== "file" && draft[input.id]) {
                 input.value = draft[input.id];
             } else if (input.type === "file" && draft[input.id]) {
-                // Inform the user that they need to re-upload the files
                 const fileNames = draft[input.id].join(", ");
                 const message = document.createElement("small");
                 message.textContent = `Please re-upload the following files: ${fileNames}`;
@@ -153,4 +154,15 @@ function loadDraft() {
             currentStep = parseInt(draft["currentStep"], 10);
         }
     }
+}
+
+function populatePreview() {
+    let firstName = document.getElementById("inputFirstName").value;
+    let lastName = document.getElementById("inputLastName").value;
+    let email = document.getElementById("inputEmailAddress").value;
+    let program = document.getElementById("inputProgram") ? document.getElementById("inputProgram").value : "Not Selected";
+
+    document.getElementById("previewFullName").textContent = firstName + " " + lastName;
+    document.getElementById("previewEmail").textContent = email;
+    document.getElementById("previewProgram").textContent = program;
 }
