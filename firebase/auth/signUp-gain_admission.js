@@ -16,10 +16,7 @@ setPersistence(auth, browserLocalPersistence)
         localStorage.setItem("loggedInUserEmail", user.email);
         localStorage.setItem("user_id", user.uid);
 
-        // ✅ Only redirect if the user is NOT already on the signup page
-        if (currentPage !== "/pages/admission/signup.html") {
-            window.location.href = "/pages/admission/application-form.html";
-        }
+       
     } else {
         localStorage.removeItem("userLoggedIn");
     }
@@ -44,20 +41,36 @@ document.addEventListener("DOMContentLoaded", function () {
             const usersCollection = collection(db, "users");
             const emailQuery = query(usersCollection, where("email", "==", email));
             const querySnapshot = await getDocs(emailQuery);
-
+    
             if (!querySnapshot.empty) {
-                showAlert("❌ Email already exists in our database.");
-                signUpButton.classList.remove("loading");
+                // ✅ Ask the user if they want to continue to sign in
+                showConfirm(
+                    "❌ Email already exists. Do you wish to continue your application?",
+                    () => {
+                        // ✅ Redirect to sign-in page
+                        window.location.href = "/pages/auth/admission/sign-in-to-continue-application.html";
+                    },
+                    () => {
+                        signUpButton.classList.remove("loading"); // Stop loading
+                    }
+                );
                 return;
             }
 
             // ✅ Check Firebase Authentication for existing email
             const signInMethods = await fetchSignInMethodsForEmail(auth, email);
-            if (signInMethods.length > 0) {
-                showAlert("❌ Email already in use. Please try another email.");
-                signUpButton.classList.remove("loading");
-                return;
-            }
+        if (signInMethods.length > 0) {
+            showConfirm(
+                "❌ Email already in use. Do you wish to sign in instead?",
+                () => {
+                    window.location.href = "/pages/auth/admission/sign-in-to-continue-application.html";
+                },
+                () => {
+                    signUpButton.classList.remove("loading"); // Stop loading
+                }
+            );
+            return;
+        }
 
             // ✅ Get the last used student ID
             const lastUserQuery = query(usersCollection, orderBy("user_id", "desc"), limit(1));
@@ -99,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // ✅ Show success alert and WAIT for "OK" before redirecting
             showAlert("🎉 Sign Up Successful! Click OK to proceed.", () => {
                 // ✅ Redirect after user clicks "OK"
-                window.location.href = "/pages/admission/application-form.html";
+                window.location.href = "/pages/admission/gain-admission.html";
             });
 
         } catch (error) {
@@ -129,6 +142,30 @@ function showAlert(message, callback = null) {
         }
     };
 }
+
+function showConfirm(message, onConfirm, onCancel) {
+    const confirmBox = document.getElementById("custom-confirm");
+    const confirmMessage = document.getElementById("confirm-message");
+    const confirmYes = document.getElementById("confirm-yes");
+    const confirmNo = document.getElementById("confirm-no");
+
+    confirmMessage.innerText = message;
+    confirmBox.classList.remove("hidden");
+    confirmBox.classList.add("show");
+
+    confirmYes.onclick = function () {
+        confirmBox.classList.add("hidden");
+        confirmBox.classList.remove("show");
+        if (onConfirm) onConfirm();
+    };
+
+    confirmNo.onclick = function () {
+        confirmBox.classList.add("hidden");
+        confirmBox.classList.remove("show");
+        if (onCancel) onCancel();
+    };
+}
+
 
 // Clear localStorage on new login
 document.querySelector(".sign-up").addEventListener("click", function () {

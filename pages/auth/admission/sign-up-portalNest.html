@@ -6,14 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign Up - PortalNest</title>
   <link rel="icon" type="image/png" href="/assets/logo/portalnest-Variation-Logo.png">
+  
  <link rel="stylesheet" href="/style/sign-up-style.css">
         <link rel="stylesheet" href="/style/auth-student-main.css">
+        <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <script> 
-      document.addEventListener("DOMContentLoaded", function () {
-    if (localStorage.getItem("userLoggedIn") === "true") {
-        window.location.href = "/pages/admission/application-form.html";
-    }
-});
         </script>
 </head> 
 
@@ -22,9 +20,7 @@
     <div class="wrapper">
     <div class="left" id="authContainer" >
         <div class="get-back" >
-            <span id="back-icon"  class="material-icons-sharp">
-              arrow_back_ios
-              </span>
+              <i id="back-icon" onclick="history.back()" class='bx bx-arrow-back bx-lg bx-fade-left-hover'></i>
           </div>
                 <div class="form-filling" >
                   <img class="portalnest-logo" src="/assets/logo/portalnest logo.png" />
@@ -84,8 +80,17 @@
     <p id="alert-message"></p>
     <button id="close-alert">OK</button>
 </div>
+<div id="custom-confirm" class="hidden">
+  
+  <div class="confirm-content">
+      <p id="confirm-message"></p>
+      <button id="confirm-yes">Yes</button>
+      <button id="confirm-no">No</button>
+  </div>
+</div>
+
 
 <script type="module" src="/firebase/auth/signUp-gain_admission.js" ></script>
-<script src="autosave.js"></script>
+<script src="/functions/autosave.js"></script>
 </body>
 </html>
