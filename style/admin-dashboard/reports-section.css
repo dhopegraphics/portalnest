@@ -1,0 +1,237 @@
+
+/************ Reports *********/
+.report__section {
+    margin-top: 6rem;
+  }
+  
+  .reports_diagram__container {
+    grid-template-columns: 58% 38%;
+    gap: 4rem;
+  }
+  
+  .report__card {
+    height: 46rem;
+  }
+  
+  .report_card_heading {
+    justify-content: space-between;
+  }
+  
+  .report_sort {
+    width: 100%;
+    padding: 1rem 0.8rem;
+    border-radius: 0px;
+  }
+  
+  .analytics_con {
+    position: relative;
+    width: 20%;
+  }
+  
+  .analytics_con span {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  
+  .report_mid_container {
+    height: 374px;
+    margin-top: 6rem;
+    padding: 4rem 3rem;
+  }
+  
+  .report_mid_header {
+    justify-content: space-between;
+  }
+  
+  .report_mid_header h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--col-black);
+  }
+  
+  .report_mid_header button {
+    background-color: #4f46e5;
+    color: var(--white-col);
+  }
+  
+  .mid_footer_last button,
+  .report_mid_header button {
+    gap: 1rem;
+    border: none;
+    padding: 1.2rem 2.2rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.4s;
+  }
+  
+  .report_mid_header button:hover {
+    background-color: #3b32e8;
+  }
+  
+  .report_search_con {
+    margin: 2rem 0rem;
+    position: relative;
+    width: 100%;
+  }
+  
+  .report_search_con span {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  
+  .repor_search {
+    width: 50%;
+    border: 1px solid #d1d5db;
+    padding: 1rem 0.8rem 1rem 3rem;
+    font-size: 1.6rem;
+  }
+  
+  .table_container {
+    width: 100%;
+    height: 190px;
+    overflow-y: auto;
+  }
+  
+  table {
+    width: 99%;
+    margin: 0rem 1rem;
+  }
+  
+  tr,
+  th,
+  td {
+    border-bottom: 1px solid var(--col-otherwhite);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  th,
+  td {
+    width: 100%;
+    border: none;
+    padding: 2rem;
+    text-align: center;
+    font-size: 1.6rem;
+  }
+  
+  tr th {
+    width: 100%;
+    text-align: left;
+    background-color: var(--col-white-bg);
+  }
+  
+  .report_resolve,
+  .report_pending {
+    padding: 1rem 2rem;
+    border-radius: 15px;
+  }
+  
+  .report_mid_footer {
+    margin-top: 2rem;
+    justify-content: space-between;
+  }
+  
+  .report_mid_footer p {
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+  
+  .mid_footer_last {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .mid_footer_last button {
+    border: 1px solid var(--col-otherwhite);
+    color: #374151;
+    background-color: var(--white-col);
+  }
+  
+  .setting_container {
+    margin-top: 2rem;
+  }
+  
+  .setting_inner_content {
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+  
+  .setting_inner_content p:first-child {
+    font-size: 1.6rem;
+    color: var(--col-dark);
+  }
+  
+  .setting_inner_content p:last-child {
+    font-size: 1.2rem;
+    color: var(--low-dark);
+    margin-top: 0.5rem;
+  }
+  
+  .setting_next p:first-child {
+    font-size: 1.6rem;
+    color: var(--col-dark);
+  }
+  
+  .setting_next p:last-child {
+    border: 1px solid var(--col-otherwhite);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--col-dark);
+    padding: 1rem;
+    margin: 0.5rem 0rem 3rem;
+  }
+  
+  .setting_inner_content button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  .setting_last_icon {
+    transform: rotate(180deg);
+  }
+  
+  .btn_setting_on.active,
+  .btn_setting_last_off.active,
+  .btn_setting_last_on,
+  .btn_setting_off {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: rotate(180deg);
+    transition: all 0.4s ease;
+  }
+  
+  .btn_setting_off.active,
+  .btn_setting_last_on.active,
+  .btn_setting_last_off,
+  .btn_setting_on {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.4s ease;
+  }
+  
+  .setting_notify_header {
+    font-size: 1.6rem;
+    color: var(--col-dark);
+    margin-bottom: 1rem;
+  }
+  
+  .setting_notify div {
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .setting_notify div p {
+    font-size: 1.3rem;
+  }
+  
+  

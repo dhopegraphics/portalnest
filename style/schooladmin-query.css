@@ -16,7 +16,7 @@
 
   /* remove this */
   .main__header {
-    background-color: rgb(212, 40, 40);
+   
     color: #6827e2;
   }
 
@@ -66,18 +66,18 @@
 
 @media (max-width: 59em) {
   .main__header {
-    background-color: rgb(35, 155, 225);
+   
   }
 }
 
 @media (max-width: 44em) {
   .main__header {
-    background-color: rgb(173, 52, 230);
+  
   }
 }
 
 @media (max-width: 34em) {
   .main__header {
-    background-color: rgb(8, 4, 7);
+   
   }
 }
