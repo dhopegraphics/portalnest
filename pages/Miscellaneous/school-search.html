@@ -17,8 +17,11 @@
     </div>
 
     <form method="post" id="form">
-      <aside>
-        <h3 class="aside-heading">Filters</h3>
+      <aside class="active">
+        <div class="header">
+          <h3 class="aside-heading">Filters</h3>
+          <button class="close-btn" type="button">close</button>
+        </div>
         <div class="filters">
           <!-- Education Level -->
           <div>
@@ -252,6 +255,8 @@
             </div>
           </div>
         </div>
+
+        <div class="toggle-filter">filter results</div>
 
         <div class="center">
           <div class="school-list">
@@ -583,7 +588,7 @@
         </div>
 
         <footer>
-          <div>
+          <div class="para">
             <p>Showing 1 to 9 of schools</p>
           </div>
           <div class="pagination">
