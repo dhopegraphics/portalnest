@@ -64,6 +64,7 @@ form {
 
 aside {
   flex: 1.2;
+  /* position: fixed; */
 }
 
 .filter-heading {
@@ -177,6 +178,7 @@ aside {
   gap: 1rem;
   justify-items: center;
   margin-bottom: 1rem;
+  flex-wrap: wrap;
 }
 
 .card {
@@ -186,6 +188,10 @@ aside {
   overflow: hidden;
   border-radius: 0.4rem;
   transition: ease-in-out 400ms;
+}
+
+.close-btn {
+  display: none;
 }
 
 .card img {
@@ -269,6 +275,10 @@ aside {
   font-size: 0.9rem;
 }
 
+.toggle-filter {
+  display: none;
+}
+
 .box {
   height: 2rem;
   background-color: #5c3bfd;
@@ -279,11 +289,12 @@ aside {
   justify-content: center;
   align-items: center;
   border-radius: 0.3rem;
-  transition: ease-in-out 400ms;
+  transition: ease-in-out 300ms;
 }
 
 .box:hover {
   transform: scale(0.98);
+  background-color: #765ef3;
 }
 
 .box > a {
@@ -295,7 +306,13 @@ aside {
 footer {
   display: flex;
   justify-content: space-between;
+  /* background-color: red; */
+  width: 100%;
+  align-items: ;
 }
+/* .para {
+  margin-right: auto;
+} */
 footer > div > p {
   color: #797979;
   font-size: 0.8rem;
@@ -305,10 +322,11 @@ footer > div > p {
 .pagination {
   display: flex;
 
-  width: 23%;
+  /* width: 23%; */
   justify-content: space-evenly;
   gap: 0.6rem;
   align-items: center;
+  margin-top: -1rem;
 }
 
 .pagination > button {
@@ -340,4 +358,75 @@ footer > div > p {
 
 button:not(.disabled):hover {
   background-color: #dcdcdc;
+}
+
+@media (max-width: 668px) {
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  aside {
+    position: absolute;
+    display: none;
+    left: 0;
+    width: 70%;
+    z-index: 1000;
+    transition: ease-in-out 300ms;
+  }
+
+  aside.act {
+    display: block;
+    background-color: #5c3bfd;
+    height: 100vh;
+    position: absolute;
+    background-color: #f5f5f5;
+    padding: 0 1rem;
+    width: 50%;
+  }
+
+  aside > .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+  }
+
+  .close-btn {
+    border: none;
+    padding: 0.2rem;
+    background-color: #5c3bfd;
+    color: white;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    transition: ease-in-out 200ms;
+    display: block;
+  }
+
+  .close-btn:hover {
+    background-color: #6d51f7;
+  }
+
+  .school-list {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .mid-section {
+    margin-bottom: 1rem;
+  }
+
+  .toggle-filter {
+    color: #333;
+    margin-bottom: 1rem;
+    display: block;
+    cursor: pointer;
+  }
+
+  .footer {
+    width: 100%;
+  }
 }
