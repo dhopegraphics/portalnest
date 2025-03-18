@@ -1,0 +1,19 @@
+/************ Course Management *********/
+.course_sorted {
+    justify-content: right;
+    width: 55.5%;
+    gap: 4rem;
+  }
+  
+  .course_sort_first {
+    width: 120px;
+  }
+  
+  .course_sort_last {
+    width: 170px;
+  }
+  
+  .course_year p {
+    background-color: transparent;
+  }
+  
