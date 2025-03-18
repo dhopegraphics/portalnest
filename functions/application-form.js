@@ -1,5 +1,6 @@
+let currentStep = 1; // Global variable
+
 document.addEventListener("DOMContentLoaded", function () {
-    let currentStep = 1;
     const totalSteps = 6;
     loadDraft();
 
@@ -8,18 +9,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const nextButtons = document.querySelectorAll(".next-button");
     const prevButtons = document.querySelectorAll(".previous-button");
 
-    // Function to show the current form section and hide others
     function showFormSection(step) {
         formSections.forEach((section, index) => {
-            if (index + 1 === step) {
-                section.style.display = "flex"; // Show the current section
-            } else {
-                section.style.display = "none"; // Hide other sections
-            }
+            section.style.display = index + 1 === step ? "flex" : "none";
         });
     }
 
-    // Function to update the progress indicator
     function updateProgress() {
         progressIndicators.forEach((indicator, index) => {
             const formNumber = indicator.querySelector(".form-number");
@@ -36,18 +31,15 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        // Enable/disable the "Previous" button
         prevButtons.forEach(button => {
             button.disabled = currentStep === 1;
         });
 
-        // Update the "Next Step" button text
         nextButtons.forEach(button => {
             button.textContent = currentStep === totalSteps ? "Submit" : "Next Step";
         });
     }
 
-    // Function to validate the current form section
     function validateCurrentForm() {
         const currentForm = formSections[currentStep - 1];
         const inputs = currentForm.querySelectorAll("input, select, textarea");
@@ -65,7 +57,6 @@ document.addEventListener("DOMContentLoaded", function () {
         return isValid;
     }
 
-    // Show error message
     function showError(input, message) {
         let errorMsg = input.parentElement.querySelector(".error-message");
         if (!errorMsg) {
@@ -80,7 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
         input.style.border = "2px solid red";
     }
 
-    // Clear error message
     function clearError(input) {
         let errorMsg = input.parentElement.querySelector(".error-message");
         if (errorMsg) {
@@ -89,10 +79,10 @@ document.addEventListener("DOMContentLoaded", function () {
         input.style.border = "";
     }
 
-    // Next button click event
     nextButtons.forEach(button => {
         button.addEventListener("click", function (event) {
             event.preventDefault();
+            console.log(`Next button clicked at step ${currentStep}`);
             if (validateCurrentForm()) {
                 if (currentStep < totalSteps) {
                     currentStep++;
@@ -105,7 +95,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Previous button click event
     prevButtons.forEach(button => {
         button.addEventListener("click", function (event) {
             event.preventDefault();
@@ -117,7 +106,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Initialize
     showFormSection(currentStep);
     updateProgress();
 });
@@ -125,23 +113,44 @@ document.addEventListener("DOMContentLoaded", function () {
 function saveData() {
     const formData = {};
 
-    // Loop through all input, select, and textarea fields
     document.querySelectorAll("input, select, textarea").forEach(input => {
-        formData[input.id] = input.value;  // Store each field by its ID
+        if (input.type !== "file") {
+            formData[input.id] = input.value;
+        } else {
+            // Save file input metadata (e.g., file names)
+            if (input.files.length > 0) {
+                formData[input.id] = Array.from(input.files).map(file => file.name);
+            }
+            // Clear the file input
+            input.value = "";
+        }
     });
+
+    formData["currentStep"] = currentStep;
 
     localStorage.setItem("admissionFormDraft", JSON.stringify(formData));
     alert("Draft saved successfully!");
 }
 
-
 function loadDraft() {
     const draft = JSON.parse(localStorage.getItem("admissionFormDraft"));
     if (draft) {
         document.querySelectorAll("input, select, textarea").forEach(input => {
-            if (draft[input.id]) {
-                input.value = draft[input.id];  // Restore the saved value
+            if (input.type !== "file" && draft[input.id]) {
+                input.value = draft[input.id];
+            } else if (input.type === "file" && draft[input.id]) {
+                // Inform the user that they need to re-upload the files
+                const fileNames = draft[input.id].join(", ");
+                const message = document.createElement("small");
+                message.textContent = `Please re-upload the following files: ${fileNames}`;
+                message.style.color = "red";
+                message.style.display = "block";
+                input.parentElement.appendChild(message);
             }
         });
+
+        if (draft["currentStep"]) {
+            currentStep = parseInt(draft["currentStep"], 10);
+        }
     }
 }
