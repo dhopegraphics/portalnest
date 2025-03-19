@@ -2,10 +2,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all ease-in-out 300ms;
 }
 
 .aside-heading {
   margin-bottom: 1rem;
+}
+.header {
+  display: flex;
+  gap: 0.4rem;
+  align-items: start;
 }
 
 .select {
@@ -308,7 +314,6 @@ footer {
   justify-content: space-between;
   /* background-color: red; */
   width: 100%;
-  align-items: ;
 }
 /* .para {
   margin-right: auto;
@@ -422,8 +427,14 @@ button:not(.disabled):hover {
   .toggle-filter {
     color: #333;
     margin-bottom: 1rem;
-    display: block;
+    display: flex;
     cursor: pointer;
+    gap: 0.3rem;
+    align-items: center;
+  }
+
+  .toggle-filter > p {
+    font-size: 0.9rem;
   }
 
   .footer {

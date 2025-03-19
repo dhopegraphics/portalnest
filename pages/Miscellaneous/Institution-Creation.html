@@ -1,74 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Institution Registration - PortalNest</title>
-    <link rel="stylesheet" href="/style/institution-creation.css">
-    <link rel="icon" type="image/png" href="/assets/logo/portalnest-Variation-Logo.png">
-
-</head>
-<body>
+    <link rel="stylesheet" href="/style/institution-creation.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/logo/portalnest-Variation-Logo.png"
+    />
+  </head>
+  <body>
     <div class="institution-creation">
-        <div class="div">
-          <div class="animated-preview"><img class="secure-mobile-apps" src="/assets/images/Secure-mobile-apps.svg" /></div>
-          <div class="INPUT-NAME-form">
-            <div class="rectangle"></div>
-            <div class="text-wrapper">Name Of The School</div>
-          </div>
-          <div class="INPUT-EMAIL-form">
-            <div class="rectangle"></div>
-            <div class="text-wrapper">Email Of The School</div>
-          </div>
-          <div class="INPUT-hotlines-form">
-            <div class="div-2"></div>
-            <div class="rectangle-2"></div>
-            <div class="SCHOOL-hotlines-CALL">School Hotlines/ Call Lines</div>
-          </div>
-          <div class="INPUT-SCHOOL">
-            <div class="rectangle-3"></div>
-            <div class="overlap-group"><p class="CLICK-TO-USE-CURRENT">Click To Use Current Location</p></div>
-            <div class="text-wrapper">School Location</div>
-          </div>
-          <div class="ABOUT-SCHOOL-form">
-            <div class="rectangle-4"></div>
-            <div class="text-wrapper">About The School</div>
-          </div>
-          <div class="select-district-form">
-            <div class="div-2"><img class="chevron-down" src="img/chevron-down.svg" /></div>
-            <div class="text-wrapper">District</div>
-          </div>
-          <div class="select-school-type">
-            <div class="div-2"><img class="img" src="img/chevron-down.svg" /></div>
-            <div class="text-wrapper">Select Type</div>
-          </div>
-          <div class="UPLOADS">
-            <div class="school-requirement">
-              <div class="overlap-group-2">
-                <img class="upload-cloud" src="img/upload-cloud.svg" />
-                <div class="upload-requirement">
-                  Upload Requirement<br />
-                  For Admission
-                </div>
-              </div>
-            </div>
-            <div class="document-by-niasc">
-              <div class="overlap">
-                <img class="upload-cloud-2" src="img/upload-cloud.svg" />
-                <div class="upload-your-school">Upload Your<br />school License<br />document</div>
-              </div>
-            </div>
-          </div>
-          <div class="submit">
-            <div class="submit-your-wrapper"><div class="submit-your">Submit Your Application Form</div></div>
-          </div>
-          <div class="top-title">
-            <div class="caution-on-what-to"></div>
-            <p class="APPLICATION-FORM-FOR">Application Form For Institution Creation</p>
-            <img class="arrow-back" src="img/arrow-back.svg" />
-          </div>
+      <main>
+        <div class="head">
+          <img src="/assets/icons/arrow_back.png" alt="" class="back" />
+          <h1>APPLICATION FORM FOR INSTITUTION CREATION</h1>
+          <img src="" alt="" />
         </div>
+
+        <form action="">
+          <div class="container">
+            <label for="school-name">NAME OF THE SCHOOL</label>
+            <input
+              type="text"
+              name="school-name"
+              id="school-name"
+              class="long"
+              placeholder="name of school"
+            />
+            <label for="email">EMAIL OF THE SCHOOL</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="long"
+              placeholder="email@example.com"
+            />
+            <label for="hotlines">SCHOOL HOTLINES/CALL LINES</label>
+            <div class="house">
+              <input
+                type="text"
+                class="short left"
+                name="hotlines1"
+                id="hotlines"
+              />
+              <input
+                type="text"
+                class="short right"
+                name="hotlines2"
+                id="hotlines"
+              />
+            </div>
+            <label for="location">SCHOOL LOCATION</label>
+            <div class="lochouse">
+              <input type="text" class="short" name="location" id="location" />
+              <button class="btn btn-location">
+                click to use current location
+              </button>
+            </div>
+
+            <div class="address">
+              <div class="district">
+                <label for="district">DISTRICT</label>
+                <select name="" id="">
+                  <option value="asdfg">asdf</option>
+                  <option value="asdfgg">asdfg</option>
+                  <option value="asfgh">asdfg</option>
+                </select>
+              </div>
+              <div class="type">
+                <label for="type">SELECT TYPE</label>
+                <select name="" id="">
+                  <option value="asdfg">asdf</option>
+                  <option value="asdfgg">asdfg</option>
+                  <option value="asfgh">asdfg</option>
+                </select>
+              </div>
+            </div>
+            <label for="about-school">ABOUT YOUR SCHOOL</label>
+            <textarea name="about-school" id="about-school"></textarea>
+            <div class="upload">
+              <input type="file" id="requirement-for-admission" />
+              <input type="file" id="school-license-document" />
+              <label class="upload-box" for="requirement-for-admission">
+                <svg
+                  width="3rem"
+                  height="3rem"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M8 10C8 7.79086 9.79086 6 12 6C14.2091 6 16 7.79086 16 10V11H17C18.933 11 20.5 12.567 20.5 14.5C20.5 16.433 18.933 18 17 18H16C15.4477 18 15 18.4477 15 19C15 19.5523 15.4477 20 16 20H17C20.0376 20 22.5 17.5376 22.5 14.5C22.5 11.7793 20.5245 9.51997 17.9296 9.07824C17.4862 6.20213 15.0003 4 12 4C8.99974 4 6.51381 6.20213 6.07036 9.07824C3.47551 9.51997 1.5 11.7793 1.5 14.5C1.5 17.5376 3.96243 20 7 20H8C8.55228 20 9 19.5523 9 19C9 18.4477 8.55228 18 8 18H7C5.067 18 3.5 16.433 3.5 14.5C3.5 12.567 5.067 11 7 11H8V10ZM15.7071 13.2929L12.7071 10.2929C12.3166 9.90237 11.6834 9.90237 11.2929 10.2929L8.29289 13.2929C7.90237 13.6834 7.90237 14.3166 8.29289 14.7071C8.68342 15.0976 9.31658 15.0976 9.70711 14.7071L11 13.4142V19C11 19.5523 11.4477 20 12 20C12.5523 20 13 19.5523 13 19V13.4142L14.2929 14.7071C14.6834 15.0976 15.3166 15.0976 15.7071 14.7071C16.0976 14.3166 16.0976 13.6834 15.7071 13.2929Z"
+                      fill="#000000"
+                    ></path>
+                  </g>
+                </svg>
+                <p class="upload-text">upload requirements for admission</p>
+              </label>
+              <label for="school-license-document" class="upload-box">
+                <svg
+                  width="3rem"
+                  height="3rem"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M8 10C8 7.79086 9.79086 6 12 6C14.2091 6 16 7.79086 16 10V11H17C18.933 11 20.5 12.567 20.5 14.5C20.5 16.433 18.933 18 17 18H16C15.4477 18 15 18.4477 15 19C15 19.5523 15.4477 20 16 20H17C20.0376 20 22.5 17.5376 22.5 14.5C22.5 11.7793 20.5245 9.51997 17.9296 9.07824C17.4862 6.20213 15.0003 4 12 4C8.99974 4 6.51381 6.20213 6.07036 9.07824C3.47551 9.51997 1.5 11.7793 1.5 14.5C1.5 17.5376 3.96243 20 7 20H8C8.55228 20 9 19.5523 9 19C9 18.4477 8.55228 18 8 18H7C5.067 18 3.5 16.433 3.5 14.5C3.5 12.567 5.067 11 7 11H8V10ZM15.7071 13.2929L12.7071 10.2929C12.3166 9.90237 11.6834 9.90237 11.2929 10.2929L8.29289 13.2929C7.90237 13.6834 7.90237 14.3166 8.29289 14.7071C8.68342 15.0976 9.31658 15.0976 9.70711 14.7071L11 13.4142V19C11 19.5523 11.4477 20 12 20C12.5523 20 13 19.5523 13 19V13.4142L14.2929 14.7071C14.6834 15.0976 15.3166 15.0976 15.7071 14.7071C16.0976 14.3166 16.0976 13.6834 15.7071 13.2929Z"
+                      fill="#000000"
+                    ></path>
+                  </g>
+                </svg>
+                <p class="upload-text">upload your school license document</p>
+              </label>
+            </div>
+            <div class="subdiv">
+              <button class="btn submit" type="submit">
+                submit your application Form
+              </button>
+            </div>
+          </div>
+        </form>
+      </main>
+      <div class="view">
+        <img src="/assets/images/Secure-mobile-apps.svg" alt="" />
       </div>
-  
-</body>
+    </div>
+  </body>
 </html>
