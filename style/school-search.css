@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all ease-in-out 300ms;
 }
 
 .aside-heading {
@@ -421,8 +422,14 @@ button:not(.disabled):hover {
   .toggle-filter {
     color: #333;
     margin-bottom: 1rem;
-    display: block;
+    display: flex;
     cursor: pointer;
+    gap: 0.3rem;
+    align-items: center;
+  }
+
+  .toggle-filter > p {
+    font-size: 0.9rem;
   }
 
   .footer {
