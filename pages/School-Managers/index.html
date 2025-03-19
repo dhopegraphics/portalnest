@@ -29,7 +29,7 @@
 </head>
 
 <body style="display: flex; height: 100vh; ">
-  <aside style="position: fixed; height: 200vh; z-index: 2; overflow-y: hidden;" class="navigation">
+  <aside style=" z-index: 2; " class="navigation">
     <header class="header__content">
       <div class="logo__container flex">
         <h1>
@@ -63,6 +63,7 @@
         </span>
         Managers
       </button>
+
       <button class="btn__navigate drawer-item admissionbtn" data-file="admissions.html" >
         <span>
           <i class="bi bi-box-seam"></i>
@@ -93,37 +94,41 @@
         </span>
         Courses
       </button>
-    </nav>
-    <nav class="navigation__button-container nav__two">
-      <button class="btn__navigate drawer-item  gradingbtn"  data-file="grading.html">
-        <span>
-          <i class="bi bi-layout-text-sidebar-reverse"></i>
-        </span>
-        Grading & Exams
-      </button>
+      <hr style="width: 100%; background-color: white; height: 1px;">
 
-      <button class="btn__navigate drawer-item reportbtn" data-file="reports.html">
-        <span>
-          <i class="bi bi-gear"></i>
-        </span>
-        Settings & Reports
-      </button>
-      <button class="btn__navigate drawer-item  eventbtn"  data-file="events.html">
-        <span>
-          <i class="bi bi-display"></i>
-        </span>
-        Create Events
-      </button>
+      <nav class="navigation__button-container nav__two">
+        <button class="btn__navigate drawer-item  gradingbtn"  data-file="grading.html">
+          <span>
+            <i class="bi bi-layout-text-sidebar-reverse"></i>
+          </span>
+          Grading & Exams
+        </button>
+
+        <button class="btn__navigate drawer-item reportbtn" data-file="reports.html">
+          <span>
+            <i class="bi bi-gear"></i>
+          </span>
+          Settings & Reports
+        </button>
+  
+        <button class="btn__navigate drawer-item  eventbtn"  data-file="events.html">
+          <span>
+            <i class="bi bi-display"></i>
+          </span>
+          Create Events
+        </button>
+
+      </nav>
     </nav>
-    <div class="border_bottom"></div>
-    <div class="log-out__container">
-      <button class="btn-logout">
-        <span class="logout_icon">
-          <i class="bi bi-upload"></i>
-        </span>
-        Log Out
-      </button>
-    </div>
+
+
+    <hr style="width: 100%; background-color: white; height: 1px;">
+    <button class="btn-logout">
+      <span class="logout_icon">
+        <i class="bi bi-upload"></i>
+      </span>
+      Log Out
+    </button>
   </aside>
   <header style="position: fixed; right: 0; width: 78vw; z-index: 0;" class="main__header">
     <nav class="main__nav flex">
