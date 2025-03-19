@@ -8,6 +8,11 @@
 .aside-heading {
   margin-bottom: 1rem;
 }
+.header {
+  display: flex;
+  gap: 0.4rem;
+  align-items: start;
+}
 
 .select {
   display: block;
