@@ -1,5 +1,6 @@
 import { db } from "../firebaseconfig.js";
 import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
+const selectedSchoolId = localStorage.getItem("selectedSchoolId");
 
 // ✅ Function to Generate a Unique Applicant ID
 function generateApplicantID() {
@@ -38,7 +39,7 @@ export async function submitForm() {
                 relationship: document.getElementById("inputGuardianRel").value.trim()
             },
             program_choice_id: document.getElementById("inputProgram").value.trim(),
-            school_id: "KNUST_001",
+            school_id: selectedSchoolId ,
             status: "submitted",
             submitted_at: new Date().toISOString()
         };
@@ -48,7 +49,7 @@ export async function submitForm() {
 
         alert("🎉 Application submitted successfully!");
         localStorage.removeItem("admissionFormDraft");
-        window.location.reload();
+        window.location.href("/pages/Miscellaneous/admission-status.html");
     } catch (error) {
         console.error("❌ Error submitting application:", error);
         alert("❌ Error submitting application. Please try again.");
