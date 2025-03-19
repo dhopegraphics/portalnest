@@ -68,6 +68,7 @@ async function populateSchoolDropdown() {
           const selectedSchoolData = schoolDataMap[schoolName];
     if (selectedSchoolData && selectedSchoolData.school_id) {
         localStorage.setItem("selectedSchoolId", selectedSchoolData.school_id);
+  
         console.log("✅ School ID saved to localStorage:", selectedSchoolData.school_id);
     }
         });

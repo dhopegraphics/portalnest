@@ -3,6 +3,7 @@ import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-
 
 const userEmail = localStorage.getItem("loggedInUserEmail"); // Get user's email from local storage
 const selectedSchoolId = localStorage.getItem("selectedSchoolId"); // Get selected school ID
+const applicantId = localStorage.getItem("applicant_id"); // Get selected school ID
 
 // Function to fetch and monitor application status
 async function checkApplicationStatus() {
@@ -38,3 +39,4 @@ async function checkApplicationStatus() {
 
 // Start checking when the page loads
 document.addEventListener("DOMContentLoaded", checkApplicationStatus);
+

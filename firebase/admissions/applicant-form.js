@@ -49,6 +49,7 @@ export async function submitForm() {
 
         alert("🎉 Application submitted successfully!");
         localStorage.removeItem("admissionFormDraft");
+        localStorage.getItem("applicant_id" , applicant_id )
         window.location.href("/pages/Miscellaneous/admission-status.html");
     } catch (error) {
         console.error("❌ Error submitting application:", error);
