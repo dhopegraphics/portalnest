@@ -8,6 +8,7 @@
   <link rel="icon" type="image/png" href="/assets/logo/portalnest-Variation-Logo.png">
  <link rel="stylesheet" href="/style/sign-up-style.css">
         <link rel="stylesheet" href="/style/auth-student-main.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <script> 
       document.addEventListener("DOMContentLoaded", function () {
     if (localStorage.getItem("userLoggedIn") === "true") {
@@ -22,15 +23,13 @@
     <div class="wrapper">
     <div class="left" id="authContainer" >
         <div class="get-back" >
-            <span id="back-icon"  class="material-icons-sharp">
-              arrow_back_ios
-              </span>
+          <i id="back-icon" onclick="history.back()" class='bx bx-arrow-back bx-lg bx-fade-left-hover'></i>
           </div>
                 <div class="form-filling" >
                   <img class="portalnest-logo" src="/assets/logo/portalnest logo.png" />
                   <div>
                     <h1  class="log-in-to-your">Log In To Continue Your Application</h1>
-                    <p  class="welcome-back00t to continue your admission process</p>
+                    <p  class="welcome-back00t to continue your admission process" > Welcome Back, Continue Your Application </p>
                   </div>
                 </div>
                 <div  class="third-party-auth" >
