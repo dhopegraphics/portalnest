@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PortalNest - Course Registration Confirmation</title>
+  <style>
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      display: flex;
+      min-height: 100vh;
+      background-color: #f9f9f9;
+    }
+
+    /* Sidebar styles */
+    .sidebar {
+      width: 250px;
+      background-color: white;
+      border-right: 1px solid #e0e0e0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+      height: 100vh;
+      position: sticky;
+      top: 0;
+    }
+
+    /* Logo styles */
+    .logo {
+      padding: 20px 15px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .logo h1 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* Navigation menu */
+    .nav-menu {
+      list-style: none;
+      width: 100%;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      padding: 14px 15px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      color: #333;
+    }
+
+    .nav-item:hover {
+      background-color: #f5f5f5;
+    }
+
+    .nav-item.active {
+      background-color: #1976d2;
+      color: white;
+    }
+
+    .nav-item svg {
+      margin-right: 12px;
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    .nav-item.active svg {
+      fill: white;
+    }
+
+    .nav-item a {
+      text-decoration: none;
+      color: inherit;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+
+    /* Logout section */
+    .logout {
+      margin-top: auto;
+      border-top: 1px solid #f0f0f0;
+      padding: 15px 0;
+    }
+
+    .logout .nav-item {
+      color: #555;
+    }
+
+    .logout .nav-item:hover {
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    /* Main content area */
+    .main-content {
+      flex: 1;
+      padding: 30px;
+      background-color: white;
+    }
+
+    /* Progress steps */
+    .progress-steps {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .step {
+      display: flex;
+      align-items: center;
+    }
+
+    .step-number {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #1976d2;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .step-number.inactive {
+      background-color: #ccc;
+    }
+
+    .step-line {
+      height: 2px;
+      background-color: #ccc;
+      width: 100px;
+      margin: 0 15px;
+    }
+
+    /* Course confirmation container */
+    .course-confirmation-container {
+      margin-top: 20px;
+    }
+
+    .course-confirmation-title {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .course-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    .course-table th,
+    .course-table td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .course-table th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+
+    .course-table tr:hover {
+      background-color: #f9f9f9;
+    }
+
+    /* Credit summary */
+    .credit-summary {
+      text-align: right;
+      margin: 20px 0;
+      font-weight: bold;
+    }
+
+    /* Buttons */
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      border: none;
+      transition: all 0.2s;
+    }
+
+    .btn-back {
+      background-color: #f2f2f2;
+      color: #333;
+    }
+
+    .btn-back:hover {
+      background-color: #e0e0e0;
+    }
+
+    .btn-register {
+      background-color: #1976d2;
+      color: white;
+    }
+
+    .btn-register:hover {
+      background-color: #1565c0;
+    }
+
+    /* Loading overlay */
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.8);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      display: none;
+    }
+
+    .spinner {
+      border: 5px solid #f3f3f3;
+      border-top: 5px solid #1976d2;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      margin-bottom: 20px;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Success message */
+    .success-message {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      z-index: 1001;
+      display: none;
+    }
+
+    .success-icon {
+      color: #4caf50;
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+
+    .success-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .success-text {
+      margin-bottom: 20px;
+    }
+
+    .success-btn {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .success-btn:hover {
+      background-color: #45a049;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+      }
+
+      .nav-menu {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .nav-item {
+        padding: 10px;
+      }
+
+      .step-line {
+        width: 50px;
+      }
+
+      .main-content {
+        padding: 15px;
+      }
+
+      .course-table {
+        font-size: 14px;
+      }
+
+      .course-table th,
+      .course-table td {
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sidebar">
+    <div>
+      <div class="logo">
+        <h1 style="color: #2a7d8b; font-size: 24px;">P<span style="color: #2a7d8b; font-size: 18px;">⚙</span>rtal<span
+            style="color: #4caf50;">Nest</span>.
+        </h1>
+      </div>
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="/pages/Student-Portal/index.html">
+            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+            </svg>
+            <span>Home</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/pages/Student-Portal/fees-payment.html">
+            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z" />
+            </svg>
+            <span>Pay Fees</span>
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a href="/pages/Student-Portal/course-registration.html">
+            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z" />
+            </svg>
+            <span>Course Registration</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/pages/Student-Portal/result-check.html">
+            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+            </svg>
+            <span>Check Result</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/pages/Student-Portal/payment-history.html">
+            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" />
+            </svg>
+            <span>Payment History</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/pages/Student-Portal/registration-history.html">
+            <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm-2 14H7v-2h3v2zm0-4H7v-2h3v2zm0-4H7V7h3v2zm7 8h-4v-2h4v2zm0-4h-4v-2h4v2zm0-4h-4V7h4v2z" />
+            </svg>
+            <span>Registration History</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="logout">
+      <div class="nav-item">
+        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z" />
+        </svg>
+        <span>Log Out</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="progress-steps">
+      <div class="step">
+        <div class="step-number">1</div>
+      </div>
+      <div class="step-line"></div>
+      <div class="step">
+        <div class="step-number">2</div>
+      </div>
+      <div class="step-line"></div>
+      <div class="step">
+        <div class="step-number">3</div>
+      </div>
+    </div>
+
+    <div class="course-confirmation-container">
+      <h2 class="course-confirmation-title">PROCEED TO REGISTER</h2>
+
+      <div class="credit-summary">
+        Total Credits: <span id="total-credits">14</span>
+      </div>
+
+      <table class="course-table">
+        <thead>
+          <tr>
+            <th>Course Code</th>
+            <th>Course Name</th>
+            <th>Credits</th>
+          </tr>
+        </thead>
+        <tbody id="selected-courses">
+          <!-- Selected courses will be populated by JavaScript -->
+        </tbody>
+      </table>
+
+      <div class="button-container">
+        <a href="/pages/Student-Portal/course-selection.html"><button class="btn btn-back" id="go-back">Go
+            Back</button></a>
+        <a href="#"><button class="btn btn-register" id="register">Register</button></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading overlay -->
+  <div class="loading-overlay" id="loading-overlay">
+    <div class="spinner"></div>
+    <p>Processing your registration...</p>
+  </div>
+
+  <!-- Success message -->
+  <div class="success-message" id="success-message">
+    <div class="success-icon">✓</div>
+    <h3 class="success-title">Registration Successful!</h3>
+    <p class="success-text">Your course registration has been completed successfully.</p>
+    <button class="success-btn" id="continue-btn">Continue</button>
+  </div>
+
+  <script>
+    // Sample selected courses data (in a real app, this would come from the previous page)
+    const selectedCourses = [
+      { code: 'ACF 255', name: 'FINANCIAL ACCOUNTING', credits: 2 },
+      { code: 'CSM 353', name: 'SURVEY OF PROGRAMMING LANGUAGES', credits: 2 },
+      { code: 'CSM 367', name: 'DATA STRUCTURES I', credits: 2 },
+      { code: 'CSM 393', name: 'OPERATIONS RESEARCH I', credits: 2 },
+      { code: 'CSM 399', name: 'NUMERICAL ANALYSIS I', credits: 2 },
+      { code: 'CSM 343', name: 'VISUAL BASIC .NET', credits: 2 },
+      { code: 'CSM 377', name: 'WEB-BASED CONCEPTS AND DEVELOPMENT', credits: 2 }
+    ];
+
+    // DOM elements
+    const selectedCoursesElement = document.getElementById('selected-courses');
+    const totalCreditsElement = document.getElementById('total-credits');
+    const registerButton = document.getElementById('register');
+    const goBackButton = document.getElementById('go-back');
+    const loadingOverlay = document.getElementById('loading-overlay');
+    const successMessage = document.getElementById('success-message');
+    const continueButton = document.getElementById('continue-btn');
+
+    // Initialize
+    function initializePage() {
+      // Populate selected courses
+      populateSelectedCourses();
+
+      // Calculate and display total credits
+      calculateTotalCredits();
+
+      // Add event listeners
+      registerButton.addEventListener('click', handleRegister);
+      goBackButton.addEventListener('click', handleGoBack);
+      continueButton.addEventListener('click', handleContinue);
+
+      // Add animation to table rows
+      addTableRowAnimations();
+    }
+
+    // Populate selected courses
+    function populateSelectedCourses() {
+      selectedCoursesElement.innerHTML = '';
+
+      selectedCourses.forEach(course => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${course.code}</td>
+          <td>${course.name}</td>
+          <td>${course.credits}</td>
+        `;
+        selectedCoursesElement.appendChild(row);
+      });
+    }
+
+    // Calculate total credits
+    function calculateTotalCredits() {
+      const totalCredits = selectedCourses.reduce((total, course) => total + course.credits, 0);
+      totalCreditsElement.textContent = totalCredits;
+    }
+
+    // Handle register button click
+    function handleRegister() {
+      // Show loading overlay
+      loadingOverlay.style.display = 'flex';
+
+      // Simulate API call with a timeout
+      setTimeout(() => {
+        // Hide loading overlay
+        loadingOverlay.style.display = 'none';
+
+        // Show success message
+        successMessage.style.display = 'block';
+      }, 2000);
+    }
+
+    // Handle go back button click
+    function handleGoBack() {
+      // In a real application, you would navigate back to the course selection page
+      window.history.back();
+    }
+
+    // Handle continue button click
+    function handleContinue() {
+      // Hide success message
+      successMessage.style.display = 'none';
+
+      // In a real application, you would navigate to the next step or dashboard
+      alert('Registration completed! Redirecting to dashboard...');
+    }
+
+    // Add animations to table rows
+    function addTableRowAnimations() {
+      // Add staggered fade-in animation to table rows
+      const rows = document.querySelectorAll('.course-table tbody tr');
+      rows.forEach((row, index) => {
+        row.style.opacity = '0';
+        row.style.transform = 'translateY(10px)';
+        row.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+
+        setTimeout(() => {
+          row.style.opacity = '1';
+          row.style.transform = 'translateY(0)';
+        }, 100 * index);
+      });
+    }
+
+    // Initialize page when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      initializePage();
+    });
+
+    // Add some interactivity to the table rows
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const rows = document.querySelectorAll('.course-table tbody tr');
+        rows.forEach(row => {
+          row.addEventListener('mouseenter', () => {
+            row.style.backgroundColor = '#f0f7ff';
+          });
+
+          row.addEventListener('mouseleave', () => {
+            row.style.backgroundColor = '';
+          });
+        });
+      }, 1000); // Wait for the fade-in animation to complete
+    });
+  </script>
+</body>
+
+</html>

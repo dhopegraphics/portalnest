@@ -64,61 +64,68 @@ document.addEventListener("click", (e) => {
 
 });
 
+// Define updateButtonState globally
+function updateButtonState() {
+  const proceedButton = document.getElementById("proceed");
+  const requiredInputs = document.querySelectorAll(".form-control[required]");
+  const checkboxes = document.querySelectorAll('.checkboxes input[type="checkbox"]');
+
+  let allFilled = true;
+
+  // Check if all text inputs are filled
+  requiredInputs.forEach(input => {
+      if (input.value.trim() === "") {
+          allFilled = false;
+      }
+  });
+
+  // Check if at least one checkbox is selected
+  let oneChecked = [...checkboxes].some(checkbox => checkbox.checked);
+
+  // Enable button if all conditions are met
+  if (allFilled && oneChecked) {
+      proceedButton.style.opacity = "1";
+      proceedButton.style.cursor = "pointer";
+      proceedButton.disabled = false;
+  } else {
+      proceedButton.style.opacity = "0.5";
+      proceedButton.disabled = true;
+  }
+}
+
+// Execute when the document is fully loaded
 document.addEventListener("DOMContentLoaded", function () {
-    const proceedButton = document.getElementById("proceed");
-    const requiredInputs = document.querySelectorAll(".form-control[required]");
-    const checkboxes = document.querySelectorAll('.checkboxes input[type="checkbox"]');
+  const proceedButton = document.getElementById("proceed");
+  const requiredInputs = document.querySelectorAll(".form-control[required]");
+  const checkboxes = document.querySelectorAll('.checkboxes input[type="checkbox"]');
 
-    function updateButtonState() {
-        let allFilled = true;
+  // Attach event listeners to inputs
+  requiredInputs.forEach(input => {
+      input.addEventListener("input", updateButtonState);
+  });
 
-        // Check if all text inputs are filled
-        requiredInputs.forEach(input => {
-            if (input.value.trim() === "") {
-                allFilled = false;
-            }
-        });
+  checkboxes.forEach(checkbox => {
+      checkbox.addEventListener("change", updateButtonState);
+  });
 
-        // Check if one checkbox is selected
-        let oneChecked = [...checkboxes].some(checkbox => checkbox.checked);
+  // Initialize button state on page load
+  updateButtonState();
 
-        // Enable button if all conditions are met
-        if (allFilled && oneChecked) {
-            proceedButton.style.opacity = "1";
-            proceedButton.style.cursor = "pointer"
-            proceedButton.disabled = false;
-        } else {
-            proceedButton.style.opacity = "0.5";
-            proceedButton.disabled = true;
-        }
-    }
-
-    // Attach event listeners to inputs
-    requiredInputs.forEach(input => {
-        input.addEventListener("input", updateButtonState);
-    });
-
-    checkboxes.forEach(checkbox => {
-        checkbox.addEventListener("change", updateButtonState);
-    });
-
-    // Initialize button state on page load
-    updateButtonState();
-
-    // Redirect to another page when button is clicked
-    proceedButton.addEventListener("click", function () {
-        if (!proceedButton.disabled) {
-            window.location.href = "/pages/admission/application-form.html"; // Change this to your desired page
-        }
-    });
+  // Redirect to another page when button is clicked
+  proceedButton.addEventListener("click", function () {
+      if (!proceedButton.disabled) {
+          window.location.href = "/pages/admission/application-form.html"; // Change this to your desired page
+      }
+  });
 });
 
-    function onlyOne(checkbox) {
-        let checkboxes = document.querySelectorAll('.checkboxes input[type="checkbox"]');
-        checkboxes.forEach((cb) => {
-            if (cb !== checkbox) cb.checked = false;
-        });
+// Ensure `onlyOne()` can call `updateButtonState()`
+function onlyOne(checkbox) {
+  let checkboxes = document.querySelectorAll('.checkboxes input[type="checkbox"]');
+  checkboxes.forEach((cb) => {
+      if (cb !== checkbox) cb.checked = false;
+  });
 
-        // Update button state when a checkbox is selected
-        updateButtonState();
+  // Update button state when a checkbox is selected
+  updateButtonState();
 }

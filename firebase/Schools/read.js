@@ -1,27 +1,35 @@
 import { db } from "../firebaseconfig.js";
 import { collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
 
-// ✅ READ: Get single faculty by facultyId and schoolId
-export async function getFacultyByIdAndSchool(facultyId, schoolId) {
+// Function to fetch approved schools automatically
+async function fetchApprovedSchools() {
     try {
-        if (!facultyId || !schoolId) throw new Error("Faculty ID and School ID are required.");
+        const schoolsCollection = collection(db, "schools");
+        const approvedSchoolsQuery = query(schoolsCollection, where("approved", "==", true));
+        const querySnapshot = await getDocs(approvedSchoolsQuery);
 
-        const facultiesRef = collection(db, "faculties");
-        const q = query(facultiesRef, 
-            where("faculty_id", "==", facultyId), 
-            where("school_id", "==", schoolId)
-        );
-        const querySnapshot = await getDocs(q);
+        const schoolsList = document.querySelector("#schools-list");
+        if (!schoolsList) return; // Prevent errors if the element doesn't exist
 
-        if (querySnapshot.empty) throw new Error("Faculty not found for this school.");
+        schoolsList.innerHTML = ""; // Clear existing list
 
-        let facultyData = null;
+        if (querySnapshot.empty) {
+            schoolsList.innerHTML = "<li>No approved schools found.</li>";
+            return;
+        }
+
         querySnapshot.forEach(doc => {
-            facultyData = { id: doc.id, ...doc.data() };
+            const schoolData = doc.data();
+            const listItem = document.createElement("li");
+            listItem.textContent = `${schoolData.school_name} - ${schoolData.location.city}, ${schoolData.location.region}`;
+            schoolsList.appendChild(listItem);
         });
 
-        return { success: true, data: facultyData };
+        console.log("✅ Approved schools fetched successfully!");
     } catch (error) {
-        return { success: false, message: error.message };
+        console.error("❌ Error fetching approved schools:", error.message);
     }
 }
+
+// Fetch schools automatically when the page loads
+document.addEventListener("DOMContentLoaded", fetchApprovedSchools);

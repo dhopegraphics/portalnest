@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         <div style="flex-direction: column; " class="form-box  login">
-            
+       
             <form action="#">      
                 <h1  class="log-in-to-your">Log In to your Dashboard</h1>
                 <h4  style="font-size: medium;" class="welcome-back-to">Welcome back! to portalNest! Select Your method. this is <br> when you have  already have your  institution credentials</h4>
@@ -129,7 +129,7 @@
                     <i class='bx bxs-institution'></i>
                 </div>
                 <div class="input-box sign-up">
-                    <input id="Student_id" type="text" placeholder="Student_id" required>
+                    <input id="Staff_code" type="text" placeholder="Staff_code" required>
                     <i class='bx bx-user'></i>
                 </div>
                 <button type="submit" id="register-button" class="btn">Register</button>
@@ -144,7 +144,9 @@
         <!-- TOOGLE BOX -->
         <div class="toggle-box">
             <div class="toggle-panel toggle-left">
+              <button onclick="history.back()" class="back-button">←</button>
                 <h1>Hello, Welcome!</h1>
+               
                 <img  style="width: 150px; margin-top: 10px;   filter: brightness(0) invert(1); " class="portalnest-logo" src="/assets/logo/portalnest logo.png" />
                 <p>Already have an account?</p>
                 <img class="mobile-icon" src="/assets/images/Secure-mobile-apps.svg"  />

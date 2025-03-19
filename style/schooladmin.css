@@ -156,7 +156,7 @@ a{
 
 .hidden,
 .manager_form_container {
-  display: none;
+  
   transition: all 0.5s ease;
 }
 
@@ -164,13 +164,6 @@ a{
 .manager_form_container.hidden_remove {
   display: block;
   transition: all 0.5s ease;
-}
-
-/************ General Styling *********/
-.select_remove_default {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-progress-appearance: none;
 }
 
 .table_container::-webkit-scrollbar,
@@ -252,11 +245,11 @@ a{
 
 /************ Aside Navigation *********/
 .navigation {
-  position: relative;
+  position: fixed;
   background-color: var(--primary-col);
   color: var(--white-col);
   width: 309px;
-  height: 1122px;
+  height: 100vh;
   white-space: nowrap;
   transition: all 0.4s ease;
 }
@@ -310,15 +303,7 @@ a{
   font-weight: 400;
 }
 
-.nav__one {
-  height: 75vh;
-  /* height: 82vh; */
-  border-bottom: 1px solid var(--white-col);
-}
 
-.nav__two {
-  height: 20vh;
-}
 
 .navigation__button-container {
   display: flex;
@@ -359,18 +344,10 @@ a{
   transform: rotate(-270deg);
 }
 
-.border_bottom {
-  border-top: 1px solid var(--white-col);
-  margin-top: 200px;
-}
-
-.log-out__container {
-  position: absolute;
-  bottom: 0;
-}
 
 .btn-logout {
   position: absolute;
+  bottom: 20px;
   width: 90%;
   display: flex;
   align-items: center;
@@ -384,8 +361,8 @@ a{
   font-size: 2rem;
   white-space: nowrap;
   cursor: pointer;
-  transition: background 0.3s, color 0.3s;
-  bottom: 0;
+  transition: all 0.3s;
+
 }
 
 .btn-logout:hover {
@@ -398,9 +375,13 @@ a{
 
 /************ Main Header *********/
 .main__header {
+  position: fixed;
+  left: 309px;
+  right: 0px;
   background-color: var(--white-col);
   box-shadow: 0px 16px 12px rgba(0, 0, 0, 0.1);
   height: 64px;
+  
 }
 
 .main__nav {
@@ -450,9 +431,10 @@ a{
 }
 
 .admission_scroll .card__container {
-  width: 100%;
+  width: 120%;
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, auto);
+  cursor: pointer;
 }
 
 .card {

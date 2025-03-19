@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       showAlert("🎉 Sign Up Successful! Redirecting...");
 
       setTimeout(() => {
-        window.location.href = "/pages/admission/application-form.html";
+        window.location.href = "pages/School-Managers/index.html";
       }, 2000);
     } catch (error) {
       console.error("Error:", error.message);
