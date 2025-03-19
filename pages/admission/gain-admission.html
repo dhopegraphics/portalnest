@@ -17,15 +17,15 @@
 //     window.location.href = "/pages/auth/admission/sign-up-portalNest.html";
 // });
 
-document.addEventListener("DOMContentLoaded", function () {
-    // Redirect if user is not logged in
-    if (!localStorage.getItem("userLoggedIn")) {
-        window.location.href = "/pages/auth/admission/sign-in-to-continue-application.html";
-    }
+// document.addEventListener("DOMContentLoaded", function () {
+//     // Redirect if user is not logged in
+//     if (!localStorage.getItem("userLoggedIn")) {
+//         window.location.href = "/pages/auth/admission/sign-in-to-continue-application.html";
+//     }
 
        
     
-  });
+//   });
 
   
 
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
               </span>
             </div>
             <ul class="dropdown-menu" id="SchoolLevel">
-              <li><a class="dropdown-item ">Loading...</a></li>
+              <li><a class="dropdown-item ">Haven't Selected Any School Yet...</a></li>
             </ul>          
           </div>
 
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <!-- Hidden button that appears when "No" is checked -->
         
           </div>
-          <a id="downloadRequirementsBtn" class="btn btn-primary" style="display: none;"  target="_blank">
+          <a id="downloadRequirementsBtn" class="btn btn-primary" style="display: none;"  target="_blank" download>
             Download Requirements
         </a>
 
@@ -98,8 +98,15 @@ document.addEventListener("DOMContentLoaded", function () {
           <img class="secure-mobile-apps" src="/assets/images/Secure-mobile-apps.svg"/>
       </div>
     </div>
+
+    <div id="custom-alert" class="alert-box hidden">
+      <p id="alert-message"></p>
+      <button id="close-alert">OK</button>
+  </div>
+  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="/functions/gain-admission.js"></script>
     <script type="module" src="/firebase/Schools/schoolListFetched.js" ></script>
+    <script type="module" src="/firebase/Schools/download-requirement_file.js" ></script>
 </body>
 </html>

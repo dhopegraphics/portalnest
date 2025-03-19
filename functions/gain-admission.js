@@ -129,3 +129,22 @@ function onlyOne(checkbox) {
   // Update button state when a checkbox is selected
   updateButtonState();
 }
+
+function onlyOne(checkbox) {
+  let checkboxes = document.querySelectorAll('.checkboxes input[type="checkbox"]');
+  let downloadBtn = document.getElementById("downloadRequirementsBtn");
+
+  checkboxes.forEach((cb) => {
+      if (cb !== checkbox) cb.checked = false;
+  });
+
+  // Show or hide the "Download Requirements" button
+  if (checkbox.id === "no" && checkbox.checked) {
+      downloadBtn.style.display = "block";  // Show the button
+  } else {
+      downloadBtn.style.display = "none";   // Hide the button
+  }
+
+  // Update button state when a checkbox is selected
+  updateButtonState();
+}
