@@ -6,6 +6,10 @@ import {
   getDocs,
 } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
 
+
+// ✅ Define schoolDataMap globally
+const schoolDataMap = {};
+
 // Function to fetch approved schools and populate dropdown
 async function populateSchoolDropdown() {
   try {
@@ -34,8 +38,6 @@ async function populateSchoolDropdown() {
       return;
     }
 
-    // Store school data for quick access
-    const schoolDataMap = {};
 
     querySnapshot.forEach((doc) => {
       const schoolData = doc.data();
@@ -63,6 +65,12 @@ async function populateSchoolDropdown() {
 
           // ✅ Fetch and update school levels
           updateSchoolLevels(schoolName);
+          const selectedSchoolData = schoolDataMap[schoolName];
+    if (selectedSchoolData && selectedSchoolData.school_id) {
+        localStorage.setItem("selectedSchoolId", selectedSchoolData.school_id);
+  
+        console.log("✅ School ID saved to localStorage:", selectedSchoolData.school_id);
+    }
         });
 
         listItem.appendChild(anchor);
@@ -85,37 +93,69 @@ async function populateSchoolDropdown() {
     });
 
     // ✅ Function to update School Level dropdown
-    function updateSchoolLevels(selectedSchool) {
-      const schoolData = schoolDataMap[selectedSchool];
+    // ✅ Function to update School Level dropdown and handle download button
+function updateSchoolLevels(selectedSchool) {
+    const schoolData = schoolDataMap[selectedSchool];
+    const schoolLevelDropdown = document.querySelector("#SchoolLevel");
+    const downloadBtn = document.querySelector("#downloadRequirementsBtn");
 
-      if (schoolData && schoolData.school_levels_available) {
-        schoolLevelDropdown.innerHTML = ""; // Clear existing levels
+    if (schoolData) {
+        // ✅ Update school levels
+        if (schoolData.school_levels_available) {
+            schoolLevelDropdown.innerHTML = ""; // Clear existing levels
+            schoolData.school_levels_available.forEach((level) => {
+                const listItem = document.createElement("li");
+                const anchor = document.createElement("a");
 
-        schoolData.school_levels_available.forEach((level) => {
-          const listItem = document.createElement("li");
-          const anchor = document.createElement("a");
+                anchor.classList.add("dropdown-item");
+                anchor.textContent = level;
+                anchor.href = "#";
 
-          anchor.classList.add("dropdown-item");
-          anchor.textContent = level;
-          anchor.href = "#";
+                // ✅ Select level when clicked
+                anchor.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    document.querySelector("#schoolLevelInput").value = level; // Update input
+                    schoolLevelDropdown.style.display = "none"; // Hide dropdown after selection
+                });
 
-          // ✅ Select level when clicked
-          anchor.addEventListener("click", function (event) {
-            event.preventDefault();
-            document.querySelector("#schoolLevelInput").value = level; // Update input
-            schoolLevelDropdown.style.display = "none"; // Hide dropdown after selection
-          });
+                listItem.appendChild(anchor);
+                schoolLevelDropdown.appendChild(listItem);
+            });
 
-          listItem.appendChild(anchor);
-          schoolLevelDropdown.appendChild(listItem);
-        });
+            schoolLevelDropdown.style.display = "block"; // Show levels dropdown
+        } else {
+            schoolLevelDropdown.innerHTML =
+                "<li><a class='dropdown-item'>No levels available</a></li>";
+        }
 
-        schoolLevelDropdown.style.display = "block"; // Show levels dropdown
-      } else {
+       // ✅ Handle the requirements download button
+if (schoolData.requirement_dwn) {
+    downloadBtn.href = schoolData.requirement_dwn; // Set the PDF link
+    downloadBtn.style.display = "block"; // Show the button
+} else {
+    downloadBtn.style.display = "block"; // Show the button but handle alert
+
+    // Remove any previous event listeners to prevent duplicate alerts
+    downloadBtn.replaceWith(downloadBtn.cloneNode(true));
+    const newDownloadBtn = document.querySelector("#downloadRequirementsBtn");
+
+    newDownloadBtn.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent default behavior
+
+        if (!selectedSchool) {
+            showAlert("❌ Please select a school before downloading requirements.");
+            return;
+        }
+
+        showAlert("⚠ No requirements document available for this school.");
+    });
+}
+    } else {
         schoolLevelDropdown.innerHTML =
-          "<li><a class='dropdown-item'>No levels available</a></li>";
-      }
+            "<li><a class='dropdown-item'>No levels available</a></li>";
+        downloadBtn.style.display = "none"; // Hide button if schoolData is not found
     }
+}
 
     console.log("✅ Approved schools loaded into dropdown!");
   } catch (error) {
@@ -126,64 +166,69 @@ async function populateSchoolDropdown() {
 // Fetch schools automatically when the page loads
 document.addEventListener("DOMContentLoaded", populateSchoolDropdown);
 
-function onlyOne(checkbox) {
-  const downloadBtn = document.querySelector("#downloadRequirementsBtn");
-  const selectedSchool = document.querySelector("#dropdownInput").value; // Selected school name
+document.addEventListener("DOMContentLoaded", function () {
+    const downloadBtn = document.querySelector("#downloadRequirementsBtn");
+    const dropdownInput = document.querySelector("#dropdownInput");
+    const noCheckbox = document.querySelector("#no");
 
-  // Uncheck the other checkbox
-  document
-    .querySelectorAll(".checkboxes input[type='checkbox']")
-    .forEach((cb) => {
-      if (cb !== checkbox) cb.checked = false;
-    });
+    // Hide button by default
+    if (downloadBtn) downloadBtn.style.display = "none";
 
-  if (checkbox.checked && checkbox.id === "no") {
-    // Ensure a school is selected
-    if (!selectedSchool) {
-      alert("Please select a school first!");
-      checkbox.checked = false; // Uncheck if no school is selected
-      return;
+    // ✅ Show button when "No" is checked
+    if (noCheckbox) {
+        noCheckbox.addEventListener("change", function () {
+            if (noCheckbox.checked) {
+                downloadBtn.style.display = "block"; // Show button
+            } else {
+                downloadBtn.style.display = "none"; // Hide button if unchecked
+            }
+        });
     }
 
-    // Fetch the school's requirement_dwn URL
-    fetchSchoolRequirement(selectedSchool, downloadBtn);
-  } else {
-    downloadBtn.style.display = "none"; // Hide button if unchecked
-  }
-}
-// Function to fetch school requirement PDF link
-async function fetchSchoolRequirement(schoolName, button) {
-  try {
-    console.log("📌 Fetching requirements for:", schoolName);
-    const schoolsCollection = collection(db, "schools");
-    const schoolQuery = query(
-      schoolsCollection,
-      where("school_name", "==", schoolName)
-    );
-    const querySnapshot = await getDocs(schoolQuery);
+    // ✅ Handle button click event
+    if (downloadBtn) {
+        downloadBtn.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent default behavior
 
-    if (!querySnapshot.empty) {
-      const schoolData = querySnapshot.docs[0].data();
-      console.log("✅ School Data:", schoolData);
+            const selectedSchool = dropdownInput.value.trim();
+            console.log("🔍 Selected School:", selectedSchool);
 
-      if (schoolData.requirement_dwn) {
-        button.href = schoolData.requirement_dwn; // Set PDF link
-        button.style.display = "block"; // Show button
-        console.log(
-          "✅ Download button shown with link:",
-          schoolData.requirement_dwn
-        );
-      } else {
-        console.warn("⚠️ No requirement file available for this school.");
-        button.style.display = "none"; // Hide button if no file exists
-      }
-    } else {
-      console.error("❌ School not found in database!");
+            if (!selectedSchool) {
+                showAlert("❌ Please select a school before downloading requirements.");
+                return;
+            }
+
+            // ✅ Get school data
+            const schoolData = schoolDataMap[selectedSchool];
+
+            console.log("📂 schoolDataMap:", schoolDataMap);
+            console.log("📌 Retrieved School Data:", schoolData);
+
+            if (!schoolData) {
+                showAlert("❌ School data not found. Please select a valid school.");
+                return;
+            }
+
+            console.log("📁 requirement_dwn:", schoolData.requirement_dwn);
+
+            // ✅ SAFARI FIX: Ensure requirement_dwn is valid
+            if (
+                !schoolData.requirement_dwn ||
+                schoolData.requirement_dwn.trim() === "" ||
+                typeof schoolData.requirement_dwn !== "string"
+            ) {
+                showAlert("⚠ No requirements document available for this school.");
+                return;
+            }
+
+            // ✅ WORKAROUND: Try opening in a new tab (fixes some Safari issues)
+            console.log("📥 Downloading file:", schoolData.requirement_dwn);
+            window.open(schoolData.requirement_dwn, "_blank");
+        });
     }
-  } catch (error) {
-    console.error("❌ Error fetching school requirement:", error.message);
-  }
-}
+});
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const dropdownInput = document.querySelector("#dropdownInput");
@@ -200,3 +245,25 @@ document.addEventListener("DOMContentLoaded", function () {
       schoolLevelDropdown.style.display = "none"; // Hide initially
     }
   });
+
+
+
+  // ✅ Function to Show Custom Alert
+function showAlert(message, callback = null) {
+    const alertBox = document.getElementById("custom-alert");
+    const alertMessage = document.getElementById("alert-message");
+    const closeAlert = document.getElementById("close-alert");
+
+    alertMessage.innerText = message;
+    alertBox.classList.remove("hidden");
+    alertBox.classList.add("show");
+
+    closeAlert.onclick = function () {
+        alertBox.classList.add("hidden");
+        alertBox.classList.remove("show");
+
+        if (callback) {
+            callback();
+        }
+    };
+}

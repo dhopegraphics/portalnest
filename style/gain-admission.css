@@ -142,3 +142,57 @@
     max-width: 80%;
     align-self: center;
 }
+
+
+ /* Custom Alert Box */
+ .alert-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #1971ff;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 300px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  /* Show the alert */
+  .alert-box.show {
+    opacity: 1;
+  }
+  
+  /* Hide the alert */
+  .hidden {
+    display: none;
+  }
+  
+  /* Alert Message */
+  #alert-message {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  
+  /* Close Button */
+  #close-alert {
+    background: white;
+    color: #1971ff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+  
+  #close-alert:hover {
+    background: #e0e0e0;
+  }
