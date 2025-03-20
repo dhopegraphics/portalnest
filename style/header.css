@@ -492,8 +492,5 @@ div.active .middle-bar-icons::before {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.middle-bar>div.active {
-    transform: scale(1.1);
-    /* Slightly enlarge for effect */
-}
+
 
