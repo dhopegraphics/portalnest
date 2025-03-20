@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tickets - PortalNest Help Desk</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style//help-desk/help-desk.css">
+    <link rel="stylesheet" href="/style/help-desk/my-ticket.css">
+    <link rel="stylesheet" href="/style/help-desk/modal-ticket.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- New Ticket Modal -->
+<div class="modal-overlay" id="new-ticket-modal">
+    <div class="modal-container">
+        <div class="modal-header">
+            <h3>Create New Support Ticket</h3>
+            <button class="modal-close-btn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body">
+            <form id="new-ticket-form">
+                <div class="form-group">
+                    <label for="ticket-subject">Subject <span class="required">*</span></label>
+                    <input type="text" id="ticket-subject" name="subject" class="form-input" placeholder="Brief description of your issue" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="ticket-category">Category <span class="required">*</span></label>
+                        <select id="ticket-category" name="category" class="form-select" required>
+                            <option value="" disabled selected>Select a category</option>
+                            <option value="technical">Technical Issues</option>
+                            <option value="admissions">Admissions</option>
+                            <option value="course">Course Registration</option>
+                            <option value="grading">Grading Concerns</option>
+                            <option value="general">General Inquiries</option>
+                            <option value="student">Student Services</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="ticket-priority">Priority <span class="required">*</span></label>
+                        <select id="ticket-priority" name="priority" class="form-select" required>
+                            <option value="" disabled selected>Select priority</option>
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ticket-description">Description <span class="required">*</span></label>
+                    <textarea id="ticket-description" name="description" class="form-textarea" placeholder="Please provide detailed information about your issue" rows="6" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="ticket-attachments">Attachments</label>
+                    <div class="file-upload-container">
+                        <input type="file" id="ticket-attachments" name="attachments" class="file-input" multiple>
+                        <label for="ticket-attachments" class="file-upload-label">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <span>Choose files or drag & drop</span>
+                            <small>Max 5 files (PDF, JPG, PNG, DOC) up to 5MB each</small>
+                        </label>
+                    </div>
+                    <div class="file-list" id="file-list"></div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="action-btn secondary cancel-btn">Cancel</button>
+                    <button type="submit" class="action-btn primary submit-btn">
+                        <i class="fas fa-paper-plane"></i> Submit Ticket
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo-container">
+                <img src="/assets/logo/portalnest-Variation-Logo.png" alt="PortalNest Logo" class="logo">
+                <h1>PortalNest <span>Help Desk</span></h1>
+            </div>
+            <div class="header-controls">
+                <div class="search-container">
+                    <input type="text" placeholder="Search tickets..." class="search-input">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="user-controls">
+                    <div class="role-badge" id="user-role">Administrator</div>
+                    <div class="theme-toggle">
+                        <input type="checkbox" id="theme-switch" class="theme-switch">
+                        <label for="theme-switch" class="theme-switch-label">
+                            <i class="fas fa-sun"></i>
+                            <i class="fas fa-moon"></i>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="user-profile">
+                        <img src="placeholder.svg?height=40&width=40" alt="User Profile" class="user-avatar">
+                        <div class="user-dropdown">
+                            <span>John Doe</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Sidebar Navigation -->
+            <aside class="sidebar">
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/pages/Miscellaneous/helpdesk-pages/helpdesk.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                        <li class="active"><a href="/pages/Miscellaneous/helpdesk-pages/ticket-creation.html"><i class="fas fa-ticket-alt"></i> My Tickets</a></li>
+                        <li><a href="#"><i class="fas fa-comment-dots"></i> Live Chat</a></li>
+                        <li><a href="#"><i class="fas fa-question-circle"></i> FAQs</a></li>
+                        <li><a href="#"><i class="fas fa-book"></i> Knowledge Base</a></li>
+                        <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                    </ul>
+                </nav>
+                <div class="support-status">
+                    <div class="status-indicator online"></div>
+                    <p>Support: <span>Online</span></p>
+                    <p class="support-time">Response time: ~5 mins</p>
+                </div>
+            </aside>
+
+            <!-- My Tickets Content -->
+            <section class="tickets-content">
+                <div class="tickets-header">
+                    <div class="tickets-title">
+                        <h2>My Support Tickets</h2>
+                        <p>View and manage all your support requests</p>
+                    </div>
+                    <button class="action-btn primary"><i class="fas fa-plus-circle"></i> Create New Ticket</button>
+                </div>
+
+                <!-- Tickets Filter Bar -->
+                <div class="tickets-filter-bar">
+                    <div class="filter-group">
+                        <label for="status-filter">Status:</label>
+                        <select id="status-filter" class="filter-select">
+                            <option value="all">All Tickets</option>
+                            <option value="open">Open</option>
+                            <option value="pending">Pending</option>
+                            <option value="in-progress">In Progress</option>
+                            <option value="resolved">Resolved</option>
+                            <option value="closed">Closed</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="category-filter">Category:</label>
+                        <select id="category-filter" class="filter-select">
+                            <option value="all">All Categories</option>
+                            <option value="technical">Technical Issues</option>
+                            <option value="admissions">Admissions</option>
+                            <option value="course">Course Registration</option>
+                            <option value="grading">Grading Concerns</option>
+                            <option value="general">General Inquiries</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="date-filter">Date Range:</label>
+                        <select id="date-filter" class="filter-select">
+                            <option value="all">All Time</option>
+                            <option value="today">Today</option>
+                            <option value="week">This Week</option>
+                            <option value="month">This Month</option>
+                            <option value="quarter">Last 3 Months</option>
+                            <option value="year">This Year</option>
+                        </select>
+                    </div>
+                    <div class="filter-group sort-group">
+                        <label for="sort-filter">Sort By:</label>
+                        <select id="sort-filter" class="filter-select">
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="updated">Last Updated</option>
+                            <option value="priority">Priority</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Tickets Stats -->
+                <div class="tickets-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-ticket-alt"></i></div>
+                        <div class="stat-info">
+                            <h3>12</h3>
+                            <p>Total Tickets</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon open"><i class="fas fa-exclamation-circle"></i></div>
+                        <div class="stat-info">
+                            <h3>3</h3>
+                            <p>Open</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon pending"><i class="fas fa-clock"></i></div>
+                        <div class="stat-info">
+                            <h3>2</h3>
+                            <p>Pending</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon resolved"><i class="fas fa-check-circle"></i></div>
+                        <div class="stat-info">
+                            <h3>7</h3>
+                            <p>Resolved</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tickets Table -->
+                <div class="tickets-table-container">
+                    <table class="tickets-table">
+                        <thead>
+                            <tr>
+                                <th>Ticket ID</th>
+                                <th>Subject</th>
+                                <th>Category</th>
+                                <th>Status</th>
+                                <th>Last Updated</th>
+                                <th>Priority</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="ticket-id">#2023-0456</td>
+                                <td class="ticket-subject">
+                                    <div class="subject-content">
+                                        <h4>Login Issue with Student Portal</h4>
+                                        <p>Unable to access student portal after password reset...</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="category-badge technical">Technical</span>
+                                </td>
+                                <td>
+                                    <span class="status-badge open">Open</span>
+                                </td>
+                                <td class="ticket-date">
+                                    <div class="date-info">
+                                        <p>Today</p>
+                                        <span>2 hours ago</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="priority-badge high">High</span>
+                                </td>
+                                <td class="ticket-actions">
+                                    <button class="icon-btn view-btn" title="View Ticket"><i class="fas fa-eye"></i></button>
+                                    <button class="icon-btn reply-btn" title="Reply"><i class="fas fa-reply"></i></button>
+                                    <button class="icon-btn more-btn" title="More Actions"><i class="fas fa-ellipsis-v"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="ticket-id">#2023-0455</td>
+                                <td class="ticket-subject">
+                                    <div class="subject-content">
+                                        <h4>Course Registration Error</h4>
+                                        <p>System shows prerequisite not met but I completed the course...</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="category-badge course">Course</span>
+                                </td>
+                                <td>
+                                    <span class="status-badge pending">Pending</span>
+                                </td>
+                                <td class="ticket-date">
+                                    <div class="date-info">
+                                        <p>Yesterday</p>
+                                        <span>10:45 AM</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="priority-badge medium">Medium</span>
+                                </td>
+                                <td class="ticket-actions">
+                                    <button class="icon-btn view-btn" title="View Ticket"><i class="fas fa-eye"></i></button>
+                                    <button class="icon-btn reply-btn" title="Reply"><i class="fas fa-reply"></i></button>
+                                    <button class="icon-btn more-btn" title="More Actions"><i class="fas fa-ellipsis-v"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="ticket-id">#2023-0452</td>
+                                <td class="ticket-subject">
+                                    <div class="subject-content">
+                                        <h4>Missing Grade for Biology 101</h4>
+                                        <p>Final grade not showing on transcript for Biology 101...</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="category-badge grading">Grading</span>
+                                </td>
+                                <td>
+                                    <span class="status-badge resolved">Resolved</span>
+                                </td>
+                                <td class="ticket-date">
+                                    <div class="date-info">
+                                        <p>Mar 15, 2023</p>
+                                        <span>3:22 PM</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="priority-badge medium">Medium</span>
+                                </td>
+                                <td class="ticket-actions">
+                                    <button class="icon-btn view-btn" title="View Ticket"><i class="fas fa-eye"></i></button>
+                                    <button class="icon-btn reply-btn" title="Reply"><i class="fas fa-reply"></i></button>
+                                    <button class="icon-btn more-btn" title="More Actions"><i class="fas fa-ellipsis-v"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="ticket-id">#2023-0448</td>
+                                <td class="ticket-subject">
+                                    <div class="subject-content">
+                                        <h4>Financial Aid Application Status</h4>
+                                        <p>Need update on my financial aid application submitted last month...</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="category-badge general">General</span>
+                                </td>
+                                <td>
+                                    <span class="status-badge in-progress">In Progress</span>
+                                </td>
+                                <td class="ticket-date">
+                                    <div class="date-info">
+                                        <p>Mar 10, 2023</p>
+                                        <span>9:15 AM</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="priority-badge low">Low</span>
+                                </td>
+                                <td class="ticket-actions">
+                                    <button class="icon-btn view-btn" title="View Ticket"><i class="fas fa-eye"></i></button>
+                                    <button class="icon-btn reply-btn" title="Reply"><i class="fas fa-reply"></i></button>
+                                    <button class="icon-btn more-btn" title="More Actions"><i class="fas fa-ellipsis-v"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="ticket-id">#2023-0442</td>
+                                <td class="ticket-subject">
+                                    <div class="subject-content">
+                                        <h4>Library Access Card Not Working</h4>
+                                        <p>My student ID card is not working at the library entrance...</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="category-badge technical">Technical</span>
+                                </td>
+                                <td>
+                                    <span class="status-badge resolved">Resolved</span>
+                                </td>
+                                <td class="ticket-date">
+                                    <div class="date-info">
+                                        <p>Mar 5, 2023</p>
+                                        <span>2:30 PM</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="priority-badge medium">Medium</span>
+                                </td>
+                                <td class="ticket-actions">
+                                    <button class="icon-btn view-btn" title="View Ticket"><i class="fas fa-eye"></i></button>
+                                    <button class="icon-btn reply-btn" title="Reply"><i class="fas fa-reply"></i></button>
+                                    <button class="icon-btn more-btn" title="More Actions"><i class="fas fa-ellipsis-v"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="ticket-id">#2023-0438</td>
+                                <td class="ticket-subject">
+                                    <div class="subject-content">
+                                        <h4>Admission Document Verification</h4>
+                                        <p>Need confirmation that all my admission documents have been received...</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="category-badge admissions">Admissions</span>
+                                </td>
+                                <td>
+                                    <span class="status-badge resolved">Resolved</span>
+                                </td>
+                                <td class="ticket-date">
+                                    <div class="date-info">
+                                        <p>Feb 28, 2023</p>
+                                        <span>11:20 AM</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="priority-badge high">High</span>
+                                </td>
+                                <td class="ticket-actions">
+                                    <button class="icon-btn view-btn" title="View Ticket"><i class="fas fa-eye"></i></button>
+                                    <button class="icon-btn reply-btn" title="Reply"><i class="fas fa-reply"></i></button>
+                                    <button class="icon-btn more-btn" title="More Actions"><i class="fas fa-ellipsis-v"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="pagination-btn" disabled><i class="fas fa-chevron-left"></i></button>
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <span class="pagination-ellipsis">...</span>
+                    <button class="pagination-btn">10</button>
+                    <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </section>
+
+            <!-- Live Chat Widget -->
+            <div class="chat-widget collapsed">
+                <div class="chat-header">
+                    <div class="chat-title">
+                        <div class="chat-status online"></div>
+                        <h3>Live Support</h3>
+                    </div>
+                    <div class="chat-controls">
+                        <button class="chat-control-btn minimize"><i class="fas fa-minus"></i></button>
+                        <button class="chat-control-btn expand"><i class="fas fa-expand"></i></button>
+                        <button class="chat-control-btn close"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="chat-body">
+                    <div class="chat-messages">
+                        <div class="message system">
+                            <p>Connected to PortalNest Support. How can we help you today?</p>
+                            <span class="message-time">10:30 AM</span>
+                        </div>
+                        <div class="message agent">
+                            <div class="message-avatar">
+                                <img src="placeholder.svg?height=30&width=30" alt="Agent Avatar">
+                            </div>
+                            <div class="message-content">
+                                <p class="message-sender">Sarah (Support Agent)</p>
+                                <p>Hello! I'm Sarah from technical support. How can I assist you today?</p>
+                                <span class="message-time">10:31 AM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input">
+                        <textarea placeholder="Type your message here..."></textarea>
+                        <div class="chat-actions">
+                            <button class="chat-action-btn"><i class="fas fa-paperclip"></i></button>
+                            <button class="chat-action-btn"><i class="fas fa-smile"></i></button>
+                            <button class="chat-send-btn"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2023 PortalNest Educational Management Platform</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Simple toggle for dark/light mode
+        document.getElementById('theme-switch').addEventListener('change', function() {
+            document.body.classList.toggle('dark-mode');
+        });
+
+        // Toggle chat widget
+        document.querySelector('.chat-header').addEventListener('click', function() {
+            document.querySelector('.chat-widget').classList.toggle('collapsed');
+        });
+    </script>
+    <script src="/functions/help-desk/modal-ticket-script.js" ></script>
+</body>
+</html>
