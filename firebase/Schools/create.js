@@ -1,5 +1,5 @@
 import { db } from "../firebaseconfig.js";
-import { doc, setDoc, getDoc, getDocs, query, collection, where } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
+import { doc, setDoc, getDoc, where } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
 
 // Function to generate unique school_id
 async function generateSchoolId(schoolName, district) {
