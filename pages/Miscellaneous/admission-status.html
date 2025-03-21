@@ -6,6 +6,11 @@
     <title>Application Status</title>
     <link rel="stylesheet" href="/style/admission-status-style.css">
     <link rel="icon" type="image/png" href="/assets/logo/portalnest-Variation-Logo.png">
+       <!-- Link the Loader CSS -->
+       <link rel="stylesheet" href="../../style/portalnest-loader.css">
+    
+     
+   
 </head>
 <body>
     <div class="container">
@@ -27,6 +32,7 @@
                 </div>
             </div>
         </section>
+       
         
         <section class="status">
             <h2>Current Status</h2>
@@ -53,5 +59,21 @@
     
     <script type="module" src="/firebase/admissions/fetch-status.js"></script>
     <script  type="module" src="/firebase/admissions/fetch_submitted-applicant.js" > </script>
+
+      <!-- Include the JavaScript Loader -->
+      <script src="../../functions/portalnest-loader.js" ></script>
+      <script>
+        // Ensure the loader is accessible
+        document.addEventListener('DOMContentLoaded', function () {
+            // Show loader on page load
+            PortalNestLoader.show();
+
+            // Simulate loading process
+            setTimeout(() => {
+                PortalNestLoader.hide();
+            }, 3000); // Hide after 3 seconds
+        });
+    </script>
+
 </body>
 </html>
