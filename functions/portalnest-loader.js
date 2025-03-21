@@ -15,7 +15,7 @@
         darkOverlayColor: 'rgba(0, 0, 0, 0.8)',
         textColor: '#333',
         darkTextColor: '#fff',
-        logoPath: '/assets/logo/portalnest-Variation-Logo.png' // Default logo path
+        logoPath: '/assets/logo/portalnest-logo-abstract.svg' // Default logo path
       };
 
         // Check if the loader HTML exists, if not, create it
