@@ -1,5 +1,4 @@
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f8f8f8;
@@ -235,14 +234,15 @@ input::placeholder {
 }
 
 .testimonials-container {
-    max-width: 1200px;
+    max-width: 1000px;
+  
     margin: 0 auto;
 }
 
 /* Header Styles */
 .testimonials-header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 .testimonials-header h2 {
@@ -272,13 +272,17 @@ input::placeholder {
 
 /* Testimonial Card Styles */
 .testimonial-card {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     text-align: center;
     max-width: 900px;
     margin: 0 auto;
-    position: relative;
+   
+}
+
+.testimonial-card.active {
+    display: flex;
 }
 
 /* Image Styles */
@@ -286,7 +290,7 @@ input::placeholder {
     position: relative;
     width: 200px;
     height: 200px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .image-background {
@@ -318,21 +322,15 @@ input::placeholder {
 
 /* Content Styles */
 .testimonial-content {
-    position: relative;
     padding: 20px 0;
     width: 100%;
 }
 
-.quote-mark {
-    display: none;
-}
 
 .testimonial-text {
     font-size: 16px;
     line-height: 1.6;
-    margin: 0 0 30px 0;
-    position: relative;
-    z-index: 1;
+    margin: 0 0 20px 0;
     font-weight: bolder;
 }
 
@@ -359,11 +357,13 @@ input::placeholder {
     border: none;
     color: white;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     transition: background-color 0.3s ease;
-    margin: 30px auto 0;
+}
+
+.on-press-button{
+    position: relative;
+    left: -100px;
+    bottom: 80px;
 }
 
 .next-button:hover {
