@@ -1,22 +1,54 @@
-"use strict";
 
 // Navigation and Section Content
 const buttons = document.querySelectorAll(".btn__navigate");
 const contents = document.querySelectorAll(".content__area");
 
 // Managers
-const overLay = document.querySelector(".overlay");
 const formDisplay = document.querySelector(".manager_form_container");
-const closeBtn = document.querySelector(".close_form");
+const closeBtn = document.getElementById("close_form");
 
-const createLecturerBtn = document.querySelector("#createlecturer");
-const createManagerBtn = document.querySelector("#createmanager");
-const createOfficerBtn = document.querySelector("#createofficer");
-const createExaminerBtn = document.querySelector("#createexaminer");
+const createLecturerBtn = document.getElementById("createlecturer");
+const createManagerBtn = document.getElementById("createmanager");
+const createOfficerBtn = document.getElementById("createofficer");
+const createExaminerBtn = document.getElementById("createexaminer");
 
 // Default selection
 const dashboardBtn = document.querySelector(".dashboardbtn");
 const dashboardContent = document.querySelector("#dashboard");
+
+// Managers logic
+function displayForm() {
+  formDisplay.style.display = "block";
+   setTimeout(() => {
+    formDisplay.style.width = "55%"; // Adjust width as needed
+    formDisplay.style.overflow = "visible"; // Enable scrolling once open
+    }, 10);
+}
+
+function closeForm() {
+  formDisplay.style.width = "0%";
+  setTimeout(() => {
+    formDisplay.style.display = "none";
+  }, 200);
+}
+
+createLecturerBtn.addEventListener("click", displayForm);
+
+createManagerBtn.addEventListener("click", displayForm);
+
+createOfficerBtn.addEventListener("click", displayForm);
+
+createExaminerBtn.addEventListener("click", displayForm);
+
+closeBtn.addEventListener("click", closeForm);
+
+// Manually closing the form with Escape key when the form is open
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    closeForm();
+  }
+});
+
 
 
 
@@ -41,33 +73,6 @@ menuBtn.addEventListener("click", () => {
   });
 });
 
-// Managers logic
-function displayForm() {
-  overLay.classList.add("hidden_remove");
-  formDisplay.classList.add("hidden_remove");
-}
-
-function closeForm() {
-  overLay.classList.remove("hidden_remove");
-  formDisplay.classList.remove("hidden_remove");
-}
-
-createLecturerBtn.addEventListener("click", displayForm);
-
-createManagerBtn.addEventListener("click", displayForm);
-
-createOfficerBtn.addEventListener("click", displayForm);
-
-createExaminerBtn.addEventListener("click", displayForm);
-
-closeBtn.addEventListener("click", closeForm);
-
-// Manually closing the form with Escape key when the form is open
-window.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    closeForm();
-  }
-});
 
 const managersForm = document.querySelector(".manager_form");
 const firstName = document.querySelector("#fristname");
