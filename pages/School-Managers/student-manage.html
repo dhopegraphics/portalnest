@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Student-Management Section</title>
-      <!-- Google Fonts Links -->
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student-Management Section</title>
+  <!-- Google Fonts Links -->
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="/assets/logo/portalnest-Variation-Logo.png">
@@ -16,214 +17,216 @@
   <!-- font aw -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 
-    <link rel="stylesheet" href="/style/schooladmin.css">
-    <link rel="stylesheet" href="/style/admin-dashboard/student-management-section.css">
-    <link rel="stylesheet" href="/style/admin-dashboard/admission-section.css">
-    <script defer src="../../functions/script-schooladmin.js"></script>
+  <link rel="stylesheet" href="/style/schooladmin.css">
+  <link rel="stylesheet" href="/style/admin-dashboard/student-management-section.css">
+  <link rel="stylesheet" href="/style/admin-dashboard/admission-section.css">
+  <script defer src="../../functions/script-schooladmin.js"></script>
 
-  </head>
-  <body>
-    <script src="/functions/admin-dashboard-sideandtopbar.js"></script>
-    <main style="margin-top: 2%; padding: 1%; " class="main overall__main">
+</head>
+
+<body>
+  <script src="/functions/admin-dashboard-sideandtopbar.js"></script>
+  <main style="margin-top: 2%; padding: 1%; " class="main overall__main">
     <div class="main__main-content">
 
-    <div class="content__area" id="student">
-      <section>
-        <div class="main__card-container">
-          <h1>Student Management</h1>
+      <div class="content__area" id="student">
+        <section>
+          <div class="main__card-container">
+            <h1>Student Management</h1>
 
-          <div class="card_scroll dashboard__scroll">
-            <div class="card__container" id="cardContainer">
-              <div class="card card_green">
-                <div class="card__header flex border_green">
-                  <span class="people_icon"><i class="bi bi-journal-text col_green"></i>
-                  </span>
-                  <div>
-                    <p class="col_green">1,234</p>
-                    <p>Active Students</p>
+            <div class="card_scroll dashboard__scroll">
+              <div class="card__container" id="cardContainer">
+                <div class="card card_green">
+                  <div class="card__header flex border_green">
+                    <span class="people_icon"><i class="bi bi-journal-text col_green"></i>
+                    </span>
+                    <div>
+                      <p class="col_green">1,234</p>
+                      <p>Active Students</p>
+                    </div>
+                  </div>
+
+                  <div class="card__footer flex col_green">
+                    <p>See Details</p>
+                    <button>
+                      <i class="bi bi-arrow-right col_green"></i>
+                    </button>
                   </div>
                 </div>
 
-                <div class="card__footer flex col_green">
-                  <p>See Details</p>
-                  <button>
-                    <i class="bi bi-arrow-right col_green"></i>
-                  </button>
-                </div>
-              </div>
+                <div class="card card_violet">
+                  <div class="card__header flex border_violet">
+                    <span>
+                      <i class="bi bi-person-check col_violet"></i>
+                    </span>
+                    <div>
+                      <p class="col_violet">45</p>
+                      <p>Pending Registration</p>
+                    </div>
+                  </div>
 
-              <div class="card card_violet">
-                <div class="card__header flex border_violet">
-                  <span>
-                    <i class="bi bi-person-check col_violet"></i>
-                  </span>
-                  <div>
-                    <p class="col_violet">45</p>
-                    <p>Pending Registration</p>
+                  <div class="card__footer flex col_violet">
+                    <p>See Details</p>
+                    <button>
+                      <i class="bi bi-arrow-right col_violet"></i>
+                    </button>
                   </div>
                 </div>
 
-                <div class="card__footer flex col_violet">
-                  <p>See Details</p>
-                  <button>
-                    <i class="bi bi-arrow-right col_violet"></i>
-                  </button>
-                </div>
-              </div>
+                <div class="card card_orange">
+                  <div class="card__header flex border_orange">
+                    <span>
+                      <i class="bi bi-person col_orange"></i>
+                    </span>
+                    <div>
+                      <p class="col_orange">500</p>
+                      <p>Gratuated Students</p>
+                    </div>
+                  </div>
 
-              <div class="card card_orange">
-                <div class="card__header flex border_orange">
-                  <span>
-                    <i class="bi bi-person col_orange"></i>
-                  </span>
-                  <div>
-                    <p class="col_orange">500</p>
-                    <p>Gratuated Students</p>
+                  <div class="card__footer flex col_orange">
+                    <p>See Details</p>
+                    <button>
+                      <i class="bi bi-arrow-right col_orange"></i>
+                    </button>
                   </div>
                 </div>
 
-                <div class="card__footer flex col_orange">
-                  <p>See Details</p>
-                  <button>
-                    <i class="bi bi-arrow-right col_orange"></i>
-                  </button>
-                </div>
-              </div>
-
-              <div class="card card_lightred">
-                <div class="card__header flex border_lightred">
-                  <!-- change the icon here -->
-                  <span>
-                    <i class="bi bi-person-x col_lightred"></i>
-                  </span>
-                  <div>
-                    <p class="col_lightred">15</p>
-                    <p>Withdrawn</p>
+                <div class="card card_lightred">
+                  <div class="card__header flex border_lightred">
+                    <!-- change the icon here -->
+                    <span>
+                      <i class="bi bi-person-x col_lightred"></i>
+                    </span>
+                    <div>
+                      <p class="col_lightred">15</p>
+                      <p>Withdrawn</p>
+                    </div>
                   </div>
-                </div>
 
-                <div class="card__footer flex col_lightred">
-                  <p>See Details</p>
-                  <button>
-                    <i class="bi bi-arrow-right col_lightred"></i>
-                  </button>
+                  <div class="card__footer flex col_lightred">
+                    <p>See Details</p>
+                    <button>
+                      <i class="bi bi-arrow-right col_lightred"></i>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div id="student_management" class="dashboard__section content student_management_section">
-          <div class="student_mang_header flex">
-            <button class="flex">
-              <span><i class="bi bi-person-plus"></i></span>
-              Add New Student
-            </button>
-          </div>
-
-          <div id="live__admission" class="live__activity-container admission_content_container student_management">
-            <div class="student__search flex">
-              <form action="#">
-                <input class="admission_search" type="text" placeholder="Search by Name, Email or ID..." />
-              </form>
-
-              <div class="student_sorted_con flex">
-                <div class="admission_select_con">
-                  <select name="" id="" class="select_remove_default sort_btn admission_sort student_sort_first">
-                    <option value="1">ALL STATUS</option>
-                    <option value="2">ADMITTED</option>
-                    <option value="3">PENDING REVIEW</option>
-                    <option value="4">REJECTED</option>
-                  </select>
-
-                  <span><i class="bi bi-chevron-down"></i></span>
-                </div>
-
-                <div class="admission_select_con">
-                  <select name="" id="" class="select_remove_default sort_btn admission_sort student_sort_last">
-                    <option value="1">All Departments</option>
-                    <option value="2">Computer Science</option>
-                    <option value="3">Social Sciences</option>
-                    <option value="4">Pharmacy</option>
-                    <option value="5">Biology</option>
-                    <option value="6">Business</option>
-                    <option value="7">Law</option>
-                  </select>
-
-                  <span><i class="bi bi-chevron-down"></i></span>
-                </div>
-              </div>
+          <div id="student_management" class="dashboard__section content student_management_section">
+            <div class="student_mang_header flex">
+              <button class="flex">
+                <span><i class="bi bi-person-plus"></i></span>
+                Add New Student
+              </button>
             </div>
 
-            <div class="admission_content">
-              <div class="admission_initials flex">
-                <p>Student</p>
-                <p>ID</p>
-                <p>Department</p>
-                <p>Status</p>
-                <p>Action</p>
+            <div id="live__admission" class="live__activity-container admission_content_container student_management">
+              <div class="student__search flex">
+                <form action="#">
+                  <input class="admission_search" type="text" placeholder="Search by Name, Email or ID..." />
+                </form>
+
+                <div class="student_sorted_con flex">
+                  <div class="admission_select_con">
+                    <select name="" id="" class="select_remove_default sort_btn admission_sort student_sort_first">
+                      <option value="1">ALL STATUS</option>
+                      <option value="2">ADMITTED</option>
+                      <option value="3">PENDING REVIEW</option>
+                      <option value="4">REJECTED</option>
+                    </select>
+
+                    <span><i class="bi bi-chevron-down"></i></span>
+                  </div>
+
+                  <div class="admission_select_con">
+                    <select name="" id="" class="select_remove_default sort_btn admission_sort student_sort_last">
+                      <option value="1">All Departments</option>
+                      <option value="2">Computer Science</option>
+                      <option value="3">Social Sciences</option>
+                      <option value="4">Pharmacy</option>
+                      <option value="5">Biology</option>
+                      <option value="6">Business</option>
+                      <option value="7">Law</option>
+                    </select>
+
+                    <span><i class="bi bi-chevron-down"></i></span>
+                  </div>
+                </div>
               </div>
 
-              <div class="contents__admission">
-                <div class="inner_contents__admission flex">
-                  <input type="checkbox" />
+              <div class="admission_content">
+                <div class="admission_initials flex">
+                  <p>Student</p>
+                  <p>ID</p>
+                  <p>Department</p>
+                  <p>Status</p>
+                  <p>Action</p>
+                </div>
 
-                  <div class="initial_content flex admisson_content_display">
-                    <div class="person_details flex admission_person">
-                      <div class="admission_person_img"></div>
+                <div class="contents__admission">
+                  <div class="inner_contents__admission flex">
+                    <input type="checkbox" />
 
-                      <div class="person_details_con">
-                        <p>John Sam Mensah</p>
-                        <p>example@gmail.com</p>
+                    <div class="initial_content flex admisson_content_display">
+                      <div class="person_details flex admission_person">
+                        <div class="admission_person_img"></div>
+
+                        <div class="person_details_con">
+                          <p>John Sam Mensah</p>
+                          <p>example@gmail.com</p>
+                        </div>
+                      </div>
+
+                      <div class="program_date">
+                        <p>20240220</p>
+                      </div>
+
+                      <div class="admission_title">
+                        <p>Computer Science</p>
+                      </div>
+
+                      <div class="student_pending">
+                        <p>Active</p>
+                      </div>
+
+                      <div class="flex admission_approval">
+                        <button>
+                          <span>
+                            <i class="bi bi-eye"></i>
+                          </span>
+                        </button>
+
+                        <!-- Check button -->
+                        <button class="flex">
+                          <i class="bi bi-check-lg"></i>
+                        </button>
+
+                        <!-- Close button -->
+                        <button class="flex">&times;</button>
                       </div>
                     </div>
-
-                    <div class="program_date">
-                      <p>20240220</p>
-                    </div>
-
-                    <div class="admission_title">
-                      <p>Computer Science</p>
-                    </div>
-
-                    <div class="student_pending">
-                      <p>Active</p>
-                    </div>
-
-                    <div class="flex admission_approval">
-                      <button>
-                        <span>
-                          <i class="bi bi-eye"></i>
-                        </span>
-                      </button>
-
-                      <!-- Check button -->
-                      <button class="flex">
-                        <i class="bi bi-check-lg"></i>
-                      </button>
-
-                      <!-- Close button -->
-                      <button class="flex">&times;</button>
-                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <!-- move this to the bottom -->
-            <div class="admisson_footer">
-              <p>
-                Showing <span class="admisson_num_check">1</span> To
-                <span class="addmission_on_check">10</span> of
-                <span class="admisson_total_check">97</span> Results
-              </p>
+              <!-- move this to the bottom -->
+              <div class="admisson_footer">
+                <p>
+                  Showing <span class="admisson_num_check">1</span> To
+                  <span class="addmission_on_check">10</span> of
+                  <span class="admisson_total_check">97</span> Results
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
     </div>
   </main>
 
-  </body>
+</body>
+
 </html>

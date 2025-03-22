@@ -67,3 +67,7 @@ function initializeSidebarLogic() {
 }
 
 document.addEventListener("DOMContentLoaded", loadSidebarAndHeader);
+
+
+
+

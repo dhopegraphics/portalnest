@@ -1,77 +1,8 @@
 
-// Navigation and Section Content
-const buttons = document.querySelectorAll(".btn__navigate");
-const contents = document.querySelectorAll(".content__area");
-
-// Managers
-const formDisplay = document.querySelector(".manager_form_container");
-const closeBtn = document.getElementById("close_form");
-
-const createLecturerBtn = document.getElementById("createlecturer");
-const createManagerBtn = document.getElementById("createmanager");
-const createOfficerBtn = document.getElementById("createofficer");
-const createExaminerBtn = document.getElementById("createexaminer");
-
-// Default selection
-const dashboardBtn = document.querySelector(".dashboardbtn");
-const dashboardContent = document.querySelector("#dashboard");
-
-// Managers logic
-function displayForm() {
-  formDisplay.style.display = "block";
-   setTimeout(() => {
-    formDisplay.style.width = "55%"; // Adjust width as needed
-    formDisplay.style.overflow = "visible"; // Enable scrolling once open
-    }, 10);
-}
-
-function closeForm() {
-  formDisplay.style.width = "0%";
-  setTimeout(() => {
-    formDisplay.style.display = "none";
-  }, 200);
-}
-
-createLecturerBtn.addEventListener("click", displayForm);
-
-createManagerBtn.addEventListener("click", displayForm);
-
-createOfficerBtn.addEventListener("click", displayForm);
-
-createExaminerBtn.addEventListener("click", displayForm);
-
-closeBtn.addEventListener("click", closeForm);
-
-// Manually closing the form with Escape key when the form is open
-window.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    closeForm();
-  }
-});
 
 
 
 
-// Header menu button function
-const menuBtn = document.querySelector(".btn__menu");
-const navigationSection = document.querySelector(".navigation");
-
-menuBtn.addEventListener("click", () => {
-  navigationSection.classList.toggle("close");
-  document.querySelectorAll(".pending__left-content").forEach((width) => {
-    width.classList.toggle("width");
-  });
-  document.querySelector(".see_all").classList.toggle("width");
-  document.querySelector(".card_mid_content").classList.toggle("margin");
-  document.querySelector(".first_ctext").classList.toggle("margin");
-  document.querySelector(".card_scroll").classList.toggle("scroll");
-  document.querySelector(".main__main-content").classList.toggle("width");
-  document.querySelector(".admission_scroll").classList.toggle("width");
-
-  document.querySelectorAll(".admission_scroll_card").forEach((width) => {
-    width.classList.toggle("width");
-  });
-});
 
 
 const managersForm = document.querySelector(".manager_form");
@@ -106,10 +37,6 @@ function getSelectedOption(options) {
   });
   return selected;
 }
-
-// getSelectedOption(yearOption);
-// getSelectedOption(courseOptions);
-// getSelectedOption(permissionOptions);
 
 // Function to collect form data
 function collectFormData() {
