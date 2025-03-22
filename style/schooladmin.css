@@ -225,6 +225,7 @@ a{
   width: 100%;
   height: auto;
   background-color: var(--col-white-bg);
+  padding-bottom: 45px;
 }
 
 .main__main-content {
