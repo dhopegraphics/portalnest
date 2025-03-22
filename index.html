@@ -8,11 +8,13 @@
   <link rel="stylesheet" href="/style/LandingPage.css">
   <link rel="stylesheet" href="/style/main.css" />
   <link rel="icon" type="image/png" href="/assets/logo/portalnest-Variation-Logo.png">
+
+
 </head>
 
 <body>
   <special-header> </special-header>
-  <div class="main-content">
+  <section class="main-content">
     <section class="why-choose-us">
       <h2>Why Choose Us?</h2>
 
@@ -43,46 +45,111 @@
 
       </div>
     </div>
-
-
-  </div>
   </section>
-  <!-- Testimonials -->
+ 
   <section class="testimonials">
-    <h2>Testimonials</h2>
-    <p>See what people are saying</p>
+    <div class="testimonials-container">
+        <!-- Header -->
+        <div class="testimonials-header">
+            <h2>Testimonials</h2>
+            <p>See What People Are Saying</p>
+        </div>
 
-    <div class="testimonial-container">
-      <div class="testimonial-card active">
-        <img src="assets/images/testimony1.jpeg" alt="testimonial1">
-        <p>“PortalNest has revolutionized the way our school operates. Students and teachers can now interact
-          seamlessly,
-          and our administration has never been more efficient.”</p>
-        <h4>Mr. Daniel K</h4>
-        <span>Administrator, Bright Future High School</span>
-      </div>
+        <!-- Testimonials Slider -->
+        <div class="testimonials-slider">
+            <!-- Single Testimonial -->
+            <div class="testimonial-card active">
+                <div class="testimonial-image-wrapper">
+                    <div class="image-background"></div>
+                    <div class="image-container">
+                        <img src="/assets/images/profilepic.png" alt="Mr. Daniel K" class="profile-image">
+                    </div>
+                </div>
 
-      <div class="testimonial-card">
-        <img src="assets/images/testimony2.jpeg" alt="testimonials2">
-        <p>"This platform has made student management so much easier!"</p>
-        <h4>Jane Doe</h4>
-        <span>Teacher, Elite Academy</span>
-      </div>
+                <div class="testimonial-content">
+                    <div class="quote-mark quote-left">"</div>
+                    <p class="testimonial-text">
+                        PortalNest has revolutionized the way our school operates. Students and teachers can now
+                        interact seamlessly, and our administration has never been more efficient.
+                    </p>
+                    <div class="quote-mark quote-right">"</div>
 
-      <div class="testimonial-card">
-        <img src="assets/images/testimony3.jpeg" alt="testimonials3">
-        <p>"I love how seamless the system is for checking grades."</p>
-        <h4>John Smith</h4>
-        <span>Student, University of Excellence</span>
-      </div>
+                    <div class="testimonial-author">
+                        <h3>Mr. Daniel K</h3>
+                        <p>Administrator, Bright Future High School</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-image-wrapper">
+                    <div class="image-background"></div>
+                    <div class="image-container">
+                        <img src="/assets/images/profilepic.png" alt="Mr. Daniel K" class="profile-image">
+                    </div>
+                </div>
+
+                <div class="testimonial-content">
+                    <div class="quote-mark quote-left">"</div>
+                    <p class="testimonial-text">
+                        This platform has made student management so much easier!
+                    </p>
+                    <div class="quote-mark quote-right">"</div>
+
+                    <div class="testimonial-author">
+                        <h3>Jane Doe</h3>
+                        <p>Teacher, Elite Academy</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="testimonial-card ">
+                <div class="testimonial-image-wrapper">
+                    <div class="image-background"></div>
+                    <div class="image-container">
+                        <img src="/assets/images/profilepic.png" alt="Mr. Daniel K" class="profile-image">
+                    </div>
+                </div>
+
+                <div class="testimonial-content">
+                    <div class="quote-mark quote-left">"</div>
+                    <p class="testimonial-text">
+                        I love how seamless the system is for checking grades
+                    </p>
+                    <div class="quote-mark quote-right">"</div>
+
+                    <div class="testimonial-author">
+                        <h3>John Smith</h3>
+                        <p>Student, University of Excellence</p>
+                    </div>
+
+
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="on-press-button">
+                <button id="next-button" class="next-button">
+                    <div>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"
+                                fill="currentColor" />
+                        </svg>
+                    </div>
+
+                </button>
+            </div>
+
+        </div>
     </div>
+</section>
 
-    <button id="nextButton" class="next-arrow"> →</button>
-  </section>
-  </div>
   <special-footer> </special-footer>
   <script src="/functions/headerFooter.js"></script>
-  <script src="/functions/landingpage.js"></script>
+  <script src="/functions/testimonial-slider.js"></script>
 </body>
 
 </html>

@@ -19,18 +19,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
   
   <!-- Css Link -->
-  <link rel="stylesheet" href="../../style/schooladmin.css" />
+  <link rel="stylesheet" href="/style/schooladmin.css" />
   <link rel="stylesheet" href="/style/admin-dashboard/admission-section.css">
   <link rel="stylesheet" href="/style/admin-dashboard/manager-section.css">
   <link rel="stylesheet" href="/style/admin-dashboard/dashboard-section.css">
 
   <!-- Javascript -->
-  <script defer src="../../functions/script-schooladmin.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script  src="/functions/dashboard-tab-functions.js" defer></script>
 
 </head>
-
-<body style="display: flex; height: 100vh; ">
+<body >
+  <script src="/functions/admin-dashboard-sideandtopbar.js"></script>
   <main  class="main overall__main">
     <div class="main__main-content">
       <div class="content__area dashboard__section_block" id="dashboard">
@@ -207,14 +206,12 @@
               </div>
             </div>
 
-            <div class="recent__pending_container">
+            <div  class="recent__pending_container">
               <div class="live__activity-header flex pending__heading">
                 <h1>Recent Pending Applicants</h1>
-
                 <button class="btn see_all">See All</button>
               </div>
-
-              <div class="dashboardnext__card-container grid grid--2-cols">
+              <div  class="dashboardnext__card-container grid grid--2-cols">
                 <!-- card 1 -->
                 <div class="pending__card grid">
                   <div class="pending__left-content grid">
@@ -257,7 +254,7 @@
       </div>
     </div>
   </main>
-  <script  src="/functions/school-dashboard_drawerRender.js"></script>
+  
 </body>
 
 </html>

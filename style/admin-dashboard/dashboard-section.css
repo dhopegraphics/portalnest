@@ -25,6 +25,7 @@
     padding: 2rem;
     border-radius: 20px;
     box-shadow: 0 0.8rem 1.4rem rgba(0, 0, 0, 0.2);
+
   }
   
   .live__activity-header h1 {
@@ -175,7 +176,8 @@
   
   /* Pending styling */
   .recent__pending_container {
-    height: 328px;
+    height: 300px;
+    
   }
   
   .pending__heading {
