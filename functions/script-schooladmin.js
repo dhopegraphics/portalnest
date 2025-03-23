@@ -18,22 +18,7 @@ const createExaminerBtn = document.querySelector("#createexaminer");
 const dashboardBtn = document.querySelector(".dashboardbtn");
 const dashboardContent = document.querySelector("#dashboard");
 
-dashboardBtn.classList.add("active");
-dashboardContent.classList.add("active");
 
-buttons.forEach((button) => {
-  button.addEventListener("click", () => {
-    buttons.forEach((btn) => btn.classList.remove("active"));
-
-    contents.forEach((content) => content.classList.remove("active"));
-
-    button.classList.add("active");
-
-    const targetData = button.getAttribute("data-target");
-
-    document.getElementById(targetData).classList.add("active");
-  });
-});
 
 // Header menu button function
 const menuBtn = document.querySelector(".btn__menu");

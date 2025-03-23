@@ -1,3 +1,5 @@
+
+
 .container {
   padding: 2% 5% 5% 5%;
   overflow-x: hidden;
@@ -70,6 +72,8 @@
 .img-container {
   flex: 1 0 23%;
   flex-shrink: 0;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 .img-container img {
@@ -110,6 +114,7 @@ input[type="radio"] {
   accent-color: black;
   width: 17px;
   height: 17px;
+  margin-left: 10px;
 }
 
 input[type="radio"]:checked {

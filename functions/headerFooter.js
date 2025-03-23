@@ -76,3 +76,10 @@ function attachMiddleBarListeners() {
       });
   });
 }
+
+function toggleMenu() {
+    document.querySelector(".full-header").classList.toggle("active");
+    document.querySelector(".hamburger-menu").classList.toggle("active");
+    document.body.classList.toggle("no-scroll"); // Prevents scrolling when menu is open
+}
+

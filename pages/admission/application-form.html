@@ -4,35 +4,425 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Application For Admission</title>
+    <link rel="stylesheet" href="/style/main.css">
+    <link rel="icon" type="image/png" href="/assets/logo/portalnest-Variation-Logo.png">
+    <link rel="stylesheet" href="/style/application-form-style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-    // Redirect if user is not logged in
-    if (!localStorage.getItem("userLoggedIn")) {
-        window.location.href = "/pages/auth/admission/sign-up-portalNest.html";
-    }
-
     // Restore saved form data
-    document.querySelectorAll("input, textarea").forEach(input => {
-        if (localStorage.getItem(input.name)) {
-            input.value = localStorage.getItem(input.name);
-        }
+    // document.querySelectorAll("input, textarea").forEach(input => {
+    //     if (localStorage.getItem(input.name)) {
+    //         input.value = localStorage.getItem(input.name);
+    //     }
 
-        // Save on change
-        input.addEventListener("input", () => {
-            localStorage.setItem(input.name, input.value);
-        });
-    });
-});
-
-document.getElementById("logout-btn").addEventListener("click", function () {
-    localStorage.removeItem("userLoggedIn");
-    localStorage.removeItem("loggedInUserEmail");
-    localStorage.clear(); // Also clears saved form data
-    window.location.href = "/pages/auth/admission/sign-up-portalNest.html";
-});
+    //     // Save on change
+    //     input.addEventListener("input", () => {
+    //         localStorage.setItem(input.name, input.value);
+    //     });
+    // });
     </script>
 </head>
 <body>
+    <div class="overall">
+        <section class="top-section">
+            <div class="header">
+                <h1 class="heading">Admission Application</h1>
+                <p>Please complete all sections to submit your application</p>
+            </div>
+
+            <div class="nav-indicator">
+                <div class="form-progress">
+                    <div class="form-number">1</div>
+                    <div class="description">Personal Info</div>
+                </div>
+
+                <div class="form-progress">
+                    <div class="form-number">2</div>
+                    <div class="description">Education</div>
+                </div>
+
+                <div class="form-progress">
+                    <div class="form-number">3</div>
+                    <div class="description">Program</div>
+                </div>
+
+                <div class="form-progress">
+                    <div class="form-number">4</div>
+                    <div class="description">Documents</div>
+                </div>
+
+                <div class="form-progress">
+                    <div class="form-number">5</div>
+                    <div class="description">Guardian</div>
+                </div>
+
+                <div class="form-progress">
+                    <div class="form-number">6</div>
+                    <div class="description">Submit</div>
+                </div>
+            </div>
+        </section>
+        
+        <form id="personalInfoForm" class="row g-3 form-section">
+            <div class="form-title-desc">
+                <h1>Personal Information</h1>
+                <p>Please provide your personal details accurately</p>
+            </div>
+
+            <div class="col-md-6">
+              <label for="inputFirstName" class="form-label">First Name</label>
+              <input type="text" class="form-control" id="inputFirstName" required>
+            </div>
+            <div class="col-md-6">
+              <label for="inputLastName" class="form-label">Last Name</label>
+              <input type="text" class="form-control" id="inputLastName" required>
+            </div>
+            <div class="col-md-7">
+                <label for="inputDateOfBirth" class="form-label">Date of Birth</label>
+                <input type="date" class="form-control" id="inputDateOfBirth" required>
+            </div>
+            <div class="col-md-5">
+              <label for="inputGender" class="form-label">Gender</label>
+              <select id="inputGender" class="form-select" required>
+                <option selected>Choose...</option>
+                <option>Male</option>
+                <option>Female</option>
+              </select>
+            </div>
+            <div class="col-sm">
+                <label for="inputEmailAddress" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="inputEmailAddress" placeholder="example132@gmail.com" required>
+            </div>
+            <div class="col-md-7">
+                <label for="inputPhoneNumber" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="inputPhoneNumber" required>
+            </div>
+            <div class="address-container">
+                <label for="inputAddress">Address</label>
+                <textarea  class="form-control" id="inputAddress" style="height: 100px" required></textarea>
+            </div>
+
+            <div class="buttons">
+                <button type="button" class="save-draft-btn" onclick="saveData()">Save draft</button>
+                <button type="button" class="previous-button" disabled>Previous</button>
+                <button type="button" class="next-button">Next Step</button>
+            </div>
+        </form>
+
+        <!--Education Form-->
+        <form id="educationForm" class="row g-3 form-section" style="display: none;">
+            <div class="form-title-desc">
+                <h1>Educational Background</h1>
+                <p>Please provide details about your academic history</p>
+            </div>
+            
+            <div class="col-md-6">
+                <label for="inputHighSchoolName" class="form-label">High School Name</label>
+                <input type="text" class="form-control" id="inputHighSchoolName" required>
+            </div>
+
+            <div class="col-md-6">
+                <label for="inputGraduationYear" class="form-label">Graduation Year</label>
+                <input type="number" min="1980" max="2024" class="form-control" id="inputGraduationYear" required>
+            </div>
+
+            <div class="col-md-6">
+                <label for="inputGPA" class="form-label">GPA</label>
+                <input type="number" min="0" max="5" class="form-control" id="inputGPA" required>
+            </div>
+
+            <div class="col-md-6">
+                <label for="inputSchoolDistrict" class="form-label">School District</label>
+                <input type="text" class="form-control" id="inputSchoolDistrict" required>
+            </div>
+
+            <div class="col-md-12">
+                <label for="inputAcademicAchievement">Academic Achievements</label>
+                <textarea  class="form-control" id="inputAcademicAchievement" style="height: 100px" placeholder="List any honors, awards, or significant academic achievements">
+                </textarea>
+            </div>
+
+            <div class="col-md-12">
+                <label for="inputExtraActivites">Extracurricular Activities</label>
+                <textarea  class="form-control" id="inputExtraActivites" style="height: 100px" placeholder="List any clubs, sports, or other activities you participated in">
+                </textarea>
+            </div>
+            
+
+            <div class="buttons">
+                <button class="save-draft-btn" onclick="saveData()">Save draft</button>
+                <button type="button" class="previous-button" disabled>Previous</button>
+                <button type="button" class="next-button">Next Step</button>
+
+            </div>
+        </form>
+
+        <!--Program Form-->
+        <form id="educationForm" class="row g-3 form-section" style="display: none;">
+            <div class="form-title-desc">
+                <h1>Program</h1>
+                <p>Please select your preferred program and study options</p>
+            </div>
+
+            <div class="col-md-12">
+                <label for="inputProgram" class="form-label">Select Program</label>
+                <select id="inputProgram" class="form-select" required>
+                  <option selected>Select Program</option>
+                  <option>Bsc. Computer Science</option>
+                  <option>Bsc. Human Biology</option>
+                </select>
+            </div>
+
+            <div class="col-md-5">
+                <label for="inputFaculty" class="form-label">Faculty</label>
+                <input type="text" class="form-control" id="inputFaculty" required>
+            </div>
+
+            <div class="col-md-7">
+                <label for="inputDepartment" class="form-label">Department</label>
+                <input type="text" class="form-control" id="inputDepartment" required>
+            </div>
+
+            <div class="col-md-12">
+                <label for="inputCourse" class="form-label">Preferred Course of Study</label>
+                <select id="inputCourse" class="form-select" required>
+                  <option selected>Select Course</option>
+                  <option>Bsc. Computer Science</option>
+                  <option>Bsc. Human Biology</option>
+                </select>
+            </div>
+
+            <div class="col-md-12">
+                <label for="inputStudyMode" class="form-label">Study Mode</label>
+                <select id="inputStudyMode" class="form-select" required>
+                  <option selected>Select Study Mode</option>
+                  <option>Study mode 1</option>
+                  <option>Study mode 2</option>
+                </select>
+            </div>
+            
+            <div class="buttons">
+                <button type="button" class="save-draft-btn" onclick="saveData()">Save draft</button>
+                <button type="button" class="previous-button" disabled>Previous</button>
+                <button type="button" class="next-button">Next Step</button>
+
+            </div>
+        </form>
+
+        <!--Documents Form-->
+        <form id="educationForm" class="row g-3 form-section" style="display: none;">
+            <div class="form-title-desc">
+                <h1>Required Documents</h1>
+                <p>Please upload all required documents in the specified format (PDF, JPG, or PNG)</p>
+            </div>
+
+            <div class="col-md-12">
+                <label for="inputPassport" class="form-label">Passport Photo (JPG, PNG)</label>
+                <div class="file-upload-container" data-accept="image/jpeg,image/png">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1829/1829586.png" alt="Upload Icon">
+                    <span>Upload a file or drag and drop</span>
+                    <p class="file-name"></p>
+                </div>
+                <input id="inputPassport" type="file" accept="image/jpeg, image/png">
+            </div>
+        
+            <div class="col-md-12">
+                <label for="inputTranscript" class="form-label">Academic Transcripts (PDF)</label>
+                <div class="file-upload-container" data-accept="application/pdf">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1829/1829586.png" alt="Upload Icon">
+                    <span>Upload a file or drag and drop</span>
+                    <p class="file-name"></p>
+                </div>
+                <input id="inputTranscript" type="file" accept="application/pdf">
+            </div>
+        
+            <div class="col-md-12">
+                <label for="inputCertificates" class="form-label">Certificates (PDF)</label>
+                <div class="file-upload-container" data-accept="application/pdf">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1829/1829586.png" alt="Upload Icon">
+                    <span>Upload a file or drag and drop</span>
+                    <p class="file-name"></p>
+                </div>
+                <input id="inputCertificates" type="file" accept="application/pdf">
+            </div>
+        
+            <div class="col-md-12">
+                <label for="inputPassport" class="form-label">National ID/Passport (PDF)</label>
+                <div class="file-upload-container" data-accept="application/pdf">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1829/1829586.png" alt="Upload Icon">
+                    <span>Upload a file or drag and drop</span>
+                    <p class="file-name"></p>
+                </div>
+                <input id="inputPassport" type="file" accept="application/pdf">
+            </div>
+        
+            <div class="buttons">
+                <button type="button" class="save-draft-btn" onclick="saveData()">Save draft</button>
+                <button type="button" class="previous-button" disabled>Previous</button>
+                <button type="button" class="next-button">Next Step</button>
+            </div>
+        </form>
+
+        <!--Guardian Form-->
+        <form id="educationForm" class="row g-3 form-section" style="display: none;">
+            <div class="form-title-desc">
+                <h1>Guardian Details</h1>
+                <p>Fill in the information about your guardian below</p>
+            </div>
+
+            <div class="col-md-12">
+                <label for="inputGuardianName" class="form-label">Guardian's Full Name</label>
+                <input type="text" class="form-control" id="inputGuardianName" placeholder="Enter guardian's name here" required>
+            </div>
+
+            <div class="col-md-12">
+                <label for="inputGuardianNumber" class="form-label">Contact Number</label>
+                <input type="tel" class="form-control" id="inputGuardianNumber" placeholder="0000111122" required>
+            </div>
+
+            <div class="col-md-12">
+                <label for="inputGuardianRel" class="form-label">Relationship to Applicant</label>
+                <select id="inputGuardianRel" class="form-select" required>
+                  <option selected>Select Relationship</option>
+                  <option>Father</option>
+                  <option>Mother</option>
+                  <option>Uncle</option>
+                  <option>Aunty</option>
+                  <option>Other</option>
+                </select>
+            </div>
+            
+            <div class="buttons">
+                <button class="save-draft-btn" onclick="saveData()">Save draft</button>
+                <button type="button" class="previous-button" disabled>Previous</button>
+                <button type="button" class="next-button">Next Step</button>
+
+            </div>
+        </form>
+
+        <!--Submit Form-->
+        <form id="submitForm" class="row g-3 form-section" style="display: none;">
+            <div class="form-title-desc">
+                <h1>Terms & Conditions</h1>
+                <p>Please read and accept the terms and conditions below</p>
+            </div>
+            
+            <div class="paragraph-container">
+
+                <p>
+                    By submitting this application, I hereby declare that all information provided
+                    is true and accurate to the best of my knowledge. I understand that any false statements
+                    or omissions may result in the rejection of my application or subsequent termination of
+                    enrollment
+                    
+                </p>
+                <p style="margin-top: 15px;">
+                    I agree to comply with all the rules, regulations, and policies of the institution. I authorize
+                    the institution to verify any information provided in this application
+                </p>
+            </div>
+
+            <div class="check-button">
+                <input type="checkbox" id="checkButton">
+                <label for="checkButton" style="margin-left: 20px;">I agree to the terms and conditions</label>
+            </div>
+
+            <h1>Application Preview</h1>
+            <div class="preview-container">
+                <div class="row">
+                    <div class="col-md-12 d-flex justify-content-between">
+                        <label class="fw-500">Full Name</label>
+                        <span id="previewFullName"></span>
+                    </div>
+                    <hr>
+                    <div class="col-md-12 d-flex justify-content-between">
+                        <label class="fw-500">Email</label>
+                        <span id="previewEmail"></span>
+                    </div>
+                    <hr>
+                    <div class="col-md-12 d-flex justify-content-between">
+                        <label class="fw-500">Program</label>
+                        <span id="previewProgram"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="buttons">
+                <button type="button" class="previous-button">Previous</button>
+                <button type="submit" id="submit" class="next-button">Submit Application</button>
+            </div>
+            
+
+        </form>
+        
+    </div>
+   
+    <script type="module" src="/functions/application-form.js" ></script>
     
+    <script>
+        document.querySelectorAll(".file-upload-container").forEach(dropArea => {
+            const fileInput = dropArea.nextElementSibling;
+            const fileNameDisplay = dropArea.querySelector(".file-name");
+            const uploadText = dropArea.querySelector("span");
+            const uploadIcon = dropArea.querySelector("img");
+    
+            // Click to select file
+            dropArea.addEventListener("click", () => fileInput.click());
+    
+            // Handle file selection
+            fileInput.addEventListener("change", (event) => {
+                if (event.target.files.length > 0) {
+                    handleFile(event.target.files[0], dropArea, uploadIcon, fileNameDisplay, uploadText);
+                }
+            });
+    
+            // Drag & Drop Events
+            dropArea.addEventListener("dragover", (event) => {
+                event.preventDefault();
+                dropArea.classList.add("drag-over");
+            });
+    
+            dropArea.addEventListener("dragleave", () => {
+                dropArea.classList.remove("drag-over");
+            });
+    
+            dropArea.addEventListener("drop", (event) => {
+                event.preventDefault();
+                dropArea.classList.remove("drag-over");
+    
+                const file = event.dataTransfer.files[0];
+                if (file) {
+                    handleFile(file, dropArea, uploadIcon, fileNameDisplay, uploadText);
+                    
+                    // Assign dropped file to input field so it can be submitted
+                    const dataTransfer = new DataTransfer();
+                    dataTransfer.items.add(file);
+                    fileInput.files = dataTransfer.files;
+                }
+            });
+    
+            // Function to handle file
+            function handleFile(file, dropArea, uploadIcon, fileNameDisplay, uploadText) {
+                const acceptedTypes = dropArea.getAttribute("data-accept").split(",");
+                
+                if (file && acceptedTypes.includes(file.type)) {
+                    dropArea.classList.add("uploaded");
+                    fileNameDisplay.textContent = file.name;
+                    fileNameDisplay.style.display = "block";
+                    uploadText.style.display = "none";
+    
+                    // Change icon for images
+                    if (file.type.startsWith("image/")) {
+                        const imageURL = URL.createObjectURL(file);
+                        uploadIcon.src = imageURL;
+                    } else {
+                        uploadIcon.src = "https://cdn-icons-png.flaticon.com/512/2991/2991108.png"; // PDF icon
+                    }
+                } else {
+                    fileNameDisplay.textContent = "Invalid file type. Please upload the correct format.";
+                }
+            }
+        });
+    </script>
 </body>
 </html>

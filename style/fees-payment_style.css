@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,500;1,600&display=swap");
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #fff;
+}
+
+
+.main-content {
+    margin-left: 150px; /* Push content right of the drawer */
+    width: calc(100% - 250px);
+    height: 100vh;
+    overflow-y: auto; /* Only content scrolls */
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.payment-header {
+    margin-bottom: 30px;
+}
+
+.payment-header h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.payment-header p {
+    font-size: 14px;
+    color: #666;
+}
+
+.fees-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.fee-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 24px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.fee-card:hover {
+    transform: translateY(-2px);
+}
+
+.fee-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a73e8;
+    margin-bottom: 16px;
+}
+
+.fee-description {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555;
+}

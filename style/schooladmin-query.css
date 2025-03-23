@@ -17,8 +17,19 @@
     transition: width 0.5s ease;
   }
 
+<<<<<<< HEAD
   .border_bottom {
     margin-top: 20rem;
+=======
+  /* remove this */
+  .main__header {
+   
+    color: #6827e2;
+  }
+
+  .admission_scroll {
+    width: 820px;
+>>>>>>> 69c711769a01cf50dbf1fce7f74f41379779868c
   }
 
   .admission_scroll_card {
@@ -41,6 +52,7 @@
     margin-bottom: 2.5rem;
   }
 
+<<<<<<< HEAD
   .activity__card {
     height: 321px;
   }
@@ -122,5 +134,34 @@
   /* Grading */
   #performanceChart {
     margin-top: 0rem;
+=======
+  .card__container {
+    /* display: grid; */
+    /* grid-template-columns: repeat(3, 1fr); */
+  }
+}
+
+@media (max-width: 75em) {
+  .main__header {
+    background-color: rgb(35, 120, 32);
+  }
+}
+
+@media (max-width: 59em) {
+  .main__header {
+   
+  }
+}
+
+@media (max-width: 44em) {
+  .main__header {
+  
+  }
+}
+
+@media (max-width: 34em) {
+  .main__header {
+   
+>>>>>>> 69c711769a01cf50dbf1fce7f74f41379779868c
   }
 }

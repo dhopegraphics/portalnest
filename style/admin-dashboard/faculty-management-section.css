@@ -1,0 +1,11 @@
+
+/************ Faculty Management *********/
+.faculty_initials {
+    margin: 0rem 8rem 1rem 9rem;
+  }
+  
+  .faculty_icon button span {
+    transform: rotate(270deg);
+  }
+  
+  

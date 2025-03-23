@@ -1,169 +1,391 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>School Search</title>
-    <link rel="stylesheet" href="/style/school-search.css" />
-  </head>
-  <body>
-    <!-- Header Section -->
-    <header>
-      <div class="search-container">
-        <select id="schoolType">
-          <option value="">School Type</option>
-          <option value="day">Day School</option>
-          <option value="boarding">Boarding School</option>
-        </select>
-        <input
-          type="text"
-          id="location"
-          placeholder="Gurugram, Haryana, India"
-        />
-        <button id="searchBtn">Search</button>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PortalNest - School Search</title>
+  <link rel="stylesheet" href="/style/school-search.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header with search bar and theme toggle -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <img style="width: 200px;" src="/assets/logo/portalnest logo.png" alt="portalnest">
+          </div>
+          <div class="search-container">
+            <form id="search-form">
+              <div class="search-input-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="search" id="search-input" placeholder="Search schools by name or location...">
+              </div>
+            </form>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+              <i class="fas fa-sun"></i>
+              <i class="fas fa-moon"></i>
+            </button>
+          </div>
+        </div>
       </div>
     </header>
 
-    <div class="main-container">
-      <!-- Sidebar Filters -->
-      <aside class="filters">
-        <div class="filter-section">
-          <h3>Classification</h3>
-          <label
-            ><input type="checkbox" name="classification" value="coed" />
-            Co-Ed</label
-          >
-          <label
-            ><input type="checkbox" name="classification" value="girls" /> Girls
-            Only</label
-          >
-          <label
-            ><input type="checkbox" name="classification" value="boys" /> Boys
-            Only</label
-          >
-        </div>
-
-        <div class="filter-section">
-          <h3>Board</h3>
-          <label
-            ><input type="checkbox" name="board" value="cbse" /> CBSE</label
-          >
-          <label
-            ><input type="checkbox" name="board" value="icse" /> ICSE/ISC</label
-          >
-          <label><input type="checkbox" name="board" value="ib" /> IB</label>
-          <label
-            ><input type="checkbox" name="board" value="igcse" /> IGCSE</label
-          >
-        </div>
-
-        <div class="filter-section">
-          <h3>Fees (Annual)</h3>
-          <label
-            ><input type="checkbox" name="fees" value="0-3" /> Below 3L</label
-          >
-          <label
-            ><input type="checkbox" name="fees" value="3-5" /> 3L - 5L</label
-          >
-          <label
-            ><input type="checkbox" name="fees" value="5-7" /> 5L - 7L</label
-          >
-          <label
-            ><input type="checkbox" name="fees" value="7-10" /> 7L - 10L</label
-          >
-        </div>
-
-        <div class="filter-section">
-          <h3>Distance</h3>
-          <input type="range" id="distance" min="1" max="10" value="5" />
-          <div class="range-labels">
-            <span>1 km</span>
-            <span>10 km</span>
-          </div>
-        </div>
-
-        <div class="filter-section">
-          <h3>Facilities</h3>
-          <label
-            ><input type="checkbox" name="facilities" value="ac" /> AC
-            Classrooms</label
-          >
-          <label
-            ><input type="checkbox" name="facilities" value="pool" /> Swimming
-            Pool</label
-          >
-          <label
-            ><input type="checkbox" name="facilities" value="dayboarding" /> Day
-            Boarding</label
-          >
-        </div>
-      </aside>
-
-      <!-- Main Content -->
-      <main class="content">
-        <h2>25 Best Schools Found In Gurugram</h2>
-
-        <div class="school-cards">
-          <!-- School Card 1 -->
-          <div class="school-card">
-            <div class="school-image">
-              <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/school%20search-7dXbM9b775nbNDtHW74yQEdhp9tmnJ.png"
-                alt="Heritage School"
-              />
-            </div>
-            <div class="school-info">
-              <div class="school-header">
-                <h3>Heritage Xperiential Learning School</h3>
-                <div class="rating">
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">☆</span>
-                </div>
-              </div>
-              <p class="address">DLF City Phase-1, Block-C, Palam Road</p>
-
-              <div class="school-details">
-                <div class="detail">
-                  <span class="label">School Type:</span>
-                  <span>Day School</span>
-                </div>
-                <div class="detail">
-                  <span class="label">Board:</span>
-                  <span>IB, ICSE & ISC, IGCSE</span>
-                </div>
-                <div class="detail">
-                  <span class="label">Type:</span>
-                  <span>Co-Ed</span>
-                </div>
-                <div class="detail">
-                  <span class="label">Class:</span>
-                  <span>Class 12th</span>
-                </div>
-              </div>
-
-              <div class="school-actions">
-                <button class="call-btn">📞 Call</button>
-                <button class="view-btn">View School</button>
-              </div>
-
-              <div class="expert-comment">
-                <p>
-                  <strong>Expert Comment:</strong> Heritage School provides
-                  excellent education with modern facilities and experienced
-                  faculty...
-                </p>
-              </div>
-            </div>
+    <!-- Main content area -->
+    <main class="main-content">
+      <div class="container">
+        <div class="content-wrapper">
+          <!-- Mobile filter button -->
+          <div class="mobile-filter-button">
+            <button id="mobile-filter-btn">
+              <i class="fas fa-filter"></i> Filters
+            </button>
           </div>
 
-          <!-- Additional school cards can be added here -->
+          <!-- Filters sidebar -->
+          <aside class="filters-sidebar" id="filters-sidebar">
+            <div class="filters-header">
+              <h3>Filters</h3>
+              <button id="reset-filters" class="reset-button">
+                <i class="fas fa-times"></i> Reset
+              </button>
+            </div>
+
+            <div class="filters-content">
+              <!-- School Type Filter -->
+              <div class="filter-group">
+                <div class="filter-group-header" data-toggle="school-type">
+                  <h4>School Type</h4>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="filter-group-content" id="school-type">
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="type-university" name="school-type" value="University">
+                    <label for="type-university">University</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="type-college" name="school-type" value="College">
+                    <label for="type-college">College</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="type-shs" name="school-type" value="Senior High School">
+                    <label for="type-shs">Senior High School</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="type-jhs" name="school-type" value="Junior High School">
+                    <label for="type-jhs">Junior High School</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Location Filter -->
+              <div class="filter-group">
+                <div class="filter-group-header" data-toggle="location">
+                  <h4>Location</h4>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="filter-group-content" id="location">
+                  <div class="select-item">
+                    <label for="country">Country</label>
+                    <select id="country" name="country">
+                      <option value="">All Countries</option>
+                      <option value="Philippines">Philippines</option>
+                      <option value="United States">United States</option>
+                      <option value="Canada">Canada</option>
+                    </select>
+                  </div>
+                  <div class="select-item">
+                    <label for="region">Region</label>
+                    <select id="region" name="region">
+                      <option value="">All Regions</option>
+                      <option value="NCR">NCR</option>
+                      <option value="Calabarzon">Calabarzon</option>
+                      <option value="Central Luzon">Central Luzon</option>
+                    </select>
+                  </div>
+                  <div class="select-item">
+                    <label for="city">City</label>
+                    <select id="city" name="city">
+                      <option value="">All Cities</option>
+                      <option value="Manila">Manila</option>
+                      <option value="Quezon City">Quezon City</option>
+                      <option value="Makati">Makati</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Programs Filter -->
+              <div class="filter-group">
+                <div class="filter-group-header" data-toggle="programs">
+                  <h4>Programs Offered</h4>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="filter-group-content" id="programs">
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="program-science" name="programs" value="Science">
+                    <label for="program-science">Science</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="program-business" name="programs" value="Business">
+                    <label for="program-business">Business</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="program-arts" name="programs" value="Arts">
+                    <label for="program-arts">Arts</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="program-engineering" name="programs" value="Engineering">
+                    <label for="program-engineering">Engineering</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="program-it" name="programs" value="IT">
+                    <label for="program-it">IT</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="program-medicine" name="programs" value="Medicine">
+                    <label for="program-medicine">Medicine</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Admission Status Filter -->
+              <div class="filter-group">
+                <div class="filter-group-header" data-toggle="admission">
+                  <h4>Admission Status</h4>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="filter-group-content" id="admission">
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="status-open" name="admission-status" value="Open">
+                    <label for="status-open">Open</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="status-closed" name="admission-status" value="Closed">
+                    <label for="status-closed">Closed</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="status-upcoming" name="admission-status" value="Upcoming">
+                    <label for="status-upcoming">Upcoming</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tuition Fees Range Filter -->
+              <div class="filter-group">
+                <div class="filter-group-header" data-toggle="tuition">
+                  <h4>Tuition Fees Range</h4>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="filter-group-content" id="tuition">
+                  <div class="radio-item">
+                    <input type="radio" id="tuition-all" name="tuition-range" value="" checked>
+                    <label for="tuition-all">All Ranges</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="tuition-low" name="tuition-range" value="Low">
+                    <label for="tuition-low">Low</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="tuition-medium" name="tuition-range" value="Medium">
+                    <label for="tuition-medium">Medium</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="tuition-high" name="tuition-range" value="High">
+                    <label for="tuition-high">High</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Accreditation Status Filter -->
+              <div class="filter-group">
+                <div class="filter-group-header" data-toggle="accreditation">
+                  <h4>Accreditation Status</h4>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="filter-group-content" id="accreditation">
+                  <div class="radio-item">
+                    <input type="radio" id="accreditation-all" name="accreditation" value="" checked>
+                    <label for="accreditation-all">All</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="accreditation-yes" name="accreditation" value="Accredited">
+                    <label for="accreditation-yes">Accredited</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="accreditation-no" name="accreditation" value="Non-Accredited">
+                    <label for="accreditation-no">Non-Accredited</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Facilities Filter -->
+              <div class="filter-group">
+                <div class="filter-group-header" data-toggle="facilities">
+                  <h4>Facilities Available</h4>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="filter-group-content" id="facilities">
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="facility-library" name="facilities" value="Library">
+                    <label for="facility-library">Library</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="facility-labs" name="facilities" value="Labs">
+                    <label for="facility-labs">Labs</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="facility-hostels" name="facilities" value="Hostels">
+                    <label for="facility-hostels">Hostels</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="facility-sports" name="facilities" value="Sports Complex">
+                    <label for="facility-sports">Sports Complex</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="facility-scholarships" name="facilities" value="Scholarships">
+                    <label for="facility-scholarships">Scholarships</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          <!-- School results section -->
+          <section class="results-section">
+            <div class="results-header">
+              <h2 id="results-count">0 Schools Found</h2>
+            </div>
+            <div class="results-grid" id="results-grid">
+              <!-- School cards will be dynamically inserted here -->
+            </div>
+            <div class="no-results" id="no-results">
+              <div class="no-results-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+              </div>
+              <h3>No schools found</h3>
+              <p>Try adjusting your search or filter criteria</p>
+            </div>
+          </section>
         </div>
-      </main>
+      </div>
+    </main>
+
+    <!-- School detail modal -->
+    <div class="modal" id="school-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="modal-title">School Name</h2>
+          <button class="close-modal" id="close-modal">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="school-image">
+            <img id="modal-image" src="placeholder.jpg" alt="School Image">
+          </div>
+          
+          <div class="school-badges" id="modal-badges">
+            <!-- Badges will be inserted here -->
+          </div>
+
+          <div class="school-tabs">
+            <div class="tabs-header">
+              <button class="tab-button active" data-tab="overview">Overview</button>
+              <button class="tab-button" data-tab="programs">Programs</button>
+              <button class="tab-button" data-tab="reviews">Reviews</button>
+            </div>
+            
+            <div class="tabs-content">
+              <!-- Overview Tab -->
+              <div class="tab-content active" id="overview-tab">
+                <div class="tab-section">
+                  <h3>About</h3>
+                  <p id="modal-description"></p>
+                </div>
+                
+                <div class="tab-section">
+                  <h3>Contact Information</h3>
+                  <div class="contact-grid" id="modal-contact">
+                    <!-- Contact info will be inserted here -->
+                  </div>
+                </div>
+                
+                <div class="tab-section">
+                  <h3>Tuition & Fees</h3>
+                  <div class="tuition-info" id="modal-tuition">
+                    <!-- Tuition info will be inserted here -->
+                  </div>
+                </div>
+                
+                <div class="tab-section">
+                  <h3>Facilities</h3>
+                  <div class="facilities-grid" id="modal-facilities">
+                    <!-- Facilities will be inserted here -->
+                  </div>
+                </div>
+                
+                <div class="tab-section">
+                  <h3>Admission Process</h3>
+                  <div id="modal-admission">
+                    <!-- Admission info will be inserted here -->
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Programs Tab -->
+              <div class="tab-content" id="programs-tab">
+                <h3>Available Programs</h3>
+                <div class="programs-grid" id="modal-programs">
+                  <!-- Programs will be inserted here -->
+                </div>
+              </div>
+              
+              <!-- Reviews Tab -->
+              <div class="tab-content" id="reviews-tab">
+                <div class="reviews-header">
+                  <h3>Student Reviews</h3>
+                  <div class="rating-display" id="modal-rating">
+                    <!-- Rating will be inserted here -->
+                  </div>
+                </div>
+                
+                <div class="write-review">
+                  <h4>Write a Review</h4>
+                  <div class="rating-input">
+                    <div class="stars" id="rating-stars">
+                      <i class="far fa-star" data-rating="1"></i>
+                      <i class="far fa-star" data-rating="2"></i>
+                      <i class="far fa-star" data-rating="3"></i>
+                      <i class="far fa-star" data-rating="4"></i>
+                      <i class="far fa-star" data-rating="5"></i>
+                    </div>
+                  </div>
+                  <textarea id="review-text" placeholder="Share your experience with this school..."></textarea>
+                  <button id="submit-review" class="submit-review" disabled>
+                    <i class="fas fa-paper-plane"></i> Submit Review
+                  </button>
+                </div>
+                
+                <div class="reviews-list" id="reviews-list">
+                  <!-- Reviews will be inserted here -->
+                </div>
+                
+                <div class="no-reviews" id="no-reviews">
+                  <p>No reviews yet. Be the first to review!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <script src="/functions/school-search-function.js"></script>
-  </body>
+    <!-- Mobile filter overlay -->
+    <div class="filter-overlay" id="filter-overlay"></div>
+  </div>
+
+  <script src="/functions/school-search-function.js"></script>
+</body>
 </html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PortalNest Help Desk</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style/help-desk/help-desk.css">
+    <link rel="stylesheet" href="/style/help-desk/modal-ticket.css">
+    <link rel="icon" type="image/png" href="/assets/logo/portalnest-Variation-Logo.png">
+</head>
+<body>
+    <div class="app-container">
+    
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo-container">
+                <img src="/assets/logo/portalnest-Variation-Logo.png" alt="PortalNest Logo" class="logo">
+                <h1>PortalNest <span>Help Desk</span></h1>
+            </div>
+            <div class="header-controls">
+                <div class="search-container">
+                    <input type="text" placeholder="Search for help..." class="search-input">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="user-controls">
+                    <div class="role-badge" id="user-role">Administrator</div>
+                    <div class="theme-toggle">
+                        <input type="checkbox" id="theme-switch" class="theme-switch">
+                        <label for="theme-switch" class="theme-switch-label">
+                            <i class="fas fa-sun"></i>
+                            <i class="fas fa-moon"></i>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="user-profile">
+                        <img src="placeholder.svg?height=40&width=40" alt="User Profile" class="user-avatar">
+                        <div class="user-dropdown">
+                            <span>John Doe</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Sidebar Navigation -->
+            <aside class="sidebar">
+                <nav class="main-nav">
+                    <ul>
+                        <li class="active"><a href="/pages/Miscellaneous/helpdesk-pages/helpdesk.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                        <li><a href="/pages/Miscellaneous/helpdesk-pages/ticket-creation.html"><i class="fas fa-ticket-alt"></i> My Tickets</a></li>
+                        <li><a href="#"><i class="fas fa-comment-dots"></i> Live Chat</a></li>
+                        <li><a href="#"><i class="fas fa-question-circle"></i> FAQs</a></li>
+                        <li><a href="#"><i class="fas fa-book"></i> Knowledge Base</a></li>
+                        <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                    </ul>
+                </nav>
+                <div class="support-status">
+                    <div class="status-indicator online"></div>
+                    <p>Support: <span>Online</span></p>
+                    <p class="support-time">Response time: ~5 mins</p>
+                </div>
+            </aside>
+
+            <!-- Help Desk Content -->
+            <section class="help-desk-content">
+                <div class="welcome-banner">
+                    <h2>Welcome to PortalNest Help Desk</h2>
+                    <p>How can we help you today?</p>
+                </div>
+
+                <!-- Support Categories -->
+                <div class="support-categories">
+                    <h3>Support Categories</h3>
+                    <div class="category-grid">
+                        <div class="category-card">
+                            <i class="fas fa-laptop-code"></i>
+                            <h4>Technical Issues</h4>
+                            <p>Login problems, system errors, and technical difficulties</p>
+                        </div>
+                        <div class="category-card">
+                            <i class="fas fa-user-graduate"></i>
+                            <h4>Admissions</h4>
+                            <p>Application status, requirements, and enrollment</p>
+                        </div>
+                        <div class="category-card">
+                            <i class="fas fa-book-open"></i>
+                            <h4>Course Registration</h4>
+                            <p>Class scheduling, add/drop courses, and prerequisites</p>
+                        </div>
+                        <div class="category-card">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Grading Concerns</h4>
+                            <p>Grade disputes, transcript issues, and academic records</p>
+                        </div>
+                        <div class="category-card">
+                            <i class="fas fa-question"></i>
+                            <h4>General Inquiries</h4>
+                            <p>Campus information, events, and general questions</p>
+                        </div>
+                        <div class="category-card">
+                            <i class="fas fa-hands-helping"></i>
+                            <h4>Student Services</h4>
+                            <p>Financial aid, housing, and student activities</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <h3>Quick Actions</h3>
+                    <div class="action-buttons">
+                        <button class="action-btn primary"><i class="fas fa-plus-circle"></i> Create New Ticket</button>
+                        <button class="action-btn secondary"><i class="fas fa-comments"></i> Start Live Chat</button>
+                        <button class="action-btn secondary"><i class="fas fa-search"></i> Browse FAQs</button>
+                    </div>
+                </div>
+
+                <!-- Recent Tickets -->
+                <div class="recent-tickets">
+                    <div class="section-header">
+                        <h3>Recent Tickets</h3>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <div class="tickets-list">
+                        <div class="ticket-item">
+                            <div class="ticket-status open"></div>
+                            <div class="ticket-info">
+                                <h4>Login Issue with Student Portal</h4>
+                                <p class="ticket-meta">Ticket #2023-0456 • Opened 2 hours ago</p>
+                                <p class="ticket-desc">Unable to access student portal after password reset...</p>
+                            </div>
+                            <div class="ticket-actions">
+                                <button class="ticket-btn"><i class="fas fa-eye"></i></button>
+                                <button class="ticket-btn"><i class="fas fa-reply"></i></button>
+                            </div>
+                        </div>
+                        <div class="ticket-item">
+                            <div class="ticket-status pending"></div>
+                            <div class="ticket-info">
+                                <h4>Course Registration Error</h4>
+                                <p class="ticket-meta">Ticket #2023-0455 • Opened 1 day ago</p>
+                                <p class="ticket-desc">System shows prerequisite not met but I completed the course...</p>
+                            </div>
+                            <div class="ticket-actions">
+                                <button class="ticket-btn"><i class="fas fa-eye"></i></button>
+                                <button class="ticket-btn"><i class="fas fa-reply"></i></button>
+                            </div>
+                        </div>
+                        <div class="ticket-item">
+                            <div class="ticket-status resolved"></div>
+                            <div class="ticket-info">
+                                <h4>Missing Grade for Biology 101</h4>
+                                <p class="ticket-meta">Ticket #2023-0452 • Resolved 2 days ago</p>
+                                <p class="ticket-desc">Final grade not showing on transcript for Biology 101...</p>
+                            </div>
+                            <div class="ticket-actions">
+                                <button class="ticket-btn"><i class="fas fa-eye"></i></button>
+                                <button class="ticket-btn"><i class="fas fa-reply"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="faq-section">
+                    <div class="section-header">
+                        <h3>Frequently Asked Questions</h3>
+                        <a href="#" class="view-all">View All FAQs</a>
+                    </div>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4>How do I reset my password?</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>To reset your password, click on the "Forgot Password" link on the login page. You will receive an email with instructions to reset your password. Follow the link in the email to create a new password.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4>When is the deadline for course registration?</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Course registration deadlines vary by semester. For the current semester, registration closes on September 15th. Late registration is available until September 20th with a late fee.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h4>How do I access my official transcripts?</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Official transcripts can be requested through the Records Office in your student portal. There is a $10 fee for each official transcript. Processing typically takes 3-5 business days.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Live Chat Widget -->
+            <div class="chat-widget collapsed">
+                <div class="chat-header">
+                    <div class="chat-title">
+                        <div class="chat-status online"></div>
+                        <h3>Live Support</h3>
+                    </div>
+                    <div class="chat-controls">
+                        <button class="chat-control-btn minimize"><i class="fas fa-minus"></i></button>
+                        <button class="chat-control-btn expand"><i class="fas fa-expand"></i></button>
+                        <button class="chat-control-btn close"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+                <div class="chat-body">
+                    <div class="chat-messages">
+                        <div class="message system">
+                            <p>Connected to PortalNest Support. How can we help you today?</p>
+                            <span class="message-time">10:30 AM</span>
+                        </div>
+                        <div class="message agent">
+                            <div class="message-avatar">
+                                <img src="placeholder.svg?height=30&width=30" alt="Agent Avatar">
+                            </div>
+                            <div class="message-content">
+                                <p class="message-sender">Sarah (Support Agent)</p>
+                                <p>Hello! I'm Sarah from technical support. How can I assist you today?</p>
+                                <span class="message-time">10:31 AM</span>
+                            </div>
+                        </div>
+                        <div class="message user">
+                            <div class="message-content">
+                                <p>Hi Sarah, I'm having trouble accessing my course materials for Physics 201.</p>
+                                <span class="message-time">10:32 AM</span>
+                            </div>
+                        </div>
+                        <div class="message agent">
+                            <div class="message-avatar">
+                                <img src="placeholder.svg?height=30&width=30" alt="Agent Avatar">
+                            </div>
+                            <div class="message-content">
+                                <p class="message-sender">Sarah (Support Agent)</p>
+                                <p>I'd be happy to help with that. Could you please provide your student ID so I can check your course enrollment?</p>
+                                <span class="message-time">10:33 AM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input">
+                        <textarea placeholder="Type your message here..."></textarea>
+                        <div class="chat-actions">
+                            <button class="chat-action-btn"><i class="fas fa-paperclip"></i></button>
+                            <button class="chat-action-btn"><i class="fas fa-smile"></i></button>
+                            <button class="chat-send-btn"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2023 PortalNest Educational Management Platform</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Simple toggle for dark/light mode
+        document.getElementById('theme-switch').addEventListener('change', function() {
+            document.body.classList.toggle('dark-mode');
+        });
+
+        // Toggle FAQ answers
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // Toggle chat widget
+        document.querySelector('.chat-header').addEventListener('click', function() {
+            document.querySelector('.chat-widget').classList.toggle('collapsed');
+        });
+    </script>
+    <script src="/functions/help-desk/modal-ticket-script.js" ></script>
+</body>
+</html>
