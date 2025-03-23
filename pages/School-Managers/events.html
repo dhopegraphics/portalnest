@@ -18,12 +18,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 
   <!-- Css Link -->
-  <link rel="stylesheet" href="../../style/schooladmin.css" />
+  <link rel="stylesheet" href="/style/schooladmin.css" />
   <link rel="stylesheet" href="/style/admin-dashboard/admission-section.css">
   <link rel="stylesheet" href="/style/admin-dashboard/student-management-section.css">
 
   <!-- Javascript -->
-  <script defer src="../../functions/script-schooladmin.js"></script>
+  <script defer src="/functions/script-schooladmin.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
@@ -48,12 +48,12 @@
                   </div>
                 </div>
 
-                <div class="card__footer flex col_green">
+                <button id="see_full_total_events_details" class="card__footer flex col_green flex">
                   <p>See Details</p>
-                  <button>
+                  <div>
                     <i class="bi bi-arrow-right col_green"></i>
-                  </button>
-                </div>
+                  </div>
+                </button>
               </div>
 
               <div class="card card_violet">
@@ -67,12 +67,12 @@
                   </div>
                 </div>
 
-                <div class="card__footer flex col_violet">
+                <button id="see_full_ongoing_events_details" class="card__footer flex col_violet flex">
                   <p>See Details</p>
-                  <button>
+                  <div>
                     <i class="bi bi-arrow-right col_violet"></i>
-                  </button>
-                </div>
+                  </div>
+                </button>
               </div>
 
               <div class="card card_orange">
@@ -84,12 +84,12 @@
                   </div>
                 </div>
 
-                <div class="card__footer flex col_orange">
+                <button id="see_full_closed_events_details" class="card__footer flex col_orange flex">
                   <p>See Details</p>
-                  <button>
+                  <div>
                     <i class="bi bi-arrow-right col_orange"></i>
-                  </button>
-                </div>
+                  </div>
+                </button>
               </div>
 
               <div class="card card_lightblue">
@@ -103,12 +103,12 @@
                   </div>
                 </div>
 
-                <div class="card__footer flex col_lightblue">
+                <button id="see_full_completed_events_details" class="card__footer flex col_lightblue flex">
                   <p>See Details</p>
-                  <button>
+                  <div>
                     <i class="bi bi-arrow-right col_lightblue"></i>
-                  </button>
-                </div>
+                  </div>
+                </button>
               </div>
             </div>
           </div>
@@ -175,11 +175,11 @@
 
             <div class="admission_content">
               <div class="admission_initials flex faculty_initials">
-                <p>Course Name</p>
-                <p>ID</p>
-                <p>Lecturer</p>
-                <p>Year</p>
-                <p>Action</p>
+                <h2  >Course Name</h2>
+                <h2>ID</h2>
+                <h2>Lecturer</h2>
+                <h2>Year</h2>
+                <h2>Action</h2>
               </div>
 
               <div class="contents__admission">
@@ -187,7 +187,7 @@
                   <input type="checkbox" />
 
                   <div class="initial_content flex admisson_content_display">
-                    <div class="person_details flex admission_person">
+                    <div class=" flex admission_person">
                       <div class="person_details_con">
                         <p>Circuit Theory</p>
                       </div>

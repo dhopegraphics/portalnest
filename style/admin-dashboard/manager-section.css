@@ -82,7 +82,7 @@
     grid-template-columns: 25% 15% 15% 15% 30%;
     background-color: var(--white-col);
     padding: 2rem 3rem;
-    border-radius: 5px;
+    border-radius: 15px;
   }
 
   .initial_content div p {

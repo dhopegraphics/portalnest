@@ -32,7 +32,8 @@
   <main class="main overall__main">
     <div class="main__main-content">
       <div class="content__area dashboard__section_block" >
-        <section>
+    
+          <div class="overlay"></div>
           <div class="main__card-container">
             <h1>Dashboard-School Manager</h1>
             <div class="card_scroll dashboard__scroll">
@@ -48,14 +49,15 @@
                     </div>
                   </div>
 
-                  <button class="card__footer flex col_green flex">
+                  <button id="see_full_applicants_details" class="card__footer flex col_green flex"    >
                     <p>See Details</p>
                     <div>
                       <i class="bi bi-arrow-right col_green"></i>
                     </div>
                   </button>
-
+                 
                 </div>
+               
                 <div class="card card_violet">
                   <div class="card__header flex border_violet">
                     <span>
@@ -66,9 +68,9 @@
                       <h5>Staff/School Managers</h5>
                     </div>
                   </div>
-                  <button class="card__footer flex col_violet flex">
+                  <button   id="see_full_staff_details" class="card__footer flex col_violet flex">
                     <p>See Details</p>
-                    <div>
+                    <div id="arrow_detail">
                       <i class="bi bi-arrow-right col_violet"></i>
                     </div>
                   </button>
@@ -84,7 +86,7 @@
                       <h5>Students</h5>
                     </div>
                   </div> 
-                  <button class="card__footer flex col_orange flex">
+                  <button id="see_full_student_details" class="card__footer flex col_orange flex">
                     <p>See Details</p>
                     <div>
                       <i class="bi bi-arrow-right col_orange"></i>
@@ -103,7 +105,7 @@
                     </div>
                   </div>
 
-                  <button class="card__footer flex col_lightblue flex">
+                  <button id="see_full_listed_courses_details" class="card__footer flex col_lightblue flex">
                     <h5>See Details</h5>
                     <div>
                       <i class="bi bi-arrow-right col_lightblue"></i>
@@ -193,7 +195,7 @@
                       <p>Pending</p>
                     </div>
 
-                    <!-- this isn't showing now -->
+                   
                     <div class="show_progress flex fifty">
                       <div class="show_progress_3"></div>
                       <div class="show_progress_4"></div>
@@ -248,11 +250,11 @@
             </div>
           </div>
       </div>
-      </section>
     </div>
     </div>
   </main>
-
+<script src="/functions/see_details_function.js" defer ></script>
+<script src="/functions/pending_applicants.js" defer ></script>
 </body>
 
 </html>

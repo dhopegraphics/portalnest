@@ -226,12 +226,15 @@ a{
   height: auto;
   background-color: var(--col-white-bg);
   padding-bottom: 45px;
+
 }
+
 
 .main__main-content {
   flex: 1;
   background: var(--col-white-bg);
   height: auto;
+  
 }
 
 .main__card-container {
@@ -440,16 +443,124 @@ a{
   cursor: pointer;
 }
 
+/* Basic card styling */
 .card {
   width: 100%;
   height: 16rem;
   border: 1px solid;
   border-radius: 20px;
-
+  transition: height 0.5s ease-in-out; /* Only width will transition */
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
+  background: white;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+/* Floating effect when expanded */
+.card.expanded {
+  position: fixed;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: auto;
+  min-height: 24rem;
+  z-index: 1000;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  padding-bottom: 1rem;
+  transition: height 0.5s ease-in-out; /* Only width will transition */
+}
+
+/* Scrollable details section */
+.card-details {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  max-height: 15rem;
+  overflow-y: auto;
+  border-top: 2px solid #ddd;
+  border-radius: 0 0 15px 15px;
+  transition: width 0.5s ease-in-out; /* Only width will transition */
+
+}
+
+.card__footer i {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Modern list styling */
+.card-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-details h3 {
+font-size: 3rem;
+}
+
+.card-details li {
+  font-size: 2rem;
+  padding: 0.8rem;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* List icon styling */
+.card-details li::before {
+  content: "🔹"; /* Customize with different icons */
+  font-size: 1.2rem;
+  color: #007bff;
+}
+
+/* Hover effect on list items */
+.card-details li:hover {
+  background: #f5f5f5;
+  cursor: pointer;
+}
+
+/* Backdrop overlay when card expands */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  display: none;
+  backdrop-filter: blur(5px);
+}
+
+/* Show overlay when expanded */
+.overlay.show {
+  display: block;
+}
+
+/* Close button for expanded card */
+.card-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.card-close:hover {
+  color: red;
+}
+
+
 
 .admission_scroll_card {
   width: 27rem;
