@@ -4,16 +4,23 @@
   }
 
   /* Javascript */
-  /* 1058.48px */
+  .see_all.width {
+    width: 13.5%;
+  }
+
   .admission_scroll.width {
-    width: 1058.48px;
+    width: 1286px;
   }
 
   .admission_scroll_card.width {
-    width: 41rem;
+    width: 37rem;
     transition: width 0.5s ease;
   }
 
+<<<<<<< HEAD
+  .border_bottom {
+    margin-top: 20rem;
+=======
   /* remove this */
   .main__header {
    
@@ -22,36 +29,112 @@
 
   .admission_scroll {
     width: 820px;
+>>>>>>> 69c711769a01cf50dbf1fce7f74f41379779868c
   }
 
   .admission_scroll_card {
     width: 31rem;
   }
-}
 
-@media (max-width: 84em) {
-  .main__header {
-    background-color: rgb(225, 238, 42);
+  /* Navigation */
+  .nav__one {
+    height: 75vh;
   }
 
-  .task-today {
-    padding: 1.2rem;
-    height: 81rem;
-    overflow-y: auto;
-  }
-  .task-today::-webkit-scrollbar {
-    display: none;
+  .nav__two {
+    height: 30vh;
   }
 
-  /* .card_scroll.scroll { */
-  /* .card_scroll {
-    width: 100%;
-    max-width: 700px;
-    overflow-x: auto;
-    overflow-x: scroll;
-    white-space: nowrap;
-  } */
+  /* Dashboard */
+  .pending__heading h1,
+  .live__activity-header h1 {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+  }
 
+<<<<<<< HEAD
+  .activity__card {
+    height: 321px;
+  }
+
+  .image-container {
+    height: 38%;
+  }
+
+  .card__content {
+    padding: 2rem;
+  }
+
+  .card__content h1 {
+    font-size: 1.9rem;
+  }
+
+  .card__content p {
+    font-size: 1.4rem;
+  }
+
+  .first_ctext {
+    margin-bottom: 3rem;
+  }
+
+  .progress__container {
+    margin-top: 1rem;
+  }
+
+  .show_progress {
+    margin-top: 1rem;
+  }
+
+  .recent__pending_container {
+    margin-top: 0.5rem;
+  }
+
+  .dashboardnext__card-container {
+    row-gap: 1.5rem;
+  }
+
+  .pending__card {
+    grid-template-columns: 70% 28%;
+    gap: 2rem;
+    padding: 2rem 1.8rem;
+  }
+
+  .pending__left-content {
+    width: 90%;
+    grid-template-columns: 30% 68%;
+    gap: 1rem;
+  }
+
+  /* Manager form */
+  .hold_select_position span {
+    left: 366px;
+  }
+
+  .inn_four .hold_select_position span {
+    left: 376px;
+  }
+
+  .course_search_cont span {
+    right: 235px;
+  }
+
+  /* Admission */
+  .admission_select_con span {
+    top: 10px;
+  }
+
+  .admission_scroll {
+    width: 1035px;
+  }
+
+  .admission_scroll_card {
+    width: 29rem;
+  }
+
+  /* Grading */
+  #performanceChart {
+    margin-top: 0rem;
+=======
   .card__container {
     /* display: grid; */
     /* grid-template-columns: repeat(3, 1fr); */
@@ -79,5 +162,6 @@
 @media (max-width: 34em) {
   .main__header {
    
+>>>>>>> 69c711769a01cf50dbf1fce7f74f41379779868c
   }
 }
