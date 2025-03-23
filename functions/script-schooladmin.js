@@ -1,25 +1,5 @@
 
 
-
-
-<<<<<<< HEAD
-menuBtn.addEventListener("click", () => {
-  navigationSection.classList.toggle("close");
-  document.querySelectorAll(".pending__left-content").forEach((width) => {
-    width.classList.toggle("width");
-  });
-  document.querySelector(".see_all").classList.toggle("width");
-  document.querySelector(".card_mid_content").classList.toggle("margin");
-  document.querySelector(".first_ctext").classList.toggle("margin");
-  document.querySelector(".card_scroll").classList.toggle("scroll");
-  document.querySelector(".main__main-content").classList.toggle("width");
-  document.querySelector(".admission_scroll").classList.toggle("width");
-  document.querySelector(".manager_form_container").classList.toggle("left");
-=======
->>>>>>> 7e61738b688002446fc9e7c6fc0b233c611f4ede
-
-
-
 const managersForm = document.querySelector(".manager_form");
 const firstName = document.querySelector("#fristname");
 const lastName = document.querySelector("#lastname");
