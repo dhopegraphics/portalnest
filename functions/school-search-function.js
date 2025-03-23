@@ -1,34 +1,34 @@
 // DOM Elements
-const themeToggle = document.getElementById("theme-toggle");
-const mobileFilterBtn = document.getElementById("mobile-filter-btn");
-const filtersSidebar = document.getElementById("filters-sidebar");
-const filterOverlay = document.getElementById("filter-overlay");
-const closeModal = document.getElementById("close-modal");
-const schoolModal = document.getElementById("school-modal");
-const resultsGrid = document.getElementById("results-grid");
-const resultsCount = document.getElementById("results-count");
-const noResults = document.getElementById("no-results");
-const searchInput = document.getElementById("search-input");
-const searchForm = document.getElementById("search-form");
-const resetFilters = document.getElementById("reset-filters");
-const filterGroups = document.querySelectorAll(".filter-group-header");
-const tabButtons = document.querySelectorAll(".tab-button");
-const ratingStars = document.querySelectorAll("#rating-stars i");
-const reviewText = document.getElementById("review-text");
-const submitReview = document.getElementById("submit-review");
-const reviewsList = document.getElementById("reviews-list");
-const noReviews = document.getElementById("no-reviews");
+const themeToggle = document.getElementById('theme-toggle');
+const mobileFilterBtn = document.getElementById('mobile-filter-btn');
+const filtersSidebar = document.getElementById('filters-sidebar');
+const filterOverlay = document.getElementById('filter-overlay');
+const closeModal = document.getElementById('close-modal');
+const schoolModal = document.getElementById('school-modal');
+const resultsGrid = document.getElementById('results-grid');
+const resultsCount = document.getElementById('results-count');
+const noResults = document.getElementById('no-results');
+const searchInput = document.getElementById('search-input');
+const searchForm = document.getElementById('search-form');
+const resetFilters = document.getElementById('reset-filters');
+const filterGroups = document.querySelectorAll('.filter-group-header');
+const tabButtons = document.querySelectorAll('.tab-button');
+const ratingStars = document.querySelectorAll('#rating-stars i');
+const reviewText = document.getElementById('review-text');
+const submitReview = document.getElementById('submit-review');
+const reviewsList = document.getElementById('reviews-list');
+const noReviews = document.getElementById('no-reviews');
 
 // State
 let schools = [];
 let filteredSchools = [];
 let selectedSchool = null;
 let currentRating = 0;
-let darkMode = localStorage.getItem("darkMode") === "true";
+let darkMode = localStorage.getItem('darkMode') === 'true';
 
 // Apply dark mode if saved
 if (darkMode) {
-  document.body.classList.add("dark-theme");
+  document.body.classList.add('dark-theme');
 }
 
 // Fetch schools data
@@ -40,9 +40,8 @@ async function fetchSchools() {
       id: "1",
       name: "University of Manila",
       type: "University",
-      description:
-        "A premier university offering a wide range of undergraduate and graduate programs with a focus on research and innovation.",
-      image: "../../assets/images/University_of_Manila.jpg",
+      description: "A premier university offering a wide range of undergraduate and graduate programs with a focus on research and innovation.",
+      image: "https://via.placeholder.com/600x300?text=University+of+Manila",
       location: {
         country: "Philippines",
         region: "NCR",
@@ -53,19 +52,11 @@ async function fetchSchools() {
         email: "admissions@umanila.edu.ph",
         website: "https://www.umanila.edu.ph",
       },
-      programs: [
-        "Science",
-        "Business",
-        "Arts",
-        "Engineering",
-        "IT",
-        "Medicine",
-      ],
+      programs: ["Science", "Business", "Arts", "Engineering", "IT", "Medicine"],
       programDetails: [
         {
           name: "Computer Science",
-          description:
-            "Learn programming, algorithms, and software development.",
+          description: "Learn programming, algorithms, and software development.",
           duration: "4 years",
         },
         {
@@ -75,8 +66,7 @@ async function fetchSchools() {
         },
         {
           name: "Medicine",
-          description:
-            "Comprehensive medical education with clinical rotations.",
+          description: "Comprehensive medical education with clinical rotations.",
           duration: "6 years",
         },
         {
@@ -86,19 +76,11 @@ async function fetchSchools() {
         },
       ],
       admissionStatus: "Open",
-      admissionProcess:
-        "Submit application form, entrance exam, interview, and required documents. Applications are accepted from June to August each year.",
+      admissionProcess: "Submit application form, entrance exam, interview, and required documents. Applications are accepted from June to August each year.",
       tuitionRange: "Medium",
-      tuitionDetails:
-        "Tuition ranges from ₱50,000 to ₱80,000 per semester depending on the program. Scholarships and financial aid are available.",
+      tuitionDetails: "Tuition ranges from ₱50,000 to ₱80,000 per semester depending on the program. Scholarships and financial aid are available.",
       accreditation: "Accredited",
-      facilities: [
-        "Library",
-        "Labs",
-        "Hostels",
-        "Sports Complex",
-        "Scholarships",
-      ],
+      facilities: ["Library", "Labs", "Hostels", "Sports Complex", "Scholarships"],
       rating: 4.5,
       reviews: [
         {
@@ -121,9 +103,8 @@ async function fetchSchools() {
       id: "2",
       name: "Quezon City College",
       type: "College",
-      description:
-        "A community college providing affordable education with a focus on practical skills and workforce readiness.",
-      image: "../../assets/images/Quezon_City_College.jpg",
+      description: "A community college providing affordable education with a focus on practical skills and workforce readiness.",
+      image: "https://via.placeholder.com/600x300?text=Quezon+City+College",
       location: {
         country: "Philippines",
         region: "NCR",
@@ -148,11 +129,9 @@ async function fetchSchools() {
         },
       ],
       admissionStatus: "Closed",
-      admissionProcess:
-        "Submit application form, high school transcript, and attend orientation. Next admission cycle opens in November.",
+      admissionProcess: "Submit application form, high school transcript, and attend orientation. Next admission cycle opens in November.",
       tuitionRange: "Low",
-      tuitionDetails:
-        "Tuition is approximately ₱25,000 per semester. City residents receive discounts.",
+      tuitionDetails: "Tuition is approximately ₱25,000 per semester. City residents receive discounts.",
       accreditation: "Accredited",
       facilities: ["Library", "Computer Labs", "Cafeteria"],
       rating: 3.8,
@@ -170,9 +149,8 @@ async function fetchSchools() {
       id: "3",
       name: "Makati Science High School",
       type: "Senior High School",
-      description:
-        "A specialized science high school offering STEM-focused education for academically gifted students.",
-      image: "../../assets/images/Makati_Science_High_School.jpg",
+      description: "A specialized science high school offering STEM-focused education for academically gifted students.",
+      image: "https://via.placeholder.com/600x300?text=Makati+Science+High",
       location: {
         country: "Philippines",
         region: "NCR",
@@ -187,30 +165,21 @@ async function fetchSchools() {
       programDetails: [
         {
           name: "STEM Strand",
-          description:
-            "Rigorous curriculum in Science, Technology, Engineering, and Mathematics.",
+          description: "Rigorous curriculum in Science, Technology, Engineering, and Mathematics.",
           duration: "2 years",
         },
         {
           name: "Research Program",
-          description:
-            "Specialized track for students interested in scientific research.",
+          description: "Specialized track for students interested in scientific research.",
           duration: "2 years",
         },
       ],
       admissionStatus: "Upcoming",
-      admissionProcess:
-        "Entrance examination, interview, and review of junior high school records. Only top-performing students are admitted.",
+      admissionProcess: "Entrance examination, interview, and review of junior high school records. Only top-performing students are admitted.",
       tuitionRange: "Low",
-      tuitionDetails:
-        "Public school with minimal fees. Scholarships available for exceptional students.",
+      tuitionDetails: "Public school with minimal fees. Scholarships available for exceptional students.",
       accreditation: "Accredited",
-      facilities: [
-        "Science Labs",
-        "Computer Labs",
-        "Library",
-        "Sports Facilities",
-      ],
+      facilities: ["Science Labs", "Computer Labs", "Library", "Sports Facilities"],
       rating: 4.7,
       reviews: [
         {
@@ -233,9 +202,8 @@ async function fetchSchools() {
       id: "4",
       name: "Central Luzon State University",
       type: "University",
-      description:
-        "A leading agricultural university known for its research and extension programs in agriculture, forestry, and fisheries.",
-      image: "../../assets/images/Central_Luzon_State_University.jpg",
+      description: "A leading agricultural university known for its research and extension programs in agriculture, forestry, and fisheries.",
+      image: "https://via.placeholder.com/600x300?text=Central+Luzon+State+University",
       location: {
         country: "Philippines",
         region: "Central Luzon",
@@ -246,17 +214,11 @@ async function fetchSchools() {
         email: "info@clsu.edu.ph",
         website: "https://www.clsu.edu.ph",
       },
-      programs: [
-        "Agriculture",
-        "Veterinary Medicine",
-        "Engineering",
-        "Science",
-      ],
+      programs: ["Agriculture", "Veterinary Medicine", "Engineering", "Science"],
       programDetails: [
         {
           name: "Agricultural Engineering",
-          description:
-            "Application of engineering principles to agricultural production and processing.",
+          description: "Application of engineering principles to agricultural production and processing.",
           duration: "5 years",
         },
         {
@@ -266,25 +228,16 @@ async function fetchSchools() {
         },
         {
           name: "Agriculture",
-          description:
-            "Study of crop production, animal husbandry, and agricultural economics.",
+          description: "Study of crop production, animal husbandry, and agricultural economics.",
           duration: "4 years",
         },
       ],
       admissionStatus: "Open",
-      admissionProcess:
-        "Submit application form, entrance examination, and interview. Special consideration for agriculture-related achievements.",
+      admissionProcess: "Submit application form, entrance examination, and interview. Special consideration for agriculture-related achievements.",
       tuitionRange: "Low",
-      tuitionDetails:
-        "State university with subsidized tuition. Free tuition for qualified students under the Universal Access to Quality Tertiary Education Act.",
+      tuitionDetails: "State university with subsidized tuition. Free tuition for qualified students under the Universal Access to Quality Tertiary Education Act.",
       accreditation: "Accredited",
-      facilities: [
-        "Research Farms",
-        "Laboratories",
-        "Library",
-        "Dormitories",
-        "Sports Complex",
-      ],
+      facilities: ["Research Farms", "Laboratories", "Library", "Dormitories", "Sports Complex"],
       rating: 4.3,
       reviews: [
         {
@@ -300,9 +253,8 @@ async function fetchSchools() {
       id: "5",
       name: "St. Paul College Pasig",
       type: "Junior High School",
-      description:
-        "A Catholic educational institution offering quality education with a focus on Christian values and character formation.",
-      image: "../../assets/images/St_Paul_College_Pasig.jpg",
+      description: "A Catholic educational institution offering quality education with a focus on Christian values and character formation.",
+      image: "https://via.placeholder.com/600x300?text=St.+Paul+College",
       location: {
         country: "Philippines",
         region: "NCR",
@@ -327,19 +279,11 @@ async function fetchSchools() {
         },
       ],
       admissionStatus: "Upcoming",
-      admissionProcess:
-        "Entrance examination, interview with parents, and submission of report cards from previous school.",
+      admissionProcess: "Entrance examination, interview with parents, and submission of report cards from previous school.",
       tuitionRange: "High",
-      tuitionDetails:
-        "Annual tuition ranges from ₱90,000 to ₱120,000 depending on the grade level. Additional fees for special programs.",
+      tuitionDetails: "Annual tuition ranges from ₱90,000 to ₱120,000 depending on the grade level. Additional fees for special programs.",
       accreditation: "Accredited",
-      facilities: [
-        "Library",
-        "Science Labs",
-        "Computer Labs",
-        "Sports Facilities",
-        "Chapel",
-      ],
+      facilities: ["Library", "Science Labs", "Computer Labs", "Sports Facilities", "Chapel"],
       rating: 4.6,
       reviews: [
         {
@@ -362,9 +306,8 @@ async function fetchSchools() {
       id: "6",
       name: "Ateneo de Manila University",
       type: "University",
-      description:
-        "A prestigious Jesuit university known for its liberal arts tradition and formation of leaders for the nation.",
-      image: "../../assets/images/Ateneo_de_Manila_University.jpg",
+      description: "A prestigious Jesuit university known for its liberal arts tradition and formation of leaders for the nation.",
+      image: "https://via.placeholder.com/600x300?text=Ateneo+de+Manila",
       location: {
         country: "Philippines",
         region: "NCR",
@@ -379,14 +322,12 @@ async function fetchSchools() {
       programDetails: [
         {
           name: "Management",
-          description:
-            "Comprehensive business education with a focus on ethics and leadership.",
+          description: "Comprehensive business education with a focus on ethics and leadership.",
           duration: "4 years",
         },
         {
           name: "Communications",
-          description:
-            "Study of media, journalism, and organizational communication.",
+          description: "Study of media, journalism, and organizational communication.",
           duration: "4 years",
         },
         {
@@ -396,20 +337,11 @@ async function fetchSchools() {
         },
       ],
       admissionStatus: "Open",
-      admissionProcess:
-        "Submit application, entrance exam (ACET), and interview. Highly competitive admission process.",
+      admissionProcess: "Submit application, entrance exam (ACET), and interview. Highly competitive admission process.",
       tuitionRange: "High",
-      tuitionDetails:
-        "Annual tuition ranges from ₱200,000 to ₱250,000 depending on the program. Financial aid and scholarships available.",
+      tuitionDetails: "Annual tuition ranges from ₱200,000 to ₱250,000 depending on the program. Financial aid and scholarships available.",
       accreditation: "Accredited",
-      facilities: [
-        "Library",
-        "Labs",
-        "Sports Complex",
-        "Theater",
-        "Chapel",
-        "Scholarships",
-      ],
+      facilities: ["Library", "Labs", "Sports Complex", "Theater", "Chapel", "Scholarships"],
       rating: 4.8,
       reviews: [
         {
@@ -429,26 +361,24 @@ async function fetchSchools() {
       ],
     },
   ];
-
+  
   filteredSchools = [...schools];
   renderSchools();
 }
 
 // Render schools to the grid
 function renderSchools() {
-  resultsGrid.innerHTML = "";
-  resultsCount.textContent = `${filteredSchools.length} ${
-    filteredSchools.length === 1 ? "School" : "Schools"
-  } Found`;
-
+  resultsGrid.innerHTML = '';
+  resultsCount.textContent = `${filteredSchools.length} ${filteredSchools.length === 1 ? 'School' : 'Schools'} Found`;
+  
   if (filteredSchools.length === 0) {
-    resultsGrid.style.display = "none";
-    noResults.style.display = "flex";
+    resultsGrid.style.display = 'none';
+    noResults.style.display = 'flex';
   } else {
-    resultsGrid.style.display = "grid";
-    noResults.style.display = "none";
-
-    filteredSchools.forEach((school) => {
+    resultsGrid.style.display = 'grid';
+    noResults.style.display = 'none';
+    
+    filteredSchools.forEach(school => {
       const card = createSchoolCard(school);
       resultsGrid.appendChild(card);
     });
@@ -457,20 +387,18 @@ function renderSchools() {
 
 // Create a school card element
 function createSchoolCard(school) {
-  const card = document.createElement("div");
-  card.className = "school-card";
-
-  let badgeClass = "";
-  if (school.admissionStatus === "Open") {
-    badgeClass = "badge-open";
-  } else if (school.admissionStatus === "Closed") {
-    badgeClass = "badge-closed";
+  const card = document.createElement('div');
+  card.className = 'school-card';
+  
+  let badgeClass = '';
+  if (school.admissionStatus === 'Open') {
+    badgeClass = 'badge-open';
+  } else if (school.admissionStatus === 'Closed') {
+    badgeClass = 'badge-closed';
   } else {
-    badgeClass = "badge-upcoming";
+    badgeClass = 'badge-upcoming';
   }
-
-  console.log(school);
-
+  
   card.innerHTML = `
     <div class="card-image">
       <img src="${school.image}" alt="${school.name}">
@@ -495,17 +423,12 @@ function createSchoolCard(school) {
         <span>${school.type}</span>
       </div>
       <div class="card-programs">
-        ${school.programs
-          .slice(0, 3)
-          .map((program) => `<span class="program-badge">${program}</span>`)
-          .join("")}
-        ${
-          school.programs.length > 3
-            ? `<span class="program-badge">+${
-                school.programs.length - 3
-              } more</span>`
-            : ""
-        }
+        ${school.programs.slice(0, 3).map(program => 
+          `<span class="program-badge">${program}</span>`
+        ).join('')}
+        ${school.programs.length > 3 ? 
+          `<span class="program-badge">+${school.programs.length - 3} more</span>` : 
+          ''}
       </div>
       <div class="card-tuition">
         <i class="fas fa-clock"></i>
@@ -513,54 +436,48 @@ function createSchoolCard(school) {
       </div>
     </div>
     <div class="card-footer">
-      <button class="view-details-btn" data-id="${
-        school.id
-      }">View Details</button>
+      <button class="view-details-btn" data-id="${school.id}">View Details</button>
     </div>
   `;
-
-  const viewDetailsBtn = card.querySelector(".view-details-btn");
-  viewDetailsBtn.addEventListener("click", () => {
+  
+  const viewDetailsBtn = card.querySelector('.view-details-btn');
+  viewDetailsBtn.addEventListener('click', () => {
     openSchoolModal(school);
   });
-
+  
   return card;
 }
 
 // Open school details modal
 function openSchoolModal(school) {
   selectedSchool = school;
-
+  
   // Set modal title and image
-  document.getElementById("modal-title").textContent = school.name;
-  document.getElementById("modal-image").src = school.image;
-  document.getElementById("modal-image").alt = school.name;
-
+  document.getElementById('modal-title').textContent = school.name;
+  document.getElementById('modal-image').src = school.image;
+  document.getElementById('modal-image').alt = school.name;
+  
   // Set badges
-  const badgesContainer = document.getElementById("modal-badges");
+  const badgesContainer = document.getElementById('modal-badges');
   badgesContainer.innerHTML = `
     <div class="school-badge badge-primary">${school.type}</div>
     <div class="school-badge badge-outline">${school.accreditation}</div>
     <div class="school-badge ${
-      school.admissionStatus === "Open"
-        ? "badge-open"
-        : school.admissionStatus === "Closed"
-        ? "badge-closed"
-        : "badge-upcoming"
+      school.admissionStatus === 'Open' ? 'badge-open' : 
+      school.admissionStatus === 'Closed' ? 'badge-closed' : 
+      'badge-upcoming'
     }">${school.admissionStatus}</div>
   `;
-
+  
   // Set description
-  document.getElementById("modal-description").textContent = school.description;
-
+  document.getElementById('modal-description').textContent = school.description;
+  
   // Set contact information
-  const contactContainer = document.getElementById("modal-contact");
+  const contactContainer = document.getElementById('modal-contact');
   contactContainer.innerHTML = `
     <div class="contact-item">
       <i class="fas fa-map-marker-alt"></i>
-      <span>${school.location.city}, ${school.location.region}, ${
-    school.location.country
-  }</span>
+      <span>${school.location.city}, ${school.location.region}, ${school.location.country}</span>
     </div>
     <div class="contact-item">
       <i class="fas fa-phone"></i>
@@ -572,17 +489,12 @@ function openSchoolModal(school) {
     </div>
     <div class="contact-item">
       <i class="fas fa-globe"></i>
-      <a href="${
-        school.contact.website
-      }" target="_blank">${school.contact.website.replace(
-    /^https?:\/\//,
-    ""
-  )}</a>
+      <a href="${school.contact.website}" target="_blank">${school.contact.website.replace(/^https?:\/\//, '')}</a>
     </div>
   `;
-
+  
   // Set tuition information
-  const tuitionContainer = document.getElementById("modal-tuition");
+  const tuitionContainer = document.getElementById('modal-tuition');
   tuitionContainer.innerHTML = `
     <div class="tuition-range">
       <i class="fas fa-clock"></i>
@@ -590,41 +502,33 @@ function openSchoolModal(school) {
     </div>
     <p class="tuition-details">${school.tuitionDetails}</p>
   `;
-
+  
   // Set facilities
-  const facilitiesContainer = document.getElementById("modal-facilities");
-  facilitiesContainer.innerHTML = school.facilities
-    .map(
-      (facility) => `
+  const facilitiesContainer = document.getElementById('modal-facilities');
+  facilitiesContainer.innerHTML = school.facilities.map(facility => `
     <div class="facility-item">
       <i class="fas fa-check-circle"></i>
       <span>${facility}</span>
     </div>
-  `
-    )
-    .join("");
-
+  `).join('');
+  
   // Set admission information
-  const admissionContainer = document.getElementById("modal-admission");
+  const admissionContainer = document.getElementById('modal-admission');
   admissionContainer.innerHTML = `
     <p>${school.admissionProcess}</p>
     <div class="admission-status">
       <span>Status:</span>
       <div class="school-badge ${
-        school.admissionStatus === "Open"
-          ? "badge-open"
-          : school.admissionStatus === "Closed"
-          ? "badge-closed"
-          : "badge-upcoming"
+        school.admissionStatus === 'Open' ? 'badge-open' : 
+        school.admissionStatus === 'Closed' ? 'badge-closed' : 
+        'badge-upcoming'
       }">${school.admissionStatus}</div>
     </div>
   `;
-
+  
   // Set programs
-  const programsContainer = document.getElementById("modal-programs");
-  programsContainer.innerHTML = school.programDetails
-    .map(
-      (program) => `
+  const programsContainer = document.getElementById('modal-programs');
+  programsContainer.innerHTML = school.programDetails.map(program => `
     <div class="program-card">
       <h4>${program.name}</h4>
       <p>${program.description}</p>
@@ -633,40 +537,31 @@ function openSchoolModal(school) {
         <span>Duration: ${program.duration}</span>
       </div>
     </div>
-  `
-    )
-    .join("");
-
+  `).join('');
+  
   // Set reviews
   const reviews = school.reviews || [];
-  const reviewsContainer = document.getElementById("reviews-list");
-  const noReviewsElement = document.getElementById("no-reviews");
-
+  const reviewsContainer = document.getElementById('reviews-list');
+  const noReviewsElement = document.getElementById('no-reviews');
+  
   if (reviews.length > 0) {
-    reviewsContainer.innerHTML = reviews
-      .map((review) => {
-        const date = new Date(review.date);
-        const formattedDate = date.toLocaleDateString("en-US", {
-          year: "numeric",
-          month: "short",
-          day: "numeric",
-        });
-
-        return `
+    reviewsContainer.innerHTML = reviews.map(review => {
+      const date = new Date(review.date);
+      const formattedDate = date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+      });
+      
+      return `
         <div class="review-card">
           <div class="review-header">
             <div>
               <div class="review-user">${review.user}</div>
               <div class="review-stars">
-                ${Array(5)
-                  .fill()
-                  .map(
-                    (_, i) =>
-                      `<i class="${
-                        i < review.rating ? "fas" : "far"
-                      } fa-star"></i>`
-                  )
-                  .join("")}
+                ${Array(5).fill().map((_, i) => 
+                  `<i class="${i < review.rating ? 'fas' : 'far'} fa-star"></i>`
+                ).join('')}
               </div>
             </div>
             <div class="review-date">${formattedDate}</div>
@@ -674,354 +569,314 @@ function openSchoolModal(school) {
           <p class="review-text">${review.text}</p>
         </div>
       `;
-      })
-      .join("");
-
-    reviewsContainer.style.display = "flex";
-    noReviewsElement.style.display = "none";
+    }).join('');
+    
+    reviewsContainer.style.display = 'flex';
+    noReviewsElement.style.display = 'none';
   } else {
-    reviewsContainer.style.display = "none";
-    noReviewsElement.style.display = "block";
+    reviewsContainer.style.display = 'none';
+    noReviewsElement.style.display = 'block';
   }
-
+  
   // Set rating display
-  const ratingContainer = document.getElementById("modal-rating");
+  const ratingContainer = document.getElementById('modal-rating');
   ratingContainer.innerHTML = `
     <i class="fas fa-star"></i>
     <span>${school.rating.toFixed(1)}</span>
     <span class="rating-count">(${reviews.length} reviews)</span>
   `;
-
+  
   // Reset review form
   resetReviewForm();
-
+  
   // Show the first tab
   document.querySelector('.tab-button[data-tab="overview"]').click();
-
+  
   // Show modal
-  schoolModal.style.display = "block";
-  document.body.style.overflow = "hidden";
+  schoolModal.style.display = 'block';
+  document.body.style.overflow = 'hidden';
 }
 
 // Reset review form
 function resetReviewForm() {
   currentRating = 0;
-  reviewText.value = "";
+  reviewText.value = '';
   submitReview.disabled = true;
-
-  ratingStars.forEach((star) => {
-    star.classList.remove("fas");
-    star.classList.add("far");
+  
+  ratingStars.forEach(star => {
+    star.classList.remove('fas');
+    star.classList.add('far');
   });
 }
 
 // Apply filters to schools
 function applyFilters() {
   const searchQuery = searchInput.value.toLowerCase().trim();
-
+  
   // Get selected school types
-  const selectedSchoolTypes = Array.from(
-    document.querySelectorAll('input[name="school-type"]:checked')
-  ).map((checkbox) => checkbox.value);
-
+  const selectedSchoolTypes = Array.from(document.querySelectorAll('input[name="school-type"]:checked'))
+    .map(checkbox => checkbox.value);
+  
   // Get location filters
-  const country = document.getElementById("country").value;
-  const region = document.getElementById("region").value;
-  const city = document.getElementById("city").value;
-
+  const country = document.getElementById('country').value;
+  const region = document.getElementById('region').value;
+  const city = document.getElementById('city').value;
+  
   // Get selected programs
-  const selectedPrograms = Array.from(
-    document.querySelectorAll('input[name="programs"]:checked')
-  ).map((checkbox) => checkbox.value);
-
+  const selectedPrograms = Array.from(document.querySelectorAll('input[name="programs"]:checked'))
+    .map(checkbox => checkbox.value);
+  
   // Get selected admission statuses
-  const selectedAdmissionStatuses = Array.from(
-    document.querySelectorAll('input[name="admission-status"]:checked')
-  ).map((checkbox) => checkbox.value);
-
+  const selectedAdmissionStatuses = Array.from(document.querySelectorAll('input[name="admission-status"]:checked'))
+    .map(checkbox => checkbox.value);
+  
   // Get tuition range
-  const tuitionRange = document.querySelector(
-    'input[name="tuition-range"]:checked'
-  ).value;
-
+  const tuitionRange = document.querySelector('input[name="tuition-range"]:checked').value;
+  
   // Get accreditation status
-  const accreditation = document.querySelector(
-    'input[name="accreditation"]:checked'
-  ).value;
-
+  const accreditation = document.querySelector('input[name="accreditation"]:checked').value;
+  
   // Get selected facilities
-  const selectedFacilities = Array.from(
-    document.querySelectorAll('input[name="facilities"]:checked')
-  ).map((checkbox) => checkbox.value);
-
+  const selectedFacilities = Array.from(document.querySelectorAll('input[name="facilities"]:checked'))
+    .map(checkbox => checkbox.value);
+  
   // Filter schools
-  filteredSchools = schools.filter((school) => {
+  filteredSchools = schools.filter(school => {
     // Search query filter
-    if (
-      searchQuery &&
-      !(
-        school.name.toLowerCase().includes(searchQuery) ||
-        school.location.city.toLowerCase().includes(searchQuery) ||
-        school.location.region.toLowerCase().includes(searchQuery) ||
-        school.location.country.toLowerCase().includes(searchQuery)
-      )
-    ) {
+    if (searchQuery && !(
+      school.name.toLowerCase().includes(searchQuery) ||
+      school.location.city.toLowerCase().includes(searchQuery) ||
+      school.location.region.toLowerCase().includes(searchQuery) ||
+      school.location.country.toLowerCase().includes(searchQuery)
+    )) {
       return false;
     }
-
+    
     // School type filter
-    if (
-      selectedSchoolTypes.length > 0 &&
-      !selectedSchoolTypes.includes(school.type)
-    ) {
+    if (selectedSchoolTypes.length > 0 && !selectedSchoolTypes.includes(school.type)) {
       return false;
     }
-
+    
     // Location filters
-    if (country && country !== "" && school.location.country !== country) {
+    if (country && country !== '' && school.location.country !== country) {
       return false;
     }
-
-    if (region && region !== "" && school.location.region !== region) {
+    
+    if (region && region !== '' && school.location.region !== region) {
       return false;
     }
-
-    if (city && city !== "" && school.location.city !== city) {
+    
+    if (city && city !== '' && school.location.city !== city) {
       return false;
     }
-
+    
     // Programs filter
-    if (
-      selectedPrograms.length > 0 &&
-      !selectedPrograms.some((program) => school.programs.includes(program))
-    ) {
+    if (selectedPrograms.length > 0 && !selectedPrograms.some(program => school.programs.includes(program))) {
       return false;
     }
-
+    
     // Admission status filter
-    if (
-      selectedAdmissionStatuses.length > 0 &&
-      !selectedAdmissionStatuses.includes(school.admissionStatus)
-    ) {
+    if (selectedAdmissionStatuses.length > 0 && !selectedAdmissionStatuses.includes(school.admissionStatus)) {
       return false;
     }
-
+    
     // Tuition range filter
-    if (
-      tuitionRange &&
-      tuitionRange !== "" &&
-      school.tuitionRange !== tuitionRange
-    ) {
+    if (tuitionRange && tuitionRange !== '' && school.tuitionRange !== tuitionRange) {
       return false;
     }
-
+    
     // Accreditation filter
-    if (
-      accreditation &&
-      accreditation !== "" &&
-      school.accreditation !== accreditation
-    ) {
+    if (accreditation && accreditation !== '' && school.accreditation !== accreditation) {
       return false;
     }
-
+    
     // Facilities filter
-    if (
-      selectedFacilities.length > 0 &&
-      !selectedFacilities.every((facility) =>
-        school.facilities.includes(facility)
-      )
-    ) {
+    if (selectedFacilities.length > 0 && !selectedFacilities.every(facility => school.facilities.includes(facility))) {
       return false;
     }
-
+    
     return true;
   });
-
+  
   renderSchools();
 }
 
 // Event Listeners
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   // Fetch schools data
   fetchSchools();
-
+  
   // Theme toggle
-  themeToggle.addEventListener("click", () => {
+  themeToggle.addEventListener('click', () => {
     darkMode = !darkMode;
-    document.body.classList.toggle("dark-theme", darkMode);
-    localStorage.setItem("darkMode", darkMode);
+    document.body.classList.toggle('dark-theme', darkMode);
+    localStorage.setItem('darkMode', darkMode);
   });
-
+  
   // Mobile filter button
-  mobileFilterBtn.addEventListener("click", () => {
-    filtersSidebar.classList.add("active");
-    filterOverlay.classList.add("active");
+  mobileFilterBtn.addEventListener('click', () => {
+    filtersSidebar.classList.add('active');
+    filterOverlay.classList.add('active');
   });
-
+  
   // Filter overlay click
-  filterOverlay.addEventListener("click", () => {
-    filtersSidebar.classList.remove("active");
-    filterOverlay.classList.remove("active");
+  filterOverlay.addEventListener('click', () => {
+    filtersSidebar.classList.remove('active');
+    filterOverlay.classList.remove('active');
   });
-
+  
   // Close modal
-  closeModal.addEventListener("click", () => {
-    schoolModal.style.display = "none";
-    document.body.style.overflow = "";
+  closeModal.addEventListener('click', () => {
+    schoolModal.style.display = 'none';
+    document.body.style.overflow = '';
   });
-
+  
   // Close modal when clicking outside
-  window.addEventListener("click", (e) => {
+  window.addEventListener('click', (e) => {
     if (e.target === schoolModal) {
-      schoolModal.style.display = "none";
-      document.body.style.overflow = "";
+      schoolModal.style.display = 'none';
+      document.body.style.overflow = '';
     }
   });
-
+  
   // Search form submit
-  searchForm.addEventListener("submit", (e) => {
+  searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
     applyFilters();
   });
-
+  
   // Search input change
-  searchInput.addEventListener("input", () => {
+  searchInput.addEventListener('input', () => {
     applyFilters();
   });
-
+  
   // Reset filters
-  resetFilters.addEventListener("click", () => {
+  resetFilters.addEventListener('click', () => {
     // Reset checkboxes
-    document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
       checkbox.checked = false;
     });
-
+    
     // Reset radio buttons
-    document.querySelectorAll('input[type="radio"]').forEach((radio) => {
-      if (radio.value === "") {
+    document.querySelectorAll('input[type="radio"]').forEach(radio => {
+      if (radio.value === '') {
         radio.checked = true;
       } else {
         radio.checked = false;
       }
     });
-
+    
     // Reset selects
-    document.querySelectorAll("select").forEach((select) => {
-      select.value = "";
+    document.querySelectorAll('select').forEach(select => {
+      select.value = '';
     });
-
+    
     // Reset search
-    searchInput.value = "";
-
+    searchInput.value = '';
+    
     // Apply filters
     applyFilters();
   });
-
+  
   // Filter group toggles
-  filterGroups.forEach((header) => {
-    header.addEventListener("click", () => {
-      const groupId = header.getAttribute("data-toggle");
+  filterGroups.forEach(header => {
+    header.addEventListener('click', () => {
+      const groupId = header.getAttribute('data-toggle');
       const content = document.getElementById(groupId);
-
+      
       // Toggle content visibility
-      if (content.style.display === "none") {
-        content.style.display = "flex";
-        header.querySelector("i").classList.remove("fa-chevron-right");
-        header.querySelector("i").classList.add("fa-chevron-down");
+      if (content.style.display === 'none') {
+        content.style.display = 'flex';
+        header.querySelector('i').classList.remove('fa-chevron-right');
+        header.querySelector('i').classList.add('fa-chevron-down');
       } else {
-        content.style.display = "none";
-        header.querySelector("i").classList.remove("fa-chevron-down");
-        header.querySelector("i").classList.add("fa-chevron-right");
+        content.style.display = 'none';
+        header.querySelector('i').classList.remove('fa-chevron-down');
+        header.querySelector('i').classList.add('fa-chevron-right');
       }
     });
   });
-
+  
   // Filter inputs change
-  document
-    .querySelectorAll('input[type="checkbox"], input[type="radio"], select')
-    .forEach((input) => {
-      input.addEventListener("change", () => {
-        applyFilters();
-      });
-    });
-
-  // Tab buttons
-  tabButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      // Remove active class from all buttons and contents
-      tabButtons.forEach((btn) => btn.classList.remove("active"));
-      document.querySelectorAll(".tab-content").forEach((content) => {
-        content.classList.remove("active");
-      });
-
-      // Add active class to clicked button and corresponding content
-      button.classList.add("active");
-      const tabId = button.getAttribute("data-tab");
-      document.getElementById(`${tabId}-tab`).classList.add("active");
+  document.querySelectorAll('input[type="checkbox"], input[type="radio"], select').forEach(input => {
+    input.addEventListener('change', () => {
+      applyFilters();
     });
   });
-
+  
+  // Tab buttons
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Remove active class from all buttons and contents
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(content => {
+        content.classList.remove('active');
+      });
+      
+      // Add active class to clicked button and corresponding content
+      button.classList.add('active');
+      const tabId = button.getAttribute('data-tab');
+      document.getElementById(`${tabId}-tab`).classList.add('active');
+    });
+  });
+  
   // Rating stars
-  ratingStars.forEach((star) => {
-    star.addEventListener("click", () => {
-      const rating = parseInt(star.getAttribute("data-rating"));
+  ratingStars.forEach(star => {
+    star.addEventListener('click', () => {
+      const rating = parseInt(star.getAttribute('data-rating'));
       currentRating = rating;
-
+      
       // Update star display
       ratingStars.forEach((s, index) => {
         if (index < rating) {
-          s.classList.remove("far");
-          s.classList.add("fas");
+          s.classList.remove('far');
+          s.classList.add('fas');
         } else {
-          s.classList.remove("fas");
-          s.classList.add("far");
+          s.classList.remove('fas');
+          s.classList.add('far');
         }
       });
-
+      
       // Enable/disable submit button
-      submitReview.disabled = !(
-        currentRating > 0 && reviewText.value.trim() !== ""
-      );
+      submitReview.disabled = !(currentRating > 0 && reviewText.value.trim() !== '');
     });
-
+    
     // Hover effect
-    star.addEventListener("mouseenter", () => {
-      const rating = parseInt(star.getAttribute("data-rating"));
-
+    star.addEventListener('mouseenter', () => {
+      const rating = parseInt(star.getAttribute('data-rating'));
+      
       ratingStars.forEach((s, index) => {
         if (index < rating) {
-          s.classList.remove("far");
-          s.classList.add("fas");
+          s.classList.remove('far');
+          s.classList.add('fas');
         } else {
-          s.classList.remove("fas");
-          s.classList.add("far");
+          s.classList.remove('fas');
+          s.classList.add('far');
         }
       });
     });
-
-    star.addEventListener("mouseleave", () => {
+    
+    star.addEventListener('mouseleave', () => {
       ratingStars.forEach((s, index) => {
         if (index < currentRating) {
-          s.classList.remove("far");
-          s.classList.add("fas");
+          s.classList.remove('far');
+          s.classList.add('fas');
         } else {
-          s.classList.remove("fas");
-          s.classList.add("far");
+          s.classList.remove('fas');
+          s.classList.add('far');
         }
       });
     });
   });
-
+  
   // Review text input
-  reviewText.addEventListener("input", () => {
-    submitReview.disabled = !(
-      currentRating > 0 && reviewText.value.trim() !== ""
-    );
+  reviewText.addEventListener('input', () => {
+    submitReview.disabled = !(currentRating > 0 && reviewText.value.trim() !== '');
   });
-
+  
   // Submit review
-  submitReview.addEventListener("click", () => {
-    if (currentRating > 0 && reviewText.value.trim() !== "") {
+  submitReview.addEventListener('click', () => {
+    if (currentRating > 0 && reviewText.value.trim() !== '') {
       const newReview = {
         id: `r${Date.now()}`,
         user: "Current User",
@@ -1029,24 +884,21 @@ document.addEventListener("DOMContentLoaded", () => {
         text: reviewText.value.trim(),
         date: new Date().toISOString(),
       };
-
+      
       // Add review to school
       if (!selectedSchool.reviews) {
         selectedSchool.reviews = [];
       }
-
+      
       selectedSchool.reviews.unshift(newReview);
-
+      
       // Update school rating
-      const totalRatings = selectedSchool.reviews.reduce(
-        (sum, review) => sum + review.rating,
-        0
-      );
+      const totalRatings = selectedSchool.reviews.reduce((sum, review) => sum + review.rating, 0);
       selectedSchool.rating = totalRatings / selectedSchool.reviews.length;
-
+      
       // Reset form
       resetReviewForm();
-
+      
       // Reopen modal to refresh content
       openSchoolModal(selectedSchool);
     }
