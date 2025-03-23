@@ -147,10 +147,17 @@
     margin: 0rem 8rem 1rem 20rem;
   }
   
-  .admission_initials p {
-    font-size: 1.4rem;
+  .admission_initials h2 {
+    font-size: 1.6rem;
     font-weight: 600;
     color: var(--dark);
+    font-family: 'Poppins';
+  }
+  .admission_initials h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--dark);
+    font-family: 'Poppins';
   }
   
   .contents__admission {
@@ -214,6 +221,10 @@
   .admission_approval {
     justify-content: center;
     gap: 1rem;
+    align-items: center;
+    margin-right: 40px;
+    align-content: center;
+    justify-items: center;
   }
   
   .admission_approval button:first-child {
@@ -225,21 +236,29 @@
   }
   
   .admission_approval button:first-child span {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 600;
   }
   
   .admission_approval button:not(:first-child) {
     background-color: transparent;
     justify-content: center;
-    width: 4rem;
-    height: 4rem;
+    width: 2rem;
+    height: 2rem;
     padding: 1rem;
     border: 1px solid #fff;
     border-radius: 50%;
-    font-size: 3rem;
+    font-size: 2rem;
     transition: background-color 0.4s, border 0.4s;
     cursor: pointer;
+  }
+
+  .admission_approval button:first-child {
+    border: 1px solid #fff;
+    border-radius: 100%;
+    width: 2rem;
+    height: 2rem;
+    font-size: 2rem;
   }
   
   .admission_approval button:last-child {
@@ -249,6 +268,9 @@
   .admission_approval button:last-child:hover {
     background-color: var(--col-light-red);
     border: 1px solid var(--col-red);
+  }
+  .admission_approval button:first-child span:hover {
+    color: var(--col-red);
   }
   
   .admission_approval button:nth-child(2) {
