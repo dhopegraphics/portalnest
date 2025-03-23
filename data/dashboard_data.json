@@ -1,0 +1,51 @@
+{
+    "applicants": [
+      { "name": "John Doe", "email": "johndoe@email.com", "status": "Pending", "phone": "+1234567890", "applied_program": "Business Administration", "date_applied": "2025-03-20" },
+      { "name": "Jane Smith", "email": "janesmith@email.com", "status": "Approved", "phone": "+0987654321", "applied_program": "Computer Science", "date_applied": "2025-03-18" },
+      { "name": "David Wilson", "email": "davidwilson@email.com", "status": "Rejected", "phone": "+1122334455", "applied_program": "Mechanical Engineering", "date_applied": "2025-03-15" },
+      { "name": "Emily Johnson", "email": "emilyj@email.com", "status": "Pending", "phone": "+2233445566", "applied_program": "Medicine", "date_applied": "2025-03-22" },
+      { "name": "Michael Brown", "email": "michaelb@email.com", "status": "Approved", "phone": "+6677889911", "applied_program": "Architecture", "date_applied": "2025-03-19" }
+    ],
+    "staff": [
+      { "name": "Mr. Adams", "role": "Principal", "employee_id": "EMP001", "email": "adams@school.com", "phone": "+4455667788" },
+      { "name": "Ms. Carter", "role": "Teacher", "employee_id": "EMP002", "email": "carter@school.com", "phone": "+6677889900", "subject": "Mathematics" },
+      { "name": "Dr. Lee", "role": "Lecturer", "employee_id": "EMP003", "email": "lee@school.com", "phone": "+5544332211", "department": "Science" },
+      { "name": "Mrs. Wilson", "role": "Vice Principal", "employee_id": "EMP004", "email": "wilson@school.com", "phone": "+7788990011" },
+      { "name": "Mr. Thomas", "role": "Teacher", "employee_id": "EMP005", "email": "thomas@school.com", "phone": "+8877665544", "subject": "History" }
+    ],
+    "students": [
+      { "name": "Alice Brown", "level": "100", "program": "Computer Science", "student_id": "STU1001", "email": "alicebrown@school.com", "phone": "+1111222333", "gpa": 3.8 },
+      { "name": "Bob White", "level": "200", "program": "Engineering", "student_id": "STU1002", "email": "bobwhite@school.com", "phone": "+4444555566", "gpa": 3.5 },
+      { "name": "Clara Johnson", "level": "300", "program": "Business Administration", "student_id": "STU1003", "email": "clarajohnson@school.com", "phone": "+7777888899", "gpa": 3.9 },
+      { "name": "Daniel Green", "level": "400", "program": "Medicine", "student_id": "STU1004", "email": "danielgreen@school.com", "phone": "+9990001112", "gpa": 3.7 },
+      { "name": "Sophia Miller", "level": "100", "program": "Architecture", "student_id": "STU1005", "email": "sophiam@school.com", "phone": "+1122334455", "gpa": 3.6 }
+    ],
+    "courses": [
+      { "course": "Mathematics 101", "course_code": "MATH101", "instructor": "Dr. Lee", "credits": 3, "department": "Science" },
+      { "course": "Physics 201", "course_code": "PHYS201", "instructor": "Prof. Kim", "credits": 4, "department": "Engineering" },
+      { "course": "Business Strategy", "course_code": "BUS301", "instructor": "Dr. Anderson", "credits": 3, "department": "Business" },
+      { "course": "Medical Ethics", "course_code": "MED401", "instructor": "Dr. Harris", "credits": 4, "department": "Medicine" },
+      { "course": "Architectural Design", "course_code": "ARCH101", "instructor": "Prof. Walker", "credits": 3, "department": "Architecture" }
+    ],
+    "departments": [
+      { "name": "Science", "head": "Dr. Lee", "faculty": "Faculty of Natural Sciences" },
+      { "name": "Engineering", "head": "Prof. Kim", "faculty": "Faculty of Engineering" },
+      { "name": "Business", "head": "Dr. Anderson", "faculty": "Faculty of Business Administration" },
+      { "name": "Medicine", "head": "Dr. Harris", "faculty": "Faculty of Health Sciences" },
+      { "name": "Architecture", "head": "Prof. Walker", "faculty": "Faculty of Architecture & Design" }
+    ],
+    "faculties": [
+      { "name": "Faculty of Natural Sciences", "dean": "Dr. Morgan" },
+      { "name": "Faculty of Engineering", "dean": "Prof. Wright" },
+      { "name": "Faculty of Business Administration", "dean": "Dr. Roberts" },
+      { "name": "Faculty of Health Sciences", "dean": "Dr. Wilson" },
+      { "name": "Faculty of Architecture & Design", "dean": "Prof. Collins" }
+    ],
+    "events": [
+      { "title": "Orientation Program", "date": "2025-04-01", "location": "Main Auditorium", "organizer": "Admissions Office" },
+      { "title": "Science Fair", "date": "2025-05-10", "location": "Science Building", "organizer": "Science Department" },
+      { "title": "Business Innovation Summit", "date": "2025-06-15", "location": "Business Faculty Hall", "organizer": "Business Department" },
+      { "title": "Medical Conference", "date": "2025-07-20", "location": "Health Sciences Hall", "organizer": "Medicine Faculty" },
+      { "title": "Architecture Expo", "date": "2025-08-05", "location": "Design Studio", "organizer": "Architecture Department" }
+    ]
+  }

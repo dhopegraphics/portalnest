@@ -167,6 +167,7 @@
   .admisson_content_display {
     width: 100%;
     justify-content: space-between;
+    border-radius: 30px;
   }
 
   .admisson_content_display2 {
