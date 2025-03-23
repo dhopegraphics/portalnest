@@ -53,9 +53,9 @@ function initializeSidebarLogic() {
             mainHeader.style.position = "fixed"; // Remove from normal flow
             mainHeader.style.width = `calc(100vw - ${sidebarWidth}px)`; // Adjust width
             mainHeader.style.left = `${sidebarWidth}px`; // Push main header right
-            theCardFit_container.style.width = "887px"
             mainHeader.style.right = "0"; // Reset rig
             mainContent.style.marginLeft = `${sidebarWidth}px`;
+             theCardFit_container.style.width = "887px"
 
         }
     }

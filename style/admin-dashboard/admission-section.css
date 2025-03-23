@@ -161,14 +161,23 @@
     width: 100%;
     justify-content: space-between;
   }
-  
+
+  .admisson_content_display2 {
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+  .person_details {
+    width: none;
+  }
   
   .admisson_content_display div {
-    border: none;
+    justify-content: space-between;
   }
   
   .admission_person {
     gap: 1rem;
+    align-items: center;
   }
   
   .admission_person_img {
@@ -256,6 +265,11 @@
     height: 2.5rem;
     border: 1px solid var(--col-otherwhite);
     cursor: pointer;
+  }
+
+  .inner_contents__admission {
+    width: 100%;
+
   }
   
   .admisson_footer {
