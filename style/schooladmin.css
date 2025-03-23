@@ -105,10 +105,6 @@ a{
   height: auto;
 }
 
-.dashboard__section_block.active {
-  display: block;
-  height: auto;
-}
 
 .pending__left-content.width {
   width: 80%;
@@ -206,6 +202,13 @@ a{
 /* flex */
 .flex {
   display: flex;
+  align-items: center;
+}
+
+button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
   align-items: center;
 }
 
@@ -440,13 +443,14 @@ a{
 
 .card {
   width: 100%;
-  height: 16rem;
+  height: 14rem;
   border: 1px solid;
   border-radius: 20px;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  font-size: medium;
+  font-weight: 700;
 }
 
 .admission_scroll_card {
