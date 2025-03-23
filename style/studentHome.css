@@ -24,7 +24,14 @@ body {
 .main__header {
     overflow: hidden;
     transition: margin-right 0.3s ease-in-out; /* Smooth margin adjustment */
+    transition: all 0.3s ease-in-out;
     margin: 0;
+  }
+
+  .overall__main{
+    transition: margin-right 0.3s ease-in-out; /* Smooth margin adjustment */
+    transition: all 0.3s ease-in-out;
+
   }
   
   /* Sidebar styles */
