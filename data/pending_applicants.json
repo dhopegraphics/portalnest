@@ -1,0 +1,45 @@
+
+{
+    "pending_applicants": [
+      {
+        "name": "Mensah Isaac Nana Sam",
+        "program": "Computer Science",
+        "level": "Year One",
+        "date": "Jan 20, 2025",
+        "time": "09:30 AM",
+        "image": "/assets/images/team-2.jpg"
+      },
+      {
+        "name": "Jane Doe",
+        "program": "Software Engineering",
+        "level": "Year Two",
+        "date": "Feb 15, 2025",
+        "time": "10:45 AM",
+        "image": "/assets/images/team-3.jpg"
+      },
+      {
+        "name": "John Smith",
+        "program": "Information Technology",
+        "level": "Year Three",
+        "date": "Mar 5, 2025",
+        "time": "02:00 PM",
+        "image": "/assets/images/team-4.jpg"
+      },
+      {
+        "name": "Alice Brown",
+        "program": "Cybersecurity",
+        "level": "Year One",
+        "date": "Apr 12, 2025",
+        "time": "04:30 PM",
+        "image": "/assets/images/team-5.jpg"
+      },
+      {
+        "name": "Michael White",
+        "program": "Data Science",
+        "level": "Year Four",
+        "date": "May 20, 2025",
+        "time": "11:15 AM",
+        "image": "/assets/images/team-6.jpg"
+      }
+    ]
+  }

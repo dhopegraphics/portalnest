@@ -25,6 +25,7 @@
     padding: 2rem;
     border-radius: 20px;
     box-shadow: 0 0.8rem 1.4rem rgba(0, 0, 0, 0.2);
+    
 
   }
   
@@ -199,7 +200,7 @@ h1 {
   }
   /* Pending styling */
   .recent__pending_container {
-    height: 300px;
+    height: auto;
     
   }
   

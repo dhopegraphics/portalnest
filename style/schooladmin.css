@@ -226,12 +226,15 @@ a{
   height: auto;
   background-color: var(--col-white-bg);
   padding-bottom: 45px;
+
 }
+
 
 .main__main-content {
   flex: 1;
   background: var(--col-white-bg);
   height: auto;
+  
 }
 
 .main__card-container {

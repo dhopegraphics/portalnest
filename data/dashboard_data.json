@@ -48,4 +48,5 @@
       { "title": "Medical Conference", "date": "2025-07-20", "location": "Health Sciences Hall", "organizer": "Medicine Faculty" },
       { "title": "Architecture Expo", "date": "2025-08-05", "location": "Design Studio", "organizer": "Architecture Department" }
     ]
-  }
+  } 
+
