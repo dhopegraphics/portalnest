@@ -19,19 +19,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 
   <!-- Css Link -->
-  <link rel="stylesheet" href="../../style/schooladmin.css" />
+  <link rel="stylesheet" href="/style/schooladmin.css" />
   <link rel="stylesheet" href="/style/admin-dashboard/manager-section.css">
+  <script  src="/functions/manger-tab-functions.js" defer></script>
 
-
- 
 </head>
 
 <body>
-  <main  class="main overall__main">
-      <!-- 👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇 -->
-      <!-- ** Managers  -->
+  
+  <script src="/functions/admin-dashboard-sideandtopbar.js"></script>
+  <main style="margin-top: 2.5%; padding: 1%;" class="main overall__main">
       <div class="content__area" id="managers">
-        <section>
           <div class="main__card-container">
             <h1 class="header_title_text">Dashboard-School Manager</h1>
 
@@ -231,7 +229,7 @@
           <div class="manager_form_container">
             <div class="fake_display flex">
               <div></div>
-              <button class="close_form">
+              <button id="close_form" class="close_form">
                 <span><i class="bi bi-x"></i></span>
               </button>
             </div>
@@ -268,7 +266,7 @@
 
                 <div class="hold_select_position">
                   <select name="position" id="position">
-                    <option value="1"></option>
+                    <option value="1">Select Row To be given</option>
                     <option value="2">Head of Department (HOD)</option>
                     <option value="3">Senior Lecturer</option>
                     <option value="4">Lecturer</option>
@@ -285,7 +283,7 @@
 
                 <div class="hold_select_position">
                   <select name="department" id="department">
-                    <option value="1"></option>
+                    <option  value="1">Select The Department </option>
                     <option value="2">Computer Science Department</option>
                     <option value="3">Business Department</option>
                     <option value="4">Health Department</option>
@@ -460,15 +458,8 @@
               </div>
             </form>
           </div>
-
-          <!-- overlay -->
-          <div class="overlay hidden"></div>
-        </section>
       </div>
-
-    </div>
   </main>
-  <script src="/functions/school-dashboard_drawerRender.js"></script>
+  
 </body>
-
 </html>

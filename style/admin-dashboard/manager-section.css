@@ -156,15 +156,20 @@
   
   .manager_form_container {
     position: absolute;
-    top: 0;
+   
     /* left: 10px; */
-    width: 55%;
+    width: 0%;
     height: 900px;
-    top: 74px;
+    top: 20%;
+    left: 32%;
     background-color: var(--white-col);
     border-radius: 10px;
     transition: all 0.5s ease;
-    z-index: 999;
+    z-index: 0;
+    display: none;
+    transition: width 0.3s ease-in-out;
+   
+
   }
   
   .fake_display {
@@ -186,11 +191,8 @@
     cursor: pointer;
   }
   
-  .manager_form {
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
-  
+  #managerForm.manager_form {
+   
     padding: 0rem 4rem 4rem 6rem;
   }
   
@@ -255,7 +257,27 @@
     font-size: 1.4rem;
     border-radius: 5px;
     cursor: pointer;
+    color: black;
   }
+
+  
+
+/* Hover & Focus Effects for Select */
+select:hover {
+  border-color: #ffffff;
+}
+
+select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.4);
+}
+
+/* Disabled Select */
+select:disabled {
+  background: #e9ecef;
+  cursor: not-allowed;
+}
   
   .first_1_input input {
     width: 70%;

@@ -1,29 +1,8 @@
-"use strict";
-
-// Navigation and Section Content
-const buttons = document.querySelectorAll(".btn__navigate");
-const contents = document.querySelectorAll(".content__area");
-
-// Managers
-const overLay = document.querySelector(".overlay");
-const formDisplay = document.querySelector(".manager_form_container");
-const closeBtn = document.querySelector(".close_form");
-
-const createLecturerBtn = document.querySelector("#createlecturer");
-const createManagerBtn = document.querySelector("#createmanager");
-const createOfficerBtn = document.querySelector("#createofficer");
-const createExaminerBtn = document.querySelector("#createexaminer");
-
-// Default selection
-const dashboardBtn = document.querySelector(".dashboardbtn");
-const dashboardContent = document.querySelector("#dashboard");
 
 
 
-// Header menu button function
-const menuBtn = document.querySelector(".btn__menu");
-const navigationSection = document.querySelector(".navigation");
 
+<<<<<<< HEAD
 menuBtn.addEventListener("click", () => {
   navigationSection.classList.toggle("close");
   document.querySelectorAll(".pending__left-content").forEach((width) => {
@@ -36,39 +15,10 @@ menuBtn.addEventListener("click", () => {
   document.querySelector(".main__main-content").classList.toggle("width");
   document.querySelector(".admission_scroll").classList.toggle("width");
   document.querySelector(".manager_form_container").classList.toggle("left");
+=======
+>>>>>>> 7e61738b688002446fc9e7c6fc0b233c611f4ede
 
-  document.querySelectorAll(".admission_scroll_card").forEach((width) => {
-    width.classList.toggle("width");
-  });
-});
 
-// Managers logic
-function displayForm() {
-  overLay.classList.add("hidden_remove");
-  formDisplay.classList.add("hidden_remove");
-}
-
-function closeForm() {
-  overLay.classList.remove("hidden_remove");
-  formDisplay.classList.remove("hidden_remove");
-}
-
-createLecturerBtn.addEventListener("click", displayForm);
-
-createManagerBtn.addEventListener("click", displayForm);
-
-createOfficerBtn.addEventListener("click", displayForm);
-
-createExaminerBtn.addEventListener("click", displayForm);
-
-closeBtn.addEventListener("click", closeForm);
-
-// Manually closing the form with Escape key when the form is open
-window.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    closeForm();
-  }
-});
 
 const managersForm = document.querySelector(".manager_form");
 const firstName = document.querySelector("#fristname");
@@ -102,10 +52,6 @@ function getSelectedOption(options) {
   });
   return selected;
 }
-
-// getSelectedOption(yearOption);
-// getSelectedOption(courseOptions);
-// getSelectedOption(permissionOptions);
 
 // Function to collect form data
 function collectFormData() {

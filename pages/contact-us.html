@@ -17,9 +17,7 @@
 </head>
 
 <body>
-
     <special-header> </special-header>
-
     <!-- Contact Section -->
     <section class="contact-section main-content">
         <div class="contact-header">
@@ -29,7 +27,6 @@
                 <span class="dot"></span>
             </div>
         </div>
-
         <div class="contact-container">
             <!-- Contact Info Card -->
             <div class="contact-info">
@@ -91,10 +88,6 @@
                             <img src="/assets/logo/portalnest-Variation-Logo.png" alt="" class="network-icon">
                         </div>
                     </div>
-
-
-
-
                 </div>
                 <form>
 
@@ -112,13 +105,12 @@
                         <label for="message">Message</label>
                         <textarea id="message" rows="6"></textarea>
                     </div>
-                    <button class="Submit-now" id="submitBtn" type="button" 
-                    style="background-color: #007bff; color: white; border: none; padding: 12px 20px; 
+                    <button class="Submit-now" id="submitBtn" type="button" style="background-color: #007bff; color: white; border: none; padding: 12px 20px; 
                            font-size: 16px; border-radius: 5px; cursor: pointer; transition: 0.3s ease; 
                            display: block; width: 100%; max-width: 200px; margin: 10px auto;">
-                
-                    Submit
-                </button>
+
+                        Submit
+                    </button>
                 </form>
             </div>
         </div>
@@ -135,7 +127,7 @@
             <!-- Testimonials Slider -->
             <div class="testimonials-slider">
                 <!-- Single Testimonial -->
-                <div class="testimonial-card">
+                <div class="testimonial-card active">
                     <div class="testimonial-image-wrapper">
                         <div class="image-background"></div>
                         <div class="image-container">
@@ -155,24 +147,79 @@
                             <h3>Mr. Daniel K</h3>
                             <p>Administrator, Bright Future High School</p>
                         </div>
+                    </div>
+                </div>
 
-                        <button class="next-button" aria-label="Next testimonial">
+                <div class="testimonial-card">
+                    <div class="testimonial-image-wrapper">
+                        <div class="image-background"></div>
+                        <div class="image-container">
+                            <img src="/assets/images/profilepic.png" alt="Mr. Daniel K" class="profile-image">
+                        </div>
+                    </div>
+
+                    <div class="testimonial-content">
+                        <div class="quote-mark quote-left">"</div>
+                        <p class="testimonial-text">
+                            This platform has made student management so much easier!
+                        </p>
+                        <div class="quote-mark quote-right">"</div>
+
+                        <div class="testimonial-author">
+                            <h3>Jane Doe</h3>
+                            <p>Teacher, Elite Academy</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="testimonial-card ">
+                    <div class="testimonial-image-wrapper">
+                        <div class="image-background"></div>
+                        <div class="image-container">
+                            <img src="/assets/images/profilepic.png" alt="Mr. Daniel K" class="profile-image">
+                        </div>
+                    </div>
+
+                    <div class="testimonial-content">
+                        <div class="quote-mark quote-left">"</div>
+                        <p class="testimonial-text">
+                            I love how seamless the system is for checking grades
+                        </p>
+                        <div class="quote-mark quote-right">"</div>
+
+                        <div class="testimonial-author">
+                            <h3>John Smith</h3>
+                            <p>Student, University of Excellence</p>
+                        </div>
+
+
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="on-press-button">
+                    <button id="next-button" class="next-button">
+                        <div>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"
                                     fill="currentColor" />
                             </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
+                        </div>
 
+                    </button>
+                </div>
+
+            </div>
         </div>
     </section>
 
     <special-footer> </special-footer>
     <script src="/functions/headerFooter.js"></script>
-    <script type="module" src="/firebase/contactUs/create.js" ></script>
+    <script src="/functions/testimonial-slider.js"></script>
+    <script type="module" src="/firebase/contactUs/create.js"></script>
 
 </body>
 

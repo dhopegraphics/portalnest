@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const testimonials = document.querySelectorAll(".testimonial-card");
-    const nextButton = document.getElementById("nextButton");
+    const nextButton = document.getElementById("next-button");
     let currentIndex = 0;
 
     function showTestimonial(index) {
@@ -19,4 +19,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Show first testimonial by default
     showTestimonial(currentIndex);
-});
+});  
