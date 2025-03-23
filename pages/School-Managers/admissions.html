@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="/style/schooladmin.css" />
     <link rel="stylesheet" href="/style/admin-dashboard/admission-section.css">
     <link rel="icon" type="image/png" href="/assets/logo/portalnest-Variation-Logo.png">
-    <script  src="/functions/script-schooladmin.js" defer></script>
+   
   </head>
 
   <body>
@@ -31,7 +31,7 @@
           <div class="main__card-container">
             <h1>Admissions Management</h1>
 
-            <div class="card_scroll dashboard__scroll admission_scroll">
+            <div class="card_scroll  admission_scroll">
               <div class="card__container" id="cardContainer">
                 <div class="admission_scroll_card card card_green">
                   <div class="card__header flex">
@@ -45,7 +45,7 @@
                   </div>
 
                  
-                  <button class="card__footer flex col_green flex">
+                  <button id="see_full_applicants_details" class="card__footer flex col_green flex">
                     <p>See Details</p>
                     <div>
                       <i class="bi bi-arrow-right col_green"></i>
@@ -65,7 +65,7 @@
                   </div>
 
                
-                  <button class="card__footer flex col_violet flex">
+                  <button id="see_full_school_manager_details" class="card__footer flex col_violet flex">
                     <p>See Details</p>
                     <div>
                       <i class="bi bi-arrow-right col_violet"></i>
@@ -84,7 +84,7 @@
                       <p>Students</p>
                     </div>
                   </div>
-                  <button class="card__footer flex col_orange flex">
+                  <button id="see_full_student_details" class="card__footer flex col_orange flex">
                     <p>See Details</p>
                     <div>
                       <i class="bi bi-arrow-right col_orange"></i>
@@ -102,13 +102,12 @@
                       <p>Listed Courses</p>
                     </div>
                   </div>
-
-                  <div class="card__footer flex col_lightblue">
+                  <button id="see_full_listed_courses_details" class="card__footer flex col_lightblue flex">
                     <p>See Details</p>
-                    <button>
+                    <div>
                       <i class="bi bi-arrow-right col_lightblue"></i>
-                    </button>
-                  </div>
+                    </div>
+                  </button>
                 </div>
 
                 <div class="admission_scroll_card card card_orange">
@@ -142,15 +141,14 @@
                       <p>Rejected</p>
                     </div>
                   </div>
-
-                  <div class="card__footer flex col_lightred">
+                  <button id="see_full_rejected_details" class="card__footer flex col_lightred flex">
                     <p>See Details</p>
-                    <button>
+                    <div>
                       <i class="bi bi-arrow-right col_lightred"></i>
-                    </button>
-                  </div>
+                    </div>
+                  </button>
                 </div>
-
+               
                 <div class="admission_scroll_card card card_green">
                   <div class="card__header flex border_green">
                     <span class="people_icon">
@@ -161,13 +159,12 @@
                       <p>Accepted</p>
                     </div>
                   </div>
-
-                  <div class="card__footer flex col_green">
+                  <button id="see_full_accepted_details" class="card__footer flex col_green flex">
                     <p>See Details</p>
-                    <button>
+                    <div>
                       <i class="bi bi-arrow-right col_green"></i>
-                    </button>
-                  </div>
+                    </div>
+                  </button>
                 </div>
               </div>
             </div>

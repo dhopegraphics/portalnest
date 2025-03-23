@@ -418,6 +418,7 @@ a{
 .admission_scroll {
   flex: 1;
   width: 887px;
+ 
 }
 
 .card__container {
@@ -426,9 +427,10 @@ a{
   align-items: center;
   justify-content: space-between;
   gap: 4rem;
-
   /* max-width: 1000px; */
   overflow-x: auto;
+  padding: 10px;
+ 
 }
 
 .admission_scroll .card__container {
