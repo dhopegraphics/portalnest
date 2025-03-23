@@ -31,6 +31,7 @@ function initializeSidebarLogic() {
     const mainHeader = document.querySelector(".main__header");
     const sliderBtn = document.getElementById("slider_btn");
     const mainContent  = document.querySelector(".overall__main");
+    const theCardFit_container = document.querySelector(".admission_scroll")
     const body = document.body;
 
     if (!sidebar || !mainHeader || !sliderBtn) {
@@ -44,6 +45,7 @@ function initializeSidebarLogic() {
             mainHeader.style.width = "100vw"; // Full width
             mainHeader.style.left = "0"; // Align to left
             mainContent.style.marginLeft = "0"; // Align to right
+            theCardFit_container.style.width = "86%"
 
             
         } else {
@@ -51,9 +53,9 @@ function initializeSidebarLogic() {
             mainHeader.style.position = "fixed"; // Remove from normal flow
             mainHeader.style.width = `calc(100vw - ${sidebarWidth}px)`; // Adjust width
             mainHeader.style.left = `${sidebarWidth}px`; // Push main header right
-          
             mainHeader.style.right = "0"; // Reset rig
             mainContent.style.marginLeft = `${sidebarWidth}px`;
+             theCardFit_container.style.width = "887px"
 
         }
     }

@@ -44,13 +44,7 @@ body {
   
     transition: transform 0.3s ease-in-out;
   }
-  
-  /* Main content should have a margin-right dynamically */
-  .main-content {
-    margin-left: 22vw; /* Same width as sidebar */
-    transition: margin-left 0.3s ease-in-out;
-
-  }
+ 
   
   /* When sidebar is hidden */
   .sidebar-hidden .navigation {
