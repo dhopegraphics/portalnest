@@ -1,4 +1,7 @@
+import { submitForm } from "../firebase/admissions/applicant-form.js";
+
 let currentStep = 1; // Global variable
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const totalSteps = 6;
@@ -44,10 +47,10 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    function validateCurrentForm() {
-        const currentForm = formSections[currentStep - 1];
+   function validateCurrentForm() {
+        const currentForm = document.querySelector(".form-section:not([style*='display: none'])");
         const inputs = currentForm.querySelectorAll("input, select, textarea");
-
+    
         let isValid = true;
         inputs.forEach(input => {
             if (!input.value.trim()) {
@@ -57,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 clearError(input);
             }
         });
-
+    
         return isValid;
     }
 
@@ -83,21 +86,30 @@ document.addEventListener("DOMContentLoaded", function () {
         input.style.border = "";
     }
 
-    nextButtons.forEach(button => {
-        button.addEventListener("click", function (event) {
-            event.preventDefault();
-            console.log(`Next button clicked at step ${currentStep}`);
-            if (validateCurrentForm()) {
-                if (currentStep < totalSteps) {
-                    currentStep++;
-                    showFormSection(currentStep);
-                    updateProgress();
-                } else {
-                    alert("Form Submitted!");
+ nextButtons.forEach(button => {
+    button.addEventListener("click", async function (event) {
+        event.preventDefault();
+        console.log(`Next button clicked at step ${currentStep}`);
+        
+        if (validateCurrentForm()) {
+            if (currentStep < totalSteps) {
+                currentStep++;
+                showFormSection(currentStep);
+                updateProgress();
+            } else {
+                // ✅ Submit the form data to Firebase
+                try {
+                    await submitForm();
+                    alert("🎉 Form submitted successfully!");
+                    localStorage.removeItem("admissionFormDraft"); // Clear draft after submission
+                } catch (error) {
+                    console.error("❌ Error submitting form:", error);
+                    alert("❌ Form submission failed. Please try again.");
                 }
             }
-        });
+        }
     });
+});
 
     prevButtons.forEach(button => {
         button.addEventListener("click", function (event) {

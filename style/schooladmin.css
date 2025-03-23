@@ -225,6 +225,7 @@ a{
   width: 100%;
   height: auto;
   background-color: var(--col-white-bg);
+  padding-bottom: 45px;
 }
 
 .main__main-content {
@@ -530,6 +531,12 @@ a{
   border-top: 1px solid;
   justify-content: space-between;
   padding: 0.5rem 2rem;
+  background: transparent;
+  border-bottom: 0;
+  border-left: 0;
+  border-right: 0;
+  cursor: pointer; /* Adds pointer cursor */
+  
 }
 
 .card__footer_m {

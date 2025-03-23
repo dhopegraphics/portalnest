@@ -6,33 +6,40 @@
     <title>Application Status</title>
     <link rel="stylesheet" href="/style/admission-status-style.css">
     <link rel="icon" type="image/png" href="/assets/logo/portalnest-Variation-Logo.png">
+       <!-- Link the Loader CSS -->
+       <link rel="stylesheet" href="../../style/portalnest-loader.css">
+    
+     
+   
 </head>
 <body>
     <div class="container">
         <h1 class="right-align">Application Status</h1>
         <p class="right-align">Track your admission application progress</p>
+        
         <section class="application-summary">
             <h2>Application Summary</h2>
             <div class="summary-grid">
                 <div>
-                    <p><strong>Applicant Name</strong><br>John Doe</p>
-                    <p><strong>Faculty</strong><br>School of Engineering</p>
-                    <p><strong>Course</strong><br>MSc in Computer Science</p>
+                    <p><strong>Applicant Name</strong><br><span id="applicant-name">Loading...</span></p>
+                    <p><strong>Faculty</strong><br><span id="faculty">Loading...</span></p>
+                    <p><strong>Program</strong><br><span id="course">Loading...</span></p>
                 </div>
                 <div>
-                    <p><strong>Institution</strong><br>Harvard University</p>
-                    <p><strong>Department</strong><br>Computer Science</p>
-                    <p><strong>Submission Date</strong><br>January 15, 2024</p>
+                    <p><strong>Institution</strong><br><span id="institution">Loading...</span></p>
+                    <p><strong>Department</strong><br><span id="department">Loading...</span></p>
+                    <p><strong>Submission Date</strong><br><span id="submission-date">Loading...</span></p>
                 </div>
             </div>
         </section>
+       
         
         <section class="status">
             <h2>Current Status</h2>
             <div class="progress-container">
-                <span style="color: #007bff; font-weight: bold;">🔵 Under Review</span>
+                <span id="current-status" style="color: #007bff; font-weight: bold;">🔵 Loading...</span>
                 <div class="progress">
-                    <div class="progress-bar"></div>
+                    <div class="progress-bar" id="progress-bar"></div>
                 </div>
                 <div class="progress-labels">
                     <span>Submitted</span>
@@ -44,10 +51,31 @@
         
         <section class="updates-actions">
             <h2>Updates & Actions</h2>
-            <p>Your application is currently being reviewed by the admissions committee. Please check back regularly for updates.</p>
-            <p>🕓Expected decision date: February 15, 2024</p>
+            <p id="status-message">Fetching application details...</p>
+            <p>🕓Expected decision date: <span id="decision-date">Loading...</span></p>
             <p>✉️You will be notified via email when there are updates.</p>
         </section>
+        <button id="portal-button" style="display: none; margin-top: 15px; padding: 10px 15px; background-color: #007bff; color: white; border: none; cursor: pointer; border-radius: 5px;" onclick="redirectToPortal()">Go to Portal</button>
+    
     </div>
+
+    <script type="module" src="/firebase/admissions/fetch-status.js"></script>
+    <script  type="module" src="/firebase/admissions/fetch_submitted-applicant.js" > </script>
+
+      <!-- Include the JavaScript Loader -->
+      <script src="../../functions/portalnest-loader.js" ></script>
+      <script>
+        // Ensure the loader is accessible
+        document.addEventListener('DOMContentLoaded', function () {
+            // Show loader on page load
+            PortalNestLoader.show();
+
+            // Simulate loading process
+            setTimeout(() => {
+                PortalNestLoader.hide();
+            }, 3000); // Hide after 3 seconds
+        });
+    </script>
+
 </body>
 </html>

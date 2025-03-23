@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tickets - PortalNest Help Desk</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/style/help-desk/help-desk.css">
+    <link rel="stylesheet" href="/style/help-desk/my-ticket.css">
+    <link rel="stylesheet" href="/style/help-desk/base.css">
+    <link rel="icon" type="image/png" href="/assets/logo/portalnest-Variation-Logo.png">
+    <style>
+        /* Additional styles specific to ticket list preview */
+        .ticket-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            padding: var(--spacing-md);
+            background-color: var(--surface-color);
+            border-radius: var(--border-radius-md);
+            border: 1px solid var(--border-color);
+        }
+
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .filter-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .filter-select {
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--border-radius-sm);
+            border: 1px solid var(--border-color);
+            background-color: var(--card-color);
+            color: var(--text-primary);
+            font-size: 0.875rem;
+        }
+
+        .search-input {
+            flex: 1;
+            min-width: 200px;
+            padding: var(--spacing-sm) var(--spacing-md);
+            padding-left: calc(var(--spacing-md) * 2 + 16px); /* Space for icon */
+            border-radius: var(--border-radius-sm);
+            border: 1px solid var(--border-color);
+            background-color: var(--card-color);
+            color: var(--text-primary);
+            font-size: 0.875rem;
+            position: relative;
+        }
+
+        .search-wrapper {
+            position: relative;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: var(--spacing-md);
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-tertiary);
+            z-index: 1;
+        }
+
+        .ticket-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .ticket-card {
+            background-color: var(--card-color);
+            border-radius: var(--border-radius-md);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .ticket-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .ticket-header {
+            padding: var(--spacing-md);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ticket-id {
+            font-family: monospace;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .ticket-date {
+            font-size: 0.75rem;
+            color: var(--text-tertiary);
+        }
+
+        .ticket-body {
+            padding: var(--spacing-md);
+        }
+
+        .ticket-subject {
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-primary);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .ticket-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+        }
+
+        .ticket-category,
+        .ticket-priority {
+            font-size: 0.75rem;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--border-radius-sm);
+            background-color: var(--surface-color);
+            color: var(--text-secondary);
+        }
+
+        .status-badge {
+            font-size: 0.75rem;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--border-radius-sm);
+            font-weight: 500;
+        }
+
+        .status-badge.open {
+            background-color: #d1fae5;
+            color: #047857;
+        }
+
+        .status-badge.in-progress {
+            background-color: #e0f2fe;
+            color: #0369a1;
+        }
+
+        .status-badge.closed {
+            background-color: #f3f4f6;
+            color: #4b5563;
+        }
+
+        .ticket-footer {
+            padding: var(--spacing-md);
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ticket-actions {
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+
+        .ticket-action-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 0.875rem;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--border-radius-sm);
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .ticket-action-btn:hover {
+            background-color: var(--surface-color);
+            color: var(--primary-color);
+        }
+
+        .ticket-attachments {
+            color: var(--text-tertiary);
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: var(--spacing-xl) 0;
+            color: var(--text-secondary);
+        }
+
+        .empty-state i {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--text-tertiary);
+        }
+
+        .empty-state h3 {
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-primary);
+        }
+
+        .empty-state p {
+            margin-bottom: var(--spacing-lg);
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: var(--spacing-xl);
+            gap: var(--spacing-xs);
+        }
+
+        .pagination-btn {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--border-radius-sm);
+            border: 1px solid var(--border-color);
+            background-color: var(--card-color);
+            color: var(--text-primary);
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .pagination-btn:hover {
+            background-color: var(--surface-color);
+        }
+
+        .pagination-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .pagination-btn.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .ticket-filters {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .filter-group {
+                width: 100%;
+            }
+            
+            .search-wrapper {
+                width: 100%;
+            }
+        }
+
+        /* Animation for new tickets */
+        @keyframes highlightNew {
+            0% { box-shadow: 0 0 0 2px var(--primary-color); }
+            100% { box-shadow: none; }
+        }
+
+        .ticket-card.new-ticket {
+            animation: highlightNew 2s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo-container">
+                <img src="placeholder.svg?height=40&width=40" alt="PortalNest Logo" class="logo">
+                <h1>PortalNest <span>Help Desk</span></h1>
+            </div>
+            <div class="header-controls">
+                <div class="search-container">
+                    <input type="text" placeholder="Search tickets..." class="search-input">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="user-controls">
+                    <div class="role-badge" id="user-role">Administrator</div>
+                    <div class="theme-toggle">
+                        <input type="checkbox" id="theme-switch" class="theme-switch">
+                        <label for="theme-switch" class="theme-switch-label">
+                            <i class="fas fa-sun"></i>
+                            <i class="fas fa-moon"></i>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="user-profile">
+                        <img src="placeholder.svg?height=40&width=40" alt="User Profile" class="user-avatar">
+                        <div class="user-dropdown">
+                            <span>John Doe</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <main class="main-content">
+            <!-- Sidebar Navigation -->
+            <aside class="sidebar">
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/pages/Miscellaneous/helpdesk-pages/helpdesk.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                        <li class="active"><a href="/pages/Miscellaneous/helpdesk-pages/ticket-creation.html"><i class="fas fa-ticket-alt"></i> My Tickets</a></li>
+                        <li><a href="#"><i class="fas fa-comment-dots"></i> Live Chat</a></li>
+                        <li><a href="#"><i class="fas fa-question-circle"></i> FAQs</a></li>
+                        <li><a href="#"><i class="fas fa-book"></i> Knowledge Base</a></li>
+                        <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                    </ul>
+                </nav>
+                <div class="support-status">
+                    <div class="status-indicator online"></div>
+                    <p>Support: <span>Online</span></p>
+                    <p class="support-time">Response time: ~5 mins</p>
+                </div>
+            </aside>
+
+            
+            <main class="app-content">
+                <div class="content-header">
+                    <h1>My Tickets</h1>
+                    <button class="action-btn primary">
+                        <i class="fas fa-plus"></i> Create New Ticket
+                    </button>
+                </div>
+                
+                <div class="content-body">
+                    <div class="ticket-filters">
+                        <div class="filter-group">
+                            <span class="filter-label">Status:</span>
+                            <select class="filter-select" id="status-filter">
+                                <option value="all">All</option>
+                                <option value="open">Open</option>
+                                <option value="in-progress">In Progress</option>
+                                <option value="closed">Closed</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <span class="filter-label">Priority:</span>
+                            <select class="filter-select" id="priority-filter">
+                                <option value="all">All</option>
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <span class="filter-label">Category:</span>
+                            <select class="filter-select" id="category-filter">
+                                <option value="all">All</option>
+                                <option value="technical">Technical Issues</option>
+                                <option value="admissions">Admissions</option>
+                                <option value="course">Course Registration</option>
+                                <option value="grading">Grading Concerns</option>
+                                <option value="general">General Inquiries</option>
+                                <option value="student">Student Services</option>
+                            </select>
+                        </div>
+                        
+                        <div class="search-wrapper">
+                            <i class="fas fa-search search-icon"></i>
+                            <input type="text" class="search-input" placeholder="Search tickets..." id="ticket-search">
+                        </div>
+                    </div>
+                    
+                    <div class="ticket-list" id="ticket-list">
+                        <!-- Tickets will be dynamically added here -->
+                    </div>
+                    
+                    <div class="pagination" id="pagination">
+                        <button class="pagination-btn disabled" id="prev-page">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="pagination-btn active">1</button>
+                        <button class="pagination-btn">2</button>
+                        <button class="pagination-btn">3</button>
+                        <button class="pagination-btn" id="next-page">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </main>
+        </div>
+        
+        <!-- New Ticket Modal -->
+        <div class="modal-overlay" id="new-ticket-modal">
+            <div class="modal-container">
+                <div class="modal-header">
+                    <h3>Create New Support Ticket</h3>
+                    <button class="modal-close-btn"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="modal-body">
+                    <form id="new-ticket-form">
+                        <div class="form-group">
+                            <label for="ticket-subject">Subject <span class="required">*</span></label>
+                            <input type="text" id="ticket-subject" name="subject" class="form-input" placeholder="Brief description of your issue" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="ticket-category">Category <span class="required">*</span></label>
+                                <select id="ticket-category" name="category" class="form-select" required>
+                                    <option value="" disabled selected>Select a category</option>
+                                    <option value="technical">Technical Issues</option>
+                                    <option value="admissions">Admissions</option>
+                                    <option value="course">Course Registration</option>
+                                    <option value="grading">Grading Concerns</option>
+                                    <option value="general">General Inquiries</option>
+                                    <option value="student">Student Services</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="ticket-priority">Priority <span class="required">*</span></label>
+                                <select id="ticket-priority" name="priority" class="form-select" required>
+                                    <option value="" disabled selected>Select priority</option>
+                                    <option value="low">Low</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="high">High</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="ticket-description">Description <span class="required">*</span></label>
+                            <textarea id="ticket-description" name="description" class="form-textarea" placeholder="Please provide detailed information about your issue" rows="6" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="ticket-attachments">Attachments</label>
+                            <div class="file-upload-container">
+                                <input type="file" id="ticket-attachments" name="attachments" class="file-input" multiple>
+                                <label for="ticket-attachments" class="file-upload-label">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <span>Choose files or drag & drop</span>
+                                    <small>Max 5 files (PDF, JPG, PNG, DOC) up to 5MB each</small>
+                                </label>
+                            </div>
+                            <div class="file-list" id="file-list"></div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="action-btn secondary cancel-btn">Cancel</button>
+                            <button type="submit" class="action-btn primary submit-btn">
+                                <i class="fas fa-paper-plane"></i> Submit Ticket
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+   <script src="/functions/help-desk/ticket-list.js"></script>
+</body>
+</html>

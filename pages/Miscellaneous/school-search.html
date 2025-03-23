@@ -1,658 +1,391 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>School Search</title>
-    <link rel="stylesheet" href="/style/school-search.css" />
-    <link
-      rel="icon"
-      type="image/png"
-      href="/assets/logo/portalnest-Variation-Logo.png"
-    />
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PortalNest - School Search</title>
+  <link rel="stylesheet" href="/style/school-search.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header with search bar and theme toggle -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <img style="width: 200px;" src="/assets/logo/portalnest logo.png" alt="portalnest">
+          </div>
+          <div class="search-container">
+            <form id="search-form">
+              <div class="search-input-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="search" id="search-input" placeholder="Search schools by name or location...">
+              </div>
+            </form>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+              <i class="fas fa-sun"></i>
+              <i class="fas fa-moon"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
 
-  <body>
-    <div class="container">
-      <h1 class="">Find Your Perfect School</h1>
-      <p class="">
-        Search through thousands of schools and find the right fit for you
-        education journey
-      </p>
+    <!-- Main content area -->
+    <main class="main-content">
+      <div class="container">
+        <div class="content-wrapper">
+          <!-- Mobile filter button -->
+          <div class="mobile-filter-button">
+            <button id="mobile-filter-btn">
+              <i class="fas fa-filter"></i> Filters
+            </button>
+          </div>
+
+          <!-- Filters sidebar -->
+          <aside class="filters-sidebar" id="filters-sidebar">
+            <div class="filters-header">
+              <h3>Filters</h3>
+              <button id="reset-filters" class="reset-button">
+                <i class="fas fa-times"></i> Reset
+              </button>
+            </div>
+
+            <div class="filters-content">
+              <!-- School Type Filter -->
+              <div class="filter-group">
+                <div class="filter-group-header" data-toggle="school-type">
+                  <h4>School Type</h4>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="filter-group-content" id="school-type">
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="type-university" name="school-type" value="University">
+                    <label for="type-university">University</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="type-college" name="school-type" value="College">
+                    <label for="type-college">College</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="type-shs" name="school-type" value="Senior High School">
+                    <label for="type-shs">Senior High School</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="type-jhs" name="school-type" value="Junior High School">
+                    <label for="type-jhs">Junior High School</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Location Filter -->
+              <div class="filter-group">
+                <div class="filter-group-header" data-toggle="location">
+                  <h4>Location</h4>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="filter-group-content" id="location">
+                  <div class="select-item">
+                    <label for="country">Country</label>
+                    <select id="country" name="country">
+                      <option value="">All Countries</option>
+                      <option value="Philippines">Philippines</option>
+                      <option value="United States">United States</option>
+                      <option value="Canada">Canada</option>
+                    </select>
+                  </div>
+                  <div class="select-item">
+                    <label for="region">Region</label>
+                    <select id="region" name="region">
+                      <option value="">All Regions</option>
+                      <option value="NCR">NCR</option>
+                      <option value="Calabarzon">Calabarzon</option>
+                      <option value="Central Luzon">Central Luzon</option>
+                    </select>
+                  </div>
+                  <div class="select-item">
+                    <label for="city">City</label>
+                    <select id="city" name="city">
+                      <option value="">All Cities</option>
+                      <option value="Manila">Manila</option>
+                      <option value="Quezon City">Quezon City</option>
+                      <option value="Makati">Makati</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Programs Filter -->
+              <div class="filter-group">
+                <div class="filter-group-header" data-toggle="programs">
+                  <h4>Programs Offered</h4>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="filter-group-content" id="programs">
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="program-science" name="programs" value="Science">
+                    <label for="program-science">Science</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="program-business" name="programs" value="Business">
+                    <label for="program-business">Business</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="program-arts" name="programs" value="Arts">
+                    <label for="program-arts">Arts</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="program-engineering" name="programs" value="Engineering">
+                    <label for="program-engineering">Engineering</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="program-it" name="programs" value="IT">
+                    <label for="program-it">IT</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="program-medicine" name="programs" value="Medicine">
+                    <label for="program-medicine">Medicine</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Admission Status Filter -->
+              <div class="filter-group">
+                <div class="filter-group-header" data-toggle="admission">
+                  <h4>Admission Status</h4>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="filter-group-content" id="admission">
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="status-open" name="admission-status" value="Open">
+                    <label for="status-open">Open</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="status-closed" name="admission-status" value="Closed">
+                    <label for="status-closed">Closed</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="status-upcoming" name="admission-status" value="Upcoming">
+                    <label for="status-upcoming">Upcoming</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tuition Fees Range Filter -->
+              <div class="filter-group">
+                <div class="filter-group-header" data-toggle="tuition">
+                  <h4>Tuition Fees Range</h4>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="filter-group-content" id="tuition">
+                  <div class="radio-item">
+                    <input type="radio" id="tuition-all" name="tuition-range" value="" checked>
+                    <label for="tuition-all">All Ranges</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="tuition-low" name="tuition-range" value="Low">
+                    <label for="tuition-low">Low</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="tuition-medium" name="tuition-range" value="Medium">
+                    <label for="tuition-medium">Medium</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="tuition-high" name="tuition-range" value="High">
+                    <label for="tuition-high">High</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Accreditation Status Filter -->
+              <div class="filter-group">
+                <div class="filter-group-header" data-toggle="accreditation">
+                  <h4>Accreditation Status</h4>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="filter-group-content" id="accreditation">
+                  <div class="radio-item">
+                    <input type="radio" id="accreditation-all" name="accreditation" value="" checked>
+                    <label for="accreditation-all">All</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="accreditation-yes" name="accreditation" value="Accredited">
+                    <label for="accreditation-yes">Accredited</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="accreditation-no" name="accreditation" value="Non-Accredited">
+                    <label for="accreditation-no">Non-Accredited</label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Facilities Filter -->
+              <div class="filter-group">
+                <div class="filter-group-header" data-toggle="facilities">
+                  <h4>Facilities Available</h4>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="filter-group-content" id="facilities">
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="facility-library" name="facilities" value="Library">
+                    <label for="facility-library">Library</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="facility-labs" name="facilities" value="Labs">
+                    <label for="facility-labs">Labs</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="facility-hostels" name="facilities" value="Hostels">
+                    <label for="facility-hostels">Hostels</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="facility-sports" name="facilities" value="Sports Complex">
+                    <label for="facility-sports">Sports Complex</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="facility-scholarships" name="facilities" value="Scholarships">
+                    <label for="facility-scholarships">Scholarships</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          <!-- School results section -->
+          <section class="results-section">
+            <div class="results-header">
+              <h2 id="results-count">0 Schools Found</h2>
+            </div>
+            <div class="results-grid" id="results-grid">
+              <!-- School cards will be dynamically inserted here -->
+            </div>
+            <div class="no-results" id="no-results">
+              <div class="no-results-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+              </div>
+              <h3>No schools found</h3>
+              <p>Try adjusting your search or filter criteria</p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- School detail modal -->
+    <div class="modal" id="school-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="modal-title">School Name</h2>
+          <button class="close-modal" id="close-modal">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="school-image">
+            <img id="modal-image" src="placeholder.jpg" alt="School Image">
+          </div>
+          
+          <div class="school-badges" id="modal-badges">
+            <!-- Badges will be inserted here -->
+          </div>
+
+          <div class="school-tabs">
+            <div class="tabs-header">
+              <button class="tab-button active" data-tab="overview">Overview</button>
+              <button class="tab-button" data-tab="programs">Programs</button>
+              <button class="tab-button" data-tab="reviews">Reviews</button>
+            </div>
+            
+            <div class="tabs-content">
+              <!-- Overview Tab -->
+              <div class="tab-content active" id="overview-tab">
+                <div class="tab-section">
+                  <h3>About</h3>
+                  <p id="modal-description"></p>
+                </div>
+                
+                <div class="tab-section">
+                  <h3>Contact Information</h3>
+                  <div class="contact-grid" id="modal-contact">
+                    <!-- Contact info will be inserted here -->
+                  </div>
+                </div>
+                
+                <div class="tab-section">
+                  <h3>Tuition & Fees</h3>
+                  <div class="tuition-info" id="modal-tuition">
+                    <!-- Tuition info will be inserted here -->
+                  </div>
+                </div>
+                
+                <div class="tab-section">
+                  <h3>Facilities</h3>
+                  <div class="facilities-grid" id="modal-facilities">
+                    <!-- Facilities will be inserted here -->
+                  </div>
+                </div>
+                
+                <div class="tab-section">
+                  <h3>Admission Process</h3>
+                  <div id="modal-admission">
+                    <!-- Admission info will be inserted here -->
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Programs Tab -->
+              <div class="tab-content" id="programs-tab">
+                <h3>Available Programs</h3>
+                <div class="programs-grid" id="modal-programs">
+                  <!-- Programs will be inserted here -->
+                </div>
+              </div>
+              
+              <!-- Reviews Tab -->
+              <div class="tab-content" id="reviews-tab">
+                <div class="reviews-header">
+                  <h3>Student Reviews</h3>
+                  <div class="rating-display" id="modal-rating">
+                    <!-- Rating will be inserted here -->
+                  </div>
+                </div>
+                
+                <div class="write-review">
+                  <h4>Write a Review</h4>
+                  <div class="rating-input">
+                    <div class="stars" id="rating-stars">
+                      <i class="far fa-star" data-rating="1"></i>
+                      <i class="far fa-star" data-rating="2"></i>
+                      <i class="far fa-star" data-rating="3"></i>
+                      <i class="far fa-star" data-rating="4"></i>
+                      <i class="far fa-star" data-rating="5"></i>
+                    </div>
+                  </div>
+                  <textarea id="review-text" placeholder="Share your experience with this school..."></textarea>
+                  <button id="submit-review" class="submit-review" disabled>
+                    <i class="fas fa-paper-plane"></i> Submit Review
+                  </button>
+                </div>
+                
+                <div class="reviews-list" id="reviews-list">
+                  <!-- Reviews will be inserted here -->
+                </div>
+                
+                <div class="no-reviews" id="no-reviews">
+                  <p>No reviews yet. Be the first to review!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <form method="post" id="form">
-      <aside class="active">
-        <div class="header">
-          <svg
-            width="1.5rem"
-            height="1.5rem"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g
-              id="SVGRepo_tracerCarrier"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></g>
-            <g id="SVGRepo_iconCarrier">
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M3 7C3 6.44772 3.44772 6 4 6H20C20.5523 6 21 6.44772 21 7C21 7.55228 20.5523 8 20 8H4C3.44772 8 3 7.55228 3 7ZM6 12C6 11.4477 6.44772 11 7 11H17C17.5523 11 18 11.4477 18 12C18 12.5523 17.5523 13 17 13H7C6.44772 13 6 12.5523 6 12ZM9 17C9 16.4477 9.44772 16 10 16H14C14.5523 16 15 16.4477 15 17C15 17.5523 14.5523 18 14 18H10C9.44772 18 9 17.5523 9 17Z"
-                fill="#000000"
-              ></path>
-            </g>
-          </svg>
-          <h3 class="aside-heading">Filters</h3>
-          <button class="close-btn" type="button">close</button>
-        </div>
-        <div class="filters">
-          <!-- Education Level -->
-          <div>
-            <p class="filter-heading">education level</p>
-            <select name="education-level" id="education-level" class="select">
-              <option value="">high school</option>
-              <option value="">under grad</option>
-              <option value="">post grad</option>
-            </select>
-          </div>
-          <!-- Location -->
-          <div>
-            <p class="filter-heading">Location</p>
-            <select
-              name="education-level"
-              id="education-level"
-              class="select"
-              style="margin-bottom: 0.3rem"
-            >
-              <option value="high-school">high school</option>
-              <option value="under-grad">under grad</option>
-              <option value="post-grad">post grad</option>
-            </select>
-            <select name="education-level" id="education-level" class="select">
-              <option value="">high school</option>
-              <option value="">under grad</option>
-              <option value="">post grad</option>
-            </select>
-          </div>
+    <!-- Mobile filter overlay -->
+    <div class="filter-overlay" id="filter-overlay"></div>
+  </div>
 
-          <!-- school type -->
-          <div>
-            <p class="filter-heading">School Type</p>
-            <div>
-              <div class="input-container">
-                <input type="checkbox" name="type" id="public" /><label
-                  for="public"
-                  >public</label
-                >
-              </div>
-              <div class="input-container">
-                <input type="checkbox" name="type" id="private" /><label
-                  for="private"
-                  >private</label
-                >
-              </div>
-              <div class="input-container">
-                <input type="checkbox" name="type" id="Boarding" /><label
-                  for="Boarding"
-                  >Boarding</label
-                >
-              </div>
-            </div>
-          </div>
-          <!-- Programs -->
-          <div>
-            <p class="filter-heading">Programs</p>
-            <div>
-              <div class="input-container">
-                <input type="checkbox" name="Programs" id="science" /><label
-                  for="science"
-                  >science</label
-                >
-              </div>
-              <div class="input-container">
-                <input type="checkbox" name="Programs" id="Arts" /><label
-                  for="Arts"
-                  >Arts</label
-                >
-              </div>
-              <div class="input-container">
-                <input type="checkbox" name="Programs" id="boarding" /><label
-                  for="boarding"
-                  >Business</label
-                >
-              </div>
-              <div class="input-container">
-                <input type="checkbox" name="Programs" id="Engineering" /><label
-                  for="Engineering"
-                  >Engineering</label
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- facilities -->
-          <div>
-            <p class="filter-heading">facilities</p>
-            <div>
-              <div class="input-container">
-                <input type="checkbox" name="facilities" id="Labs" /><label
-                  for="Labs"
-                  >Labs</label
-                >
-              </div>
-              <div class="input-container">
-                <input
-                  type="checkbox"
-                  name="facilities"
-                  id="Sports-faciliities"
-                /><label for="Sports-faciliities">Sports faciliities</label>
-              </div>
-              <div class="input-container">
-                <input type="checkbox" name="facilities" id="Library" /><label
-                  for="Library"
-                  >Library</label
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </aside>
-      <div class="area">
-        <div class="big-input">
-          <svg
-            fill="#878787"
-            height="0.8rem"
-            width="0.8rem"
-            version="1.1"
-            id="Capa_1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 0 490.4 490.4"
-            xml:space="preserve"
-            stroke="#ccc"
-          >
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g
-              id="SVGRepo_tracerCarrier"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></g>
-            <g id="SVGRepo_iconCarrier">
-              <g>
-                <path
-                  d="M484.1,454.796l-110.5-110.6c29.8-36.3,47.6-82.8,47.6-133.4c0-116.3-94.3-210.6-210.6-210.6S0,94.496,0,210.796 s94.3,210.6,210.6,210.6c50.8,0,97.4-18,133.8-48l110.5,110.5c12.9,11.8,25,4.2,29.2,0C492.5,475.596,492.5,463.096,484.1,454.796z M41.1,210.796c0-93.6,75.9-169.5,169.5-169.5s169.6,75.9,169.6,169.5s-75.9,169.5-169.5,169.5S41.1,304.396,41.1,210.796z"
-                ></path>
-              </g>
-            </g>
-          </svg>
-
-          <input
-            type="text"
-            placeholder="search schools, programs or locations..."
-          />
-        </div>
-
-        <div class="mid-section">
-          <div class="left">
-            <p>245 schools found</p>
-            <div class="mid-select">
-              <span>Sort by: </span>
-              <select name="" id="">
-                <option value="">Relevance</option>
-                <option value="">Name</option>
-                <option value="">category</option>
-              </select>
-            </div>
-          </div>
-          <div class="right">
-            <div class="first-svg">
-              <svg
-                width="1.3rem"
-                height="1.3rem"
-                viewBox="-2.1 -2.1 25.20 25.20"
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                fill="#000000"
-              >
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                <g
-                  id="SVGRepo_tracerCarrier"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></g>
-                <g id="SVGRepo_iconCarrier">
-                  <title>grid [#1526]</title>
-                  <desc>Created with Sketch.</desc>
-                  <defs></defs>
-                  <g
-                    id="Page-1"
-                    stroke="none"
-                    stroke-width="1"
-                    fill="none"
-                    fill-rule="evenodd"
-                  >
-                    <g
-                      id="Dribbble-Light-Preview"
-                      transform="translate(-219.000000, -200.000000)"
-                      fill="#ffff"
-                    >
-                      <g
-                        id="icons"
-                        transform="translate(56.000000, 160.000000)"
-                      >
-                        <path
-                          d="M181.9,54 L179.8,54 C178.63975,54 177.7,54.895 177.7,56 L177.7,58 C177.7,59.105 178.63975,60 179.8,60 L181.9,60 C183.06025,60 184,59.105 184,58 L184,56 C184,54.895 183.06025,54 181.9,54 M174.55,54 L172.45,54 C171.28975,54 170.35,54.895 170.35,56 L170.35,58 C170.35,59.105 171.28975,60 172.45,60 L174.55,60 C175.71025,60 176.65,59.105 176.65,58 L176.65,56 C176.65,54.895 175.71025,54 174.55,54 M167.2,54 L165.1,54 C163.93975,54 163,54.895 163,56 L163,58 C163,59.105 163.93975,60 165.1,60 L167.2,60 C168.36025,60 169.3,59.105 169.3,58 L169.3,56 C169.3,54.895 168.36025,54 167.2,54 M181.9,47 L179.8,47 C178.63975,47 177.7,47.895 177.7,49 L177.7,51 C177.7,52.105 178.63975,53 179.8,53 L181.9,53 C183.06025,53 184,52.105 184,51 L184,49 C184,47.895 183.06025,47 181.9,47 M174.55,47 L172.45,47 C171.28975,47 170.35,47.895 170.35,49 L170.35,51 C170.35,52.105 171.28975,53 172.45,53 L174.55,53 C175.71025,53 176.65,52.105 176.65,51 L176.65,49 C176.65,47.895 175.71025,47 174.55,47 M167.2,47 L165.1,47 C163.93975,47 163,47.895 163,49 L163,51 C163,52.105 163.93975,53 165.1,53 L167.2,53 C168.36025,53 169.3,52.105 169.3,51 L169.3,49 C169.3,47.895 168.36025,47 167.2,47 M181.9,40 L179.8,40 C178.63975,40 177.7,40.895 177.7,42 L177.7,44 C177.7,45.105 178.63975,46 179.8,46 L181.9,46 C183.06025,46 184,45.105 184,44 L184,42 C184,40.895 183.06025,40 181.9,40 M174.55,40 L172.45,40 C171.28975,40 170.35,40.895 170.35,42 L170.35,44 C170.35,45.105 171.28975,46 172.45,46 L174.55,46 C175.71025,46 176.65,45.105 176.65,44 L176.65,42 C176.65,40.895 175.71025,40 174.55,40 M169.3,42 L169.3,44 C169.3,45.105 168.36025,46 167.2,46 L165.1,46 C163.93975,46 163,45.105 163,44 L163,42 C163,40.895 163.93975,40 165.1,40 L167.2,40 C168.36025,40 169.3,40.895 169.3,42"
-                          id="grid-[#1526]"
-                        ></path>
-                      </g>
-                    </g>
-                  </g>
-                </g>
-              </svg>
-            </div>
-            <div>
-              <svg
-                width="1.6rem"
-                height="1.6rem"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                <g
-                  id="SVGRepo_tracerCarrier"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></g>
-                <g id="SVGRepo_iconCarrier">
-                  <path
-                    d="M8 6.00067L21 6.00139M8 12.0007L21 12.0015M8 18.0007L21 18.0015M3.5 6H3.51M3.5 12H3.51M3.5 18H3.51M4 6C4 6.27614 3.77614 6.5 3.5 6.5C3.22386 6.5 3 6.27614 3 6C3 5.72386 3.22386 5.5 3.5 5.5C3.77614 5.5 4 5.72386 4 6ZM4 12C4 12.2761 3.77614 12.5 3.5 12.5C3.22386 12.5 3 12.2761 3 12C3 11.7239 3.22386 11.5 3.5 11.5C3.77614 11.5 4 11.7239 4 12ZM4 18C4 18.2761 3.77614 18.5 3.5 18.5C3.22386 18.5 3 18.2761 3 18C3 17.7239 3.22386 17.5 3.5 17.5C3.77614 17.5 4 17.7239 4 18Z"
-                    stroke="#000000"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  ></path>
-                </g>
-              </svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="toggle-filter">
-          <svg
-            width="1rem"
-            height="1rem"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g
-              id="SVGRepo_tracerCarrier"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            ></g>
-            <g id="SVGRepo_iconCarrier">
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M3 7C3 6.44772 3.44772 6 4 6H20C20.5523 6 21 6.44772 21 7C21 7.55228 20.5523 8 20 8H4C3.44772 8 3 7.55228 3 7ZM6 12C6 11.4477 6.44772 11 7 11H17C17.5523 11 18 11.4477 18 12C18 12.5523 17.5523 13 17 13H7C6.44772 13 6 12.5523 6 12ZM9 17C9 16.4477 9.44772 16 10 16H14C14.5523 16 15 16.4477 15 17C15 17.5523 14.5523 18 14 18H10C9.44772 18 9 17.5523 9 17Z"
-                fill="#000000"
-              ></path>
-            </g>
-          </svg>
-          <p>filter results</p>
-        </div>
-
-        <div class="center">
-          <div class="school-list">
-            <div class="card">
-              <img src="/assets/images/classroom.png" alt="" />
-
-              <div class="head">
-                <div>
-                  <h5>Accra International School</h5>
-                </div>
-                <div>
-                  <p>open</p>
-                </div>
-              </div>
-              <p class="location">Accra, Ghana</p>
-              <div>
-                <div class="accommodation">
-                  <div class="item">
-                    <span>
-                      <svg
-                        fill="#797979"
-                        version="1.1"
-                        id="Capa_1"
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                        width="0.7rem"
-                        height="0.7rem"
-                        viewBox="0 0 38.022 38.022"
-                        xml:space="preserve"
-                      >
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g
-                          id="SVGRepo_tracerCarrier"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        ></g>
-                        <g id="SVGRepo_iconCarrier">
-                          <g>
-                            <path
-                              d="M38.022,16.348c0,0.807-0.484,1.534-1.229,1.846l-0.771,0.322v4.43c0,0.552-0.447,1-1,1c-0.554,0-1-0.448-1-1v-3.594 l-2.312,0.968v5.085c0,0.859-0.554,1.626-1.369,1.896l-10.188,3.386c-0.205,0.068-0.418,0.104-0.632,0.104 c-0.192,0-0.389-0.028-0.577-0.085L7.736,27.319c-0.845-0.257-1.423-1.033-1.423-1.915v-5.085l-5.084-2.126 C0.486,17.881,0,17.154,0,16.348c0-0.806,0.484-1.534,1.229-1.845L18.24,7.388c0.491-0.206,1.049-0.206,1.543,0l17.01,7.115 C37.537,14.813,38.022,15.541,38.022,16.348z"
-                            ></path>
-                          </g>
-                        </g>
-                      </svg>
-                    </span>
-                    <p>university</p>
-                  </div>
-                  <div class="item">
-                    <span
-                      ><svg
-                        fill="#797979"
-                        width="0.7rem"
-                        height="0.7rem"
-                        viewBox="0 0 32 32"
-                        version="1.1"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g
-                          id="SVGRepo_tracerCarrier"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        ></g>
-                        <g id="SVGRepo_iconCarrier">
-                          <title>house</title>
-                          <path
-                            d="M0 16h4l12-13.696 12 13.696h4l-13.984-16h-4zM4 32h8v-9.984q0-0.832 0.576-1.408t1.44-0.608h4q0.8 0 1.408 0.608t0.576 1.408v9.984h8v-13.408l-12-13.248-12 13.248v13.408zM26.016 6.112l4 4.576v-8.672h-4v4.096z"
-                          ></path>
-                        </g></svg
-                    ></span>
-                    <p>Boarding</p>
-                  </div>
-                </div>
-              </div>
-              <div class="programs">
-                <p>Science</p>
-                <p>Arts</p>
-                <p>Business</p>
-              </div>
-
-              <div class="box">
-                <a href="">view details</a>
-              </div>
-            </div>
-            <div class="card">
-              <img src="/assets/images/preview2.webp" alt="" />
-
-              <div class="head">
-                <div>
-                  <h5>Accra International School</h5>
-                </div>
-                <div>
-                  <p style="background-color: #ffff00">upcoming</p>
-                </div>
-              </div>
-              <p class="location">Accra, Ghana</p>
-              <div>
-                <div class="accommodation">
-                  <div class="item">
-                    <span>
-                      <svg
-                        fill="#797979"
-                        version="1.1"
-                        id="Capa_1"
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                        width="0.7rem"
-                        height="0.7rem"
-                        viewBox="0 0 38.022 38.022"
-                        xml:space="preserve"
-                      >
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g
-                          id="SVGRepo_tracerCarrier"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        ></g>
-                        <g id="SVGRepo_iconCarrier">
-                          <g>
-                            <path
-                              d="M38.022,16.348c0,0.807-0.484,1.534-1.229,1.846l-0.771,0.322v4.43c0,0.552-0.447,1-1,1c-0.554,0-1-0.448-1-1v-3.594 l-2.312,0.968v5.085c0,0.859-0.554,1.626-1.369,1.896l-10.188,3.386c-0.205,0.068-0.418,0.104-0.632,0.104 c-0.192,0-0.389-0.028-0.577-0.085L7.736,27.319c-0.845-0.257-1.423-1.033-1.423-1.915v-5.085l-5.084-2.126 C0.486,17.881,0,17.154,0,16.348c0-0.806,0.484-1.534,1.229-1.845L18.24,7.388c0.491-0.206,1.049-0.206,1.543,0l17.01,7.115 C37.537,14.813,38.022,15.541,38.022,16.348z"
-                            ></path>
-                          </g>
-                        </g>
-                      </svg>
-                    </span>
-                    <p>university</p>
-                  </div>
-                  <div class="item">
-                    <span
-                      ><svg
-                        fill="#797979"
-                        width="0.7rem"
-                        height="0.7rem"
-                        viewBox="0 0 32 32"
-                        version="1.1"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g
-                          id="SVGRepo_tracerCarrier"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        ></g>
-                        <g id="SVGRepo_iconCarrier">
-                          <title>house</title>
-                          <path
-                            d="M0 16h4l12-13.696 12 13.696h4l-13.984-16h-4zM4 32h8v-9.984q0-0.832 0.576-1.408t1.44-0.608h4q0.8 0 1.408 0.608t0.576 1.408v9.984h8v-13.408l-12-13.248-12 13.248v13.408zM26.016 6.112l4 4.576v-8.672h-4v4.096z"
-                          ></path>
-                        </g></svg
-                    ></span>
-                    <p>Boarding</p>
-                  </div>
-                </div>
-              </div>
-              <div class="programs">
-                <p>Science</p>
-                <p>Arts</p>
-                <p>Business</p>
-              </div>
-
-              <div class="box">
-                <a href="">view details</a>
-              </div>
-            </div>
-            <div class="card">
-              <img src="/assets/images/preview1.jpeg" alt="" />
-
-              <div class="head">
-                <div>
-                  <h5>Accra International School</h5>
-                </div>
-                <div>
-                  <p>open</p>
-                </div>
-              </div>
-              <p class="location">Accra, Ghana</p>
-              <div>
-                <div class="accommodation">
-                  <div class="item">
-                    <span>
-                      <svg
-                        fill="#797979"
-                        version="1.1"
-                        id="Capa_1"
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                        width="0.7rem"
-                        height="0.7rem"
-                        viewBox="0 0 38.022 38.022"
-                        xml:space="preserve"
-                      >
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g
-                          id="SVGRepo_tracerCarrier"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        ></g>
-                        <g id="SVGRepo_iconCarrier">
-                          <g>
-                            <path
-                              d="M38.022,16.348c0,0.807-0.484,1.534-1.229,1.846l-0.771,0.322v4.43c0,0.552-0.447,1-1,1c-0.554,0-1-0.448-1-1v-3.594 l-2.312,0.968v5.085c0,0.859-0.554,1.626-1.369,1.896l-10.188,3.386c-0.205,0.068-0.418,0.104-0.632,0.104 c-0.192,0-0.389-0.028-0.577-0.085L7.736,27.319c-0.845-0.257-1.423-1.033-1.423-1.915v-5.085l-5.084-2.126 C0.486,17.881,0,17.154,0,16.348c0-0.806,0.484-1.534,1.229-1.845L18.24,7.388c0.491-0.206,1.049-0.206,1.543,0l17.01,7.115 C37.537,14.813,38.022,15.541,38.022,16.348z"
-                            ></path>
-                          </g>
-                        </g>
-                      </svg>
-                    </span>
-                    <p>university</p>
-                  </div>
-                  <div class="item">
-                    <span
-                      ><svg
-                        fill="#797979"
-                        width="0.7rem"
-                        height="0.7rem"
-                        viewBox="0 0 32 32"
-                        version="1.1"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g
-                          id="SVGRepo_tracerCarrier"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        ></g>
-                        <g id="SVGRepo_iconCarrier">
-                          <title>house</title>
-                          <path
-                            d="M0 16h4l12-13.696 12 13.696h4l-13.984-16h-4zM4 32h8v-9.984q0-0.832 0.576-1.408t1.44-0.608h4q0.8 0 1.408 0.608t0.576 1.408v9.984h8v-13.408l-12-13.248-12 13.248v13.408zM26.016 6.112l4 4.576v-8.672h-4v4.096z"
-                          ></path>
-                        </g></svg
-                    ></span>
-                    <p>Boarding</p>
-                  </div>
-                </div>
-              </div>
-              <div class="programs">
-                <p>Science</p>
-                <p>Arts</p>
-                <p>Business</p>
-              </div>
-
-              <div class="box">
-                <a href="">view details</a>
-              </div>
-            </div>
-            <div class="card">
-              <img src="/assets/images/preview3.webp" alt="" />
-
-              <div class="head">
-                <div>
-                  <h5>Accra International School</h5>
-                </div>
-                <div>
-                  <p>open</p>
-                </div>
-              </div>
-              <p class="location">Accra, Ghana</p>
-              <div>
-                <div class="accommodation">
-                  <div class="item">
-                    <span>
-                      <svg
-                        fill="#797979"
-                        version="1.1"
-                        id="Capa_1"
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                        width="0.7rem"
-                        height="0.7rem"
-                        viewBox="0 0 38.022 38.022"
-                        xml:space="preserve"
-                      >
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g
-                          id="SVGRepo_tracerCarrier"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        ></g>
-                        <g id="SVGRepo_iconCarrier">
-                          <g>
-                            <path
-                              d="M38.022,16.348c0,0.807-0.484,1.534-1.229,1.846l-0.771,0.322v4.43c0,0.552-0.447,1-1,1c-0.554,0-1-0.448-1-1v-3.594 l-2.312,0.968v5.085c0,0.859-0.554,1.626-1.369,1.896l-10.188,3.386c-0.205,0.068-0.418,0.104-0.632,0.104 c-0.192,0-0.389-0.028-0.577-0.085L7.736,27.319c-0.845-0.257-1.423-1.033-1.423-1.915v-5.085l-5.084-2.126 C0.486,17.881,0,17.154,0,16.348c0-0.806,0.484-1.534,1.229-1.845L18.24,7.388c0.491-0.206,1.049-0.206,1.543,0l17.01,7.115 C37.537,14.813,38.022,15.541,38.022,16.348z"
-                            ></path>
-                          </g>
-                        </g>
-                      </svg>
-                    </span>
-                    <p>university</p>
-                  </div>
-                  <div class="item">
-                    <span
-                      ><svg
-                        fill="#797979"
-                        width="0.7rem"
-                        height="0.7rem"
-                        viewBox="0 0 32 32"
-                        version="1.1"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g
-                          id="SVGRepo_tracerCarrier"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        ></g>
-                        <g id="SVGRepo_iconCarrier">
-                          <title>house</title>
-                          <path
-                            d="M0 16h4l12-13.696 12 13.696h4l-13.984-16h-4zM4 32h8v-9.984q0-0.832 0.576-1.408t1.44-0.608h4q0.8 0 1.408 0.608t0.576 1.408v9.984h8v-13.408l-12-13.248-12 13.248v13.408zM26.016 6.112l4 4.576v-8.672h-4v4.096z"
-                          ></path>
-                        </g></svg
-                    ></span>
-                    <p>Boarding</p>
-                  </div>
-                </div>
-              </div>
-              <div class="programs">
-                <p>Science</p>
-                <p>Arts</p>
-                <p>Business</p>
-              </div>
-
-              <div class="box">
-                <a href="">view details</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <footer>
-          <div class="para">
-            <p>Showing 1 to 9 of schools</p>
-          </div>
-          <div class="pagination">
-            <button class="prev disabled">previous</button>
-            <button class="page">1</button>
-            <button class="page active">2</button>
-            <button class="page">3</button>
-            <button class="next">next</button>
-          </div>
-        </footer>
-      </div>
-    </form>
-
-    <script src="/functions/school-search-function.js"></script>
-  </body>
+  <script src="/functions/school-search-function.js"></script>
+</body>
 </html>

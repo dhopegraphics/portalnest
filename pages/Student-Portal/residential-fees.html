@@ -441,6 +441,38 @@
         gap: 0;
       }
     }
+
+    select {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    font-size: 16px;
+    background: #ffffff;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    appearance: none;
+    cursor: pointer; /* Apply pointer cursor only to select */
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover & Focus Effects for Select */
+select:hover {
+    border-color: #007bff;
+}
+
+select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.4);
+}
+
+/* Disabled Select */
+select:disabled {
+    background: #e9ecef;
+    cursor: not-allowed;
+}
+
   </style>
 </head>
 
@@ -448,9 +480,7 @@
   <div class="sidebar">
     <div>
       <div class="logo">
-        <h1 style="color: #2a7d8b; font-size: 24px;">P<span style="color: #2a7d8b; font-size: 18px;">⚙</span>rtal<span
-            style="color: #4caf50;">Nest</span>.
-        </h1>
+        <img  width="180px" src="/assets/logo/portalnest logo.png" alt="PortalNest Logo">
       </div>
       <ul class="nav-menu">
         <li class="nav-item">
