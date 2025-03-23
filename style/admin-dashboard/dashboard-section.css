@@ -32,7 +32,9 @@
     font-size: 2.4rem;
     margin-bottom: 2.5rem;
   }
-
+h1 {
+  font-size: 1.6rem;
+}
   
   .live__activity-card {
     gap: 2rem;
@@ -84,8 +86,9 @@
   }
   
   .card__content {
-    padding-left: 2rem;
+    padding: 1rem ;
   }
+
   
   .card__content h1 {
     font-size: 1rem;
@@ -227,7 +230,7 @@
   
   .pending__card {
     border: 2px solid #0080802a;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 70% 25%;
     gap: 1rem;
     padding: 2.5rem 2rem;
     border-radius: 30px;
@@ -251,8 +254,10 @@
     flex-direction: column;
     justify-content: space-between;
     text-align: left;
-    margin-top: 0.4rem;
+    margin-top: 1rem;
     white-space: nowrap;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
   
   .program {
@@ -307,18 +312,24 @@
   }
   
   .approval_btn {
-    width: 100%;
+    width: 90%;
     border: 1px solid #008080;
     background: #0080802a;
     transform: background-color 0.3s, color 0.3s;
+    height: 30px;
+    align-items: center;
+    justify-items: center;
   }
   
   .decline_btn {
-    width: 100%;
+    width: 90%;
     border: 1px solid #ff0307ff;
     background: #ff032558;
     color: #ff0307ff;
     transform: background-color 0.3s, color 0.3s;
+    height: 30px;
+    align-items: center;
+    justify-items: center;
   }
   
   .approval_btn:hover {

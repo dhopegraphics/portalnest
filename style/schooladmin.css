@@ -213,7 +213,7 @@ button {
 }
 
 .btn {
-  padding: 1rem 4rem;
+  padding: 1rem 3rem;
   font-size: 1.6rem;
   font-weight: 600;
   color: var(--dark);
