@@ -179,8 +179,9 @@
     transition: all 0.5s ease;
     z-index: 0;
     display: none;
-    transition: width 0.3s ease-in-out;
-   
+    opacity: 0;
+    transition: width 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    
 
   }
   
@@ -364,7 +365,26 @@ select:disabled {
     cursor: pointer;
     transition: background-color 0.4s;
   }
+
+  .selection #submit {
+    background-color: var(--col-ligh-tblue);
+    border: 1px solid var(--col-blue);
+    padding: 1rem 2rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--col-black);
+    border-radius: 15px;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.4s;
+   align-self: flex-end;
+   margin-left: 16rem;
+  }
   
+  .selection #submit:hover {
+    background-color: var(--col-white);
+  }
+
   .selection div p:hover {
     background-color: var(--col-mid-green);
   }

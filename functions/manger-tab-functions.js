@@ -9,19 +9,27 @@ const createExaminerBtn = document.getElementById("createexaminer");
 
 
 // Managers logic
+// Function to display the form
 function displayForm() {
-  formDisplay.style.display = "block";
-   setTimeout(() => {
-    formDisplay.style.width = "55%"; // Adjust width as needed
-    formDisplay.style.overflow = "visible"; // Enable scrolling once open
+  if (formDisplay) {
+    formDisplay.style.display = "block";
+    setTimeout(() => {
+      formDisplay.style.width = "55%";
+      formDisplay.style.overflow = "visible";
+      formDisplay.style.opacity = "1"; // Ensure visibility
     }, 10);
+  }
 }
 
+// Function to close the form
 function closeForm() {
-  formDisplay.style.width = "0%";
-  setTimeout(() => {
-    formDisplay.style.display = "none";
-  }, 200);
+  if (formDisplay) {
+    formDisplay.style.width = "0%";
+    formDisplay.style.opacity = "0"; // Smooth fade out
+    setTimeout(() => {
+      formDisplay.style.display = "none";
+    }, 300);
+  }
 }
 
 createLecturerBtn.addEventListener("click", displayForm);
