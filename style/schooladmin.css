@@ -1,0 +1,697 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,500;1,600&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --light-white-col: #f5f5f5;
+  --low-dark: #656565;
+  --col-dark: #333;
+  --dark: #14141f;
+
+  --white-col: #fff;
+  --col-black: #000;
+
+  /* colors */
+  --primary-col: #011e30;
+
+  --col-green: #3dbda9;
+  --my-mid-green: #c5ebe5;
+  --col-mid-green: #84c1b4;
+  --col-light-green: #d8f1ee;
+
+  --col-red: #c30f0f;
+  --col-mid-red: #ffbaba;
+  --col-light-red: #f4cccc;
+
+  --col-violet: #765fe4;
+  --col-lighviolet: #978cd7;
+  --col-small-violet: #a097d9;
+
+  /* #4F46E5 */
+
+  --col-deep-blue: #217dff;
+  --col-blue: #2a99e1;
+  --col-small-blue: #60a7d8;
+  --col-ligh-tblue: #cceafe;
+
+  --col-deep-orange: #b05f1a;
+  --col-orange: #ef8b36;
+  --col-mid-orange: #e18b47;
+  --col-light-orange: #fce2cb;
+
+  --col-blue-white: #e4defe;
+  --col-otherwhite: #d9d9d9;
+  --col-white-bg: #f6f7fa;
+  --col-aside-btn: #d2d2d2;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 43%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+
+  color: var(--col-dark);
+  font-size: 0.5rem;
+  font-weight: 400;
+  background-color: white;
+
+  
+}
+
+/************ Script Styling *********/
+.btn__navigate.active {
+  background-color: var(--col-green);
+  border-radius: 11px;
+  padding: 1.8rem 3rem;
+  color: white;
+}
+
+.btn__navigate.active,
+.btn__navigate.active i {
+    color: white !important; /* Ensures both text and icon are white */
+}
+
+
+.selection div p.active {
+  background-color: var(--col-green);
+}
+
+.navigation.close {
+  width: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+  white-space: nowrap;
+}
+
+
+a{
+  text-decoration: none;
+}
+
+
+
+.content__area.active {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+}
+
+.dashboard__section_block.active {
+  display: block;
+  height: auto;
+}
+
+.pending__left-content.width {
+  width: 80%;
+}
+
+.see_all.width {
+  width: 14%;
+}
+
+.admission_scroll.width {
+  width: 1133px;
+}
+
+.admission_scroll_card.width {
+  width: 34rem;
+  transition: width 0.5s ease;
+}
+
+/* maybe change this  */
+.card_scroll.scroll {
+  width: 100%;
+}
+
+
+
+.card_mid_content.margin {
+  margin-top: 0rem;
+}
+
+.first_ctext.margin {
+  margin-bottom: 1.2rem;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* left: 235px; */
+  width: 100%;
+  height: 100%;
+  background-color: rgba(246, 247, 250, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.5s ease;
+}
+
+.hidden,
+.manager_form_container {
+  
+  transition: all 0.5s ease;
+}
+
+.hidden.hidden_remove,
+.manager_form_container.hidden_remove {
+  display: block;
+  transition: all 0.5s ease;
+}
+
+.table_container::-webkit-scrollbar,
+.card__container::-webkit-scrollbar,
+.table_container::-webkit-scrollbar,
+.inner_grading_container::-webkit-scrollbar,
+.initial_content_container::-webkit-scrollbar {
+  display: none;
+}
+
+/* grids */
+.grid {
+  display: grid;
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--2-cols2 {
+  grid-template-columns: 30% 70%;
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--5-cols {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.grid--center-v {
+  align-items: center;
+}
+
+/* flex */
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  padding: 1rem 4rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--dark);
+  border-radius: 11px;
+  cursor: pointer;
+  transform: background 0.3s, color 0.3s;
+}
+
+/**** main container ***/
+.main,
+.main__header {
+  width: 100%;
+  height: auto;
+  background-color: var(--col-white-bg);
+  padding-bottom: 45px;
+
+}
+
+
+.main__main-content {
+  flex: 1;
+  background: var(--col-white-bg);
+  height: auto;
+  
+}
+
+.main__card-container {
+  padding: 2rem 0rem;
+}
+
+.content__area {
+  margin: 0rem 4.8rem 4rem;
+  /* height: auto; */
+  height: 1028px;
+}
+
+/************ Aside Navigation *********/
+.navigation {
+  position: fixed;
+  background-color: var(--primary-col);
+  color: var(--white-col);
+  width: 309px;
+  height: 100vh;
+  white-space: nowrap;
+  transition: all 0.4s ease;
+}
+
+.header__content {
+  padding: 2rem 0rem 2rem 2rem;
+  border-bottom: 1px solid var(--white-col);
+}
+
+.logo__container {
+  max-width: 100rem;
+}
+
+/* Will change this when the transparent logo comes */
+.logo__container h1 {
+  font-size: 4.4rem;
+}
+
+.logo__container span {
+  font-weight: 400;
+}
+
+.logo__container img {
+  width: 8%;
+  object-fit: cover;
+  filter: invert(1);
+}
+
+.info__container {
+  margin-top: 0.5rem;
+  gap: 0.5rem;
+}
+
+/* img__con im making this to behave like a button I think I have to add hover to this or? */
+.img__con {
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--col-otherwhite);
+  border: 2px solid var(--col-otherwhite);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.info__texts {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.management__email {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+
+
+.navigation__button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 1.5rem;
+}
+
+.btn__navigate {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  background: transparent;
+  color: var(--col-aside-btn);
+  margin: 0.6rem 1.5rem;
+  padding: 1.8rem 3rem;
+  border: none;
+  font-size: 2rem;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn__navigate:hover {
+  background-color: var(--col-green);
+  border-radius: 11px;
+}
+
+.btn__navigate span i {
+  font-size: 2.5rem;
+  color: var(--col-aside-btn);
+}
+
+.btn__navigate .slider_turn {
+  transform: rotate(-270deg);
+}
+
+
+.btn-logout {
+  position: absolute;
+  bottom: 20px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: transparent;
+  color: var(--col-mid-red);
+  /* margin: 0.6rem 0.6rem 0.6rem 1.5rem; */
+  margin-left: 3rem;
+  padding: 1.3rem;
+  border: none;
+  font-size: 2rem;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.3s;
+
+}
+
+.btn-logout:hover {
+  color: var(--col-otherwhite);
+}
+
+.logout_icon {
+  transform: rotate(90deg);
+}
+
+/************ Main Header *********/
+.main__header {
+  position: fixed;
+  left: 309px;
+  right: 0px;
+  background-color: var(--white-col);
+  box-shadow: 0px 16px 12px rgba(0, 0, 0, 0.1);
+  height: 64px;
+  
+}
+
+.main__nav {
+  justify-content: space-between;
+  padding: 2rem 4.4rem 1rem 2rem;
+}
+
+.btn__main {
+  width: 23.5px;
+  height: 24px;
+  object-fit: contain;
+  border: none;
+  background: transparent;
+  font-size: 2.4rem;
+  cursor: pointer;
+}
+
+.btn__notification {
+  width: 29.4px;
+  height: 30px;
+  transform: rotate(-30deg);
+}
+
+.main__card-container h1 {
+  color: var(--col-black);
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 1rem 0rem 0.6rem;
+}
+
+
+
+.admission_scroll {
+  flex: 1;
+  width: 887px;
+ 
+}
+
+.card__container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  /* max-width: 1000px; */
+  overflow-x: auto;
+  padding: 10px;
+ 
+}
+
+.admission_scroll .card__container {
+  width: 120%;
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+  cursor: pointer;
+}
+
+/* Basic card styling */
+.card {
+  width: 100%;
+  height: 16rem;
+  border: 1px solid;
+  border-radius: 20px;
+  transition: height 0.5s ease-in-out; /* Only width will transition */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  background: white;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Floating effect when expanded */
+.card.expanded {
+  position: fixed;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: auto;
+  min-height: 24rem;
+  z-index: 1000;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  padding-bottom: 1rem;
+  transition: height 0.5s ease-in-out; /* Only width will transition */
+}
+
+/* Scrollable details section */
+.card-details {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  height: 100%;
+  max-height: 15rem;
+  overflow-y: auto;
+  border-top: 2px solid #ddd;
+  border-radius: 0 0 15px 15px;
+  transition: width 0.5s ease-in-out; /* Only width will transition */
+
+}
+
+.card__footer i {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Modern list styling */
+.card-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-details h3 {
+font-size: 3rem;
+}
+
+.card-details li {
+  font-size: 2rem;
+  padding: 0.8rem;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* List icon styling */
+.card-details li::before {
+  content: "🔹"; /* Customize with different icons */
+  font-size: 1.2rem;
+  color: #007bff;
+}
+
+/* Hover effect on list items */
+.card-details li:hover {
+  background: #f5f5f5;
+  cursor: pointer;
+}
+
+/* Backdrop overlay when card expands */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  display: none;
+  backdrop-filter: blur(5px);
+}
+
+/* Show overlay when expanded */
+.overlay.show {
+  display: block;
+}
+
+/* Close button for expanded card */
+.card-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.card-close:hover {
+  color: red;
+}
+
+
+
+.admission_scroll_card {
+  width: 27rem;
+  transition: width 0.5s ease;
+}
+
+.card_green {
+  
+  background-color: var(--my-mid-green);
+  border-color: var(--col-green);
+}
+
+.col_green {
+ 
+  color: var(--col-green);
+}
+
+
+
+.card_violet {
+  background-color: #af6eff48;
+  border-color: #a097d9;
+}
+
+.col_violet {
+  color: #af6efffd;
+}
+
+
+.card_orange {
+  background-color: #ff89035d;
+  border-color: #ff8903fb;
+}
+
+.col_orange {
+  color: #ff8903fb;
+}
+
+
+.card_lightblue {
+  background-color: #039eff49;
+  border-color: #039efffc;
+}
+
+.col_lightblue {
+  color: #039efffc;
+}
+
+
+.card__header {
+  padding: 2rem;
+  gap: 0.8rem;
+}
+
+.card__header span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white-col);
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+}
+
+.card__header span i {
+  font-size: 2.5rem;
+}
+
+.card__header p:first-child {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.card__header p:last-child {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.card__footer {
+  margin-bottom: 1rem;
+  border-top: 1px solid;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+  background: transparent;
+  border-bottom: 0;
+  border-left: 0;
+  border-right: 0;
+  cursor: pointer; /* Adds pointer cursor */
+  
+}
+
+.card__footer_m {
+  margin-bottom: 1rem;
+  border-top: 1px solid;
+  justify-content: center;
+  padding: 1rem 2rem;
+}
+
+.btn_m {
+  border: none;
+  background: transparent;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn_m span {
+  border: 1px solid;
+  border-radius: 3px;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  transition: all 0.3s;
+}
+
+.btn_m:hover p {
+  border-bottom: 1px solid;
+}
+
+.card__footer p,
+.card__footer button {
+  margin-top: 1rem;
+  font-size: 1.6rem;
+}
+
+.card__footer button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}

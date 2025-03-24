@@ -1,0 +1,83 @@
+@media (max-width: 96em) {
+  html {
+    font-size: 50%;
+  }
+
+  /* Javascript */
+  /* 1058.48px */
+  .admission_scroll.width {
+    width: 1058.48px;
+  }
+
+  .admission_scroll_card.width {
+    width: 41rem;
+    transition: width 0.5s ease;
+  }
+
+  /* remove this */
+  .main__header {
+   
+    color: #6827e2;
+  }
+
+  .admission_scroll {
+    width: 820px;
+  }
+
+  .admission_scroll_card {
+    width: 31rem;
+  }
+}
+
+@media (max-width: 84em) {
+  .main__header {
+    background-color: rgb(225, 238, 42);
+  }
+
+  .task-today {
+    padding: 1.2rem;
+    height: 81rem;
+    overflow-y: auto;
+  }
+  .task-today::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* .card_scroll.scroll { */
+  /* .card_scroll {
+    width: 100%;
+    max-width: 700px;
+    overflow-x: auto;
+    overflow-x: scroll;
+    white-space: nowrap;
+  } */
+
+  .card__container {
+    /* display: grid; */
+    /* grid-template-columns: repeat(3, 1fr); */
+  }
+}
+
+@media (max-width: 75em) {
+  .main__header {
+    background-color: rgb(35, 120, 32);
+  }
+}
+
+@media (max-width: 59em) {
+  .main__header {
+   
+  }
+}
+
+@media (max-width: 44em) {
+  .main__header {
+  
+  }
+}
+
+@media (max-width: 34em) {
+  .main__header {
+   
+  }
+}

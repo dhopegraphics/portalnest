@@ -1,0 +1,496 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,500;1,600&display=swap");
+
+body {
+    margin: 0;
+    font-family: "Poppins";
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    z-index: 1001;
+}
+
+.hamburger-menu span {
+    background: #ffffff;
+    height: 3px;
+    width: 30px;
+    margin: 3px 0;
+    transition: 0.3s;
+    transition: transform 0.3s, opacity 0.3s, background 0.3s;
+}
+
+/* When menu is active, transform into an 'X' */
+.hamburger-menu.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+    /* Move down slightly before rotating */
+    background: black;
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+    /* Hide middle bar */
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+    /* Move up slightly before rotating */
+    background: black;
+}
+
+.overall-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.topBG-image-content {
+    width: 100%;
+    min-height: 70vh;
+    background-image: url("/assets/images/TopBgImage.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: -10%;
+    font-family: "Poppins", "Poppins";
+}
+
+.logo-and-header {
+    display: flex;
+    flex-direction: column;
+    top: 50px;
+    left: 15%;
+    right: 15%;
+    margin: 50px 0;
+}
+
+
+.portalnest-logo {
+    max-width: 300px;
+    min-width: 200px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-wrap: nowrap;
+    padding: 20px 0px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.full-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    /* Default width */
+    max-width: 1200px;
+    /* Optional: Prevent it from getting too wide */
+}
+
+.nav-icon {
+    display: none;
+    width: 16px; /* Adjust as needed */
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+
+.header a::before {
+    content: "";
+    align-items: center;
+    position: absolute;
+    top: -35%;
+    /* Move border up */
+    width: 330%;
+    height: 5px;
+    /* Control thickness */
+    background: white;
+    border-radius: 50px;
+    /* Fully round edges */
+    transition: all 500ms ease;
+    left: -25%;
+}
+
+.header a {
+    position: relative;
+    /* Needed for absolute positioning of ::before */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header a div {
+    position: relative;
+    /* Needed for pseudo-element positioning */
+    padding: 10px 15px;
+    /* Add some spacing */
+}
+
+.topBG-container .logo-and-header .header a div {
+    color: rgb(255, 255, 255);
+
+    transition: color 0.3s ease-in-out;
+    /* Smooth transition */
+}
+
+.topBG-container .logo-and-header .header a div:hover {
+    color: rgb(4, 158, 247);
+    text-shadow: 0 0 10px rgba(4, 158, 247, 0.8), 0 0 20px rgba(4, 158, 247, 0.6);
+    /* Blue glow effect */
+}
+
+.logo-and-header .header a.active-nav-bar div {
+    color: rgb(4, 158, 247);
+    text-shadow: 0 0 10px rgba(4, 158, 247, 0.8), 0 0 20px rgba(4, 158, 247, 0.6);
+    /* Blue glow effect */
+    transition: color 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+.logo-and-header .header a.active-nav-bar div::before {
+    content: "";
+    position: absolute;
+    top: -35%;
+    /* Position above */
+    left: 50%;
+    width: 150%;
+    /* Initially hidden */
+    height: 5px;
+    /* Thickness */
+    background: rgb(29, 146, 255);
+    border-radius: 50px;
+    /* Round edges */
+    opacity: 1;
+    transform: translateX(-50%);
+    box-shadow: 0 0 15px rgba(29, 146, 255, 1), 0 0 30px rgba(29, 146, 255, 0.8);
+    /* Intense glow */
+    transition: left 0.4s ease-in-out, width 0.4s ease-in-out, opacity 0.3s;
+}
+
+/* Border effect */
+/* Initial border effect */
+.header a div::before {
+    content: "";
+    position: absolute;
+    top: -35%;
+    /* Position above */
+    left: 50%;
+    width: 0%;
+    /* Initially hidden */
+    height: 5px;
+    /* Thickness */
+    background: rgb(29, 146, 255);
+    border-radius: 50px;
+    /* Round edges */
+    transition: width 0.4s ease-in-out, left 0.4s ease-in-out,
+        opacity 0.3s ease-in-out, box-shadow 0.4s ease-in-out;
+    transform: translateX(-50%);
+    box-shadow: 0 0 5px rgba(29, 146, 255, 0);
+    /* No glow initially */
+    opacity: 0;
+    /* Initially hidden */
+}
+
+/* Expand and glow on hover */
+.header a div:hover::before {
+    width: 150%;
+    /* Expand */
+    opacity: 1;
+    /* Fully visible */
+    box-shadow: 0 0 15px rgba(29, 146, 255, 1), 0 0 30px rgba(29, 146, 255, 0.8);
+    /* Intense glow */
+}
+
+/* Smooth transition back when unhovering */
+.header a div:not(:hover)::before {
+    width: 0%;
+    /* Shrinks smoothly */
+    opacity: 0;
+    /* Fade out */
+    box-shadow: 0 0 5px rgba(29, 146, 255, 0);
+    /* Remove glow */
+}
+
+.header a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+}
+
+.get-started {
+    background-color: rgb(245, 187, 41);
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-width: 0;
+    border-radius: 20px;
+    transition: all 0.25s;
+    width: 170px;
+    margin-left: 4rem;
+}
+
+.get-started:hover,
+.add-school-button:hover {
+    cursor: pointer;
+    filter: brightness(120%);
+}
+
+.get-started:active,
+.add-school-button:active {
+    opacity: 0.8;
+}
+
+.page-message {
+    text-align: center;
+    font-family: "Poppins";
+    color: white;
+    margin-top: 100px;
+    max-width: fit-content;
+}
+
+@keyframes typing {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.connect {
+    font-size: 40px;
+    margin: 0;
+    animation: typing 3s steps(22, end) forwards, blink 0.7s infinite;
+}
+
+.everywhere {
+    font-size: clamp(1.8rem, calc(6vw + 1rem), 5rem);
+    font-weight: bold;
+    font-stretch: narrower;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    animation: typing 3s steps(22, end) 3.5s forwards, blink 0.7s infinite 3.5s;
+}
+
+.connect,.everywhere {
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid white;
+    width: 100%;
+}
+
+.add-school-button {
+    background-color: rgb(245, 187, 41);
+    font-weight: bolder;
+    padding: 10px 30px;
+    border-width: 0;
+    border-radius: 150px;
+    transition: all 0.25s;
+    width: 350px;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.topBG-container .logo-and-header .header {
+    transition: all 1.25s ease;
+}
+
+.middle-bar {
+    display: flex;
+    align-items: center;
+    margin-top: -1%;
+    padding: 3rem;
+    padding-left: 10px;
+    width: 80%;
+    transition: padding 0.3s ease-in-out ;
+}
+
+.middle-bar div {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    background-color: white;
+    font-weight: 650;
+    text-align: center;
+    font-size: 1rem;
+    transition: padding 0.3s ease-in-out ;
+    width: 100%;
+    height: 10rem;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+    padding: 1px; /* Set an explicit padding */
+    transition: background-color 0.3s ease-in-out, padding 0.3s ease-in-out;
+    
+}
+
+.middle-bar div p {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 80%;
+}
+
+.middle-bar div:first-child {
+    border-radius: 10px 0px 0 10px;
+    
+}
+
+.middle-bar div:last-child {
+    border-radius: 0px 10px 10px 0px;
+}
+
+.middle-bar div:hover {
+    cursor: pointer;
+    background-color: rgb(224, 242, 253);
+    padding: 15px;
+}
+
+.middle-bar-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    position: relative;
+    /* Needed for absolute positioning */
+    font-size: 80%;
+    transition: all 0.3s  ease-in-out ;
+}
+
+.middle-bar-icons::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 2px;
+    /* Border width */
+    height: 50%;
+    /* Adjust height of the border */
+    background: black;
+    /* Border color */
+    transition: height 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.middle-bar-icons::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 2px;
+    /* Border width */
+    height: 50%;
+    /* Adjust height of the border */
+    background: black;
+    /* Border color */
+    transition: height 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+/* Hover effect: Show the border */
+/* Hover effect: Show the border */
+.middle-bar div:not(.active):hover .middle-bar-icons::before,
+.middle-bar div:not(.active):hover .middle-bar-icons::after {
+    width: 2px;
+    height: 100%;
+    /* Expand vertically */
+    background: rgb(0, 68, 255);
+    /* Change color */
+}
+
+.icons {
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+.middle-bar div p {
+    margin: 0;
+}
+
+.arrow-up-icon {
+    display: none;
+}
+
+div.active .arrow-up-icon {
+    display: inline;
+    background-color: white;
+    border-radius: 30px;
+    margin-top: 10px;
+    width: 35px;
+}
+
+div.active .middle-bar-icons {
+    background-color: rgb(4, 158, 247);
+    color: white;
+    border-left-width: 0;
+    border-right-width: 0;
+    padding: 10% 10%;
+    border-radius: 10px;
+    width: 100%;
+}
+
+div.active .middle-bar-icons img.icons {
+    filter: invert(1);
+}
+
+.middle-bar-icons img.study-icons {
+    filter: invert(1);
+}
+
+div.active .middle-bar-icons img.study-icons {
+    filter: invert(0);
+}
+
+div.active .middle-bar-icons::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 0px;
+    /* Border width */
+    height: 0;
+    /* Adjust height of the border */
+    background: rgb(255, 255, 255);
+    /* Border color */
+}
+
+div.active .middle-bar-icons::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0px;
+    /* Border width */
+    height: 0;
+    /* Adjust height of the border */
+    background: rgb(255, 255, 255);
+    /* Border color */
+}
+
+.middle-bar>div {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+

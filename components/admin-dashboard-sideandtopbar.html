@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal-Nest-School_Manager</title>
+
+    <!-- Google Fonts Links -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="/assets/logo/portalnest-Variation-Logo.png">
+  
+    <!-- icons links -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
+  
+    <!-- font aw -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  
+  <!-- Css Link -->
+  <link rel="stylesheet" href="/style/studentHome.css" />
+  <link rel="stylesheet" href="/style/admin-dashboard/manager-section.css">
+
+
+</head>
+
+<body style="height: 100vh; ">
+  <aside style=" z-index: 14; " class="navigation">
+    <header class="header__content">
+      <div class="logo__container flex">
+        <h1>
+          P<img src="../../assets/logo/portalnest-Variation-Logo.png" alt="Portalnest logo" />rtal<span>Nest</span>.
+        </h1>
+      </div>
+      <div class="info__container flex">
+        <!-- tabindex="0" causes the div(a) to focus -->
+        <div class="img__con" role="a" tabindex="0">
+          <!-- <img src="" alt=""> -->
+        </div>
+        <div class="info__texts">
+          <p class="management__name">Fullname</p>
+          <p class="management__email">example@mail.com</p>
+        </div>
+      </div>
+    </header>
+    <nav class="navigation__a-container nav__one">
+      
+      <a class="btn__navigate  active  dashboardbtn" href="/pages/School-Managers/index.html" >
+        <span>
+          <i class="bi bi-house-door"></i>
+        </span>
+        Dashboard
+      </a>
+
+
+      <a class="btn__navigate   managersbtn" href="/pages/School-Managers/managers.html" >
+        <span class="slider_turn">
+          <i class="bi bi-layout-sidebar"></i>
+        </span>
+        Managers
+      </a>
+
+      <a class="btn__navigate  admissionbtn" href="/pages/School-Managers/admissions.html" >
+        <span>
+          <i class="bi bi-box-seam"></i>
+        </span>
+        Admissions
+      </a>
+      <a class="btn__navigate   student-managementbtn" href="/pages/School-Managers/student-manage.html" >
+        <span>
+          <i class="bi bi-clipboard-plus"></i>
+        </span>
+        Student Management
+      </a>
+      <a class="btn__navigate  faculty-managementbtn" href="/pages/School-Managers/faculty-manage.html" >
+        <span>
+          <i class="bi bi-building-check"></i>
+        </span>
+        Faculty Management
+      </a>
+      <a class="btn__navigate   departmentbtn" href="/pages/School-Managers/departments.html" >
+        <span>
+          <i class="bi bi-columns-gap"></i>
+        </span>
+        Departments
+      </a>
+      <a class="btn__navigate  coursebtn"  href="/pages/School-Managers/courses.html">
+        <span>
+          <i class="bi bi-file-earmark-minus"></i>
+        </span>
+        Courses
+      </a>
+      <hr style="width: 100%; background-color: white; height: 1px;">
+
+      <nav class="navigation__a-container nav__two">
+        <a class="btn__navigate   gradingbtn"  href="/pages/School-Managers/grading.html">
+          <span>
+            <i class="bi bi-layout-text-sidebar-reverse"></i>
+          </span>
+          Grading & Exams
+        </a>
+
+        <a class="btn__navigate  reportbtn" href="/pages/School-Managers/reports.html">
+          <span>
+            <i class="bi bi-gear"></i>
+          </span>
+          Settings & Reports
+        </a>
+  
+        <a class="btn__navigate   eventbtn"  href="/pages/School-Managers/events.html">
+          <span>
+            <i class="bi bi-display"></i>
+          </span>
+          Create Events
+        </a>
+
+      </nav>
+    </nav>
+
+    <hr style="width: 100%; background-color: white; height: 1px;">
+    <button class="btn-logout">
+      <span class="logout_icon">
+        <i class="bi bi-upload"></i>
+      </span>
+      Log Out
+    </button>
+  </aside>
+  <header style=" width: 78vw; z-index: 11; position: fixed;" class="main__header">
+    <nav class="main__nav flex">
+      <button class="btn__main btn__menu" id="slider_btn">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <button class="btn__main btn__notification">
+        <i class="bi bi-bell"></i>
+      </button>
+    </nav>
+  </header>
+  
+</body>
+</html>
+

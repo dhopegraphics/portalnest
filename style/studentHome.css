@@ -1,0 +1,754 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #fff;
+}
+
+.sidebar {
+    width: 220px;
+    background-color: #fff;
+    border-right: 1px solid #eaeaea;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Ensure SidebarAndHeader does not overflow */
+.main__header {
+    overflow: hidden;
+    transition: margin-right 0.3s ease-in-out; /* Smooth margin adjustment */
+    transition: all 0.3s ease-in-out;
+    margin: 0;
+  }
+
+  .overall__main{
+    transition: margin-right 0.3s ease-in-out; /* Smooth margin adjustment */
+    transition: all 0.3s ease-in-out;
+
+  }
+  
+  /* Sidebar styles */
+  .navigation {
+    width: 22vw; /* Set a fixed width */
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+  
+    transition: transform 0.3s ease-in-out;
+  }
+ 
+  
+  /* When sidebar is hidden */
+  .sidebar-hidden .navigation {
+    transform: translateX(-100%);
+  }
+  
+  .sidebar-hidden .main-content {
+    margin-left: 0;
+  }
+
+.logo {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.nav-menu {
+    list-style: none;
+    width: 100%;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 14px 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #333;
+}
+
+.nav-item:hover {
+    background-color: #f5f5f5;
+}
+
+.nav-item.active {
+    background-color: #1976d2;
+    color: white;
+}
+
+.nav-item svg {
+    margin-right: 12px;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.nav-item.active svg {
+    fill: white;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Logout section */
+.logout {
+    margin-top: auto;
+    border-top: 1px solid #f0f0f0;
+    padding: 15px 0;
+}
+
+.logout .nav-item {
+    color: #555;
+}
+
+.logout .nav-item:hover {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.main-content {
+    flex: 1;
+    padding: 30px;
+    background-color: #f9f9f9;
+}
+
+.profile-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.profile-image {
+    width: 220px;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-right: 30px;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    flex: 1;
+}
+
+.detail-group {
+    margin-bottom: 20px;
+}
+
+.detail-label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.detail-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.not-paid {
+    color: #f44336;
+}
+
+.pay-now {
+    color: #1a73e8;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.pay-now::after {
+    content: "→";
+    margin-left: 5px;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-closed {
+    background-color: #ffebee;
+    color: #f44336;
+}
+
+.register-now {
+    background-color: #e3f2fd;
+    color: #1a73e8;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.info-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.info-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.info-card h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.info-group {
+    margin-bottom: 15px;
+}
+
+.info-label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.info-value {
+    font-size: 15px;
+    color: #333;
+}
+
+.closed-text {
+    color: #f44336;
+    font-weight: 500;
+}
+
+.virtual-classroom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.classroom-icon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.classroom-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.classroom-desc {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.coming-soon {
+    color: #f44336;
+    font-weight: 500;
+}
+
+
+
+
+/* Add these new styles to the existing studentHome.css file */
+
+.payment-header {
+    margin-bottom: 30px;
+}
+
+.payment-header h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.payment-header p {
+    font-size: 14px;
+    color: #666;
+}
+
+.fees-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.fee-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 24px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.fee-card:hover {
+    transform: translateY(-2px);
+}
+
+.fee-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a73e8;
+    margin-bottom: 16px;
+}
+
+.fee-description {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555;
+}
+s
+/* Add these new styles to the existing studentHome.css file */
+
+.progress-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.step {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #e3e8ef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #666;
+}
+
+.step.active {
+    background-color: #1a73e8;
+    color: white;
+}
+
+.step-line {
+    width: 100px;
+    height: 2px;
+    background-color: #e3e8ef;
+    margin: 0 10px;
+}
+
+.course-title {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.courses-table-container {
+    background: white;
+    border-radius: 10px;
+    padding: 1px;
+    margin-bottom: 30px;
+    overflow-x: auto;
+}
+
+.courses-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.courses-table th {
+    background-color: #f8f9fa;
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.courses-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eaeaea;
+    color: #444;
+}
+
+.courses-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.courses-table tr:last-child td {
+    border-bottom: none;
+}
+
+.courses-table tbody tr:hover {
+    background-color: #f0f7ff;
+}
+
+.proceed-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.proceed-button {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.proceed-button:hover {
+    background-color: #1557b0;
+}
+
+select {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    font-size: 16px;
+    background: #ffffff;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    appearance: none;
+    cursor: pointer; /* Apply pointer cursor only to select */
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover & Focus Effects for Select */
+select:hover {
+    border-color: #007bff;
+}
+
+select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.4);
+}
+
+/* Disabled Select */
+select:disabled {
+    background: #e9ecef;
+    cursor: not-allowed;
+}
+
+
+
+/* Add these new styles to the existing studentHome.css file */
+
+.registration-history {
+    display: flex;
+    position: relative;
+    min-height: 100%;
+}
+
+.selection-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    gap: 24px;
+}
+
+.dropdown-group {
+    width: 100%;
+    max-width: 400px;
+}
+
+.dropdown-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.custom-select {
+    position: relative;
+    width: 100%;
+}
+
+.custom-select select {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    appearance: none;
+    background-color: white;
+    cursor: pointer;
+    color: #333;
+    transition: all 0.2s ease;
+}
+
+.custom-select select:focus {
+    outline: none;
+    border-color: #1a73e8;
+}
+
+.custom-select.focused {
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.2);
+    border-radius: 8px;
+}
+
+.select-arrow {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #666;
+    font-size: 12px;
+}
+
+.registration-slip-banner {
+    background-color: #1a73e8;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    border-top-right-radius: 115.5px;
+    border-bottom-right-radius: 115.5px;
+}
+
+.registration-slip-banner span {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+.proceed-button {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 16px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.proceed-button:hover {
+    background-color: #1557b0;
+}
+
+
+
+.payment-history-container {
+    background: white;
+    border-radius: 10px;
+    padding: 1px;
+    margin: 30px;
+    overflow-x: auto;
+}
+
+.payment-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+}
+
+.payment-table th,
+.payment-table td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.payment-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+}
+
+.payment-table td {
+    color: #444;
+}
+
+.payment-table tr:last-child td {
+    border-bottom: none;
+}
+
+.status-successful {
+    color: #1a73e8;
+    font-weight: 500;
+}
+
+.view-button {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 6px 16px;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.view-button:hover {
+    background-color: #f5f5f5;
+    border-color: #ccc;
+}
+
+
+/* Add these new styles to the existing studentHome.css file */
+
+.results-page {
+    display: flex;
+    position: relative;
+    min-height: 100%;
+}
+
+.selection-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    gap: 24px;
+}
+
+.dropdown-group {
+    width: 100%;
+    max-width: 400px;
+}
+
+.dropdown-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.custom-select {
+    position: relative;
+    width: 100%;
+}
+
+.custom-select select {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    appearance: none;
+    background-color: white;
+    cursor: pointer;
+    color: #333;
+    transition: all 0.2s ease;
+}
+
+.custom-select select:focus {
+    outline: none;
+    border-color: #1a73e8;
+}
+
+.custom-select.focused {
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.2);
+    border-radius: 8px;
+}
+
+.select-arrow {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #666;
+    font-size: 12px;
+}
+
+.results-banner {
+    background-color: #1a73e8;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    border-top-right-radius: 115.5px;
+    border-bottom-right-radius: 115.5px;
+}
+
+.results-banner span {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+.proceed-button {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 16px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.proceed-button:hover {
+    background-color: #1557b0;
+}

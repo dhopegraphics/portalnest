@@ -1,0 +1,289 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.institution-creation {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  width: 110%;
+  height: 100vh;
+ 
+}
+
+.back {
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+main {
+  flex: 1;
+  padding: 1rem 1rem;
+  width: 100%;
+  height: auto;
+  margin-left: 5%;
+ 
+
+}
+
+.head {
+  display: flex;
+  margin-bottom: 0.8rem;
+  align-items: center;
+}
+
+.head > h1 {
+  font-size: large;
+}
+
+.tooltip-container {
+  position: relative;
+  display: inline-block; /* Ensures tooltip stays properly placed */
+}
+
+.tooltip {
+  position: absolute;
+  top: 120%; /* Position below the image */
+  left: 50%; /* Centering */
+  transform: translateX(-50%);
+  background: white;
+  color: black;
+  padding: 12px 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  width: 320px; /* Adjust width */
+  height: auto; /* Adjust height based on content */
+  max-height: 600px; /* Prevents excessive height */
+  white-space: normal; /* Allows text wrapping */
+  font-size: 0.85rem;
+  line-height: 1.4;
+  text-align: justify;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.tooltip > p {
+  background: white;
+}
+
+/* Show tooltip on hover */
+.tooltip-container:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-5px);
+ 
+}
+
+.view {
+  background-color: #147aff;
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: auto;
+  max-width: 50%;
+  min-width: none;
+}
+
+.view > img {
+  object-fit: cover;
+  width: 60%;
+  align-self: center;
+}
+
+.container {
+  width: 80%;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.long {
+  border: 1.4px solid #333;
+  border-radius: 0.3rem;
+  padding: 0.4rem 0.5rem;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  background-color: #f2f2f2;
+}
+
+.btn {
+  border: none;
+  background-color: #147aff;
+  border-radius: 0.3rem;
+  color: whitesmoke;
+  cursor: pointer;
+  transition: ease-in-out 300ms;
+}
+
+.btn-location {
+  padding: 0.4rem 0.5rem;
+  flex-shrink: 0;
+}
+
+.lochouse {
+  display: flex;
+  justify-content: space-between;
+
+  align-items: start;
+  gap: 1rem;
+}
+
+.house {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.short.right {
+  flex: 1;
+}
+/* Label Styling */
+label {
+  display: block;
+  font-weight: 600;
+  margin: 10px 0 5px;
+  color: #444;
+}
+
+.address {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+  flex-wrap: wrap;
+  
+}
+
+
+.district,
+.type {
+  flex: 1;
+}
+
+select , input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px;
+  font-size: 16px;
+  background: #ffffff;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  appearance: none; /* Hide default dropdown arrow */
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Effect */
+select:hover, input:hover {
+  border-color: #007bff;
+}
+
+/* Focus Effect */
+select:focus, input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.4);
+}
+
+/* Disabled Select & Input */
+select:disabled, input:disabled {
+  background: #e9ecef;
+  cursor: not-allowed;
+}
+/* Custom Select Arrow */
+select {
+  position: relative;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="gray"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 18px;
+  padding-right: 35px;
+}
+
+textarea {
+  background-color: #f2f2f2;
+  border: 1.4px solid #333;
+  border-radius: 0.3rem;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 5rem;
+  margin-bottom: 0.5rem;
+}
+
+input[type="file"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.upload-box {
+  height: 6rem;
+  border: 1px solid #147aff;
+  width: 100%;
+  border-radius: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.upload {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.short.left {
+  flex: 1;
+}
+.short {
+  border: 1.4px solid #333;
+  border-radius: 0.3rem;
+  padding: 0.4rem 0.5rem;
+
+  margin-bottom: 0.5rem;
+  background-color: #f2f2f2;
+  flex: 1;
+}
+.subdiv {
+  display: flex;
+  /* justify-content: center; */
+}
+.submit {
+  margin: 0 auto;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.btn:hover {
+  background-color: #4395ff;
+}
+
+@media (max-width: 768px) {
+  .institution-creation {
+    display: block;
+  }
+
+  .view {
+    display: none;
+  }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Pending Applicants</title>
+  <link rel="stylesheet" href="/style/schooladmin.css" />
+  <link rel="stylesheet" href="/style/admin-dashboard/dashboard-section.css">
+</head>
+<body>
+
+  <div class="recent__pending_container">
+    <div class="live__activity-header flex pending__heading">
+      <h1>All Pending Applicants</h1>
+      <button class="btn" onclick="goBack()">Go Back</button>
+    </div>
+    <div class="dashboardnext__card-container grid grid--2-cols">
+      <!-- Cards will be rendered here -->
+    </div>
+  </div>
+
+  <script>
+    let allApplicants = [];
+
+    // Fetch and display all applicants
+    fetch("/data/pending_applicants.json")
+      .then(response => response.json())
+      .then(data => {
+        allApplicants = data.pending_applicants;
+        renderPendingApplicants(allApplicants);
+      })
+      .catch(error => console.error("Error fetching data:", error));
+
+    function renderPendingApplicants(applicants) {
+      const container = document.querySelector(".dashboardnext__card-container");
+      container.innerHTML = ""; // Clear existing content
+
+      applicants.forEach((applicant, index) => {
+        const card = document.createElement("div");
+        card.className = "pending__card grid";
+        card.innerHTML = `
+          <div class="pending__left-content grid">
+            <img src="${applicant.image}" alt="image of ${applicant.name}" />
+
+            <div class="personinfo__container">
+              <div class="program flex">
+                <p>${applicant.program}</p>
+                <div class="level ">
+                  <span><i class="fa-solid fa-circle"></i></span>
+                  <p>${applicant.level}</p>
+                </div>
+              </div>
+
+              <h2>${applicant.name}</h2>
+              <div class="approval flex">
+                <div class="date flex">
+                  <span><i class="bi bi-calendar4-week"></i></span>
+                  <p>${applicant.date}</p>
+                </div>
+
+                <div class="flex">
+                  <span><i class="bi bi-clock"></i></span>
+                  <p>${applicant.time}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pending__right-content">
+            <button class="btn approval_btn" onclick="approveApplicant(${index})">Approve</button>
+            <button class="btn decline_btn" onclick="declineApplicant(${index})">Decline</button>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    // Approve applicant
+    function approveApplicant(index) {
+      allApplicants.splice(index, 1);
+      renderPendingApplicants(allApplicants);
+    }
+
+    // Decline applicant
+    function declineApplicant(index) {
+      allApplicants.splice(index, 1);
+      renderPendingApplicants(allApplicants);
+    }
+
+    // Go back to previous page
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+
+</body>
+</html>

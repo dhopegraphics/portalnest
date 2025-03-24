@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PortalNest - Check Results</title>
+    <link rel="stylesheet" href="/style/studentHome.css">
+    <link rel="icon" type="image/png" href="/assets/logo/portalnest-Variation-Logo.png">
+</head>
+
+<body>
+    <div class="sidebar">
+        <div>
+            <div class="logo">
+                <img  width="180px" src="/assets/logo/portalnest logo.png" alt="PortalNest Logo">
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/pages/Student-Portal/index.html">
+                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                        </svg>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/pages/Student-Portal/fees-payment.html">
+                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z" />
+                        </svg>
+                        <span>Pay Fees</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/pages/Student-Portal/course-registration.html">
+                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z" />
+                        </svg>
+                        <span>Course Registration</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="/pages/Student-Portal/result-check.html">
+                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+                        </svg>
+                        <span>Check Result</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/pages/Student-Portal/payment-history.html">
+                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" />
+                        </svg>
+                        <span>Payment History</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/pages/Student-Portal/registration-history.html">
+                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm-2 14H7v-2h3v2zm0-4H7v-2h3v2zm0-4H7V7h3v2zm7 8h-4v-2h4v2zm0-4h-4v-2h4v2zm0-4h-4V7h4v2z" />
+                        </svg>
+                        <span>Registration History</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="logout">
+            <div class="nav-item">
+                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z" />
+                </svg>
+                <span>Log Out</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content results-page">
+        <div class="selection-container">
+            <div class="dropdown-group">
+                <label for="academicYear">Select Academic Year</label>
+                <div class="custom-select">
+                    <select id="academicYear">
+                        <option value="" selected disabled>Choose Academic Year</option>
+                        <option value="2024-2025">2024/2025</option>
+                        <option value="2023-2024">2023/2024</option>
+                        <option value="2022-2023">2022/2023</option>
+                    </select>
+                    <div class="select-arrow">▼</div>
+                </div>
+            </div>
+
+            <div class="dropdown-group">
+                <label for="semester">Select Semester</label>
+                <div class="custom-select">
+                    <select id="semester">
+                        <option value="" selected disabled>Choose Semester</option>
+                        <option value="first">First Semester</option>
+                        <option value="second">Second Semester</option>
+                    </select>
+                    <div class="select-arrow">▼</div>
+                </div>
+            </div>
+
+            <a href="/pages/Student-Portal/result-confirm.html"><button class="proceed-button">Proceed</button></a>
+        </div>
+
+        <div class="results-banner">
+            <span>CHECK RESULTS</span>
+        </div>
+    </div>
+
+    <script>
+        // Add click event to proceed button
+        document.querySelector('.proceed-button').addEventListener('click', function () {
+            const year = document.getElementById('academicYear').value;
+            const semester = document.getElementById('semester').value;
+
+            if (!year || !semester) {
+                alert('Please select both Academic Year and Semester');
+                return;
+            }
+
+            // Handle form submission here
+            console.log('Selected:', { year, semester });
+        });
+
+        // Add custom styling for select focus
+        const selects = document.querySelectorAll('select');
+        selects.forEach(select => {
+            select.addEventListener('focus', function () {
+                this.parentElement.classList.add('focused');
+            });
+            select.addEventListener('blur', function () {
+                this.parentElement.classList.remove('focused');
+            });
+        });
+    </script>
+</body>
+
+</html>

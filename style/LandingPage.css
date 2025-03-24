@@ -1,0 +1,384 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+/* Why Choose Us */
+.why-choose-us {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.features {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin: 0 auto 10px auto;
+    text-align: center;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feature span {
+    flex: 1;
+    font-size: 16px;
+    color: #aaa; /* Light grey text */
+}
+
+.feature.active span {
+    font-weight: bold;
+    color: black; /* Highlight active text */
+}
+
+.progress-line {
+    width: 50%;
+    height: 3px;
+    background: #ccc;
+    position: relative;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.progress-dot {
+    width: 12px;
+    height: 12px;
+    background: #ccc;
+    border-radius: 50%;
+    position: relative;
+}
+
+.progress-dot.active {
+    background: black; /* Highlight the active dot */
+}
+
+/* Horizontal Line with Dots */
+.why-choose-line {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    gap: 20px;
+}
+.image-section {
+    display: flex;  /* Enable flexbox */
+    justify-content: center;  /* Horizontally center the content */
+    align-items: center;  /* Vertically center the content */
+    position: relative;  /* Needed for absolute positioning of the preview images */
+    height: 100vh;  /* Adjusts the height to 100% of the viewport */
+  }
+  
+  .image-preview {
+    position: relative;  /* Necessary for positioning the images within */
+    width: 300px;  /* Set width of the image preview */
+    height: 300px;  /* Set height of the image preview */
+    display: flex;  /* Enable flexbox within the preview */
+    justify-content: center;  /* Center the content horizontally */
+    align-items: center;  /* Center the content vertically */
+  }
+  
+  .image {
+    position: absolute;  /* Make the images stack on top of each other */
+    width: 100%;
+    height: 100%;
+  }
+  
+  .preview1 {
+    z-index: 1;  /* This image will be at the bottom */
+    left: -50%;
+    top: -15%;
+    bottom: -2%;
+    border-radius: 5%;
+  }
+  
+  .preview2 {
+    z-index: 2;  /* This image will be in the middle */
+    top: -20%;  /* Adjust positioning for layering */
+    right: -10%;
+    left: -20%;
+    border-radius: 5%;
+  }
+  
+  .preview3 {
+    z-index: 3;  /* This image will be on top */
+    top: -1%;  /* Adjust positioning for layering */
+    right: -40%;
+    left: -2%;
+    bottom: -90%;
+    border-radius: 5%;
+  }
+  
+  .textpreview {
+    text-align: left;  /* Center the text */
+    margin-top: 10px;  /* Add some space below the images */
+    font-size: 18px;  /* Adjust font size as needed */
+    margin-left: 5rem;
+    max-width: 400px;
+    line-height: 1.5;
+  }
+  
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background: gray;
+    border-radius: 50%;
+}
+
+.dot.active {
+    background: black;
+}
+
+/* Image & Text Section */
+.why-choose-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 0px;
+    padding: 0 ;
+    vertical-align: top;
+}
+
+.why-choose-image img {
+    width: 250px;
+    max-width: 100%;
+}
+
+.why-choose-text {
+    text-align: left;
+    max-width: 400px;
+}
+
+.why-choose-text h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.why-choose-image{
+    width:400px;
+    height:100px;
+    object-position: top;
+    object-fit: contain;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 60px 20px;
+    background-color: #fff;
+}
+
+.testimonials-container {
+    max-width: 1000px;
+  
+    margin: 0 auto;
+}
+
+/* Header Styles */
+.testimonials-header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.testimonials-header h2 {
+    font-size: 36px;
+    font-weight: 900;
+    margin: 0;
+    position: relative;
+    padding-top: 20px;
+}
+
+.testimonials-header h2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: #ffd700;
+}
+
+.testimonials-header p {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Testimonial Card Styles */
+.testimonial-card {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+   
+}
+
+.testimonial-card.active {
+    display: flex;
+}
+
+/* Image Styles */
+.testimonial-image-wrapper {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+.image-background {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background-color: #0073e6;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+}
+
+.image-container {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #ffb6c1;
+    top: 20px;
+    left: 20px;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Content Styles */
+.testimonial-content {
+    padding: 20px 0;
+    width: 100%;
+}
+
+
+.testimonial-text {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+    font-weight: bolder;
+}
+
+.testimonial-author h3 {
+    color: #0073e6;
+    font-size: 20px;
+    font-weight: bolder;
+    margin: 0 0 5px 0;
+}
+
+.testimonial-author p {
+    color: #080808;
+    margin: 0;
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+/* Next Button Styles */
+.next-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #0073e6;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.on-press-button{
+    position: relative;
+    left: -100px;
+    bottom: 80px;
+}
+
+.next-button:hover {
+    background-color: #3151b7;
+}
+
+
+@media (min-width: 1200px) {
+
+    .testimonials-header h2 {
+        font-size: 48px;
+    }
+
+    .testimonial-card {
+        flex-direction: row;
+        text-align: left;
+        gap: 40px;
+    }
+
+    .testimonial-image-wrapper {
+        width: 300px;
+        height: 300px;
+        margin-bottom: 0;
+    }
+
+    .image-background {
+        width: 280px;
+        height: 280px;
+    }
+
+    .image-container {
+        width: 280px;
+        height: 280px;
+        top: 20px;
+        left: 20px;
+    }
+
+    .quote-mark {
+        display: block;
+        font-size: 100px;
+    }
+
+    .quote-left {
+        top: -20px;
+        left: -40px;
+        margin-left: 100px;
+    }
+
+    .quote-right {
+        bottom: 60px;
+        right: 60px;
+        margin-left: 600px;
+    }
+
+    .testimonial-text {
+        font-size: 18px;
+        margin-left: 100px;
+    }
+
+    .testimonial-author h3 {
+        font-size: 24px;
+        margin-left: 100px;
+    }
+
+    .testimonial-author p {
+        font-size: 16px;
+        margin-left: 100px;
+    }
+
+    .next-button {
+        position: absolute;
+        right: -60px;
+        bottom: 0;
+        margin: 0;
+    }
+}

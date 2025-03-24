@@ -1,0 +1,181 @@
+
+/* Responsive adjustments */
+/* @media (max-width: 768px) {
+    .payment-header h1 {
+        font-size: 20px;
+    }
+
+    .fees-grid {
+        grid-template-columns: 1fr;
+    }
+} */
+
+/* Responsive design for smaller screens */
+/* @media (max-width: 1024px) {
+    .profile-card {
+        flex-direction: column;
+    }
+
+    .profile-image {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .profile-details {
+        grid-template-columns: 1fr;
+    }
+
+    .info-cards {
+        grid-template-columns: 1fr;
+    }
+} */
+
+@media (max-width: 768px) {
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        display: flex;
+        min-height: 100vh;
+        background-color: #ffffff;
+    }
+
+
+    .main-content {
+        width: auto;
+        height: 100%;
+        background-color: #ffffff;
+        margin-top: 80px;
+        justify-self: center;
+        align-self: center;
+        align-items: center;
+        margin-left: 0;
+       
+    }
+
+
+    .sidebar {
+        width: 100%;
+        height: 200px;
+        border-right: none;
+        border-bottom: 1px solid #eaeaea;
+      background-color: rgb(255, 255, 255);
+      flex-direction: row;
+      display: flex;
+     
+    }
+
+
+    .nav-menu {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .nav-item {
+        flex: 1;
+        min-width: 120px;
+        justify-content: center;
+        padding: 10px;
+    }
+
+  
+
+    
+}
+
+
+/* Responsive adjustments */
+/* @media (max-width: 768px) {
+    .step-line {
+        width: 50px;
+    }
+
+    .courses-table th,
+    .courses-table td {
+        padding: 12px 10px;
+        font-size: 14px;
+    }
+
+    .course-title {
+        font-size: 20px;
+    }
+} */
+
+/* Responsive adjustments */
+/* @media (max-width: 768px) {
+    .registration-history {
+        flex-direction: column;
+    }
+
+    .registration-slip-banner {
+        writing-mode: horizontal-tb;
+        transform: none;
+        padding: 20px;
+        border-top-right-radius: 115.5px;
+        border-bottom-right-radius: 115.5px;
+    }
+
+    .registration-slip-banner span {
+        transform: none;
+    }
+
+    .selection-container {
+        padding: 20px;
+    }
+} */
+
+/* Responsive adjustments */
+/* @media (max-width: 1024px) {
+    .payment-history-container {
+        margin: 15px;
+    }
+
+    .payment-table th,
+    .payment-table td {
+        padding: 12px;
+        font-size: 14px;
+    }
+} */
+
+/* @media (max-width: 768px) {
+    .payment-table {
+        font-size: 13px;
+    }
+
+    .payment-table th,
+    .payment-table td {
+        padding: 8px;
+    }
+
+    .view-button {
+        padding: 4px 12px;
+        font-size: 12px;
+    }
+} */
+
+
+/* Responsive adjustments */
+/* @media (max-width: 768px) {
+    .results-page {
+        flex-direction: column;
+    }
+
+    .results-banner {
+        writing-mode: horizontal-tb;
+        transform: none;
+        padding: 20px;
+        border-top-left-radius: 115.5px;
+        border-top-right-radius: 115.5px;
+    }
+
+    .results-banner span {
+        transform: none;
+    }
+
+    .selection-container {
+        padding: 20px;
+    }
+} */
+
