@@ -13,7 +13,7 @@
   <!-- icons links -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
-
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- font aw -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 
@@ -24,7 +24,8 @@
 
   <!-- Javascript -->
   <script defer src="/functions/script-schooladmin.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="/style/admin-dashboard/modalformstyles.css">
+
 </head>
 
 <body>
@@ -114,9 +115,84 @@
           </div>
         </div>
 
+        <div class="modal-overlay" id="event-modal">
+          <div class="modal-container">
+            <div class="modal-header">
+              <h2>Add Event</h2>
+              <span class="close-modal">&times;</span>
+            </div>
+            <form id="event-form" class="modal-form">
+              <div class="form-group">
+                <div class="input-container">
+                  <span class="input-icon"><i class="material-icons">event</i></span>
+                  <input type="text" id="event-title" required>
+                  <label for="event-title">Event Title</label>
+                </div>
+                <div class="error-message" id="event-title-error"></div>
+              </div>
+      
+              <div class="form-group">
+                <div class="input-container">
+                  <span class="input-icon"><i class="material-icons">badge</i></span>
+                  <input type="text" id="event-id" required>
+                  <label for="event-id">Event ID</label>
+                </div>
+                <div class="error-message" id="event-id-error"></div>
+              </div>
+      
+              <div class="form-group">
+                <div class="input-container">
+                  <span class="input-icon"><i class="material-icons">category</i></span>
+                  <select id="event-type" required>
+                    <option value="" disabled selected></option>
+                    <option value="meeting">Meeting</option>
+                    <option value="registration">Course Registration</option>
+                    <option value="seminar">Seminar</option>
+                    <option value="workshop">Workshop</option>
+                  </select>
+                  <label for="event-type">Event Type</label>
+                </div>
+                <div class="error-message" id="event-type-error"></div>
+              </div>
+      
+              <div class="form-group">
+                <div class="input-container">
+                  <span class="input-icon"><i class="material-icons">calendar_today</i></span>
+                  <input type="date" id="event-start-date" required>
+                  <label for="event-start-date">Start Date</label>
+                </div>
+                <div class="error-message" id="event-start-date-error"></div>
+              </div>
+      
+              <div class="form-group">
+                <div class="input-container">
+                  <span class="input-icon"><i class="material-icons">event_busy</i></span>
+                  <input type="date" id="event-end-date" required>
+                  <label for="event-end-date">End Date</label>
+                </div>
+                <div class="error-message" id="event-end-date-error"></div>
+              </div>
+      
+              <div class="form-group">
+                <div class="input-container">
+                  <span class="input-icon"><i class="material-icons">access_time</i></span>
+                  <input type="time" id="event-time" required>
+                  <label for="event-time">Time</label>
+                </div>
+                <div class="error-message" id="event-time-error"></div>
+              </div>
+      
+              <div class="form-actions">
+                <button type="button" class="cancel-btn">Cancel</button>
+                <button type="submit" class="submit-btn">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
         <div id="course_management" class="dashboard__section content course_management_section">
           <div class="student_mang_header flex">
-            <button class="flex">
+            <button class="flex open-modal-btn" data-modal="event-modal" >
               <span><i class="bi bi-journal-text"></i></span>
               Add Events
             </button>
@@ -238,7 +314,7 @@
       </section>
     </div>
   </main>
-  <script src="/functions/school-dashboard_drawerRender.js"></script>
+  <script src="/functions/managementButtons.js"></script>
 </body>
 
 </html>
