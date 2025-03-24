@@ -1,23 +1,4 @@
-/* Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
 
-body {
-    background-color: #f5f7fa;
-    color: #333;
-    line-height: 1.6;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 20px;
-    text-align: center;
-}
 
 h1 {
     margin-bottom: 30px;
@@ -150,6 +131,11 @@ h1 {
     background-color: white;
 }
 
+input .checkbox-group {
+    font-size: 20px;
+}
+
+
 .input-container input:focus,
 .input-container select:focus {
     border-color: #3498db;
@@ -202,6 +188,52 @@ h1 {
     display: flex;
     align-items: center;
     margin-bottom: 5px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.course-selection {
+    margin-bottom: 30px;
+}
+.header h3 {
+    font-size: 22px; /* Increase heading size */
+    font-weight: bold;
+}
+
+.search-bar {
+    padding: 10px;
+    font-size: 16px; /* Increase input font size */
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    outline: none;
+    width: 200px;
+}
+
+.checkbox-label  , .checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    font-size: 12px; /* Increase checkbox label font size */
+   
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 5px;
+}
+
+.grade-table , .form-group {
+   
+    font-size: 12px; /* Increase checkbox label font size */
+   
+   
+   
 }
 
 .checkbox-item input[type="checkbox"] {
@@ -308,6 +340,23 @@ select[multiple] {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
+.header {
+    display: flex;
+   
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.hidden {
+    display: none;
+}
+.search-bar {
+    padding: 8px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    outline: none;
+    width: 200px;
+}
 
 select {
     width: 100%;

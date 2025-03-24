@@ -425,3 +425,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+ // Search functionality
+ document.getElementById('search').addEventListener('input', function () {
+    const searchTerm = this.value.toLowerCase();
+    document.querySelectorAll('.checkbox-label , .checkbox-item ').forEach(label => {
+        const text = label.textContent.toLowerCase();
+        if (text.includes(searchTerm)) {
+            label.classList.remove('hidden');
+
+        } else {
+            label.classList.add('hidden');
+          
+        }
+    });
+});
