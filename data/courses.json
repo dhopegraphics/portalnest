@@ -1,0 +1,10 @@
+[
+    { "code": "CSM 151", "name": "Information Technology I" },
+    { "code": "CSM 153", "name": "Circuit Theory" },
+    { "code": "CSM 357", "name": "Human Computer Interaction" },
+    { "code": "ACF 255", "name": "Accounting I" },
+    { "code": "CSM 395", "name": "Introduction to Artificial Intelligence" },
+    { "code": "View/edit student records", "name": "View/edit student records" },
+    { "code": "Create/update courses", "name": "Create/update courses" },
+    { "code": "Create/update faculties", "name": "Create/update faculties" }
+  ]
