@@ -1,0 +1,12 @@
+[
+    { "id": "PERM_001", "name": "Create/Edit Staff", "category": "Staff Management" },
+    { "id": "PERM_002", "name": "Assign Roles", "category": "Staff Management" },
+    { "id": "PERM_003", "name": "Set Custom Permissions", "category": "Staff Management" },
+    { "id": "PERM_004", "name": "Deactivate/Reactivate Staff", "category": "Staff Management" },
+    { "id": "PERM_005", "name": "Remove Staff from System", "category": "Staff Management" },
+    { "id": "PERM_006", "name": "View/Edit Student Records", "category": "Student Management" },
+    { "id": "PERM_007", "name": "Register Students for Courses", "category": "Student Management" },
+    { "id": "PERM_008", "name": "Manage Student Attendance", "category": "Student Management" },
+    { "id": "PERM_009", "name": "Transfer Students Between Departments", "category": "Student Management" },
+    { "id": "PERM_010", "name": "Manage Student Disciplinary Actions", "category": "Student Management" }
+  ]

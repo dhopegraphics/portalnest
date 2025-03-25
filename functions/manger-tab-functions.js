@@ -41,3 +41,5 @@ createOfficerBtn.addEventListener("click", displayForm);
 createExaminerBtn.addEventListener("click", displayForm);
 
 closeBtn.addEventListener("click", closeForm);
+
+

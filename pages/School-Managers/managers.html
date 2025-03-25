@@ -128,87 +128,60 @@
 
       <!-- initial content for my javascript -->
       <div class="initial_content_container">
+                <!-- Teacher -->
+                <div class="manager_content_container">
+                  <h1>Lecturer/Teacher :</h1>
+        
+                  <div class="initial_title flex">
+                    <h2>Name</h2>
+                    <h2>Department</h2>
+                    <h2>Course</h2>
+                    <h2>Year</h2>
+                    <h2>Salary($)</h2>
+                  </div>
+        
+                  <div class="initial_content grid">
+                    <div class="person_details flex">
+                      <div class="person_img"></div>
+                      <h4>Isaac Nana Sam Mensah</h4>
+                    </div>
+        
+                    <div class="program_title flex">
+                      <h4>Computer Science</h4>
+                    </div>
+        
+                    <div class="course_title flex">
+                      <h4>Circuit Theory</h4>
+                    </div>
+        
+                    <div class="program_level flex">
+                      <h4>Year 1,2,4</h4>
+                    </div>
+        
+                    <div class="manager_salary flex">
+                      <h4>12,000</h4>
+        
+                      <div class="salary_btn_container flex">
+                        <button class="flex"><span>+</span> Add Roles</button>
+        
+                        <!-- Edit button -->
+                        <button class="flex">
+                          <i class="fa-solid fa-pen-to-square"></i>
+                        </button>
+        
+                        <!-- close button -->
+                        <button class="flex">&times;</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        
+        
         <!-- Manager -->
         <div class="manager_content_container">
           <h1>School Manager/Staff:</h1>
         </div>
-        <script>
-          document.getElementById("submit").addEventListener("click", function (event) {
-            event.preventDefault(); // Prevent page reload
-        
-            // Get input values
-            let role = document.getElementById("role").value;
-            let name = document.getElementById("name").value;
-            let department = document.getElementById("department").value;
-            let course = document.getElementById("course").value;
-            let year = document.getElementById("year").value;
-            let salary = document.getElementById("salary").value;
-        
-            if (!role || !name || !department || !course || !year || !salary) {
-              alert("Please fill all fields.");
-              return;
-            }
-        
-            let container = document.querySelector(".manager_content_container");
-            let roleSection = document.getElementById(role.replace(/\s+/g, "_")); // ID without spaces
-        
-            // Create section if it doesn't exist
-            if (!roleSection) {
-              roleSection = document.createElement("div");
-              roleSection.id = role.replace(/\s+/g, "_");
-              roleSection.innerHTML = `
-                <h1>${role}:</h1>
-                <div class="initial_title flex">
-                  <h2>Name</h2>
-                  <h2>Department</h2>
-                  <h2>Course</h2>
-                  <h2>Year</h2>
-                  <h2>Salary($)</h2>
-                </div>
-                <div class="manager_list"></div>
-              `;
-              container.appendChild(roleSection);
-            }
-        
-            // Append staff data
-            let managerList = roleSection.querySelector(".manager_list");
-            let newEntry = `
-              <div class="initial_content grid">
-                <div class="person_details flex">
-                  <div class="person_img"></div>
-                  <h4>${name}</h4>
-                </div>
-        
-                <div class="program_title flex">
-                  <h4>${department}</h4>
-                </div>
-        
-                <div class="course_title flex">
-                  <h4>${course}</h4>
-                </div>
-        
-                <div class="program_level flex">
-                  <h4>${year}</h4>
-                </div>
-        
-                <div class="manager_salary flex">
-                  <h4>${salary}</h4>
-        
-                  <div class="salary_btn_container flex">
-                    <button class="flex"><span>+</span> Add Roles</button>
-                    <button class="flex"><i class="fa-solid fa-pen-to-square"></i></button>
-                    <button class="flex" onclick="this.parentElement.parentElement.parentElement.remove()">&times;</button>
-                  </div>
-                </div>
-              </div>
-            `;
-            
-            managerList.innerHTML += newEntry;
-            
-            // Clear form
-            document.getElementById("staffForm").reset();
-          });
-        </script>
+       
       </div>
 
       <!-- Form  -->
@@ -245,6 +218,11 @@
           <div class="inn-container inn_two">
             <label for="number">Work Phone</label>
             <input type="number" name="number" id="number" />
+          </div>
+
+          <div class="inn-container inn_two">
+            <label for="number">Salary</label>
+            <input type="number" name="number" id="Salary" />
           </div>
 
           <div class="inn-container inn_three">
@@ -319,137 +297,37 @@
           </div>
 
           <div class="permission_selection">
-            <p class="permission-margin">Permissions :</p>
-
-            <div class="selection">
-              <div class="flex">
-                <p role="button" class="permission-option" data-value="Create/Edit Staff">
-                  Create/Edit Staff<span>+</span>
-                </p>
-                <p role="button" class="permission-option" data-value="Assign Roles">
-                  Assign Roles <span>+</span>
-                </p>
-                <p role="button" class="permission-option" data-value="Select Custom Permissions">
-                  Select Custom Permissions <span>+</span>
-                </p>
-                <p role="button" class="permission-option" data-value="Withdrawals">
-                  Withdrawals <span>+</span>
-                </p>
-              </div>
-
-              <div class="flex">
-                <p role="button" class="permission-option" data-value="View/Approve/Reject Applications">
-                  View/Approve/Reject Applications <span>+</span>
-                </p>
-                <p role="button" class="permission-option" data-value="Set Admisstion Criteria">
-                  Set Admisstion Criteria <span>+</span>
-                </p>
-                <p role="button" class="permission-option" data-value="Deferrials">
-                  Deferrials <span>+</span>
-                </p>
-              </div>
-
-              <div class="flex">
-                <p role="button" class="permission-option" data-value="View/Edit Students Records">
-                  View/Edit Students Records <span>+</span>
-                </p>
-                <p role="button" class="permission-option" data-value="Create/Update Courses">
-                  Create/Update Courses <span>+</span>
-                </p>
-                <p role="button" class="permission-option" data-value="Create/Update Faculties">
-                  Create/Update Faculties <span>+</span>
-                </p>
-              </div>
-
-              <div class="flex">
-                <p role="button" class="permission-option" data-value="Create/Update Departments">
-                  Create/Update Departments <span>+</span>
-                </p>
-                <p role="button" class="permission-option" data-value="Define Grading Policies">
-                  Define Grading Policies <span>+</span>
-                </p>
-                <p role="button" class="permission-option" data-value="Approve/Release Results">
-                  Approve/Release Results <span>+</span>
-                </p>
-              </div>
-
-              <div class="flex">
-                <p role="button" class="permission-option" data-value="View School Analytics">
-                  View School Analytics <span>+</span>
-                </p>
+            <div class="select_permissions flex">
+              <p class="permission-margin">Permissions :</p>
+              <div class="course_search_cont">
+                <input id="search_permission" type="text" class="search_courses" />
+                  <span><i class="bi bi-search"></i></span>
               </div>
             </div>
+            <div class="  inner-permission_selection">
+            </div>
           </div>
-
+         
           <div class="course_selection">
             <div class="select_course flex">
               <p class="permission-margin">Select Courses :</p>
-
               <div class="course_search_cont">
-                <input type="text" class="search_courses" />
-                <span><i class="bi bi-search"></i></span>
+                <input id="search_courses" type="text" class="search_courses" />
+                  <span><i class="bi bi-search"></i></span>
               </div>
             </div>
-
             <div class="selection course__selection">
-              <div class="flex">
-                <p role="button" class="course-option" data-value="Information Technology I">
-                  CSM 151 Information Technology I <span>+</span>
-                </p>
-                <p role="button" class="course-option" data-value="Circuit Theory">
-                  CSM 153 Circuit Theory <span>+</span>
-                </p>
-                <p role="button" class="course-option" data-value="Human Computer Interaction">
-                  CSM 357 Human Computer Interaction <span>+</span>
-                </p>
-              </div>
-
-              <div class="flex">
-                <p role="button" class="course-option" data-value="Accounting I">
-                  ACF 255 Accounting I <span>+</span>
-                </p>
-                <p role="button" class="course-option" data-value="Human Computer Interaction">
-                  CSM 357 Human Computer Interaction <span>+</span>
-                </p>
-                <p role="button" class="course-option" data-value="Introduction to Artificial Intelligence">
-                  CSM 395 Introduction to Artificial Intelligence
-                  <span>+</span>
-                </p>
-              </div>
-
-              <div class="flex">
-                <p role="button" class="course-option" data-value="View/edit student records">
-                  View/edit student records <span>+</span>
-                </p>
-                <p role="button" class="course-option" data-value="Create/update courses">
-                  Create/update courses <span>+</span>
-                </p>
-                <p role="button" class="course-option" data-value="Create/update faculties">
-                  Create/update faculties <span>+</span>
-                </p>
-              </div>
-
-              <div class="flex">
-                <p role="button" class="course-option" data-value="Create/update departments">
-                  Create/update departments <span>+</span>
-                </p>
-                <p role="button" class="course-option" data-value="Define grading policies">
-                  Define grading policies <span>+</span>
-                </p>
-                <p role="button" class="course-option" data-value="approve/release results">
-                  approve/release results <span>+</span>
-                </p>
-                <div  id="submit" class="course-option" >
-                 Submit Your Form
-                </div>
-              </div>
             </div>
+            <div  id="submit" class="course-option" >
+              Submit Your Form
+             </div>
           </div>
         </form>
       </div>
     </div>
   </main>
-
+  <script src="/functions/see_details_function.js" defer ></script>
+  <script  src="/functions/managers_data_render.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="School Management Dashboard - Settings">
+  <title>School Management Dashboard - Settings</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/style/settings_style.css">
+
+  <!-- Include Lucide for icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+      <!-- Settings content -->
+      <div class="settings-content  ">
+        <!-- Tab navigation -->
+        <div class="tabs" role="tablist">
+          <button id="tab-account" class="tab active" role="tab" aria-selected="true" aria-controls="panel-account">
+            Account
+          </button>
+          <button id="tab-system" class="tab" role="tab" aria-selected="false" aria-controls="panel-system">
+            System
+          </button>
+          <button id="tab-users" class="tab" role="tab" aria-selected="false" aria-controls="panel-users">
+            User Management
+          </button>
+        </div>
+
+        <!-- Account Settings Panel -->
+        <div id="panel-account" class="tab-panel active" role="tabpanel" aria-labelledby="tab-account">
+          <div class="panel-content">
+            <h2 class="panel-title">User Account Settings</h2>
+            
+            <!-- Profile Picture Section -->
+            <div class="profile-section">
+              <div class="profile-image-container">
+                <div class="profile-image" id="profileImage">
+                  <i data-lucide="user"></i>
+                </div>
+              </div>
+              <div class="profile-details">
+                <h3 class="profile-title">Profile Picture</h3>
+                <p class="profile-description">Upload a new profile picture. JPG, GIF or PNG. Max size of 800K.</p>
+                <div class="profile-actions">
+                  <label for="imageUpload" class="button button-outline">
+                    <i data-lucide="upload"></i>
+                    Upload Image
+                  </label>
+                  <input type="file" id="imageUpload" accept="image/*" class="hidden-input">
+                  <button id="removeImage" class="button button-outline" disabled>
+                    Remove
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Account Form -->
+            <form class="form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="fullName" class="form-label">Full Name</label>
+                  <input id="fullName" type="text" class="form-input" value="Admin User">
+                </div>
+                <div class="form-group">
+                  <label for="email" class="form-label">Email</label>
+                  <input id="email" type="email" class="form-input" value="admin@school.edu" disabled>
+                  <span class="form-hint">Email cannot be changed for security reasons</span>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone" class="form-label">Phone Number</label>
+                  <input id="phone" type="tel" class="form-input" value="+1 (555) 123-4567">
+                </div>
+                <div class="form-group">
+                  <label for="role" class="form-label">Role</label>
+                  <input id="role" type="text" class="form-input" value="Administrator" disabled>
+                </div>
+              </div>
+              <button type="button" class="button button-primary">Save Changes</button>
+            </form>
+            
+            <!-- Password Section -->
+            <div class="password-section">
+              <h3 class="section-title">Change Password</h3>
+              <form class="form">
+                <div class="form-group">
+                  <label for="currentPassword" class="form-label">Current Password</label>
+                  <input id="currentPassword" type="password" class="form-input">
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="newPassword" class="form-label">New Password</label>
+                    <input id="newPassword" type="password" class="form-input">
+                  </div>
+                  <div class="form-group">
+                    <label for="confirmPassword" class="form-label">Confirm New Password</label>
+                    <input id="confirmPassword" type="password" class="form-input">
+                  </div>
+                </div>
+                <button type="button" class="button button-primary">Update Password</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- System Settings Panel -->
+        <div id="panel-system" class="tab-panel" role="tabpanel" aria-labelledby="tab-system">
+          <div class="panel-content">
+            <h2 class="panel-title">System Settings</h2>
+            
+            <!-- Notification Preferences -->
+            <div class="settings-section">
+              <h3 class="section-title">Notification Preferences</h3>
+              
+              <div class="setting-item">
+                <div class="setting-info">
+                  <label for="emailNotifications" class="setting-label">Email Notifications</label>
+                  <p class="setting-description">Receive email notifications for important updates</p>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" id="emailNotifications" checked>
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              
+              <div class="setting-item">
+                <div class="setting-info">
+                  <label for="smsNotifications" class="setting-label">SMS Notifications</label>
+                  <p class="setting-description">Receive text messages for urgent alerts</p>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" id="smsNotifications">
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              
+              <div class="setting-item">
+                <div class="setting-info">
+                  <label for="pushNotifications" class="setting-label">Push Notifications</label>
+                  <p class="setting-description">Receive browser notifications</p>
+                </div>
+                <label class="toggle">
+                  <input type="checkbox" id="pushNotifications" checked>
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+            
+            <!-- Theme Selection -->
+            <div class="settings-section">
+              <h3 class="section-title">Theme Selection</h3>
+              <div class="setting-item">
+                <div class="setting-info">
+                  <label for="themeSelect" class="setting-label">Theme Mode</label>
+                  <p class="setting-description">Choose between light and dark mode</p>
+                </div>
+                <select id="themeSelect" class="select">
+                  <option value="light">Light</option>
+                  <option value="dark">Dark</option>
+                  <option value="system">System</option>
+                </select>
+              </div>
+            </div>
+            
+            <!-- Language Selection -->
+            <div class="settings-section">
+              <h3 class="section-title">Language Selection</h3>
+              <div class="setting-item">
+                <div class="setting-info">
+                  <label for="languageSelect" class="setting-label">Language</label>
+                  <p class="setting-description">Select your preferred language</p>
+                </div>
+                <select id="languageSelect" class="select">
+                  <option value="en">English</option>
+                  <option value="es">Spanish</option>
+                  <option value="fr">French</option>
+                  <option value="de">German</option>
+                </select>
+              </div>
+            </div>
+            
+            <button type="button" class="button button-primary">Save System Settings</button>
+          </div>
+        </div>
+
+        <!-- User Management Panel -->
+        <div id="panel-users" class="tab-panel" role="tabpanel" aria-labelledby="tab-users">
+          <div class="panel-content">
+            <h2 class="panel-title">User Management</h2>
+            
+            <!-- Search and Add User -->
+            <div class="user-management-header">
+              <div class="search-container">
+                <i data-lucide="search" class="search-icon"></i>
+                <input type="text" id="userSearch" class="search-input" placeholder="Search users...">
+              </div>
+              <button type="button" class="button button-primary">Add New User</button>
+            </div>
+            
+            <!-- Users Table -->
+            <div class="table-responsive">
+              <table class="data-table" aria-label="User list">
+                <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Last Login</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="userTableBody">
+                  <!-- User rows will be populated by JavaScript -->
+                </tbody>
+              </table>
+              <div id="emptyUserMessage" class="empty-message" style="display: none;">
+                No users found matching your search.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+  <script src="/functions/settings.js"></script>
+</body>
+</html>

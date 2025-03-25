@@ -171,8 +171,8 @@
    
     /* left: 10px; */
     width: 0%;
-    height: 900px;
-    top: 20%;
+    height: auto;
+    top: 12%;
     left: 32%;
     background-color: var(--white-col);
     border-radius: 10px;
@@ -366,7 +366,34 @@ select:disabled {
     transition: background-color 0.4s;
   }
 
-  .selection #submit {
+  .inner-permission_selection {
+    flex-wrap: wrap;
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .inner-permission_selection div p {
+    background-color: var(--col-light-green);
+    border: 1px solid var(--col-green);
+    padding: 0.5rem 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--col-black);
+    border-radius: 15px;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.4s;
+  }
+
+  .inner-permission_selection div p:hover {
+    background-color: var(--col-mid-green);
+  }
+
+ 
+
+  #submit {
     background-color: var(--col-ligh-tblue);
     border: 1px solid var(--col-blue);
     padding: 1rem 2rem;
@@ -377,11 +404,10 @@ select:disabled {
     white-space: nowrap;
     cursor: pointer;
     transition: background-color 0.4s;
-   align-self: flex-end;
-   margin-left: 16rem;
+    text-align: center;
   }
   
-  .selection #submit:hover {
+#submit:hover {
     background-color: var(--col-white);
   }
 
@@ -419,8 +445,8 @@ select:disabled {
   
   .course_search_cont span {
     position: absolute;
-    top: 5px;
-    right: 215px;
+    top: 7px;
+    right: 43%;
     font-size: 2rem;
     color: var(--col-black);
   }
