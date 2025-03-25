@@ -83,6 +83,8 @@ document.getElementById("see_full_listed_courses_details").addEventListener("cli
   expandCard(this, "courses");
 });
 
+
+
 // Overlay close event
 document.querySelector(".overlay").addEventListener("click", () => {
   document.querySelectorAll(".card.expanded").forEach(collapseCard);

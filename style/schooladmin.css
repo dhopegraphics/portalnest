@@ -78,6 +78,9 @@ body {
     color: white !important; /* Ensures both text and icon are white */
 }
 
+.inner-permission_selection div p.active {
+  background-color: var(--col-green);
+}
 
 .selection div p.active {
   background-color: var(--col-green);
@@ -154,17 +157,6 @@ a{
   transition: all 0.5s ease;
 }
 
-.hidden,
-.manager_form_container {
-  
-  transition: all 0.5s ease;
-}
-
-.hidden.hidden_remove,
-.manager_form_container.hidden_remove {
-  display: block;
-  transition: all 0.5s ease;
-}
 
 .table_container::-webkit-scrollbar,
 .card__container::-webkit-scrollbar,
