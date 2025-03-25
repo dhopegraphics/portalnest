@@ -18,8 +18,6 @@ function expandCard(button, category) {
     expandedCard.classList.remove("expanded");
     expandedCard.querySelector(".card-details")?.remove();
     resetButton(expandedCard);
-
-
   });
 
   // Hide overlay if clicking the same card again

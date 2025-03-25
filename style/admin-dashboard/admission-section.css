@@ -1,23 +1,4 @@
 /************ Admission *********/
-.live__activity-container {
-  height: 434px;
-  margin-top: 2rem;
-  background-color: var(--white-col);
-  padding: 2rem;
-  border-radius: 20px;
-  box-shadow: 0 0.8rem 1.4rem rgba(0, 0, 0, 0.2);
-}
-
-.recent__pending_container,
-.recent__pending-container {
-  /* margin-top: 4rem; */
-  background-color: var(--white-col);
-  padding: 2rem;
-  border-radius: 20px;
-  box-shadow: 0 0.8rem 1.4rem rgba(0, 0, 0, 0.2);
- 
-}
-
 .admission_section {
     margin-top: 7rem;
     display: flex;
