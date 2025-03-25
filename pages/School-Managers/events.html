@@ -33,6 +33,7 @@
   <main class="main overall__main">
     <div class="content__area" id="events">
       <section>
+        <div class="overlay"></div>
         <div class="main__card-container">
           <h1>Dashboard-School Manager</h1>
 
@@ -49,7 +50,7 @@
                   </div>
                 </div>
 
-                <button id="see_full_total_events_details" class="card__footer flex col_green flex">
+                <button id="total_events_details" class="card__footer flex col_green flex">
                   <p>See Details</p>
                   <div>
                     <i class="bi bi-arrow-right col_green"></i>
@@ -68,7 +69,7 @@
                   </div>
                 </div>
 
-                <button id="see_full_ongoing_events_details" class="card__footer flex col_violet flex">
+                <button id="ongoing_events_details" class="card__footer flex col_violet flex">
                   <p>See Details</p>
                   <div>
                     <i class="bi bi-arrow-right col_violet"></i>
@@ -85,7 +86,7 @@
                   </div>
                 </div>
 
-                <button id="see_full_closed_events_details" class="card__footer flex col_orange flex">
+                <button id="closed_events_details" class="card__footer flex col_orange flex">
                   <p>See Details</p>
                   <div>
                     <i class="bi bi-arrow-right col_orange"></i>
@@ -104,7 +105,7 @@
                   </div>
                 </div>
 
-                <button id="see_full_completed_events_details" class="card__footer flex col_lightblue flex">
+                <button id="completed_events_details" class="card__footer flex col_lightblue flex">
                   <p>See Details</p>
                   <div>
                     <i class="bi bi-arrow-right col_lightblue"></i>
@@ -314,6 +315,7 @@
       </section>
     </div>
   </main>
+  <script src="/functions/events_details.js"></script>
   <script src="/functions/managementButtons.js"></script>
 </body>
 

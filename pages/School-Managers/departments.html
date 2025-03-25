@@ -22,14 +22,15 @@
   <link rel="stylesheet" href="/style/schooladmin.css">
   <link rel="stylesheet" href="/style/admin-dashboard/student-management-section.css">
   <link rel="stylesheet" href="/style/admin-dashboard/admission-section.css">
-  <script defer src="/functions/script-schooladmin.js"></script>
   <link rel="stylesheet" href="/style/admin-dashboard/modalformstyles.css">
+  <script defer src="/functions/script-schooladmin.js"></script>
 
 </head>
 
 <body>
   <script src="/functions/admin-dashboard-sideandtopbar.js"></script>
   <main style="margin-top: 5%; padding: 2%;"  class="main overall__main">
+    <div class="overlay"></div>
     <div class="main__card-container">
       <h1>Department Managements</h1>
       <div class="card_scroll dashboard__scroll">
@@ -46,7 +47,7 @@
             </div>
 
           
-            <button id="see_full_departments_details" class="card__footer flex col_green flex">
+            <button id="falculitie_departments_departments_details" class="card__footer flex col_green flex">
               <p>See Details</p>
               <div>
                 <i class="bi bi-arrow-right col_green"></i>
@@ -65,7 +66,7 @@
               </div>
             </div>
 
-            <button id="see_full_assigned_lecturers_details" class="card__footer flex col_violet flex">
+            <button id="assigned_lecturers_details" class="card__footer flex col_violet flex">
               <p>See Details</p>
               <div>
                 <i class="bi bi-arrow-right col_violet"></i>
@@ -83,7 +84,7 @@
                 <p>Unassigned Courses</p>
               </div>
             </div>
-            <button id="see_full_unassigned_lecturers_details" class="card__footer flex col_orange flex">
+            <button id="unassigned_courses_details" class="card__footer flex col_orange flex">
               <p>See Details</p>
               <div>
                 <i class="bi bi-arrow-right col_orange"></i>
@@ -102,7 +103,7 @@
               </div>
             </div>
 
-            <button id="see_full_listed_courses_details" class="card__footer flex col_lightblue flex">
+            <button id="listed_courses_details" class="card__footer flex col_lightblue flex">
               <p>See Details</p>
               <div>
                 <i class="bi bi-arrow-right col_lightblue"></i>
@@ -293,6 +294,9 @@
       </div>
     </div>
   </main>
+
+  
+  <script src="/functions/department_details.js" defer ></script>
   <script src="/functions/managementButtons.js"></script>
 </body>
 

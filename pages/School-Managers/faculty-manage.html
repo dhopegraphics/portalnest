@@ -22,12 +22,13 @@
 
     <script defer src="/functions/script-schooladmin.js"></script>
     <link rel="stylesheet" href="/style/admin-dashboard/modalformstyles.css">
-
-
+    <link rel="stylesheet" href="/style/schooladmin.css" />
+    <link rel="stylesheet" href="/style/admin-dashboard/dashboard-section.css">
   </head>
   <body>
     <script src="/functions/admin-dashboard-sideandtopbar.js"></script>
     <main style="margin-top: 5%; padding: 2%;"  class="main overall__main">
+    <div class="overlay"></div>
     <div class="main__card-container">
       <h1>Faculties Management</h1>
 
@@ -44,7 +45,7 @@
               </div>
             </div>
 
-            <button id="see_full_total_faculties_details" class="card__footer flex col_green flex">
+            <button id="total_faculties_details" class="card__footer flex col_green flex">
               <p>See Details</p>
               <div>
                 <i class="bi bi-arrow-right col_green"></i>
@@ -63,7 +64,7 @@
               </div>
             </div>
 
-            <button id="see_full_departments_details" class="card__footer flex col_violet flex">
+            <button id="falculitie_departments_details" class="card__footer flex col_violet flex">
               <p>See Details</p>
               <div>
                 <i class="bi bi-arrow-right col_violet"></i>
@@ -80,10 +81,10 @@
               </div>
             </div>
 
-            <div class="card__footer flex col_orange">
+            <button id="hods_assigned_details" class="card__footer flex col_orange">
               <p>See Details</p>
-              <button><i class="bi bi-arrow-right col_orange"></i></button>
-            </div>
+              <div><i class="bi bi-arrow-right col_orange"></i></div>
+            </button>
           </div>
 
           <div class="card card_lightblue">
@@ -98,12 +99,12 @@
               </div>
             </div>
 
-            <div class="card__footer flex col_lightblue">
+            <button id="unassigned_departments_details" class="card__footer flex col_lightblue">
               <p>See Details</p>
-              <button>
+              <div>
                 <i class="bi bi-arrow-right col_lightblue"></i>
-              </button>
-            </div>
+              </div>
+            </button>
           </div>
         </div>
       </div>
@@ -274,6 +275,8 @@
       </div>
     </div>
   </main>
+  
+  <script src="/functions/falculty_details.js" defer ></script>
   <script src="/functions/managementButtons.js"></script>
   </body>
 </html>

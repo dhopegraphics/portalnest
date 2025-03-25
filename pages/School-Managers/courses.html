@@ -27,6 +27,7 @@
   <body>
     <script src="/functions/admin-dashboard-sideandtopbar.js"></script>
     <main style="margin-top: 5%; padding: 2%;"  class="main overall__main">
+    <div class="overlay"></div>
     <div class="main__card-container">
       <h1>Course Management</h1>
 
@@ -43,7 +44,7 @@
               </div>
             </div>
 
-            <button id="see_full_totalCourses_details" class="card__footer flex col_green flex">
+            <button id="totalCourses_details" class="card__footer flex col_green flex">
               <p>See Details</p>
               <div>
                 <i class="bi bi-arrow-right col_green"></i>
@@ -61,7 +62,7 @@
                 <p>Lecturers</p>
               </div>
             </div>
-            <button id="see_full_lecturers_details" class="card__footer flex col_violet flex">
+            <button id="lecturers_details" class="card__footer flex col_violet flex">
               <p>See Details</p>
               <div>
                 <i class="bi bi-arrow-right col_violet"></i>
@@ -77,7 +78,7 @@
                 <p>Assigned Lecturers</p>
               </div>
             </div>
-            <button id="see_full_assigned_lecturers_details" class="card__footer flex col_orange flex">
+            <button id="assigned_lecturers_details" class="card__footer flex col_orange flex">
               <p>See Details</p>
               <div>
                 <i class="bi bi-arrow-right col_orange"></i>
@@ -96,7 +97,7 @@
               </div>
             </div>
 
-            <button id="see_full_unassigned_lecturers_details" class="card__footer flex col_lightblue flex">
+            <button id="unassigned_lecturers_details" class="card__footer flex col_lightblue flex">
               <p>See Details</p>
               <div>
                 <i class="bi bi-arrow-right col_lightblue"></i>
@@ -287,6 +288,7 @@
       </div>
     </div>
   </main>
+  <script src="/functions/course_details.js"></script>
   <script src="/functions/managementButtons.js"></script>
   </body>
 </html>

@@ -37,6 +37,7 @@
   <main style="margin-top: 5%;" class="main overall__main">
     <div class="content__area" id="reports">
       <section class="inner_grading_container">
+        <div class="overlay"></div>
         <div class="main__card-container">
           <h1>Dashboard-School Manager</h1>
 
@@ -53,12 +54,12 @@
                   </div>
                 </div>
 
-                <div class="card__footer flex col_green">
+                <button id="reports_details" class="card__footer flex col_green">
                   <p>See Details</p>
-                  <button>
+                  <div>
                     <i class="bi bi-arrow-right col_green"></i>
-                  </button>
-                </div>
+                  </div>
+                </button>
               </div>
 
               <div class="card card_violet">
@@ -72,12 +73,12 @@
                   </div>
                 </div>
 
-                <div class="card__footer flex col_violet">
+                <button id="unresolved_reports_details" class="card__footer flex col_violet">
                   <p>See Details</p>
-                  <button>
+                  <div>
                     <i class="bi bi-arrow-right col_violet"></i>
-                  </button>
-                </div>
+                  </div>
+                </button>
               </div>
 
               <div class="card card_orange">
@@ -89,12 +90,12 @@
                   </div>
                 </div>
 
-                <div class="card__footer flex col_orange">
+                <button id="resolved_reports_details" class="card__footer flex col_orange">
                   <p>See Details</p>
-                  <button>
+                  <div>
                     <i class="bi bi-arrow-right col_orange"></i>
-                  </button>
-                </div>
+                  </div>
+                </button>
               </div>
 
               <div class="card card_lightblue">
@@ -108,12 +109,12 @@
                   </div>
                 </div>
 
-                <div class="card__footer flex col_lightblue">
+                <button id="portal_nest_reports_details" class="card__footer flex col_lightblue">
                   <p>See Details</p>
-                  <button>
+                  <div>
                     <i class="bi bi-arrow-right col_lightblue"></i>
-                  </button>
-                </div>
+                  </div>
+                </button>
               </div>
             </div>
           </div>
@@ -298,6 +299,7 @@
     </div>
   </main>
 
+  <script src="/functions/reports_details.js"></script>
 </body>
 
 </html>

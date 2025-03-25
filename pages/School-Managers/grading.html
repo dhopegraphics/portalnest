@@ -34,6 +34,7 @@
   <body>
     <script src="/functions/admin-dashboard-sideandtopbar.js"></script>
     <main style="margin-top: 5%; padding: 2%;"  class="main overall__main">
+    <div class="overlay"></div>
     <div class="main__card-container">
       <h1>Grade Managements</h1>
 
@@ -50,7 +51,7 @@
               </div>
             </div>
 
-            <button id="see_full_graded_courses_details" class="card__footer flex col_green flex"    >
+            <button id="graded_courses_details" class="card__footer flex col_green flex"    >
               <p>See Details</p>
               <div>
                 <i class="bi bi-arrow-right col_green"></i>
@@ -69,7 +70,7 @@
               </div>
             </div>
 
-            <button id="see_full_graded_student_details" class="card__footer flex col_violet flex"    >
+            <button id="graded_students_details" class="card__footer flex col_violet flex"    >
               <p>See Details</p>
               <div>
                 <i class="bi bi-arrow-right col_violet"></i>
@@ -86,7 +87,7 @@
               </div>
             </div>
 
-            <button id="see_full_total_exam_details" class="card__footer flex col_orange flex"    >
+            <button id="total_exam_details" class="card__footer flex col_orange flex"    >
               <p>See Details</p>
               <div>
                 <i class="bi bi-arrow-right col_orange"></i>
@@ -105,7 +106,7 @@
               </div>
             </div>
 
-            <button id="see_full_pending_courses_details" class="card__footer flex col_lightblue flex"    >
+            <button id="pending_courses_details" class="card__footer flex col_lightblue flex"    >
               <p>See Details</p>
               <div>
                 <i class="bi bi-arrow-right col_lightblue"></i>
@@ -388,6 +389,7 @@
         },
       });
     </script>
+ <script src="/functions/grading_details.js"></script>
  <script src="/functions/managementButtons.js"></script>
   </body>
 </html>
