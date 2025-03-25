@@ -800,7 +800,7 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 id: 1,
                 author: 'Jane Smith',
-                avatar: 'https://via.placeholder.com/40',
+                avatar: 'https://i.pinimg.com/474x/b8/d5/5a/b8d55a60bd20a95af88e8805318c5a89.jpg',
                 date: '2023-03-10T14:30:00Z',
                 text: 'This resource was incredibly helpful for my research project. Thank you for sharing!',
                 likes: 5
@@ -808,7 +808,7 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 id: 2,
                 author: 'Michael Brown',
-                avatar: 'https://via.placeholder.com/40',
+                avatar: 'https://i.pinimg.com/474x/b3/e5/db/b3e5db5a3bf1399f74500a6209462794.jpg',
                 date: '2023-03-09T10:15:00Z',
                 text: 'Could you provide more examples for the concepts covered in chapter 3? I\'m having trouble understanding them.',
                 likes: 2
@@ -816,7 +816,7 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 id: 3,
                 author: 'Sarah Johnson',
-                avatar: 'https://via.placeholder.com/40',
+                avatar: 'https://i.pinimg.com/474x/d2/b7/09/d2b70944badcfa84c23a6755d99adb8d.jpg',
                 date: '2023-03-08T16:45:00Z',
                 text: 'The explanations are clear and concise. I especially appreciated the diagrams that helped visualize the concepts.',
                 likes: 8
