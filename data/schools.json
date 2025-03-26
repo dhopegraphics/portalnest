@@ -322,5 +322,161 @@
           "date": "2023-06-22T16:45:00Z"
         }
       ]
+    },
+
+    {
+      "id": "7",
+      "name": "Kwame Nkrumah University of Science and Technology",
+      "type": "University",
+      "description": "A highly regarded university in Ghana, known for its strong focus on science and technology, and is considered a top research institution in Africa, with global quality accreditation",
+      "image": "https://i.pinimg.com/474x/a1/60/02/a160020407e2a2d108a2d568d766d30a.jpg",
+      "location": {
+        "country": "Ghana",
+        "region": "Ashanti region",
+        "city": "Kumasi"
+      },
+      "contact": {
+        "phone": "+233 322 060 021",
+        "email": "info@clsu.edu.ph",
+        "website": "https://apps.knust.edu.gh/admissions/apply"
+      },
+      "programs": ["Agriculture", "Veterinary Medicine", "Engineering", "Computer Science"],
+      "programDetails": [
+        {
+          "name": "Computer Science",
+          "description": "Application of Science and Mathematics in mordern computing. Software Development and many more",
+          "duration": "4 years"
+        },
+        {
+          "name": "Veterinary Medicine",
+          "description": "Comprehensive program for animal health and medicine.",
+          "duration": "6 years"
+        },
+        {
+          "name": "Agriculture",
+          "description": "Study of crop production, animal husbandry, and agricultural economics.",
+          "duration": "4 years"
+        }
+      ],
+      "admissionStatus": "Upcoming",
+      "admissionProcess": "Submit application form, entrance examination, and interview. Special consideration for agriculture-related achievements.",
+      "tuitionRange": "Medium",
+      "tuitionDetails": "State university with subsidized tuition. Free tuition for qualified students under the Universal Access to Quality Tertiary Education Act.",
+      "accreditation": "Accredited",
+      "facilities": ["Research Farms", "Laboratories", "Library", "Dormitories", "Sports Complex"],
+      "rating": 4.3,
+      "reviews": [
+        {
+          "id": "r7",
+          "user": "Raphael Ossom",
+          "rating": 5,
+          "text": "Kwame Nkrumah University of Science and Technology stands out as one of the best institutions for higher education in Africa. The university offers a wide range of well-structured academic programs that equip students with both theoretical knowledge and practical skills.",
+          "date": "2025-03-15T16:45:00Z"
+        }
+      ]
+    },
+
+    {
+      "id": "8",
+      "name": "University of Ghana",
+      "type": "University",
+      "description": "As the leading university in Ghana, the University aims to produce the next generation of thought leaders to drive national development",
+      "image": "https://i.pinimg.com/474x/b0/c4/53/b0c453d1fd758c09e73f2805b5ccbfbf.jpg",
+      "location": {
+        "country": "Ghana",
+        "region": "Greater Accra region",
+        "city": "Legon"
+      },
+      "contact": {
+        "phone": " 030 221 3850",
+        "email": "pad@ug.edu.gh",
+        "website": "https://www.ug.edu.gh/"
+      },
+      "programs": ["Pharmacy", "Veterinary Medicine", "Engineering", "Computer Science"],
+      "programDetails": [
+        {
+          "name": "Computer Science",
+          "description": "Application of Science and Mathematics in mordern computing. Software Development and many more",
+          "duration": "4 years"
+        },
+        {
+          "name": "Veterinary Medicine",
+          "description": "Comprehensive program for animal health and medicine.",
+          "duration": "6 years"
+        },
+        {
+          "name": "Pharmacy",
+          "description": "Study in a healthcare field where medications and other healthcare products are dispensed",
+          "duration": "6 years"
+        }
+      ],
+      "admissionStatus": "Upcoming",
+      "admissionProcess": "Submit application form, entrance examination, and interview. Special consideration for agriculture-related achievements.",
+      "tuitionRange": "Medium",
+      "tuitionDetails": "State university with subsidized tuition. Free tuition for qualified students under the Universal Access to Quality Tertiary Education Act.",
+      "accreditation": "Accredited",
+      "facilities": ["Research Farms", "Laboratories", "Library", "Dormitories", "Sports Complex"],
+      "rating": 4.3,
+      "reviews": [
+        {
+          "id": "r7",
+          "user": "Sampson Oppong",
+          "rating": 5,
+          "text": "I recently completed the Introduction to Pharmacy course, and I must say it was an incredible learning experience",
+          "date": "2024-02-27T16:45:00Z"
+        }
+      ]
+    },
+
+    {
+      "id": "9",
+      "name": "University of Cape Coast",
+      "type": "University",
+      "description": "The University of Cape Coast was established in October, 1962 as a University College and placed in a special relationship with the University of Ghana, Legon. On October 1, 1971, the College attained the status of a full and independent University, with the authority to confer its own degrees, diplomas and certificates by an Act of Parliament - The University of Cape Coast Act, 1971 [Act 390] and subsequently the University of Cape Coast Law, 1992 [PNDC Law 278].",
+      "image": "https://i.pinimg.com/474x/b1/f5/b6/b1f5b66a8a5ff836352af7f5a7bf93bf.jpg",
+      "location": {
+        "country": "Ghana",
+        "region": "Central region",
+        "city": "Cape Coast"
+      },
+      "contact": {
+        "phone": "+233 3321 324 40",
+        "email": "registrar@ucc.edu.gh",
+        "website": "https://ucc.edu.gh/"
+      },
+      "programs": ["Information Technology", "Pharmacy", "Veterinary Medicine", "Engineering"],
+      "programDetails": [
+        {
+          "name": "Information Technology",
+          "description": "Application of Science and Mathematics in mordern computing. Software Development and many more",
+          "duration": "4 years"
+        },
+        {
+          "name": "Veterinary Medicine",
+          "description": "Comprehensive program for animal health and medicine.",
+          "duration": "6 years"
+        },
+        {
+          "name": "Pharmacy",
+          "description": "Study in a healthcare field where medications and other healthcare products are dispensed",
+          "duration": "6 years"
+        }
+      ],
+      "admissionStatus": "Upcoming",
+      "admissionProcess": "Submit application form, entrance examination, and interview. Special consideration for agriculture-related achievements.",
+      "tuitionRange": "Low",
+      "tuitionDetails": "State university with subsidized tuition. Free tuition for qualified students under the Universal Access to Quality Tertiary Education Act.",
+      "accreditation": "Accredited",
+      "facilities": ["Research Farms", "Laboratories", "Library", "Dormitories", "Sports Complex"],
+      "rating": 4.7,
+      "reviews": [
+        {
+          "id": "r8",
+          "user": "Oppong Richmond",
+          "rating": 4.1,
+          "text": "As a UCC student, I appreciated how the courses were tailored to our local context. The intructors uesd examples and case studies from African settings, making the course highly relevant and engaging",
+          "date": "2024-05-27T16:45:00Z"
+        }
+      ]
     }
   ]
