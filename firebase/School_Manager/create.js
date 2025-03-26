@@ -9,32 +9,40 @@ import { doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs
 async function createSchoolManager(managerData) {
     try {
         // ✅ Required fields validation
-        const requiredFields = ["manager_id", "manager_type", "user_id", "institution_code", "first_name", "last_name"];
+        const requiredFields = ["first_name", "last_name", "manager_type"];
         for (const field of requiredFields) {
             if (!managerData[field]) {
                 throw new Error(`❌ Missing required field: ${field}`);
             }
         }
 
-        // ✅ Document ID is the manager_id
-        const documentId = managerData.manager_id;
+        // ✅ Generate Manager ID (Numbers + First Name)
+        const randomNum = Math.floor(1000 + Math.random() * 9000);
+        const documentId = `${managerData.first_name}${randomNum}`;
+
+        // ✅ Get current user ID from local storage or Firebase Auth
+        const currentUserId = localStorage.getItem("current_user_id") || "Unknown";
+        const institutionCode = localStorage.getItem("institution_code") || null;
 
         // ✅ Structure Firestore document
         const schoolManagerDoc = {
             permissions: managerData.permissions || [],
             course_selected: managerData.course_selected || [],
-            created_at: serverTimestamp(), // Firestore Timestamp
-            created_by: managerData.created_by || "Unknown",
-            department_id: managerData.department_id || "N/A",
+            created_at: serverTimestamp(),
+            created_by: currentUserId,
+            department_id: null, // Default to null
             first_name: managerData.first_name,
-            institution_code: managerData.institution_code,
+            institution_code: institutionCode,
             last_name: managerData.last_name,
-            manager_active: managerData.manager_active ?? true, // Default: true
-            manager_id: managerData.manager_id,
+            manager_active: managerData.manager_active ?? false, // Default: false
+            manager_id: documentId,
             manager_type: managerData.manager_type,
             updated_at: serverTimestamp(),
-            user_id: managerData.user_id,
+            user_id: null, // Default to null
             year_selected: managerData.year_selected || [],
+            Salary: managerData.Salary,
+            personal_mail: managerData.personal_mail,
+            personal_number: managerData.personal_number
         };
 
         // ✅ Store in Firestore
@@ -49,45 +57,48 @@ async function createSchoolManager(managerData) {
 }
 
 // ✅ Handle form submission
-document.getElementById("create-manager-form").addEventListener("submit", async function (event) {
-    event.preventDefault(); // Prevent form from reloading the page
-
+document.getElementById("submit").addEventListener("click", async function () {
     // Get values from input fields
-    const firstName = document.getElementById("first_name").value.trim();
-    const lastName = document.getElementById("last_name").value.trim();
-    const institutionCode = document.getElementById("institution_code").value.trim();
-    const departmentId = document.getElementById("department_id").value.trim();
-    const userId = document.getElementById("user_id").value.trim();
-    const managerId = document.getElementById("manager_id").value.trim();
-    const managerType = document.getElementById("manager_type").value.trim();
-    const createdBy = document.getElementById("created_by").value.trim();
+    const firstName = document.getElementById("firstname").value.trim();
+    const lastName = document.getElementById("lastname").value.trim();
+    const managerType = document.getElementById("position").value.trim();
+    const department = document.getElementById("department").value.trim();
+    const salary = document.getElementById("Salary").value.trim();
+    const workEmail = document.getElementById("personmail").value.trim();
+    const workPhone = document.getElementById("number").value.trim();
+
 
     // Get multiple selected options for courses
-    const courseSelected = Array.from(document.getElementById("course_selected").selectedOptions).map(option => option.value);
+    const courseSelected = Array.from(document.querySelectorAll(".course__selection .selected"))
+        .map(option => option.dataset.value);
 
     // Get multiple selected options for year
-    const yearSelected = Array.from(document.getElementById("year_selected").selectedOptions).map(option => option.value);
+    const yearSelected = Array.from(document.querySelectorAll(".year-option.selected"))
+        .map(option => option.dataset.value);
+
+    // Get multiple selected permissions
+    const permissions = Array.from(document.querySelectorAll(".inner-permission_selection .selected"))
+        .map(option => option.dataset.value);
 
     // Validate required fields
-    if (!firstName || !lastName || !institutionCode || !userId || !managerId || !managerType) {
+    if (!firstName || !lastName || !managerType) {
         alert("❌ Please fill in all required fields.");
         return;
     }
 
     // ✅ Create the manager object
     const newManager = {
-        permissions: ["PERM_001", "PERM_002"], // Modify dynamically if needed
+        permissions: permissions,
         course_selected: courseSelected,
-        created_by: createdBy || "Unknown",
-        department_id: departmentId || "N/A",
         first_name: firstName,
-        institution_code: institutionCode,
         last_name: lastName,
-        manager_active: true, // Default to active
-        manager_id: managerId,
+        manager_active: false, // Default to inactive
         manager_type: managerType,
-        user_id: userId,
         year_selected: yearSelected,
+        department_id : department,
+        Salary: salary,
+        personal_mail: workEmail,
+        personal_number: workPhone
     };
 
     try {
@@ -95,7 +106,7 @@ document.getElementById("create-manager-form").addEventListener("submit", async 
         const response = await createSchoolManager(newManager);
         if (response.success) {
             alert("🎉 Manager created successfully!");
-            document.getElementById("create-manager-form").reset(); // Reset form
+            document.getElementById("managerForm").reset(); // Reset form
         } else {
             alert("❌ Error: " + response.message);
         }

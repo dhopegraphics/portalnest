@@ -128,62 +128,11 @@
 
       <!-- initial content for my javascript -->
       <div class="initial_content_container">
-                <!-- Teacher -->
-                <div class="manager_content_container">
-                  <h1>Lecturer/Teacher :</h1>
-        
-                  <div class="initial_title flex">
-                    <h2>Name</h2>
-                    <h2>Department</h2>
-                    <h2>Course</h2>
-                    <h2>Year</h2>
-                    <h2>Salary($)</h2>
-                  </div>
-        
-                  <div class="initial_content grid">
-                    <div class="person_details flex">
-                      <div class="person_img"></div>
-                      <h4>Isaac Nana Sam Mensah</h4>
-                    </div>
-        
-                    <div class="program_title flex">
-                      <h4>Computer Science</h4>
-                    </div>
-        
-                    <div class="course_title flex">
-                      <h4>Circuit Theory</h4>
-                    </div>
-        
-                    <div class="program_level flex">
-                      <h4>Year 1,2,4</h4>
-                    </div>
-        
-                    <div class="manager_salary flex">
-                      <h4>12,000</h4>
-        
-                      <div class="salary_btn_container flex">
-                        <button class="flex"><span>+</span> Add Roles</button>
-        
-                        <!-- Edit button -->
-                        <button class="flex">
-                          <i class="fa-solid fa-pen-to-square"></i>
-                        </button>
-        
-                        <!-- close button -->
-                        <button class="flex">&times;</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-        
-        
         <!-- Manager -->
         <div class="manager_content_container">
-          <h1>School Manager/Staff:</h1>
         </div>
-       
       </div>
-
+    
       <!-- Form  -->
       <div class="manager_form_container">
         <div class="fake_display flex">
@@ -324,10 +273,154 @@
           </div>
         </form>
       </div>
+
+      <div class="manager_form_edit_container">
+        <div class="fake_display flex">
+          <div></div>
+          <button id="close_form_edit" class="close_form">
+            <span><i class="bi bi-x"></i></span>
+          </button>
+        </div>
+
+        <form action="" class="manager_form" id="managerFormEdit" name="managerForm">
+          <div class="up_container flex">
+            <div class="img_con" role="button"></div>
+
+            <div class="first_1_input">
+              <div class="">
+                <label for="fristname">First Name</label>
+                <input type="text" name="firstname" id="editfirstname" />
+              </div>
+
+              <div class="">
+                <label for="lastname">Last Name</label>
+                <input type="text" name="lastname" id="editlastname" />
+              </div>
+            </div>
+          </div>
+
+          <div class="inn-container inn_one">
+            <label for="personmail">Work Email</label>
+            <input type="email" name="personmail" id="editpersonmail" />
+          </div>
+
+          <div class="inn-container inn_two">
+            <label for="number">Work Phone</label>
+            <input type="number" name="number" id="editnumber" />
+          </div>
+
+          <div class="inn-container inn_two">
+            <label for="number">Salary</label>
+            <input type="number" name="number" id="editSalary" />
+          </div>
+
+          <div class="inn-container inn_three">
+            <label for="position">Role/Position</label>
+
+            <div class="hold_select_position">
+              <select name="position" id="editposition">
+                <option value="1">Select Row To be given</option>
+                <option value="2">Head of Department (HOD)</option>
+                <option value="3">Senior Lecturer</option>
+                <option value="4">Lecturer</option>
+              </select>
+
+              <span>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="inn-container inn_four">
+            <label for="department">Department</label>
+
+            <div class="hold_select_position">
+              <select name="department" id="editdepartment">
+                <option value="1">Select The Department </option>
+                <option value="2">Computer Science Department</option>
+                <option value="3">Business Department</option>
+                <option value="4">Health Department</option>
+                <option value="5">Law Department</option>
+              </select>
+
+              <span>
+                <i class="bi bi-caret-down-fill"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="year_selection">
+            <label>Year Selection :</label>
+
+            <div class="selection">
+              <div class="flex">
+                <p role="button" class="year-option" data-value="Year 1">
+                  Year 1 <span>+</span>
+                </p>
+                <p role="button" class="year-option" data-value="Year 2">
+                  Year 2 <span>+</span>
+                </p>
+                <p role="button" class="year-option" data-value="Year 3">
+                  Year 3 <span>+</span>
+                </p>
+                <p role="button" class="year-option" data-value="Year 4">
+                  Year 4 <span>+</span>
+                </p>
+              </div>
+
+              <div class="flex">
+                <p role="button" class="year-option" data-value="Year 5">
+                  Year 5 <span>+</span>
+                </p>
+                <p role="button" class="year-option" data-value="Year 6">
+                  Year 6 <span>+</span>
+                </p>
+                <p role="button" class="year-option" data-value="Year 7">
+                  Year 7 <span>+</span>
+                </p>
+                <p role="button" class="year-option" data-value="All Year">
+                  All Year
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="permission_selection">
+            <div class="select_permissions flex">
+              <p class="permission-margin">Permissions :</p>
+              <div class="course_search_cont">
+                <input id="search_permission" type="text" class="search_courses" />
+                  <span><i class="bi bi-search"></i></span>
+              </div>
+            </div>
+            <div class="inner-permission_selection">
+            </div>
+          </div>
+         
+          <div class="course_selection">
+            <div class="select_course flex">
+              <p class="permission-margin">Select Courses :</p>
+              <div class="course_search_cont">
+                <input id="search_courses" type="text" class="search_courses" />
+                  <span><i class="bi bi-search"></i></span>
+              </div>
+            </div>
+            <div class="selection course__selection">
+            </div>
+            <div  id="submit_edit" class="course-option" >
+              Submit Your Form
+             </div>
+          </div>
+        </form>
+      </div>
+
+      
     </div>
   </main>
   <script src="/functions/see_details_function.js" defer ></script>
-  <script  src="/functions/managers_data_render.js"></script>
+  <script defer  src="/functions/managers_data_render.js"></script>
+  <script type="module" src="/firebase/School_Manager/create.js" ></script>
+  <script type="module" src="/firebase/School_Manager/read.js" ></script>
 </body>
 
 </html>
