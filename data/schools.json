@@ -4,7 +4,7 @@
       "name": "University of Manila",
       "type": "University",
       "description": "A premier university offering a wide range of undergraduate and graduate programs with a focus on research and innovation.",
-      "image": "https://via.placeholder.com/600x300?text=University+of+Manila",
+      "image": "https://i.pinimg.com/474x/ec/79/82/ec79829679c050e16b491f59cb5dc164.jpg",
       "location": {
         "country": "Philippines",
         "region": "NCR",
@@ -67,7 +67,7 @@
       "name": "Quezon City College",
       "type": "College",
       "description": "A community college providing affordable education with a focus on practical skills and workforce readiness.",
-      "image": "https://via.placeholder.com/600x300?text=Quezon+City+College",
+      "image": "https://i.pinimg.com/474x/03/c3/f8/03c3f874f7a8838decd17db5a578120e.jpg",
       "location": {
         "country": "Philippines",
         "region": "NCR",
@@ -113,7 +113,7 @@
       "name": "Makati Science High School",
       "type": "Senior High School",
       "description": "A specialized science high school offering STEM-focused education for academically gifted students.",
-      "image": "https://via.placeholder.com/600x300?text=Makati+Science+High",
+      "image": "https://i.pinimg.com/474x/cc/8a/29/cc8a2998eaaf9c94dc26493c1e78a49d.jpg",
       "location": {
         "country": "Philippines",
         "region": "NCR",
@@ -166,7 +166,7 @@
       "name": "Central Luzon State University",
       "type": "University",
       "description": "A leading agricultural university known for its research and extension programs in agriculture, forestry, and fisheries.",
-      "image": "https://via.placeholder.com/600x300?text=Central+Luzon+State+University",
+      "image": "https://i.pinimg.com/474x/31/3a/79/313a7985bd736b9809f45f2bb1c6ec09.jpg",
       "location": {
         "country": "Philippines",
         "region": "Central Luzon",
@@ -217,7 +217,7 @@
       "name": "St. Paul College Pasig",
       "type": "Junior High School",
       "description": "A Catholic educational institution offering quality education with a focus on Christian values and character formation.",
-      "image": "https://via.placeholder.com/600x300?text=St.+Paul+College",
+      "image": "https://i.pinimg.com/474x/c5/b2/6c/c5b26c4cd92071c42d0d77ed492d1e4e.jpg",
       "location": {
         "country": "Philippines",
         "region": "NCR",
@@ -270,7 +270,7 @@
       "name": "Ateneo de Manila University",
       "type": "University",
       "description": "A prestigious Jesuit university known for its liberal arts tradition and formation of leaders for the nation.",
-      "image": "https://via.placeholder.com/600x300?text=Ateneo+de+Manila",
+      "image": "https://i.pinimg.com/474x/d5/05/ab/d505abfb6bf1bac0b8ddeac213f8d707.jpg",
       "location": {
         "country": "Philippines",
         "region": "NCR",
